@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class HexTile : MonoBehaviour
 {
-    SpriteRenderer spriteRenderer;
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
+
+    [SerializeField]
+    private Vector2 coordinates;
+
     public Chemical storedChemical;
+    public HexTile[] neighbors;
 
     private Color mouseOverColor = new Color(.6f, .87f, .9f, 1f);
     private Color defaultColor = new Color(1f, 1f, 1f, 1f);
@@ -53,5 +59,10 @@ public class HexTile : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetCoordinates(Vector2 coords)
+    {
+        this.coordinates = coords;
     }
 }

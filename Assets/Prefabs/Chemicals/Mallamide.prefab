@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2055982565
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
   m_Color: {r: 0.9137255, g: 0.5339166, b: 0.5137255, a: 1}
@@ -163,7 +163,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2055982565
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c342a02c1ec59764ab8c5f2892c2928b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -188,7 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081519c71e139ad4eb9a8f45afa1fc1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Chemical: {fileID: 3798050445816259048}
+  chemical: {fileID: 631240075661282151}
+  toRotate: {fileID: 3798050445816259048}
   amount: -60
   mouseOver: 0
 --- !u!58 &7568729217331235351
@@ -283,7 +284,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2055982565
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c342a02c1ec59764ab8c5f2892c2928b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -308,7 +309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081519c71e139ad4eb9a8f45afa1fc1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Chemical: {fileID: 3798050445816259048}
+  chemical: {fileID: 631240075661282151}
+  toRotate: {fileID: 3798050445816259048}
   amount: 60
   mouseOver: 0
 --- !u!58 &5905710257683588467
@@ -440,7 +442,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2055982565
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
   m_Color: {r: 0.93333334, g: 0.49803922, b: 0.92984104, a: 1}
@@ -464,7 +466,7 @@ GameObject:
   - component: {fileID: 8234713883796013617}
   - component: {fileID: 8234713883796013616}
   - component: {fileID: 8234713883796013618}
-  - component: {fileID: 2281616587342011409}
+  - component: {fileID: 631240075661282151}
   m_Layer: 0
   m_Name: Mallamide
   m_TagString: Untagged
@@ -531,7 +533,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2055982565
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 2747690628134850419, guid: a9716c16a44a94eed9b5c90fbf4d9bdd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -596,7 +598,7 @@ PolygonCollider2D:
       - {x: 0.265625, y: -0.4375}
       - {x: 0.29296875, y: -0.390625}
       - {x: 0.30859375, y: -0.36328125}
---- !u!114 &2281616587342011409
+--- !u!114 &631240075661282151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -605,13 +607,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8234713883796013621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cf4b7deecb443e45ad8b39cd3d2735b, type: 3}
+  m_Script: {fileID: 11500000, guid: 233622dc0446f3d4a90913745baa9390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Mallamide
   isPlaced: 0
   currentLocation: {fileID: 0}
   chemicalObject: {fileID: 8234713883796013621}
+  TopConnection: None
+  TRConnection: Positive
+  BRConnection: Neutral
+  BottomConnection: None
+  BLConnection: Negative
+  TLConnection: None
   buttons: {fileID: 9051250397077676146}
   leftButton: {fileID: 8655700410934439686}
   rightButton: {fileID: 6809187288487118265}
@@ -689,7 +697,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2055982565
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
   m_Color: {r: 0.5528828, g: 0.9150943, b: 0.51366144, a: 1}
@@ -776,7 +784,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2055982565
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
   m_Color: {r: 0.9137255, g: 0.80640894, b: 0.5137255, a: 1}

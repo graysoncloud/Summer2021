@@ -114,7 +114,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2055982565
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c342a02c1ec59764ab8c5f2892c2928b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -139,7 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081519c71e139ad4eb9a8f45afa1fc1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Chemical: {fileID: 1123805448408306522}
+  chemical: {fileID: 5631039560477863137}
+  toRotate: {fileID: 1123805448408306522}
   amount: 60
   mouseOver: 0
 --- !u!58 &7699081583201785793
@@ -234,7 +235,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2055982565
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c342a02c1ec59764ab8c5f2892c2928b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -259,7 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081519c71e139ad4eb9a8f45afa1fc1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Chemical: {fileID: 1123805448408306522}
+  chemical: {fileID: 5631039560477863137}
+  toRotate: {fileID: 1123805448408306522}
   amount: -60
   mouseOver: 0
 --- !u!58 &5918973214692014245
@@ -352,7 +354,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2055982565
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
   m_Color: {r: 0.9137255, g: 0.5339166, b: 0.5137255, a: 1}
@@ -476,7 +478,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2055982565
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
   m_Color: {r: 0.49803922, g: 0.93333334, b: 0.93333334, a: 1}
@@ -563,7 +565,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2055982565
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
   m_Color: {r: 0.5528828, g: 0.9150943, b: 0.51366144, a: 1}
@@ -587,7 +589,7 @@ GameObject:
   - component: {fileID: 5290174293672554627}
   - component: {fileID: 5290174293672554626}
   - component: {fileID: 5290174293672554624}
-  - component: {fileID: 2631232388311166627}
+  - component: {fileID: 5631039560477863137}
   m_Layer: 0
   m_Name: Europioid
   m_TagString: Untagged
@@ -654,7 +656,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2055982565
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 2747690628134850419, guid: a9716c16a44a94eed9b5c90fbf4d9bdd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -719,7 +721,7 @@ PolygonCollider2D:
       - {x: 0.265625, y: -0.4375}
       - {x: 0.29296875, y: -0.390625}
       - {x: 0.30859375, y: -0.36328125}
---- !u!114 &2631232388311166627
+--- !u!114 &5631039560477863137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -728,13 +730,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5290174293672554631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cf4b7deecb443e45ad8b39cd3d2735b, type: 3}
+  m_Script: {fileID: 11500000, guid: 233622dc0446f3d4a90913745baa9390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Europioid
   isPlaced: 0
   currentLocation: {fileID: 0}
   chemicalObject: {fileID: 5290174293672554631}
+  TopConnection: Negative
+  TRConnection: None
+  BRConnection: None
+  BottomConnection: None
+  BLConnection: None
+  TLConnection: Positive
   buttons: {fileID: 5093973186858406592}
   leftButton: {fileID: 4842166135385349556}
   rightButton: {fileID: 7301172940522108683}

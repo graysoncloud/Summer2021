@@ -2,16 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Chemical : MonoBehaviour
+public class Chemical : MonoBehaviour
 {
-    public string name;
+    [SerializeField]
+    private string name;
+
     public bool isPlaced;
     public HexTile currentLocation;
     public GameObject chemicalObject;
 
-    public GameObject buttons;
-    public ChemicalRotateButton leftButton;
-    public ChemicalRotateButton rightButton;
+    // Storage of the chemical's "bond" information. The first item in the array represents the top bond, then it proceeds clockwise.
+    // 
+    [SerializeField]
+    private string TopConnection,
+                   TRConnection,
+                   BRConnection,
+                   BottomConnection,
+                   BLConnection,
+                   TLConnection;
+
+    [SerializeField]
+    private GameObject buttons;
+    [SerializeField]
+    private ChemicalRotateButton leftButton,
+                                rightButton;
 
     private void Update()
     {
@@ -61,5 +75,35 @@ public abstract class Chemical : MonoBehaviour
         yield return new WaitForEndOfFrame();
         if (!(leftButton.mouseOver || rightButton.mouseOver))
             buttons.gameObject.SetActive(false);
+    }
+
+    public void RotateConnections(float amount)
+    {
+        if (amount < 0)
+        {
+            // Clockwise rotation:
+            string oldTop = TopConnection;
+            TopConnection = TLConnection;
+            TLConnection = BLConnection;
+            BLConnection = BottomConnection;
+            BottomConnection = BRConnection;
+            BRConnection = TRConnection;
+            TRConnection = oldTop;
+        } else
+        {
+            // Counterclockwise rotation:
+            string oldTop = TopConnection;
+            TopConnection = TRConnection;
+            TRConnection = BRConnection;
+            BRConnection = BottomConnection;
+            BottomConnection = BLConnection;
+            BLConnection = TLConnection;
+            TLConnection = oldTop;
+        }
+    }
+
+    private string GetConnections()
+    {
+        return null;
     }
 }

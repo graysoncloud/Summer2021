@@ -11,6 +11,8 @@ public class HexTile : MonoBehaviour
     private Vector2 coordinates;
 
     public Chemical storedChemical;
+
+    // Neighbors is a 6-long array of a hextile's neighbors, starting with the topmost one and rotating clockwise
     public HexTile[] neighbors;
 
     private Color mouseOverColor = new Color(.6f, .87f, .9f, 1f);
@@ -43,7 +45,7 @@ public class HexTile : MonoBehaviour
             storedChemical.GetComponent<PolygonCollider2D>().enabled = true;
             this.GetComponent<PolygonCollider2D>().enabled = false;
             storedChemical.isPlaced = true;
-            storedChemical.currentLocation = this;
+            storedChemical.housingTile = this;
             storedChemical.transform.position = transform.position;
 
             foreach (SpriteRenderer SR in storedChemical.chemicalObject.GetComponentsInChildren<SpriteRenderer>())

@@ -520,14 +520,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Didrite
   isPlaced: 0
-  currentLocation: {fileID: 0}
+  housingTile: {fileID: 0}
   chemicalObject: {fileID: 4137379982750764935}
-  TopConnection: Amplifier
-  TRConnection: None
-  BRConnection: Neutral
-  BottomConnection: None
-  BLConnection: Positive
-  TLConnection: None
+  connectionTypes:
+  - Amplifier
+  - None
+  - Neutral
+  - None
+  - Positive
+  - None
+  connectionStatuses:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   buttons: {fileID: 3941205813710155200}
   leftButton: {fileID: 3689081552059982516}
   rightButton: {fileID: 1536411689432975371}

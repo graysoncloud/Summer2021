@@ -53,6 +53,8 @@ public class HexTile : MonoBehaviour
                 SR.sortingLayerName = "HexGraphics";
             }
 
+            storedChemical.EvaluateConnections();
+
             GameManager.instance.currentlyHeldChemical = null;
         }
     }

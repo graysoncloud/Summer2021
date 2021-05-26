@@ -612,14 +612,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Mallamide
   isPlaced: 0
-  currentLocation: {fileID: 0}
+  housingTile: {fileID: 0}
   chemicalObject: {fileID: 8234713883796013621}
-  TopConnection: None
-  TRConnection: Positive
-  BRConnection: Neutral
-  BottomConnection: None
-  BLConnection: Negative
-  TLConnection: None
+  connectionTypes:
+  - None
+  - Positive
+  - Neutral
+  - None
+  - Negative
+  - None
+  connectionStatuses:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   buttons: {fileID: 9051250397077676146}
   leftButton: {fileID: 8655700410934439686}
   rightButton: {fileID: 6809187288487118265}

@@ -735,14 +735,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Europioid
   isPlaced: 0
-  currentLocation: {fileID: 0}
+  housingTile: {fileID: 0}
   chemicalObject: {fileID: 5290174293672554631}
-  TopConnection: Negative
-  TRConnection: None
-  BRConnection: None
-  BottomConnection: None
-  BLConnection: None
-  TLConnection: Positive
+  connectionTypes:
+  - Negative
+  - None
+  - None
+  - None
+  - None
+  - Positive
+  connectionStatuses:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   buttons: {fileID: 5093973186858406592}
   leftButton: {fileID: 4842166135385349556}
   rightButton: {fileID: 7301172940522108683}

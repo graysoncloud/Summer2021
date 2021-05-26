@@ -669,14 +669,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Duodide
   isPlaced: 0
-  currentLocation: {fileID: 0}
+  housingTile: {fileID: 0}
   chemicalObject: {fileID: 1970604856051267958}
-  TopConnection: None
-  TRConnection: Negative
-  BRConnection: Neutral
-  BottomConnection: Postive
-  BLConnection: None
-  TLConnection: None
+  connectionTypes:
+  - None
+  - Negative
+  - Neutral
+  - Positive
+  - None
+  - None
+  connectionStatuses:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   buttons: {fileID: 1478282727896013617}
   leftButton: {fileID: 1225071050283865157}
   rightButton: {fileID: 3990327584848789242}

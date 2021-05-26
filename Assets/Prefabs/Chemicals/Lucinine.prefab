@@ -331,14 +331,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Lucinine
   isPlaced: 0
-  currentLocation: {fileID: 0}
+  housingTile: {fileID: 0}
   chemicalObject: {fileID: 3476672171389485891}
-  TopConnection: None
-  TRConnection: Negative
-  BRConnection: Neutral
-  BottomConnection: None
-  BLConnection: None
-  TLConnection: None
+  connectionTypes:
+  - None
+  - Negative
+  - Neutral
+  - None
+  - None
+  - None
+  connectionStatuses:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   buttons: {fileID: 4603956492425896196}
   leftButton: {fileID: 4208389445599669872}
   rightButton: {fileID: 2019615451707524303}

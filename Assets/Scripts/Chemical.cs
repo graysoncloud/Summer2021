@@ -41,8 +41,10 @@ public class Chemical : MonoBehaviour
         // Attempt to pick up the chemical, if another one is already being held
         if (GameManager.instance.currentlyHeldChemical != null) return;
 
+        // Update neighbors, and clear this chemical's statuses (alternatively, these could be returned to a default)
         UpdateNeighborsUponLeaving();
         connectionStatuses = new string[6];
+
         GameManager.instance.currentlyHeldChemical = this;
 
         // Disable collisions for this
@@ -148,20 +150,18 @@ public class Chemical : MonoBehaviour
         if (adjacentTile != null && adjacentTile.storedChemical != null)
         {
             adjacentConnectionType = adjacentTile.storedChemical.GetConnectionTypeSingle((adjacentIndex + 3) % 6);
-            // vDebug.Log("adjcanet connection type: " + adjacentConnectionType);
+            // Debug.Log("adjcanet connection type: " + adjacentConnectionType);
         }
         else
             adjacentConnectionType = null;
 
 
-        // Off a positive connection, the two possible outcomes are unstable and positive (?)
+        // Off a positive connection, the two possible outcomes are unstable and positive
         if (connectionType == "Positive")
         {
             // Unstable conditions (no neighbor, adjacent bond is wrong type)
-            // NOTE: This will likely change as design is altered
             if (adjacentTile == null || adjacentTile.storedChemical == null || (adjacentConnectionType != "Positive" && adjacentConnectionType != "Neutral"))
             {
-                //Debug.Log((adjacentConnectionType != "Positive") + ", " + (adjacentConnectionType != "Neutral")); 
                 connectionStatuses[statusIndex] = "Unstable";
                 // Small calculation to reverse the index on the neighbor hexTile
                 if (adjacentTile != null && adjacentTile.storedChemical != null)
@@ -170,7 +170,7 @@ public class Chemical : MonoBehaviour
                 // Is there anything more to do?
             }
 
-            // Success conditions (coresponding positive or neutral connection)
+            // Positive conditions:
             else if (adjacentConnectionType == "Positive" || adjacentConnectionType == "Neutral")
             {
                 // Something other than "Positive" may be more descriptive
@@ -184,7 +184,7 @@ public class Chemical : MonoBehaviour
         }
 
 
-        // Off a negative connection, the two possible outcomes are unstable and negative (?)
+        // Off a negative connection, the two possible outcomes are unstable and negative
         else if (connectionType == "Negative")
         {
             // Unstable conditions:
@@ -195,7 +195,7 @@ public class Chemical : MonoBehaviour
                     adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "Unstable");
             }
 
-            // Success conditions (coresponding positive or neutral connection):
+            // Negative conditions:
             else if (adjacentConnectionType == "Negative" || adjacentConnectionType == "Neutral")
             {
                 connectionStatuses[statusIndex] = "Negative";
@@ -208,7 +208,7 @@ public class Chemical : MonoBehaviour
         }
 
 
-        // Off a neutral connection, the three possible outcomes are unstable, positive and negative (?)
+        // Off a neutral connection, the three possible outcomes are unstable, positive and negative
         else if (connectionType == "Neutral")
         {
             // Unstable conditions: (as it is, two neutral connections make an unstable bond)
@@ -244,7 +244,7 @@ public class Chemical : MonoBehaviour
                     adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "Unstable");
             }
 
-            // Success condition 1 (one amplification):
+            // Single amplification condition:
             else if (adjacentConnectionType == "None")
             {
                 // The amplifier will never have a status, but it will change a "None" connection's status to "Amplified" so we cab track what's amplified
@@ -253,7 +253,7 @@ public class Chemical : MonoBehaviour
                     adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "Amplified");
             }
 
-            // Success condition 2 (two amplifications):
+            // Double amplification condition:
             else if (adjacentConnectionType == "Amplifier")
             {
                 connectionStatuses[statusIndex] = "Amplified";
@@ -285,7 +285,7 @@ public class Chemical : MonoBehaviour
                     adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "Unstable");
             }
 
-            // Amplification condition:
+            // Single amplification condition:
             else if (adjacentConnectionType == "Amplifier")
             {
                 connectionStatuses[statusIndex] = "Amplified";

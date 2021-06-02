@@ -21,10 +21,52 @@ public class Chemical : MonoBehaviour
     private string[] connectionStatuses = new string[6];
 
     [SerializeField]
+    private GameObject graphicsParent;
+    [SerializeField]
     private GameObject buttons;
     [SerializeField]
     private ChemicalRotateButton leftButton,
                                 rightButton;
+
+    // Make sure prefabs are dragged in right order (see connectionTypesDict below)
+    private GameObject[] connectionSprites;
+    [SerializeField]
+    private ConnectionSpriteData ConnectionSpriteData;
+    
+
+    Dictionary<string, int> connectionTypesDict = new Dictionary<string, int>() {
+        { "None", 0 },
+        { "Negative", 1},
+        { "Neutral", 2},
+        { "Positive", 3},
+        { "Amplifier", 4}
+    };
+
+    public void CreateConnections()
+    {
+        // create the visual elements for the connections
+        float offsetDist = 3f;
+        for (int i = 0; i < 6; i++)
+        {
+            if (connectionTypes[i] != "None")
+            {
+                GameObject newConnection = Instantiate(connectionSprites[connectionTypesDict[connectionTypes[i]] - 1]);
+                GameObject pivot = new GameObject("ConnectionPivot");
+                pivot.transform.localPosition = transform.position;
+                pivot.transform.SetParent(graphicsParent.transform);
+                newConnection.transform.localPosition = transform.position;
+                newConnection.transform.SetParent(pivot.transform);
+                newConnection.transform.Translate(new Vector3(0, offsetDist, 0));
+                pivot.transform.Rotate(new Vector3(0, 0, -(60 * i)));
+            }
+        }
+    }
+
+    private void Start()
+    {
+        connectionSprites = GameObject.Find("ConnectionSpriteData").GetComponent<ConnectionSpriteData>().connectionSprites;
+        CreateConnections();
+    }
 
     private void Update()
     {
@@ -128,6 +170,21 @@ public class Chemical : MonoBehaviour
         //     independantly, and will contribute to the danger bar and benefit value on its own. This code updates the status of a
         //     chemical's bond, as well as the 6 adjacent bonds in its neighbors.
 
+        // oldStatuses is used to calculate changes in danger level* / benefit value* at the end of the function. Indexes 0 - 5 are this chemical's old statuses,
+        //     and indexes 6 - 11 are its neighbor's old statuses (those of the bonds that point to it) starting at the top and rotating clockwise
+        string[] oldStatuses = new string[12];
+        for (int i = 0; i < 6; i ++)
+        {
+            oldStatuses[i] = connectionStatuses[i];
+
+            HexTile adjacentTile = this.housingTile.neighbors[i];
+            if (adjacentTile != null && adjacentTile.storedChemical != null)
+                oldStatuses[i + 6] = adjacentTile.storedChemical.connectionStatuses[(i + 3) % 6];
+            else
+                // None it technically a status, whereas this is the absence of a status, but in this case they both represent an absence of danger / benefit
+                oldStatuses[i + 6] = "None";
+        }
+
         // Run evaluateConnection 6 times, starting with the top and running clockwise
         EvaluateConnection(connectionTypes[0], 0, 0);
         EvaluateConnection(connectionTypes[1], 1, 1);
@@ -163,9 +220,7 @@ public class Chemical : MonoBehaviour
             if (adjacentTile == null || adjacentTile.storedChemical == null || (adjacentConnectionType != "Positive" && adjacentConnectionType != "Neutral"))
             {
                 connectionStatuses[statusIndex] = "Unstable";
-                // Small calculation to reverse the index on the neighbor hexTile
-                if (adjacentTile != null && adjacentTile.storedChemical != null)
-                    adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "Unstable");
+                AttemptSetStatus(statusIndex, adjacentTile, "Unstable");
 
                 // Is there anything more to do?
             }
@@ -175,8 +230,7 @@ public class Chemical : MonoBehaviour
             {
                 // Something other than "Positive" may be more descriptive
                 connectionStatuses[statusIndex] = "Positive";
-                if (adjacentTile != null && adjacentTile.storedChemical != null)
-                    adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "Positive");
+                AttemptSetStatus(statusIndex, adjacentTile, "Positive");
             }
 
             else
@@ -191,16 +245,14 @@ public class Chemical : MonoBehaviour
             if (adjacentTile == null || adjacentTile.storedChemical == null || (adjacentConnectionType != "Negative" && adjacentConnectionType != "Neutral"))
             {
                 connectionStatuses[statusIndex] = "Unstable";
-                if (adjacentTile != null && adjacentTile.storedChemical != null)
-                    adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "Unstable");
+                AttemptSetStatus(statusIndex, adjacentTile, "Unstable");
             }
 
             // Negative conditions:
             else if (adjacentConnectionType == "Negative" || adjacentConnectionType == "Neutral")
             {
                 connectionStatuses[statusIndex] = "Negative";
-                if (adjacentTile != null && adjacentTile.storedChemical != null)
-                    adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "Negative");
+                AttemptSetStatus(statusIndex, adjacentTile, "Negative");
             }
 
             else
@@ -215,8 +267,7 @@ public class Chemical : MonoBehaviour
             if (adjacentTile == null || adjacentTile.storedChemical == null || (adjacentConnectionType != "Negative" && adjacentConnectionType != "Positive"))
             {
                 connectionStatuses[statusIndex] = "Unstable";
-                if (adjacentTile != null && adjacentTile.storedChemical != null)
-                    adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "Unstable");
+                AttemptSetStatus(statusIndex, adjacentTile, "Unstable");
             }
 
             // Success conditions (coresponding positive or neutral connection):
@@ -224,8 +275,7 @@ public class Chemical : MonoBehaviour
             {
                 // If the names for connection statuses are changed, this will be buggy. But it works as is.
                 connectionStatuses[statusIndex] = adjacentConnectionType;
-                if (adjacentTile != null && adjacentTile.storedChemical != null)
-                    adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, adjacentConnectionType);
+                AttemptSetStatus(statusIndex, adjacentTile, adjacentConnectionType);
             }
 
             else
@@ -240,8 +290,7 @@ public class Chemical : MonoBehaviour
             if (adjacentTile == null || adjacentTile.storedChemical == null || (adjacentConnectionType != "None" && adjacentConnectionType != "Amplifier"))
             {
                 connectionStatuses[statusIndex] = "Unstable";
-                if (adjacentTile != null && adjacentTile.storedChemical != null)
-                    adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "Unstable");
+                AttemptSetStatus(statusIndex, adjacentTile, "Unstable");
             }
 
             // Single amplification condition:
@@ -249,16 +298,14 @@ public class Chemical : MonoBehaviour
             {
                 // The amplifier will never have a status, but it will change a "None" connection's status to "Amplified" so we cab track what's amplified
                 connectionStatuses[statusIndex] = "None";
-                if (adjacentTile != null && adjacentTile.storedChemical != null)
-                    adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "Amplified");
+                AttemptSetStatus(statusIndex, adjacentTile, "Amplified");
             }
 
             // Double amplification condition:
             else if (adjacentConnectionType == "Amplifier")
             {
                 connectionStatuses[statusIndex] = "Amplified";
-                if (adjacentTile != null && adjacentTile.storedChemical != null)
-                    adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "Amplified");
+                AttemptSetStatus(statusIndex, adjacentTile, "Amplified");
             }
 
             else
@@ -273,24 +320,21 @@ public class Chemical : MonoBehaviour
             if (adjacentTile == null || adjacentTile.storedChemical == null || adjacentConnectionType == "None")
             {
                 connectionStatuses[statusIndex] = "None";
-                if (adjacentTile != null && adjacentTile.storedChemical != null)
-                    adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "None");
+                AttemptSetStatus(statusIndex, adjacentTile, "None");
             }
 
             // Unstable conditions: (no conflicts if neighbor if an amplifier or a supressor)
             else if ((adjacentConnectionType != "None" && adjacentConnectionType != "Amplifier"))
             {
                 connectionStatuses[statusIndex] = "None";
-                if (adjacentTile != null && adjacentTile.storedChemical != null)
-                    adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "Unstable");
+                AttemptSetStatus(statusIndex, adjacentTile, "Unstable");
             }
 
             // Single amplification condition:
             else if (adjacentConnectionType == "Amplifier")
             {
                 connectionStatuses[statusIndex] = "Amplified";
-                if (adjacentTile != null && adjacentTile.storedChemical != null)
-                    adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, "None");
+                AttemptSetStatus(statusIndex, adjacentTile, "None");
             }
 
             else
@@ -299,7 +343,14 @@ public class Chemical : MonoBehaviour
 
     }
 
-    // Called when a chemical is picked up; updates all surrounding connections
+    private void AttemptSetStatus(int statusIndex, HexTile adjacentTile, string status)
+    {
+        if (adjacentTile != null && adjacentTile.storedChemical != null)
+            adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, status);
+    }
+
+    // Called when a chemical is picked up; much simplified version of EvaluateConnections because results are limited to
+    //    unstable or none
     public void UpdateNeighborsUponLeaving()
     {
         for (int i = 0; i < 6; i++)

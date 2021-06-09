@@ -485,9 +485,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Mallamide
+  cost: 2
   isPlaced: 0
   housingTile: {fileID: 0}
-  chemicalObject: {fileID: 4613335985365643265}
   connectionTypes:
   - Positive
   - Negative
@@ -502,10 +502,6 @@ MonoBehaviour:
   - 
   - 
   - 
-  graphicsParent: {fileID: 4703939092782083827}
-  buttons: {fileID: 8123576032339113522}
-  leftButton: {fileID: 4906777159011888640}
-  rightButton: {fileID: 8384737118063344393}
   ConnectionSpriteData: {fileID: 0}
 --- !u!1 &4703939092782083827
 GameObject:

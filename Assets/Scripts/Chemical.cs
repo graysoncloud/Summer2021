@@ -6,10 +6,11 @@ public class Chemical : MonoBehaviour
 {
     [SerializeField]
     private string name;
+    [SerializeField]
+    private float cost;
 
     public bool isPlaced;
     public HexTile housingTile;
-    public GameObject chemicalObject;
 
     // Storage of the chemical's "bond" information. The first item in the array represents the top bond, then it proceeds clockwise.
     //     Possible values: Positive, Negative, Neutral, Amplifer, (more to be added)
@@ -20,11 +21,8 @@ public class Chemical : MonoBehaviour
     [SerializeField]
     private string[] connectionStatuses = new string[6];
 
-    [SerializeField]
     private GameObject graphicsParent;
-    [SerializeField]
     private GameObject buttons;
-    [SerializeField]
     private ChemicalRotateButton leftButton,
                                 rightButton;
 
@@ -32,8 +30,12 @@ public class Chemical : MonoBehaviour
     private GameObject[] connectionSprites;
     [SerializeField]
     private ConnectionSpriteData ConnectionSpriteData;
-    
 
+    private DangerBar dangerBar;
+    private BenefitValue benefitValue;
+    private CostDisplay costDisplay;
+
+    
     Dictionary<string, int> connectionTypesDict = new Dictionary<string, int>() {
         { "None", 0 },
         { "Negative", 1},
@@ -42,15 +44,36 @@ public class Chemical : MonoBehaviour
         { "Amplifier", 4}
     };
 
+    private void Start()
+    {
+        // Saves us from having to assign redundant variables each time we create a new drug
+        connectionSprites = GameObject.Find("ConnectionSpriteData").GetComponent<ConnectionSpriteData>().connectionSprites;
+        graphicsParent = transform.Find("Graphics").gameObject;
+        buttons = transform.Find("Buttons").gameObject;
+        leftButton = buttons.transform.Find("RotateLeft").GetComponent<ChemicalRotateButton>();
+        rightButton = buttons.transform.Find("RotateRight").GetComponent<ChemicalRotateButton>();
+        dangerBar = GameObject.FindObjectOfType<DangerBar>();
+        benefitValue = GameObject.FindObjectOfType<BenefitValue>();
+        costDisplay = GameObject.FindObjectOfType<CostDisplay>();
+
+        costDisplay.UpdateCost(cost);
+
+        CreateConnections();
+    }
+
     public void CreateConnections()
     {
         // create the visual elements for the connections
-        float offsetDist = 3f;
+        float offsetDist = 2.7f;
         for (int i = 0; i < 6; i++)
         {
             if (connectionTypes[i] != "None")
             {
                 GameObject newConnection = Instantiate(connectionSprites[connectionTypesDict[connectionTypes[i]] - 1]);
+
+                // Instantiates new sprites with the assumption that the tile is lifted, because chemicals are always generated lifted
+                newConnection.GetComponent<SpriteRenderer>().sortingLayerName = "LiftedTile";
+
                 GameObject pivot = new GameObject("ConnectionPivot");
                 pivot.transform.localPosition = transform.position;
                 pivot.transform.SetParent(graphicsParent.transform);
@@ -62,11 +85,6 @@ public class Chemical : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        connectionSprites = GameObject.Find("ConnectionSpriteData").GetComponent<ConnectionSpriteData>().connectionSprites;
-        CreateConnections();
-    }
 
     private void Update()
     {
@@ -97,7 +115,7 @@ public class Chemical : MonoBehaviour
         housingTile.GetComponent<PolygonCollider2D>().enabled = true;
 
         // "Raise" the tile's sprite above everything else
-        foreach(SpriteRenderer SR in chemicalObject.GetComponentsInChildren<SpriteRenderer>())
+        foreach(SpriteRenderer SR in this.GetComponentsInChildren<SpriteRenderer>())
         {
             SR.sortingLayerName = "LiftedTile";
         }
@@ -118,6 +136,7 @@ public class Chemical : MonoBehaviour
 
     IEnumerator TurnOffButtons()
     {
+        // Bit buggy right now. Delay is needed to prevent a flashing effect
         yield return new WaitForEndOfFrame();
         if (!(leftButton.mouseOver || rightButton.mouseOver))
             buttons.gameObject.SetActive(false);
@@ -145,7 +164,6 @@ public class Chemical : MonoBehaviour
             connectionTypes[5] = oldTop;
         }
 
-        // Check if new connections have formed with neighbor / if old ones broke
         EvaluateConnections();
     }
 
@@ -170,8 +188,8 @@ public class Chemical : MonoBehaviour
         //     independantly, and will contribute to the danger bar and benefit value on its own. This code updates the status of a
         //     chemical's bond, as well as the 6 adjacent bonds in its neighbors.
 
-        // oldStatuses is used to calculate changes in danger level* / benefit value* at the end of the function. Indexes 0 - 5 are this chemical's old statuses,
-        //     and indexes 6 - 11 are its neighbor's old statuses (those of the bonds that point to it) starting at the top and rotating clockwise
+        // Changes to the danger level* / benefit value* are calculated by comparing the starting and ending statuses of this chemical and its neighbors.
+        //     Indexes 0 - 5 are this chemical's old statuses, and indexes 6 - 11 are its neighbor's old statuses, starting at the top and rotating clockwise
         string[] oldStatuses = new string[12];
         for (int i = 0; i < 6; i ++)
         {
@@ -193,7 +211,22 @@ public class Chemical : MonoBehaviour
         EvaluateConnection(connectionTypes[4], 4, 4);
         EvaluateConnection(connectionTypes[5], 5, 5);
 
-        // Update score mechanism, maybe run a function in a scorekeeper UI
+        // Create second array of statuses to compare against old ones
+        string[] newStatuses = new string[12];
+        for (int i = 0; i < 6; i++)
+        {
+            newStatuses[i] = connectionStatuses[i];
+
+            HexTile adjacentTile = this.housingTile.neighbors[i];
+            if (adjacentTile != null && adjacentTile.storedChemical != null)
+                newStatuses[i + 6] = adjacentTile.storedChemical.connectionStatuses[(i + 3) % 6];
+            else
+                newStatuses[i + 6] = "None";
+        }
+
+        // Update score (could this be run in the scorekeeper's script?)
+        dangerBar.UpdateDanger(oldStatuses, newStatuses);
+        benefitValue.UpdateBenefitValue(oldStatuses, newStatuses);
     }
 
     private void EvaluateConnection(string connectionType, int statusIndex, int adjacentIndex)
@@ -226,11 +259,18 @@ public class Chemical : MonoBehaviour
             }
 
             // Positive conditions:
-            else if (adjacentConnectionType == "Positive" || adjacentConnectionType == "Neutral")
+            else if (adjacentConnectionType == "Positive")
             {
                 // Something other than "Positive" may be more descriptive
                 connectionStatuses[statusIndex] = "Positive";
                 AttemptSetStatus(statusIndex, adjacentTile, "Positive");
+            }
+
+            // Neutral conditions:
+            else if (adjacentConnectionType == "Neutral")
+            {
+                connectionStatuses[statusIndex] = "Positive";
+                AttemptSetStatus(statusIndex, adjacentTile, "Neutral");
             }
 
             else
@@ -249,10 +289,17 @@ public class Chemical : MonoBehaviour
             }
 
             // Negative conditions:
-            else if (adjacentConnectionType == "Negative" || adjacentConnectionType == "Neutral")
+            else if (adjacentConnectionType == "Negative")
             {
                 connectionStatuses[statusIndex] = "Negative";
                 AttemptSetStatus(statusIndex, adjacentTile, "Negative");
+            }
+
+            // Neutral conditions:
+            else if (adjacentConnectionType == "Neutral")
+            {
+                connectionStatuses[statusIndex] = "Negative";
+                AttemptSetStatus(statusIndex, adjacentTile, "Neutral");
             }
 
             else
@@ -275,7 +322,7 @@ public class Chemical : MonoBehaviour
             {
                 // If the names for connection statuses are changed, this will be buggy. But it works as is.
                 connectionStatuses[statusIndex] = adjacentConnectionType;
-                AttemptSetStatus(statusIndex, adjacentTile, adjacentConnectionType);
+                AttemptSetStatus(statusIndex, adjacentTile, "Neutral");
             }
 
             else
@@ -349,10 +396,24 @@ public class Chemical : MonoBehaviour
             adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, status);
     }
 
-    // Called when a chemical is picked up; much simplified version of EvaluateConnections because results are limited to
-    //    unstable or none
     public void UpdateNeighborsUponLeaving()
     {
+        // Called when a chemical is picked up; much simplified version of EvaluateConnections because results are limited to unstable or none
+
+        // For danger level / benefit value tracking
+        string[] oldStatuses = new string[12];
+        for (int i = 0; i < 6; i++)
+        {
+            oldStatuses[i] = connectionStatuses[i];
+
+            HexTile adjacentTile = this.housingTile.neighbors[i];
+            if (adjacentTile != null && adjacentTile.storedChemical != null)
+                oldStatuses[i + 6] = adjacentTile.storedChemical.connectionStatuses[(i + 3) % 6];
+            else
+                oldStatuses[i + 6] = "None";
+        }
+
+        // Status changing
         for (int i = 0; i < 6; i++)
         {
             HexTile adjacentTile = this.housingTile.neighbors[i];
@@ -369,6 +430,27 @@ public class Chemical : MonoBehaviour
                 }
             }
         }
+
+        // Recalculate statuses 
+        string[] newStatuses = new string[12];
+        for (int i = 0; i < 6; i++)
+        {
+            // This tile was just removed, so all its connections no longer exist
+            newStatuses[i] = "None";
+
+            HexTile adjacentTile = this.housingTile.neighbors[i];
+            if (adjacentTile != null && adjacentTile.storedChemical != null)
+                newStatuses[i + 6] = adjacentTile.storedChemical.connectionStatuses[(i + 3) % 6];
+            else
+                newStatuses[i + 6] = "None";
+        }
+
+        dangerBar.UpdateDanger(oldStatuses, newStatuses);
+    }
+
+    public float getCost()
+    {
+        return cost;
     }
 
 }

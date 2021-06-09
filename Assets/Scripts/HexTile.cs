@@ -48,7 +48,7 @@ public class HexTile : MonoBehaviour
             storedChemical.housingTile = this;
             storedChemical.transform.position = transform.position;
 
-            foreach (SpriteRenderer SR in storedChemical.chemicalObject.GetComponentsInChildren<SpriteRenderer>())
+            foreach (SpriteRenderer SR in storedChemical.GetComponentsInChildren<SpriteRenderer>())
             {
                 SR.sortingLayerName = "HexGraphics";
             }

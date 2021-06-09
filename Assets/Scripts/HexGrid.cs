@@ -86,4 +86,8 @@ public class HexGrid : MonoBehaviour
         return returnArray;
     }
 
+    public Dictionary<Vector2, HexTile> GetTileDictionary()
+    {
+        return tileDictionary;
+    }
 }

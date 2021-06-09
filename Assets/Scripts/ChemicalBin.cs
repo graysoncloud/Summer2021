@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChemicalBin : MonoBehaviour
 {
+
     // In the full development, there would be a "ChemicalBin" abstract class that this would inherit from
     public Chemical ChemicalPrefab;
 

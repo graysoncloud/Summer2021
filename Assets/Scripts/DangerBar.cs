@@ -26,7 +26,7 @@ public class DangerBar : MonoBehaviour
     // Takes in the 12 statuses that were possibly altered from a rotation, placement or pickup, and adjusts the danger level accordingly
     public void UpdateDanger(string[] oldStatuses, string[] newStatuses)
     {
-        for (int i = 0; i < oldStatuses.Length; i ++)
+        for (int i = 0; i < oldStatuses.Length; i++)
         {
             // expand if else statements to increase separate variables to display different bars, i.e. unstable amount vs. negative amount
             if (newStatuses[i] == "Unstable")

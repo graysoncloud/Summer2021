@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7431826639850403290}
   m_Layer: 0
   m_Name: HexTile
-  m_TagString: Untagged
+  m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1244771120938692292}
+  coordinates: {x: 0, y: 0}
   storedChemical: {fileID: 0}
+  neighbors: []
 --- !u!60 &7431826639850403290
 PolygonCollider2D:
   m_ObjectHideFlags: 0

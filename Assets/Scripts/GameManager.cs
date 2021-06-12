@@ -47,5 +47,30 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 20.0f);
+            if (hit.transform != null)
+            {
+                if (hit.transform.gameObject.tag == "Grid")
+                {
+                    HexTile tile = hit.transform.GetComponent<HexTile>();
+                    if (tile != null)
+                    {
+                        tile.DropChem();
+                    }
+                }
+
+                if (hit.transform.gameObject.tag == "Trash")
+                {
+                    Garbage trash = hit.transform.GetComponent<Garbage>();
+                    if (trash != null)
+                    {
+                        trash.TrashChem();
+                    }
+                }
+            }
+        }
     }
 }

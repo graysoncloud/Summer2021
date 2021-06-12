@@ -22,6 +22,13 @@ public class Garbage : MonoBehaviour
 
     private void OnMouseDown()
     {
+        TrashChem();
+    }
+
+    //On mouse up doesn't work with holding chems, so it's done in game manager
+
+    public void TrashChem()
+    {
         if (GameManager.instance.currentlyHeldChemical == null) return;
 
         costDisplay.UpdateCost(GameManager.instance.currentlyHeldChemical.getCost() * -1);

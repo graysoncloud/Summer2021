@@ -36,7 +36,16 @@ public class HexTile : MonoBehaviour
 
     private void OnMouseDown()
     {
+        DropChem();
+    }
 
+    private void OnMouseUp()
+    {
+        DropChem();
+    }
+
+    public void DropChem()
+    {
         // Deposit the currently held chemical, if one exists and there isn't already one here
         if (GameManager.instance.currentlyHeldChemical != null && storedChemical == null)
         {
@@ -57,12 +66,6 @@ public class HexTile : MonoBehaviour
 
             GameManager.instance.currentlyHeldChemical = null;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void SetCoordinates(Vector2 coords)

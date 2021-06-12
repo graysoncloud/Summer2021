@@ -8,7 +8,7 @@ using UnityEngine.Playables;
 // 
 
 // Specifies to Timeline what kind of GameObject this track can manipulate
-[TrackBindingType(typeof(TextMeshProUGUI))]
+[TrackBindingType(typeof(GameObject))]
 // Specifies what clips it uses
 [TrackClipType(typeof(DialogueClip))]
 public class DialogueTrack : TrackAsset

@@ -10,16 +10,20 @@ using TMPro;
 
 public class DialogueTrackMixer : PlayableBehaviour
 {
+    string prevDialogueText = "";
+
     public override void ProcessFrame(Playable playable, FrameData info, object playerData)
     {
-        TextMeshProUGUI textObject = playerData as TextMeshProUGUI;
-        string currentText = "";
+        GameObject textObject = playerData as GameObject;
+        string currentCharacterText = "";
+        string currentDialogueText = "";
+       
+        Vector2 currentOffset = new Vector2();
         float currentAlpha = 0f;
 
         if (!textObject) return;
 
         int inputCount = playable.GetInputCount();
-        Debug.Log(inputCount);
         for (int i = 0; i < inputCount; i++)
         {
             float inputWeight = playable.GetInputWeight(i);
@@ -29,12 +33,29 @@ public class DialogueTrackMixer : PlayableBehaviour
                 ScriptPlayable<DialogueBehavior> inputPlayable = (ScriptPlayable<DialogueBehavior>)playable.GetInput(i);
 
                 DialogueBehavior input = inputPlayable.GetBehaviour();
-                currentText = input.currentDialogueText;
+                currentCharacterText = input.currentCharacterText;
+                currentDialogueText = input.currentDialogueText;
+                Debug.Log(prevDialogueText + ", " + currentDialogueText);
+                currentOffset = input.currentOffset;
                 currentAlpha = inputWeight;
             }
         }
 
-        textObject.text = currentText;
-        textObject.color = new Color(0, 0, 0, currentAlpha);
+        if (prevDialogueText != currentDialogueText)
+        {
+            // Text object itself doesn't have a text component- it merely houses everything else
+            textObject.gameObject.transform.position = new Vector3(currentOffset.x, currentOffset.y - 3.25f, 0);
+
+            TextMeshProUGUI characterText = textObject.transform.Find("CharacterText").GetComponent<TextMeshProUGUI>();
+            characterText.text = currentCharacterText;
+
+            DialogueText dialogueText = textObject.transform.Find("DialogueText").GetComponent<DialogueText>();
+            //dialogueText.GetComponent<TextMeshProUGUI>().text = currentDialogueText;
+            dialogueText.DisplayText(currentDialogueText);
+            dialogueText.GetComponent<TextMeshProUGUI>().color = new Color(1, 1, 1, currentAlpha);
+        }
+
+        prevDialogueText = currentDialogueText;
+
     }
 }

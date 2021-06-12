@@ -9,5 +9,7 @@ using TMPro;
 
 public class DialogueBehavior : PlayableBehaviour
 {
+    public string currentCharacterText;
     public string currentDialogueText;
+    public Vector2 currentOffset;
 }

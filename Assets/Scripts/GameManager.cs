@@ -30,6 +30,22 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 20.0f);
+            if (hit.transform != null)
+            {
+                if (hit.transform.gameObject.tag == "Bin")
+                {
+                    ChemicalBin bin = hit.transform.GetComponent<ChemicalBin>();
+                    if (bin != null)
+                    {
+                        bin.CreateDrug();
+                    }
+                }
+            }
+        }
     }
 }

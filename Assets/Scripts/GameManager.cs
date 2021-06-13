@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    [SerializeField]
+    private CostDisplay costDisplay;
+
     public Chemical currentlyHeldChemical;
 
     private void Awake()
@@ -67,10 +70,27 @@ public class GameManager : MonoBehaviour
                     Garbage trash = hit.transform.GetComponent<Garbage>();
                     if (trash != null)
                     {
-                        trash.TrashChem();
+                        TrashChem();
+                    }
+                }
+
+                if (hit.transform.gameObject.tag == "Bin")
+                {
+                    ChemicalBin bin = hit.transform.GetComponent<ChemicalBin>();
+                    if (bin != null && bin.ChemicalPrefab.name == currentlyHeldChemical.name)
+                    {
+                        TrashChem();
                     }
                 }
             }
         }
+    }
+
+    public void TrashChem()
+    {
+        if (currentlyHeldChemical == null) return;
+
+        costDisplay.UpdateCost(currentlyHeldChemical.getCost() * -1);
+        Destroy(currentlyHeldChemical.gameObject);
     }
 }

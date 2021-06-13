@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Chemical : MonoBehaviour
 {
-    [SerializeField]
-    private string name;
+    //[SerializeField]
+    //private string name;
     [SerializeField]
     private float cost;
 

@@ -31,19 +31,6 @@ public class ChemicalRotateButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        StartCoroutine("RotateEnum");
         chemical.RotateConnections(amount);
-        // Shift connections according to counterclockwise / clockwise rules
-
-
-    }
-
-    IEnumerator RotateEnum()
-    {
-        for (float i = 0; i < Mathf.Abs(amount); i += (Mathf.Abs(amount) / 20))
-        {
-            toRotate.transform.Rotate(0, 0, amount / 20);
-            yield return new WaitForSeconds(.002f);
-        }
     }
 }

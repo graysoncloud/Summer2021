@@ -8,6 +8,8 @@ public class Chemical : MonoBehaviour
     //private string name;
     [SerializeField]
     private float cost;
+    private const float rotateSpeed = 10f;
+    private float rotateTarget = 0, internalRotation = 0;
 
     public bool isPlaced;
     public HexTile housingTile;
@@ -96,6 +98,24 @@ public class Chemical : MonoBehaviour
         transform.position = toMoveTo;
     }
 
+    private void FixedUpdate()
+    {
+        // Rotate stuff
+        if (!Mathf.Approximately(internalRotation, rotateTarget))
+        {
+            float dir = rotateSpeed;
+            float difference = Mathf.Abs(rotateTarget - internalRotation);
+            if (rotateTarget < internalRotation)
+            {
+                dir *= -1;
+            }
+            Mathf.Clamp(dir, -difference, difference);
+
+            graphicsParent.transform.rotation = Quaternion.Euler(0, 0, graphicsParent.transform.rotation.eulerAngles.z + dir);
+            internalRotation += dir;
+        }
+    }
+
     private void OnMouseDown()
     {
         // Attempt to pick up the chemical, if another one is already being held
@@ -144,6 +164,8 @@ public class Chemical : MonoBehaviour
 
     public void RotateConnections(float amount)
     {
+        rotateTarget += amount;
+
         if (amount < 0)
         {
             string oldTop = connectionTypes[0];

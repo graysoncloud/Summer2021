@@ -167,7 +167,10 @@ public class Chemical : MonoBehaviour
             connectionTypes[5] = oldTop;
         }
 
-        EvaluateConnections();
+        if (GameManager.instance.currentlyHeldChemical == null)
+        {
+            EvaluateConnections();
+        }
     }
 
     public string[] GetConnections()

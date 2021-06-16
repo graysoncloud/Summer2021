@@ -64,25 +64,36 @@ public class GameManager : MonoBehaviour
                     lastHovered.setActive(false);
                 }
             }
+
+            if (Input.GetButtonDown("Rotate") && chemHovered)
+            {
+                float rotateDir = Input.GetAxis("Rotate");
+                lastHovered.RotateConnections(60 * -rotateDir);
+            }
+        }
+
+        // rotate in hand
+        if (currentlyHeldChemical != null)
+        {
+            if (Input.GetButtonDown("Rotate")) {
+                float rotateDir = Input.GetAxis("Rotate");
+                currentlyHeldChemical.RotateConnections(60 * -rotateDir);
+            }
         }
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (hit.transform != null && hit.transform.gameObject.tag == "Rotate")
-            {
-                ChemicalRotateButton button = hit.transform.GetComponent<ChemicalRotateButton>();
-                if (button != null)
-                {
-                    button.Rotate();
-                }
-            }
-        }
-        
-
-        if (Input.GetMouseButton(0))
-        {
             if (hit.transform != null)
             {
+                if (hit.transform.gameObject.tag == "Rotate")
+                {
+                    ChemicalRotateButton button = hit.transform.GetComponent<ChemicalRotateButton>();
+                    if (button != null)
+                    {
+                        button.Rotate();
+                    }
+                }
+                
                 if (hit.transform.gameObject.tag == "Bin")
                 {
                     ChemicalBin bin = hit.transform.GetComponent<ChemicalBin>();
@@ -92,8 +103,10 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
-        } 
-        else
+        }
+        
+
+        if (!Input.GetMouseButton(0))
         {
             if (hit.transform != null)
             {

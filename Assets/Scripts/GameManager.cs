@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private CostDisplay costDisplay;
 
     public Chemical currentlyHeldChemical;
+    private Chemical lastHovered;
 
     private void Awake()
     {
@@ -24,20 +25,62 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 20.0f);
+
+        if (hit.transform != null) //hover over stuff
+        {
+            bool chemHovered = false;
+            if (hit.transform.gameObject.tag == "Chemical" || hit.transform.gameObject.tag == "Rotate")
+            {
+                chemHovered = true;
+            }
+            if (lastHovered != null && chemHovered)
+            {
+                lastHovered.setActive(false); //for when the last hovered was a different chemical
+            }
+            if (hit.transform.gameObject.tag == "Chemical")
+            {
+                lastHovered = hit.transform.GetComponent<Chemical>();
+            }
+            if (hit.transform.gameObject.tag == "Rotate")
+            {
+                ChemicalRotateButton button = hit.transform.GetComponent<ChemicalRotateButton>();
+                if (button != null)
+                {
+                    lastHovered = button.transform.GetComponentInParent<Chemical>();
+                }
+            }
+            if (chemHovered)
+            {
+                lastHovered.setActive(true);
+            }
+            else
+            {
+                if (lastHovered != null)
+                {
+                    lastHovered.setActive(false);
+                }
+            }
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 20.0f);
+            if (hit.transform != null && hit.transform.gameObject.tag == "Rotate")
+            {
+                ChemicalRotateButton button = hit.transform.GetComponent<ChemicalRotateButton>();
+                if (button != null)
+                {
+                    button.Rotate();
+                }
+            }
+        }
+        
+
+        if (Input.GetMouseButton(0))
+        {
             if (hit.transform != null)
             {
                 if (hit.transform.gameObject.tag == "Bin")
@@ -49,11 +92,9 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
-        }
-
-        if (Input.GetMouseButtonUp(0))
+        } 
+        else
         {
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 20.0f);
             if (hit.transform != null)
             {
                 if (hit.transform.gameObject.tag == "Grid")
@@ -77,10 +118,17 @@ public class GameManager : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Bin")
                 {
                     ChemicalBin bin = hit.transform.GetComponent<ChemicalBin>();
-                    if (bin != null && bin.ChemicalPrefab.name == currentlyHeldChemical.name)
+                    if (bin != null)
                     {
                         TrashChem();
                     }
+                }
+            }
+            else
+            {
+                if (currentlyHeldChemical != null)
+                {
+                    TrashChem();
                 }
             }
         }

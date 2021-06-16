@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 1845687974562502713}
   m_Layer: 0
   m_Name: Lucinine
-  m_TagString: Untagged
+  m_TagString: Chemical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,7 +242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233622dc0446f3d4a90913745baa9390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Lucinine
   cost: 2
   isPlaced: 0
   housingTile: {fileID: 0}
@@ -312,7 +311,7 @@ GameObject:
   - component: {fileID: 3130438599303859041}
   m_Layer: 0
   m_Name: RotateRight
-  m_TagString: Untagged
+  m_TagString: Rotate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -433,7 +432,7 @@ GameObject:
   - component: {fileID: 1408859766106088453}
   m_Layer: 0
   m_Name: RotateLeft
-  m_TagString: Untagged
+  m_TagString: Rotate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

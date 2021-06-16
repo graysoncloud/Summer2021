@@ -25,7 +25,7 @@ public class ChemicalBin : MonoBehaviour
 
         if (ChemicalPrefab != null)
         {
-            Chemical newChemical = Instantiate<Chemical>(ChemicalPrefab);
+            Chemical newChemical = Instantiate<Chemical>(ChemicalPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
             newChemical.name = ChemicalPrefab.name;//without this, it adds (clone) to the name which is annoying if you try to use them as IDs
 
             GameManager.instance.currentlyHeldChemical = newChemical;

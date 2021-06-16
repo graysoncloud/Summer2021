@@ -119,7 +119,7 @@ public class Chemical : MonoBehaviour
     private void OnMouseDown()
     {
         // Attempt to pick up the chemical, if another one is already being held
-        if (GameManager.instance.currentlyHeldChemical != null) return;
+        if (GameManager.instance.currentlyHeldChemical != null || leftButton.mouseOver || rightButton.mouseOver) return;
 
         // Update neighbors, and clear this chemical's statuses (alternatively, these could be returned to a default)
         UpdateNeighborsUponLeaving();
@@ -141,25 +141,6 @@ public class Chemical : MonoBehaviour
         }
 
         housingTile.storedChemical = null;
-    }
-
-    private void OnMouseOver()
-    {
-        if (GameManager.instance.currentlyHeldChemical != null) return;
-        buttons.gameObject.SetActive(true);
-    }
-
-    private void OnMouseExit()
-    {
-        StartCoroutine("TurnOffButtons");
-    }
-
-    IEnumerator TurnOffButtons()
-    {
-        // Bit buggy right now. Delay is needed to prevent a flashing effect
-        yield return new WaitForEndOfFrame();
-        if (!(leftButton.mouseOver || rightButton.mouseOver))
-            buttons.gameObject.SetActive(false);
     }
 
     public void RotateConnections(float amount)
@@ -468,6 +449,11 @@ public class Chemical : MonoBehaviour
         }
 
         dangerBar.UpdateDanger(oldStatuses, newStatuses);
+    }
+
+    public void setActive(bool active)
+    {
+        buttons.gameObject.SetActive(active);
     }
 
     public float getCost()

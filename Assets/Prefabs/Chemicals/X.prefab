@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6088422657789527450}
   m_Layer: 0
   m_Name: RotateLeft
-  m_TagString: Untagged
+  m_TagString: Rotate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 6107601613476366833}
   m_Layer: 0
   m_Name: RotateRight
-  m_TagString: Untagged
+  m_TagString: Rotate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 110390762768189720}
   m_Layer: 0
   m_Name: X
-  m_TagString: Untagged
+  m_TagString: Chemical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -484,7 +484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233622dc0446f3d4a90913745baa9390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Mallamide
   cost: 2
   isPlaced: 0
   housingTile: {fileID: 0}

@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 2652440645296196336}
   m_Layer: 0
   m_Name: Duodide
-  m_TagString: Untagged
+  m_TagString: Chemical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -667,7 +667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233622dc0446f3d4a90913745baa9390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Duodide
   cost: 2
   isPlaced: 0
   housingTile: {fileID: 0}
@@ -787,7 +786,7 @@ GameObject:
   - component: {fileID: 4101132434188770864}
   m_Layer: 0
   m_Name: RotateLeft
-  m_TagString: Untagged
+  m_TagString: Rotate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -908,7 +907,7 @@ GameObject:
   - component: {fileID: 6453134861660500}
   m_Layer: 0
   m_Name: RotateRight
-  m_TagString: Untagged
+  m_TagString: Rotate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

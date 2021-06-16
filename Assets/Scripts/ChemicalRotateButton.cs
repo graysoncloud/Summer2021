@@ -29,7 +29,12 @@ public class ChemicalRotateButton : MonoBehaviour
         mouseOver = false;
     }
 
-    private void OnMouseDown()
+    /*private void OnMouseDown()
+    {
+        chemical.RotateConnections(amount);
+    }*/
+
+    public void Rotate()
     {
         chemical.RotateConnections(amount);
     }

@@ -367,7 +367,7 @@ MonoBehaviour:
   container: {fileID: 824609056}
   dialogueTextObject: {fileID: 1423300754}
   characterTextObject: {fileID: 2142267977}
-  characterBox: {fileID: 287728513}
+  characterParentObject: {fileID: 287728513}
 --- !u!4 &418089078
 Transform:
   m_ObjectHideFlags: 0

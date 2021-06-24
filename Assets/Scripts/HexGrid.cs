@@ -7,13 +7,13 @@ using TMPro;
 public class HexGrid : MonoBehaviour
 {
     [SerializeField]
-    private int height,
-                width;
+    private int height = 9,
+                width = 9;
 
     [SerializeField]
-    private GameObject hexRow;
+    private GameObject hexRow = null;
     [SerializeField]
-    private HexTile hexTile;
+    private HexTile hexTile = null; //search through prefab folder if it doesn't work
 
     private Dictionary<Vector2, HexTile> tileDictionary = new Dictionary<Vector2, HexTile>();  
 

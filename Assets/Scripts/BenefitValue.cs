@@ -5,18 +5,15 @@ using TMPro;
 
 public class BenefitValue : MonoBehaviour
 {
-    [SerializeField]
-    private int benefitValue;
+    private int benefitValue = 0;
 
-    // Will probably be replaced by bar apparatus
-    [SerializeField]
-    private TextMeshProUGUI benefitValueText;
+    //private int negativeConnectionIncrement = 1;
 
-    private int negativeConnectionIncrement = 1;
-
+    private TMPro.TextMeshProUGUI benefitValueText;
 
     private void Start()
     {
+        benefitValueText = GetComponentInChildren<TMPro.TextMeshProUGUI>();
         benefitValue = 0;
     }
 
@@ -25,7 +22,7 @@ public class BenefitValue : MonoBehaviour
     {
         for (int i = 0; i < oldStatuses.Length; i++)
         {
-            if (newStatuses[i] == "Positive")
+            if (newStatuses[i] == "Positive") 
                 benefitValue += 1;
 
             // This essentially reverses the above affect if nothing changed

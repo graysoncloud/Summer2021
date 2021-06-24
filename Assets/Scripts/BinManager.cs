@@ -5,10 +5,10 @@ using UnityEngine;
 public class BinManager : MonoBehaviour
 {
     [SerializeField]
-    private ChemicalBin bin;
+    private ChemicalBin bin = null;
 
     [SerializeField]
-    private Chemical[] chemicals;
+    private Chemical[] chemicals = null;
     // Could rework it so it loads from a json or something for different days
 
     [SerializeField]

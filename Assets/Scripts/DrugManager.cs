@@ -7,7 +7,7 @@ public class DrugManager : MonoBehaviour
     public static DrugManager instance = null;
 
     [SerializeField]
-    private CostDisplay costDisplay;
+    private CostDisplay costDisplay = null;
 
     public Chemical currentlyHeldChemical;
     private Chemical lastHovered;
@@ -118,7 +118,7 @@ public class DrugManager : MonoBehaviour
                         tile.DropChem();
                     }
                 }
-
+                 
                 if (hit.transform.gameObject.tag == "Trash")
                 {
                     Garbage trash = hit.transform.GetComponent<Garbage>();

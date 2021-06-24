@@ -7,7 +7,7 @@ public class Chemical : MonoBehaviour
     //[SerializeField]
     //private string name;
     [SerializeField]
-    private float cost;
+    private float cost = 0;
     private const float rotateSpeed = 10f;
     private float rotateTarget = 0, internalRotation = 0;
 
@@ -20,7 +20,7 @@ public class Chemical : MonoBehaviour
     private string[] connectionTypes = new string[6];
 
     // Store's the status of the chemical's bonds. As with the previous array, the first item is the topmost, then proceedcs clockwise.
-    [SerializeField]
+    [SerializeField] 
     private string[] connectionStatuses = new string[6];
 
     private GameObject graphicsParent;

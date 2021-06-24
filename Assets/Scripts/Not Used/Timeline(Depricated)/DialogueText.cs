@@ -9,7 +9,7 @@ public class DialogueText : MonoBehaviour
     private Coroutine currentDisplayCoroutine = null;
 
     [SerializeField]
-    TextMeshProUGUI textField;
+    TextMeshProUGUI textField = null;
 
     private float normalDelay = .1f;
     private float punctuationDelay = .3f;

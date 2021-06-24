@@ -10,12 +10,12 @@ public class DangerBar : MonoBehaviour
 
     // Will probably be replaced by bar apparatus
     [SerializeField]
-    private TextMeshProUGUI dangerText;
+    private TextMeshProUGUI dangerText = null;
     [SerializeField]
-    private SpriteRenderer dangerBar;
+    private SpriteRenderer dangerBar = null;
 
-    private int unstableIncrement = 4;
-    private int negativeConnectionIncrement = 1;
+    //private int unstableIncrement = 4;
+    //private int negativeConnectionIncrement = 1;
 
 
     private void Start()

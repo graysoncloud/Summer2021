@@ -22,6 +22,6 @@ public class Garbage : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GameManager.instance.TrashChem();
+        DrugManager.instance.TrashChem();
     }
 }

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class DrugManager : MonoBehaviour
 {
-    public static GameManager instance = null;
+    public static DrugManager instance = null;
 
     [SerializeField]
     private CostDisplay costDisplay;

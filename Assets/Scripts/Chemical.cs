@@ -119,13 +119,13 @@ public class Chemical : MonoBehaviour
     private void OnMouseDown()
     {
         // Attempt to pick up the chemical, if another one is already being held
-        if (GameManager.instance.currentlyHeldChemical != null || leftButton.mouseOver || rightButton.mouseOver) return;
+        if (DrugManager.instance.currentlyHeldChemical != null || leftButton.mouseOver || rightButton.mouseOver) return;
 
         // Update neighbors, and clear this chemical's statuses (alternatively, these could be returned to a default)
         UpdateNeighborsUponLeaving();
         connectionStatuses = new string[6];
 
-        GameManager.instance.currentlyHeldChemical = this;
+        DrugManager.instance.currentlyHeldChemical = this;
 
         // Disable collisions for this
         this.GetComponent<PolygonCollider2D>().enabled = false;
@@ -167,7 +167,7 @@ public class Chemical : MonoBehaviour
             connectionTypes[5] = oldTop;
         }
 
-        if (GameManager.instance.currentlyHeldChemical == null)
+        if (DrugManager.instance.currentlyHeldChemical == null)
         {
             EvaluateConnections();
         }

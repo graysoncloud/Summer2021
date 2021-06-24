@@ -21,14 +21,14 @@ public class ChemicalBin : MonoBehaviour
 
     public void CreateDrug()
     {
-        if (GameManager.instance.currentlyHeldChemical != null) return;
+        if (DrugManager.instance.currentlyHeldChemical != null) return;
 
         if (ChemicalPrefab != null)
         {
             Chemical newChemical = Instantiate<Chemical>(ChemicalPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
             newChemical.name = ChemicalPrefab.name;//without this, it adds (clone) to the name which is annoying if you try to use them as IDs
 
-            GameManager.instance.currentlyHeldChemical = newChemical;
+            DrugManager.instance.currentlyHeldChemical = newChemical;
             newChemical.isPlaced = false;
             newChemical.GetComponent<PolygonCollider2D>().enabled = false;
 

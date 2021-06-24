@@ -47,10 +47,10 @@ public class HexTile : MonoBehaviour
     public void DropChem()
     {
         // Deposit the currently held chemical, if one exists and there isn't already one here
-        if (GameManager.instance.currentlyHeldChemical != null && storedChemical == null)
+        if (DrugManager.instance.currentlyHeldChemical != null && storedChemical == null)
         {
             // Are there any problems with this sequence?
-            storedChemical = GameManager.instance.currentlyHeldChemical;
+            storedChemical = DrugManager.instance.currentlyHeldChemical;
             storedChemical.GetComponent<PolygonCollider2D>().enabled = true;
             this.GetComponent<PolygonCollider2D>().enabled = false;
             storedChemical.isPlaced = true;
@@ -64,7 +64,7 @@ public class HexTile : MonoBehaviour
 
             storedChemical.EvaluateConnections();
 
-            GameManager.instance.currentlyHeldChemical = null;
+            DrugManager.instance.currentlyHeldChemical = null;
         }
     }
 

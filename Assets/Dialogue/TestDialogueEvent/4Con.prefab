@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 626685457050215795}
   - component: {fileID: 626685457050215796}
   m_Layer: 0
-  m_Name: Path3
+  m_Name: 4Con
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: 0
-    dialogue: ...
+    dialogue: Anyway, that was weird.
     offset: {x: 0, y: 0}
     animations: []
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 3293492610282294457, guid: ff420f9f630f0e149b5f5a2955d51cfb, type: 3}

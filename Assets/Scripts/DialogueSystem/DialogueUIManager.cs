@@ -10,7 +10,7 @@ public class DialogueUIManager : MonoBehaviour
     public string currentDialogue;
     public string currentCharacter;
 
-    public GameObject container;
+    public GameObject UIParent;
     public TextMeshProUGUI dialogueTextObject;
     public TextMeshProUGUI characterTextObject;
     public GameObject characterParentObject;
@@ -26,16 +26,7 @@ public class DialogueUIManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void EnableDialogueOverlay()
-    {
-        container.SetActive(true);
-    }
-
-    public void DisableDialogueOverlay()
-    {
-        container.SetActive(false);
-    }
-
+    // Possibly could change
     public void SetUpForOption()
     {
         characterParentObject.SetActive(false);
@@ -43,7 +34,18 @@ public class DialogueUIManager : MonoBehaviour
 
     public void SetUpForConversation()
     {
+        UIParent.SetActive(true);
         characterParentObject.SetActive(true);
+    }
+
+    public void SetUpForSceneChange()
+    {
+        UIParent.SetActive(false);
+    }
+
+    public void turnOffDialogueUI()
+    {
+        UIParent.SetActive(false);
     }
 
 }

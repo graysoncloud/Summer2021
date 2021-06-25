@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 626685457050215795}
   - component: {fileID: 626685457050215796}
   m_Layer: 0
-  m_Name: Path1
+  m_Name: 3.2Con
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: 0
-    dialogue: Uhh okay.
+    dialogue: No its Barney
     offset: {x: 0, y: 0}
     animations: []
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 626685457050215797, guid: 098b53a21de690544b98f7bcf3fdb116, type: 3}

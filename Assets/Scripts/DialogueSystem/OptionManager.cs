@@ -23,8 +23,8 @@ public class OptionManager : MonoBehaviour
 
     public void PresentOption(Option option)
     {
-        currentOption = option;
         DialogueUIManager.instance.SetUpForOption();
+        currentOption = option;
 
         for (int i = 0; i < currentOption.options.Length; i++)
         {
@@ -37,12 +37,12 @@ public class OptionManager : MonoBehaviour
 
     public void ExecuteChoice(int index)
     {
-        // Note that options must result in conversations right now. It should be possible to run an empty conversation if need be
-        ConversationManager.instance.InitiateConversation(currentOption.possibleConversations[index]);
         foreach (GameObject button in buttons)
             button.SetActive(false);
+
+        // Note that options must result in conversations right now. It should be possible to run an empty conversation if need be
+        ConversationManager.instance.StartConversation(currentOption.possibleConversations[index]);
         // This should probably be in ConversationManager, or renamed
-        DialogueUIManager.instance.SetUpForConversation();
     }
 
 }

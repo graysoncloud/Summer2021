@@ -10,15 +10,12 @@ public class ConversationManager : MonoBehaviour
     // While "inConversation", certain objects won't respond to clicks and whatnot
     public bool inConversation;
     private bool clicked;
+    private bool waitingForClick;
 
-    private float periodDelay = .5f;
-    private float punctuationDelay = .3f;
-    private float normalDelay = .1f;
-
-    // Its a little sloppy to store references to every needed conversation, but I couldn't find a better way
-    // Perhaps a conversationStorage object would be useful to avoid cluttering the GameManager
-    // (this is just for test purposes, I don't think Conversations should be stored in this class)
-    public Conversation toExecute;
+    private float periodDelay = .33f;
+    private float punctuationDelay = .2f;
+    private float normalDelay = .066f;
+    private float readbackSpeedModifier = 1;
 
     private void Awake()
     {
@@ -31,15 +28,10 @@ public class ConversationManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Start()
-    {
-        InitiateConversation(toExecute);
-    }
-
     private void Update()
     {
         // The "clicked" boolean is necessary because OnMouseButtonDown doesn't consistently work within Coroutines
-        if (Input.GetMouseButtonDown(0) && inConversation)
+        if (Input.GetMouseButtonDown(0) && inConversation && waitingForClick)
             clicked = true;
         // clicked is only turned off once its "uses", so if my logic is wrong, it could get stuck into on
     }
@@ -47,15 +39,17 @@ public class ConversationManager : MonoBehaviour
     /**
      * Can be called from any class to begin a specified conversation.
      */
-    public void InitiateConversation(Conversation conversation)
+    public void StartConversation(Conversation conversation)
     {
-        clicked = false;
+        // May be redundant but there's not really a need for a second inConversation variable
+        DialogueUIManager.instance.SetUpForConversation();
+
         if (!inConversation)
         {
             // These things will already be on if mid-conversation.
             inConversation = true;
             // Just turn on what needs to be turned on
-            DialogueUIManager.instance.EnableDialogueOverlay();
+            DialogueUIManager.instance.SetUpForConversation();
         }
 
         StartCoroutine(ExecuteConversation(conversation));
@@ -77,25 +71,43 @@ public class ConversationManager : MonoBehaviour
             DialogueUIManager.instance.dialogueTextObject.text = currentConversation.dialogueLines[i].dialogue;
             // Reveals dialogue one letter at a time; skips to end if mouse is clicked
             // Could change it to be such that characters are just revealed faster once you click
+            waitingForClick = true;
+            bool readbackSpeedChanged = false;
             foreach (char toReveal in currentConversation.dialogueLines[i].dialogue)
             {
                 DialogueUIManager.instance.dialogueTextObject.maxVisibleCharacters += 1;
-                if (clicked)
+                // Fastforward on first click
+                if (clicked && !readbackSpeedChanged)
                 {
-                    DialogueUIManager.instance.dialogueTextObject.maxVisibleCharacters = currentConversation.dialogueLines[i].dialogue.Length;
+                    // Commented code instantly reveals the text; current version speeds it up by 10
+                    //DialogueUIManager.instance.dialogueTextObject.maxVisibleCharacters = currentConversation.dialogueLines[i].dialogue.Length;
+                    readbackSpeedModifier /= 7;
+                    readbackSpeedChanged = true;
+                    clicked = false;
+                // Instantly finish on second click
+                } else if (clicked && readbackSpeedChanged)
+                {
+                    DialogueUIManager.instance.dialogueTextObject.maxVisibleCharacters = DialogueUIManager.instance.dialogueTextObject.text.Length;
                     clicked = false;
                     break;
                 }
                 // Delay between characters increases if its a punctuation mark
                 if (toReveal == '.')
-                    yield return new WaitForSeconds(periodDelay);
+                    yield return new WaitForSeconds(periodDelay * readbackSpeedModifier);
                 else if (toReveal == ' ')
                     yield return new WaitForSeconds(0);
                 else if (",;-?!".Contains(toReveal.ToString()))
-                    yield return new WaitForSeconds(punctuationDelay);
+                    yield return new WaitForSeconds(punctuationDelay * readbackSpeedModifier);
                 else
-                    yield return new WaitForSeconds(normalDelay);
+                    yield return new WaitForSeconds(normalDelay * readbackSpeedModifier);
             }
+            waitingForClick = false;
+            // This gives a small buffer to prevent player from double clicking
+            yield return new WaitForSeconds(.1f);
+            // Makes sure the user doesn't "store" a click during the .25 seconds of waiting
+            clicked = false;
+
+            readbackSpeedModifier = 1;
             // Wait for player to click to continue
             yield return StartCoroutine("WaitForClick");
             DialogueUIManager.instance.dialogueTextObject.text = "";
@@ -107,8 +119,9 @@ public class ConversationManager : MonoBehaviour
         else if (currentConversation.nextEvent.GetComponent<Option>() != null)
             OptionManager.instance.PresentOption(currentConversation.nextEvent.GetComponent<Option>());
         else if (currentConversation.nextEvent.GetComponent<Conversation>() != null)
-            ExecuteConversation(currentConversation.nextEvent.GetComponent<Conversation>());
-        // Add an else if for scene transition
+            StartConversation(currentConversation.nextEvent.GetComponent<Conversation>());
+        else if (currentConversation.nextEvent.GetComponent<SceneChange>() != null)
+            SceneChangeManager.instance.BeginSceneChange(currentConversation.nextEvent.GetComponent<SceneChange>());
         else
             Debug.LogError("Invalid next event");
 
@@ -118,17 +131,19 @@ public class ConversationManager : MonoBehaviour
 
     private IEnumerator WaitForClick()
     {
+        waitingForClick = true;
         while (!clicked)
         {
             yield return new WaitForEndOfFrame();
         }
         clicked = false;
+        waitingForClick = false;
     }
 
     public void EndConversation()
     {
         inConversation = false;
-        DialogueUIManager.instance.DisableDialogueOverlay();
+        DialogueUIManager.instance.turnOffDialogueUI();
     }
 
 

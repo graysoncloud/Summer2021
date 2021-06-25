@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 626685457050215795}
   - component: {fileID: 626685457050215796}
   m_Layer: 0
-  m_Name: TestConversation
+  m_Name: 3.3Con
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,11 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: 0
-    dialogue: My name is Barney... right?
+    dialogue: ...
     offset: {x: 0, y: 0}
     animations: []
-  - speaker: 1
-    dialogue: Barney, you fool. Your name is Christopher.
-    offset: {x: 0, y: 0}
-    animations: []
-  nextEvent: {fileID: 5939421933801957119, guid: 5bff3181c9c371f4ebdd6ce02f081a12, type: 3}
+  nextEvent: {fileID: 626685457050215797, guid: 098b53a21de690544b98f7bcf3fdb116, type: 3}

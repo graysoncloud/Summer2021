@@ -9,7 +9,8 @@ public class SceneChangeManager : MonoBehaviour
 
     // Current scene could be referenced by other scripts to make sure they don't run while their parent is off
     // Current scene is a parent game object of a given scene
-    private GameObject currentScene;
+
+    public GameObject currentScene;
     private List<Character> activeCharacters;
 
     [SerializeField]
@@ -23,6 +24,8 @@ public class SceneChangeManager : MonoBehaviour
     private float fadeInRate = .03f;
     private float midFadeDelay = .7f;
 
+    public GameObject[] scenes;
+
     private void Awake()
     {
         // Singleton Stuff
@@ -32,16 +35,17 @@ public class SceneChangeManager : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+        
     }
 
     private void Start()
     {
         activeCharacters = new List<Character>();
-        BeginSceneChange(startingScene);
+        StartSceneChange(startingScene);
         fadeOutCover.gameObject.SetActive(false);
     }
 
-    public void BeginSceneChange(SceneChange sceneChange) {
+    public void StartSceneChange(SceneChange sceneChange) {
         DialogueUIManager.instance.SetUpForSceneChange();
         StartCoroutine(ExecuteSceneChange(sceneChange));
     }
@@ -54,7 +58,6 @@ public class SceneChangeManager : MonoBehaviour
         {
             fadeOutCover.color = new Color(0f, 0f, 0f, 0f);
             fadeOutCover.gameObject.SetActive(true);
-            // Note- all parent scene objects must have a background named "Background"
             while (fadeOutCover.color.a < 1)
             {
                 fadeOutCover.color += new Color(0f, 0f, 0f, .01f);
@@ -77,21 +80,31 @@ public class SceneChangeManager : MonoBehaviour
         activeCharacters = new List<Character>();
 
         // Turn on new scene and assign it to scene manager's current scene field
-        GameObject newScene = GameObject.Find(sceneChange.newScene.ToString());
+        GameObject newScene = null;
+        // Strings must match whatevers in the newScene sceneName enumerator, and the scene array must be indexed properly
+        switch(sceneChange.newScene.ToString())
+        {
+            case "NormalTestScene": newScene = scenes[0]; break;
+            case "RedTestScene": newScene = scenes[1]; break;
+            case "DrugGameScene": newScene = scenes[2]; break;
+            case "MorningRoutineScene": newScene = scenes[3]; break;
+            default: Debug.LogError("Invalid sceneName: " + sceneChange.newScene.ToString()); break;
+        }
+
         newScene.gameObject.SetActive(true);
         currentScene = newScene;
 
         // Add in new characters
         foreach (SceneChange.CharacterInstantiation characterInstantiation in sceneChange.characters)
         {
-            Character toInstantiate = characterPool.transform.Find(characterInstantiation.character.ToString()).GetComponent<Character>();
+            Character charToInstantiate = characterPool.transform.Find(characterInstantiation.character.ToString()).GetComponent<Character>();
 
-            toInstantiate.transform.parent = newScene.transform;
+            charToInstantiate.transform.parent = newScene.transform;
             // Note this may change z value and result in weird rendering. 
-            toInstantiate.transform.position = characterInstantiation.location;
-            toInstantiate.gameObject.SetActive(true);
-            Debug.Log(activeCharacters == null);
-            activeCharacters.Add(toInstantiate);
+            charToInstantiate.transform.position = characterInstantiation.location;
+            charToInstantiate.gameObject.SetActive(true);
+            charToInstantiate.GetComponent<Animator>().Play(characterInstantiation.animation.ToString());
+            activeCharacters.Add(charToInstantiate);
         }
 
         yield return new WaitForSeconds(midFadeDelay);
@@ -108,17 +121,19 @@ public class SceneChangeManager : MonoBehaviour
 
         yield return new WaitForSeconds(sceneChange.postdelay);
 
-        if (sceneChange.nextEvent != null)
-        {
-            if (sceneChange.nextEvent.GetComponent<Conversation>() != null)
-                ConversationManager.instance.StartConversation(sceneChange.nextEvent.GetComponent<Conversation>());
-            else if (sceneChange.nextEvent.GetComponent<Option>() != null)
-                OptionManager.instance.PresentOption(sceneChange.nextEvent.GetComponent<Option>());
-            else if (sceneChange.nextEvent.GetComponent<SceneChange>() != null)
-                BeginSceneChange(sceneChange.nextEvent.GetComponent<SceneChange>());
-            else
-                Debug.LogError("Invalid next event");
-        }
+
+        if (sceneChange.nextEvent == null)
+            ConversationManager.instance.EndConversation();
+        else if (sceneChange.nextEvent.GetComponent<Conversation>() != null)
+            ConversationManager.instance.StartConversation(sceneChange.nextEvent.GetComponent<Conversation>());
+        else if (sceneChange.nextEvent.GetComponent<Option>() != null)
+            OptionManager.instance.PresentOption(sceneChange.nextEvent.GetComponent<Option>());
+        else if (sceneChange.nextEvent.GetComponent<AnimationMoment>() != null)
+            AnimationManager.instance.StartAnimationMoment(sceneChange.nextEvent.GetComponent<AnimationMoment>());
+        else if (sceneChange.nextEvent.GetComponent<SceneChange>() != null)
+            StartSceneChange(sceneChange.nextEvent.GetComponent<SceneChange>());
+        else
+            Debug.LogError("Invalid next event");
 
     }
 

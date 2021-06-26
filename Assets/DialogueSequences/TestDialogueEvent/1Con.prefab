@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3293492610282294457
+--- !u!1 &626685457050215797
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3293492610282294455}
-  - component: {fileID: 3293492610282294454}
+  - component: {fileID: 626685457050215795}
+  - component: {fileID: 626685457050215796}
   m_Layer: 0
-  m_Name: 5Tran
+  m_Name: 1Con
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3293492610282294455
+--- !u!4 &626685457050215795
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3293492610282294457}
+  m_GameObject: {fileID: 626685457050215797}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.22445418, y: -0.36685562, z: -188.3159}
+  m_LocalPosition: {x: 2.9320047, y: -75.95315, z: -55.967697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3293492610282294454
+--- !u!114 &626685457050215796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3293492610282294457}
+  m_GameObject: {fileID: 626685457050215797}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15f2c2874d4a210459b67163429fe28c, type: 3}
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newScene: 1
-  characters:
-  - character: 0
-    location: {x: -2, y: 2}
-  - character: 1
-    location: {x: 2, y: -2}
-  transitionStyle: 1
-  predelay: 0
-  postdelay: 0
-  nextEvent: {fileID: 626685457050215797, guid: 9cb8218802d22dc4c891eafd5ab9b55f, type: 3}
+  dialogueLines:
+  - speaker: 0
+    dialogue: My name is Barney... right? AAAAAAAAAAAAAAA.............................................................>>>>>>>AAAAAAAAAAAAA
+    offset: {x: 0, y: 0}
+  - speaker: 1
+    dialogue: Barney, you fool. Your name is Christopher.
+    offset: {x: 0, y: 0}
+  nextEvent: {fileID: 5939421933801957119, guid: 5bff3181c9c371f4ebdd6ce02f081a12, type: 3}

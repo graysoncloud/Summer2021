@@ -15,7 +15,7 @@ public class SceneChange : MonoBehaviour
     public GameObject nextEvent;
 
     // These must be named exactly how the scenes are in the editor
-    public enum SceneName {NormalTestScene, RedTestScene}
+    public enum SceneName {NormalTestScene, RedTestScene, DrugGameScene, MorningRoutineScene}
 
     public enum TransitionStyle { instant, fade}
 
@@ -24,8 +24,6 @@ public class SceneChange : MonoBehaviour
     {
         public CharacterName character;
         public Vector2 location;
-
-        // These must be named exactly how the characters appear in the editor
-        public enum CharacterName { Lumberjack, Purplejack}
+        public AnimationName animation;
     }
 }

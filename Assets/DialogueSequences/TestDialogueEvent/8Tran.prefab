@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3293492610282294455}
   - component: {fileID: 3293492610282294454}
   m_Layer: 0
-  m_Name: InitialScene
+  m_Name: 8Tran
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,13 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f2c2874d4a210459b67163429fe28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newScene: 0
-  characters:
-  - character: 0
-    location: {x: -4, y: 0}
-  - character: 1
-    location: {x: 4, y: 0}
-  transitionStyle: 0
+  newScene: 2
+  characters: []
+  transitionStyle: 1
   predelay: 0
   postdelay: 0
-  nextEvent: {fileID: 626685457050215797, guid: 2cf1b9c9030bf6249a2c0c134906600f, type: 3}
+  nextEvent: {fileID: 0}

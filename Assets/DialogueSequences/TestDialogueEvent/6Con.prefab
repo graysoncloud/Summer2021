@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 626685457050215795}
   - component: {fileID: 626685457050215796}
   m_Layer: 0
-  m_Name: 1Con
+  m_Name: 6Con
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,17 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: 0
-    dialogue: My name is Barney... right? AAAAAAAAAAAAAAA.............................................................>>>>>>>AAAAAAAAAAAAA
+    dialogue: Woah where am I?
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 0
-      animationName: 0
-      delay: 0.1
-      requiresMovement: 0
-      endLocation: {x: 0, y: 0}
-      moveSpeed: 0
-  - speaker: 1
-    dialogue: Barney, you fool. Your name is Christopher.
+  - speaker: 0
+    dialogue: ' Time to go I guess.'
     offset: {x: 0, y: 0}
-    animations: []
-  nextEvent: {fileID: 5939421933801957119, guid: 5bff3181c9c371f4ebdd6ce02f081a12, type: 3}
+  nextEvent: {fileID: 2236597533805247547, guid: a09d1074b91043b4f8d5f4281ab967a8, type: 3}

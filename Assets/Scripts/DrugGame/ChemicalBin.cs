@@ -19,6 +19,11 @@ public class ChemicalBin : MonoBehaviour
         
     }
 
+    private void OnMouseDown()
+    {
+        CreateDrug();
+    }
+
     public void CreateDrug()
     {
         if (DrugManager.instance.currentlyHeldChemical != null) return;

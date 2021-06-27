@@ -9,8 +9,12 @@ public class DrugManager : MonoBehaviour
     [SerializeField]
     private CostDisplay costDisplay = null;
 
+    [SerializeField]
+    private Chemical childChem = null;
+
     public Chemical currentlyHeldChemical;
     private Chemical lastHovered;
+    private HexGrid hexGrid;
 
     private void Awake()
     {
@@ -21,8 +25,10 @@ public class DrugManager : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-
-
+    }
+    private void Start()
+    {
+        hexGrid = GameObject.FindObjectOfType<HexGrid>().GetComponent<HexGrid>();
     }
 
     void Update()
@@ -153,5 +159,26 @@ public class DrugManager : MonoBehaviour
 
         costDisplay.UpdateCost(currentlyHeldChemical.getCost() * -1);
         Destroy(currentlyHeldChemical.gameObject);
+    }
+
+    public void CreateChemChild(Chemical chemical, Vector2 location) //for multiple sized chemicals
+    {
+        if (currentlyHeldChemical == null) //weird stuff will happen if it's not held
+        {
+            HexTile hexLocation = hexGrid.GetHexTile(location);
+            Chemical chem = Instantiate(childChem, hexLocation.transform.position, Quaternion.identity, chemical.transform);
+            currentlyHeldChemical = chem;
+            hexLocation.DropChem();
+        }
+    }
+
+    public void CreateChemChild(Chemical chemical, HexTile location) //for multiple sized chemicals
+    {
+        if (currentlyHeldChemical == null) //weird stuff will happen if it's not held
+        {
+            Chemical chem = Instantiate(childChem, location.transform.position, Quaternion.identity, chemical.transform);
+            currentlyHeldChemical = chem;
+            location.DropChem();
+        }
     }
 }

@@ -2273,6 +2273,7 @@ MonoBehaviour:
   - {fileID: 4542189392878006048, guid: b7a46c1de97f28c48b50a1d2d003ad84, type: 3}
   - {fileID: 380978198217971007, guid: 03dd4d0af89d1074eb50ee8657b12504, type: 3}
   - {fileID: 1249458872636264092, guid: dccda18014a0465418814105d1ec971c, type: 3}
+  - {fileID: 1249458872636264092, guid: dccda18014a0465418814105d1ec971c, type: 3}
 --- !u!1 &360880095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,7 +3001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &418089077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4316,7 +4317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &566389060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7571,7 +7572,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1539074182}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7847,7 +7848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1188740267
 Transform:
   m_ObjectHideFlags: 0
@@ -7885,7 +7886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1192841186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9242,7 +9243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1416244925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9944,9 +9945,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1710066681}
-  - {fileID: 1592020338}
   - {fileID: 1102991285}
+  - {fileID: 1592020338}
+  - {fileID: 1710066681}
   m_Father: {fileID: 80597313}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11193,7 +11194,7 @@ RectTransform:
   m_LocalScale: {x: 78.92, y: 84.82, z: 1}
   m_Children: []
   m_Father: {fileID: 1539074182}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12433,7 +12434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1898226367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13357,7 +13358,7 @@ GameObject:
   - component: {fileID: 2072807694}
   - component: {fileID: 2072807695}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: DrugManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13390,6 +13391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   costDisplay: {fileID: 524278568}
+  childChem: {fileID: 2407817697115214040, guid: 41ea1bdbb7e6f3144a7e32d986fcc543, type: 3}
   currentlyHeldChemical: {fileID: 0}
 --- !u!1 &2085668890
 GameObject:

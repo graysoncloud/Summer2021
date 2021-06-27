@@ -90,4 +90,9 @@ public class HexGrid : MonoBehaviour
     {
         return tileDictionary;
     }
+
+    public HexTile GetHexTile(Vector2 location)
+    {
+        return tileDictionary[location];
+    }
 }

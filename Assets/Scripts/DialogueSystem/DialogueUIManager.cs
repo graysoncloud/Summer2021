@@ -38,6 +38,11 @@ public class DialogueUIManager : MonoBehaviour
         characterParentObject.SetActive(true);
     }
 
+    public void SetUpForAnimation()
+    {
+        UIParent.SetActive(false);
+    }
+
     public void SetUpForSceneChange()
     {
         UIParent.SetActive(false);

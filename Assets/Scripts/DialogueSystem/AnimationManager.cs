@@ -35,8 +35,10 @@ public class AnimationManager : MonoBehaviour
     private IEnumerator ExecuteAnimation(AnimationMoment anim)
     {
         activeAnimations++;
-        Debug.Log(anim.charName.ToString());
         Character charToAnimate = SceneChangeManager.instance.currentScene.transform.Find(anim.charName.ToString()).gameObject.GetComponent<Character>();
+
+        // Removes text boxes
+        DialogueUIManager.instance.SetUpForAnimation();
 
         // Wait for a specified amount of time
         yield return new WaitForSeconds(anim.predelay);

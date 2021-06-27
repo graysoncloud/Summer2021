@@ -115,6 +115,7 @@ public class ConversationManager : MonoBehaviour
             readbackSpeedModifier = 1;
             // Wait for player to click to continue
             yield return StartCoroutine("WaitForClick");
+
             DialogueUIManager.instance.dialogueTextObject.text = "";
             DialogueUIManager.instance.characterTextObject.text = "";
         }

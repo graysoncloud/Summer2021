@@ -11,13 +11,12 @@ public class Chemical : MonoBehaviour
     private const float rotateSpeed = 10f;
     private float rotateTarget = 0, internalRotation = 0;
 
-    public bool isPlaced;
+    public bool isPlaced, isChild = false;
     public HexTile housingTile;
 
     // Storage of the chemical's "bond" information. The first item in the array represents the top bond, then it proceeds clockwise.
     //     Possible values: Positive, Negative, Neutral, Amplifer, (more to be added)
-    [SerializeField]
-    private string[] connectionTypes = new string[6];
+    public string[] connectionTypes = new string[6];
 
     // Store's the status of the chemical's bonds. As with the previous array, the first item is the topmost, then proceedcs clockwise.
     [SerializeField] 
@@ -43,17 +42,22 @@ public class Chemical : MonoBehaviour
         { "Negative", 1},
         { "Neutral", 2},
         { "Positive", 3},
-        { "Amplifier", 4}
+        { "Amplifier", 4},
+        { "Chemical", 5 }
     };
 
     private void Start()
     {
         // Saves us from having to assign redundant variables each time we create a new drug
         connectionSprites = GameObject.Find("ConnectionSpriteData").GetComponent<ConnectionSpriteData>().connectionSprites;
-        graphicsParent = transform.Find("Graphics").gameObject;
-        buttons = transform.Find("Buttons").gameObject;
-        leftButton = buttons.transform.Find("RotateLeft").GetComponent<ChemicalRotateButton>();
-        rightButton = buttons.transform.Find("RotateRight").GetComponent<ChemicalRotateButton>();
+        if (!isChild)
+        {
+            graphicsParent = transform.Find("Graphics").gameObject;
+            buttons = transform.Find("Buttons").gameObject;
+            leftButton = buttons.transform.Find("RotateLeft").GetComponent<ChemicalRotateButton>();
+            rightButton = buttons.transform.Find("RotateRight").GetComponent<ChemicalRotateButton>();
+        }
+        
         dangerBar = GameObject.FindObjectOfType<DangerBar>();
         benefitValue = GameObject.FindObjectOfType<BenefitValue>();
         costDisplay = GameObject.FindObjectOfType<CostDisplay>();
@@ -65,24 +69,27 @@ public class Chemical : MonoBehaviour
 
     public void CreateConnections()
     {
-        // create the visual elements for the connections
-        float offsetDist = 2.7f;
-        for (int i = 0; i < 6; i++)
+        if (!isChild)
         {
-            if (connectionTypes[i] != "None")
+            // create the visual elements for the connections
+            float offsetDist = 2.7f;
+            for (int i = 0; i < 6; i++)
             {
-                GameObject newConnection = Instantiate(connectionSprites[connectionTypesDict[connectionTypes[i]] - 1]);
+                if (connectionTypes[i] != "None")
+                {
+                    GameObject newConnection = Instantiate(connectionSprites[connectionTypesDict[connectionTypes[i]] - 1]);
 
-                // Instantiates new sprites with the assumption that the tile is lifted, because chemicals are always generated lifted
-                newConnection.GetComponent<SpriteRenderer>().sortingLayerName = "LiftedTile";
+                    // Instantiates new sprites with the assumption that the tile is lifted, because chemicals are always generated lifted
+                    newConnection.GetComponent<SpriteRenderer>().sortingLayerName = "LiftedTile";
 
-                GameObject pivot = new GameObject("ConnectionPivot");
-                pivot.transform.localPosition = transform.position;
-                pivot.transform.SetParent(graphicsParent.transform);
-                newConnection.transform.localPosition = transform.position;
-                newConnection.transform.SetParent(pivot.transform);
-                newConnection.transform.Translate(new Vector3(0, offsetDist, 0));
-                pivot.transform.Rotate(new Vector3(0, 0, -(60 * i)));
+                    GameObject pivot = new GameObject("ConnectionPivot");
+                    pivot.transform.localPosition = transform.position;
+                    pivot.transform.SetParent(graphicsParent.transform);
+                    newConnection.transform.localPosition = transform.position;
+                    newConnection.transform.SetParent(pivot.transform);
+                    newConnection.transform.Translate(new Vector3(0, offsetDist, 0));
+                    pivot.transform.Rotate(new Vector3(0, 0, -(60 * i)));
+                }
             }
         }
     }
@@ -100,19 +107,22 @@ public class Chemical : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Rotate stuff
-        if (!Mathf.Approximately(internalRotation, rotateTarget))
+        if (!isChild)
         {
-            float dir = rotateSpeed;
-            float difference = Mathf.Abs(rotateTarget - internalRotation);
-            if (rotateTarget < internalRotation)
+            // Rotate stuff
+            if (!Mathf.Approximately(internalRotation, rotateTarget))
             {
-                dir *= -1;
-            }
-            Mathf.Clamp(dir, -difference, difference);
+                float dir = rotateSpeed;
+                float difference = Mathf.Abs(rotateTarget - internalRotation);
+                if (rotateTarget < internalRotation)
+                {
+                    dir *= -1;
+                }
+                Mathf.Clamp(dir, -difference, difference);
 
-            graphicsParent.transform.rotation = Quaternion.Euler(0, 0, graphicsParent.transform.rotation.eulerAngles.z + dir);
-            internalRotation += dir;
+                graphicsParent.transform.rotation = Quaternion.Euler(0, 0, graphicsParent.transform.rotation.eulerAngles.z + dir);
+                internalRotation += dir;
+            }
         }
     }
 
@@ -365,6 +375,13 @@ public class Chemical : MonoBehaviour
                 Debug.LogError("Invalid connection type: " + connectionType);
         }
 
+        else if (connectionType == "Chemical")
+        {
+            if (adjacentTile == null)
+            {
+                DrugManager.instance.CreateChemChild(this, adjacentTile);
+            }
+        }
 
         // Off a "None" connection, the two possible outcomes are unstable and amplifying
         else if (connectionType == "None")
@@ -454,9 +471,20 @@ public class Chemical : MonoBehaviour
         dangerBar.UpdateDanger(oldStatuses, newStatuses);
     }
 
+    public void CreateChemChild(Vector2 location)
+    {
+        DrugManager.instance.CreateChemChild(this, location);
+    }
+
+    public void CreateChemChild(HexTile location)
+    {
+        DrugManager.instance.CreateChemChild(this, location);
+    }
+
     public void setActive(bool active)
     {
-        buttons.gameObject.SetActive(active);
+        if (buttons != null)
+            buttons.gameObject.SetActive(active);
     }
 
     public float getCost()

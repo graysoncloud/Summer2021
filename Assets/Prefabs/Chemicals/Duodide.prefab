@@ -669,10 +669,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2
   isPlaced: 0
+  isChild: 0
   housingTile: {fileID: 0}
   connectionTypes:
   - None
-  - Negative
+  - Chemical
   - Neutral
   - Positive
   - None

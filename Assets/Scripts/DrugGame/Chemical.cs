@@ -24,8 +24,8 @@ public class Chemical : MonoBehaviour
 
     private GameObject graphicsParent;
     private GameObject buttons;
-    private ChemicalRotateButton leftButton,
-                                rightButton;
+    private ChemicalRotateButton leftButton = null,
+                                rightButton = null;
 
     // Make sure prefabs are dragged in right order (see connectionTypesDict below)
     private GameObject[] connectionSprites;
@@ -46,7 +46,7 @@ public class Chemical : MonoBehaviour
         { "Chemical", 5 }
     };
 
-    private void Start()
+    private void Awake()
     {
         // Saves us from having to assign redundant variables each time we create a new drug
         connectionSprites = GameObject.Find("ConnectionSpriteData").GetComponent<ConnectionSpriteData>().connectionSprites;
@@ -128,29 +128,7 @@ public class Chemical : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Attempt to pick up the chemical, if another one is already being held
-        if (DrugManager.instance.currentlyHeldChemical != null || leftButton.mouseOver || rightButton.mouseOver) return;
-
-        // Update neighbors, and clear this chemical's statuses (alternatively, these could be returned to a default)
-        UpdateNeighborsUponLeaving();
-        connectionStatuses = new string[6];
-
-        DrugManager.instance.currentlyHeldChemical = this;
-
-        // Disable collisions for this
-        this.GetComponent<PolygonCollider2D>().enabled = false;
-        isPlaced = false;
-
-        // Enable hexTile collisions (for mouse clicking)
-        housingTile.GetComponent<PolygonCollider2D>().enabled = true;
-
-        // "Raise" the tile's sprite above everything else
-        foreach(SpriteRenderer SR in this.GetComponentsInChildren<SpriteRenderer>())
-        {
-            SR.sortingLayerName = "LiftedTile";
-        }
-
-        housingTile.storedChemical = null;
+        LiftChem();
     }
 
     public void RotateConnections(float amount)
@@ -377,10 +355,8 @@ public class Chemical : MonoBehaviour
 
         else if (connectionType == "Chemical")
         {
-            if (adjacentTile == null)
-            {
-                DrugManager.instance.CreateChemChild(this, adjacentTile);
-            }
+            connectionStatuses[statusIndex] = "None";
+            // Can't set status since chemical doesn't exist yet
         }
 
         // Off a "None" connection, the two possible outcomes are unstable and amplifying
@@ -469,6 +445,33 @@ public class Chemical : MonoBehaviour
         }
 
         dangerBar.UpdateDanger(oldStatuses, newStatuses);
+    }
+
+    public void LiftChem()
+    {
+        // Attempt to pick up the chemical, if another one is already being held
+        if (DrugManager.instance.currentlyHeldChemical != null || leftButton != null && (leftButton.mouseOver || rightButton.mouseOver)) return;
+
+        // Update neighbors, and clear this chemical's statuses (alternatively, these could be returned to a default)
+        UpdateNeighborsUponLeaving();
+        connectionStatuses = new string[6];
+
+        DrugManager.instance.currentlyHeldChemical = this;
+
+        // Disable collisions for this
+        this.GetComponent<PolygonCollider2D>().enabled = false;
+        isPlaced = false;
+
+        // Enable hexTile collisions (for mouse clicking)
+        housingTile.GetComponent<PolygonCollider2D>().enabled = true;
+
+        // "Raise" the tile's sprite above everything else
+        foreach (SpriteRenderer SR in this.GetComponentsInChildren<SpriteRenderer>())
+        {
+            SR.sortingLayerName = "LiftedTile";
+        }
+
+        housingTile.storedChemical = null;
     }
 
     public void CreateChemChild(Vector2 location)

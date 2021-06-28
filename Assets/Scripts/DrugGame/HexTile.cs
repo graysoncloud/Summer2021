@@ -49,8 +49,27 @@ public class HexTile : MonoBehaviour
         // Deposit the currently held chemical, if one exists and there isn't already one here
         if (DrugManager.instance.currentlyHeldChemical != null && storedChemical == null)
         {
-            // Are there any problems with this sequence?
             storedChemical = DrugManager.instance.currentlyHeldChemical;
+
+            string[] connections = storedChemical.GetConnections();
+            for (int i = 0; i < 6; i++)
+            {
+                if (connections[i] == "Chemical")
+                {
+                    if (neighbors[i] == null)
+                    {
+                        DrugManager.instance.TrashChem();
+                        return;
+                    }
+                    if (neighbors[i].storedChemical != null)
+                    {
+                        return;
+                    }
+                    DrugManager.instance.currentlyHeldChemical = null;
+                    DrugManager.instance.CreateChemChild(storedChemical, neighbors[i]);
+                }
+            }
+
             storedChemical.GetComponent<PolygonCollider2D>().enabled = true;
             this.GetComponent<PolygonCollider2D>().enabled = false;
             storedChemical.isPlaced = true;

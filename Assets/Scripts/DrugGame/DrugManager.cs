@@ -161,6 +161,13 @@ public class DrugManager : MonoBehaviour
         Destroy(currentlyHeldChemical.gameObject);
     }
 
+    public void TrashChem(HexTile tile)
+    {
+        tile.storedChemical.LiftChem();
+        TrashChem();
+        tile.storedChemical = null;
+    }
+
     public void CreateChemChild(Chemical chemical, Vector2 location) //for multiple sized chemicals
     {
         if (currentlyHeldChemical == null) //weird stuff will happen if it's not held
@@ -176,7 +183,7 @@ public class DrugManager : MonoBehaviour
     {
         if (currentlyHeldChemical == null) //weird stuff will happen if it's not held
         {
-            Chemical chem = Instantiate(childChem, location.transform.position, Quaternion.identity, chemical.transform);
+            Chemical chem = Instantiate(childChem, location.transform.position, Quaternion.identity);
             currentlyHeldChemical = chem;
             location.DropChem();
         }

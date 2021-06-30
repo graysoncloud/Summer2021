@@ -20,6 +20,7 @@ public class StubbleUnit : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     public float cutChance = 0.1f;
+    public float healChance = 0.5f;
 
     StubbleState stubbleState = StubbleState.UNSHAVED;
 
@@ -38,6 +39,14 @@ public class StubbleUnit : MonoBehaviour
     }
 
     public void UpdateLength(int len) { 
+
+        if(stubbleState == StubbleState.CUT) {
+            float rand = Random.Range(0f, 1f);
+            if(rand <= healChance) {
+                return;
+            }
+        }
+
         length += len;
         if(length >= stubbleSprites.Length) {
             length = stubbleSprites.Length - 1;

@@ -9,6 +9,10 @@ TagManager:
   - Trash
   - Rotate
   - Chemical
+  - WateringCan
+  - WaterEffect
+  - ShavingCream
+  - Razor
   layers:
   - Default
   - TransparentFX

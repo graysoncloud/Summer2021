@@ -12,6 +12,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     public Minigame currentMinigame = null;
 
     public FlowerMinigame flowerMinigame;
+    public ShavingMinigame shavingMinigame;
 
     // game data
     // the day
@@ -21,6 +22,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     void Start()
     {
         flowerMinigame = FindObjectOfType<FlowerMinigame>();
+        shavingMinigame = FindObjectOfType<ShavingMinigame>();
     }
 
     void LoadInteractables() {
@@ -50,5 +52,6 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         gameDay++;
 
         flowerMinigame.IncrementDay();
+        shavingMinigame.IncrementDay();
     }
 }

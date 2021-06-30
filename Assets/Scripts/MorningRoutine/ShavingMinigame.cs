@@ -6,6 +6,7 @@ public class ShavingMinigame : Minigame
 {
     // Start is called before the first frame update
     public GameObject stubblePrefab, stubbleParent;
+    List<StubbleUnit> stubbleUnits;
     public BoxCollider2D spawnBounds;
 
 
@@ -36,7 +37,8 @@ public class ShavingMinigame : Minigame
     new void BeginGame() {
         base.BeginGame();
 
-        SpawnStubble();
+        //SpawnStubble();
+        GetStubble();
 
         Debug.Log("shaving game begun");
     }
@@ -50,6 +52,17 @@ public class ShavingMinigame : Minigame
             StubbleUnit newStubble = Instantiate(stubblePrefab, randomPos, Quaternion.identity).GetComponent<StubbleUnit>();
             newStubble.transform.SetParent(stubbleParent.transform);
             Debug.Log("stubble spawned");
+        }
+    }
+
+    void GetStubble() {
+        stubbleUnits = new List<StubbleUnit>(FindObjectsOfType<StubbleUnit>());
+        Debug.Log(stubbleUnits.Count + " stubble units found");
+    }
+
+    public void IncrementDay() {
+        foreach(StubbleUnit s in stubbleUnits) {
+            s.UpdateLength(1);
         }
     }
 }

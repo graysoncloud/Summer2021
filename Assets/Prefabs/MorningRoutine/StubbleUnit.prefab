@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 55
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c7be2b0ce8d770c4e80ed4845e982e7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1703395759216821567
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -145,9 +145,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stubbleSprites:
-  - {fileID: 21300000, guid: 4ccc441560786994e88bb2577898073c, type: 3}
+  - {fileID: 0}
   - {fileID: 21300000, guid: 4ccc441560786994e88bb2577898073c, type: 3}
   - {fileID: 21300000, guid: 981fdb09a71af7d4aabb295df9b9cd76, type: 3}
   - {fileID: 21300000, guid: dc065ca9c0adb6c41868021fa4ad440a, type: 3}
   - {fileID: 21300000, guid: 1fe16580359e2e2498e0c9273c66e5d9, type: 3}
+  shaveCreamSprite: {fileID: 21300000, guid: c35f6ee4dccf5db40b8e749560e64b98, type: 3}
+  cutSprite: {fileID: 21300000, guid: 152857c2a7c8c724fb0d46ee3820c2bc, type: 3}
   length: 0
+  cutChance: 0.1

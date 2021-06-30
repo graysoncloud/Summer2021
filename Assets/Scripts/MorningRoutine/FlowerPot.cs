@@ -8,7 +8,7 @@ public class FlowerPot : Interactable
     [Range(0, 4)]
     [SerializeField]
     public int decay = 0;
-    public int waterLevel = 2;
+    public int waterLevel = 0;
     int maxWaterLevel;
     int maxDecay;
     public Sprite[] flowerSprites;

@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public float scrollSpeed = 0.5f;
 
+    public GameObject[] rooms;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +21,15 @@ public class PlayerController : MonoBehaviour
         
     }
 
-
-    public void ScrollLeft() {
-        transform.Translate(new Vector3(-scrollSpeed, 0, 0));
-    }
-
-    public void ScrollRight() {
-        transform.Translate(new Vector3(scrollSpeed, 0, 0));
+    public void SetRoom(int r) {
+        for(int i = 0; i < rooms.Length; i++) {
+            Vector3 pos = rooms[i].transform.position;
+            if(i == r) {
+                pos.x = 0;
+            } else {
+                pos.x = 25;
+            }
+            rooms[i].transform.position = pos;
+        }
     }
 }

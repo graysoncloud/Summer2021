@@ -7,6 +7,7 @@ using TMPro;
 public class MorningRoutineManager : Singleton<MorningRoutineManager>
 {
     public Button backButton;
+    public GameObject roomButtons;
     public TextMeshProUGUI dayCounterTxt;
 
     public Minigame currentMinigame = null;
@@ -40,12 +41,14 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     public void SetMinigame(Minigame m) {
         this.currentMinigame = m;
         backButton.gameObject.SetActive(true);
+        roomButtons.SetActive(false);
     }
 
     public void StopMinigame() {
         this.currentMinigame.StopGame();
         this.currentMinigame = null;
         backButton.gameObject.SetActive(false);
+        roomButtons.SetActive(true);
     }
 
     public void StartNewDay() {

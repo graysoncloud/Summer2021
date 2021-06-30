@@ -42,6 +42,9 @@ public class Interactable : MonoBehaviour
 
     void OnMouseDown() {
         if(active && draggable) {
+            if(!mouseDown) {
+                defaultPosition = this.gameObject.transform.position;
+            }
             Debug.Log("Interactable " + interactableName + " clicked");
             Interact();
             mouseDown = true;

@@ -234,7 +234,7 @@ MonoBehaviour:
   persistent: 1
   activeCam: {fileID: 0}
   decay: 0
-  waterLevel: 2
+  waterLevel: 0
   flowerSprites:
   - {fileID: 21300000, guid: 9bae8ec91406af24ba5c8e1c050b0651, type: 3}
   - {fileID: 21300000, guid: 930ef0c4081fad14fbbf6f8ac8b475d7, type: 3}

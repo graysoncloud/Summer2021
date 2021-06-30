@@ -57,12 +57,12 @@ public class StubbleUnit : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) {
         if(col.gameObject.tag.Equals("ShavingCream") && stubbleState == StubbleState.UNSHAVED) {
-            Debug.Log("creamed up");
+            //Debug.Log("creamed up");
             stubbleState = StubbleState.CREAM;
         }
 
         if(col.gameObject.tag.Equals("Razor")) {
-            Debug.Log("razor");
+            //Debug.Log("razor");
             
             if(stubbleState == StubbleState.CREAM) {
                 stubbleState = StubbleState.SHAVED;

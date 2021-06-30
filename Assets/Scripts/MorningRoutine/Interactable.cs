@@ -41,7 +41,7 @@ public class Interactable : MonoBehaviour
     }
 
     void OnMouseDown() {
-        if(active) {
+        if(active && draggable) {
             Debug.Log("Interactable " + interactableName + " clicked");
             Interact();
             mouseDown = true;
@@ -49,7 +49,7 @@ public class Interactable : MonoBehaviour
     }
 
     void OnMouseUp() {
-        if(active) { 
+        if(active && draggable) { 
             mouseDown = false;
             this.gameObject.transform.position = defaultPosition;
         }

@@ -18,6 +18,7 @@ public class ShavingMinigame : Minigame
         Vector2 spawnPos = new Vector2(spawnBounds.transform.position.x, spawnBounds.transform.position.y);
         spawnMin = spawnPos - (spawnBounds.size / 2);
         spawnMax = spawnPos + (spawnBounds.size / 2);
+        GetStubble();
     }
 
     // Update is called once per frame
@@ -38,7 +39,7 @@ public class ShavingMinigame : Minigame
         base.BeginGame();
 
         //SpawnStubble();
-        GetStubble();
+        
 
         Debug.Log("shaving game begun");
     }

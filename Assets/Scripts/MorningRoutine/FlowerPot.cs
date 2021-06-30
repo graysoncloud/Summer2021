@@ -16,7 +16,7 @@ public class FlowerPot : Interactable
     bool hasBeenWateredToday = false;
     
     void Start() {
-        maxDecay = flowerSprites.Length;
+        maxDecay = flowerSprites.Length - 1;
         waterEffectGO = GameObject.FindGameObjectWithTag("WaterEffect");
         waterEffectGO.SetActive(false);
     }

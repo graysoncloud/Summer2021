@@ -153,6 +153,12 @@ public class DrugManager : MonoBehaviour
         }
     }
 
+    public void SetConnection(Chemical chemical, int index, string type)
+    {
+        chemical.connectionTypes[index] = type;
+        chemical.EvaluateConnections();
+    }
+
     public void TrashChem()
     {
         if (currentlyHeldChemical == null) return;
@@ -163,29 +169,37 @@ public class DrugManager : MonoBehaviour
 
     public void TrashChem(HexTile tile)
     {
-        tile.storedChemical.LiftChem();
-        TrashChem();
+        if (tile.storedChemical == null) return;
+        Chemical chem = tile.storedChemical;
+
+        chem.UpdateNeighborsUponLeaving();
+        costDisplay.UpdateCost(chem.getCost() * -1);
+        Destroy(chem.transform.gameObject);
         tile.storedChemical = null;
     }
 
-    public void CreateChemChild(Chemical chemical, Vector2 location) //for multiple sized chemicals
+    public Chemical CreateChemChild(Chemical chemical, Vector2 location) //for multiple sized chemicals
     {
         if (currentlyHeldChemical == null) //weird stuff will happen if it's not held
         {
             HexTile hexLocation = hexGrid.GetHexTile(location);
-            Chemical chem = Instantiate(childChem, hexLocation.transform.position, Quaternion.identity, chemical.transform);
+            Chemical chem = Instantiate(childChem, hexLocation.transform.position, Quaternion.identity);
             currentlyHeldChemical = chem;
             hexLocation.DropChem();
+            return chem;
         }
+        return null;
     }
 
-    public void CreateChemChild(Chemical chemical, HexTile location) //for multiple sized chemicals
+    public Chemical CreateChemChild(Chemical chemical, HexTile location) //for multiple sized chemicals
     {
         if (currentlyHeldChemical == null) //weird stuff will happen if it's not held
         {
             Chemical chem = Instantiate(childChem, location.transform.position, Quaternion.identity);
             currentlyHeldChemical = chem;
             location.DropChem();
+            return chem;
         }
+        return null;
     }
 }

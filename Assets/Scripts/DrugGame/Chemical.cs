@@ -453,35 +453,50 @@ public class Chemical : MonoBehaviour
         if (DrugManager.instance.currentlyHeldChemical != null || leftButton != null && (leftButton.mouseOver || rightButton.mouseOver)) return;
 
         // Destroy children on pick up
-        for (int i = 0; i < 6; i++)
+        if (!this.isChild)
         {
-            if (connectionTypes[i] == "Chemical")
+            for (int i = 0; i < 6; i++)
             {
-                HexTile childTile = this.housingTile.neighbors[i];
-                DrugManager.instance.TrashChem(childTile);
+                if (connectionTypes[i] == "Chemical")
+                {
+                    HexTile childTile = this.housingTile.neighbors[i];
+                    DrugManager.instance.TrashChem(childTile);
+                }
+            }
+
+
+            // Update neighbors, and clear this chemical's statuses (alternatively, these could be returned to a default)
+            UpdateNeighborsUponLeaving();
+            connectionStatuses = new string[6];
+
+            DrugManager.instance.currentlyHeldChemical = this;
+
+            // Disable collisions for this
+            this.GetComponent<PolygonCollider2D>().enabled = false;
+            isPlaced = false;
+
+            // Enable hexTile collisions (for mouse clicking)
+            housingTile.GetComponent<PolygonCollider2D>().enabled = true;
+
+            // "Raise" the tile's sprite above everything else
+            foreach (SpriteRenderer SR in this.GetComponentsInChildren<SpriteRenderer>())
+            {
+                SR.sortingLayerName = "LiftedTile";
+            }
+
+            housingTile.storedChemical = null;
+        } 
+        else
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                if (connectionTypes[i] == "Chemical")
+                {
+                    this.housingTile.neighbors[i].storedChemical.LiftChem();
+                    return;
+                }
             }
         }
-
-        // Update neighbors, and clear this chemical's statuses (alternatively, these could be returned to a default)
-        UpdateNeighborsUponLeaving();
-        connectionStatuses = new string[6];
-
-        DrugManager.instance.currentlyHeldChemical = this;
-
-        // Disable collisions for this
-        this.GetComponent<PolygonCollider2D>().enabled = false;
-        isPlaced = false;
-
-        // Enable hexTile collisions (for mouse clicking)
-        housingTile.GetComponent<PolygonCollider2D>().enabled = true;
-
-        // "Raise" the tile's sprite above everything else
-        foreach (SpriteRenderer SR in this.GetComponentsInChildren<SpriteRenderer>())
-        {
-            SR.sortingLayerName = "LiftedTile";
-        }
-
-        housingTile.storedChemical = null;
     }
 
     public void CreateChemChild(Vector2 location)

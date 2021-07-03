@@ -51,22 +51,26 @@ public class HexTile : MonoBehaviour
         {
             storedChemical = DrugManager.instance.currentlyHeldChemical;
 
-            string[] connections = storedChemical.GetConnections();
-            for (int i = 0; i < 6; i++)
+            if (!storedChemical.isChild)
             {
-                if (connections[i] == "Chemical")
+                string[] connections = storedChemical.GetConnections();
+                for (int i = 0; i < 6; i++)
                 {
-                    if (neighbors[i] == null)
+                    if (connections[i] == "Chemical")
                     {
-                        DrugManager.instance.TrashChem();
-                        return;
+                        if (neighbors[i] == null)
+                        {
+                            DrugManager.instance.TrashChem();
+                            return;
+                        }
+                        if (neighbors[i].storedChemical != null)
+                        {
+                            return;
+                        }
+                        DrugManager.instance.currentlyHeldChemical = null;
+                        Chemical child = DrugManager.instance.CreateChemChild(storedChemical, neighbors[i]);
+                        DrugManager.instance.SetConnection(child, (i + 3) % 6, "Chemical");
                     }
-                    if (neighbors[i].storedChemical != null)
-                    {
-                        return;
-                    }
-                    DrugManager.instance.currentlyHeldChemical = null;
-                    DrugManager.instance.CreateChemChild(storedChemical, neighbors[i]);
                 }
             }
 

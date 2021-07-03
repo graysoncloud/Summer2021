@@ -452,6 +452,16 @@ public class Chemical : MonoBehaviour
         // Attempt to pick up the chemical, if another one is already being held
         if (DrugManager.instance.currentlyHeldChemical != null || leftButton != null && (leftButton.mouseOver || rightButton.mouseOver)) return;
 
+        // Destroy children on pick up
+        for (int i = 0; i < 6; i++)
+        {
+            if (connectionTypes[i] == "Chemical")
+            {
+                HexTile childTile = this.housingTile.neighbors[i];
+                DrugManager.instance.TrashChem(childTile);
+            }
+        }
+
         // Update neighbors, and clear this chemical's statuses (alternatively, these could be returned to a default)
         UpdateNeighborsUponLeaving();
         connectionStatuses = new string[6];
@@ -494,5 +504,4 @@ public class Chemical : MonoBehaviour
     {
         return cost;
     }
-
 }

@@ -486,6 +486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2
   isPlaced: 0
+  isChild: 0
   housingTile: {fileID: 0}
   connectionTypes:
   - Positive
@@ -501,6 +502,10 @@ MonoBehaviour:
   - 
   - 
   - 
+  childIndex1: -1
+  childIndex2: -1
+  childConnection1: []
+  childConnection2: []
   ConnectionSpriteData: {fileID: 0}
 --- !u!1 &4703939092782083827
 GameObject:

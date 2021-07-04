@@ -281,6 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 3
   isPlaced: 0
+  isChild: 0
   housingTile: {fileID: 0}
   connectionTypes:
   - Amplifier
@@ -296,6 +297,10 @@ MonoBehaviour:
   - 
   - 
   - 
+  childIndex1: -1
+  childIndex2: -1
+  childConnection1: []
+  childConnection2: []
   ConnectionSpriteData: {fileID: 0}
 --- !u!1 &7272465304228895427
 GameObject:

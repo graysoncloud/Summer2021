@@ -62,6 +62,10 @@ MonoBehaviour:
   - 
   - 
   - 
+  childIndex1: 0
+  childIndex2: 0
+  childConnection1: []
+  childConnection2: []
   ConnectionSpriteData: {fileID: 0}
 --- !u!60 &1541455730702725428
 PolygonCollider2D:

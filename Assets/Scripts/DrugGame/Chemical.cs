@@ -8,7 +8,7 @@ public class Chemical : MonoBehaviour
     //private string name;
     [SerializeField]
     private float cost = 0;
-    private const float rotateSpeed = 10f;
+    private const float rotateSpeed = 15f;
     private float rotateTarget = 0, internalRotation = 0;
 
     public bool isPlaced, isChild = false;
@@ -21,6 +21,10 @@ public class Chemical : MonoBehaviour
     // Store's the status of the chemical's bonds. As with the previous array, the first item is the topmost, then proceedcs clockwise.
     [SerializeField] 
     private string[] connectionStatuses = new string[6];
+
+    private int childIndex1 = -1, childIndex2 = -1; //-1 = none
+    public string[] childConnection1;
+    public string[] childConnection2;
 
     private GameObject graphicsParent;
     private GameObject buttons;
@@ -65,6 +69,16 @@ public class Chemical : MonoBehaviour
         costDisplay.UpdateCost(cost);
 
         CreateConnections();
+        for (int i = 0; i < 6; i++)
+        {
+            if (connectionTypes[i] == "Chemical")
+            {
+                if (childIndex1 == -1)
+                    childIndex1 = i;
+                else
+                    childIndex2 = i;
+            }
+        }
     }
 
     public void CreateConnections()
@@ -133,32 +147,104 @@ public class Chemical : MonoBehaviour
 
     public void RotateConnections(float amount)
     {
+        if (amount % 60 != 0) return;
+
+        Chemical child1 = null;
+        Chemical child2 = null;
+
+        if (isPlaced && childIndex1 != -1)
+        {
+            //check for occupied tiles before child rotation
+            int oldChild1 = childIndex1;
+            child1 = housingTile.neighbors[childIndex1].storedChemical;
+
+            childIndex1 -= (int)amount / 60;
+            if (childIndex1 == -1)
+                childIndex1 = 5;
+            if (childIndex1 == 6)
+                childIndex1 = 0;
+            HexTile adjacentTile = housingTile.neighbors[childIndex1];
+            if (adjacentTile == null || adjacentTile.storedChemical != null)//needs an exception for adjacent multi chems
+            {
+                childIndex1 = oldChild1;
+                return;
+            }
+
+            if (childIndex2 != -1)
+            {
+                int oldChild2 = childIndex2;
+                child2 = housingTile.neighbors[childIndex2].storedChemical;
+
+                childIndex2 -= (int)amount / 60;
+                if (childIndex2 == -1)
+                    childIndex2 = 5;
+                if (childIndex2 == 6)
+                    childIndex2 = 0;
+                adjacentTile = this.housingTile.neighbors[childIndex2];
+                if (adjacentTile == null || adjacentTile.storedChemical != null)
+                {
+                    childIndex1 = oldChild1;
+                    childIndex2 = oldChild2;
+                    return;
+                }
+                DrugManager.instance.MoveChildTile(child2, adjacentTile);
+            }
+
+            adjacentTile = housingTile.neighbors[childIndex1];
+            DrugManager.instance.MoveChildTile(child1, adjacentTile);
+        }
+
         rotateTarget += amount;
 
-        if (amount < 0)
+        connectionTypes = RotateArray(connectionTypes, amount);
+        if (childIndex1 != -1)
         {
-            string oldTop = connectionTypes[0];
-            connectionTypes[0] = connectionTypes[5];
-            connectionTypes[5] = connectionTypes[4];
-            connectionTypes[4] = connectionTypes[3];
-            connectionTypes[3] = connectionTypes[2];
-            connectionTypes[2] = connectionTypes[1];
-            connectionTypes[1] = oldTop;
-        } else
-        {
-            string oldTop = connectionTypes[0];
-            connectionTypes[0] = connectionTypes[1];
-            connectionTypes[1] = connectionTypes[2];
-            connectionTypes[2] = connectionTypes[3];
-            connectionTypes[3] = connectionTypes[4];
-            connectionTypes[4] = connectionTypes[5];
-            connectionTypes[5] = oldTop;
-        }
+            childConnection1 = RotateArray(childConnection1, amount);
+            if (isPlaced)
+            {
+                child1.connectionTypes = (string[])childConnection1.Clone();
+                child1.EvaluateConnections();
+            }
+
+            if (childIndex2 != -1)
+            {
+                childConnection2 = RotateArray(childConnection2, amount);
+                if (isPlaced)
+                { 
+                    child2.connectionTypes = child2.connectionTypes = (string[])childConnection2.Clone();
+                    child2.EvaluateConnections();
+                }
+            }
+        } 
+
 
         if (DrugManager.instance.currentlyHeldChemical == null)
         {
             EvaluateConnections();
         }
+    }
+
+    public string[] RotateArray(string[] array, float dir)
+    {
+        string[] newArray = new string[array.Length];
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (dir > 0)
+            {
+                if (i != array.Length - 1)
+                    newArray[i] = array[i + 1];
+                else
+                    newArray[i] = array[0];
+            }
+            else
+            {
+                if (i != 0)
+                    newArray[i] = array[i - 1];
+                else
+                    newArray[i] = array[array.Length - 1];
+            }
+        }
+        return newArray;
     }
 
     public string[] GetConnections()
@@ -452,9 +538,9 @@ public class Chemical : MonoBehaviour
         // Attempt to pick up the chemical, if another one is already being held
         if (DrugManager.instance.currentlyHeldChemical != null || leftButton != null && (leftButton.mouseOver || rightButton.mouseOver)) return;
 
-        // Destroy children on pick up
         if (!this.isChild)
         {
+            // Destroy children on pick up
             for (int i = 0; i < 6; i++)
             {
                 if (connectionTypes[i] == "Chemical")
@@ -499,14 +585,18 @@ public class Chemical : MonoBehaviour
         }
     }
 
-    public void CreateChemChild(Vector2 location)
+    public void SetChildConnections(Chemical child)
     {
-        DrugManager.instance.CreateChemChild(this, location);
-    }
-
-    public void CreateChemChild(HexTile location)
-    {
-        DrugManager.instance.CreateChemChild(this, location);
+        if (childIndex1 != -1)
+        {
+            child.connectionTypes = (string[]) childConnection1.Clone();
+            //System.Array.Copy(childConnection1, housingTile.neighbors[childIndex1].storedChemical.connectionTypes, 6);
+            if (childIndex2 != -1)
+            {
+                child.connectionTypes = (string[])childConnection2.Clone();
+                //System.Array.Copy(childConnection2, housingTile.neighbors[childIndex2].storedChemical.connectionTypes, 6);
+            }
+        }
     }
 
     public void setActive(bool active)

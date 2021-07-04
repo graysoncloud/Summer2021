@@ -184,6 +184,7 @@ public class DrugManager : MonoBehaviour
         {
             HexTile hexLocation = hexGrid.GetHexTile(location);
             Chemical chem = Instantiate(childChem, hexLocation.transform.position, Quaternion.identity);
+            chemical.SetChildConnections(chem);
             currentlyHeldChemical = chem;
             hexLocation.DropChem();
             return chem;
@@ -196,10 +197,23 @@ public class DrugManager : MonoBehaviour
         if (currentlyHeldChemical == null) //weird stuff will happen if it's not held
         {
             Chemical chem = Instantiate(childChem, location.transform.position, Quaternion.identity);
+            chemical.SetChildConnections(chem);
             currentlyHeldChemical = chem;
             location.DropChem();
             return chem;
         }
         return null;
+    }
+
+    public void MoveChildTile(Chemical chem, HexTile newTile)
+    {
+        //chem.UpdateNeighborsUponLeaving();
+        chem.housingTile.GetComponent<PolygonCollider2D>().enabled = true;
+        chem.housingTile.storedChemical = null;
+
+        chem.housingTile = newTile;
+        newTile.GetComponent<PolygonCollider2D>().enabled = false;
+        newTile.storedChemical = chem;
+        chem.transform.position = transform.position; //this will cause problems with generated graphics
     }
 }

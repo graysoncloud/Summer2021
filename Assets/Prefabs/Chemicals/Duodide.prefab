@@ -685,6 +685,16 @@ MonoBehaviour:
   - 
   - 
   - 
+  childIndex1: 1
+  childIndex2: -1
+  childConnection1:
+  - None
+  - Neutral
+  - Positive
+  - None
+  - Chemical
+  - None
+  childConnection2: []
   ConnectionSpriteData: {fileID: 0}
 --- !u!1 &1970604857088962881
 GameObject:

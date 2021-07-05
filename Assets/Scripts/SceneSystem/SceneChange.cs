@@ -15,7 +15,7 @@ public class SceneChange : MonoBehaviour
     public GameObject nextEvent;
 
     // These must be named exactly how the scenes are in the editor
-    public enum SceneName {NormalTestScene, RedTestScene, DrugGameScene, MorningRoutineScene}
+    public enum SceneName {NormalTestScene, RedTestScene, DrugGameScene, MorningRoutineScene, OfficeScene}
 
     public enum TransitionStyle { instant, fade}
 

@@ -41,7 +41,7 @@ public class SceneChangeManager : MonoBehaviour
     private void Start()
     {
         activeCharacters = new List<Character>();
-        StartSceneChange(startingScene);
+        //StartSceneChange(startingScene);
         fadeOutCover.gameObject.SetActive(false);
     }
 
@@ -88,6 +88,7 @@ public class SceneChangeManager : MonoBehaviour
             case "RedTestScene": newScene = scenes[1]; break;
             case "DrugGameScene": newScene = scenes[2]; break;
             case "MorningRoutineScene": newScene = scenes[3]; break;
+            case "OfficeScene": newScene = scenes[4]; break;
             default: Debug.LogError("Invalid sceneName: " + sceneChange.newScene.ToString()); break;
         }
 

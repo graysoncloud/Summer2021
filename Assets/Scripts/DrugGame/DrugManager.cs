@@ -34,7 +34,7 @@ public class DrugManager : MonoBehaviour
     void Update()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 20.0f);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 20.0f);  
 
         if (hit.transform != null) //hover over stuff
         {
@@ -176,6 +176,7 @@ public class DrugManager : MonoBehaviour
         costDisplay.UpdateCost(chem.getCost() * -1);
         Destroy(chem.transform.gameObject);
         tile.storedChemical = null;
+        tile.GetComponent<PolygonCollider2D>().enabled = true;
     }
 
     public Chemical CreateChemChild(Chemical chemical, Vector2 location) //for multiple sized chemicals
@@ -215,6 +216,11 @@ public class DrugManager : MonoBehaviour
         chem.housingTile = newTile;
         newTile.GetComponent<PolygonCollider2D>().enabled = false;
         newTile.storedChemical = chem;
-        chem.transform.position = transform.position; //this will cause problems with generated graphics
+        chem.transform.position = newTile.transform.position; //this will cause problems with generated graphics
+        chem.EvaluateConnections();
+        foreach (SpriteRenderer SR in newTile.GetComponentsInChildren<SpriteRenderer>())
+        {
+            SR.sortingLayerName = "HexGraphics";
+        }
     }
 }

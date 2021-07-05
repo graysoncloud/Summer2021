@@ -49,11 +49,10 @@ public class HexTile : MonoBehaviour
         // Deposit the currently held chemical, if one exists and there isn't already one here
         if (DrugManager.instance.currentlyHeldChemical != null && storedChemical == null)
         {
-            storedChemical = DrugManager.instance.currentlyHeldChemical;
-
-            if (!storedChemical.isChild)
+            Chemical tempChem = DrugManager.instance.currentlyHeldChemical;
+            if (!tempChem.isChild)
             {
-                string[] connections = storedChemical.GetConnections();
+                string[] connections = tempChem.GetConnections();
                 for (int i = 0; i < 6; i++)
                 {
                     if (connections[i] == "Chemical")
@@ -68,11 +67,11 @@ public class HexTile : MonoBehaviour
                             return;
                         }
                         DrugManager.instance.currentlyHeldChemical = null;
-                        Chemical child = DrugManager.instance.CreateChemChild(storedChemical, neighbors[i]);
-                        DrugManager.instance.SetConnection(child, (i + 3) % 6, "Chemical");
+                        Chemical child = DrugManager.instance.CreateChemChild(tempChem, neighbors[i]);
                     }
                 }
             }
+            storedChemical = tempChem;
 
             storedChemical.GetComponent<PolygonCollider2D>().enabled = true;
             this.GetComponent<PolygonCollider2D>().enabled = false;

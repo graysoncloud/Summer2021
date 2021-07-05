@@ -442,6 +442,7 @@ public class Chemical : MonoBehaviour
         else if (connectionType == "Chemical")
         {
             connectionStatuses[statusIndex] = "None";
+            AttemptSetStatus(statusIndex, adjacentTile, "None"); 
             // Can't set status since chemical doesn't exist yet
         }
 
@@ -597,6 +598,11 @@ public class Chemical : MonoBehaviour
                 //System.Array.Copy(childConnection2, housingTile.neighbors[childIndex2].storedChemical.connectionTypes, 6);
             }
         }
+    }
+
+    public void ClearStatus()
+    {
+        connectionStatuses = new string [6];
     }
 
     public void setActive(bool active)

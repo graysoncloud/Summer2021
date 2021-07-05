@@ -207,7 +207,8 @@ public class DrugManager : MonoBehaviour
 
     public void MoveChildTile(Chemical chem, HexTile newTile)
     {
-        //chem.UpdateNeighborsUponLeaving();
+        chem.UpdateNeighborsUponLeaving();
+        chem.ClearStatus();
         chem.housingTile.GetComponent<PolygonCollider2D>().enabled = true;
         chem.housingTile.storedChemical = null;
 

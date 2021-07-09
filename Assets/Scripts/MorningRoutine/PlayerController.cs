@@ -32,4 +32,13 @@ public class PlayerController : MonoBehaviour
             rooms[i].transform.position = pos;
         }
     }
+
+    public void GoToWork() {
+        GameObject officeScene = GameObject.Find("OfficeScene");
+        GameObject MRScene = GameObject.Find("MorningRoutineScene");
+        if(officeScene != null && MRScene != null) {
+            officeScene.SetActive(true);
+            MRScene.SetActive(false);
+        }
+    }
 }

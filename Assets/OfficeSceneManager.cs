@@ -8,10 +8,10 @@ public class OfficeSceneManager : MonoBehaviour
 
     public GameObject background;
 
-    public Contract contractPrefab;
+    public ContractFolder contractPrefab;
     public SolutionPaper solutionPaperPrefab;
 
-    public Contract contractInHand;
+    public ContractFolder contractInHand;
     public SolutionPaper solutionInHand;
 
     // Used to properly return contract / solution paper where it should go
@@ -37,13 +37,10 @@ public class OfficeSceneManager : MonoBehaviour
         {
             Vector3 worldPointOfClick = OfficeSceneCamera.instance.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
             Vector3 pointOfClick = new Vector3(worldPointOfClick.x, worldPointOfClick.y, 0);
-            Debug.Log(pointOfClick.ToString());
-            Debug.Log(ContractStack.instance.GetComponent<BoxCollider2D>().bounds.ToString());
 
             // Pick Up Contract from Stack
             if (ContractStack.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick) && ActiveContractArea.instance.currentContract == null && contractInHand == null && solutionInHand == null)
             {
-                Debug.Log("picked up");
                 contractInHand = Instantiate(contractPrefab, background.transform);
                 contractInHand.pickedUp = true;
                 lastLocation = ContractStack.instance.gameObject;
@@ -89,7 +86,9 @@ public class OfficeSceneManager : MonoBehaviour
                 ActiveContractArea.instance.currentContract.pickedUp = false;
                 ActiveContractArea.instance.currentContract.transform.position = ActiveContractArea.instance.contractSpot;
                 contractInHand = null;
-                // Notify drug game that a contract is ready to go
+                lastLocation = null;
+
+                // Notify drug game that the next contract is ready to go
             }
 
             // Drop solution onto Contract (in ActiveContractArea)
@@ -98,14 +97,16 @@ public class OfficeSceneManager : MonoBehaviour
                 ActiveContractArea.instance.currentContract.GetComponent<SpriteRenderer>().sprite = ActiveContractArea.instance.currentContract.solvedContractSprite;
                 ActiveContractArea.instance.currentContract.solved = true;
                 Destroy(solutionInHand.gameObject);
+                lastLocation = null;
             }
 
             // Drop completed contract into the filing cabinet
             else if (FilingCabinet.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfRelease) && contractInHand != null && contractInHand.solved)
             {
                 EvaluateSolution();
+                lastLocation = null;
 
-                // Maybe have an if / else condition returning an error?
+                // Maybe have an if / else condition returning a visual error?
             }
 
             // Return contract to where it came from
@@ -123,17 +124,18 @@ public class OfficeSceneManager : MonoBehaviour
             // Return solution to printer if it's dropped no where special
             else if (solutionInHand != null)
             {
+                Destroy(solutionInHand.gameObject);
                 Printer.instance.solutionPrinted = true;
                 Printer.instance.GetComponent<SpriteRenderer>().sprite = Printer.instance.printedSolutionSprite;
-                solutionInHand = null;
             }
         }
 
-        if (Input.GetKeyDown("space"))
-        {
-            Printer.instance.solutionPrinted = true;
-            Printer.instance.GetComponent<SpriteRenderer>().sprite = Printer.instance.printedSolutionSprite;
-        }
+        // Should be deleted- only a test mechanism
+        //if (Input.GetKeyDown("space"))
+        //{
+        //    Printer.instance.solutionPrinted = true;
+        //    Printer.instance.GetComponent<SpriteRenderer>().sprite = Printer.instance.printedSolutionSprite;
+        //}
 
     }
 

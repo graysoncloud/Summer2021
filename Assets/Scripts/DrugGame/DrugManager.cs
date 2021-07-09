@@ -12,9 +12,13 @@ public class DrugManager : MonoBehaviour
     [SerializeField]
     private Chemical childChem = null;
 
+    // Some way to hold the current solution
+
     public Chemical currentlyHeldChemical;
     private Chemical lastHovered;
     private HexGrid hexGrid;
+
+    public SceneChange officeToOfficeSceneChange;
 
     private void Awake()
     {
@@ -151,6 +155,7 @@ public class DrugManager : MonoBehaviour
                 }
             }
         }
+
     }
 
     public void SetConnection(Chemical chemical, int index, string type)

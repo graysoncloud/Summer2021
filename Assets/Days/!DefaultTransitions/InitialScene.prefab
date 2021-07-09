@@ -43,15 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f2c2874d4a210459b67163429fe28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newScene: 0
-  characters:
-  - character: 5
-    location: {x: -4, y: 0}
-    animation: 4
-  - character: 6
-    location: {x: 4, y: 0}
-    animation: 4
+  newScene: 4
+  characters: []
   transitionStyle: 0
   predelay: 0
   postdelay: 0
-  nextEvent: {fileID: 626685457050215797, guid: 2cf1b9c9030bf6249a2c0c134906600f, type: 3}
+  nextEvent: {fileID: 0}

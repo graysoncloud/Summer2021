@@ -17,7 +17,7 @@ public class SceneChangeManager : MonoBehaviour
     Image fadeOutCover;
 
     public GameObject characterPool;
-    // Right now, the first scene must be specified and is immediately loaded
+    // Not used
     public SceneChange startingScene;
 
     private float fadeOutRate = .03f;
@@ -41,7 +41,7 @@ public class SceneChangeManager : MonoBehaviour
     private void Start()
     {
         activeCharacters = new List<Character>();
-        //StartSceneChange(startingScene);
+        StartSceneChange(startingScene);
         fadeOutCover.gameObject.SetActive(false);
     }
 
@@ -50,7 +50,7 @@ public class SceneChangeManager : MonoBehaviour
         StartCoroutine(ExecuteSceneChange(sceneChange));
     }
 
-    public IEnumerator ExecuteSceneChange(SceneChange sceneChange)
+    private IEnumerator ExecuteSceneChange(SceneChange sceneChange)
     {
         yield return new WaitForSeconds(sceneChange.predelay);
 

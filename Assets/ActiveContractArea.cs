@@ -6,7 +6,7 @@ public class ActiveContractArea : MonoBehaviour
 {
     public static ActiveContractArea instance = null;
 
-    public Contract currentContract;
+    public ContractFolder currentContract;
     public Vector3 contractSpot = new Vector3(0, 0, 0);
 
     private void Awake()

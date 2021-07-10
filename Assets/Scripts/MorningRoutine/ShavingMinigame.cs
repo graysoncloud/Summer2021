@@ -41,7 +41,7 @@ public class ShavingMinigame : Minigame
         //SpawnStubble();
         
 
-        Debug.Log("shaving game begun");
+        //Debug.Log("shaving game begun");
     }
 
     void SpawnStubble() {
@@ -52,13 +52,13 @@ public class ShavingMinigame : Minigame
             Vector3 randomPos = new Vector3(randX, randY, 0);
             StubbleUnit newStubble = Instantiate(stubblePrefab, randomPos, Quaternion.identity).GetComponent<StubbleUnit>();
             newStubble.transform.SetParent(stubbleParent.transform);
-            Debug.Log("stubble spawned");
+            //Debug.Log("stubble spawned");
         }
     }
 
     void GetStubble() {
         stubbleUnits = new List<StubbleUnit>(FindObjectsOfType<StubbleUnit>());
-        Debug.Log(stubbleUnits.Count + " stubble units found");
+        //Debug.Log(stubbleUnits.Count + " stubble units found");
     }
 
     public void IncrementDay() {

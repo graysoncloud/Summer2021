@@ -40,7 +40,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    void OnMouseDown() {
+    public void OnMouseDown() {
         if(active && draggable) {
             if(!mouseDown) {
                 defaultPosition = this.gameObject.transform.position;
@@ -51,7 +51,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    void OnMouseUp() {
+    public void OnMouseUp() {
         if(active && draggable) { 
             mouseDown = false;
             this.gameObject.transform.position = defaultPosition;

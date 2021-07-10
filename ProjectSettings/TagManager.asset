@@ -13,6 +13,7 @@ TagManager:
   - WaterEffect
   - ShavingCream
   - Razor
+  - Bed
   layers:
   - Default
   - TransparentFX

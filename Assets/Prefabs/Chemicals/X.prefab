@@ -489,10 +489,10 @@ MonoBehaviour:
   isChild: 0
   housingTile: {fileID: 0}
   connectionTypes:
-  - Positive
+  - Chemical
   - Negative
   - Positive
-  - None
+  - Chemical
   - Neutral
   - Amplifier
   connectionStatuses:
@@ -502,11 +502,20 @@ MonoBehaviour:
   - 
   - 
   - 
-  childIndex1: -1
-  childIndex2: -1
-  childConnection1: []
-  childConnection2: []
-  ConnectionSpriteData: {fileID: 0}
+  childConnection1:
+  - None
+  - None
+  - None
+  - Chemical
+  - None
+  - None
+  childConnection2:
+  - Chemical
+  - None
+  - None
+  - None
+  - None
+  - None
 --- !u!1 &4703939092782083827
 GameObject:
   m_ObjectHideFlags: 0

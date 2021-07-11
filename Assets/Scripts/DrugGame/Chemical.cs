@@ -33,12 +33,12 @@ public class Chemical : MonoBehaviour
 
     // Make sure prefabs are dragged in right order (see connectionTypesDict below)
     private GameObject[] connectionSprites;
-    [SerializeField]
-    private ConnectionSpriteData ConnectionSpriteData;
 
     private DangerBar dangerBar;
     private BenefitValue benefitValue;
     private CostDisplay costDisplay;
+
+    private SpriteRenderer spriteRenderer;
 
     
     Dictionary<string, int> connectionTypesDict = new Dictionary<string, int>() {
@@ -61,14 +61,17 @@ public class Chemical : MonoBehaviour
             leftButton = buttons.transform.Find("RotateLeft").GetComponent<ChemicalRotateButton>();
             rightButton = buttons.transform.Find("RotateRight").GetComponent<ChemicalRotateButton>();
         }
-        
+        if (!isChild)
+        {
+            spriteRenderer = transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>();
+        }
+
         dangerBar = GameObject.FindObjectOfType<DangerBar>();
         benefitValue = GameObject.FindObjectOfType<BenefitValue>();
         costDisplay = GameObject.FindObjectOfType<CostDisplay>();
 
         costDisplay.UpdateCost(cost);
 
-        CreateConnections();
         for (int i = 0; i < 6; i++)
         {
             if (connectionTypes[i] == "Chemical")
@@ -79,6 +82,7 @@ public class Chemical : MonoBehaviour
                     childIndex2 = i;
             }
         }
+        CreateConnections();
     }
 
     public void CreateConnections()
@@ -103,6 +107,69 @@ public class Chemical : MonoBehaviour
                     newConnection.transform.SetParent(pivot.transform);
                     newConnection.transform.Translate(new Vector3(0, offsetDist, 0));
                     pivot.transform.Rotate(new Vector3(0, 0, -(60 * i)));
+                    if (connectionTypes[i] == "Chemical")
+                        newConnection.GetComponent<SpriteRenderer>().color = spriteRenderer.color;
+                }
+                if (connectionTypes[i] == "Chemical")
+                {
+                    GameObject newConnection = Instantiate(connectionSprites[5]);//CHANGE IF MORE CONNECTIONS ARE ADDED
+                    newConnection.GetComponent<SpriteRenderer>().sortingLayerName = "LiftedTile";
+                    newConnection.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().color = spriteRenderer.color;
+
+                    GameObject pivot = new GameObject("ConnectionPivot");
+                    pivot.transform.localPosition = transform.position;
+                    pivot.transform.SetParent(graphicsParent.transform);
+                    newConnection.transform.localPosition = transform.position;
+                    newConnection.transform.SetParent(pivot.transform);
+                    newConnection.transform.Translate(new Vector3(0, 8.5088f, 0));
+                    pivot.transform.Rotate(new Vector3(0, 0, -(60 * i)));
+
+                    if (i == childIndex1)
+                    {
+                        for (int j = 0; j < 6; j++)
+                        {
+                            if (childConnection1[j] != "None")
+                            {
+                                GameObject childConnection = Instantiate(connectionSprites[connectionTypesDict[childConnection1[j]] - 1]);
+
+                                // Instantiates new sprites with the assumption that the tile is lifted, because chemicals are always generated lifted
+                                childConnection.GetComponent<SpriteRenderer>().sortingLayerName = "LiftedTile";
+
+                                GameObject childPivot = new GameObject("ConnectionPivot");
+                                childPivot.transform.localPosition = newConnection.transform.position;
+                                childPivot.transform.SetParent(newConnection.transform);
+                                childConnection.transform.localPosition = newConnection.transform.position;
+                                childConnection.transform.SetParent(childPivot.transform);
+                                childConnection.transform.Translate(new Vector3(0, offsetDist, 0));
+                                childPivot.transform.Rotate(new Vector3(0, 0, -(60 * j)));
+                                if (connectionTypes[i] == "Chemical")
+                                    childConnection.GetComponent<SpriteRenderer>().color = spriteRenderer.color;
+                            }
+                        }
+                    } else if (i == childIndex2)
+                    {
+                        for (int j = 0; j < 6; j++)
+                        {
+                            if (childConnection2[j] != "None")
+                            {
+                                GameObject childConnection = Instantiate(connectionSprites[connectionTypesDict[childConnection2[j]] - 1]);
+
+                                // Instantiates new sprites with the assumption that the tile is lifted, because chemicals are always generated lifted
+                                childConnection.GetComponent<SpriteRenderer>().sortingLayerName = "LiftedTile";
+
+                                GameObject childPivot = new GameObject("ConnectionPivot");
+                                childPivot.transform.localPosition = newConnection.transform.position;
+                                childPivot.transform.SetParent(newConnection.transform);
+                                childConnection.transform.localPosition = newConnection.transform.position;
+                                childConnection.transform.SetParent(childPivot.transform);
+                                childConnection.transform.Translate(new Vector3(0, offsetDist, 0));
+                                childPivot.transform.Rotate(new Vector3(0, 0, -(60 * j)));
+                                if (connectionTypes[i] == "Chemical")
+                                    childConnection.GetComponent<SpriteRenderer>().color = spriteRenderer.color;
+                            }
+                        }
+                    }
+                    
                 }
             }
         }
@@ -204,6 +271,14 @@ public class Chemical : MonoBehaviour
             {
                 child1.connectionTypes = (string[])childConnection1.Clone();
                 child1.EvaluateConnections();
+            } 
+            else
+            {
+                childIndex1 -= (int)amount / 60;
+                if (childIndex1 == -1)
+                    childIndex1 = 5;
+                if (childIndex1 == 6)
+                    childIndex1 = 0;
             }
 
             if (childIndex2 != -1)
@@ -213,6 +288,14 @@ public class Chemical : MonoBehaviour
                 { 
                     child2.connectionTypes = child2.connectionTypes = (string[])childConnection2.Clone();
                     child2.EvaluateConnections();
+                } 
+                else
+                {
+                    childIndex2 -= (int)amount / 60;
+                    if (childIndex2 == -1)
+                        childIndex2 = 5;
+                    if (childIndex2 == 6)
+                        childIndex2 = 0;
                 }
             }
         } 

@@ -142,7 +142,7 @@ public class Chemical : MonoBehaviour
                                 childConnection.transform.SetParent(childPivot.transform);
                                 childConnection.transform.Translate(new Vector3(0, offsetDist, 0));
                                 childPivot.transform.Rotate(new Vector3(0, 0, -(60 * j)));
-                                if (connectionTypes[i] == "Chemical")
+                                if (childConnection1[j] == "Chemical")
                                     childConnection.GetComponent<SpriteRenderer>().color = spriteRenderer.color;
                             }
                         }
@@ -164,7 +164,7 @@ public class Chemical : MonoBehaviour
                                 childConnection.transform.SetParent(childPivot.transform);
                                 childConnection.transform.Translate(new Vector3(0, offsetDist, 0));
                                 childPivot.transform.Rotate(new Vector3(0, 0, -(60 * j)));
-                                if (connectionTypes[i] == "Chemical")
+                                if (childConnection2[j] == "Chemical")
                                     childConnection.GetComponent<SpriteRenderer>().color = spriteRenderer.color;
                             }
                         }
@@ -215,95 +215,109 @@ public class Chemical : MonoBehaviour
     public void RotateConnections(float amount)
     {
         if (amount % 60 != 0) return;
-
-        Chemical child1 = null;
-        Chemical child2 = null;
-
-        if (isPlaced && childIndex1 != -1)
+        if (!isChild)
         {
-            //check for occupied tiles before child rotation
-            int oldChild1 = childIndex1;
-            child1 = housingTile.neighbors[childIndex1].storedChemical;
+            Chemical child1 = null;
+            Chemical child2 = null;
 
-            childIndex1 -= (int)amount / 60;
-            if (childIndex1 == -1)
-                childIndex1 = 5;
-            if (childIndex1 == 6)
-                childIndex1 = 0;
-            HexTile adjacentTile = housingTile.neighbors[childIndex1];
-            if (adjacentTile == null || adjacentTile.storedChemical != null)//needs an exception for adjacent multi chems
+            if (isPlaced && childIndex1 != -1)
             {
-                childIndex1 = oldChild1;
-                return;
-            }
+                //check for occupied tiles before child rotation
+                int oldChild1 = childIndex1;
+                child1 = housingTile.neighbors[childIndex1].storedChemical;
 
-            if (childIndex2 != -1)
-            {
-                int oldChild2 = childIndex2;
-                child2 = housingTile.neighbors[childIndex2].storedChemical;
-
-                childIndex2 -= (int)amount / 60;
-                if (childIndex2 == -1)
-                    childIndex2 = 5;
-                if (childIndex2 == 6)
-                    childIndex2 = 0;
-                adjacentTile = this.housingTile.neighbors[childIndex2];
-                if (adjacentTile == null || adjacentTile.storedChemical != null)
-                {
-                    childIndex1 = oldChild1;
-                    childIndex2 = oldChild2;
-                    return;
-                }
-                DrugManager.instance.MoveChildTile(child2, adjacentTile);
-            }
-
-            adjacentTile = housingTile.neighbors[childIndex1];
-            DrugManager.instance.MoveChildTile(child1, adjacentTile);
-        }
-
-        rotateTarget += amount;
-
-        connectionTypes = RotateArray(connectionTypes, amount);
-        if (childIndex1 != -1)
-        {
-            childConnection1 = RotateArray(childConnection1, amount);
-            if (isPlaced)
-            {
-                child1.connectionTypes = (string[])childConnection1.Clone();
-                child1.EvaluateConnections();
-            } 
-            else
-            {
                 childIndex1 -= (int)amount / 60;
                 if (childIndex1 == -1)
                     childIndex1 = 5;
                 if (childIndex1 == 6)
                     childIndex1 = 0;
-            }
-
-            if (childIndex2 != -1)
-            {
-                childConnection2 = RotateArray(childConnection2, amount);
-                if (isPlaced)
-                { 
-                    child2.connectionTypes = child2.connectionTypes = (string[])childConnection2.Clone();
-                    child2.EvaluateConnections();
-                } 
-                else
+                HexTile adjacentTile = housingTile.neighbors[childIndex1];
+                if (adjacentTile == null || adjacentTile.storedChemical != null)//needs an exception for adjacent multi chems
                 {
+                    childIndex1 = oldChild1;
+                    return;
+                }
+
+                if (childIndex2 != -1)
+                {
+                    int oldChild2 = childIndex2;
+                    child2 = housingTile.neighbors[childIndex2].storedChemical;
+
                     childIndex2 -= (int)amount / 60;
                     if (childIndex2 == -1)
                         childIndex2 = 5;
                     if (childIndex2 == 6)
                         childIndex2 = 0;
+                    adjacentTile = this.housingTile.neighbors[childIndex2];
+                    if (adjacentTile == null || adjacentTile.storedChemical != null)
+                    {
+                        childIndex1 = oldChild1;
+                        childIndex2 = oldChild2;
+                        return;
+                    }
+                    DrugManager.instance.MoveChildTile(child2, adjacentTile);
+                }
+
+                adjacentTile = housingTile.neighbors[childIndex1];
+                DrugManager.instance.MoveChildTile(child1, adjacentTile);
+            }
+
+            rotateTarget += amount;
+
+            connectionTypes = RotateArray(connectionTypes, amount);
+            if (childIndex1 != -1)
+            {
+                childConnection1 = RotateArray(childConnection1, amount);
+                if (isPlaced)
+                {
+                    child1.connectionTypes = (string[])childConnection1.Clone();
+                    child1.EvaluateConnections();
+                }
+                else
+                {
+                    childIndex1 -= (int)amount / 60;
+                    if (childIndex1 == -1)
+                        childIndex1 = 5;
+                    if (childIndex1 == 6)
+                        childIndex1 = 0;
+                }
+
+                if (childIndex2 != -1)
+                {
+                    childConnection2 = RotateArray(childConnection2, amount);
+                    if (isPlaced)
+                    {
+                        child2.connectionTypes = child2.connectionTypes = (string[])childConnection2.Clone();
+                        child2.EvaluateConnections();
+                    }
+                    else
+                    {
+                        childIndex2 -= (int)amount / 60;
+                        if (childIndex2 == -1)
+                            childIndex2 = 5;
+                        if (childIndex2 == 6)
+                            childIndex2 = 0;
+                    }
                 }
             }
-        } 
 
 
-        if (DrugManager.instance.currentlyHeldChemical == null)
+            if (DrugManager.instance.currentlyHeldChemical == null)
+            {
+                EvaluateConnections();
+            }
+        }
+        else
         {
-            EvaluateConnections();
+            for (int i = 0; i < 6; i++)
+            {
+                if (connectionTypes[i] == "Chemical")
+                {
+                    HexTile Parent = housingTile.neighbors[i];
+                    Parent.storedChemical.RotateConnections(amount);
+                    return;
+                }
+            }
         }
     }
 

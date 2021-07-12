@@ -169,7 +169,7 @@ public class DrugManager : MonoBehaviour
     {
         if (currentlyHeldChemical == null) return;
 
-        costDisplay.UpdateCost(currentlyHeldChemical.getCost() * -1);
+        costDisplay.RemoveCost(currentlyHeldChemical, currentlyHeldChemical.getCost());
         Destroy(currentlyHeldChemical.gameObject);
     }
 
@@ -179,7 +179,7 @@ public class DrugManager : MonoBehaviour
         Chemical chem = tile.storedChemical;
 
         chem.UpdateNeighborsUponLeaving();
-        costDisplay.UpdateCost(chem.getCost() * -1);
+        costDisplay.RemoveCost(chem, chem.getCost());
         Destroy(chem.transform.gameObject);
         tile.storedChemical = null;
         tile.GetComponent<PolygonCollider2D>().enabled = true;

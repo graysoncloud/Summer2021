@@ -14,7 +14,7 @@ public class BinManager : MonoBehaviour
     [SerializeField]
     private float spacing = 0;
 
-    private void Start()
+    private void Awake()
     {
         int index = 0;
         foreach (Chemical chem in chemicals)

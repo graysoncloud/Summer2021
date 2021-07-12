@@ -11,6 +11,15 @@ public class CostDisplay : MonoBehaviour
     [SerializeField]
     private float totalCost = 0;
 
+    private Dictionary<string, int> chemAmount;
+
+    private BinManager bin;
+
+    private void Awake()
+    {
+        bin = GameObject.FindObjectOfType<BinManager>();
+    }
+
     public void UpdateCost(float amount)
     {
         totalCost += amount;

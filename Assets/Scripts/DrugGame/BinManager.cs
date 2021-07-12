@@ -32,4 +32,9 @@ public class BinManager : MonoBehaviour
             index++;
         }
     }
+
+    public Chemical[] GetChemicals()
+    {
+        return chemicals;
+    }
 }

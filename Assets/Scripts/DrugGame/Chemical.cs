@@ -629,6 +629,8 @@ public class Chemical : MonoBehaviour
         }
 
         dangerBar.UpdateDanger(oldStatuses, newStatuses);
+        benefitValue.UpdateBenefitValue(oldStatuses, newStatuses);
+        
     }
 
     public void LiftChem()

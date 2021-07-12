@@ -12,6 +12,8 @@ public class ContractDisplayer : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI description;
     [SerializeField]
+    private TextMeshProUGUI spacingDescriptionCopy;
+    [SerializeField]
     private TextMeshProUGUI[] requirements;
     [SerializeField]
     private TextMeshProUGUI[] values;
@@ -32,6 +34,8 @@ public class ContractDisplayer : MonoBehaviour
         // Erase the old data
         companyName.text = "";
         description.text = "";
+        spacingDescriptionCopy.text = "<alpha =#00>";
+
         foreach (TextMeshProUGUI tmpro in requirements)
             tmpro.text = "";
         foreach (TextMeshProUGUI tmpro in values)
@@ -42,6 +46,7 @@ public class ContractDisplayer : MonoBehaviour
 
         companyName.text = contractToDisplay.companyName;
         description.text = contractToDisplay.description;
+        spacingDescriptionCopy.text = "<alpha=#00>" + contractToDisplay.description;
 
         int currentDisplayItemIndex = 0;
 

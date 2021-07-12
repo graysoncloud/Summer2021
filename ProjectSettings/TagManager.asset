@@ -14,6 +14,7 @@ TagManager:
   - ShavingCream
   - Razor
   - Bed
+  - Lid
   layers:
   - Default
   - TransparentFX

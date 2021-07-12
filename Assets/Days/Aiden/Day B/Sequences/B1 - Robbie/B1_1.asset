@@ -22,4 +22,4 @@ MonoBehaviour:
   - speaker: 0
     dialogue: Goodbye.
     offset: {x: 0, y: 0}
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: c6c884eb8a0e0654288411fffa9c9798, type: 2}

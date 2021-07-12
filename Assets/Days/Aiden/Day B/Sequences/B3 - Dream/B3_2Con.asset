@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: B3_1
+  m_Name: B3_2Con
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: 2

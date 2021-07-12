@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15f2c2874d4a210459b67163429fe28c, type: 3}
-  m_Name: MRtoOffice
+  m_Name: RecapToMR
   m_EditorClassIdentifier: 
-  newScene: 1
+  newScene: 0
   characters: []
-  transitionStyle: 1
+  transitionStyle: 0
   predelay: 0
   postdelay: 0
   increaseDay: 0

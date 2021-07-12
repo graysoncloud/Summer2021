@@ -95,7 +95,8 @@ public class SceneChangeManager : MonoBehaviour
             case "MorningRoutineScene": newScene = scenes[0]; break;
             case "OfficeScene": newScene = scenes[1]; break;
             case "DrugGameScene": newScene = scenes[2]; break;
-            case "Recap": newScene = scenes[3]; break;
+            case "RecapScene": newScene = scenes[3]; break;
+            case "DreamScene": newScene = scenes[4]; break;
             default: Debug.LogError("Invalid sceneName: " + sceneChange.newScene.ToString()); break;
         }
 
@@ -131,14 +132,14 @@ public class SceneChangeManager : MonoBehaviour
 
         if (sceneChange.nextEvent == null)
             ConversationManager.instance.EndConversation();
-        else if (sceneChange.nextEvent.GetComponent<Conversation>() != null)
-            ConversationManager.instance.StartConversation(sceneChange.nextEvent.GetComponent<Conversation>());
-        else if (sceneChange.nextEvent.GetComponent<Option>() != null)
-            OptionManager.instance.PresentOption(sceneChange.nextEvent.GetComponent<Option>());
-        else if (sceneChange.nextEvent.GetComponent<AnimationMoment>() != null)
-            AnimationManager.instance.StartAnimationMoment(sceneChange.nextEvent.GetComponent<AnimationMoment>());
-        else if (sceneChange.nextEvent.GetComponent<SceneChange>() != null)
-            StartSceneChange(sceneChange.nextEvent.GetComponent<SceneChange>());
+        else if (sceneChange.nextEvent.GetType().ToString() == "Conversation")
+            ConversationManager.instance.StartConversation((Conversation)sceneChange.nextEvent);
+        else if (sceneChange.nextEvent.GetType().ToString() == "Option")
+            OptionManager.instance.PresentOption((Option)sceneChange.nextEvent);
+        else if (sceneChange.nextEvent.GetType().ToString() == "AnimationMoment")
+            AnimationManager.instance.StartAnimationMoment((AnimationMoment)sceneChange.nextEvent);
+        else if (sceneChange.nextEvent.GetType().ToString() == "SceneChange")
+            SceneChangeManager.instance.StartSceneChange((SceneChange)sceneChange.nextEvent);
         else
             Debug.LogError("Invalid next event");
 

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Day : MonoBehaviour
 {
     public Sequence[] sequences;
-    public Contract[] contracts;
+    public ContractSO[] contracts;
 
     [System.Serializable]
     public class Sequence

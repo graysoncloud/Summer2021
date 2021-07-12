@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
 
     public void NextDay()
     {
+        OfficeSceneManager.instance.currentContractIndex = 0;
+
         currentDayIndex++;
         currentDay = days[currentDayIndex];
     }

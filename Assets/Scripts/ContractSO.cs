@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Contract : MonoBehaviour
+[CreateAssetMenu(fileName = "Contract", menuName = "Contract", order = 1)]
+public class ContractSO : ScriptableObject
 {
     // Need to check in with Harry to get specifics
 
+    public string companyName;
+    public string description;
+
     // Volatility requirements (no contract would have a minimum volatility right?
-    public bool usesVolatility;
+    public bool usesMaxVolatility;
     public int volatilityMax;
 
     // Price requirements
@@ -28,7 +32,7 @@ public class Contract : MonoBehaviour
     // Desirable side effect
     public bool usesDesirableEffect;
     public EffectType desirableEffect;
-    public int desirableEffectMax;
+    public int desirableEffectMin;
 
 
     public enum EffectType
@@ -45,16 +49,19 @@ public class Contract : MonoBehaviour
     }
 
 
-    [CustomEditor(typeof(Contract))]
+    [CustomEditor(typeof(ContractSO))]
     public class MyScriptEditor : Editor
     {
         override public void OnInspectorGUI()
         {
-            var myScript = target as Contract;
+            var myScript = target as ContractSO;
+
+            myScript.companyName = EditorGUILayout.TextField("Company Name", myScript.companyName);
+            myScript.description = EditorGUILayout.TextField("Description", myScript.description);
 
             // Max Volatility
-            myScript.usesVolatility = GUILayout.Toggle(myScript.usesVolatility, "Uses Max Volatility");
-            if (myScript.usesVolatility)
+            myScript.usesMaxVolatility = GUILayout.Toggle(myScript.usesMaxVolatility, "Uses Max Volatility");
+            if (myScript.usesMaxVolatility)
             {
                 myScript.volatilityMax = EditorGUILayout.IntField("Max Volatility", myScript.volatilityMax);
             }
@@ -77,16 +84,16 @@ public class Contract : MonoBehaviour
             myScript.usesUndesirableEffect = GUILayout.Toggle(myScript.usesUndesirableEffect, "Uses Undesirable Effect");
             if (myScript.usesUndesirableEffect)
             {
-                myScript.undesirableEffect = (EffectType)EditorGUILayout.EnumFlagsField("Effect Type", myScript.undesirableEffect);
-                myScript.undesirableEffectMax = EditorGUILayout.IntField("Max", myScript.maxPrice);
+                myScript.undesirableEffect = (EffectType)EditorGUILayout.EnumPopup("Effect Type", myScript.undesirableEffect);
+                myScript.undesirableEffectMax = EditorGUILayout.IntField("Max", myScript.undesirableEffectMax);
             }
 
             // Desirable Effect
             myScript.usesDesirableEffect = GUILayout.Toggle(myScript.usesDesirableEffect, "Uses Desirable Effect");
             if (myScript.usesDesirableEffect)
             {
-                myScript.desirableEffect = (EffectType)EditorGUILayout.EnumFlagsField("Effect Type", myScript.desirableEffect);
-                myScript.desirableEffectMax = EditorGUILayout.IntField("Min", myScript.maxPrice);
+                myScript.desirableEffect = (EffectType)EditorGUILayout.EnumPopup("Effect Type", myScript.desirableEffect);
+                myScript.desirableEffectMin = EditorGUILayout.IntField("Min", myScript.desirableEffectMin);
             }
 
             // Could add multiple desirable / undesirable effects

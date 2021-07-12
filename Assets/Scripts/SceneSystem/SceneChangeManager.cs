@@ -83,8 +83,6 @@ public class SceneChangeManager : MonoBehaviour
         GameObject newScene = null;
 
         // Strings must match whatevers in the newScene sceneName enumerator, and the scene array must be indexed properly
-        Debug.Log(sceneChange.newScene.ToString());
-
         switch(sceneChange.newScene.ToString())
         {
             case "MorningRoutineScene": newScene = scenes[0]; break;

@@ -8,7 +8,10 @@ public class OfficeSceneManager : MonoBehaviour
 
     public GameObject background;
 
+    public int currentContractIndex;
     public int contractsSolved;
+    [SerializeField]
+    private ContractDisplayer contractDisplayer;
 
     public ContractFolder contractPrefab;
     public SolutionPaper solutionPaperPrefab;
@@ -32,10 +35,19 @@ public class OfficeSceneManager : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+
+        // Singleton stuff for contractDisplayer
+    }
+
+    private void Start()
+    {
+        currentContractIndex = 0;
     }
 
     private void Update()
     {
+        //Debug.Log(ContractDisplayer.instance == null);
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 worldPointOfClick = OfficeSceneCamera.instance.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
@@ -44,9 +56,12 @@ public class OfficeSceneManager : MonoBehaviour
             // Pick Up Contract from Stack
             if (ContractStack.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick) && ActiveContractArea.instance.currentContract == null && contractInHand == null && solutionInHand == null)
             {
-                contractInHand = Instantiate(contractPrefab, background.transform);
-                contractInHand.pickedUp = true;
-                lastLocation = ContractStack.instance.gameObject;
+                if (currentContractIndex < GameManager.instance.currentDay.contracts.Length)
+                {
+                    contractInHand = Instantiate(contractPrefab, background.transform);
+                    contractInHand.pickedUp = true;
+                    lastLocation = ContractStack.instance.gameObject;
+                }
             }
 
             // Pick up solution from printer
@@ -109,7 +124,8 @@ public class OfficeSceneManager : MonoBehaviour
                 contractInHand = null;
                 lastLocation = null;
 
-                // Notify drug game that the next contract is ready to go
+                contractDisplayer.DisplayContract(currentContractIndex);
+                currentContractIndex++;
             }
 
             // Drop solution onto Contract (in ActiveContractArea)

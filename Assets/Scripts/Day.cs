@@ -19,6 +19,7 @@ public class Day : ScriptableObject
         public enum Trigger
         {
             leavingHome,
+            arrivingAtWork,
             solvedContract1,
             solvedContract2,
             solvedContract3,

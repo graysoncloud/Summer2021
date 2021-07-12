@@ -52,6 +52,13 @@ public class SceneChangeManager : MonoBehaviour
 
     private IEnumerator ExecuteSceneChange(SceneChange sceneChange)
     {
+        // Old scene name lets us track which scene we're transitioning from, allowing us to trigger certain events
+        string oldSceneName;
+        if (currentScene != null)
+            oldSceneName = currentScene.gameObject.name;
+        else
+            oldSceneName = null;
+
         yield return new WaitForSeconds(sceneChange.predelay);
 
         if (sceneChange.transitionStyle.ToString() == "fade")
@@ -122,7 +129,6 @@ public class SceneChangeManager : MonoBehaviour
 
         yield return new WaitForSeconds(sceneChange.postdelay);
 
-
         if (sceneChange.nextEvent == null)
             ConversationManager.instance.EndConversation();
         else if (sceneChange.nextEvent.GetComponent<Conversation>() != null)
@@ -135,6 +141,17 @@ public class SceneChangeManager : MonoBehaviour
             StartSceneChange(sceneChange.nextEvent.GetComponent<SceneChange>());
         else
             Debug.LogError("Invalid next event");
+
+        if(oldSceneName == "MorningRoutineScene" && currentScene.gameObject.name == "OfficeScene")
+        {
+            foreach (Day.Sequence sequence in GameManager.instance.currentDay.sequences)
+            {
+                if (sequence.trigger.ToString() == "arrivingAtWork")
+                {
+                    GameManager.instance.StartSequence(sequence.initialEvent);
+                }
+            }
+        }
 
     }
 

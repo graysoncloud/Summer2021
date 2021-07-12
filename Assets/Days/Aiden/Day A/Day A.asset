@@ -16,7 +16,9 @@ MonoBehaviour:
   - initialEvent: {fileID: 11400000, guid: 64891f173f98f1941b972aeba850c7ed, type: 2}
     trigger: 0
   - initialEvent: {fileID: 11400000, guid: 052d1e6aaf3b0b64086ac1ff75b64a4a, type: 2}
-    trigger: 0
+    trigger: 1
   - initialEvent: {fileID: 11400000, guid: 860935ac8e874c747903007f09a063fb, type: 2}
-    trigger: 0
-  contracts: []
+    trigger: 3
+  contracts:
+  - {fileID: 11400000, guid: 2690638670583df4a9ab2bca7fc379fe, type: 2}
+  - {fileID: 11400000, guid: 3d705040b793bbd4183ce8f1177ada3d, type: 2}

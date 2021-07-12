@@ -38,7 +38,7 @@ public class ContractDisplayer : MonoBehaviour
             tmpro.text = "";
 
 
-        ContractSO contractToDisplay = GameManager.instance.currentDay.contracts[contractIndex];
+        Contract contractToDisplay = GameManager.instance.currentDay.contracts[contractIndex];
 
         companyName.text = contractToDisplay.companyName;
         description.text = contractToDisplay.description;

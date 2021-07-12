@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Day : MonoBehaviour
+[CreateAssetMenu(fileName = "Day", menuName = "Day", order = 1)]
+public class Day : ScriptableObject
 {
     public Sequence[] sequences;
-    public ContractSO[] contracts;
+    public Contract[] contracts;
 
     [System.Serializable]
     public class Sequence
     {
         // Could be a scene change, conversation, etc.
-        public GameObject initialEvent;
+        public ScriptableObject initialEvent;
         public Trigger trigger;
 
         public enum Trigger

@@ -1472,7 +1472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   days:
-  - {fileID: 5023571192584605557, guid: 2e2225f7b84475a46a60a2e60e2ae8dc, type: 3}
+  - {fileID: 11400000, guid: cff37fc0d5a9b1c47b896d8f9afc8c12, type: 2}
   currentDayIndex: 0
   currentDay: {fileID: 0}
 --- !u!1 &147361327
@@ -9785,6 +9785,10 @@ MonoBehaviour:
   dangerValue: 0
   dangerText: {fileID: 360880097}
   dangerBar: {fileID: 624302692}
+  dangerBG: {fileID: 0}
+  unstableVol: 5
+  negativeVol: 3
+  positiveVol: -2
 --- !u!1 &711048140
 GameObject:
   m_ObjectHideFlags: 0
@@ -14399,7 +14403,7 @@ MonoBehaviour:
   currentScene: {fileID: 0}
   fadeOutCover: {fileID: 1862985148}
   characterPool: {fileID: 2003548642}
-  startingScene: {fileID: 3293492610282294454, guid: b12e5afc949048d40a740567738ad6a3, type: 3}
+  startingScene: {fileID: 11400000, guid: e2f4f35f992eef047ad8add7bccae219, type: 2}
   scenes:
   - {fileID: 156543537}
   - {fileID: 1891660643}
@@ -18846,7 +18850,7 @@ MonoBehaviour:
   flowerMinigame: {fileID: 0}
   shavingMinigame: {fileID: 0}
   bedMinigame: {fileID: 0}
-  mrToOffice: {fileID: 3293492610282294454, guid: a81a989bb40ca8e4db0527796b71ef0e, type: 3}
+  mrToOffice: {fileID: 11400000, guid: 6bbd4549b0c8e454ab66da7ef09f700b, type: 2}
   gameDay: 1
 --- !u!4 &1560080107
 Transform:
@@ -24641,8 +24645,8 @@ MonoBehaviour:
   solutionPaperPrefab: {fileID: 5480521376133792589, guid: e076e26815d302643955a38205fbbcc0, type: 3}
   contractInHand: {fileID: 0}
   solutionInHand: {fileID: 0}
-  officeToDrugGameTransition: {fileID: 3293492610282294454, guid: 9140c6c342f5c704fb500eaf2c62ac1b, type: 3}
-  officeToRecapTransition: {fileID: 3293492610282294454, guid: 0a97ebeaa0d39074386f0a3bf9d05f5d, type: 3}
+  officeToDrugGameTransition: {fileID: 11400000, guid: 470001e3bd7863b4180fc532a5e0c589, type: 2}
+  officeToRecapTransition: {fileID: 11400000, guid: 92ec3a8fdf304444e9ef4229a9050253, type: 2}
 --- !u!1 &1977676282
 GameObject:
   m_ObjectHideFlags: 0
@@ -25547,7 +25551,7 @@ MonoBehaviour:
   costDisplay: {fileID: 524278568}
   childChem: {fileID: 2407817697115214040, guid: 41ea1bdbb7e6f3144a7e32d986fcc543, type: 3}
   currentlyHeldChemical: {fileID: 0}
-  drugToOfficeSceneChange: {fileID: 3293492610282294454, guid: 2fb44451c56d4cd4881b2181336bfd4d, type: 3}
+  drugToOfficeSceneChange: {fileID: 11400000, guid: b90e1ba2acd092d40b34299862d89a15, type: 2}
 --- !u!4 &2084069426 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}

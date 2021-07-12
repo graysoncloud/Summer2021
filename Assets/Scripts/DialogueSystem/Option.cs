@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Option : MonoBehaviour
+[CreateAssetMenu(fileName = "Option", menuName = "Option", order = 1)]
+public class Option : ScriptableObject
 {
     // The strings which will be displayed to the player
     [TextArea]

@@ -39,26 +39,26 @@ public class GameManager : MonoBehaviour
         currentDay = days[currentDayIndex];
     }
 
-    public void StartSequence(GameObject toExecute)
+    public void StartSequence(ScriptableObject toExecute)
     {
-        if (toExecute.GetComponent<Conversation>() != null)
+        if (toExecute.GetType().ToString() == "Conversation")
         {
-            ConversationManager.instance.StartConversation(toExecute.GetComponent<Conversation>());
+            ConversationManager.instance.StartConversation((Conversation)toExecute);
         }
 
-        else if (toExecute.GetComponent<Option>() != null)
+        else if (toExecute.GetType().ToString() == "Option")
         {
-            OptionManager.instance.PresentOption(toExecute.GetComponent<Option>());
+            OptionManager.instance.PresentOption((Option)toExecute);
         }
 
-        else if (toExecute.GetComponent<SceneChange>() != null)
+        else if (toExecute.GetType().ToString() == "SceneChange")
         {
-            SceneChangeManager.instance.StartSceneChange(toExecute.GetComponent<SceneChange>());
+            SceneChangeManager.instance.StartSceneChange((SceneChange)toExecute);
         }
 
-        else if (toExecute.GetComponent<AnimationClip>() != null)
+        else if (toExecute.GetType().ToString() == "AnimationMoment")
         {
-            AnimationManager.instance.StartAnimationMoment(toExecute.GetComponent<AnimationMoment>());
+            AnimationManager.instance.StartAnimationMoment((AnimationMoment)toExecute);
         }
 
     }

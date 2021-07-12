@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneChange : MonoBehaviour
+[CreateAssetMenu(fileName = "SceneChange", menuName = "SceneChange", order = 1)]
+public class SceneChange : ScriptableObject
 {
     public SceneName newScene;
     public CharacterInstantiation[] characters;

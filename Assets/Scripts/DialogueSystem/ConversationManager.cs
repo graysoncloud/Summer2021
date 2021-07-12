@@ -122,14 +122,14 @@ public class ConversationManager : MonoBehaviour
 
         if (currentConversation.nextEvent == null)
             EndConversation();
-        else if (currentConversation.nextEvent.GetComponent<Option>() != null)
-            OptionManager.instance.PresentOption(currentConversation.nextEvent.GetComponent<Option>());
-        else if (currentConversation.nextEvent.GetComponent<AnimationMoment>() != null)
-            AnimationManager.instance.StartAnimationMoment(currentConversation.nextEvent.GetComponent<AnimationMoment>());
-        else if (currentConversation.nextEvent.GetComponent<Conversation>() != null)
-            StartConversation(currentConversation.nextEvent.GetComponent<Conversation>());
-        else if (currentConversation.nextEvent.GetComponent<SceneChange>() != null)
-            SceneChangeManager.instance.StartSceneChange(currentConversation.nextEvent.GetComponent<SceneChange>());
+        else if (currentConversation.nextEvent.GetType().ToString() == "Option")
+            OptionManager.instance.PresentOption((Option)currentConversation.nextEvent);
+        else if (currentConversation.nextEvent.GetType().ToString() == "AnimationMoment")
+            AnimationManager.instance.StartAnimationMoment((AnimationMoment)currentConversation.nextEvent);
+        else if (currentConversation.nextEvent.GetType().ToString() == "Conversation")
+            StartConversation((Conversation)currentConversation.nextEvent);
+        else if (currentConversation.nextEvent.GetType().ToString() == "SceneChange")
+            SceneChangeManager.instance.StartSceneChange((SceneChange)currentConversation.nextEvent);
         else
             Debug.LogError("Invalid next event");
 

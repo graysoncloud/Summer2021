@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Conversation : MonoBehaviour
+[CreateAssetMenu(fileName = "Conversation", menuName = "Conversation", order = 1)]
+public class Conversation : ScriptableObject
 {
     public DialogueLine[] dialogueLines;
-    public GameObject nextEvent;
+    public ScriptableObject nextEvent;
 
     [System.Serializable]
     public class DialogueLine

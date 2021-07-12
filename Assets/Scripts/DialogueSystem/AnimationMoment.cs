@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class AnimationMoment : MonoBehaviour
+[CreateAssetMenu(fileName = "AnimationMoment", menuName = "AnimationMoment", order = 1)]
+public class AnimationMoment : ScriptableObject
 {
     public CharacterName charName;
     public AnimationName animationName;

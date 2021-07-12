@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Contract", menuName = "Contract", order = 1)]
-public class ContractSO : ScriptableObject
+public class Contract : ScriptableObject
 {
     // Need to check in with Harry to get specifics
 
@@ -49,15 +49,15 @@ public class ContractSO : ScriptableObject
     }
 
 
-    [CustomEditor(typeof(ContractSO))]
+    [CustomEditor(typeof(Contract))]
     public class MyScriptEditor : Editor
     {
         override public void OnInspectorGUI()
         {
-            var myScript = target as ContractSO;
+            var myScript = target as Contract;
 
             myScript.companyName = EditorGUILayout.TextField("Company Name", myScript.companyName);
-            myScript.description = EditorGUILayout.TextField("Description", myScript.description);
+            myScript.description = EditorGUILayout.TextArea(myScript.description);
 
             // Max Volatility
             myScript.usesMaxVolatility = GUILayout.Toggle(myScript.usesMaxVolatility, "Uses Max Volatility");

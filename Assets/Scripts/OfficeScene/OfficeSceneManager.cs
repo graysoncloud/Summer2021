@@ -10,6 +10,7 @@ public class OfficeSceneManager : MonoBehaviour
 
     public int currentContractIndex;
     public int contractsSolved;
+    private bool holdingNewContract;
     [SerializeField]
     private ContractDisplayer contractDisplayer;
 
@@ -42,6 +43,7 @@ public class OfficeSceneManager : MonoBehaviour
     private void Start()
     {
         currentContractIndex = 0;
+        holdingNewContract = false;
     }
 
     private void Update()
@@ -58,6 +60,7 @@ public class OfficeSceneManager : MonoBehaviour
             {
                 if (currentContractIndex < GameManager.instance.currentDay.contracts.Length)
                 {
+                    holdingNewContract = true;
                     contractInHand = Instantiate(contractPrefab, background.transform);
                     contractInHand.pickedUp = true;
                     lastLocation = ContractStack.instance.gameObject;
@@ -124,8 +127,12 @@ public class OfficeSceneManager : MonoBehaviour
                 contractInHand = null;
                 lastLocation = null;
 
-                contractDisplayer.DisplayContract(currentContractIndex);
-                currentContractIndex++;
+                if (holdingNewContract)
+                {
+                    contractDisplayer.DisplayContract(currentContractIndex);
+                    currentContractIndex++;
+                    holdingNewContract = false;
+                }
             }
 
             // Drop solution onto Contract (in ActiveContractArea)
@@ -172,6 +179,7 @@ public class OfficeSceneManager : MonoBehaviour
             // Return contract to where it came from
             else if (contractInHand != null && lastLocation == ContractStack.instance.gameObject)
             {
+                holdingNewContract = false;
                 Destroy(contractInHand.gameObject);
             }
             else if (contractInHand != null && lastLocation == ActiveContractArea.instance.gameObject)
@@ -180,6 +188,7 @@ public class OfficeSceneManager : MonoBehaviour
                 contractInHand.pickedUp = false;
                 contractInHand.transform.position = ActiveContractArea.instance.contractSpot;
                 contractInHand = null;
+                holdingNewContract = false;
             }
             // Return solution to printer if it's dropped no where special
             else if (solutionInHand != null)

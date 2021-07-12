@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 626685457050215795}
   - component: {fileID: 626685457050215796}
   m_Layer: 0
-  m_Name: 3Con
+  m_Name: 1Con
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,6 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: 0
-    dialogue: Wait I'm talking to me...
+    dialogue: Alright. TIme to go to work.
     offset: {x: 0, y: 0}
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 3293492610282294457, guid: 7f098032933280346bfc6e05cc740178, type: 3}

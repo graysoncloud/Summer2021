@@ -16,6 +16,8 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     public ShavingMinigame shavingMinigame;
     public BedMinigame bedMinigame;
 
+    public SceneChange mrToOffice;
+
     // game data
     // the day
     public int gameDay = 1;

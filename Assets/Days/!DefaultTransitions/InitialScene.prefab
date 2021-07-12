@@ -43,9 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f2c2874d4a210459b67163429fe28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newScene: 4
+  newScene: 0
   characters: []
   transitionStyle: 0
   predelay: 0
   postdelay: 0
+  increaseDay: 0
   nextEvent: {fileID: 0}

@@ -8,6 +8,8 @@ public class OfficeSceneManager : MonoBehaviour
 
     public GameObject background;
 
+    public int contractsSolved;
+
     public ContractFolder contractPrefab;
     public SolutionPaper solutionPaperPrefab;
 
@@ -17,7 +19,8 @@ public class OfficeSceneManager : MonoBehaviour
     // Used to properly return contract / solution paper where it should go
     private GameObject lastLocation;
 
-    public SceneChange computerToDrugGameTransition;
+    public SceneChange officeToDrugGameTransition;
+    public SceneChange officeToRecapTransition;
 
 
     private void Awake()
@@ -69,7 +72,25 @@ public class OfficeSceneManager : MonoBehaviour
             // Start Drug Game if computer clicked
             else if (OfficeComputer.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick))
             {
-                SceneChangeManager.instance.StartSceneChange(computerToDrugGameTransition);
+                SceneChangeManager.instance.StartSceneChange(officeToDrugGameTransition);
+            }
+
+            // Leave office if button clicked, also looking out for special transitions
+            else if (LeaveOfficeButton.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick))
+            {
+                bool sequenceTriggered = false;
+
+                foreach (Day.Sequence sequence in GameManager.instance.currentDay.sequences)
+                {
+                    if (sequence.trigger.ToString() == "leavingWork" && !sequenceTriggered)
+                    {
+                        GameManager.instance.StartSequence(sequence.initialEvent);
+                        sequenceTriggered = true;
+                    }
+                }
+
+                if (!sequenceTriggered)
+                    SceneChangeManager.instance.StartSceneChange(officeToRecapTransition);
             }
 
         }
@@ -106,7 +127,30 @@ public class OfficeSceneManager : MonoBehaviour
                 EvaluateSolution();
                 lastLocation = null;
 
+                contractsSolved++;
+
+                foreach (Day.Sequence sequence in GameManager.instance.currentDay.sequences)
+                {
+                    if (sequence.trigger.ToString() == "solvedContract1" && contractsSolved == 1)
+                        GameManager.instance.StartSequence(sequence.initialEvent);
+                    else if (sequence.trigger.ToString() == "solvedContract2" && contractsSolved == 2)
+                        GameManager.instance.StartSequence(sequence.initialEvent);
+                    else if (sequence.trigger.ToString() == "solvedContract3" && contractsSolved == 3)
+                        GameManager.instance.StartSequence(sequence.initialEvent);
+                    else if (sequence.trigger.ToString() == "solvedContract4" && contractsSolved == 4)
+                        GameManager.instance.StartSequence(sequence.initialEvent);
+                    else if (sequence.trigger.ToString() == "solvedContract5" && contractsSolved == 5)
+                        GameManager.instance.StartSequence(sequence.initialEvent);
+                    else if (sequence.trigger.ToString() == "solvedContract6" && contractsSolved == 6)
+                        GameManager.instance.StartSequence(sequence.initialEvent);
+
+                }
+
+                if (contractsSolved >= GameManager.instance.currentDay.contracts.Length) 
+                    LeaveOfficeButton.instance.gameObject.SetActive(true);
+
                 // Maybe have an if / else condition returning a visual error?
+
             }
 
             // Return contract to where it came from

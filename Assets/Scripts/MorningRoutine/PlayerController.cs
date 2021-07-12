@@ -34,11 +34,17 @@ public class PlayerController : MonoBehaviour
     }
 
     public void GoToWork() {
-        GameObject officeScene = GameObject.Find("OfficeScene");
-        GameObject MRScene = GameObject.Find("MorningRoutineScene");
-        if(officeScene != null && MRScene != null) {
-            officeScene.SetActive(true);
-            MRScene.SetActive(false);
+        foreach (Day.Sequence dialogueEvent in GameManager.instance.currentDay.sequences)
+        {
+            if (dialogueEvent.trigger.ToString() == "leavingHome")
+            {
+                GameManager.instance.StartSequence(dialogueEvent.initialEvent);
+                return;
+            }
+
         }
+
+        SceneChangeManager.instance.StartSceneChange(MorningRoutineManager.Instance.mrToOffice);
+
     }
 }

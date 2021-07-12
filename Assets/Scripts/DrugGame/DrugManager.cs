@@ -18,7 +18,7 @@ public class DrugManager : MonoBehaviour
     private Chemical lastHovered;
     private HexGrid hexGrid;
 
-    public SceneChange officeToOfficeSceneChange;
+    public SceneChange drugToOfficeSceneChange;
 
     private void Awake()
     {
@@ -30,6 +30,7 @@ public class DrugManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+
     private void Start()
     {
         hexGrid = GameObject.FindObjectOfType<HexGrid>().GetComponent<HexGrid>();

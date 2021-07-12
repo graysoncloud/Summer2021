@@ -5,28 +5,29 @@ using UnityEngine;
 
 public class Day : MonoBehaviour
 {
-    public DialogueEvent[] dialogueEvents;
+    public Sequence[] sequences;
     public Contract[] contracts;
 
     [System.Serializable]
-    public class DialogueEvent
+    public class Sequence
     {
         // Could be a scene change, conversation, etc.
-        public GameObject startingEvent;
+        public GameObject initialEvent;
         public Trigger trigger;
 
         public enum Trigger
         {
-            wakingUp,
             leavingHome,
-            arrivingAtWork,
             solvedContract1,
             solvedContract2,
             solvedContract3,
             solvedContract4,
             solvedContract5,
             solvedContract6,
-            arrivingHome,
+            leavingWork,
+            dream,
+            // Since going to bed and waking up is one combined sequence, waking up events must be specified the day before
+            wakingUpNextDay,
         }
 
     }

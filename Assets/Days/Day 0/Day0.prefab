@@ -44,9 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c747640b685770845b310d0728bc0456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueEvents:
-  - startingEvent: {fileID: 3293492610282294457, guid: 7927d84adaf034e478c15116142eea6f, type: 3}
-    trigger: 3
+  sequences:
+  - initialEvent: {fileID: 626685457050215797, guid: 8ef715196c59b6a46ae3dc3979aed188, type: 3}
+    trigger: 0
+  - initialEvent: {fileID: 626685457050215797, guid: b3022a9e82870804ab181cc6fce7c575, type: 3}
+    trigger: 1
   contracts:
   - {fileID: 8030213736431650128, guid: 4124272da67e41f499ffc435fb14872e, type: 3}
   - {fileID: 8030213736431650128, guid: 83781f15795745441a990df20aee4437, type: 3}
@@ -62,3 +64,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc6717a70026244e9efe1f1ea5bcde0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  days: []
+  currentDayIndex: 0
+  currentDay: {fileID: 0}

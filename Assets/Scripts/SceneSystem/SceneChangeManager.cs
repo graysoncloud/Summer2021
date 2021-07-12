@@ -81,14 +81,16 @@ public class SceneChangeManager : MonoBehaviour
 
         // Turn on new scene and assign it to scene manager's current scene field
         GameObject newScene = null;
+
         // Strings must match whatevers in the newScene sceneName enumerator, and the scene array must be indexed properly
+        Debug.Log(sceneChange.newScene.ToString());
+
         switch(sceneChange.newScene.ToString())
         {
-            case "NormalTestScene": newScene = scenes[0]; break;
-            case "RedTestScene": newScene = scenes[1]; break;
+            case "MorningRoutineScene": newScene = scenes[0]; break;
+            case "OfficeScene": newScene = scenes[1]; break;
             case "DrugGameScene": newScene = scenes[2]; break;
-            case "MorningRoutineScene": newScene = scenes[3]; break;
-            case "OfficeScene": newScene = scenes[4]; break;
+            case "Recap": newScene = scenes[3]; break;
             default: Debug.LogError("Invalid sceneName: " + sceneChange.newScene.ToString()); break;
         }
 

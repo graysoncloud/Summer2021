@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3293492610282294455}
   - component: {fileID: 3293492610282294454}
   m_Layer: 0
-  m_Name: Drug-Office
+  m_Name: 2Tran
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newScene: 1
   characters: []
-  transitionStyle: 0
+  transitionStyle: 1
   predelay: 0
   postdelay: 0
   increaseDay: 0

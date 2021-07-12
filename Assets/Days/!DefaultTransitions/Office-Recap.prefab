@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3293492610282294455}
   - component: {fileID: 3293492610282294454}
   m_Layer: 0
-  m_Name: Drug-Office
+  m_Name: Computer-DrugGame 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,10 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f2c2874d4a210459b67163429fe28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newScene: 1
+  newScene: 2
   characters: []
   transitionStyle: 0
   predelay: 0
   postdelay: 0
-  increaseDay: 0
   nextEvent: {fileID: 0}

@@ -11,11 +11,13 @@ public class SceneChange : MonoBehaviour
     public float predelay;
     public float postdelay;
 
+    public bool increaseDay;
+
     // Typically used mid conversaiton. However, you could theoretically start a dialogue event by including a nextEvent here.
     public GameObject nextEvent;
 
     // These must be named exactly how the scenes are in the editor
-    public enum SceneName {NormalTestScene, RedTestScene, DrugGameScene, MorningRoutineScene, OfficeScene}
+    public enum SceneName {MorningRoutineScene, OfficeScene, DrugGameScene, Recap}
 
     public enum TransitionStyle { instant, fade}
 

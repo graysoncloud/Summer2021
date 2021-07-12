@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Chemical : MonoBehaviour
 {
-    //[SerializeField]
-    //private string name;
-    [SerializeField]
-    private float cost = 0;
+    public float cost = 0;
     private const float rotateSpeed = 15f;
     private float rotateTarget = 0, internalRotation = 0;
 
@@ -70,8 +67,6 @@ public class Chemical : MonoBehaviour
         benefitValue = GameObject.FindObjectOfType<BenefitValue>();
         costDisplay = GameObject.FindObjectOfType<CostDisplay>();
 
-        costDisplay.UpdateCost(cost);
-
         for (int i = 0; i < 6; i++)
         {
             if (connectionTypes[i] == "Chemical")
@@ -83,6 +78,14 @@ public class Chemical : MonoBehaviour
             }
         }
         CreateConnections();
+    }
+
+    private void Start()
+    {
+        if (!isChild)
+        {
+            costDisplay.AddCost(this, cost);
+        }
     }
 
     public void CreateConnections()

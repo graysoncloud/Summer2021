@@ -12,7 +12,9 @@ public class DangerBar : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI dangerText = null;
     [SerializeField]
-    private SpriteRenderer dangerBar = null;
+    private SpriteRenderer dangerBar = null, dangerBG = null;
+    [SerializeField]
+    private int unstableVol = 5, negativeVol = 3, positiveVol = -2;
 
     //private int unstableIncrement = 4;
     //private int negativeConnectionIncrement = 1;
@@ -30,18 +32,30 @@ public class DangerBar : MonoBehaviour
         {
             // expand if else statements to increase separate variables to display different bars, i.e. unstable amount vs. negative amount
             if (newStatuses[i] == "Unstable")
-                dangerValue += 4;
+                dangerValue += unstableVol;
             else if (newStatuses[i] == "Negative")
-                dangerValue += 1;
+                dangerValue += negativeVol;
+            else if (newStatuses[i] == "Positive")
+                dangerValue += positiveVol;
+
 
             // This essentially reverses the above affect if nothing changed
             if (oldStatuses[i] == "Unstable")
-                dangerValue -= 4;
+                dangerValue -= unstableVol;
             else if (oldStatuses[i] == "Negative")
-                dangerValue -= 1;
+                dangerValue -= negativeVol;
+            else if (oldStatuses[i] == "Positive")
+                dangerValue -= positiveVol;
         }
 
         dangerText.text = dangerValue.ToString();
-        dangerBar.transform.localScale = new Vector3(dangerValue * 4, dangerBar.transform.localScale.y, dangerBar.transform.localScale.z);
+        if (dangerValue * 4 < dangerBG.transform.localScale.x * dangerBG.size.x)
+        {
+            dangerBar.transform.localScale = new Vector3(dangerValue * 4, dangerBar.transform.localScale.y, dangerBar.transform.localScale.z);
+        } else
+        {
+            dangerBar.transform.localScale = new Vector3(dangerBG.transform.localScale.x * dangerBG.size.x, dangerBar.transform.localScale.y, dangerBar.transform.localScale.z);
+        }
+        
     }
 }

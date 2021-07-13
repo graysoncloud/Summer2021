@@ -60,8 +60,12 @@ public class OfficeSceneManager : MonoBehaviour
             {
                 if (currentContractIndex < GameManager.instance.currentDay.contracts.Length)
                 {
+                    Vector3 mouseLocation = OfficeSceneCamera.instance.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
+
                     holdingNewContract = true;
                     contractInHand = Instantiate(contractPrefab, background.transform);
+                    contractInHand.transform.position = new Vector3(mouseLocation.x, mouseLocation.y, 0);
+
                     contractInHand.pickedUp = true;
                     lastLocation = ContractStack.instance.gameObject;
                 }
@@ -70,7 +74,11 @@ public class OfficeSceneManager : MonoBehaviour
             // Pick up solution from printer
             else if (Printer.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick) && contractInHand == null && solutionInHand == null && Printer.instance.solutionPrinted)
             {
+                Vector3 mouseLocation = OfficeSceneCamera.instance.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
+
                 solutionInHand = Instantiate(solutionPaperPrefab, background.transform);
+                solutionInHand.transform.position = new Vector3(mouseLocation.x, mouseLocation.y, 0);
+
                 solutionInHand.pickedUp = true;
                 Printer.instance.solutionPrinted = false;
                 Printer.instance.GetComponent<SpriteRenderer>().sprite = Printer.instance.noSolutionSprite;
@@ -130,7 +138,6 @@ public class OfficeSceneManager : MonoBehaviour
                 if (holdingNewContract)
                 {
                     contractDisplayer.DisplayContract();
-                    currentContractIndex++;
                     holdingNewContract = false;
                 }
             }
@@ -150,7 +157,9 @@ public class OfficeSceneManager : MonoBehaviour
                 EvaluateSolution();
                 lastLocation = null;
 
-                contractsSolved++;
+                contractsSolved++; 
+                currentContractIndex++;
+
 
                 foreach (Day.Sequence sequence in GameManager.instance.currentDay.sequences)
                 {

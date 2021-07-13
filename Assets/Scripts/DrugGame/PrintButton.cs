@@ -14,6 +14,10 @@ public class PrintButton : MonoBehaviour
             return;
         }
 
+        //Printer.instance.solutionPrinted = true;
+        //Printer.instance.GetComponent<SpriteRenderer>().sprite = Printer.instance.printedSolutionSprite;
+        //return;
+
         // Evaluate solution
         if (ContractDisplayer.instance.EvaluateContract())
         {

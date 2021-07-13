@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 public enum EffectType
@@ -48,6 +50,7 @@ public class Contract : ScriptableObject
     public EffectType desirableEffect;
     public int desirableEffectMin;
 
+    #if UNITY_EDITOR
     [CustomEditor(typeof(Contract))]
     public class MyScriptEditor : Editor
     {
@@ -99,5 +102,6 @@ public class Contract : ScriptableObject
 
         }
     }
+    #endif
 
 }

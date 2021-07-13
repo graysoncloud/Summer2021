@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: A1_3
   m_EditorClassIdentifier: 
+  nextEvent: {fileID: 11400000, guid: adad3877ee01128458525b35c143e516, type: 2}
   dialogueLines:
   - speaker: 1
-    dialogue: "You know, this sort of thing would be a lot easier if you had a bit
-      more practice.\r"
+    dialogue: You know, this sort of thing would be a lot easier if you had a bit
+      more practice.
     offset: {x: 0, y: 0}
   - speaker: 0
     dialogue: Not now, Mom-
@@ -36,4 +37,3 @@ MonoBehaviour:
   - speaker: 1
     dialogue: Have a good first day back.
     offset: {x: 0, y: 0}
-  nextEvent: {fileID: 11400000, guid: adad3877ee01128458525b35c143e516, type: 2}

@@ -12,7 +12,7 @@ public class Conversation : ScriptableEvent
     {
         // If you create a character object, speaking character should be a reference to those
         public CharacterName speaker;
-        [TextArea]
+        [TextArea(6,20)]
         public string dialogue;
         public Vector2 offset;
 

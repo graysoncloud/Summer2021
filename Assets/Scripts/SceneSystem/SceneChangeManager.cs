@@ -20,8 +20,8 @@ public class SceneChangeManager : MonoBehaviour
     // Not used
     public SceneChange startingScene;
 
-    private float fadeOutRate = .03f;
-    private float fadeInRate = .03f;
+    private float fadeOutRate = .01f;
+    private float fadeInRate = .01f;
     private float midFadeDelay = .7f;
 
     public GameObject[] scenes;
@@ -132,16 +132,8 @@ public class SceneChangeManager : MonoBehaviour
 
         if (sceneChange.nextEvent == null)
             ConversationManager.instance.EndConversation();
-        else if (sceneChange.nextEvent.GetType().ToString() == "Conversation")
-            ConversationManager.instance.StartConversation((Conversation)sceneChange.nextEvent);
-        else if (sceneChange.nextEvent.GetType().ToString() == "Option")
-            OptionManager.instance.PresentOption((Option)sceneChange.nextEvent);
-        else if (sceneChange.nextEvent.GetType().ToString() == "AnimationMoment")
-            AnimationManager.instance.StartAnimationMoment((AnimationMoment)sceneChange.nextEvent);
-        else if (sceneChange.nextEvent.GetType().ToString() == "SceneChange")
-            SceneChangeManager.instance.StartSceneChange((SceneChange)sceneChange.nextEvent);
         else
-            Debug.LogError("Invalid next event");
+            GameManager.instance.StartSequence(sceneChange.nextEvent);
 
         if(oldSceneName == "MorningRoutineScene" && currentScene.gameObject.name == "OfficeScene")
         {

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: A1_1
   m_EditorClassIdentifier: 
+  nextEvent: {fileID: 11400000, guid: 1a3d839a1def9f845aaa751fc5ab6f4b, type: 2}
   dialogueLines:
   - speaker: 1
     dialogue: Barney!
@@ -35,4 +36,3 @@ MonoBehaviour:
   - speaker: 1
     dialogue: "And you still can\u2019t remember to tell your mother you love her."
     offset: {x: 0, y: 0}
-  nextEvent: {fileID: 11400000, guid: 1a3d839a1def9f845aaa751fc5ab6f4b, type: 2}

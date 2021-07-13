@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SceneChange", menuName = "SceneChange", order = 1)]
-public class SceneChange : ScriptableObject
+public class SceneChange : ScriptableEvent
 {
     public SceneName newScene;
     public CharacterInstantiation[] characters;
@@ -13,9 +13,6 @@ public class SceneChange : ScriptableObject
     public float postdelay;
 
     public bool increaseDay;
-
-    // Typically used mid conversaiton. However, you could theoretically start a dialogue event by including a nextEvent here.
-    public ScriptableObject nextEvent;
 
     // These must be named exactly how the scenes are in the editor
     public enum SceneName { MorningRoutineScene, OfficeScene, DrugGameScene, RecapScene, DreamScene }

@@ -60,19 +60,11 @@ public class AnimationManager : MonoBehaviour
         while (activeAnimations != 0)
             yield return new WaitForEndOfFrame();
 
-        // This whole block could be a GameManager thing, or at least a static function
+        // Execute Next Event
         if (anim.nextEvent == null)
             ConversationManager.instance.EndConversation();
-        else if (anim.nextEvent.GetComponent<Conversation>() != null)
-            ConversationManager.instance.StartConversation(anim.nextEvent.GetComponent<Conversation>());
-        else if (anim.nextEvent.GetComponent<Option>() != null)
-            OptionManager.instance.PresentOption(anim.nextEvent.GetComponent<Option>());
-        else if (anim.nextEvent.GetComponent<AnimationMoment>() != null)
-            AnimationManager.instance.StartAnimationMoment(anim.nextEvent.GetComponent<AnimationMoment>());
-        else if (anim.nextEvent.GetComponent<SceneChange>() != null)
-            SceneChangeManager.instance.StartSceneChange(anim.nextEvent.GetComponent<SceneChange>());
         else
-            Debug.LogError("Invalid next event");
+            GameManager.instance.StartSequence(anim.nextEvent);
     }
 
     private IEnumerator MoveCharacter(Character toMove, Vector2 targetLocationVec2, float speed, bool pauseWhileMoving)

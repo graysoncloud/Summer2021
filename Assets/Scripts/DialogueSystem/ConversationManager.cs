@@ -11,6 +11,7 @@ public class ConversationManager : MonoBehaviour
     public bool inConversation;
     private bool clicked;
     private bool waitingForClick;
+
     // Serves as a indicator of whether or not the conversation can continue (all animations must finish before clicking past a dialogue line)
     private int activeAnimations;
 
@@ -35,7 +36,7 @@ public class ConversationManager : MonoBehaviour
         // The "clicked" boolean is necessary because OnMouseButtonDown doesn't consistently work within Coroutines
         if (Input.GetMouseButtonDown(0) && inConversation && waitingForClick)
             clicked = true;
-        // clicked is only turned off once its "uses", so if my logic is wrong, it could get stuck into on
+            // clicked is only turned off once its "uses", so if my logic is wrong, it could get stuck into on
     }
 
     /**
@@ -122,16 +123,8 @@ public class ConversationManager : MonoBehaviour
 
         if (currentConversation.nextEvent == null)
             EndConversation();
-        else if (currentConversation.nextEvent.GetType().ToString() == "Option")
-            OptionManager.instance.PresentOption((Option)currentConversation.nextEvent);
-        else if (currentConversation.nextEvent.GetType().ToString() == "AnimationMoment")
-            AnimationManager.instance.StartAnimationMoment((AnimationMoment)currentConversation.nextEvent);
-        else if (currentConversation.nextEvent.GetType().ToString() == "Conversation")
-            StartConversation((Conversation)currentConversation.nextEvent);
-        else if (currentConversation.nextEvent.GetType().ToString() == "SceneChange")
-            SceneChangeManager.instance.StartSceneChange((SceneChange)currentConversation.nextEvent);
         else
-            Debug.LogError("Invalid next event");
+            GameManager.instance.StartSequence(currentConversation.nextEvent);
 
         // Don't need to destroy because we're just using the prefab without instantiating
         //Destroy(currentConversation);
@@ -151,8 +144,43 @@ public class ConversationManager : MonoBehaviour
     public void EndConversation()
     {
         // Might be better to handle the record keeping in a GameManager- a better name for inConversation might be inDialogueScene
+        waitingForClick = false;
+        readbackSpeedModifier = 1;
         inConversation = false;
         DialogueUIManager.instance.turnOffDialogueUI();
+    }
+
+    public void JumpToSceneChange()
+    {
+
+        ScriptableEvent currentEvent = currentConversation;
+        int breaker = 0;
+
+        while (currentEvent.nextEvent != null)
+        {
+            Debug.Log(currentEvent.GetType().ToString());
+
+            breaker++;
+            if (breaker > 10)
+                break;
+
+            currentEvent = currentEvent.nextEvent;
+
+            Option nextEventAsOption;
+            if (currentEvent.GetType().ToString() == "Option")
+            {
+                nextEventAsOption = (Option)currentEvent;
+                currentEvent = nextEventAsOption.possibleConversations[0];
+            }
+
+
+
+            if (currentEvent.GetType().ToString() == "SceneChange")
+            {
+                SceneChangeManager.instance.StartSceneChange((SceneChange)currentEvent);
+                return;
+            }
+        }
     }
 
 

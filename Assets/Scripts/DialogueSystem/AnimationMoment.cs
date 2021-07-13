@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 [CreateAssetMenu(fileName = "AnimationMoment", menuName = "AnimationMoment", order = 1)]
-public class AnimationMoment : ScriptableObject
+public class AnimationMoment : ScriptableEvent
 {
     public CharacterName charName;
     public AnimationName animationName;
@@ -21,8 +21,6 @@ public class AnimationMoment : ScriptableObject
     public Vector2 endLocation;
     public float moveSpeed;
     public bool pauseWhileMoving;
-
-    public GameObject nextEvent;
 
     // Might add a bool that specifies if you should wait for a click after animation is done (end of scenes)
 }

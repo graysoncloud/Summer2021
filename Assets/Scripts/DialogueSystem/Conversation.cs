@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Conversation", menuName = "Conversation", order = 1)]
-public class Conversation : ScriptableObject
+public class Conversation : ScriptableEvent
 {
     public DialogueLine[] dialogueLines;
-    public ScriptableObject nextEvent;
 
     [System.Serializable]
     public class DialogueLine

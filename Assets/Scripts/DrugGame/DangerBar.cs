@@ -58,4 +58,9 @@ public class DangerBar : MonoBehaviour
         }
         
     }
+
+    public int GetVol()
+    {
+        return dangerValue;
+    }
 }

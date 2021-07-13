@@ -32,7 +32,6 @@ public class ChemicalBin : MonoBehaviour
         {
             Chemical newChemical = Instantiate<Chemical>(ChemicalPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
             newChemical.name = ChemicalPrefab.name;//without this, it adds (clone) to the name which is annoying if you try to use them as IDs
-
             DrugManager.instance.currentlyHeldChemical = newChemical;
             newChemical.isPlaced = false;
             newChemical.GetComponent<PolygonCollider2D>().enabled = false;

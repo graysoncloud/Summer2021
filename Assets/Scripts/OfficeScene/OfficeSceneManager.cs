@@ -129,7 +129,7 @@ public class OfficeSceneManager : MonoBehaviour
 
                 if (holdingNewContract)
                 {
-                    contractDisplayer.DisplayContract(currentContractIndex);
+                    contractDisplayer.DisplayContract();
                     currentContractIndex++;
                     holdingNewContract = false;
                 }

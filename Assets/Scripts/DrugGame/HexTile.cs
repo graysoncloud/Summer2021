@@ -70,6 +70,10 @@ public class HexTile : MonoBehaviour
                         Chemical child = DrugManager.instance.CreateChemChild(tempChem, neighbors[i]);
                     }
                 }
+                if (tempChem.desirable)
+                    DrugManager.instance.desiredChems++;
+                if (tempChem.undesirable)
+                    DrugManager.instance.undesiredChems++;
             }
             storedChemical = tempChem;
 

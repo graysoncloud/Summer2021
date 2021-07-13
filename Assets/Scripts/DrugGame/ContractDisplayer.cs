@@ -29,7 +29,7 @@ public class ContractDisplayer : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void DisplayContract(int contractIndex)
+    public void DisplayContract()
     {
         // Erase the old data
         companyName.text = "";
@@ -42,7 +42,7 @@ public class ContractDisplayer : MonoBehaviour
             tmpro.text = "";
 
 
-        Contract contractToDisplay = GameManager.instance.currentDay.contracts[contractIndex];
+        Contract contractToDisplay = GameManager.instance.GetCurrentContract();
 
         companyName.text = contractToDisplay.companyName;
         description.text = contractToDisplay.description;
@@ -85,6 +85,45 @@ public class ContractDisplayer : MonoBehaviour
             currentDisplayItemIndex++;
         }
 
+    }
+
+    public bool EvaluateContract()
+    {
+        Contract currentContract = GameManager.instance.GetCurrentContract();
+        if (currentContract.usesMaxVolatility)
+        {
+            int vol = DrugManager.instance.GetVol();
+            if (vol > currentContract.volatilityMax)
+                return false;
+        }
+
+        float cost = DrugManager.instance.GetCost();
+
+        if (currentContract.usesMaxPrice)
+        {
+            if (cost > currentContract.maxPrice)
+                return false;
+        }
+
+        if (currentContract.usesMinPrice)
+        {
+            if (cost < currentContract.minPrice)
+                return false;
+        }
+
+        if (currentContract.usesUndesirableEffect)
+        {
+            if (DrugManager.instance.undesiredChems > currentContract.undesirableEffectMax)
+                return false;
+        }
+
+        if (currentContract.usesDesirableEffect)
+        {
+            if (DrugManager.instance.desiredChems < currentContract.desirableEffectMin)
+                return false;
+        }
+
+        return true;
     }
 
 

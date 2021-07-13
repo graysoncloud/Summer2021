@@ -5,6 +5,8 @@ using UnityEngine;
 public class Chemical : MonoBehaviour
 {
     public float cost = 0;
+    public EffectType[] effects;
+    public bool desirable = false, undesirable = false;
     private const float rotateSpeed = 15f;
     private float rotateTarget = 0, internalRotation = 0;
 
@@ -85,6 +87,17 @@ public class Chemical : MonoBehaviour
         if (!isChild)
         {
             costDisplay.AddCost(this, cost);
+
+            EffectType wanted = DrugManager.instance.GetDesireable();
+            EffectType unwanted = DrugManager.instance.GetUndesireable();
+
+            foreach (var effect in effects)
+            {
+                if (effect == wanted)
+                    desirable = true;
+                if (effect == unwanted)
+                    undesirable = true;
+            }
         }
     }
 
@@ -643,6 +656,11 @@ public class Chemical : MonoBehaviour
 
         if (!this.isChild)
         {
+            if (desirable)
+                DrugManager.instance.desiredChems--;
+            if (undesirable)
+                DrugManager.instance.undesiredChems--;
+
             // Destroy children on pick up
             for (int i = 0; i < 6; i++)
             {

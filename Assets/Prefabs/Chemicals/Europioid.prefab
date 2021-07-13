@@ -558,6 +558,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 1
+  effects: 
+  desirable: 0
+  undesirable: 0
   isPlaced: 0
   isChild: 0
   housingTile: {fileID: 0}
@@ -575,8 +578,5 @@ MonoBehaviour:
   - 
   - 
   - 
-  childIndex1: -1
-  childIndex2: -1
   childConnection1: []
   childConnection2: []
-  ConnectionSpriteData: {fileID: 0}

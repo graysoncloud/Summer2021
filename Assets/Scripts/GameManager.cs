@@ -28,7 +28,11 @@ public class GameManager : MonoBehaviour
         currentDayIndex = 0;
 
         currentDay = days[currentDayIndex];
+    }
 
+    public Contract GetCurrentContract()
+    {
+        return currentDay.contracts[OfficeSceneManager.instance.currentContractIndex];
     }
 
     public void NextDay()

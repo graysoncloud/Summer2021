@@ -39,4 +39,9 @@ public class CostDisplay : MonoBehaviour
         totalCost -= cost + (chemAmount[chem.name] * chemAmount[chem.name]);
         displayText.text = totalCost.ToString();
     }
+
+    public float GetCost()
+    {
+        return totalCost;
+    }
 }

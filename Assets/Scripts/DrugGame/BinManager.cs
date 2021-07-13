@@ -29,6 +29,7 @@ public class BinManager : MonoBehaviour
             chemBin.ChemicalPrefab = chem;
             chemBin.transform.position = pos;
 
+
             index++;
         }
     }

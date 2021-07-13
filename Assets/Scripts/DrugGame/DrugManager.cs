@@ -20,6 +20,10 @@ public class DrugManager : MonoBehaviour
 
     public SceneChange drugToOfficeSceneChange;
 
+    private DangerBar dangerBar;
+
+    public int desiredChems = 0, undesiredChems = 0;
+
     private void Awake()
     {
         // Singleton Stuff
@@ -34,6 +38,7 @@ public class DrugManager : MonoBehaviour
     private void Start()
     {
         hexGrid = GameObject.FindObjectOfType<HexGrid>().GetComponent<HexGrid>();
+        dangerBar = GameObject.FindObjectOfType<DangerBar>();
     }
 
     void Update()
@@ -157,6 +162,26 @@ public class DrugManager : MonoBehaviour
             }
         }
 
+    }
+
+    public int GetVol()
+    {
+        return dangerBar.GetVol();
+    }
+
+    public float GetCost()
+    {
+        return costDisplay.GetCost();
+    }
+
+    public EffectType GetDesireable()
+    {
+        return GameManager.instance.GetCurrentContract().desirableEffect;
+    }
+
+    public EffectType GetUndesireable()
+    {
+        return GameManager.instance.GetCurrentContract().undesirableEffect;
     }
 
     public void SetConnection(Chemical chemical, int index, string type)

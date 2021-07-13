@@ -280,6 +280,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 3
+  effects: 00000000
+  desirable: 0
+  undesirable: 0
   isPlaced: 0
   isChild: 0
   housingTile: {fileID: 0}
@@ -297,11 +300,8 @@ MonoBehaviour:
   - 
   - 
   - 
-  childIndex1: -1
-  childIndex2: -1
   childConnection1: []
   childConnection2: []
-  ConnectionSpriteData: {fileID: 0}
 --- !u!1 &7272465304228895427
 GameObject:
   m_ObjectHideFlags: 0

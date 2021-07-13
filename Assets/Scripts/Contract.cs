@@ -3,7 +3,21 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+public enum EffectType
+{
+    Analgesic,
+    Antidepressant,
+    Ecstasis,
+    FetalExposure,
+    Headache,
+    Immunosuppressant,
+    Nauseatic,
+    Stimulant,
+
+}
+
 [CreateAssetMenu(fileName = "Contract", menuName = "Contract", order = 1)]
+
 public class Contract : ScriptableObject
 {
     // Need to check in with Harry to get specifics
@@ -33,21 +47,6 @@ public class Contract : ScriptableObject
     public bool usesDesirableEffect;
     public EffectType desirableEffect;
     public int desirableEffectMin;
-
-
-    public enum EffectType
-    {
-        Analgesic,
-        Antidepressant,
-        Ecstasis,
-        FetalExposure,
-        Headache,
-        Immunosuppressant,
-        Nauseatic,
-        Stimulant,
-
-    }
-
 
     [CustomEditor(typeof(Contract))]
     public class MyScriptEditor : Editor

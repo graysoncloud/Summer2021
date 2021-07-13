@@ -28,16 +28,22 @@ public class CostDisplay : MonoBehaviour
 
     public void AddCost(Chemical chem, float cost)
     {
-        totalCost += cost + (chemAmount[chem.name] * chemAmount[chem.name]);
-        displayText.text = totalCost.ToString();
-        chemAmount[chem.name] += 1;
+        if (!chem.isChild)
+        {
+            totalCost += cost + (chemAmount[chem.name] * chemAmount[chem.name]);
+            displayText.text = totalCost.ToString();
+            chemAmount[chem.name] += 1;
+        }
     }
 
     public void RemoveCost(Chemical chem, float cost)
     {
-        chemAmount[chem.name] -= 1;
-        totalCost -= cost + (chemAmount[chem.name] * chemAmount[chem.name]);
-        displayText.text = totalCost.ToString();
+        if (!chem.isChild)
+        {
+            chemAmount[chem.name] -= 1;
+            totalCost -= cost + (chemAmount[chem.name] * chemAmount[chem.name]);
+            displayText.text = totalCost.ToString();
+        }
     }
 
     public float GetCost()

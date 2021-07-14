@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
+using UnityEditor.SceneManagement;
 #endif
 using UnityEngine;
 
@@ -23,6 +24,8 @@ public enum EffectType
 public class Contract : ScriptableObject
 {
     // Need to check in with Harry to get specifics
+
+    public static SceneAsset mainScene;
 
     public string companyName;
     public string description;
@@ -56,6 +59,7 @@ public class Contract : ScriptableObject
     {
         override public void OnInspectorGUI()
         {
+
             var myScript = target as Contract;
 
             myScript.companyName = EditorGUILayout.TextField("Company Name", myScript.companyName);
@@ -99,8 +103,13 @@ public class Contract : ScriptableObject
             }
 
             // Could add multiple desirable / undesirable effects
+            if (GUI.changed)
+            {
+                EditorUtility.SetDirty(myScript);
+            }
 
         }
+
     }
     #endif
 

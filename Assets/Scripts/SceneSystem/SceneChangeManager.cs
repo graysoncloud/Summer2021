@@ -92,6 +92,7 @@ public class SceneChangeManager : MonoBehaviour
         // Strings must match whatevers in the newScene sceneName enumerator, and the scene array must be indexed properly
         switch(sceneChange.newScene.ToString())
         {
+            // Insert things like MRManager.ResetScene() below
             case "MorningRoutineScene": newScene = scenes[0]; break;
             case "OfficeScene": newScene = scenes[1]; break;
             case "DrugGameScene": newScene = scenes[2]; break;

@@ -16,14 +16,14 @@ MonoBehaviour:
   description: Winter is harsh on our citizens- need something to counteract mood
     inconsistencies
   usesMaxVolatility: 1
-  volatilityMax: 8
-  usesMaxPrice: 1
+  volatilityMax: 16
+  usesMaxPrice: 0
   maxPrice: 11
-  usesMinPrice: 0
-  minPrice: 0
+  usesMinPrice: 1
+  minPrice: 10
   usesUndesirableEffect: 0
   undesirableEffect: 0
   undesirableEffectMax: 0
-  usesDesirableEffect: 1
+  usesDesirableEffect: 0
   desirableEffect: 1
   desirableEffectMin: 5

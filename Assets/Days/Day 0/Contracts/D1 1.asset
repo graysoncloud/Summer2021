@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: D1 1
   m_EditorClassIdentifier: 
   companyName: Fredrickson QRL
-  description: Productivity is low- looking for something to rally the troops
+  description: Looking for something to motivate our employees
   usesMaxVolatility: 1
   volatilityMax: 8
   usesMaxPrice: 1

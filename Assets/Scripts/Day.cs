@@ -29,7 +29,7 @@ public class Day : ScriptableObject
             leavingWork,
             dream,
             // Since going to bed and waking up is one combined sequence, waking up events must be specified the day before
-            wakingUpNextDay,
+            wakingUpNextDay
         }
 
     }

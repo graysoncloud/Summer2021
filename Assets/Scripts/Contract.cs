@@ -55,15 +55,25 @@ public class Contract : ScriptableObject
 
     #if UNITY_EDITOR
     [CustomEditor(typeof(Contract))]
-    public class MyScriptEditor : Editor
+    public class ContractEditor : Editor
     {
+
         override public void OnInspectorGUI()
         {
+            // Makes words wrap in text areas
+            GUIStyle myCustomStyle = new GUIStyle(GUI.skin.GetStyle("TextArea"))
+            {
+                wordWrap = true
+            };
 
             var myScript = target as Contract;
 
             myScript.companyName = EditorGUILayout.TextField("Company Name", myScript.companyName);
-            myScript.description = EditorGUILayout.TextArea(myScript.description);
+            EditorGUILayout.LabelField("Description:");
+
+            GUIStyle style = new GUIStyle(EditorStyles.textArea);
+            style.wordWrap = true;
+            myScript.description = EditorGUILayout.TextArea(myScript.description, style);
 
             // Max Volatility
             myScript.usesMaxVolatility = GUILayout.Toggle(myScript.usesMaxVolatility, "Uses Max Volatility");
@@ -108,7 +118,10 @@ public class Contract : ScriptableObject
                 EditorUtility.SetDirty(myScript);
             }
 
+            EditorStyles.textArea.wordWrap = true;
+
         }
+
 
     }
     #endif

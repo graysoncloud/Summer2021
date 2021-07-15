@@ -26,12 +26,15 @@ public class OptionManager : MonoBehaviour
         DialogueUIManager.instance.SetUpForOption();
         currentOption = option;
 
-        for (int i = 0; i < currentOption.options.Length; i++)
+        for (int i = 0; i < currentOption.choices.Length; i++)
         {
+
+
             buttons[i].gameObject.SetActive(true);
-            // Finds text child of button, then sets it text 
+
+
             // The only children of these buttons right now is their text. If this changes, make sure the text is the first child
-            buttons[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentOption.options[i];
+            buttons[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentOption.choices[i].choiceText;
         }
     }
 
@@ -39,6 +42,8 @@ public class OptionManager : MonoBehaviour
     {
         foreach (GameObject button in buttons)
             button.SetActive(false);
+
+        // Execute Consequences
 
         // Note that options must result in conversations right now. It should be possible to run an empty conversation if need be
         ConversationManager.instance.StartConversation(currentOption.possibleConversations[index]);

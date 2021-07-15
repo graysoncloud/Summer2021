@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c747640b685770845b310d0728bc0456, type: 3}
-  m_Name: Day A
+  m_Name: Day 1
   m_EditorClassIdentifier: 
   sequences:
   - initialEvent: {fileID: 11400000, guid: 64891f173f98f1941b972aeba850c7ed, type: 2}

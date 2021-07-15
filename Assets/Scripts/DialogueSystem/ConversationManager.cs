@@ -28,7 +28,6 @@ public class ConversationManager : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()

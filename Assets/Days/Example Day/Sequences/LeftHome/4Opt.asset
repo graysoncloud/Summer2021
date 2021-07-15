@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef0108177cadee74884d6225aac515b5, type: 3}
-  m_Name: 2Opt
+  m_Name: 4Opt
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
   choices:
-  - {fileID: 11400000, guid: 763e2acdccb294a45950222e43081715, type: 2}
-  - {fileID: 11400000, guid: 91a218fd241dcd749a53375c9531ff4a, type: 2}
+  - {fileID: 11400000, guid: ea1b8a56aa7dd924a9ce7b5e053a40f8, type: 2}
+  - {fileID: 11400000, guid: 8f7557b6a6f433c45a44e32bab1af86b, type: 2}
   possibleConversations:
-  - {fileID: 11400000, guid: d48492ced0c0fa249841249440f04be8, type: 2}
-  - {fileID: 11400000, guid: 127bc84657d21b948ab1c6172e33b35f, type: 2}
+  - {fileID: 11400000, guid: 6f075c3912791b341be362af243ebf8d, type: 2}
+  - {fileID: 11400000, guid: 623a0caaed175e349b493cddc0f8d8e0, type: 2}

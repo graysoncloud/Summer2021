@@ -7,16 +7,11 @@ public class ContractDisplayer : MonoBehaviour
 {
     public static ContractDisplayer instance = null;
 
-    [SerializeField]
-    private TextMeshProUGUI companyName;
-    [SerializeField]
-    private TextMeshProUGUI description;
-    [SerializeField]
-    private TextMeshProUGUI spacingDescriptionCopy;
-    [SerializeField]
-    private TextMeshProUGUI[] requirements;
-    [SerializeField]
-    private TextMeshProUGUI[] values;
+    public TextMeshProUGUI companyName;
+    public TextMeshProUGUI description;
+    public TextMeshProUGUI spacingDescriptionCopy;
+    public TextMeshProUGUI[] requirements;
+    public TextMeshProUGUI[] values;
 
     private void Awake()
     {

@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
         currentDayIndex = 0;
 
         currentDay = days[currentDayIndex];
+
+        PlayerPrefs.DeleteAll();
+
     }
 
     public Contract GetCurrentContract()

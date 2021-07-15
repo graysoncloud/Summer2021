@@ -10,19 +10,19 @@ public class Choice : ScriptableObject
     [TextArea]
     public string choiceText;
 
-    public bool attitudeCheck;
+    public bool checkAttitude;
     public CharacterName characterToCheck;
     public AttitudeComparison comparison;
-    public int amountToCompare;
+    public int attitudeValueToCompare;
 
-    public bool eventCheck;
+    public bool checkEvent;
     public GameManager.SavedEvent eventToCheck;
 
     public bool changesAttitude;
     public CharacterName attitudeToChange;
-    public int amountToChange;
+    public int amountToAlter;
 
-    public bool logEvent;
+    public bool logsEvent;
     public GameManager.SavedEvent eventToLog;
 
     public enum AttitudeComparison
@@ -46,16 +46,16 @@ public class Choice : ScriptableObject
             style.wordWrap = true;
             myScript.choiceText = EditorGUILayout.TextArea(myScript.choiceText, style);
 
-            myScript.attitudeCheck = GUILayout.Toggle(myScript.attitudeCheck, "Attitude Check");
-            if (myScript.attitudeCheck && !myScript.eventCheck)
+            myScript.checkAttitude = GUILayout.Toggle(myScript.checkAttitude, "Attitude Check");
+            if (myScript.checkAttitude && !myScript.checkEvent)
             {
                 myScript.characterToCheck = (CharacterName)EditorGUILayout.EnumPopup("Character to Check", myScript.characterToCheck);
                 myScript.comparison = (AttitudeComparison)EditorGUILayout.EnumPopup("Comparison", myScript.comparison);
-                myScript.amountToCompare = EditorGUILayout.IntField("Amount", myScript.amountToCompare);
+                myScript.attitudeValueToCompare = EditorGUILayout.IntField("Amount", myScript.attitudeValueToCompare);
             }
 
-            myScript.eventCheck = GUILayout.Toggle(myScript.eventCheck, "Event Check");
-            if (myScript.eventCheck && !myScript.attitudeCheck)
+            myScript.checkEvent = GUILayout.Toggle(myScript.checkEvent, "Event Check");
+            if (myScript.checkEvent && !myScript.checkAttitude)
             {
                 myScript.eventToCheck = (GameManager.SavedEvent)EditorGUILayout.EnumPopup("Event to Check", myScript.eventToCheck);
             }
@@ -64,13 +64,18 @@ public class Choice : ScriptableObject
             if (myScript.changesAttitude)
             {
                 myScript.attitudeToChange = (CharacterName)EditorGUILayout.EnumPopup("Attitude To Change", myScript.attitudeToChange);
-                myScript.amountToCompare = EditorGUILayout.IntField("Amount", myScript.amountToCompare);
+                myScript.amountToAlter = EditorGUILayout.IntField("Amount", myScript.amountToAlter);
             }
 
-            myScript.logEvent = GUILayout.Toggle(myScript.logEvent, "Logs Event");
-            if (myScript.logEvent)
+            myScript.logsEvent = GUILayout.Toggle(myScript.logsEvent, "Logs Event");
+            if (myScript.logsEvent)
             {
                 myScript.eventToLog = (GameManager.SavedEvent)EditorGUILayout.EnumPopup("Event to Log", myScript.eventToLog);
+            }
+
+            if (GUI.changed)
+            {
+                EditorUtility.SetDirty(myScript);
             }
 
         }

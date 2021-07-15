@@ -118,8 +118,6 @@ public class Contract : ScriptableObject
                 EditorUtility.SetDirty(myScript);
             }
 
-            EditorStyles.textArea.wordWrap = true;
-
         }
 
 

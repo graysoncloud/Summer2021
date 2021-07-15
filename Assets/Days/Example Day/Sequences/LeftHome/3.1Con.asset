@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 3.1Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
-  dialogueLines: []
+  nextEvent: {fileID: 11400000, guid: a828f4ee6617bce45854609572be833d, type: 2}
+  dialogueLines:
+  - speaker: 0
+    dialogue: attitude choice success
+    offset: {x: 0, y: 0}

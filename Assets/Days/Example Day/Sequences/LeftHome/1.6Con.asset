@@ -15,7 +15,7 @@ MonoBehaviour:
   nextEvent: {fileID: 11400000, guid: 89a19713387bad448b2239d28e8774af, type: 2}
   dialogueLines:
   - speaker: 0
-    dialogue: Woah howd u get here
+    dialogue: Woah i'm in the scene now
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 0

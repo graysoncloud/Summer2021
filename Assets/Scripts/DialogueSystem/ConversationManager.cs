@@ -43,6 +43,8 @@ public class ConversationManager : MonoBehaviour
      */
     public void StartConversation(Conversation conversation)
     {
+        GameManager.instance.sequenceActive = true;
+
         // May be redundant but there's not really a need for a second inConversation variable
         DialogueUIManager.instance.SetUpForConversation();
 
@@ -145,10 +147,8 @@ public class ConversationManager : MonoBehaviour
             DialogueUIManager.instance.characterTextObject.text = "";
         }
 
-        if (currentConversation.nextEvent == null)
-            EndConversation();
-        else
-            GameManager.instance.StartSequence(currentConversation.nextEvent);
+
+        GameManager.instance.StartSequence(currentConversation.nextEvent);
 
         // Don't need to destroy because we're just using the prefab without instantiating
         //Destroy(currentConversation);
@@ -182,6 +182,8 @@ public class ConversationManager : MonoBehaviour
 
         while (currentEvent.nextEvent != null)
         {
+            GameManager.instance.sequenceActive = false;
+
             //Debug.Log(currentEvent.GetType().ToString());
 
             breaker++;

@@ -43,7 +43,10 @@ public class SceneChangeManager : MonoBehaviour
         fadeOutCover.gameObject.SetActive(false);
     }
 
-    public void StartSceneChange(SceneChange sceneChange) {
+    public void StartSceneChange(SceneChange sceneChange) 
+    {
+        GameManager.instance.sequenceActive = true;
+
         DialogueUIManager.instance.SetUpForSceneChange();
         StartCoroutine(ExecuteSceneChange(sceneChange));
     }
@@ -136,10 +139,8 @@ public class SceneChangeManager : MonoBehaviour
 
         yield return new WaitForSeconds(sceneChange.postdelay);
 
-        if (sceneChange.nextEvent == null)
-            ConversationManager.instance.EndConversation();
-        else
-            GameManager.instance.StartSequence(sceneChange.nextEvent);
+        // 
+        bool triggeredSequence = false;
 
         if(oldSceneName == "MorningRoutineScene" && currentScene.gameObject.name == "OfficeScene")
         {
@@ -147,10 +148,14 @@ public class SceneChangeManager : MonoBehaviour
             {
                 if (sequence.trigger.ToString() == "arrivingAtWork")
                 {
+                    triggeredSequence = true;
                     GameManager.instance.StartSequence(sequence.initialEvent);
                 }
             }
         }
+
+        if (!triggeredSequence)
+            GameManager.instance.StartSequence(sceneChange.nextEvent);
 
     }
 

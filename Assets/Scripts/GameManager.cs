@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public int currentDayIndex;
     public Day currentDay;
 
+    public bool sequenceActive;
+    public bool optionsMenuActive;
+
     private void Awake()
     {
         // Singleton Stuff
@@ -27,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         // Should be an if statement to allow for save loading (ideally would just specify the day you're on
         currentDayIndex = 0;
+        sequenceActive = false;
 
         currentDay = days[currentDayIndex];
 
@@ -55,7 +59,13 @@ public class GameManager : MonoBehaviour
 
     public void StartSequence(ScriptableObject toExecute)
     {
-        if (toExecute.GetType().ToString() == "Conversation")
+        if (toExecute == null)
+        {
+            ConversationManager.instance.EndConversation();
+            GameManager.instance.sequenceActive = false;
+        }
+
+        else if (toExecute.GetType().ToString() == "Conversation")
         {
             ConversationManager.instance.StartConversation((Conversation)toExecute);
         }
@@ -78,7 +88,7 @@ public class GameManager : MonoBehaviour
         else if (toExecute.GetType().ToString() == "CharacterFade")
         {
             CharacterFadeManager.instance.StartCharacterFade((CharacterFade)toExecute);
-        }
+        } 
 
     }
 

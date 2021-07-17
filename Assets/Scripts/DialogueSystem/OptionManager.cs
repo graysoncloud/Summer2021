@@ -26,6 +26,8 @@ public class OptionManager : MonoBehaviour
 
     public void StartOption(Option option)
     {
+        GameManager.instance.sequenceActive = true;
+
         currentOption = option;
 
         // This block of code allows instant forks to occur (no choosing necessary)

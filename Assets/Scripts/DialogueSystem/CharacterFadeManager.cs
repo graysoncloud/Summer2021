@@ -33,6 +33,8 @@ public class CharacterFadeManager : MonoBehaviour
 
     public void StartCharacterFade(CharacterFade fadeObject)
     {
+        GameManager.instance.sequenceActive = true;
+
         DialogueUIManager.instance.SetUpForCharacterFade();
 
         currentFadeObject = fadeObject;

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: Con1
   m_EditorClassIdentifier: 
+  nextEvent: {fileID: 0}
   dialogueLines:
   - speaker: 0
-    dialogue: One down, a few to go...
+    dialogue: Made it to work!
     offset: {x: 0, y: 0}
-  nextEvent: {fileID: 0}
+    animations: []

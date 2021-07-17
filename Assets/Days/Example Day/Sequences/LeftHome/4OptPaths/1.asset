@@ -19,7 +19,7 @@ MonoBehaviour:
   attitudeValueToCompare: 105
   checkEvent: 1
   eventToCheck: 0
-  changesAttitude: 0
+  changesAttitude: 1
   attitudeToChange: 0
   amountToAlter: 0
   logsEvent: 0

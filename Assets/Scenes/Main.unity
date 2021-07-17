@@ -587,7 +587,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4b7c56cf83379469231e86085f163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attitude: 0
+  defaultAnimation: 0
+  defaultLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &64008180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,6 +1765,7 @@ Transform:
   m_Children:
   - {fileID: 2003548643}
   - {fileID: 1192841187}
+  - {fileID: 1895019254}
   - {fileID: 418089078}
   - {fileID: 566389061}
   - {fileID: 1879730436}
@@ -5885,7 +5887,7 @@ Transform:
   m_Children:
   - {fileID: 824609057}
   m_Father: {fileID: 137353600}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &431988400
 GameObject:
@@ -8228,7 +8230,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 137353600}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &578985922
 GameObject:
@@ -11802,7 +11804,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1879730435}
         m_TargetAssemblyTypeName: OptionManager, Assembly-CSharp
-        m_MethodName: ExecuteChoice
+        m_MethodName: ExecutePath
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14193,7 +14195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4b7c56cf83379469231e86085f163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attitude: 0
+  defaultAnimation: 0
+  defaultLocation: {x: 0, y: 0, z: 0}
 --- !u!4 &1087464513
 Transform:
   m_ObjectHideFlags: 0
@@ -15293,7 +15296,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScene: {fileID: 0}
   fadeOutCover: {fileID: 1862985148}
-  characterPool: {fileID: 2003548642}
   startingScene: {fileID: 11400000, guid: e2f4f35f992eef047ad8add7bccae219, type: 2}
   scenes:
   - {fileID: 156543537}
@@ -20645,7 +20647,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1879730435}
         m_TargetAssemblyTypeName: OptionManager, Assembly-CSharp
-        m_MethodName: ExecuteChoice
+        m_MethodName: ExecutePath
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22050,7 +22052,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4b7c56cf83379469231e86085f163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attitude: 0
+  defaultAnimation: 0
+  defaultLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &1680038803
 GameObject:
   m_ObjectHideFlags: 0
@@ -22348,7 +22351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4b7c56cf83379469231e86085f163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attitude: 0
+  defaultAnimation: 0
+  defaultLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &1702665566
 GameObject:
   m_ObjectHideFlags: 0
@@ -22759,7 +22763,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4b7c56cf83379469231e86085f163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attitude: 0
+  defaultAnimation: 0
+  defaultLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &1710066680
 GameObject:
   m_ObjectHideFlags: 0
@@ -23747,7 +23752,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1879730435}
         m_TargetAssemblyTypeName: OptionManager, Assembly-CSharp
-        m_MethodName: ExecuteChoice
+        m_MethodName: ExecutePath
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25171,7 +25176,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 137353600}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1880885208
 GameObject:
@@ -25216,7 +25221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4b7c56cf83379469231e86085f163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attitude: 0
+  defaultAnimation: 0
+  defaultLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &1887585661
 GameObject:
   m_ObjectHideFlags: 0
@@ -25542,6 +25548,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1895019253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1895019254}
+  - component: {fileID: 1895019255}
+  m_Layer: 0
+  m_Name: CharacterFadeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1895019254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895019253}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 137353600}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1895019255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895019253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd1d657fec2a3e459ec2d2fef898a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterPrefabs:
+  - {fileID: 6747791553878151686, guid: e0d83b0572dc20c4eaa208e2d75c02cb, type: 3}
+  numActiveFades: 0
 --- !u!1 &1898226366
 GameObject:
   m_ObjectHideFlags: 0
@@ -25585,7 +25637,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 137353600}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1911850406
 GameObject:
@@ -26000,7 +26052,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4b7c56cf83379469231e86085f163b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attitude: 0
+  defaultAnimation: 0
+  defaultLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &1966671104
 GameObject:
   m_ObjectHideFlags: 0
@@ -26558,7 +26611,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2003548643
 Transform:
   m_ObjectHideFlags: 0
@@ -27816,7 +27869,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1879730435}
         m_TargetAssemblyTypeName: OptionManager, Assembly-CSharp
-        m_MethodName: ExecuteChoice
+        m_MethodName: ExecutePath
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 5.1Con
+  m_Script: {fileID: 11500000, guid: fd5a681f375878044ba0aba0d7a3a9a8, type: 3}
+  m_Name: 1.5Fade
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 1513de40ad11cac429eb641b28dfdb4b, type: 2}
-  dialogueLines:
-  - speaker: 0
-    dialogue: You did it
-    offset: {x: 0, y: 0}
+  nextEvent: {fileID: 11400000, guid: d248cae442c4d944e9a471877dd808bc, type: 2}
+  characterFades:
+  - characterToFade: 0
+    animationName: 0
+    fadeIn: 1

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 5.1Con
+  m_Name: 6Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 1513de40ad11cac429eb641b28dfdb4b, type: 2}
+  nextEvent: {fileID: 11400000, guid: 46c55c57d2446ac43a677b068d112270, type: 2}
   dialogueLines:
   - speaker: 0
-    dialogue: You did it
+    dialogue: Now for an auto fork!
     offset: {x: 0, y: 0}

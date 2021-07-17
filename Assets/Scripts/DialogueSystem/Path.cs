@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CreateAssetMenu(fileName = "Choice", menuName = "Choice", order = 1)]
+[CreateAssetMenu(fileName = "Path", menuName = "Path", order = 1)]
 [System.Serializable]
-public class Choice : ScriptableObject
+public class Path : ScriptableObject
 {
     [TextArea]
     public string choiceText;
@@ -32,14 +32,14 @@ public class Choice : ScriptableObject
     }
 
     #if UNITY_EDITOR
-    [CustomEditor(typeof(Choice))]
+    [CustomEditor(typeof(Path))]
     public class ChoiceEditor : Editor
     {
 
         override public void OnInspectorGUI()
         {
 
-            var myScript = target as Choice;
+            var myScript = target as Path;
 
             EditorGUILayout.LabelField("Choice Text:");
             GUIStyle style = new GUIStyle(EditorStyles.textArea);

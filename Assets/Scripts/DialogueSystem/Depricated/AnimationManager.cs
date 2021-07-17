@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Depricated: Animations handled in conversation script
+ */
 public class AnimationManager : MonoBehaviour
 {
     public static AnimationManager instance = null;
@@ -88,3 +91,4 @@ public class AnimationManager : MonoBehaviour
     }
 
 }
+

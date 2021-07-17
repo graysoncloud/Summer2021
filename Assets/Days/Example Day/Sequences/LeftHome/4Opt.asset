@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 4Opt
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
-  choices:
+  automatic: 0
+  paths:
   - {fileID: 11400000, guid: ea1b8a56aa7dd924a9ce7b5e053a40f8, type: 2}
   - {fileID: 11400000, guid: 8f7557b6a6f433c45a44e32bab1af86b, type: 2}
   possibleConversations:

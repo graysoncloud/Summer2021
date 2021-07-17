@@ -24,10 +24,57 @@ public class OptionManager : MonoBehaviour
 
     }
 
-    public void PresentOption(Option option)
+    public void StartOption(Option option)
     {
-        DialogueUIManager.instance.SetUpForOption();
         currentOption = option;
+
+        // This block of code allows instant forks to occur (no choosing necessary)
+        if (option.automatic)
+        {
+            for (int i = 0; i < option.paths.Length; i++)
+            {
+                if (option.paths[i].checkAttitude)
+                {
+                    string attitudeToCheck = option.paths[i].characterToCheck.ToString() + "Attitude";
+                    if (option.paths[i].comparison.ToString() == "greaterThanOrEqual")
+                    {
+                        if (PlayerPrefs.GetInt(attitudeToCheck) >= option.paths[i].attitudeValueToCompare)
+                            ExecutePath(i);
+                        return;
+                    }
+                    else if (option.paths[i].comparison.ToString() == "lessThanOrEqual")
+                    {
+                        if (PlayerPrefs.GetInt(attitudeToCheck) <= option.paths[i].attitudeValueToCompare)
+                            ExecutePath(i);
+                        return;
+                    }
+                    else
+                    {
+                        Debug.LogError("Invalid comparator: " + option.paths[i].comparison.ToString());
+                    }
+                }
+                else if (option.paths[i].checkEvent)
+                {
+                    if (PlayerPrefs.GetInt(option.paths[i].eventToCheck.ToString()) == 1)
+                    {
+                        ExecutePath(i);
+                        return;
+                    }
+                } 
+                // Default path, if no restrictions are present
+                else if (!option.paths[i].checkEvent && !option.paths[i].checkAttitude)
+                {
+                    ExecutePath(i);
+                    return;
+                }
+            }
+
+            Debug.LogError("No valid (default) pathway detected");
+        }
+
+
+
+        DialogueUIManager.instance.SetUpForOption();
 
         // Reset remnants of disabled buttons form previous option
         foreach (GameObject button in buttons)
@@ -37,35 +84,37 @@ public class OptionManager : MonoBehaviour
 
         }
 
-        for (int i = 0; i < currentOption.choices.Length; i++)
+        for (int i = 0; i < currentOption.paths.Length; i++)
         {
-            Choice currentChoice = currentOption.choices[i];
+            Path currentPath = currentOption.paths[i];
             bool enabled = false;
 
             // Determine if choice will be choosable, or greyed out. Currently, choices can be enabled / disabled by prerequisite events and character attitudes
-            if (currentChoice.checkAttitude)
+            if (currentPath.checkAttitude)
             {
-                Character charToCheck = SceneChangeManager.instance.characterPool.transform.Find(currentChoice.characterToCheck.ToString()).GetComponent<Character>();
-                if (currentChoice.comparison.ToString() == "greaterThanOrEqual")
+
+                string attitudeToCheck = currentPath.characterToCheck.ToString() + "Attitude";
+
+                if (currentPath.comparison.ToString() == "greaterThanOrEqual")
                 {
-                    if (charToCheck.attitude >= currentChoice.attitudeValueToCompare)
+                    if (PlayerPrefs.GetInt(attitudeToCheck) >= currentPath.attitudeValueToCompare)
                         enabled = true;
                 } 
-                else if (currentChoice.comparison.ToString() == "lessThanOrEqual")
+                else if (currentPath.comparison.ToString() == "lessThanOrEqual")
                 {
-                    if (charToCheck.attitude <= currentChoice.attitudeValueToCompare)
+                    if ((PlayerPrefs.GetInt(attitudeToCheck) <= currentPath.attitudeValueToCompare))
                         enabled = true;
                 }
                 else
                 {
-                    Debug.LogError("Invalid comparator: " + currentChoice.comparison.ToString());
+                    Debug.LogError("Invalid comparator: " + currentPath.comparison.ToString());
                 }
 
             } 
-            else if (currentChoice.checkEvent)
+            else if (currentPath.checkEvent)
             {
                 // If player prefs had bools this would look a bit simpler. As is, 1 is on, 0 is off
-                if (PlayerPrefs.GetInt(currentChoice.eventToCheck.ToString()) == 1)
+                if (PlayerPrefs.GetInt(currentPath.eventToCheck.ToString()) == 1)
                 {
                     enabled = true;
                 }
@@ -88,20 +137,19 @@ public class OptionManager : MonoBehaviour
 
 
             // The only children of these buttons right now is their text. If this changes, make sure the text is the first child
-            buttons[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentOption.choices[i].choiceText;
+            buttons[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentOption.paths[i].choiceText;
         }
     }
 
-    public void ExecuteChoice(int index)
+    public void ExecutePath(int index)
     {
-        Choice choiceToExecute = currentOption.choices[index];
+        Path choiceToExecute = currentOption.paths[index];
 
         if (choiceToExecute.changesAttitude)
         {
             // Attitude To Change is a charName enumerator
-            Character charToChange = SceneChangeManager.instance.characterPool.transform.Find(choiceToExecute.attitudeToChange.ToString()).GetComponent<Character>();
-            Debug.Log(charToChange.name);
-            charToChange.attitude += choiceToExecute.amountToAlter;
+            string charToChange = choiceToExecute.attitudeToChange.ToString();
+            PlayerPrefs.SetInt(charToChange + "Attitude", PlayerPrefs.GetInt(charToChange + "Attitude") + choiceToExecute.amountToAlter);
         }
 
         if (choiceToExecute.logsEvent)

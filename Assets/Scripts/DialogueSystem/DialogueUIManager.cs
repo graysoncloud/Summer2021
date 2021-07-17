@@ -24,9 +24,9 @@ public class DialogueUIManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    // Possibly could change
     public void SetUpForOption()
     {
+        UIParent.SetActive(true);
         characterParentObject.SetActive(false);
     }
 
@@ -42,6 +42,11 @@ public class DialogueUIManager : MonoBehaviour
     }
 
     public void SetUpForSceneChange()
+    {
+        UIParent.SetActive(false);
+    }
+
+    public void SetUpForCharacterFade()
     {
         UIParent.SetActive(false);
     }

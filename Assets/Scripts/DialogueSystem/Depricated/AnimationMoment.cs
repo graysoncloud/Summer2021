@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Depricated: Animations handled in conversation script
+ */
 [System.Serializable]
-[CreateAssetMenu(fileName = "AnimationMoment", menuName = "AnimationMoment", order = 1)]
+//[CreateAssetMenu(fileName = "AnimationMoment", menuName = "AnimationMoment", order = 1)]
 public class AnimationMoment : ScriptableEvent
 {
     public CharacterName charName;
@@ -24,5 +27,3 @@ public class AnimationMoment : ScriptableEvent
 
     // Might add a bool that specifies if you should wait for a click after animation is done (end of scenes)
 }
-
-public enum AnimationName { Walk, Wave, Sit, Run, Idle, Standing}

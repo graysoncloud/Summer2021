@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef0108177cadee74884d6225aac515b5, type: 3}
-  m_Name: 2Opt
+  m_Name: 7Fork
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
-  automatic: 0
+  automatic: 1
   paths:
-  - {fileID: 11400000, guid: 763e2acdccb294a45950222e43081715, type: 2}
-  - {fileID: 11400000, guid: 91a218fd241dcd749a53375c9531ff4a, type: 2}
+  - {fileID: 11400000, guid: f81010fe1e0856f4583553d03bce6eb8, type: 2}
+  - {fileID: 11400000, guid: 72a6ef7ca79cba04aabc350648f48a67, type: 2}
   possibleConversations:
-  - {fileID: 11400000, guid: d48492ced0c0fa249841249440f04be8, type: 2}
-  - {fileID: 11400000, guid: 127bc84657d21b948ab1c6172e33b35f, type: 2}
+  - {fileID: 11400000, guid: ad74565607c639e4ebd6c78f295fb1e6, type: 2}
+  - {fileID: 11400000, guid: 945895ce628aa6c4c92c1eedc02ac694, type: 2}

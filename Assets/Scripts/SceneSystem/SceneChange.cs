@@ -6,7 +6,7 @@ using UnityEngine;
 public class SceneChange : ScriptableEvent
 {
     public SceneName newScene;
-    public CharacterInstantiation[] characters;
+    //public CharacterInstantiation[] characters;
     public TransitionStyle transitionStyle;
 
     public float predelay;

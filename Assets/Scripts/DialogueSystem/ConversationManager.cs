@@ -72,6 +72,31 @@ public class ConversationManager : MonoBehaviour
             DialogueUIManager.instance.characterTextObject.text = currentConversation.dialogueLines[i].speaker.ToString();
             DialogueUIManager.instance.dialogueTextObject.text = currentConversation.dialogueLines[i].dialogue;
 
+
+            // Adjust character animations
+            foreach (Conversation.AnimationBit anim in conversation.dialogueLines[i].animations)
+            {
+                //Character toAnimate = CharacterFadeManager.instance.currentChars[anim.toAnimate.ToString()];
+
+                //foreach (AnimationClip animClip in toAnimate.GetComponent<Animator>().runtimeAnimatorController.animationClips)
+                //{
+                //    Debug.Log(animClip.name);
+                //    Debug.Log(anim.animationName.ToString());
+                //    Debug.Log(animClip.name == anim.animationName.ToString());
+
+                //    if (animClip.name == anim.animationName.ToString()) {
+                //        toAnimate.GetComponent<Animator>().Play(animClip.name);
+                //    }
+
+                //}
+
+                Character toAnimate = CharacterFadeManager.instance.currentChars[anim.toAnimate.ToString()];
+                toAnimate.GetComponent<Animator>().Play(currentConversation.dialogueLines[i].animations[0].animationName.ToString());
+
+
+            }
+
+
             // Reveals dialogue one letter at a time; fastforward on first click, instantly finish on second
             waitingForClick = true;
             bool readbackSpeedChanged = false;
@@ -157,7 +182,7 @@ public class ConversationManager : MonoBehaviour
 
         while (currentEvent.nextEvent != null)
         {
-            Debug.Log(currentEvent.GetType().ToString());
+            //Debug.Log(currentEvent.GetType().ToString());
 
             breaker++;
             if (breaker > 10)

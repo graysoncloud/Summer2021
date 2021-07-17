@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15f2c2874d4a210459b67163429fe28c, type: 3}
-  m_Name: 5SC
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 8.2Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
-  newScene: 1
-  characters: []
-  transitionStyle: 1
-  predelay: 0
-  postdelay: 0
-  increaseDay: 0
+  nextEvent: {fileID: 11400000, guid: 7abd3e39a2cf90f41af3f290ab47a4fd, type: 2}
+  dialogueLines:
+  - speaker: 0
+    dialogue: You did not punch your mom
+    offset: {x: 0, y: 0}
+  animations: []

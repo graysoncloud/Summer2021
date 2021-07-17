@@ -11,12 +11,12 @@ public class SceneChangeManager : MonoBehaviour
     // Current scene is a parent game object of a given scene
 
     public GameObject currentScene;
-    private List<Character> activeCharacters;
+    //private List<Character> activeCharacters;
 
     [SerializeField]
     Image fadeOutCover;
 
-    public GameObject characterPool;
+    //public GameObject characterPool;
     // Not used
     public SceneChange startingScene;
 
@@ -38,7 +38,7 @@ public class SceneChangeManager : MonoBehaviour
 
     private void Start()
     {
-        activeCharacters = new List<Character>();
+        //activeCharacters = new List<Character>();
         StartSceneChange(startingScene);
         fadeOutCover.gameObject.SetActive(false);
     }
@@ -73,16 +73,19 @@ public class SceneChangeManager : MonoBehaviour
         if (currentScene != null)
             currentScene.SetActive(false);
 
-        // Remove old characters
-        if (activeCharacters != null) {
-            foreach (Character character in activeCharacters)
-            {
-                character.transform.parent = characterPool.transform;
-                character.gameObject.SetActive(false);
-                // Something to reset the characters animation / anything else?
-            }
-        }
-        activeCharacters = new List<Character>();
+        /*
+         * Depricated: characters instantiated in their own scriptable object
+         */
+        //// Remove old characters
+        //if (activeCharacters != null) {
+        //    foreach (Character character in activeCharacters)
+        //    {
+        //        character.transform.parent = characterPool.transform;
+        //        character.gameObject.SetActive(false);
+        //        // Something to reset the characters animation / anything else?
+        //    }
+        //}
+        //activeCharacters = new List<Character>();
 
         // Turn on new scene and assign it to scene manager's current scene field
         GameObject newScene = null;
@@ -102,18 +105,22 @@ public class SceneChangeManager : MonoBehaviour
         newScene.gameObject.SetActive(true);
         currentScene = newScene;
 
-        // Add in new characters
-        foreach (SceneChange.CharacterInstantiation characterInstantiation in sceneChange.characters)
-        {
-            Character charToInstantiate = characterPool.transform.Find(characterInstantiation.character.ToString()).GetComponent<Character>();
 
-            charToInstantiate.transform.parent = newScene.transform;
-            // Note this may change z value and result in weird rendering. 
-            charToInstantiate.transform.position = characterInstantiation.location;
-            charToInstantiate.gameObject.SetActive(true);
-            charToInstantiate.GetComponent<Animator>().Play(characterInstantiation.animation.ToString());
-            activeCharacters.Add(charToInstantiate);
-        }
+        /*
+         * Depricated, characters now added in by there own scriptable object
+         */
+        // Add in new characters
+        //foreach (SceneChange.CharacterInstantiation characterInstantiation in sceneChange.characters)
+        //{
+        //    Character charToInstantiate = characterPool.transform.Find(characterInstantiation.character.ToString()).GetComponent<Character>();
+
+        //    charToInstantiate.transform.parent = newScene.transform;
+        //    // Note this may change z value and result in weird rendering. 
+        //    charToInstantiate.transform.position = characterInstantiation.location;
+        //    charToInstantiate.gameObject.SetActive(true);
+        //    charToInstantiate.GetComponent<Animator>().Play(characterInstantiation.animation.ToString());
+        //    activeCharacters.Add(charToInstantiate);
+        //}
 
         yield return new WaitForSeconds(midFadeDelay);
 

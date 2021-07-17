@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,12 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.DeleteAll();
 
+        foreach (CharacterName character in Enum.GetValues(typeof(CharacterName)))
+        {
+            // Load save state here
+            PlayerPrefs.SetInt(character.ToString() + "Attitude", 150);
+        }
+
     }
 
     public Contract GetCurrentContract()
@@ -55,7 +62,7 @@ public class GameManager : MonoBehaviour
 
         else if (toExecute.GetType().ToString() == "Option")
         {
-            OptionManager.instance.PresentOption((Option)toExecute);
+            OptionManager.instance.StartOption((Option)toExecute);
         }
 
         else if (toExecute.GetType().ToString() == "SceneChange")
@@ -66,6 +73,11 @@ public class GameManager : MonoBehaviour
         else if (toExecute.GetType().ToString() == "AnimationMoment")
         {
             AnimationManager.instance.StartAnimationMoment((AnimationMoment)toExecute);
+        }
+
+        else if (toExecute.GetType().ToString() == "CharacterFade")
+        {
+            CharacterFadeManager.instance.StartCharacterFade((CharacterFade)toExecute);
         }
 
     }

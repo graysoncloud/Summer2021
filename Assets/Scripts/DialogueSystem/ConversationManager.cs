@@ -78,19 +78,6 @@ public class ConversationManager : MonoBehaviour
             // Adjust character animations
             foreach (Conversation.AnimationBit anim in conversation.dialogueLines[i].animations)
             {
-                //Character toAnimate = CharacterFadeManager.instance.currentChars[anim.toAnimate.ToString()];
-
-                //foreach (AnimationClip animClip in toAnimate.GetComponent<Animator>().runtimeAnimatorController.animationClips)
-                //{
-                //    Debug.Log(animClip.name);
-                //    Debug.Log(anim.animationName.ToString());
-                //    Debug.Log(animClip.name == anim.animationName.ToString());
-
-                //    if (animClip.name == anim.animationName.ToString()) {
-                //        toAnimate.GetComponent<Animator>().Play(animClip.name);
-                //    }
-
-                //}
 
                 Character toAnimate = CharacterFadeManager.instance.currentChars[anim.toAnimate.ToString()];
                 toAnimate.GetComponent<Animator>().Play(currentConversation.dialogueLines[i].animations[0].animationName.ToString());

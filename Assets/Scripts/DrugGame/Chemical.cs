@@ -462,7 +462,7 @@ public class Chemical : MonoBehaviour
             // Neutral conditions:
             else if (adjacentConnectionType == "Neutral")
             {
-                connectionStatuses[statusIndex] = "Positive";
+                connectionStatuses[statusIndex] = "Neutral";
                 AttemptSetStatus(statusIndex, adjacentTile, "Neutral");
             }
 
@@ -491,7 +491,7 @@ public class Chemical : MonoBehaviour
             // Neutral conditions:
             else if (adjacentConnectionType == "Neutral")
             {
-                connectionStatuses[statusIndex] = "Negative";
+                connectionStatuses[statusIndex] = "Neutral";
                 AttemptSetStatus(statusIndex, adjacentTile, "Neutral");
             }
 
@@ -514,7 +514,7 @@ public class Chemical : MonoBehaviour
             else if (adjacentConnectionType == "Negative" || adjacentConnectionType == "Positive")
             {
                 // If the names for connection statuses are changed, this will be buggy. But it works as is.
-                connectionStatuses[statusIndex] = adjacentConnectionType;
+                connectionStatuses[statusIndex] = "Neutral";
                 AttemptSetStatus(statusIndex, adjacentTile, "Neutral");
             }
 
@@ -591,7 +591,7 @@ public class Chemical : MonoBehaviour
 
     private void AttemptSetStatus(int statusIndex, HexTile adjacentTile, string status)
     {
-        if (adjacentTile != null && adjacentTile.storedChemical != null)
+        if (adjacentTile != null && adjacentTile.storedChemical != null && adjacentTile.storedChemical.GetConnectionTypeSingle((statusIndex + 3) % 6) != "None")
             adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, status);
     }
 

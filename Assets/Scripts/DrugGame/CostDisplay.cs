@@ -30,7 +30,7 @@ public class CostDisplay : MonoBehaviour
     {
         if (!chem.isChild)
         {
-            totalCost += cost + (chemAmount[chem.name] * chemAmount[chem.name]);
+            totalCost += cost + chemAmount[chem.name];
             displayText.text = totalCost.ToString();
             chemAmount[chem.name] += 1;
         }
@@ -41,7 +41,7 @@ public class CostDisplay : MonoBehaviour
         if (!chem.isChild)
         {
             chemAmount[chem.name] -= 1;
-            totalCost -= cost + (chemAmount[chem.name] * chemAmount[chem.name]);
+            totalCost -= cost + chemAmount[chem.name];
             displayText.text = totalCost.ToString();
         }
     }

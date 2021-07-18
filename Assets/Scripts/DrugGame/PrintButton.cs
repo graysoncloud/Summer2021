@@ -7,7 +7,6 @@ public class PrintButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("test");
         if (Printer.instance.solutionPrinted == true)
         {
             // produce visual error
@@ -27,7 +26,7 @@ public class PrintButton : MonoBehaviour
             // Display a "solution printed", prevent further editing
         }
         else
-            Debug.Log("fail");
+            Debug.Log("Contract conditions not achived");
     }
 
 

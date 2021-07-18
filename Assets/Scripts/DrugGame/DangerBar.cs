@@ -49,7 +49,10 @@ public class DangerBar : MonoBehaviour
         }
 
         dangerText.text = dangerValue.ToString();
-        if (dangerValue * 4 < dangerBG.transform.localScale.x * dangerBG.size.x)
+        if (dangerValue < 0)
+        {
+            dangerBar.transform.localScale = new Vector3(0, dangerBar.transform.localScale.y, dangerBar.transform.localScale.z);
+        } else if (dangerValue * 4 < dangerBG.transform.localScale.x * dangerBG.size.x)
         {
             dangerBar.transform.localScale = new Vector3(dangerValue * 4, dangerBar.transform.localScale.y, dangerBar.transform.localScale.z);
         } else

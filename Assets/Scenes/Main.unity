@@ -588,7 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultAnimation: 0
-  defaultLocation: {x: 0, y: 0, z: 0}
+  startLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &64008180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,6 +1791,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 43c23f096ba49e94f85e1a4cc5c0a6b3, type: 2}
   currentDayIndex: 0
   currentDay: {fileID: 0}
+  sequenceActive: 0
+  optionsMenuActive: 0
 --- !u!1 &147361327
 GameObject:
   m_ObjectHideFlags: 0
@@ -3315,7 +3317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Company Name
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5287,7 +5289,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 12
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5714,7 +5716,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Req 2
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9622,7 +9624,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 7
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11235,7 +11237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14196,7 +14198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultAnimation: 0
-  defaultLocation: {x: 0, y: 0, z: 0}
+  startLocation: {x: 0, y: 0, z: 0}
 --- !u!4 &1087464513
 Transform:
   m_ObjectHideFlags: 0
@@ -21649,7 +21651,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Req 3
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22053,7 +22055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultAnimation: 0
-  defaultLocation: {x: 0, y: 0, z: 0}
+  startLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &1680038803
 GameObject:
   m_ObjectHideFlags: 0
@@ -22352,7 +22354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultAnimation: 0
-  defaultLocation: {x: 0, y: 0, z: 0}
+  startLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &1702665566
 GameObject:
   m_ObjectHideFlags: 0
@@ -22764,7 +22766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultAnimation: 0
-  defaultLocation: {x: 0, y: 0, z: 0}
+  startLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &1710066680
 GameObject:
   m_ObjectHideFlags: 0
@@ -23857,7 +23859,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Req 1
+  m_text: Please insert contract
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -25222,7 +25224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultAnimation: 0
-  defaultLocation: {x: 0, y: 0, z: 0}
+  startLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &1887585661
 GameObject:
   m_ObjectHideFlags: 0
@@ -26053,7 +26055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultAnimation: 0
-  defaultLocation: {x: 0, y: 0, z: 0}
+  startLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &1966671104
 GameObject:
   m_ObjectHideFlags: 0
@@ -27693,7 +27695,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Description
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

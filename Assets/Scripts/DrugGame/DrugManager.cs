@@ -24,6 +24,9 @@ public class DrugManager : MonoBehaviour
 
     public int desiredChems = 0, undesiredChems = 0;
 
+    public delegate void OnClearChems();
+    public static event OnClearChems onClearChems;
+
     private void Awake()
     {
         // Singleton Stuff
@@ -162,6 +165,19 @@ public class DrugManager : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ClearChems();
+        }
+
+    }
+
+    public void ClearChems()
+    {
+        if (onClearChems != null)
+        {
+            onClearChems();
+        }
     }
 
     public int GetVol()

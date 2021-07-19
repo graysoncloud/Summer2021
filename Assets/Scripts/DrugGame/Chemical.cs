@@ -377,6 +377,9 @@ public class Chemical : MonoBehaviour
 
     public void EvaluateConnections()
     {
+        // Subscribes to the clear tile event
+        DrugManager.onClearChems += TrashChem;
+
         // Determines the bonds formed between this chemical and its neighbors. The way its coded, each half of a bond is calculated
         //     independantly, and will contribute to the danger bar and benefit value on its own. This code updates the status of a
         //     chemical's bond, as well as the 6 adjacent bonds in its neighbors.
@@ -599,6 +602,8 @@ public class Chemical : MonoBehaviour
     {
         // Called when a chemical is picked up; much simplified version of EvaluateConnections because results are limited to unstable or none
 
+        DrugManager.onClearChems -= TrashChem;
+
         // For danger level / benefit value tracking
         string[] oldStatuses = new string[12];
         for (int i = 0; i < 6; i++)
@@ -718,6 +723,11 @@ public class Chemical : MonoBehaviour
                 //System.Array.Copy(childConnection2, housingTile.neighbors[childIndex2].storedChemical.connectionTypes, 6);
             }
         }
+    }
+
+    public void TrashChem()
+    {
+        DrugManager.instance.TrashChem(housingTile);
     }
 
     public void ClearStatus()

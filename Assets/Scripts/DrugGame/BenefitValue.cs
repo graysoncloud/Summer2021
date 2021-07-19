@@ -32,4 +32,10 @@ public class BenefitValue : MonoBehaviour
 
         benefitValueText.text = benefitValue.ToString();
     }
+
+    public void UpdateBenefitValue(int benefit)
+    {
+        benefitValue += benefit;
+        benefitValueText.text = benefitValue.ToString();
+    }
 }

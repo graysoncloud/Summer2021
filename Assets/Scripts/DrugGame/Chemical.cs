@@ -7,10 +7,12 @@ public class Chemical : MonoBehaviour
     public float cost = 0;
     public EffectType[] effects;
     public bool desirable = false, undesirable = false;
+    private int benefit = 0;
     private const float rotateSpeed = 15f;
     private float rotateTarget = 0, internalRotation = 0;
 
     public bool isPlaced, isChild = false;
+    public bool amplified;
     public HexTile housingTile;
 
     // Storage of the chemical's "bond" information. The first item in the array represents the top bond, then it proceeds clockwise.
@@ -420,9 +422,10 @@ public class Chemical : MonoBehaviour
                 newStatuses[i + 6] = "None";
         }
 
+
         // Update score (could this be run in the scorekeeper's script?)
         dangerBar.UpdateDanger(oldStatuses, newStatuses);
-        benefitValue.UpdateBenefitValue(oldStatuses, newStatuses);
+        UpdateBenefit();
     }
 
     private void EvaluateConnection(string connectionType, int statusIndex, int adjacentIndex)
@@ -549,6 +552,7 @@ public class Chemical : MonoBehaviour
             {
                 connectionStatuses[statusIndex] = "Amplified";
                 AttemptSetStatus(statusIndex, adjacentTile, "Amplified");
+                amplified = true;
             }
 
             else
@@ -584,6 +588,7 @@ public class Chemical : MonoBehaviour
             {
                 connectionStatuses[statusIndex] = "Amplified";
                 AttemptSetStatus(statusIndex, adjacentTile, "None");
+                amplified = true;
             }
 
             else
@@ -596,6 +601,51 @@ public class Chemical : MonoBehaviour
     {
         if (adjacentTile != null && adjacentTile.storedChemical != null && adjacentTile.storedChemical.GetConnectionTypeSingle((statusIndex + 3) % 6) != "None")
             adjacentTile.storedChemical.SetConnectionStatus((statusIndex + 3) % 6, status);
+        if (status == "Amplified")
+        {
+            adjacentTile.storedChemical.amplified = true;
+        }
+    }
+
+    public void UpdateBenefit()
+    {
+        UpdateBenefitNeighbor();
+        for (int j = 0; j < 6; j++)
+        {
+            HexTile adjacentTile = this.housingTile.neighbors[j];
+            if (adjacentTile != null && adjacentTile.storedChemical != null)
+                adjacentTile.storedChemical.UpdateBenefitNeighbor();
+        }
+    }
+
+    public void UpdateBenefitNeighbor()
+    {
+        // call after statuses are changed
+        if (desirable)
+        {
+            benefitValue.UpdateBenefitValue(-benefit);
+            benefit = 0;
+            foreach (string status in connectionStatuses)
+            {
+                if (status == "Positive")
+                {
+                    if (!amplified)
+                        benefit++;
+                    else
+                        benefit += 2;
+                }
+            }
+            benefitValue.UpdateBenefitValue(benefit);
+        }
+    }
+
+    public void ClearBenefit()
+    {
+        if (desirable)
+        {
+            benefitValue.UpdateBenefitValue(-benefit);
+            benefit = 0;
+        }
     }
 
     public void UpdateNeighborsUponLeaving()
@@ -612,7 +662,9 @@ public class Chemical : MonoBehaviour
 
             HexTile adjacentTile = this.housingTile.neighbors[i];
             if (adjacentTile != null && adjacentTile.storedChemical != null)
+            {
                 oldStatuses[i + 6] = adjacentTile.storedChemical.connectionStatuses[(i + 3) % 6];
+            }
             else
                 oldStatuses[i + 6] = "None";
         }
@@ -628,7 +680,7 @@ public class Chemical : MonoBehaviour
                 {
                     adjacentTile.storedChemical.SetConnectionStatus((i + 3) % 6, "Unstable");
                 }
-                else if (connectionType == "None" || connectionType == "Amplifier")
+                else if (connectionType == "None" || connectionType != "Amplifier")
                 {
                     adjacentTile.storedChemical.SetConnectionStatus((i + 3) % 6, "None");
                 }
@@ -644,14 +696,18 @@ public class Chemical : MonoBehaviour
 
             HexTile adjacentTile = this.housingTile.neighbors[i];
             if (adjacentTile != null && adjacentTile.storedChemical != null)
+            {
                 newStatuses[i + 6] = adjacentTile.storedChemical.connectionStatuses[(i + 3) % 6];
+                adjacentTile.storedChemical.CheckAmplified();
+            }
             else
                 newStatuses[i + 6] = "None";
+
         }
 
         dangerBar.UpdateDanger(oldStatuses, newStatuses);
-        benefitValue.UpdateBenefitValue(oldStatuses, newStatuses);
-        
+        ClearBenefit();
+        amplified = false;
     }
 
     public void LiftChem()
@@ -661,10 +717,10 @@ public class Chemical : MonoBehaviour
 
         if (!this.isChild)
         {
-            if (desirable)
+            /*if (desirable)
                 DrugManager.instance.desiredChems--;
             if (undesirable)
-                DrugManager.instance.undesiredChems--;
+                DrugManager.instance.undesiredChems--;*/
 
             // Destroy children on pick up
             for (int i = 0; i < 6; i++)
@@ -723,6 +779,19 @@ public class Chemical : MonoBehaviour
                 //System.Array.Copy(childConnection2, housingTile.neighbors[childIndex2].storedChemical.connectionTypes, 6);
             }
         }
+    }
+
+    public void CheckAmplified()
+    {
+        amplified = false;
+        for (int i = 0; i < 6; i++)
+        {
+            if (connectionStatuses[i] == "Amplified")
+            {
+                amplified = true;
+            }
+        }
+        UpdateBenefitNeighbor();
     }
 
     public void TrashChem()

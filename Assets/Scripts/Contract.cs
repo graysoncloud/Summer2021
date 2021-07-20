@@ -33,13 +33,16 @@ public class Contract : ScriptableObject
     // Volatility requirements (no contract would have a minimum volatility right?
     public bool usesMaxVolatility;
     public int volatilityMax;
+    public int optimalVolatility;
 
     // Price requirements
     public bool usesMaxPrice;
     public int maxPrice;
+    public int optimalLowPrice;
 
     public bool usesMinPrice;
     public int minPrice;
+    public int optimalHighPrice;
 
     // Could expand to having multiple side effects
 
@@ -47,13 +50,15 @@ public class Contract : ScriptableObject
     public bool usesUndesirableEffect;
     public EffectType undesirableEffect;
     public int undesirableEffectMax;
+    public int optimalUndesirableEffectAmount;
 
     // Desirable side effect
     public bool usesDesirableEffect;
     public EffectType desirableEffect;
     public int desirableEffectMin;
+    public int optimalDesirableEffectAmount;
 
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     [CustomEditor(typeof(Contract))]
     public class ContractEditor : Editor
     {
@@ -80,6 +85,7 @@ public class Contract : ScriptableObject
             if (myScript.usesMaxVolatility)
             {
                 myScript.volatilityMax = EditorGUILayout.IntField("Max Volatility", myScript.volatilityMax);
+                myScript.optimalVolatility = EditorGUILayout.IntField("Optimal Volatility", myScript.optimalVolatility);
             }
 
             // Min Price
@@ -87,6 +93,8 @@ public class Contract : ScriptableObject
             if (myScript.usesMinPrice)
             {
                 myScript.minPrice = EditorGUILayout.IntField("Min Price", myScript.minPrice);
+                myScript.optimalHighPrice = EditorGUILayout.IntField("Optimal Price", myScript.optimalHighPrice);
+
             }
 
             // Max Price
@@ -94,6 +102,8 @@ public class Contract : ScriptableObject
             if (myScript.usesMaxPrice)
             {
                 myScript.maxPrice = EditorGUILayout.IntField("Max Price", myScript.maxPrice);
+                myScript.optimalLowPrice = EditorGUILayout.IntField("Optimal Price", myScript.optimalLowPrice);
+
             }
 
             // Undesirable Effect
@@ -102,6 +112,8 @@ public class Contract : ScriptableObject
             {
                 myScript.undesirableEffect = (EffectType)EditorGUILayout.EnumPopup("Effect Type", myScript.undesirableEffect);
                 myScript.undesirableEffectMax = EditorGUILayout.IntField("Max", myScript.undesirableEffectMax);
+                myScript.optimalUndesirableEffectAmount = EditorGUILayout.IntField("Optimal Amount", myScript.optimalUndesirableEffectAmount);
+
             }
 
             // Desirable Effect
@@ -110,6 +122,7 @@ public class Contract : ScriptableObject
             {
                 myScript.desirableEffect = (EffectType)EditorGUILayout.EnumPopup("Effect Type", myScript.desirableEffect);
                 myScript.desirableEffectMin = EditorGUILayout.IntField("Min", myScript.desirableEffectMin);
+                myScript.optimalDesirableEffectAmount = EditorGUILayout.IntField("Optimal Amount", myScript.optimalDesirableEffectAmount);
             }
 
             // Could add multiple desirable / undesirable effects

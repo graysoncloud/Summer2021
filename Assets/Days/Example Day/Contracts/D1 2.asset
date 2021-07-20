@@ -17,13 +17,18 @@ MonoBehaviour:
     inconsistencies
   usesMaxVolatility: 1
   volatilityMax: 8
+  optimalMaxVolatilityVal: 0
   usesMaxPrice: 1
   maxPrice: 11
+  optimalMaxPriceVal: 0
   usesMinPrice: 0
   minPrice: 0
+  optimalMinPriceVal: 0
   usesUndesirableEffect: 0
   undesirableEffect: 0
   undesirableEffectMax: 0
-  usesDesirableEffect: 1
+  optimalUndesirableEffectAmount: 0
+  usesDesirableEffect: 0
   desirableEffect: 1
   desirableEffectMin: 5
+  optimalDesirableEffectAmount: 0

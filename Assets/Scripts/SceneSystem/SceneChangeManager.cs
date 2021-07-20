@@ -90,6 +90,11 @@ public class SceneChangeManager : MonoBehaviour
         //}
         //activeCharacters = new List<Character>();
 
+        if (sceneChange.newScene.ToString() == "RecapScene")
+        {
+            RecapSceneManager.instance.DisplayContracts();
+        }
+
         // Turn on new scene and assign it to scene manager's current scene field
         GameObject newScene = null;
 
@@ -139,9 +144,8 @@ public class SceneChangeManager : MonoBehaviour
 
         yield return new WaitForSeconds(sceneChange.postdelay);
 
-        // 
+        // Look for any triggered sequences
         bool triggeredSequence = false;
-
         if(oldSceneName == "MorningRoutineScene" && currentScene.gameObject.name == "OfficeScene")
         {
             foreach (Day.Sequence sequence in GameManager.instance.currentDay.sequences)

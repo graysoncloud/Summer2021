@@ -35,7 +35,7 @@ public class Chemical : MonoBehaviour
     // Make sure prefabs are dragged in right order (see connectionTypesDict below)
     private GameObject[] connectionSprites;
 
-    private DangerBar dangerBar;
+    private VolatilityBar dangerBar;
     private BenefitValue benefitValue;
     private CostDisplay costDisplay;
 
@@ -67,7 +67,7 @@ public class Chemical : MonoBehaviour
             spriteRenderer = transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>();
         }
 
-        dangerBar = GameObject.FindObjectOfType<DangerBar>();
+        dangerBar = GameObject.FindObjectOfType<VolatilityBar>();
         benefitValue = GameObject.FindObjectOfType<BenefitValue>();
         costDisplay = GameObject.FindObjectOfType<CostDisplay>();
 

@@ -5,6 +5,8 @@ using TMPro;
 
 public class CostDisplay : MonoBehaviour
 {
+    public static CostDisplay instance = null;
+
     [SerializeField]
     private TextMeshProUGUI displayText = null;
 
@@ -15,6 +17,18 @@ public class CostDisplay : MonoBehaviour
 
     private BinManager bin;
     private Chemical[] chemArray;
+
+    private void Awake()
+    {
+        // Singleton Stuff
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+
+    }
 
     private void Start()
     {

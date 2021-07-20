@@ -22,6 +22,7 @@ public class PrintButton : MonoBehaviour
         {
             Printer.instance.solutionPrinted = true;
             Printer.instance.GetComponent<SpriteRenderer>().sprite = Printer.instance.printedSolutionSprite;
+            OfficeSceneManager.instance.solutionFinished = true;
 
             // Display a "solution printed", prevent further editing
         }

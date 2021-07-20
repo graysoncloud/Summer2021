@@ -14,6 +14,8 @@ public class OfficeSceneManager : MonoBehaviour
     [SerializeField]
     private ContractDisplayer contractDisplayer;
 
+    public bool solutionFinished;
+
     public ContractFolder contractPrefab;
     public SolutionPaper solutionPaperPrefab;
 
@@ -44,6 +46,7 @@ public class OfficeSceneManager : MonoBehaviour
     {
         currentContractIndex = 0;
         holdingNewContract = false;
+        solutionFinished = false;
     }
 
     private void Update()
@@ -96,7 +99,7 @@ public class OfficeSceneManager : MonoBehaviour
             }
 
             // Start Drug Game if computer clicked
-            else if (OfficeComputer.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick))
+            else if (OfficeComputer.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick) && !solutionFinished)
             {
                 SceneChangeManager.instance.StartSceneChange(officeToDrugGameTransition);
             }
@@ -157,10 +160,13 @@ public class OfficeSceneManager : MonoBehaviour
                 EvaluateSolution();
                 lastLocation = null;
 
+                // Generate FinishedContract object for the recap scene to read
+                RecapSceneManager.instance.GenerateFinishedContract();
+
                 contractsSolved++; 
                 currentContractIndex++;
 
-
+                // Trigger dialogue events
                 foreach (Day.Sequence sequence in GameManager.instance.currentDay.sequences)
                 {
                     if (sequence.trigger.ToString() == "solvedContract1" && contractsSolved == 1)
@@ -180,6 +186,8 @@ public class OfficeSceneManager : MonoBehaviour
 
                 if (contractsSolved >= GameManager.instance.currentDay.contracts.Length) 
                     LeaveOfficeButton.instance.gameObject.SetActive(true);
+
+                solutionFinished = false;
 
                 // Maybe have an if / else condition returning a visual error?
 

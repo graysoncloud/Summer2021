@@ -20,7 +20,7 @@ public class DrugManager : MonoBehaviour
 
     public SceneChange drugToOfficeSceneChange;
 
-    private DangerBar dangerBar;
+    private VolatilityBar dangerBar;
 
     public int desiredChems = 0, undesiredChems = 0;
 
@@ -41,7 +41,7 @@ public class DrugManager : MonoBehaviour
     private void Start()
     {
         hexGrid = GameObject.FindObjectOfType<HexGrid>().GetComponent<HexGrid>();
-        dangerBar = GameObject.FindObjectOfType<DangerBar>();
+        dangerBar = GameObject.FindObjectOfType<VolatilityBar>();
     }
 
     void Update()

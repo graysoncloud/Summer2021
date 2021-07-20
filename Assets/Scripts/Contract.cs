@@ -33,16 +33,16 @@ public class Contract : ScriptableObject
     // Volatility requirements (no contract would have a minimum volatility right?
     public bool usesMaxVolatility;
     public int volatilityMax;
-    public int optimalVolatility;
+    public int optimalMaxVolatilityVal;
 
     // Price requirements
     public bool usesMaxPrice;
     public int maxPrice;
-    public int optimalLowPrice;
+    public int optimalMaxPriceVal;
 
     public bool usesMinPrice;
     public int minPrice;
-    public int optimalHighPrice;
+    public int optimalMinPriceVal;
 
     // Could expand to having multiple side effects
 
@@ -85,7 +85,7 @@ public class Contract : ScriptableObject
             if (myScript.usesMaxVolatility)
             {
                 myScript.volatilityMax = EditorGUILayout.IntField("Max Volatility", myScript.volatilityMax);
-                myScript.optimalVolatility = EditorGUILayout.IntField("Optimal Volatility", myScript.optimalVolatility);
+                myScript.optimalMaxVolatilityVal = EditorGUILayout.IntField("Optimal Volatility", myScript.optimalMaxVolatilityVal);
             }
 
             // Min Price
@@ -93,7 +93,7 @@ public class Contract : ScriptableObject
             if (myScript.usesMinPrice)
             {
                 myScript.minPrice = EditorGUILayout.IntField("Min Price", myScript.minPrice);
-                myScript.optimalHighPrice = EditorGUILayout.IntField("Optimal Price", myScript.optimalHighPrice);
+                myScript.optimalMinPriceVal = EditorGUILayout.IntField("Optimal Price", myScript.optimalMinPriceVal);
 
             }
 
@@ -102,7 +102,7 @@ public class Contract : ScriptableObject
             if (myScript.usesMaxPrice)
             {
                 myScript.maxPrice = EditorGUILayout.IntField("Max Price", myScript.maxPrice);
-                myScript.optimalLowPrice = EditorGUILayout.IntField("Optimal Price", myScript.optimalLowPrice);
+                myScript.optimalMaxPriceVal = EditorGUILayout.IntField("Optimal Price", myScript.optimalMaxPriceVal);
 
             }
 
@@ -136,5 +136,41 @@ public class Contract : ScriptableObject
 
     }
     #endif
+}
+
+
+public class FinishedContract
+{
+    public string companyName;
+
+    public bool usesMaxVolatility;
+    public int maxVolatility;
+    public int playerVolatility;
+    public int optimalVolatility;
+
+    // Naming convention is a little weird- a max price will ask the player to provide a min price
+    public bool usesMaxPrice;
+    public int maxPrice;
+    public int playerMaxPriceVal;
+    public int optimalMaxPriceVal;
+
+    public bool usesMinPrice;
+    public int minPrice;
+    public int playerMinPriceVal;
+    public int optimalMinPriceVal;
+
+    public bool usesDesirableEffect;
+    public EffectType desirableEffect;
+    public int desirableEffectMin;
+    public int playerDesirableEffectAmount;
+    public int optimalDesirableEffectAmount;
+
+    public bool usesUndesirableEffect;
+    public EffectType undesirableEffect;
+    public int undesirableEffectMax;
+    public int playerUndesirableEffectAmount;
+    public int optimalUndesirableEffectAmount;
 
 }
+
+

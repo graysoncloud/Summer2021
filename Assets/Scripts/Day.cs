@@ -7,7 +7,12 @@ using UnityEngine;
 public class Day : ScriptableObject
 {
     public Sequence[] sequences;
-    public Contract[] contracts;
+    public List<Contract> contracts = new List<Contract>();
+
+    public List<Contract> easyContracts = new List<Contract>();
+    public List<Contract> hardContracts = new List<Contract>();
+    public int numEasy;
+    public int numHard;
 
     [System.Serializable]
     public class Sequence
@@ -33,5 +38,38 @@ public class Day : ScriptableObject
         }
 
     }
+
+    public void ShuffleContracts()
+    {
+
+        // RESET
+        contracts.Clear();
+        List<int> randomEasy = new List<int>();
+        List<int> randomHard = new List<int>();
+
+        /*
+        for(int i = 0; i < numEasy; i++)
+        {
+            int newNum = Random.Range(0, easyContracts.Count - 1);
+            while(!randomEasy.Contains(newNum))
+            {
+                newNum = Random.Range(0, easyContracts.Count - 1);
+            }
+            randomEasy.Add(newNum);
+            contracts.Add(easyContracts[newNum]);
+        }
+
+        for(int i = 0; i < numHard; i++)
+        {
+            int newNum = Random.Range(0, hardContracts.Count - 1);
+            while(!randomHard.Contains(newNum))
+            {
+                newNum = Random.Range(0, hardContracts.Count - 1);
+            }
+            randomHard.Add(newNum);
+            contracts.Add(hardContracts[newNum]);
+        }
+
+    }*/
 
 }

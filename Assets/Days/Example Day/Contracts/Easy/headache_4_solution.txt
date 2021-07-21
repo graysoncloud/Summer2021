@@ -1,0 +1,17 @@
+* * * * * * * * * * 
+ * * * * * * * * * * 
+* * * * * * * * * * 
+ * * * * * * G * * * 
+* * * * * * A N * * 
+ * * * * * N A * * * 
+* * * * * * G * * * 
+ * * * * * * * * * * 
+* * * * * * * * * * 
+ * * * * * * * * * * 
+
+Molecule N at 5,5 rotated 0 times
+Molecule G at 6,6 rotated 1 times
+Molecule A at 6,4 rotated 4 times
+Molecule A at 6,5 rotated 1 times
+Molecule G at 6,3 rotated 4 times
+Molecule N at 7,4 rotated 3 times

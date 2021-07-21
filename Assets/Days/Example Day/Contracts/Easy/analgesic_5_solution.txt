@@ -1,0 +1,19 @@
+* * * * * * * * * * 
+ * * * * * * * * * * 
+* * * * * * * * * * 
+ * * * * * * * * * * 
+* * * * K A G * * * 
+ * * * * K T G * * * 
+* * * * * K N * * * 
+ * * * * * * * * * * 
+* * * * * * * * * * 
+ * * * * * * * * * * 
+
+Molecule T at 5,5 rotated 0 times
+Molecule G at 6,5 rotated 3 times
+Molecule K at 5,6 rotated 0 times
+Molecule N at 6,6 rotated 2 times
+Molecule G at 6,4 rotated 3 times
+Molecule A at 5,4 rotated 3 times
+Molecule K at 4,5 rotated 1 times
+Molecule K at 4,4 rotated 5 times

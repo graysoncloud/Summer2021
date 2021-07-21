@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 5.2Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 1513de40ad11cac429eb641b28dfdb4b, type: 2}
+  nextEvent: {fileID: 11400000, guid: 5cbd1b698272550418b62be55f2d2b8a, type: 2}
   dialogueLines:
   - speaker: 1
     dialogue: Boring
@@ -20,3 +20,4 @@ MonoBehaviour:
     animations: []
     animOnly: 0
     animLength: 0
+    SFX: 

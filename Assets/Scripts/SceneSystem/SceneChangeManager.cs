@@ -60,6 +60,8 @@ public class SceneChangeManager : MonoBehaviour
         else
             oldSceneName = null;
 
+        MusicManager.instance.StartFadeOut();
+
         yield return new WaitForSeconds(sceneChange.predelay);
 
         if (sceneChange.transitionStyle.ToString() == "fade")

@@ -16,14 +16,14 @@ public class Path : ScriptableObject
     public int attitudeValueToCompare;
 
     public bool checkEvent;
-    public GameManager.SavedEvent eventToCheck;
+    public GameManager.SaveableEvent eventToCheck;
 
     public bool changesAttitude;
     public CharacterName attitudeToChange;
     public int amountToAlter;
 
     public bool logsEvent;
-    public GameManager.SavedEvent eventToLog;
+    public GameManager.SaveableEvent eventToLog;
 
     public enum AttitudeComparison
     {
@@ -57,7 +57,7 @@ public class Path : ScriptableObject
             myScript.checkEvent = GUILayout.Toggle(myScript.checkEvent, "Event Check");
             if (myScript.checkEvent && !myScript.checkAttitude)
             {
-                myScript.eventToCheck = (GameManager.SavedEvent)EditorGUILayout.EnumPopup("Event to Check", myScript.eventToCheck);
+                myScript.eventToCheck = (GameManager.SaveableEvent)EditorGUILayout.EnumPopup("Event to Check", myScript.eventToCheck);
             }
 
             myScript.changesAttitude = GUILayout.Toggle(myScript.changesAttitude, "Changes Attitude");
@@ -70,7 +70,7 @@ public class Path : ScriptableObject
             myScript.logsEvent = GUILayout.Toggle(myScript.logsEvent, "Logs Event");
             if (myScript.logsEvent)
             {
-                myScript.eventToLog = (GameManager.SavedEvent)EditorGUILayout.EnumPopup("Event to Log", myScript.eventToLog);
+                myScript.eventToLog = (GameManager.SaveableEvent)EditorGUILayout.EnumPopup("Event to Log", myScript.eventToLog);
             }
 
             if (GUI.changed)

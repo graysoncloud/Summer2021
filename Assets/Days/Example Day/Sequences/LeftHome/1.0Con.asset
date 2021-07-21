@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1.0Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 617b7b6abc9532b4ab2f57adf8641b96, type: 2}
+  nextEvent: {fileID: 11400000, guid: e27011afa7aabcf4aa3649b484c851a3, type: 2}
   dialogueLines:
   - speaker: 1
     dialogue: Alright, time to go to work.
@@ -20,3 +20,4 @@ MonoBehaviour:
     animations: []
     animOnly: 0
     animLength: 0
+    SFX: 

@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.DeleteAll();
 
+        // Load save info
+        PlayerPrefs.SetFloat("MusicVolume", .5f);
+
         foreach (CharacterName character in Enum.GetValues(typeof(CharacterName)))
         {
             // Load save state here
@@ -66,29 +69,22 @@ public class GameManager : MonoBehaviour
         }
 
         else if (toExecute.GetType().ToString() == "Conversation")
-        {
             ConversationManager.instance.StartConversation((Conversation)toExecute);
-        }
 
         else if (toExecute.GetType().ToString() == "Option")
-        {
             OptionManager.instance.StartOption((Option)toExecute);
-        }
 
         else if (toExecute.GetType().ToString() == "SceneChange")
-        {
             SceneChangeManager.instance.StartSceneChange((SceneChange)toExecute);
-        }
 
         else if (toExecute.GetType().ToString() == "AnimationMoment")
-        {
             AnimationManager.instance.StartAnimationMoment((AnimationMoment)toExecute);
-        }
 
         else if (toExecute.GetType().ToString() == "CharacterFade")
-        {
             CharacterFadeManager.instance.StartCharacterFade((CharacterFade)toExecute);
-        } 
+
+        else if (toExecute.GetType().ToString() == "MusicEvent")
+            MusicManager.instance.StartMusicEvent((MusicEvent)toExecute);
 
     }
 
@@ -97,7 +93,7 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public enum SavedEvent {
+    public enum SaveableEvent {
         punchedMom,
         huggedMom
     }

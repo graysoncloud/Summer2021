@@ -170,18 +170,35 @@ public class OfficeSceneManager : MonoBehaviour
                 foreach (Day.Sequence sequence in GameManager.instance.currentDay.sequences)
                 {
                     if (sequence.trigger.ToString() == "solvedContract1" && contractsSolved == 1)
+                    {
                         GameManager.instance.StartSequence(sequence.initialEvent);
+                        MusicManager.instance.StartFadeOut();
+                    }
                     else if (sequence.trigger.ToString() == "solvedContract2" && contractsSolved == 2)
+                    {
                         GameManager.instance.StartSequence(sequence.initialEvent);
+                        MusicManager.instance.StartFadeOut();
+                    }
                     else if (sequence.trigger.ToString() == "solvedContract3" && contractsSolved == 3)
+                    {
                         GameManager.instance.StartSequence(sequence.initialEvent);
+                        MusicManager.instance.StartFadeOut();
+                    }
                     else if (sequence.trigger.ToString() == "solvedContract4" && contractsSolved == 4)
+                    {
                         GameManager.instance.StartSequence(sequence.initialEvent);
+                        MusicManager.instance.StartFadeOut();
+                    }
                     else if (sequence.trigger.ToString() == "solvedContract5" && contractsSolved == 5)
+                    {
                         GameManager.instance.StartSequence(sequence.initialEvent);
+                        MusicManager.instance.StartFadeOut();
+                    }
                     else if (sequence.trigger.ToString() == "solvedContract6" && contractsSolved == 6)
+                    {
                         GameManager.instance.StartSequence(sequence.initialEvent);
-
+                        MusicManager.instance.StartFadeOut();
+                    }
                 }
 
                 if (contractsSolved >= GameManager.instance.currentDay.contracts.Length) 

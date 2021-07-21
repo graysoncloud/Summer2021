@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choiceText: Attitude Choice
   checkAttitude: 1
-  characterToCheck: 0
+  characterToCheck: 1
   comparison: 0
   attitudeValueToCompare: 105
   checkEvent: 0

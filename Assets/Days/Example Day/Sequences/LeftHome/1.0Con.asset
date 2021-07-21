@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: 617b7b6abc9532b4ab2f57adf8641b96, type: 2}
   dialogueLines:
-  - speaker: 0
+  - speaker: 1
     dialogue: Alright, time to go to work.
     offset: {x: 0, y: 0}
-  animations:
-  - toAnimate: 0
-    animationName: 0
+    animations: []
+    animOnly: 0
+    animLength: 0

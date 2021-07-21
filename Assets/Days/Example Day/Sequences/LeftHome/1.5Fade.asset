@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: d248cae442c4d944e9a471877dd808bc, type: 2}
   characterFades:
-  - characterToFade: 0
-    animationName: 0
+  - characterToFade: 1
     fadeIn: 1
+    SFX: 00000000

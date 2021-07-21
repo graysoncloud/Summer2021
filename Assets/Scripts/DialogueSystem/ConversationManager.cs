@@ -66,79 +66,101 @@ public class ConversationManager : MonoBehaviour
     {
         // Could be a redundant variable, but it could be useful (not a big deal either way)
         currentConversation = conversation;
+
         for (int i = 0; i < currentConversation.dialogueLines.Length; i++)
         {
-            DialogueUIManager.instance.dialogueTextObject.maxVisibleCharacters = 0;
-
-            // Reveal characterName, and then set up dialogue text (but make it invisible)
-            DialogueUIManager.instance.characterTextObject.text = currentConversation.dialogueLines[i].speaker.ToString();
-            DialogueUIManager.instance.dialogueTextObject.text = currentConversation.dialogueLines[i].dialogue;
-
-
-            // Adjust character animations
-            foreach (Conversation.AnimationBit anim in conversation.dialogueLines[i].animations)
+            // Check if its an animation-only event
+            if (currentConversation.dialogueLines[i].animOnly)
             {
-
-                Character toAnimate = CharacterFadeManager.instance.currentChars[anim.toAnimate.ToString()];
-                toAnimate.GetComponent<Animator>().Play(currentConversation.dialogueLines[i].animations[0].animationName.ToString());
-
-
-            }
-
-
-            // Reveals dialogue one letter at a time; fastforward on first click, instantly finish on second
-            waitingForClick = true;
-            bool readbackSpeedChanged = false;
-            foreach (char toReveal in currentConversation.dialogueLines[i].dialogue)
-            {
-                DialogueUIManager.instance.dialogueTextObject.maxVisibleCharacters += 1;
-
-                // Fastforward on first click
-                if (clicked && !readbackSpeedChanged)
+                DialogueUIManager.instance.SetUpForAnimation();
+                foreach (Conversation.AnimationBit anim in conversation.dialogueLines[i].animations)
                 {
-                    // Commented code instantly reveals the text; current version speeds it up by 10
-                    //DialogueUIManager.instance.dialogueTextObject.maxVisibleCharacters = currentConversation.dialogueLines[i].dialogue.Length;
-                    readbackSpeedModifier /= 7;
-                    readbackSpeedChanged = true;
-                    clicked = false;
-                    // Instantly finish on second click
-                } else if (clicked && readbackSpeedChanged)
+                    Character toAnimate = CharacterFadeManager.instance.currentChars[anim.toAnimate.ToString()];
+                    toAnimate.GetComponent<Animator>().Play(currentConversation.dialogueLines[i].animations[0].animationName.ToString());
+                }
+                foreach (ConversationSFX toPlay in conversation.dialogueLines[i].SFX)
                 {
-                    DialogueUIManager.instance.dialogueTextObject.maxVisibleCharacters = DialogueUIManager.instance.dialogueTextObject.text.Length;
-                    clicked = false;
-                    break;
+                    ConversationSFXManager.instance.PlaySFX(toPlay);
                 }
 
-                // Delay between characters increases if its a punctuation mark
-                if (toReveal == '.')
-                    yield return new WaitForSeconds(periodDelay * readbackSpeedModifier);
-                else if (toReveal == ' ')
-                    yield return new WaitForSeconds(0);
-                else if (",;-?!".Contains(toReveal.ToString()))
-                    yield return new WaitForSeconds(punctuationDelay * readbackSpeedModifier);
-                else
-                    yield return new WaitForSeconds(normalDelay * readbackSpeedModifier);
+                yield return new WaitForSeconds(currentConversation.dialogueLines[i].animLength);
             }
 
-            waitingForClick = false;
-            // This gives a small buffer to prevent player from double clicking
-            yield return new WaitForSeconds(.1f);
-            // Makes sure the user doesn't "store" a click during the .25 seconds of waiting
-            clicked = false;
+            else
+            {
+                DialogueUIManager.instance.dialogueTextObject.maxVisibleCharacters = 0;
 
-            readbackSpeedModifier = 1;
-            // Wait for player to click to continue
-            yield return StartCoroutine("WaitForClick");
+                // Reveal characterName, and then set up dialogue text (but make it invisible)
+                DialogueUIManager.instance.characterTextObject.text = currentConversation.dialogueLines[i].speaker.ToString();
+                DialogueUIManager.instance.dialogueTextObject.text = currentConversation.dialogueLines[i].dialogue;
 
-            DialogueUIManager.instance.dialogueTextObject.text = "";
-            DialogueUIManager.instance.characterTextObject.text = "";
+                // Adjust character animations
+                foreach (Conversation.AnimationBit anim in conversation.dialogueLines[i].animations)
+                {
+                    Character toAnimate = CharacterFadeManager.instance.currentChars[anim.toAnimate.ToString()];
+                    toAnimate.GetComponent<Animator>().Play(currentConversation.dialogueLines[i].animations[0].animationName.ToString());
+                }
+
+                // Play SFX
+                foreach (ConversationSFX toPlay in conversation.dialogueLines[i].SFX)
+                {
+                    ConversationSFXManager.instance.PlaySFX(toPlay);
+                }
+
+                // Reveals dialogue one letter at a time; fastforward on first click, instantly finish on second
+                waitingForClick = true;
+                bool readbackSpeedChanged = false;
+                foreach (char toReveal in currentConversation.dialogueLines[i].dialogue)
+                {
+                    DialogueUIManager.instance.dialogueTextObject.maxVisibleCharacters += 1;
+
+                    // Fastforward on first click
+                    if (clicked && !readbackSpeedChanged)
+                    {
+                        // Commented code instantly reveals the text; current version speeds it up by 10
+                        //DialogueUIManager.instance.dialogueTextObject.maxVisibleCharacters = currentConversation.dialogueLines[i].dialogue.Length;
+                        readbackSpeedModifier /= 7;
+                        readbackSpeedChanged = true;
+                        clicked = false;
+                        // Instantly finish on second click
+                    }
+                    else if (clicked && readbackSpeedChanged)
+                    {
+                        DialogueUIManager.instance.dialogueTextObject.maxVisibleCharacters = DialogueUIManager.instance.dialogueTextObject.text.Length;
+                        clicked = false;
+                        break;
+                    }
+
+                    // Delay between characters increases if its a punctuation mark
+                    if (toReveal == '.')
+                        yield return new WaitForSeconds(periodDelay * readbackSpeedModifier);
+                    else if (toReveal == ' ')
+                        yield return new WaitForSeconds(0);
+                    else if (",;-?!".Contains(toReveal.ToString()))
+                        yield return new WaitForSeconds(punctuationDelay * readbackSpeedModifier);
+                    else
+                        yield return new WaitForSeconds(normalDelay * readbackSpeedModifier);
+                }
+
+                waitingForClick = false;
+                // This gives a small buffer to prevent player from double clicking
+                yield return new WaitForSeconds(.1f);
+                // Makes sure the user doesn't "store" a click during the .25 seconds of waiting
+                clicked = false;
+
+                readbackSpeedModifier = 1;
+
+                // Wait for player to click to continue
+                yield return StartCoroutine("WaitForClick");
+
+                DialogueUIManager.instance.dialogueTextObject.text = "";
+                DialogueUIManager.instance.characterTextObject.text = "";
+            }
+            
         }
-
 
         GameManager.instance.StartSequence(currentConversation.nextEvent);
 
-        // Don't need to destroy because we're just using the prefab without instantiating
-        //Destroy(currentConversation);
     }
 
     private IEnumerator WaitForClick()
@@ -195,6 +217,5 @@ public class ConversationManager : MonoBehaviour
             }
         }
     }
-
 
 }

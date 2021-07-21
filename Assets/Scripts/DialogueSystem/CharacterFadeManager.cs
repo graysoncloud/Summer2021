@@ -56,8 +56,14 @@ public class CharacterFadeManager : MonoBehaviour
         if (fadeEvent.fadeIn)
         {
             // Relies on prefab having an alpha of 0 and being set to black (0, 0, 0, 0);
-            Character charToFade = Instantiate(characterPrefabs[(int)fadeEvent.characterToFade], SceneChangeManager.instance.currentScene.transform);
-            charToFade.transform.position = charToFade.startLocation; 
+            Character charToFade = Instantiate(characterPrefabs[(int)fadeEvent.characterToFade - 1], SceneChangeManager.instance.currentScene.transform);
+            charToFade.transform.position = charToFade.startLocation;
+
+            // Play SFX
+            foreach (CharacterFadeSFX sfx in fadeEvent.SFX)
+            {
+                CharacterFadeSFXManager.instance.PlaySFX(sfx);
+            }
 
             SpriteRenderer spriteRenderer = charToFade.GetComponent<SpriteRenderer>();
 
@@ -65,6 +71,7 @@ public class CharacterFadeManager : MonoBehaviour
 
             float fadeRate = .01f;
 
+            // Move and fade in
             while (charToFade.GetComponent<SpriteRenderer>().color.a < 1)
             {
                 charToFade.transform.position += new Vector3(.02f, 0f, 0f);

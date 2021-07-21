@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: 1513de40ad11cac429eb641b28dfdb4b, type: 2}
   dialogueLines:
-  - speaker: 0
+  - speaker: 1
     dialogue: You did it
     offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0

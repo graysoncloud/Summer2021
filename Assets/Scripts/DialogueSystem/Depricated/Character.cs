@@ -16,13 +16,12 @@ public class Character : MonoBehaviour
 }
 
 public enum CharacterName { 
+    None,
     Barney, 
     Elizabeth, 
     Wesley, 
     Robbie, 
-    Maria,
-    Lumberjack,
-    Purplejack
+    Maria
 }
 
 public enum AnimationName

@@ -14,6 +14,7 @@ public class CharacterFade : ScriptableEvent
         public CharacterName characterToFade;
         //public AnimationName animationName;
         public bool fadeIn;
+        public CharacterFadeSFX[] SFX;
 
     }
 

@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: 46c55c57d2446ac43a677b068d112270, type: 2}
   dialogueLines:
-  - speaker: 0
+  - speaker: 1
     dialogue: Now for an auto fork!
     offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0

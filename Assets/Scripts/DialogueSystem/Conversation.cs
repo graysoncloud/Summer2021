@@ -18,6 +18,10 @@ public class Conversation : ScriptableEvent
         public Vector2 offset;
 
         public AnimationBit[] animations;
+        public bool animOnly;
+        public float animLength;
+
+        public ConversationSFX[] SFX;
     }
 
     [System.Serializable]
@@ -29,4 +33,3 @@ public class Conversation : ScriptableEvent
     }
 
 }
-

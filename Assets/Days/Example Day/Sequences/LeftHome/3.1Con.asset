@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: a828f4ee6617bce45854609572be833d, type: 2}
   dialogueLines:
-  - speaker: 0
+  - speaker: 1
     dialogue: attitude choice success
     offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

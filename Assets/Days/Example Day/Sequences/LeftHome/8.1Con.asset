@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: 7abd3e39a2cf90f41af3f290ab47a4fd, type: 2}
   dialogueLines:
-  - speaker: 0
+  - speaker: 1
     dialogue: You punched your mom
     offset: {x: 0, y: 0}
-  animations: []
+    animations: []
+    animOnly: 0
+    animLength: 0

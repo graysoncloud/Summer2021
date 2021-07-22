@@ -17,13 +17,15 @@ MonoBehaviour:
     trigger: 0
   - initialEvent: {fileID: 11400000, guid: 5ed3732fabf44dc4d87225971154f2d9, type: 2}
     trigger: 1
-  contracts: []
+  contracts:
+  - {fileID: 11400000, guid: 3e3e5405348578f4c9c693508d328902, type: 2}
+  - {fileID: 11400000, guid: 2690638670583df4a9ab2bca7fc379fe, type: 2}
   easyContracts:
-  - {fileID: 11400000, guid: 5fd21b798b581db41bd0189f1cbcf61f, type: 2}
-  - {fileID: 11400000, guid: b6e29a7817b689d46ba624c6241287aa, type: 2}
-  - {fileID: 11400000, guid: dc1228b76d3ce124080050ccab67edec, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   hardContracts:
-  - {fileID: 11400000, guid: b6e29a7817b689d46ba624c6241287aa, type: 2}
-  - {fileID: 11400000, guid: fd3c37f5ef0b26c4db8d16194a55a38e, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   numEasy: 0
   numHard: 0

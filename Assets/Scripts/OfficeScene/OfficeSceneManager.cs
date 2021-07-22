@@ -61,7 +61,7 @@ public class OfficeSceneManager : MonoBehaviour
             // Pick Up Contract from Stack
             if (ContractStack.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick) && ActiveContractArea.instance.currentContract == null && contractInHand == null && solutionInHand == null)
             {
-                if (currentContractIndex < GameManager.instance.currentDay.contracts.Length)
+                if (currentContractIndex < GameManager.instance.currentDay.contracts.Count)
                 {
                     Vector3 mouseLocation = OfficeSceneCamera.instance.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
 
@@ -201,7 +201,7 @@ public class OfficeSceneManager : MonoBehaviour
                     }
                 }
 
-                if (contractsSolved >= GameManager.instance.currentDay.contracts.Length) 
+                if (contractsSolved >= GameManager.instance.currentDay.contracts.Count) 
                     LeaveOfficeButton.instance.gameObject.SetActive(true);
 
                 solutionFinished = false;

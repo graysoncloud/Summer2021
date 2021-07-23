@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -44,33 +45,26 @@ public class Day : ScriptableObject
 
         // RESET
         contracts.Clear();
-        List<int> randomEasy = new List<int>();
-        List<int> randomHard = new List<int>();
+        List<int> randomEasy = Enumerable.Range(0, easyContracts.Count).ToList();
+        List<int> randomHard = Enumerable.Range(0, hardContracts.Count).ToList();
 
-        /*
+        int randomChoice;
+
+
         for(int i = 0; i < numEasy; i++)
         {
-            int newNum = Random.Range(0, easyContracts.Count - 1);
-            while(!randomEasy.Contains(newNum))
-            {
-                newNum = Random.Range(0, easyContracts.Count - 1);
-            }
-            randomEasy.Add(newNum);
-            contracts.Add(easyContracts[newNum]);
+            randomChoice = Random.Range(0, randomEasy.Count);
+            contracts.Add(easyContracts[randomEasy[randomChoice]]);
+            randomEasy.RemoveAt(randomChoice);
         }
 
         for(int i = 0; i < numHard; i++)
         {
-            int newNum = Random.Range(0, hardContracts.Count - 1);
-            while(!randomHard.Contains(newNum))
-            {
-                newNum = Random.Range(0, hardContracts.Count - 1);
-            }
-            randomHard.Add(newNum);
-            contracts.Add(hardContracts[newNum]);
+            randomChoice = Random.Range(0, randomHard.Count);
+            contracts.Add(hardContracts[randomHard[randomChoice]]);
+            randomHard.RemoveAt(randomChoice);
         }
 
-    }*/
     }
 
 }

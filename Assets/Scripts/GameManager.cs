@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
         sequenceActive = false;
 
         currentDay = days[currentDayIndex];
+        currentDay.ShuffleContracts();
 
         PlayerPrefs.DeleteAll();
 
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
 
         currentDayIndex++;
         currentDay = days[currentDayIndex];
+        currentDay.ShuffleContracts();
     }
 
     public void StartSequence(ScriptableObject toExecute)

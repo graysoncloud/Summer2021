@@ -37,8 +37,18 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.DeleteAll();
 
+        /*
+         * NOTE ABOUT SAVING: player pref automatically saves on quit, which should not be the case
+         * Possible options going forward are:
+         *   1. Make a set of variables in the player prefs that represent changes made that day, add their strings to a list (one list 
+         *      for each type), then loop through the list and revert the changes (can be done on load so as to avoid weird force quit issues)
+         *   2. ???
+         */
+
         // Load save info
         PlayerPrefs.SetFloat("MusicVolume", .5f);
+
+        PlayerPrefs.SetInt("Stress", 50);
 
         foreach (CharacterName character in Enum.GetValues(typeof(CharacterName)))
         {
@@ -56,6 +66,9 @@ public class GameManager : MonoBehaviour
     public void NextDay()
     {
         OfficeSceneManager.instance.currentContractIndex = 0;
+
+        PlayerPrefs.SetInt("TookPills", 0);
+        PlayerPrefs.SetInt("WatchedNews", 0);
 
         currentDayIndex++;
         currentDay = days[currentDayIndex];
@@ -96,8 +109,10 @@ public class GameManager : MonoBehaviour
     }
 
     public enum SaveableEvent {
-        punchedMom,
-        huggedMom
+        TookPill,
+        WatchedNews,
+
+
     }
 
 }

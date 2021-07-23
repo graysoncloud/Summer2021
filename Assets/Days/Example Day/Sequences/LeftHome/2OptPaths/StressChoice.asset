@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6cf3753bd334704ea56229dd0ebb808, type: 3}
-  m_Name: AttChoice
+  m_Name: StressChoice
   m_EditorClassIdentifier: 
-  choiceText: Attitude Choice
-  checkStress: 0
+  choiceText: Stress Choice
+  checkStress: 1
   stressComparison: 0
   stressCheckAmount: 0
-  checkAttitude: 1
-  characterToCheck: 1
+  checkAttitude: 0
+  characterToCheck: 0
   attitudeComparison: 0
   attitudeToCompare: 0
   checkEvent: 0
   eventToCheck: 0
-  changesStress: 0
-  stressChangeAmount: 0
-  changesAttitude: 1
+  changesStress: 1
+  stressChangeAmount: 163
+  changesAttitude: 0
   attitudeToChange: 0
-  amountToAlter: -46
+  amountToAlter: 0
   logsEvent: 0
   eventToLog: 0

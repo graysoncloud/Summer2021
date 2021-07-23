@@ -38,21 +38,21 @@ public class OptionManager : MonoBehaviour
                 if (option.paths[i].checkAttitude)
                 {
                     string attitudeToCheck = option.paths[i].characterToCheck.ToString() + "Attitude";
-                    if (option.paths[i].comparison.ToString() == "greaterThanOrEqual")
+                    if (option.paths[i].attitudeComparison.ToString() == "greaterThanOrEqual")
                     {
-                        if (PlayerPrefs.GetInt(attitudeToCheck) >= option.paths[i].attitudeValueToCompare)
+                        if (PlayerPrefs.GetInt(attitudeToCheck) >= option.paths[i].attitudeToCompare)
                             ExecutePath(i);
                         return;
                     }
-                    else if (option.paths[i].comparison.ToString() == "lessThanOrEqual")
+                    else if (option.paths[i].attitudeComparison.ToString() == "lessThanOrEqual")
                     {
-                        if (PlayerPrefs.GetInt(attitudeToCheck) <= option.paths[i].attitudeValueToCompare)
+                        if (PlayerPrefs.GetInt(attitudeToCheck) <= option.paths[i].attitudeToCompare)
                             ExecutePath(i);
                         return;
                     }
                     else
                     {
-                        Debug.LogError("Invalid comparator: " + option.paths[i].comparison.ToString());
+                        Debug.LogError("Invalid comparator: " + option.paths[i].attitudeComparison.ToString());
                     }
                 }
                 else if (option.paths[i].checkEvent)
@@ -63,6 +63,26 @@ public class OptionManager : MonoBehaviour
                         return;
                     }
                 } 
+                else if (option.paths[i].checkStress)
+                {
+                    if (option.paths[i].stressComparison.ToString() == "greaterThanOrEqual")
+                    {
+                        if (PlayerPrefs.GetInt("Stress") >= option.paths[i].stressCheckAmount)
+                            ExecutePath(i);
+                        return;
+                    }
+                    else if (option.paths[i].stressComparison.ToString() == "lessThanOrEqual")
+                    {
+                        if (PlayerPrefs.GetInt("Stress") <= option.paths[i].stressCheckAmount)
+                            ExecutePath(i);
+                        return;
+                    }
+                    else
+                    {
+                        Debug.LogError("Invalid comparator: " + option.paths[i].attitudeComparison.ToString());
+                    }
+                }
+
                 // Default path, if no restrictions are present
                 else if (!option.paths[i].checkEvent && !option.paths[i].checkAttitude)
                 {
@@ -97,21 +117,20 @@ public class OptionManager : MonoBehaviour
 
                 string attitudeToCheck = currentPath.characterToCheck.ToString() + "Attitude";
 
-                if (currentPath.comparison.ToString() == "greaterThanOrEqual")
+                if (currentPath.attitudeComparison.ToString() == "greaterThanOrEqual")
                 {
-                    if (PlayerPrefs.GetInt(attitudeToCheck) >= currentPath.attitudeValueToCompare)
+                    if (PlayerPrefs.GetInt(attitudeToCheck) >= currentPath.attitudeToCompare)
                         enabled = true;
                 } 
-                else if (currentPath.comparison.ToString() == "lessThanOrEqual")
+                else if (currentPath.attitudeComparison.ToString() == "lessThanOrEqual")
                 {
-                    if ((PlayerPrefs.GetInt(attitudeToCheck) <= currentPath.attitudeValueToCompare))
+                    if ((PlayerPrefs.GetInt(attitudeToCheck) <= currentPath.attitudeToCompare))
                         enabled = true;
                 }
                 else
                 {
-                    Debug.LogError("Invalid comparator: " + currentPath.comparison.ToString());
+                    Debug.LogError("Invalid comparator: " + currentPath.attitudeComparison.ToString());
                 }
-
             } 
             else if (currentPath.checkEvent)
             {
@@ -121,7 +140,26 @@ public class OptionManager : MonoBehaviour
                     enabled = true;
                 }
 
-            } 
+            }
+            else if (option.paths[i].checkStress)
+            {
+                if (option.paths[i].stressComparison.ToString() == "greaterThanOrEqual")
+                {
+                    if (PlayerPrefs.GetInt("Stress") >= option.paths[i].stressCheckAmount)
+                        enabled = true;
+                    enabled = true;
+                }
+                else if (option.paths[i].stressComparison.ToString() == "lessThanOrEqual")
+                {
+                    if (PlayerPrefs.GetInt("Stress") <= option.paths[i].stressCheckAmount)
+                        enabled = true;
+                    enabled = true;
+                }
+                else
+                {
+                    Debug.LogError("Invalid comparator: " + option.paths[i].attitudeComparison.ToString());
+                }
+            }
             else
             {
                 // Default case means there's no restrictions on the option
@@ -157,6 +195,12 @@ public class OptionManager : MonoBehaviour
         if (choiceToExecute.logsEvent)
         {
             PlayerPrefs.SetInt(choiceToExecute.eventToLog.ToString(), 1);
+        }
+
+        if (choiceToExecute.changesStress) 
+        {
+            PlayerPrefs.SetInt("Stress", PlayerPrefs.GetInt("Stress") + choiceToExecute.stressChangeAmount);
+            Debug.Log(PlayerPrefs.GetInt("Stress"));
         }
 
 

@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c747640b685770845b310d0728bc0456, type: 3}
-  m_Name: Day 2
+  m_Name: Day 5
   m_EditorClassIdentifier: 
   sequences:
-  - initialEvent: {fileID: 11400000, guid: b407541f2b65d694c9a3352ea55a4d50, type: 2}
+  - initialEvent: {fileID: 11400000, guid: 404450c17cf46ae4e9cb2c6fdd8aa17d, type: 2}
     trigger: 1
+  - initialEvent: {fileID: 11400000, guid: 27cf6882d48dccb49bcb18f70ad5223e, type: 2}
+    trigger: 4
   contracts: []
   easyContracts: []
   hardContracts: []

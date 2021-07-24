@@ -9,14 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c747640b685770845b310d0728bc0456, type: 3}
-  m_Name: Day 2
+  m_Script: {fileID: 11500000, guid: 15f2c2874d4a210459b67163429fe28c, type: 3}
+  m_Name: 2 SC
   m_EditorClassIdentifier: 
-  sequences:
-  - initialEvent: {fileID: 11400000, guid: b407541f2b65d694c9a3352ea55a4d50, type: 2}
-    trigger: 1
-  contracts: []
-  easyContracts: []
-  hardContracts: []
-  numEasy: 0
-  numHard: 0
+  nextEvent: {fileID: 0}
+  newScene: 1
+  transitionStyle: 1
+  predelay: 0
+  postdelay: 0
+  increaseDay: 0

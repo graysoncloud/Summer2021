@@ -111,8 +111,11 @@ public class GameManager : MonoBehaviour
     public enum SaveableEvent {
         TookPill,
         WatchedNews,
-
-
+        WateredPlants,
+        NotWateredPlants,
+        FinishedOnTime,
+        FinishedLate,
+        NotTookPill,
     }
 
 }

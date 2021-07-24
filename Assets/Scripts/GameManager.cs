@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public bool sequenceActive;
     public bool optionsMenuActive;
 
+    public EscapeMenu escapeMenu;
+
     private void Awake()
     {
         // Singleton Stuff
@@ -45,8 +47,11 @@ public class GameManager : MonoBehaviour
          *   2. ???
          */
 
+        PlayerPrefs.DeleteAll();
+
         // Load save info
-        PlayerPrefs.SetFloat("MusicVolume", .5f);
+        PlayerPrefs.SetFloat("MusicVolume", MusicManager.instance.defaultSFXVolume);
+        PlayerPrefs.SetFloat("SFXVolume", MusicManager.instance.defaultSFXVolume);
 
         PlayerPrefs.SetInt("Stress", 50);
 
@@ -56,6 +61,21 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt(character.ToString() + "Attitude", 150);
         }
 
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Escape menu won't trigger while looking at title scene or if a dialogue sequence is active
+            if (SceneChangeManager.instance.currentScene.name != "TitleScene" && !sequenceActive && !escapeMenu.gameObject.activeSelf)
+            {
+                optionsMenuActive = true;
+                escapeMenu.OpenMainMenu();
+                escapeMenu.gameObject.SetActive(true);
+            }
+
+        }
     }
 
     public Contract GetCurrentContract()

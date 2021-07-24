@@ -5,6 +5,10 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager instance = null;
+
+    public float defaultMusicVolume = .5f;
+    public float defaultSFXVolume = .5f;
+
     
     // Must be in the exact order of the Song enum
     public AudioClip[] songs;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: 39475c0f4c59948409d2a89b6ae4274a, type: 2}
   dialogueLines:
   - speaker: 5
     dialogue: "Let me see....\r"

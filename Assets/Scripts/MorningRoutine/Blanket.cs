@@ -26,11 +26,13 @@ public class Blanket : MonoBehaviour
             spriteRenderer.enabled = true;
         }
     }
-    void OnMouseDown() {        
-        spriteRenderer.sprite = sprites[1];
-        dragging = true;
-        Vector3 newScale = new Vector3(0.5f, 1, 1);
-        GetComponent<Rigidbody2D>().transform.localScale = newScale;
+    void OnMouseDown() {   
+        if(!ConversationManager.instance.inConversation) {
+            spriteRenderer.sprite = sprites[1];
+            dragging = true;
+            Vector3 newScale = new Vector3(0.5f, 1, 1);
+            GetComponent<Rigidbody2D>().transform.localScale = newScale;
+        }  
     }
 
     void OnMouseUp() {

@@ -7,8 +7,8 @@ public class Interactable : MonoBehaviour
     public string interactableName;
     public bool draggable;
     public bool persistent = false;
-    private bool active = false;
-    private bool mouseDown = false;
+    public bool active = false;
+    public bool mouseDown = false;
     private Vector3 defaultPosition;
 
     public Camera activeCam;
@@ -30,7 +30,7 @@ public class Interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(active && mouseDown && draggable) { 
+        if(active && mouseDown && draggable && !ConversationManager.instance.inConversation) { 
             //Debug.Log("dragging " + interactableName);
             Vector3 mousePos = Input.mousePosition;
             Vector3 screenPos = activeCam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, activeCam.nearClipPlane));
@@ -48,6 +48,8 @@ public class Interactable : MonoBehaviour
             Debug.Log("Interactable " + interactableName + " clicked");
             Interact();
             mouseDown = true;
+        } else if (active) {
+            Interact();
         }
     }
 
@@ -57,8 +59,7 @@ public class Interactable : MonoBehaviour
             this.gameObject.transform.position = defaultPosition;
         }
     }
-
-    void Interact() {
+    public void Interact() {
     }
 
     public void SetInteractableActive(bool a) { 

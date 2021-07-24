@@ -27,17 +27,20 @@ public class Minigame : MonoBehaviour
     }
 
     public void OnMouseDown() {
-        Debug.Log("Minigame " + minigameName + " clicked");
-        if(!isGameActive) {
+        
+        if(!isGameActive && !ConversationManager.instance.inConversation) {
+            //Debug.Log("Minigame " + minigameName + " clicked");
             isGameActive = true;
             BeginGame();
         }
         
     }
 
+    
+
     public void BeginGame() {
         if(isGameActive) {
-            Debug.Log(minigameName + " game started");
+            //Debug.Log(minigameName + " game started");
             minigameClickArea.enabled = false;
 
             foreach(Interactable i in interactableList) {
@@ -54,7 +57,7 @@ public class Minigame : MonoBehaviour
 
     public void StopGame() {
         if(isGameActive) {
-            Debug.Log(minigameName + " game ended");
+            //Debug.Log(minigameName + " game ended");
             isGameActive = false;
             minigameClickArea.enabled = true;
         }

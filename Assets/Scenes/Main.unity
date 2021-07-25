@@ -13690,9 +13690,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volatility: 0
-  volatilityText: {fileID: 0}
-  volatilityBar: {fileID: 0}
-  volatiltiyBG: {fileID: 0}
+  volatilityText: {fileID: 431988402}
+  volatilityBar: {fileID: 624302692}
+  volatiltiyBG: {fileID: 953781915}
   unstableVol: 5
   negativeVol: 3
   positiveVol: -2

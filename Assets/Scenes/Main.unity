@@ -12528,7 +12528,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultMusicVolume: 0.5
   defaultSFXVolume: 0.5
-  songs: []
+  songs:
+  - {fileID: 8300000, guid: c2ad810f2bd56ae438d814cc44e9e4e0, type: 3}
+  - {fileID: 8300000, guid: 763a4b390d5a18543abe0d221f0a28f5, type: 3}
+  - {fileID: 8300000, guid: ddda22353a902fd4ea9bf7af33da88fc, type: 3}
   audioSource: {fileID: 639671559}
 --- !u!1 &654498208
 GameObject:
@@ -20345,7 +20348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc043a4c7c70e204b89f916e042aa7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFX: []
+  SFX:
+  - {fileID: 8300000, guid: b1ee7ee4c7e436743af37aec222dbac7, type: 3}
 --- !u!1001 &1161460950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24382,7 +24386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4631f1f6f0a603f42a3c12d3c040291c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFX: []
+  SFX:
+  - {fileID: 8300000, guid: dd25ad50d909bbb4ba799d3a7e6c7a92, type: 3}
 --- !u!82 &1392189974
 AudioSource:
   m_ObjectHideFlags: 0

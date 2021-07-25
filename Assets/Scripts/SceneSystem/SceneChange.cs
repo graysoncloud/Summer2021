@@ -15,7 +15,13 @@ public class SceneChange : ScriptableEvent
     public bool increaseDay;
 
     // These must be named exactly how the scenes are in the editor
-    public enum SceneName { MorningRoutineScene, OfficeScene, DrugGameScene, RecapScene, DreamScene }
+    public enum SceneName { MorningRoutineScene, 
+        OfficeScene, 
+        DrugGameScene, 
+        RecapScene, 
+        DreamScene,
+        TitleScene
+    }
 
     public enum TransitionStyle { instant, fade}
 

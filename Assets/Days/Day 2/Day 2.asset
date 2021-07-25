@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Day 2
   m_EditorClassIdentifier: 
   sequences:
-  - initialEvent: {fileID: 11400000, guid: b407541f2b65d694c9a3352ea55a4d50, type: 2}
+  - initialEvent: {fileID: 11400000, guid: 84cb34e029ccfd14c9e0c3d94a4da181, type: 2}
     trigger: 1
   contracts: []
   easyContracts: []

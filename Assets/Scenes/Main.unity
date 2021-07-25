@@ -18562,7 +18562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01edfbbdbe185c348ad816a489d8a54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 1249941056}
 --- !u!1 &1030064963
 GameObject:
   m_ObjectHideFlags: 0
@@ -20685,7 +20685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01edfbbdbe185c348ad816a489d8a54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 829631757}
 --- !u!1 &1188740266
 GameObject:
   m_ObjectHideFlags: 0
@@ -32598,13 +32598,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a963faab08d865040ae9fc5af78ef30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 0}
-  optionsMenu: {fileID: 0}
-  titleWarningMenu: {fileID: 0}
-  exitWarningMenu: {fileID: 0}
-  musicSlider: {fileID: 0}
-  sfxSlider: {fileID: 0}
-  escapeMenuToTitleSC: {fileID: 0}
+  mainMenu: {fileID: 2100847451}
+  optionsMenu: {fileID: 191317805}
+  titleWarningMenu: {fileID: 819093951}
+  exitWarningMenu: {fileID: 522400125}
+  musicSlider: {fileID: 829631757}
+  sfxSlider: {fileID: 1606546250}
+  escapeMenuToTitleSC: {fileID: 11400000, guid: 0511e8c54a530d047a069400b64e9a53, type: 2}
 --- !u!114 &1813985270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36559,7 +36559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c5cf2cdf3825c4aa2114b89206a1d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 1606546250}
 --- !u!4 &2084069426 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
@@ -37299,7 +37299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c5cf2cdf3825c4aa2114b89206a1d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 148964243}
 --- !u!1 &2124604617
 GameObject:
   m_ObjectHideFlags: 0

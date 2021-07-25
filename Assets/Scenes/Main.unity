@@ -12528,10 +12528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultMusicVolume: 0.5
   defaultSFXVolume: 0.5
-  songs:
-  - {fileID: 8300000, guid: c2ad810f2bd56ae438d814cc44e9e4e0, type: 3}
-  - {fileID: 8300000, guid: 763a4b390d5a18543abe0d221f0a28f5, type: 3}
-  - {fileID: 8300000, guid: ddda22353a902fd4ea9bf7af33da88fc, type: 3}
+  songs: []
   audioSource: {fileID: 639671559}
 --- !u!1 &654498208
 GameObject:
@@ -32601,13 +32598,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a963faab08d865040ae9fc5af78ef30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 2100847451}
-  optionsMenu: {fileID: 191317805}
-  titleWarningMenu: {fileID: 819093951}
-  exitWarningMenu: {fileID: 522400125}
-  musicSlider: {fileID: 829631757}
-  sfxSlider: {fileID: 1606546250}
-  escapeMenuToTitleSC: {fileID: 11400000, guid: 0511e8c54a530d047a069400b64e9a53, type: 2}
+  mainMenu: {fileID: 0}
+  optionsMenu: {fileID: 0}
+  titleWarningMenu: {fileID: 0}
+  exitWarningMenu: {fileID: 0}
+  musicSlider: {fileID: 0}
+  sfxSlider: {fileID: 0}
+  escapeMenuToTitleSC: {fileID: 0}
 --- !u!114 &1813985270
 MonoBehaviour:
   m_ObjectHideFlags: 0

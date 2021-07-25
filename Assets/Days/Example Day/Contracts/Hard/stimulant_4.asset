@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: stimulant_4
   m_EditorClassIdentifier: 
-  companyName: hard 2
+  companyName: Hard 2
   description: hello barney
   usesMaxVolatility: 1
   volatilityMax: 27

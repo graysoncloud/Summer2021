@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 2.1 Con
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 11400000, guid: eba7c9aba3ecb294da26527fea7412aa, type: 2}
+  dialogueLines:
+  - speaker: 4
+    dialogue: Listen, about those migraine pills.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 4
+      animationName: 14
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: "*Pharmacy name* developed them a few years ago. They work pretty well,
+      but prolonged use can cause some pretty bad side effects. I\u2019ve started
+      having a harder time falling asleep.\r"
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 4
+      animationName: 14
+    animOnly: 0
+    animLength: 0
+    SFX: 

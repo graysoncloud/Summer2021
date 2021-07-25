@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: analgesic_10
   m_EditorClassIdentifier: 
-  companyName: hard1
+  companyName: Hard 1
   description: only one!
   usesMaxVolatility: 1
   volatilityMax: 12

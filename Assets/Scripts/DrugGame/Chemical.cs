@@ -623,7 +623,7 @@ public class Chemical : MonoBehaviour
         // call after statuses are changed
         if (desirable)
         {
-            benefitValue.UpdateBenefitValue(-benefit);
+            /*benefitValue.UpdateBenefitValue(-benefit);
             benefit = 0;
             foreach (string status in connectionStatuses)
             {
@@ -635,6 +635,12 @@ public class Chemical : MonoBehaviour
                         benefit += 2;
                 }
             }
+            if (!amplified)
+                benefit++;
+            else
+                benefit += 2;*/
+            benefitValue.UpdateBenefitValue(-benefit);
+            benefit = 1;
             benefitValue.UpdateBenefitValue(benefit);
         }
     }
@@ -643,7 +649,7 @@ public class Chemical : MonoBehaviour
     {
         if (desirable)
         {
-            benefitValue.UpdateBenefitValue(-benefit);
+            benefitValue.UpdateBenefitValue(-1);
             benefit = 0;
         }
     }

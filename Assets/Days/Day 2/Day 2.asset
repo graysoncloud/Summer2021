@@ -15,6 +15,8 @@ MonoBehaviour:
   sequences:
   - initialEvent: {fileID: 11400000, guid: b407541f2b65d694c9a3352ea55a4d50, type: 2}
     trigger: 1
-  - initialEvent: {fileID: 11400000, guid: 1cd0026fc951c1343a02b64690737519, type: 2}
-    trigger: 9
   contracts: []
+  easyContracts: []
+  hardContracts: []
+  numEasy: 0
+  numHard: 0

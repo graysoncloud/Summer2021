@@ -13,12 +13,17 @@ MonoBehaviour:
   m_Name: EventChoice
   m_EditorClassIdentifier: 
   choiceText: Event Choice
+  checkStress: 0
+  stressComparison: 0
+  stressCheckAmount: 0
   checkAttitude: 0
   characterToCheck: 0
-  comparison: 0
-  attitudeValueToCompare: 0
+  attitudeComparison: 0
+  attitudeToCompare: 0
   checkEvent: 0
   eventToCheck: 0
+  changesStress: 0
+  stressChangeAmount: 0
   changesAttitude: 0
   attitudeToChange: 0
   amountToAlter: 0

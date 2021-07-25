@@ -19,8 +19,13 @@ MonoBehaviour:
     trigger: 1
   contracts:
   - {fileID: 11400000, guid: 3e3e5405348578f4c9c693508d328902, type: 2}
+  - {fileID: 11400000, guid: 2690638670583df4a9ab2bca7fc379fe, type: 2}
   easyContracts:
-  - {fileID: 11400000, guid: 3e3e5405348578f4c9c693508d328902, type: 2}
-  hardContracts: []
-  numEasy: 1
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  hardContracts:
+  - {fileID: 0}
+  - {fileID: 0}
+  numEasy: 0
   numHard: 0

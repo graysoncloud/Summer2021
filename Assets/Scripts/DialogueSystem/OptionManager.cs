@@ -93,7 +93,8 @@ public class OptionManager : MonoBehaviour
 
             Debug.LogError("No valid (default) pathway detected");
         }
-        // End of auto-fork code
+
+
 
         DialogueUIManager.instance.SetUpForOption();
 
@@ -138,6 +139,7 @@ public class OptionManager : MonoBehaviour
                 {
                     enabled = true;
                 }
+
             }
             else if (option.paths[i].checkStress)
             {

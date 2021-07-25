@@ -51,14 +51,14 @@ public class Day : ScriptableObject
         int randomChoice;
 
 
-        for (int i = 0; i < numEasy; i++)
+        for(int i = 0; i < numEasy; i++)
         {
             randomChoice = Random.Range(0, randomEasy.Count);
             contracts.Add(easyContracts[randomEasy[randomChoice]]);
             randomEasy.RemoveAt(randomChoice);
         }
 
-        for (int i = 0; i < numHard; i++)
+        for(int i = 0; i < numHard; i++)
         {
             randomChoice = Random.Range(0, randomHard.Count);
             contracts.Add(hardContracts[randomHard[randomChoice]]);

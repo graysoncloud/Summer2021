@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 3 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 679a02a87a2e76845b78740b5f07ebf9, type: 2}
+  nextEvent: {fileID: 11400000, guid: ea181cf3ad41df44a8add43ef333f9f7, type: 2}
   dialogueLines:
   - speaker: 2
     dialogue: "Unbelievable. You manage to remember the names of all those fancy

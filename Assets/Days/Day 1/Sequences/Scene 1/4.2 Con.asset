@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 4.2 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: d54a8d60935e5174daec6e39391f8d6c, type: 2}
+  nextEvent: {fileID: 11400000, guid: a0e36ff3f4de17e41b102e1dbed4d9cc, type: 2}
   dialogueLines:
   - speaker: 1
     dialogue: "Mom, I don\u2019t have time for this. I have to go to work.\r"

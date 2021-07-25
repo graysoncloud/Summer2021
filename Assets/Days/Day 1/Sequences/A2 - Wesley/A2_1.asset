@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: A2_1
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: 2
+    dialogue: Morning, Barney! Good to see you again.
+    offset: {x: 0, y: 0}
+  - speaker: 2
+    dialogue: "Now, to make up for all your missed time, you\u2019re gonna be working
+      on twice as many contracts. We need you at 250% manpower, minimum.\r"
+    offset: {x: 0, y: 0}
+  - speaker: 2
+    dialogue: "Naw, I\u2019m just pulling your leg! Nothing crazy today, just some
+      very simple contracts to get you back into the flow. No need to stress.\r"
+    offset: {x: 0, y: 0}
+  - speaker: 2
+    dialogue: "At least, not too much anyway. Ho ho ho!\r"
+    offset: {x: 0, y: 0}
+  - speaker: 2
+    dialogue: "Good to have you back!\r"
+    offset: {x: 0, y: 0}
+  nextEvent: {fileID: 0}

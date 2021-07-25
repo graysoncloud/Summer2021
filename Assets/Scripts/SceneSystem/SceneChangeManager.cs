@@ -109,7 +109,6 @@ public class SceneChangeManager : MonoBehaviour
             case "DrugGameScene": newScene = scenes[2]; break;
             case "RecapScene": newScene = scenes[3]; break;
             case "DreamScene": newScene = scenes[4]; break;
-            case "TitleScene": newScene = scenes[5]; newScene.GetComponent<TitleSceneManager>().PrepareScene(); break;
             default: Debug.LogError("Invalid sceneName: " + sceneChange.newScene.ToString()); break;
         }
 

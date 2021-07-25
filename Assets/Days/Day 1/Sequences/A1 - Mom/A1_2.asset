@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0108177cadee74884d6225aac515b5, type: 3}
+  m_Name: A1_2
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 0}
+  choices:
+  - choiceText: I love you.
+    attitudeCheck: 0
+    characterToCheck: 0
+    comparison: 0
+    amount: 0
+    eventCheck: 1
+    eventToCheck: 0
+  - choiceText: I have to go!
+    attitudeCheck: 0
+    characterToCheck: 0
+    comparison: 0
+    amount: 0
+    eventCheck: 0
+    eventToCheck: 0
+  possibleConversations:
+  - {fileID: 11400000, guid: eb203de193e5a4b47a25161fbed4ace0, type: 2}
+  - {fileID: 11400000, guid: bc7cf4ded4b32c14aa9053194cdb11ed, type: 2}

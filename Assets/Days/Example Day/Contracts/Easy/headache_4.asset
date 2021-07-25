@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: headache_4
   m_EditorClassIdentifier: 
-  companyName: Easy 2
-  description: Hello
+  companyName: ez2
+  description: go
   usesMaxVolatility: 1
   volatilityMax: 20
   optimalMaxVolatilityVal: 20

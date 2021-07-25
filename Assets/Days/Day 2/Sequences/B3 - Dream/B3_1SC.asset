@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15f2c2874d4a210459b67163429fe28c, type: 3}
-  m_Name: InitialSceneChange
+  m_Name: B3_1SC
   m_EditorClassIdentifier: 
-  newScene: 0
+  newScene: 4
   characters: []
-  transitionStyle: 0
+  transitionStyle: 1
   predelay: 0
   postdelay: 0
   increaseDay: 0
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: ae13111b75abb4143a6e0b06441326e9, type: 2}

@@ -2591,9 +2591,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cff37fc0d5a9b1c47b896d8f9afc8c12, type: 2}
   - {fileID: 11400000, guid: bef17959852e84d4880d48c90c95d5e9, type: 2}
   - {fileID: 11400000, guid: 43c23f096ba49e94f85e1a4cc5c0a6b3, type: 2}
-  - {fileID: 11400000, guid: bf738d117c9be46468863c171a5c8aa4, type: 2}
-  - {fileID: 11400000, guid: fd48fcc359565aa41916d5ff32cc2028, type: 2}
-  - {fileID: 11400000, guid: d0036f5449c864e4980ab7a5c98b0e7b, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   currentDayIndex: 0
   currentDay: {fileID: 0}
   sequenceActive: 0
@@ -2719,15 +2719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2872d5c50f470d5498953fedd3dabaa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsMenu: {fileID: 1603228236}
-  warningMenu: {fileID: 28698120}
-  newGameButton: {fileID: 382229684}
-  resumeGameButton: {fileID: 1749813286}
-  optionsButton: {fileID: 1688902448}
-  exitGameButton: {fileID: 1204401418}
-  volumeSlider: {fileID: 1249941056}
-  sfxSlider: {fileID: 148964243}
-  titleToMR: {fileID: 11400000, guid: e90d69a8c41094940bbf50519d31f29f, type: 2}
 --- !u!1 &147361327
 GameObject:
   m_ObjectHideFlags: 0
@@ -12526,13 +12517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22822d0b6f887f548ae87d280d32814c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMusicVolume: 0.5
-  defaultSFXVolume: 0.5
-  songs:
-  - {fileID: 8300000, guid: c2ad810f2bd56ae438d814cc44e9e4e0, type: 3}
-  - {fileID: 8300000, guid: 763a4b390d5a18543abe0d221f0a28f5, type: 3}
-  - {fileID: 8300000, guid: ddda22353a902fd4ea9bf7af33da88fc, type: 3}
-  audioSource: {fileID: 639671559}
 --- !u!1 &654498208
 GameObject:
   m_ObjectHideFlags: 0
@@ -13689,13 +13673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dcecdc2b80426b49b9c8cd21cdb97b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volatility: 0
-  volatilityText: {fileID: 360880097}
-  volatilityBar: {fileID: 624302692}
-  volatiltiyBG: {fileID: 953781915}
-  unstableVol: 5
-  negativeVol: 3
-  positiveVol: -2
 --- !u!1 &711048140
 GameObject:
   m_ObjectHideFlags: 0
@@ -18565,7 +18542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01edfbbdbe185c348ad816a489d8a54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1249941056}
 --- !u!1 &1030064963
 GameObject:
   m_ObjectHideFlags: 0
@@ -19601,36 +19577,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.0651853, y: 2.5547097}
   m_EdgeRadius: 0
---- !u!1 &1095737762
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1095737763}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1095737763
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095737762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 503.06598, y: 216.38997, z: -61.84477}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1098376408
 GameObject:
   m_ObjectHideFlags: 0
@@ -20378,8 +20324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc043a4c7c70e204b89f916e042aa7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFX:
-  - {fileID: 8300000, guid: b1ee7ee4c7e436743af37aec222dbac7, type: 3}
 --- !u!1001 &1161460950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20719,7 +20663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01edfbbdbe185c348ad816a489d8a54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 829631757}
 --- !u!1 &1188740266
 GameObject:
   m_ObjectHideFlags: 0
@@ -24416,8 +24359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4631f1f6f0a603f42a3c12d3c040291c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFX:
-  - {fileID: 8300000, guid: dd25ad50d909bbb4ba799d3a7e6c7a92, type: 3}
 --- !u!82 &1392189974
 AudioSource:
   m_ObjectHideFlags: 0
@@ -29552,13 +29493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20427f2d09c0e034990f05f2d9f39299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recapToMR: {fileID: 11400000, guid: df27a2a1f8af16846b958903df2cd9de, type: 2}
-  contractNumbers: {fileID: 1488472035}
-  companyNames: {fileID: 856402421}
-  volatilities: {fileID: 1241270238}
-  prices: {fileID: 1951702445}
-  undesiredEffects: {fileID: 410552396}
-  desiredEffects: {fileID: 870918120}
 --- !u!1 &1656374379
 GameObject:
   m_ObjectHideFlags: 0
@@ -32633,13 +32567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a963faab08d865040ae9fc5af78ef30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 2100847451}
-  optionsMenu: {fileID: 191317805}
-  titleWarningMenu: {fileID: 819093951}
-  exitWarningMenu: {fileID: 522400125}
-  musicSlider: {fileID: 829631757}
-  sfxSlider: {fileID: 1606546250}
-  escapeMenuToTitleSC: {fileID: 11400000, guid: 0511e8c54a530d047a069400b64e9a53, type: 2}
 --- !u!114 &1813985270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36594,7 +36521,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c5cf2cdf3825c4aa2114b89206a1d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1606546250}
 --- !u!4 &2084069426 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
@@ -37334,7 +37260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c5cf2cdf3825c4aa2114b89206a1d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 148964243}
 --- !u!1 &2124604617
 GameObject:
   m_ObjectHideFlags: 0

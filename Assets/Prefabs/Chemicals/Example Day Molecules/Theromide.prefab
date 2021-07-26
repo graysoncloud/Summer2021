@@ -558,7 +558,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 2
-  effects: 00000000
+  effects: 0400000000000000
+  effectAmount: 0200000002000000
   desirable: 1
   undesirable: 0
   isPlaced: 0

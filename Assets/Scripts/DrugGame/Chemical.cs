@@ -6,8 +6,9 @@ public class Chemical : MonoBehaviour
 {
     public float cost = 0;
     public EffectType[] effects;
+    public int[] effectAmount;
     public bool desirable = false, undesirable = false;
-    private int benefit = 0;
+    private int benefit = 0, detriment = 0, benefitAmount = 1, detrimentAmount = 1;
     private const float rotateSpeed = 15f;
     private float rotateTarget = 0, internalRotation = 0;
 
@@ -93,12 +94,27 @@ public class Chemical : MonoBehaviour
             EffectType wanted = DrugManager.instance.GetDesireable();
             EffectType unwanted = DrugManager.instance.GetUndesireable();
 
+            int i = 0;
             foreach (var effect in effects)
             {
-                if (effect == wanted)
+                if (effect == wanted) //THIS SYSTEM DOESN'T WORK WELL WITH MULTIPLE DESIRABLE AND UNDESIRABLE
+                {
                     desirable = true;
+                    if (i + 1> effectAmount.Length) 
+                        benefitAmount = 1;
+                    else
+                        benefitAmount = effectAmount[i];
+                }
+                    
                 if (effect == unwanted)
+                {
                     undesirable = true;
+                    if (i + 1> effectAmount.Length) 
+                        detrimentAmount = 1;
+                    else
+                        detrimentAmount = effectAmount[i];
+                }
+                i++;
             }
         }
     }
@@ -639,9 +655,15 @@ public class Chemical : MonoBehaviour
                 benefit++;
             else
                 benefit += 2;*/
-            benefitValue.UpdateBenefitValue(-benefit);
-            benefit = 1;
+            benefitValue.UpdateBenefitValue(-benefit); // This code doesn't really make sense but it works
+            benefit = benefitAmount;
             benefitValue.UpdateBenefitValue(benefit);
+        }
+        if (undesirable)
+        {
+            DrugManager.instance.undesiredChems -= detriment;
+            detriment = detrimentAmount;
+            DrugManager.instance.undesiredChems += detriment;
         }
     }
 
@@ -649,8 +671,13 @@ public class Chemical : MonoBehaviour
     {
         if (desirable)
         {
-            benefitValue.UpdateBenefitValue(-1);
+            benefitValue.UpdateBenefitValue(-benefitAmount);
             benefit = 0;
+        }
+        if (undesirable)
+        {
+            DrugManager.instance.undesiredChems -= detriment;
+            detriment = 0;
         }
     }
 

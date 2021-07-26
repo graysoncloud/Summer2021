@@ -13690,12 +13690,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volatility: 0
-  volatilityText: {fileID: 431988402}
+  volatilityText: {fileID: 360880097}
   volatilityBar: {fileID: 624302692}
   volatiltiyBG: {fileID: 953781915}
   unstableVol: 5
-  negativeVol: 3
-  positiveVol: -2
+  negativeVol: 2
+  positiveVol: -1
 --- !u!1 &711048140
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public class VolatilityBar : MonoBehaviour
     [SerializeField]
     private SpriteRenderer volatilityBar = null, volatiltiyBG = null;
     [SerializeField]
-    private int unstableVol = 5, negativeVol = 3, positiveVol = -2;
+    private int unstableVol = 5, negativeVol = 2, positiveVol = -1;
 
     //private int unstableIncrement = 4;
     //private int negativeConnectionIncrement = 1;
@@ -64,6 +64,7 @@ public class VolatilityBar : MonoBehaviour
         volatilityText.text = volatility.ToString();
         if (volatility < 0)
         {
+            volatilityText.text = "0";
             volatilityBar.transform.localScale = new Vector3(0, volatilityBar.transform.localScale.y, volatilityBar.transform.localScale.z);
         } else if (volatility * 4 < volatiltiyBG.transform.localScale.x * volatiltiyBG.size.x)
         {

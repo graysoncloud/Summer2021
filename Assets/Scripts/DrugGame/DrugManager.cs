@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DrugManager : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class DrugManager : MonoBehaviour
 
     public int desiredChems = 0, undesiredChems = 0;
 
+    [SerializeField]
+    private TextMeshProUGUI timeText;
+    private int lastTimeStamp;
+    private float timeElapsed;
+
     public delegate void OnClearChems();
     public static event OnClearChems onClearChems;
 
@@ -42,10 +48,37 @@ public class DrugManager : MonoBehaviour
     {
         hexGrid = GameObject.FindObjectOfType<HexGrid>().GetComponent<HexGrid>();
         dangerBar = GameObject.FindObjectOfType<VolatilityBar>();
+
+        lastTimeStamp = 0;
+        timeElapsed = 0;
     }
 
     void Update()
     {
+        timeElapsed += Time.deltaTime * 30;
+
+        // Every fifteen seconds in the drug game, the player-visible clock will tick up 15 minutes. Stops at 11:00
+        if (Mathf.Floor(timeElapsed / 15) > lastTimeStamp && (timeElapsed < 854))
+        {
+            bool isPM = false;
+
+            lastTimeStamp++;
+            int hours = (int)Mathf.Floor(lastTimeStamp / 4) + 9;
+            if (!isPM && hours >= 13)
+            {
+                hours -= 12;
+                isPM = true;
+            }
+
+            string minutes = ((lastTimeStamp % 4) * 15).ToString();
+            if (minutes == "0")
+                minutes = "00";
+
+            string qualifier = isPM ? " PM" : " AM";
+
+            timeText.text = hours.ToString() + ":" + minutes + qualifier;
+        }
+
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 20.0f);  
 
@@ -269,5 +302,16 @@ public class DrugManager : MonoBehaviour
         {
             SR.sortingLayerName = "HexGraphics";
         }
+    }
+
+    public float GetTimeElapsed()
+    {
+        return timeElapsed;
+    }
+
+    public void ResetTimeElapsed()
+    {
+        timeElapsed = 0;
+        lastTimeStamp = 0;
     }
 }

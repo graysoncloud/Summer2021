@@ -53,7 +53,7 @@ public class OfficeSceneManager : MonoBehaviour
     {
         //Debug.Log(ContractDisplayer.instance == null);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !GameManager.instance.optionsMenuActive && !GameManager.instance.sequenceActive)
         {
             Vector3 worldPointOfClick = OfficeSceneCamera.instance.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
             Vector3 pointOfClick = new Vector3(worldPointOfClick.x, worldPointOfClick.y, 0);
@@ -246,6 +246,11 @@ public class OfficeSceneManager : MonoBehaviour
     {
         Destroy(contractInHand.gameObject);
         // Do something to determine how the player did
+    }
+
+    public void SetUpOfficeScene()
+    {
+        MusicManager.instance.StartBackgroundPlayer();
     }
 
 

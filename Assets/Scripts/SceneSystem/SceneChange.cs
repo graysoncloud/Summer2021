@@ -15,7 +15,8 @@ public class SceneChange : ScriptableEvent
     public bool increaseDay;
 
     // These must be named exactly how the scenes are in the editor
-    public enum SceneName { MorningRoutineScene, 
+    public enum SceneName { 
+        MorningRoutineScene, 
         OfficeScene, 
         DrugGameScene, 
         RecapScene, 
@@ -23,7 +24,11 @@ public class SceneChange : ScriptableEvent
         TitleScene
     }
 
-    public enum TransitionStyle { instant, fade}
+    public enum TransitionStyle { 
+        instant, 
+        fade,
+        longFade,
+    }
 
     [System.Serializable]
     public class CharacterInstantiation

@@ -17,6 +17,7 @@ public class MusicSlider : MonoBehaviour
     // Invoked when the value of the slider changes.
     public void ValueChangeCheck()
     {
+        Debug.Log(slider.value);
         PlayerPrefs.SetFloat("MusicVolume", slider.value);
     }
 

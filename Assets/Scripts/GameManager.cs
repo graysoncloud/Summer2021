@@ -47,8 +47,6 @@ public class GameManager : MonoBehaviour
          *   2. ???
          */
 
-        PlayerPrefs.DeleteAll();
-
         // Load save info
         PlayerPrefs.SetFloat("MusicVolume", MusicManager.instance.defaultSFXVolume);
         PlayerPrefs.SetFloat("SFXVolume", MusicManager.instance.defaultSFXVolume);
@@ -58,7 +56,7 @@ public class GameManager : MonoBehaviour
         foreach (CharacterName character in Enum.GetValues(typeof(CharacterName)))
         {
             // Load save state here
-            PlayerPrefs.SetInt(character.ToString() + "Attitude", 150);
+            PlayerPrefs.SetInt(character.ToString() + "Attitude", 0);
         }
 
     }
@@ -90,6 +88,8 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("TookPills", 0);
         PlayerPrefs.SetInt("WatchedNews", 0);
 
+        DrugManager.instance.ResetTimeElapsed();
+
         currentDayIndex++;
         currentDay = days[currentDayIndex];
         currentDay.ShuffleContracts();
@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
         if (toExecute == null)
         {
             ConversationManager.instance.EndConversation();
+            MusicManager.instance.StartFadeOut();
             GameManager.instance.sequenceActive = false;
         }
 

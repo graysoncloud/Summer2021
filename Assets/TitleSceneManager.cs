@@ -73,7 +73,16 @@ public class TitleSceneManager : MonoBehaviour
     public void StartNewGame()
     {
         ToggleButtonInteractability(false);
+
+        float musicVol = PlayerPrefs.GetFloat("MusicVolume");
+        float sfxVol = PlayerPrefs.GetFloat("SFXVolume");
+
         PlayerPrefs.DeleteAll();
+
+        // Saves settings from game to game
+        PlayerPrefs.SetFloat("MusicVolume", musicVol);
+        PlayerPrefs.SetFloat("SFXVolume", sfxVol);
+
         PlayerPrefs.SetInt("ActiveGame", 1);
         SceneChangeManager.instance.StartSceneChange(titleToMR);
     }

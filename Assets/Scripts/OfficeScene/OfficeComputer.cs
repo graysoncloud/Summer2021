@@ -20,12 +20,12 @@ public class OfficeComputer : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void OnMouseDown()
-    {
-        //mouseClicked = true;
-        //SceneChangeManager.instance.StartSceneChange(computerToDrugGameTransition);
+    //private void OnMouseDown()
+    //{
+    //    mouseClicked = true;
+    //    SceneChangeManager.instance.StartSceneChange(computerToDrugGameTransition);
 
-    }
+    //}
 
     //private void OnMouseUp()
     //{

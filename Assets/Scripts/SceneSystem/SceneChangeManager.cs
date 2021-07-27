@@ -43,6 +43,11 @@ public class SceneChangeManager : MonoBehaviour
         fadeOutCover.gameObject.SetActive(false);
     }
 
+    private void Update()
+    {
+        //Debug.Log(PlayerPrefs.GetFloat("MusicVolume"));
+    }
+
     public void StartSceneChange(SceneChange sceneChange) 
     {
         GameManager.instance.sequenceActive = true;
@@ -60,11 +65,12 @@ public class SceneChangeManager : MonoBehaviour
         else
             oldSceneName = null;
 
-        MusicManager.instance.StartFadeOut();
+        if (MusicManager.instance.GetComponent<AudioSource>().isPlaying)
+            MusicManager.instance.StartFadeOut();
 
         yield return new WaitForSeconds(sceneChange.predelay);
 
-        if (sceneChange.transitionStyle.ToString() == "fade")
+        if (sceneChange.transitionStyle.ToString() == "fade" || sceneChange.transitionStyle.ToString() == "longFade")
         {
             fadeOutCover.color = new Color(0f, 0f, 0f, 0f);
             fadeOutCover.gameObject.SetActive(true);
@@ -72,6 +78,10 @@ public class SceneChangeManager : MonoBehaviour
             {
                 fadeOutCover.color += new Color(0f, 0f, 0f, .01f);
                 yield return new WaitForSeconds(fadeOutRate);
+
+                // Doubles fade length for long fade
+                if (sceneChange.transitionStyle.ToString() == "longFade")
+                    yield return new WaitForSeconds(fadeOutRate);
             }
         }
 
@@ -104,18 +114,14 @@ public class SceneChangeManager : MonoBehaviour
         switch(sceneChange.newScene.ToString())
         {
             // Insert things like MRManager.ResetScene() below
-            case "MorningRoutineScene": newScene = scenes[0]; break;
-            case "OfficeScene": newScene = scenes[1]; break;
-            case "DrugGameScene": newScene = scenes[2]; break;
-            case "RecapScene": newScene = scenes[3]; break;
-            case "DreamScene": newScene = scenes[4]; break;
-            case "TitleScene": newScene = scenes[5]; newScene.GetComponent<TitleSceneManager>().PrepareScene(); break;
+            case "MorningRoutineScene": newScene = scenes[0]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
+            case "OfficeScene": newScene = scenes[1]; currentScene = newScene; newScene.gameObject.SetActive(true); OfficeSceneManager.instance.SetUpOfficeScene(); break;
+            case "DrugGameScene": newScene = scenes[2]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
+            case "RecapScene": newScene = scenes[3]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
+            case "DreamScene": newScene = scenes[4]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
+            case "TitleScene": newScene = scenes[5]; currentScene = newScene; newScene.gameObject.SetActive(true); newScene.GetComponent<TitleSceneManager>().PrepareScene(); break;
             default: Debug.LogError("Invalid sceneName: " + sceneChange.newScene.ToString()); break;
         }
-
-        newScene.gameObject.SetActive(true);
-        currentScene = newScene;
-
 
         /*
          * Depricated, characters now added in by there own scriptable object
@@ -135,12 +141,17 @@ public class SceneChangeManager : MonoBehaviour
 
         yield return new WaitForSeconds(midFadeDelay);
 
-        if (sceneChange.transitionStyle.ToString() == "fade")
+        if (sceneChange.transitionStyle.ToString() == "fade" || sceneChange.transitionStyle.ToString() == "longFade")
         {
             while (fadeOutCover.color.a > 0)
             {
                 fadeOutCover.color -= new Color(0f, 0f, 0f, .01f);
                 yield return new WaitForSeconds(fadeInRate);
+
+                // Doubles fade length for long fade
+                if (sceneChange.transitionStyle.ToString() == "longFade")
+                    yield return new WaitForSeconds(fadeOutRate);
+
             }
             fadeOutCover.gameObject.SetActive(false);
         }

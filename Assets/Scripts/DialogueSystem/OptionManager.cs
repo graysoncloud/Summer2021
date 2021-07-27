@@ -198,7 +198,6 @@ public class OptionManager : MonoBehaviour
         if (choiceToExecute.changesStress) 
         {
             PlayerPrefs.SetInt("Stress", PlayerPrefs.GetInt("Stress") + choiceToExecute.stressChangeAmount);
-            Debug.Log(PlayerPrefs.GetInt("Stress"));
         }
 
 

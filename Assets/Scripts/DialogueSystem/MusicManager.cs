@@ -9,11 +9,13 @@ public class MusicManager : MonoBehaviour
     public float defaultMusicVolume = .5f;
     public float defaultSFXVolume = .5f;
 
-    
     // Must be in the exact order of the Song enum
     public AudioClip[] songs;
+    public AudioClip[] workSongs;
 
     public AudioSource audioSource;
+
+    public Coroutine backgroundMusicPlayerInstance;
 
     private void Awake()
     {
@@ -23,7 +25,36 @@ public class MusicManager : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
+    }
+
+    public void StartBackgroundPlayer()
+    {
+        if (backgroundMusicPlayerInstance != null)
+            return;
+
+        backgroundMusicPlayerInstance = StartCoroutine("BackgroundMusicPlayer");
+    }
+
+    public IEnumerator BackgroundMusicPlayer()
+    {
+        // Initial delay
+        //yield return new WaitForSeconds(Random.value * 10);
+
+        while (SceneChangeManager.instance.currentScene.name == "OfficeScene" || SceneChangeManager.instance.currentScene.name == "DrugGameScene")
+        {
+            if (!audioSource.isPlaying)
+            {
+                yield return new WaitForSeconds((Random.value * 20) + 5);
+
+                int rInt = Random.Range(0, workSongs.Length);
+                audioSource.clip = workSongs[rInt];
+
+                StartCoroutine("FadeInMusic");
+            }
+
+            yield return new WaitForSeconds(1f);
+
+        }
 
     }
 
@@ -51,20 +82,6 @@ public class MusicManager : MonoBehaviour
         StartCoroutine("FadeOutMusic");
     }
 
-    private IEnumerator FadeInMusic()
-    {
-        audioSource.volume = 0;
-        audioSource.Play();
-
-        while (audioSource.volume < PlayerPrefs.GetFloat("MusicVolume"))
-        {
-            audioSource.volume += (float)(.001 * PlayerPrefs.GetFloat("MusicVolume"));
-            yield return new WaitForSeconds(.005f);
-        }
-
-
-    }
-
     private IEnumerator FadeOutMusic()
     {
 
@@ -79,6 +96,20 @@ public class MusicManager : MonoBehaviour
         }
 
         audioSource.Stop();
+
+    }
+
+    private IEnumerator FadeInMusic()
+    {
+        audioSource.volume = 0;
+        audioSource.Play();
+
+        while (audioSource.volume < PlayerPrefs.GetFloat("MusicVolume"))
+        {
+            audioSource.volume += (float)(.001 * PlayerPrefs.GetFloat("MusicVolume"));
+            yield return new WaitForSeconds(.005f);
+        }
+
 
     }
 

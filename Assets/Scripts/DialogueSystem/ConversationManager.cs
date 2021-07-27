@@ -196,7 +196,7 @@ public class ConversationManager : MonoBehaviour
             //Debug.Log(currentEvent.GetType().ToString());
 
             breaker++;
-            if (breaker > 10)
+            if (breaker > 30)
                 break;
 
             currentEvent = currentEvent.nextEvent;
@@ -215,6 +215,7 @@ public class ConversationManager : MonoBehaviour
                 SceneChangeManager.instance.StartSceneChange((SceneChange)currentEvent);
                 return;
             }
+
         }
     }
 

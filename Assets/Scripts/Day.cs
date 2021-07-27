@@ -8,6 +8,8 @@ using UnityEngine;
 public class Day : ScriptableObject
 {
     public Sequence[] sequences;
+    public ScriptableObject newsEvent;
+
     public List<Contract> contracts = new List<Contract>();
 
     public List<Contract> easyContracts = new List<Contract>();

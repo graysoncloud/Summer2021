@@ -100,7 +100,10 @@ public class GameManager : MonoBehaviour
         if (toExecute == null)
         {
             ConversationManager.instance.EndConversation();
-            MusicManager.instance.StartFadeOut();
+
+            if (MusicManager.instance.GetComponent<AudioSource>().isPlaying)
+                MusicManager.instance.StartFadeOut();
+
             GameManager.instance.sequenceActive = false;
         }
 

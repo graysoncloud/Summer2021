@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: 617b7b6abc9532b4ab2f57adf8641b96, type: 2}
   fadeOut: 0
-  toPlay: 0
+  toPlay: 1

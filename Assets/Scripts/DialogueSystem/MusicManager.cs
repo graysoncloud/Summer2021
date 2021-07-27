@@ -15,6 +15,9 @@ public class MusicManager : MonoBehaviour
 
     public AudioSource audioSource;
 
+    private Coroutine fadeInCoroutine;
+    private Coroutine fadeOutCoroutine;
+
     public Coroutine backgroundMusicPlayerInstance;
 
     private void Awake()
@@ -40,6 +43,7 @@ public class MusicManager : MonoBehaviour
         // Initial delay
         //yield return new WaitForSeconds(Random.value * 10);
 
+
         while (SceneChangeManager.instance.currentScene.name == "OfficeScene" || SceneChangeManager.instance.currentScene.name == "DrugGameScene")
         {
             if (!audioSource.isPlaying)
@@ -49,44 +53,60 @@ public class MusicManager : MonoBehaviour
                 int rInt = Random.Range(0, workSongs.Length);
                 audioSource.clip = workSongs[rInt];
 
-                StartCoroutine("FadeInMusic");
+                fadeInCoroutine = StartCoroutine("FadeInMusic");
             }
 
             yield return new WaitForSeconds(1f);
 
         }
 
+        Debug.Log(SceneChangeManager.instance.currentScene.name);
+
+        Debug.Log("Done");
+
     }
 
     // Unlike other managers, this isn't a coroutine since it should happen instantly and not delay the game
     public void StartMusicEvent(MusicEvent toExecute)
     {
-        // Makes sure nothing gets messed up if fade in / out happens at the same time
-        StopAllCoroutines();
 
         if (toExecute.fadeOut)
         {
-            StartCoroutine("FadeOutMusic");
+            fadeOutCoroutine = StartCoroutine("FadeOutMusic");
             GameManager.instance.StartSequence(toExecute.nextEvent);
             return;
+        } 
+        else
+        {
+            audioSource.clip = songs[(int)toExecute.toPlay];
+            fadeInCoroutine = StartCoroutine("FadeInMusic");
+            GameManager.instance.StartSequence(toExecute.nextEvent);
         }
-
-        audioSource.clip = songs[(int)toExecute.toPlay];
-        StartCoroutine("FadeInMusic");
-        GameManager.instance.StartSequence(toExecute.nextEvent);
-
     }
 
     public void StartFadeOut()
     {
-        StartCoroutine("FadeOutMusic");
+        fadeOutCoroutine = StartCoroutine("FadeOutMusic");
     }
 
     private IEnumerator FadeOutMusic()
     {
+        if (fadeInCoroutine != null)
+        {
+            StopCoroutine(fadeInCoroutine);
+            Debug.Log("Fade in ended");
+        }
+
+        Debug.Log("Made it past stop coroutine");
+        audioSource.volume = PlayerPrefs.GetFloat("MusicVolume");
+
+        Debug.Log(audioSource.volume);
+        Debug.Log(PlayerPrefs.GetFloat("MusicVolume"));
 
         while (audioSource.volume > 0)
         {
+            Debug.Log("Out Looping");
+
             audioSource.volume -= (float)(.001 * PlayerPrefs.GetFloat("MusicVolume"));
             yield return new WaitForSeconds(.005f);
 
@@ -95,17 +115,30 @@ public class MusicManager : MonoBehaviour
                 yield return new WaitForSeconds(.02f);
         }
 
+        Debug.Log("Stopping fade out");
+
         audioSource.Stop();
 
     }
 
     private IEnumerator FadeInMusic()
     {
+        if (fadeOutCoroutine != null)
+        {
+            StopCoroutine(fadeOutCoroutine);
+            Debug.Log("Fade out ended");
+        }
+
+        audioSource.volume = 0f;
+
         audioSource.volume = 0;
         audioSource.Play();
 
         while (audioSource.volume < PlayerPrefs.GetFloat("MusicVolume"))
         {
+            Debug.Log("In Looping");
+
+
             audioSource.volume += (float)(.001 * PlayerPrefs.GetFloat("MusicVolume"));
             yield return new WaitForSeconds(.005f);
         }

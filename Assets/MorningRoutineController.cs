@@ -13,7 +13,8 @@ public class MorningRoutineController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(SceneChangeManager.instance.currentScene.name != "MorningRoutineScene") {
+        if(SceneChangeManager.instance.currentScene != null) {
+            if(SceneChangeManager.instance.currentScene.name != "MorningRoutineScene") {
             gameObject.SetActive(false);
         }
         else {
@@ -21,5 +22,7 @@ public class MorningRoutineController : MonoBehaviour
                 gameObject.SetActive(true);
             }
         }
+        }
+        
     }
 }

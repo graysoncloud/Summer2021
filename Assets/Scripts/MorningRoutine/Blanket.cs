@@ -27,6 +27,9 @@ public class Blanket : MonoBehaviour
         }
     }
     void OnMouseDown() {        
+        if(GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive) {
+            return;
+        }
         spriteRenderer.sprite = sprites[1];
         dragging = true;
         Vector3 newScale = new Vector3(0.5f, 1, 1);

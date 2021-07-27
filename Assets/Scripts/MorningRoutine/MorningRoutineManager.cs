@@ -9,12 +9,17 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     public Button backButton;
     public GameObject roomButtons;
     public TextMeshProUGUI dayCounterTxt;
+    public GameObject MRUI;
 
     public Minigame currentMinigame = null;
 
     public FlowerMinigame flowerMinigame;
     public ShavingMinigame shavingMinigame;
     public BedMinigame bedMinigame;
+    public MedicationMinigame medicationMinigame;
+
+    // this is the global variable to check if you took your medicine today
+    public bool takenMedicationToday = false;
 
     public SceneChange mrToOffice;
 
@@ -28,6 +33,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         flowerMinigame = FindObjectOfType<FlowerMinigame>();
         shavingMinigame = FindObjectOfType<ShavingMinigame>();
         bedMinigame = FindObjectOfType<BedMinigame>();
+        medicationMinigame = FindObjectOfType<MedicationMinigame>();
     }
 
     void LoadInteractables() {
@@ -37,6 +43,14 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     // Update is called once per frame
     void Update()
     {
+        if(GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive) {
+            MRUI.SetActive(false);
+        } else {
+            if(MRUI.activeInHierarchy == false) {
+                 MRUI.SetActive(true);
+            }
+        }
+
         if(dayCounterTxt != null) {
             dayCounterTxt.text = "Day: " + gameDay;
         }
@@ -58,8 +72,11 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     public void StartNewDay() {
         gameDay++;
 
+        takenMedicationToday = false;
+
         flowerMinigame.IncrementDay();
         shavingMinigame.IncrementDay();
         bedMinigame.IncrementDay();
+        medicationMinigame.IncrementDay();
     }
 }

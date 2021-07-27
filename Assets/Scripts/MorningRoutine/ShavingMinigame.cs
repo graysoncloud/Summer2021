@@ -28,7 +28,9 @@ public class ShavingMinigame : Minigame
     }
 
     new void OnMouseDown() { 
-        Debug.Log("Minigame " + minigameName + " clicked");
+        if(GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive) {
+            return;
+        }
         if(!isGameActive) {
             isGameActive = true;
             BeginGame();

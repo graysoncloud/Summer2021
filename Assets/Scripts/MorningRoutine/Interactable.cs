@@ -41,6 +41,9 @@ public class Interactable : MonoBehaviour
     }
 
     public void OnMouseDown() {
+        if(GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive) {
+            return;
+        }
         if(active && draggable) {
             if(!mouseDown) {
                 defaultPosition = this.gameObject.transform.position;

@@ -17,11 +17,12 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     public ShavingMinigame shavingMinigame;
     public BedMinigame bedMinigame;
     public MedicationMinigame medicationMinigame;
-
+    public TVInteractable tvInteractable;
     // this is the global variable to check if you took your medicine today
     public bool takenMedicationToday = false;
 
     public SceneChange mrToOffice;
+    bool isTVActive = false;
 
     // game data
     // the day
@@ -34,6 +35,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         shavingMinigame = FindObjectOfType<ShavingMinigame>();
         bedMinigame = FindObjectOfType<BedMinigame>();
         medicationMinigame = FindObjectOfType<MedicationMinigame>();
+        tvInteractable = FindObjectOfType<TVInteractable>();
     }
 
     void LoadInteractables() {
@@ -63,8 +65,13 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     }
 
     public void StopMinigame() {
-        this.currentMinigame.StopGame();
-        this.currentMinigame = null;
+        if(this.currentMinigame != null) {
+            this.currentMinigame.StopGame();
+            this.currentMinigame = null;
+        }
+        if(isTVActive) {
+            tvInteractable.StopTVEvent();
+        }
         backButton.gameObject.SetActive(false);
         roomButtons.SetActive(true);
     }
@@ -78,5 +85,9 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         shavingMinigame.IncrementDay();
         bedMinigame.IncrementDay();
         medicationMinigame.IncrementDay();
+    }
+
+    public void SetTVActive(bool a) {
+        isTVActive = a;
     }
 }

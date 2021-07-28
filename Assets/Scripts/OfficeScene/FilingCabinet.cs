@@ -14,6 +14,5 @@ public class FilingCabinet : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
     }
 }

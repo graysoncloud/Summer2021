@@ -82,8 +82,7 @@ public class SceneChangeManager : MonoBehaviour
             }
         }
 
-        if (currentScene != null)
-            currentScene.SetActive(false);
+        GameObject oldScene = currentScene;
 
         /*
          * Depricated: characters instantiated in their own scriptable object
@@ -99,11 +98,6 @@ public class SceneChangeManager : MonoBehaviour
         //}
         //activeCharacters = new List<Character>();
 
-        if (sceneChange.newScene.ToString() == "RecapScene")
-        {
-            RecapSceneManager.instance.DisplayContracts();
-        }
-
         // Turn on new scene and assign it to scene manager's current scene field
         GameObject newScene = null;
 
@@ -114,11 +108,15 @@ public class SceneChangeManager : MonoBehaviour
             case "MorningRoutineScene": newScene = scenes[0]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
             case "OfficeScene": newScene = scenes[1]; currentScene = newScene; newScene.gameObject.SetActive(true); OfficeSceneManager.instance.SetUpOfficeScene(); break;
             case "DrugGameScene": newScene = scenes[2]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
-            case "RecapScene": newScene = scenes[3]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
+            case "RecapScene": newScene = scenes[3]; currentScene = newScene; newScene.gameObject.SetActive(true); RecapSceneManager.instance.DisplayContracts(); break;
             case "DreamScene": newScene = scenes[4]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
             case "TitleScene": newScene = scenes[5]; currentScene = newScene; newScene.gameObject.SetActive(true); newScene.GetComponent<TitleSceneManager>().PrepareScene(); break;
             default: Debug.LogError("Invalid sceneName: " + sceneChange.newScene.ToString()); break;
         }
+
+        if (oldScene != null)
+            oldScene.SetActive(false);
+
 
         /*
          * Depricated, characters now added in by there own scriptable object

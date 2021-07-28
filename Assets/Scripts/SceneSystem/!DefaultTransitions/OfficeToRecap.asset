@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f2c2874d4a210459b67163429fe28c, type: 3}
   m_Name: OfficeToRecap
   m_EditorClassIdentifier: 
+  nextEvent: {fileID: 0}
   newScene: 3
-  characters: []
   transitionStyle: 0
   predelay: 0
   postdelay: 0
   increaseDay: 0
-  nextEvent: {fileID: 0}

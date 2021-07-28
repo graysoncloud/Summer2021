@@ -18,8 +18,6 @@ public class LeaveOfficeButton : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 
 }

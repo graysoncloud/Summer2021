@@ -44,7 +44,7 @@ public class MusicManager : MonoBehaviour
         //yield return new WaitForSeconds(Random.value * 10);
 
 
-        while (SceneChangeManager.instance.currentScene.name == "OfficeScene" || SceneChangeManager.instance.currentScene.name == "DrugGameScene")
+        while (SceneChangeManager.instance.currentScene.name != "RecapScene")
         {
             if (!audioSource.isPlaying)
             {
@@ -97,15 +97,12 @@ public class MusicManager : MonoBehaviour
             Debug.Log("Fade in ended");
         }
 
-        Debug.Log("Made it past stop coroutine");
         audioSource.volume = PlayerPrefs.GetFloat("MusicVolume");
 
         Debug.Log(audioSource.volume);
-        Debug.Log(PlayerPrefs.GetFloat("MusicVolume"));
 
         while (audioSource.volume > 0)
         {
-            Debug.Log("Out Looping");
 
             audioSource.volume -= (float)(.001 * PlayerPrefs.GetFloat("MusicVolume"));
             yield return new WaitForSeconds(.005f);
@@ -114,8 +111,6 @@ public class MusicManager : MonoBehaviour
             if (audioSource.volume < (.1 * PlayerPrefs.GetFloat("MusicVolume")))
                 yield return new WaitForSeconds(.02f);
         }
-
-        Debug.Log("Stopping fade out");
 
         audioSource.Stop();
 
@@ -136,9 +131,6 @@ public class MusicManager : MonoBehaviour
 
         while (audioSource.volume < PlayerPrefs.GetFloat("MusicVolume"))
         {
-            Debug.Log("In Looping");
-
-
             audioSource.volume += (float)(.001 * PlayerPrefs.GetFloat("MusicVolume"));
             yield return new WaitForSeconds(.005f);
         }

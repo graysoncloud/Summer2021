@@ -58,7 +58,7 @@ public class Contract : ScriptableObject
     public int desirableEffectMin;
     public int optimalDesirableEffectAmount;
 
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
     [CustomEditor(typeof(Contract))]
     public class ContractEditor : Editor
     {
@@ -141,35 +141,24 @@ public class Contract : ScriptableObject
 
 public class FinishedContract
 {
+    public string drugID;
     public string companyName;
+    public string description;
 
     public bool usesMaxVolatility;
     public int maxVolatility;
     public int playerVolatility;
-    public int optimalVolatility;
 
     // Naming convention is a little weird- a max price will ask the player to provide a min price
     public bool usesMaxPrice;
     public int maxPrice;
     public int playerMaxPriceVal;
-    public int optimalMaxPriceVal;
 
     public bool usesMinPrice;
     public int minPrice;
     public int playerMinPriceVal;
-    public int optimalMinPriceVal;
 
-    public bool usesDesirableEffect;
-    public EffectType desirableEffect;
-    public int desirableEffectMin;
-    public int playerDesirableEffectAmount;
-    public int optimalDesirableEffectAmount;
-
-    public bool usesUndesirableEffect;
-    public EffectType undesirableEffect;
-    public int undesirableEffectMax;
-    public int playerUndesirableEffectAmount;
-    public int optimalUndesirableEffectAmount;
+    public string grade;
 
 }
 

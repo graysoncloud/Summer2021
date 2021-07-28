@@ -26,8 +26,6 @@ public class CostDisplay : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
-
     }
 
     private void Start()

@@ -37,8 +37,6 @@ public class OfficeSceneManager : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
-
         // Singleton stuff for contractDisplayer
     }
 
@@ -119,7 +117,10 @@ public class OfficeSceneManager : MonoBehaviour
                 }
 
                 if (!sequenceTriggered)
+                {
+                    MusicManager.instance.StartFadeOut();
                     SceneChangeManager.instance.StartSceneChange(officeToRecapTransition);
+                }
             }
 
         }
@@ -172,6 +173,7 @@ public class OfficeSceneManager : MonoBehaviour
                     if (sequence.trigger.ToString() == "solvedContract1" && contractsSolved == 1)
                     {
                         GameManager.instance.StartSequence(sequence.initialEvent);
+                        MusicManager.instance.StartFadeOut();
                         MusicManager.instance.StartFadeOut();
                     }
                     else if (sequence.trigger.ToString() == "solvedContract2" && contractsSolved == 2)

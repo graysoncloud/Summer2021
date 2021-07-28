@@ -16,8 +16,6 @@ public class ContractStack : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 
 }

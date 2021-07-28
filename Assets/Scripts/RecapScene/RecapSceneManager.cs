@@ -11,12 +11,12 @@ public class RecapSceneManager : MonoBehaviour
 
     public SceneChange recapToMR;
 
-    public GameObject contractNumbers;
-    public GameObject companyNames;
-    public GameObject volatilities;
-    public GameObject prices;
-    public GameObject undesiredEffects;
-    public GameObject desiredEffects;
+    public GameObject drugIDParent;
+    public GameObject companyNameParent;
+    public GameObject descriptionParent;
+    public GameObject volatilityParent;
+    public GameObject priceParent;
+    public GameObject gradeParent;
 
     private void Awake()
     {
@@ -38,14 +38,17 @@ public class RecapSceneManager : MonoBehaviour
         FinishedContract toAdd = new FinishedContract();
         Contract currentContract = GameManager.instance.GetCurrentContract();
 
+        // TO DO: generate drug ID from object in DrugScene
+        toAdd.drugID = "(ID)";
         toAdd.companyName = currentContract.companyName;
-        
+
+        toAdd.description = currentContract.description;
+
         if (currentContract.usesMaxVolatility)
         {
             toAdd.usesMaxVolatility = true;
             toAdd.maxVolatility = currentContract.volatilityMax;
             toAdd.playerVolatility = VolatilityBar.instance.GetVol();
-            toAdd.optimalVolatility = currentContract.optimalMaxVolatilityVal;
         }
 
         if (currentContract.usesMaxPrice)
@@ -53,35 +56,48 @@ public class RecapSceneManager : MonoBehaviour
             toAdd.usesMaxPrice = true;
             toAdd.maxPrice = currentContract.maxPrice;
             toAdd.playerMaxPriceVal = (int)CostDisplay.instance.GetCost();
-            toAdd.optimalMaxPriceVal = currentContract.optimalMaxPriceVal;
         }
 
-        if (currentContract.usesMinPrice)
-        {
-            toAdd.usesMinPrice = true;
-            toAdd.minPrice = currentContract.minPrice;
-            toAdd.playerMinPriceVal = (int)CostDisplay.instance.GetCost();
-            toAdd.optimalMinPriceVal = currentContract.optimalMinPriceVal;
-        }
+        // Initialized at 1 to match change to denominator
+        float gradeDivisor = 1;
 
-        if (currentContract.usesDesirableEffect)
-        {
-            toAdd.usesDesirableEffect = true;
-            toAdd.desirableEffect = currentContract.desirableEffect;
-            toAdd.desirableEffectMin = currentContract.desirableEffectMin;
-            // Needs to be updated
-            toAdd.playerDesirableEffectAmount = 10;
-            toAdd.optimalDesirableEffectAmount = currentContract.optimalDesirableEffectAmount;
-        }
+        if (toAdd.usesMaxVolatility)
+            gradeDivisor += currentContract.optimalMaxVolatilityVal;
 
-        if (currentContract.usesUndesirableEffect)
+        if (toAdd.usesMaxPrice)
+            gradeDivisor += currentContract.optimalMaxPriceVal;
+        else if (toAdd.usesMinPrice)
+            gradeDivisor += CostDisplay.instance.GetCost();
+
+        // Initialized at 1 so there's not divide by 0 errors
+        float gradeDenominator = 1;
+
+        if (toAdd.usesMaxVolatility)
+            gradeDenominator += VolatilityBar.instance.GetVol();
+
+        if (toAdd.usesMaxPrice)
+            gradeDenominator += CostDisplay.instance.GetCost();
+        else if (toAdd.usesMinPrice)
+            gradeDenominator += currentContract.optimalMinPriceVal;
+
+        float grade = gradeDivisor / gradeDenominator;
+        switch (grade)
         {
-            toAdd.usesUndesirableEffect = true;
-            toAdd.undesirableEffect = currentContract.undesirableEffect;
-            toAdd.undesirableEffectMax = currentContract.undesirableEffectMax;
-            // Needs to be updated
-            toAdd.playerUndesirableEffectAmount = 10;
-            toAdd.optimalUndesirableEffectAmount = currentContract.optimalUndesirableEffectAmount;
+            case float n when n >= 1:
+                toAdd.grade = "A+";
+                break;
+            case float n when n >= .9f:
+                toAdd.grade = "A";
+                break;
+            case float n when n >= .8f:
+                toAdd.grade = "B";
+                break;
+            case float n when n >= .7f:
+                toAdd.grade = "C";
+                break;
+            default:
+                toAdd.grade = "D";
+                break;
         }
 
         finishedContracts.Add(toAdd);
@@ -90,55 +106,58 @@ public class RecapSceneManager : MonoBehaviour
 
     public void DisplayContracts()
     {
-        TextMeshProUGUI[] contractNums = contractNumbers.GetComponentsInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI[] compNames = companyNames.GetComponentsInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI[] volValues = volatilities.GetComponentsInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI[] costs = prices.GetComponentsInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI[] badEffects = undesiredEffects.GetComponentsInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI[] goodEffects = desiredEffects.GetComponentsInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI[] drugIDs = drugIDParent.GetComponentsInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI[] companyNames = companyNameParent.GetComponentsInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI[] descriptions = descriptionParent.GetComponentsInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI[] volatilities = volatilityParent.GetComponentsInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI[] costs = priceParent.GetComponentsInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI[] grades = gradeParent.GetComponentsInChildren<TextMeshProUGUI>();
 
         for (int i = 0; i < finishedContracts.Count; i++)
         {
-            // Set up fields
-            contractNums[i].gameObject.SetActive(true);
-            contractNums[i].text = "";
-            compNames[i].gameObject.SetActive(true);
-            compNames[i].text = "";
-            volValues[i].gameObject.SetActive(true);
-            volValues[i].text = "";
+            // Turn on fields but set their strings to nothing
+            drugIDs[i].gameObject.SetActive(true);
+            drugIDs[i].text = "";
+            companyNames[i].gameObject.SetActive(true);
+            companyNames[i].text = "";
+            descriptions[i].gameObject.SetActive(true);
+            descriptions[i].text = "";
+            volatilities[i].gameObject.SetActive(true);
+            volatilities[i].text = "";
             costs[i].gameObject.SetActive(true);
             costs[i].text = "";
-            badEffects[i].gameObject.SetActive(true);
-            badEffects[i].text = "";
-            goodEffects[i].gameObject.SetActive(true);
-            goodEffects[i].text = "";
+            grades[i].gameObject.SetActive(true);
+            grades[i].text = "";
 
-
-            contractNums[i].text = "Contract " + i + ":";
-            compNames[i].text = finishedContracts[i].companyName;
+            // Assign fields
+            drugIDs[i].text = finishedContracts[i].drugID;
+            companyNames[i].text = finishedContracts[i].companyName;
+            descriptions[i].text = finishedContracts[i].description;
 
             if (finishedContracts[i].usesMaxVolatility)
-                volValues[i].text = finishedContracts[i].playerVolatility.ToString() + "(" + finishedContracts[i].optimalVolatility.ToString() + ")/" + finishedContracts[i].maxVolatility;
+                volatilities[i].text = finishedContracts[i].playerVolatility.ToString() + " / " + finishedContracts[i].maxVolatility;
+            else
+                volatilities[i].text = "NA";
 
             if (finishedContracts[i].usesMaxPrice)
-                costs[i].text = finishedContracts[i].playerMaxPriceVal.ToString() + "(" + finishedContracts[i].optimalMaxPriceVal.ToString() + ")/" + finishedContracts[i].maxPrice;
-            
-            if (finishedContracts[i].usesUndesirableEffect)
-                badEffects[i].text = finishedContracts[i].playerUndesirableEffectAmount.ToString() + "(" + finishedContracts[i].optimalUndesirableEffectAmount.ToString() + ")/" + finishedContracts[i].undesirableEffectMax;
-            
-            if (finishedContracts[i].usesDesirableEffect)
-                goodEffects[i].text = finishedContracts[i].playerDesirableEffectAmount.ToString() + "(" + finishedContracts[i].optimalDesirableEffectAmount.ToString() + ")/" + finishedContracts[i].desirableEffectMin;
+                costs[i].text = finishedContracts[i].playerMaxPriceVal.ToString() + " / " + finishedContracts[i].maxPrice;
+            else if (finishedContracts[i].usesMaxPrice)
+                costs[i].text = finishedContracts[i].playerMinPriceVal.ToString() + " / " + finishedContracts[i].minPrice;
+            else
+                costs[i].text = "NA";
+
+            grades[i].text = finishedContracts[i].grade;
         }
 
 
-        for (int i = finishedContracts.Count; i < contractNums.Length; i++)
+        for (int i = finishedContracts.Count; i < drugIDs.Length; i++)
         {
-            contractNums[i].gameObject.SetActive(false);
-            compNames[i].gameObject.SetActive(false);
-            volValues[i].gameObject.SetActive(false);
+            drugIDs[i].gameObject.SetActive(false);
+            companyNames[i].gameObject.SetActive(false);
+            descriptions[i].gameObject.SetActive(false);
+            volatilities[i].gameObject.SetActive(false);
             costs[i].gameObject.SetActive(false);
-            badEffects[i].gameObject.SetActive(false);
-            goodEffects[i].gameObject.SetActive(false);
+            grades[i].gameObject.SetActive(false);
         }
 
 

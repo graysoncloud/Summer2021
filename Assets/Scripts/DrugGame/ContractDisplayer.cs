@@ -20,8 +20,6 @@ public class ContractDisplayer : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 
     public void DisplayContract()

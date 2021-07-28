@@ -18,7 +18,5 @@ public class Printer : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 }

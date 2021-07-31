@@ -18,6 +18,10 @@ public class RecapSceneManager : MonoBehaviour
     public GameObject priceParent;
     public GameObject gradeParent;
 
+    public TextMeshProUGUI timeText;
+    public TextMeshProUGUI timeDecreasingText;
+    public TextMeshProUGUI bonusDecreasingText;
+
     private void Awake()
     {
         // Singleton Stuff
@@ -160,8 +164,43 @@ public class RecapSceneManager : MonoBehaviour
             grades[i].gameObject.SetActive(false);
         }
 
+    }
 
+    public void StartBonusCouroutine()
+    {
+        StartCoroutine("BonusCouroutine");
+    }
 
+    private IEnumerator BonusCouroutine()
+    {
+        bonusDecreasingText.text = "1000";
+
+        int hours = int.Parse(timeText.text.Substring(0, timeText.text.IndexOf(':')));
+        int minutes = int.Parse(timeText.text.Substring(timeText.text.IndexOf(':'), timeText.text.IndexOf(' ')));
+
+        string qualifier = timeText.text.Substring(timeText.text.IndexOf(' '));
+
+        yield return new WaitForSeconds(1f);
+    
+        while (qualifier != "AM" || minutes != 0 || hours != 9)
+        {
+
+            minutes -= 1;
+            if (minutes <= -1)
+            {
+                hours -= 1;
+                if (hours <= 0)
+                {
+                    hours = 12;
+                    qualifier = "AM";
+                }
+            }
+
+            timeDecreasingText.text = hours + ":" + minutes + " " + qualifier;
+            bonusDecreasingText.text = (int.Parse(bonusDecreasingText.text) - 1).ToString();
+
+            yield return new WaitForEndOfFrame(); 
+        }
 
     }
 

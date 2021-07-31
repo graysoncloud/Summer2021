@@ -55,7 +55,7 @@ public class Path : ScriptableObject
 
             // Checks
             myScript.checkAttitude = GUILayout.Toggle(myScript.checkAttitude, "Attitude Check");
-            if (myScript.checkAttitude && !myScript.checkEvent && !myScript.checkStress)
+            if (myScript.checkAttitude)
             {
                 myScript.characterToCheck = (CharacterName)EditorGUILayout.EnumPopup("Character to Check", myScript.characterToCheck);
                 myScript.attitudeComparison = (ComparisonType)EditorGUILayout.EnumPopup("Comparison", myScript.attitudeComparison);
@@ -63,13 +63,13 @@ public class Path : ScriptableObject
             }
 
             myScript.checkEvent = GUILayout.Toggle(myScript.checkEvent, "Event Check");
-            if (myScript.checkEvent && !myScript.checkAttitude && !myScript.checkStress)
+            if (myScript.checkEvent)
             {
                 myScript.eventToCheck = (GameManager.SaveableEvent)EditorGUILayout.EnumPopup("Event to Check", myScript.eventToCheck);
             }
 
             myScript.checkStress = GUILayout.Toggle(myScript.checkStress, "Stress Check");
-            if (myScript.checkStress && !myScript.checkAttitude && !myScript.checkEvent)
+            if (myScript.checkStress)
             {
                 myScript.stressComparison = (ComparisonType)EditorGUILayout.EnumPopup("Comparison", myScript.stressComparison);
                 myScript.stressCheckAmount = EditorGUILayout.IntField("Amount", myScript.stressCheckAmount);

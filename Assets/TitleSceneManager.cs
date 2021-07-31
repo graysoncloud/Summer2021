@@ -83,6 +83,12 @@ public class TitleSceneManager : MonoBehaviour
         PlayerPrefs.SetFloat("MusicVolume", musicVol);
         PlayerPrefs.SetFloat("SFXVolume", sfxVol);
 
+        foreach (CharacterName character in System.Enum.GetValues(typeof(CharacterName)))
+        {
+            // Load save state here
+            PlayerPrefs.SetInt(character.ToString() + "Attitude", 0);
+        }
+
         PlayerPrefs.SetInt("ActiveGame", 1);
         SceneChangeManager.instance.StartSceneChange(titleToMR);
     }

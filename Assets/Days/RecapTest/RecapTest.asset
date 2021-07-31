@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequences: []
   newsEvent: {fileID: 0}
-  contracts: []
+  contracts:
+  - {fileID: 11400000, guid: 1a554c3aa35374d4fb6c58e1272b204c, type: 2}
+  - {fileID: 11400000, guid: 54e3625e8cbe6e74ea8c427553a8e9da, type: 2}
+  - {fileID: 11400000, guid: 20a061cdb9ff7ec45bca0e0d2819e1c0, type: 2}
   easyContracts:
   - {fileID: 11400000, guid: 54e3625e8cbe6e74ea8c427553a8e9da, type: 2}
   - {fileID: 11400000, guid: 1a554c3aa35374d4fb6c58e1272b204c, type: 2}

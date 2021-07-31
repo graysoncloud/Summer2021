@@ -30,52 +30,60 @@ public class OptionManager : MonoBehaviour
 
         currentOption = option;
 
+        Debug.Log(PlayerPrefs.GetInt("BarneyAttitude"));
+        Debug.Log(PlayerPrefs.GetFloat("Stress"));
+
         // This block of code allows instant forks to occur (no choosing necessary)
         if (option.automatic)
         {
             for (int i = 0; i < option.paths.Length; i++)
             {
+                bool execute = true;
                 if (option.paths[i].checkAttitude)
                 {
                     string attitudeToCheck = option.paths[i].characterToCheck.ToString() + "Attitude";
                     if (option.paths[i].attitudeComparison.ToString() == "greaterThanOrEqual")
                     {
                         if (PlayerPrefs.GetInt(attitudeToCheck) >= option.paths[i].attitudeToCompare)
-                            ExecutePath(i);
-                        return;
+                            execute = (execute && true);
+                        else
+                            execute = (execute && false);
                     }
                     else if (option.paths[i].attitudeComparison.ToString() == "lessThanOrEqual")
                     {
                         if (PlayerPrefs.GetInt(attitudeToCheck) <= option.paths[i].attitudeToCompare)
-                            ExecutePath(i);
-                        return;
+                            execute = (execute && true);
+                        else
+                            execute = (execute && false);
                     }
                     else
                     {
                         Debug.LogError("Invalid comparator: " + option.paths[i].attitudeComparison.ToString());
                     }
                 }
-                else if (option.paths[i].checkEvent)
+                if (option.paths[i].checkEvent)
                 {
                     if (PlayerPrefs.GetInt(option.paths[i].eventToCheck.ToString()) == 1)
-                    {
-                        ExecutePath(i);
-                        return;
-                    }
+                        execute = (execute && true);
+                    else
+                        execute = (execute && false);
+
                 } 
-                else if (option.paths[i].checkStress)
+                if (option.paths[i].checkStress)
                 {
                     if (option.paths[i].stressComparison.ToString() == "greaterThanOrEqual")
                     {
                         if (PlayerPrefs.GetInt("Stress") >= option.paths[i].stressCheckAmount)
-                            ExecutePath(i);
-                        return;
+                            execute = (execute && true);
+                        else
+                            execute = (execute && false);
                     }
                     else if (option.paths[i].stressComparison.ToString() == "lessThanOrEqual")
                     {
                         if (PlayerPrefs.GetInt("Stress") <= option.paths[i].stressCheckAmount)
-                            ExecutePath(i);
-                        return;
+                            execute = (execute && true);
+                        else
+                            execute = (execute && false);
                     }
                     else
                     {
@@ -84,11 +92,13 @@ public class OptionManager : MonoBehaviour
                 }
 
                 // Default path, if no restrictions are present
-                else if (!option.paths[i].checkEvent && !option.paths[i].checkAttitude)
+                else if (!option.paths[i].checkEvent && !option.paths[i].checkAttitude && !option.paths[i].checkStress)
                 {
-                    ExecutePath(i);
-                    return;
+                    execute = true;
                 }
+
+                if (execute)
+                    ExecutePath(i);
             }
 
             Debug.LogError("No valid (default) pathway detected");
@@ -108,50 +118,55 @@ public class OptionManager : MonoBehaviour
         for (int i = 0; i < currentOption.paths.Length; i++)
         {
             Path currentPath = currentOption.paths[i];
-            bool enabled = false;
+            bool enabled = true;
 
             // Determine if choice will be choosable, or greyed out. Currently, choices can be enabled / disabled by prerequisite events and character attitudes
             if (currentPath.checkAttitude)
             {
-
                 string attitudeToCheck = currentPath.characterToCheck.ToString() + "Attitude";
 
                 if (currentPath.attitudeComparison.ToString() == "greaterThanOrEqual")
                 {
                     if (PlayerPrefs.GetInt(attitudeToCheck) >= currentPath.attitudeToCompare)
-                        enabled = true;
+                        enabled = (enabled && true);
+                    else
+                        enabled = (enabled && false);
                 } 
                 else if (currentPath.attitudeComparison.ToString() == "lessThanOrEqual")
                 {
-                    if ((PlayerPrefs.GetInt(attitudeToCheck) <= currentPath.attitudeToCompare))
-                        enabled = true;
+                    if (PlayerPrefs.GetInt(attitudeToCheck) <= currentPath.attitudeToCompare)
+                        enabled = (enabled && true);
+                    else
+                        enabled = (enabled && false);
                 }
                 else
                 {
                     Debug.LogError("Invalid comparator: " + currentPath.attitudeComparison.ToString());
                 }
             } 
-            else if (currentPath.checkEvent)
+            if (currentPath.checkEvent)
             {
                 // If player prefs had bools this would look a bit simpler. As is, 1 is on, 0 is off
                 if (PlayerPrefs.GetInt(currentPath.eventToCheck.ToString()) == 1)
-                {
-                    enabled = true;
-                }
+                    enabled = (enabled && true);
+                else
+                    enabled = (enabled && false);
             }
-            else if (option.paths[i].checkStress)
+            if (option.paths[i].checkStress)
             {
                 if (option.paths[i].stressComparison.ToString() == "greaterThanOrEqual")
                 {
                     if (PlayerPrefs.GetInt("Stress") >= option.paths[i].stressCheckAmount)
-                        enabled = true;
-                    enabled = true;
+                        enabled = (enabled && true);
+                    else
+                        enabled = (enabled && false);
                 }
                 else if (option.paths[i].stressComparison.ToString() == "lessThanOrEqual")
                 {
                     if (PlayerPrefs.GetInt("Stress") <= option.paths[i].stressCheckAmount)
-                        enabled = true;
-                    enabled = true;
+                        enabled = (enabled && true);
+                    else
+                        enabled = (enabled && false);
                 }
                 else
                 {

@@ -60,8 +60,6 @@ public class MusicManager : MonoBehaviour
 
         }
 
-        Debug.Log(SceneChangeManager.instance.currentScene.name);
-
         Debug.Log("Done");
 
     }

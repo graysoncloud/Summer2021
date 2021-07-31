@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Day 3
   m_EditorClassIdentifier: 
   sequences:
-  - initialEvent: {fileID: 11400000, guid: f9ef6deab2942244798dd91563cc2885, type: 2}
+  - initialEvent: {fileID: 11400000, guid: 3a504b29246513e42b9d8e6395eaae84, type: 2}
     trigger: 1
-  - initialEvent: {fileID: 11400000, guid: 1cd0026fc951c1343a02b64690737519, type: 2}
+  - initialEvent: {fileID: 11400000, guid: 44bf6b8f8cbc9984492ecba7f2986821, type: 2}
     trigger: 8
+  newsEvent: {fileID: 0}
   contracts: []
   easyContracts: []
   hardContracts: []

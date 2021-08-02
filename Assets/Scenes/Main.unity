@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StubbleUnit (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.638
@@ -413,7 +417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 18359829}
   - component: {fileID: 18359830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 27550510}
   - component: {fileID: 27550511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FocusCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1626,6 +1630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StubbleUnit (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.288
@@ -1937,6 +1945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StubbleUnit (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.331
@@ -2201,7 +2213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 111523325}
   - component: {fileID: 111523326}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainVCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2954,7 +2966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 156543538}
   - component: {fileID: 156543539}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MorningRoutineScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2981,6 +2993,7 @@ Transform:
   - {fileID: 2088006595}
   - {fileID: 565493393}
   - {fileID: 1807354951}
+  - {fileID: 1227395469}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3218,7 +3231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 196412831}
   - component: {fileID: 196412832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3461,7 +3474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 215324975}
   - component: {fileID: 215324976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4529,7 +4542,7 @@ GameObject:
   - component: {fileID: 247195394}
   - component: {fileID: 247195395}
   - component: {fileID: 247195397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BedMinigame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5906,7 +5919,7 @@ GameObject:
   m_Component:
   - component: {fileID: 314094126}
   - component: {fileID: 314094127}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Affector
   m_TagString: Razor
   m_Icon: {fileID: 0}
@@ -6169,7 +6182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 341988005}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: RoomButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8251,7 +8264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417735832}
   - component: {fileID: 417735831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8913,6 +8926,10 @@ PrefabInstance:
     - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_Name
       value: StubbleUnit (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11330,7 +11347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 564588609}
   - component: {fileID: 564588610}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FocusCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11397,7 +11414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 565493393}
   - component: {fileID: 565493394}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LivingRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12446,6 +12463,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StubbleUnit (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.444
@@ -13395,7 +13416,7 @@ GameObject:
   - component: {fileID: 638994826}
   - component: {fileID: 638994828}
   - component: {fileID: 638994827}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13985,7 +14006,7 @@ GameObject:
   - component: {fileID: 658556365}
   - component: {fileID: 658556364}
   - component: {fileID: 658556363}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: LivingRoomButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15759,6 +15780,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StubbleUnit (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.721
@@ -15824,6 +15849,10 @@ PrefabInstance:
     - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_Name
       value: StubbleUnit (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17349,7 +17378,7 @@ GameObject:
   - component: {fileID: 866565465}
   - component: {fileID: 866565464}
   - component: {fileID: 866565463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18352,7 +18381,7 @@ GameObject:
   - component: {fileID: 939956086}
   - component: {fileID: 939956085}
   - component: {fileID: 939956084}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BathroomButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18519,7 +18548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 943643548}
   - component: {fileID: 943643549}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Affector
   m_TagString: ShavingCream
   m_Icon: {fileID: 0}
@@ -20332,6 +20361,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StubbleUnit (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.174
@@ -21191,6 +21224,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StubbleUnit (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.63
@@ -21515,6 +21552,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StubbleUnit (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.118
@@ -21737,6 +21778,10 @@ PrefabInstance:
     - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_Name
       value: StubbleUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23024,6 +23069,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227212681}
   m_CullTransparentMesh: 1
+--- !u!1 &1227395468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1227395469}
+  m_Layer: 6
+  m_Name: MigraineEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1227395469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227395468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 156543538}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1230138683
 GameObject:
   m_ObjectHideFlags: 0
@@ -23828,7 +23903,7 @@ GameObject:
   - component: {fileID: 1268487639}
   - component: {fileID: 1268487641}
   - component: {fileID: 1268487640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MedicineMinigame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25460,13 +25535,32 @@ GameObject:
   - component: {fileID: 1375980667}
   - component: {fileID: 1375980666}
   - component: {fileID: 1375980668}
-  m_Layer: 0
+  - component: {fileID: 1375980669}
+  - component: {fileID: 1375980665}
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1375980665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375980664}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: c3d2500d5c5e5d6439b33ae5375d7f36, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!20 &1375980666
 Camera:
   m_ObjectHideFlags: 0
@@ -25558,6 +25652,66 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1375980669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375980664}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1375980667}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 1
+  m_ShowCustomSorter: 1
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1379578782
 GameObject:
   m_ObjectHideFlags: 0
@@ -26770,7 +26924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1419662219}
   - component: {fileID: 1419662218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bedroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27204,6 +27358,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StubbleUnit (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.084
@@ -27261,7 +27419,7 @@ GameObject:
   - component: {fileID: 1463752145}
   - component: {fileID: 1463752147}
   - component: {fileID: 1463752146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MadeBlanket
   m_TagString: Bed
   m_Icon: {fileID: 0}
@@ -27503,7 +27661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1488341469}
   - component: {fileID: 1488341470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FocusCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28669,7 +28827,7 @@ GameObject:
   - component: {fileID: 1537252202}
   - component: {fileID: 1537252204}
   - component: {fileID: 1537252203}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29153,7 +29311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1560080107}
   - component: {fileID: 1560080106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MRManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29209,7 +29367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1568789540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StubbleParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29841,6 +29999,10 @@ PrefabInstance:
     - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_Name
       value: StubbleUnit (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30642,6 +30804,10 @@ PrefabInstance:
     - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_Name
       value: StubbleUnit (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33229,6 +33395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StubbleUnit (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.012
@@ -33291,7 +33461,7 @@ GameObject:
   - component: {fileID: 1740694599}
   - component: {fileID: 1740694601}
   - component: {fileID: 1740694600}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33691,7 +33861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1756139144}
   - component: {fileID: 1756139145}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33736,7 +33906,7 @@ GameObject:
   - component: {fileID: 1760541218}
   - component: {fileID: 1760541217}
   - component: {fileID: 1760541216}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: WorkButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34153,6 +34323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StubbleUnit (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.668
@@ -34349,7 +34523,7 @@ GameObject:
   - component: {fileID: 1807354951}
   - component: {fileID: 1807354953}
   - component: {fileID: 1807354952}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34655,7 +34829,7 @@ GameObject:
   - component: {fileID: 1830278532}
   - component: {fileID: 1830278531}
   - component: {fileID: 1830278535}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Blanket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34820,7 +34994,7 @@ GameObject:
   - component: {fileID: 1832866109}
   - component: {fileID: 1832866108}
   - component: {fileID: 1832866107}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34950,6 +35124,10 @@ PrefabInstance:
     - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_Name
       value: StubbleUnit (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35096,7 +35274,7 @@ GameObject:
   - component: {fileID: 1841480841}
   - component: {fileID: 1841480840}
   - component: {fileID: 1841480839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35224,6 +35402,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StubbleUnit (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.419
@@ -35280,7 +35462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1860710492}
   - component: {fileID: 1860710493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37437,7 +37619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1977676283}
   - component: {fileID: 1977676284}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StubbleBounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37498,6 +37680,10 @@ PrefabInstance:
     - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_Name
       value: StubbleUnit (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703395759216821562, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1703395759216821565, guid: 22e66ffa08af63a4aad5e9ad60ba4776, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38059,7 +38245,7 @@ GameObject:
   - component: {fileID: 2028207697}
   - component: {fileID: 2028207696}
   - component: {fileID: 2028207698}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39042,7 +39228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2088006595}
   - component: {fileID: 2088006596}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40193,7 +40379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2142605712}
   - component: {fileID: 2142605713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40274,7 +40460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 307424892601007153}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40369,7 +40555,7 @@ GameObject:
   - component: {fileID: 307424892638967906}
   - component: {fileID: 307424892638967917}
   - component: {fileID: 307424892638967916}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40409,7 +40595,7 @@ GameObject:
   - component: {fileID: 307424893024981270}
   - component: {fileID: 307424893024981268}
   - component: {fileID: 307424893024981271}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: DayBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40583,7 +40769,7 @@ GameObject:
   - component: {fileID: 307424893474775175}
   - component: {fileID: 307424893474775173}
   - component: {fileID: 307424893474775172}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40728,7 +40914,7 @@ GameObject:
   - component: {fileID: 307424893862137736}
   - component: {fileID: 307424893862137742}
   - component: {fileID: 307424893862137737}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: DayText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40872,7 +41058,7 @@ GameObject:
   - component: {fileID: 307424893865099450}
   - component: {fileID: 307424893865099448}
   - component: {fileID: 307424893865099451}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40985,7 +41171,7 @@ GameObject:
   - component: {fileID: 307424894103945306}
   - component: {fileID: 307424894103945317}
   - component: {fileID: 307424894103945316}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: IncBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41110,7 +41296,7 @@ GameObject:
   - component: {fileID: 307424894193808374}
   - component: {fileID: 307424894193808369}
   - component: {fileID: 307424894193808368}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BackBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41228,7 +41414,7 @@ GameObject:
   - component: {fileID: 1689213062974725834}
   - component: {fileID: 1689213062974725835}
   - component: {fileID: 1689213062974725830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShavingCream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41373,7 +41559,7 @@ GameObject:
   - component: {fileID: 1689213063241734523}
   - component: {fileID: 1689213063241734516}
   - component: {fileID: 1689213063241734519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Razor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41467,7 +41653,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689213063387197271}
   - component: {fileID: 1689213063387197270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41511,7 +41697,7 @@ GameObject:
   - component: {fileID: 1689213063500303193}
   - component: {fileID: 1689213063500303194}
   - component: {fileID: 1689213063500303195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShavingMinigame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41612,7 +41798,7 @@ GameObject:
   - component: {fileID: 1689213063615409339}
   - component: {fileID: 1689213063615409338}
   - component: {fileID: 1689213063615409337}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41758,7 +41944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689213063783996175}
   - component: {fileID: 1689213063783996168}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FocusCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41791,7 +41977,7 @@ GameObject:
   - component: {fileID: 3649176900780571734}
   - component: {fileID: 5744459121688163894}
   - component: {fileID: 7146769542402549789}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41810,7 +41996,7 @@ GameObject:
   - component: {fileID: 4485719238096437675}
   - component: {fileID: 7597290559065858889}
   - component: {fileID: 1550639789619151492}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BedroomButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41868,7 +42054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5282021729452536520}
   - component: {fileID: 5282021729452536527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41947,7 +42133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5282021730387371355}
   - component: {fileID: 5282021730387371354}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FocusCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42003,7 +42189,7 @@ GameObject:
   - component: {fileID: 5282021730797816289}
   - component: {fileID: 5282021730797816295}
   - component: {fileID: 5282021730797816288}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FlowerMinigame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42140,7 +42326,7 @@ GameObject:
   - component: {fileID: 5282021731174827679}
   - component: {fileID: 5282021731174827672}
   - component: {fileID: 5282021731174827678}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WateringCan
   m_TagString: WateringCan
   m_Icon: {fileID: 0}

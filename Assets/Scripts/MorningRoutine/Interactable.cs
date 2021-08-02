@@ -13,6 +13,7 @@ public class Interactable : MonoBehaviour
 
     public Camera activeCam;
 
+    public AudioClip soundEffect;
 
     // Start is called before the first frame update
     void Start()

@@ -45,6 +45,7 @@ public class MedicationMinigame : Minigame
     public void IncrementDay() {
         lidInteractable.Reset();
         pillInteractable.Reset();
+        PlayerPrefs.SetInt("TookPill", 0);
     }
 
 

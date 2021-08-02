@@ -78,6 +78,7 @@ public class FlowerPot : Interactable
             if(waterLevel < maxWaterLevel) {
                 waterLevel++;
                 StartCoroutine("ShowWaterEffect");
+                PlaySoundEffect();
             }
         }
     }
@@ -88,5 +89,10 @@ public class FlowerPot : Interactable
         waterEffectGO.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         waterEffectGO.SetActive(false);
+    }
+
+    void PlaySoundEffect() {
+        MorningRoutineManager.Instance.audioManager.LoadSound(soundEffect);
+        MorningRoutineManager.Instance.audioManager.PlaySound();
     }
 }

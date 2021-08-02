@@ -233,6 +233,7 @@ MonoBehaviour:
   draggable: 0
   persistent: 1
   activeCam: {fileID: 0}
+  soundEffect: {fileID: 8300000, guid: cc44a5750a369284c98b51af1e3b92e6, type: 3}
   decay: 0
   waterLevel: 0
   flowerSprites:

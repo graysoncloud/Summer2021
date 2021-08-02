@@ -24,6 +24,8 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     public SceneChange mrToOffice;
     bool isTVActive = false;
 
+    public MRAudioManager audioManager;
+
     // game data
     // the day
     public int gameDay = 1;
@@ -36,6 +38,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         bedMinigame = FindObjectOfType<BedMinigame>();
         medicationMinigame = FindObjectOfType<MedicationMinigame>();
         tvInteractable = FindObjectOfType<TVInteractable>();
+        audioManager = FindObjectOfType<MRAudioManager>();
     }
 
     void LoadInteractables() {
@@ -85,6 +88,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         shavingMinigame.IncrementDay();
         bedMinigame.IncrementDay();
         medicationMinigame.IncrementDay();
+        tvInteractable.Reset();
     }
 
     public void SetTVActive(bool a) {

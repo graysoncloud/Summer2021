@@ -10,6 +10,8 @@ public class TVInteractable : MonoBehaviour
 
     public bool isTVActive = false;
 
+    public bool TVEventPlayed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,13 @@ public class TVInteractable : MonoBehaviour
             MorningRoutineManager.Instance.SetTVActive(true);
             MorningRoutineManager.Instance.SetMinigame(null);
             //do something to start the dialogue
+
+            if(!TVEventPlayed) {
+                if(GameManager.instance.currentDay.newsEvent != null) {
+                    GameManager.instance.StartSequence(GameManager.instance.currentDay.newsEvent);
+                    TVEventPlayed = true;
+                }
+            }
         }
     }
 
@@ -55,5 +64,9 @@ public class TVInteractable : MonoBehaviour
             focusCamera.SetActive(false);
             MorningRoutineManager.Instance.SetTVActive(false);
         }
+    }
+
+    public void Reset() {
+        TVEventPlayed = false;
     }
 }

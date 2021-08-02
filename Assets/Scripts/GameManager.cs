@@ -93,6 +93,8 @@ public class GameManager : MonoBehaviour
         currentDayIndex++;
         currentDay = days[currentDayIndex];
         currentDay.ShuffleContracts();
+
+        MorningRoutineManager.Instance.StartNewDay();
     }
 
     public void StartSequence(ScriptableObject toExecute)

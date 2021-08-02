@@ -27,6 +27,7 @@ public class PillInteractable : Interactable
             dispensed = false;
             this.gameObject.SetActive(false);
             MorningRoutineManager.Instance.takenMedicationToday = true;
+            PlayerPrefs.SetInt("TookPill", 0);
         }
     }
 

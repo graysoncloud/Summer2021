@@ -189,6 +189,12 @@ public class ConversationManager : MonoBehaviour
         ScriptableEvent currentEvent = currentConversation;
         int breaker = 0;
 
+        //remove this if it breaks something, testing to see if this fixes bug in morning routine ui
+        if(currentEvent.nextEvent == null) {
+            GameManager.instance.sequenceActive = false;
+            GameManager.instance.optionsMenuActive = false;
+        }
+
         while (currentEvent.nextEvent != null)
         {
             GameManager.instance.sequenceActive = false;

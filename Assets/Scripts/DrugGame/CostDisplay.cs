@@ -42,9 +42,13 @@ public class CostDisplay : MonoBehaviour
     {
         if (!chem.isChild)
         {
-            totalCost += cost + chemAmount[chem.name];
+            float newCost = cost + chemAmount[chem.name];
+            totalCost += newCost;
             displayText.text = totalCost.ToString();
             chemAmount[chem.name] += 1;
+
+            ChemicalBin chemBin = bin.GetBin(chem);
+            chemBin.ChangeCost(newCost+1);
         }
     }
 
@@ -53,8 +57,12 @@ public class CostDisplay : MonoBehaviour
         if (!chem.isChild)
         {
             chemAmount[chem.name] -= 1;
-            totalCost -= cost + chemAmount[chem.name];
+            float newCost = cost + chemAmount[chem.name];
+            totalCost -= newCost;
             displayText.text = totalCost.ToString();
+
+            ChemicalBin chemBin = bin.GetBin(chem);
+            chemBin.ChangeCost(newCost);
         }
     }
 

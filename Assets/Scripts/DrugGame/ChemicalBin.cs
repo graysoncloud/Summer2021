@@ -7,16 +7,21 @@ public class ChemicalBin : MonoBehaviour
 
     // In the full development, there would be a "ChemicalBin" abstract class that this would inherit from
     public Chemical ChemicalPrefab;
-    private TMPro.TextMeshProUGUI title;
+    public TMPro.TextMeshProUGUI title, costDisplay;
 
     private void Start()
     {
-        title = GetComponentInChildren<TMPro.TextMeshProUGUI>();
         if (ChemicalPrefab != null)
         {
-            title.SetText(ChemicalPrefab.name);
+            if (title != null)
+            {
+                title.SetText(ChemicalPrefab.name);
+            }
+            if (costDisplay != null)
+            {
+                costDisplay.SetText("Cost " + ChemicalPrefab.getCost().ToString());
+            }
         }
-        
     }
 
     private void OnMouseDown()
@@ -41,5 +46,10 @@ public class ChemicalBin : MonoBehaviour
                 SR.sortingLayerName = "LiftedTile";
             }
         }
+    }
+
+    public void ChangeCost(float cost)
+    {
+        costDisplay.SetText("Cost " + cost.ToString());
     }
 }

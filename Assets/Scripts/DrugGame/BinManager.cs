@@ -6,10 +6,11 @@ public class BinManager : MonoBehaviour
 {
     [SerializeField]
     private ChemicalBin bin = null;
-
+    
     [SerializeField]
     private Chemical[] chemicals = null;
     // Could rework it so it loads from a json or something for different days
+    public List<ChemicalBin> binArray = new List<ChemicalBin>(); //for getting bins from chem
 
     [SerializeField]
     private float spacing = 0;
@@ -29,9 +30,22 @@ public class BinManager : MonoBehaviour
             chemBin.ChemicalPrefab = chem;
             chemBin.transform.position = pos;
 
-
+            binArray.Add(chemBin);
             index++;
         }
+    }
+
+    public ChemicalBin GetBin(Chemical chemical)
+    {
+        foreach (ChemicalBin bin in binArray)
+        {
+            if (bin.ChemicalPrefab.name == chemical.name)
+            {
+                return bin;
+            }
+        }
+        Debug.LogWarning("Chemical bin not found");
+        return null;
     }
 
     public Chemical[] GetChemicals()

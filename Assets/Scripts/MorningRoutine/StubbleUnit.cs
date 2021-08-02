@@ -24,6 +24,8 @@ public class StubbleUnit : MonoBehaviour
 
     StubbleState stubbleState = StubbleState.UNSHAVED;
 
+    public AudioClip[] audioClips; //foam, shave, cut?
+
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +61,8 @@ public class StubbleUnit : MonoBehaviour
         if(col.gameObject.tag.Equals("ShavingCream") && stubbleState == StubbleState.UNSHAVED) {
             //Debug.Log("creamed up");
             stubbleState = StubbleState.CREAM;
+            MorningRoutineManager.Instance.audioManager.LoadSound(audioClips[0]);
+            MorningRoutineManager.Instance.audioManager.PlaySound();
         }
 
         if(col.gameObject.tag.Equals("Razor")) {
@@ -67,12 +71,18 @@ public class StubbleUnit : MonoBehaviour
             if(stubbleState == StubbleState.CREAM) {
                 stubbleState = StubbleState.SHAVED;
                 length = 0;
+                MorningRoutineManager.Instance.audioManager.LoadSound(audioClips[1]);
+                MorningRoutineManager.Instance.audioManager.PlaySound();
             } else if(stubbleState == StubbleState.UNSHAVED) {
                 float rand = Random.Range(0f, 1f);
                 if(rand <= cutChance) {
                     stubbleState = StubbleState.CUT;
+                    MorningRoutineManager.Instance.audioManager.LoadSound(audioClips[2]);
+                    MorningRoutineManager.Instance.audioManager.PlaySound();
                 } else {
                     stubbleState = StubbleState.SHAVED;
+                    MorningRoutineManager.Instance.audioManager.LoadSound(audioClips[1]);
+                    MorningRoutineManager.Instance.audioManager.PlaySound();
                 }
 
                 length = 0;

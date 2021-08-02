@@ -24,7 +24,7 @@ public class MRAudioManager : MonoBehaviour
     }
 
     public void PlaySound() {
-        if(currentSound.loadState == AudioDataLoadState.Loaded) {
+        if(currentSound.loadState == AudioDataLoadState.Loaded && !audioSource.isPlaying) {
             audioSource.volume = PlayerPrefs.GetFloat("MusicVolume");
             audioSource.PlayOneShot(currentSound);
         }

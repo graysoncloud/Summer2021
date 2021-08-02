@@ -28,7 +28,7 @@ public class Chemical : MonoBehaviour
     public string[] childConnection1;
     public string[] childConnection2;
 
-    private GameObject graphicsParent;
+    public GameObject graphicsParent;
     private GameObject buttons;
     private ChemicalRotateButton leftButton = null,
                                 rightButton = null;

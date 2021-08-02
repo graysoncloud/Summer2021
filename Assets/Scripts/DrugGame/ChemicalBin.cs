@@ -8,6 +8,7 @@ public class ChemicalBin : MonoBehaviour
     // In the full development, there would be a "ChemicalBin" abstract class that this would inherit from
     public Chemical ChemicalPrefab;
     public TMPro.TextMeshProUGUI title, costDisplay;
+    public Transform graphicPosition;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class ChemicalBin : MonoBehaviour
             {
                 costDisplay.SetText("Cost " + ChemicalPrefab.getCost().ToString());
             }
+            //CreateDrugGraphic();
         }
     }
 
@@ -46,6 +48,15 @@ public class ChemicalBin : MonoBehaviour
                 SR.sortingLayerName = "LiftedTile";
             }
         }
+    }
+
+    public void CreateDrugGraphic()
+    {
+        Chemical newChemical = Instantiate<Chemical>(ChemicalPrefab, graphicPosition.position, Quaternion.identity);
+        GameObject graphic = Instantiate<GameObject>(newChemical.graphicsParent, graphicPosition.position, Quaternion.identity);
+        graphic.transform.localScale = new Vector3(5, 5, 1);//CHANGE THIS WHEN GRAPHICS SCALE CHANGES
+
+        Destroy(newChemical.gameObject);
     }
 
     public void ChangeCost(float cost)

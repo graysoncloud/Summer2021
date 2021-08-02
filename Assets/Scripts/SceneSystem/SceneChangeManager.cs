@@ -117,6 +117,9 @@ public class SceneChangeManager : MonoBehaviour
         if (oldScene != null)
             oldScene.SetActive(false);
 
+        if (sceneChange.increaseDay)
+            GameManager.instance.NextDay();
+
 
         /*
          * Depricated, characters now added in by there own scriptable object
@@ -169,6 +172,7 @@ public class SceneChangeManager : MonoBehaviour
 
         if (!triggeredSequence)
             GameManager.instance.StartSequence(sceneChange.nextEvent);
+
 
     }
 

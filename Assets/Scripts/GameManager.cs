@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
     {
         OfficeSceneManager.instance.currentContractIndex = 0;
 
-        PlayerPrefs.SetInt("TookPills", 0);
+        PlayerPrefs.SetInt("TookPill", 0);
         PlayerPrefs.SetInt("WatchedNews", 0);
 
         DrugManager.instance.ResetTimeElapsed();

@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class TitleSceneManager : MonoBehaviour
 {
     public GameObject optionsMenu;
     public GameObject warningMenu;
 
-    public Button newGameButton;
-    public Button resumeGameButton;
-    public Button optionsButton;
-    public Button exitGameButton;
+    public UIButton newGameButton;
+    public UIButton resumeGameButton;
+    public UIButton optionsButton;
+    public UIButton exitGameButton;
 
-    public Slider volumeSlider;
+    public Slider musicSlider;
     public Slider sfxSlider;
 
     public SceneChange titleToMR;
 
 
-    private Color disabledButtonColor = new Color(.7f, .7f, .7f, 1f);
-    private Color normalButtonColor = new Color(1f, 1f, 1f, 1f);
+    private Color disabledButtonColor = new Color(.4f, .4f, .4f, 1f);
 
     public void PrepareScene()
     {
@@ -30,17 +30,17 @@ public class TitleSceneManager : MonoBehaviour
 
         ToggleButtonInteractability(true);
 
-        volumeSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
 
         if (PlayerPrefs.GetInt("ActiveGame") != 1)
         {
-            resumeGameButton.interactable = false;
-            resumeGameButton.GetComponent<Image>().color = disabledButtonColor;
+            resumeGameButton.GetComponent<EventTrigger>().enabled = false;
+            resumeGameButton.GetComponent<TextMeshProUGUI>().color = disabledButtonColor;
         }
         else {
-            resumeGameButton.interactable = true;
-            resumeGameButton.GetComponent<Image>().color = normalButtonColor;
+            resumeGameButton.GetComponent<EventTrigger>().enabled = true;
+            resumeGameButton.GetComponent<TextMeshProUGUI>().color = resumeGameButton.GetDefaultColor();
         }
 
     }
@@ -126,10 +126,11 @@ public class TitleSceneManager : MonoBehaviour
     // Specifically applies to main menu buttons
     public void ToggleButtonInteractability(bool status)
     {
-        newGameButton.interactable = status;
-        resumeGameButton.interactable = status;
-        optionsButton.interactable = status;
-        exitGameButton.interactable = status;
+        newGameButton.GetComponent<EventTrigger>().enabled = status;
+        if (PlayerPrefs.GetInt("ActiveGame") == 1)
+            resumeGameButton.GetComponent<EventTrigger>().enabled = status;
+        optionsButton.GetComponent<EventTrigger>().enabled = status;
+        exitGameButton.GetComponent<EventTrigger>().enabled = status;
     } 
 
 

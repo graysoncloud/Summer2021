@@ -139,6 +139,7 @@ public class GameManager : MonoBehaviour
         FinishedOnTime,
         FinishedLate,
         NotTookPill,
+        HelpedRobbie,
     }
 
 }

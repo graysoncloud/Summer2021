@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: a3ae04d0a9aef8e4b8c7af71d945a1c3, type: 2}
+  nextEvent: {fileID: 11400000, guid: 27e30901a4a07b74db6b465b9e539cfb, type: 2}
   dialogueLines:
   - speaker: 2
     dialogue: Oh, Barney, hold on a minute.

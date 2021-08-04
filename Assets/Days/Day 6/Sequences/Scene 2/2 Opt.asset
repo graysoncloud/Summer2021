@@ -15,8 +15,8 @@ MonoBehaviour:
   nextEvent: {fileID: 0}
   automatic: 1
   paths:
-  - {fileID: 11400000, guid: cfc35f0c0337e3d4fa07d8f1675d3354, type: 2}
-  - {fileID: 11400000, guid: 51fd9cb3696c0e0459dd61e4f58184b3, type: 2}
+  - {fileID: 11400000, guid: f0ff67a00f822a04a8ac70a71969f4e8, type: 2}
+  - {fileID: 11400000, guid: 44a9e3630c4464a42a6ffa5e27b1ef9e, type: 2}
   possibleConversations:
-  - {fileID: 11400000, guid: 92c77df5fe7f54f45bbb1e97998dbac7, type: 2}
-  - {fileID: 11400000, guid: 048264ad7095cf54a880f09d9433364e, type: 2}
+  - {fileID: 11400000, guid: 43cf6b7404a6342439a9ebef4bb26db8, type: 2}
+  - {fileID: 11400000, guid: 317941adcd5139a4f8746c28bb78b22e, type: 2}

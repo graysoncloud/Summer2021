@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 2.2 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: eba7c9aba3ecb294da26527fea7412aa, type: 2}
+  nextEvent: {fileID: 11400000, guid: 9801bed2266ef7648b01f1d03d9aef0a, type: 2}
   dialogueLines:
   - speaker: 4
     dialogue: I don't blame you for shrugging me off yesterday. I'd probably do the

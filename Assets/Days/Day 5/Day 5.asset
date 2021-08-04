@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: Day 5
   m_EditorClassIdentifier: 
   sequences:
-  - initialEvent: {fileID: 11400000, guid: 404450c17cf46ae4e9cb2c6fdd8aa17d, type: 2}
+  - initialEvent: {fileID: 11400000, guid: 7e1dd346a99af3f4abdd1e96150147ea, type: 2}
     trigger: 1
-  - initialEvent: {fileID: 11400000, guid: 27cf6882d48dccb49bcb18f70ad5223e, type: 2}
+  - initialEvent: {fileID: 11400000, guid: 4ebfb6186fb81df4fb46834e281a0186, type: 2}
     trigger: 4
+  newsEvent: {fileID: 0}
   contracts: []
+  contractTypeList: 
+  storyContracts: []
   easyContracts: []
   hardContracts: []
   numEasy: 0

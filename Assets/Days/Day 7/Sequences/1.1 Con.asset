@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 1 Con
+  m_Name: 1.1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 781adabc6c6b78e41b36ce7162b399d0, type: 2}
+  nextEvent: {fileID: 0}
   dialogueLines:
   - speaker: 4
-    dialogue: Is it a migraine?
+    dialogue: "I\u2019m sorry about yesterday.\r"
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 4
@@ -24,21 +24,25 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: I get them too. I can recognize one from a mile away.
+    dialogue: "I didn\u2019t expect them to keep such a sharp eye on your work...
+      I guess I shouldn\u2019t have asked something so extreme in the first place.\r"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 4
-      animationName: 14
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: Here. I carry these in cases of emergency. Take them as needed when
-      you feel one coming on.
+    dialogue: "I\u2019ll write down a few more subtle ideas today. Do them if you
+      want. Or ignore them."
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 4
-      animationName: 14
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: "Just know you\u2019d be doing a lot of good for a lot of people."
+    offset: {x: 0, y: 0}
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

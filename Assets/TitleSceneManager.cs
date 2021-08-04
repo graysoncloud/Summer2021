@@ -89,6 +89,8 @@ public class TitleSceneManager : MonoBehaviour
             PlayerPrefs.SetInt(character.ToString() + "Attitude", 0);
         }
 
+        PlayerPrefs.SetInt("DrugID", 100);
+
         PlayerPrefs.SetInt("ActiveGame", 1);
         SceneChangeManager.instance.StartSceneChange(titleToMR);
     }

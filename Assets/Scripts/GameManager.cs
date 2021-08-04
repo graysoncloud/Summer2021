@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         foreach (CharacterName character in Enum.GetValues(typeof(CharacterName)))
         {
             // Load save state here
-            PlayerPrefs.SetInt(character.ToString() + "Attitude", 0);
+            PlayerPrefs.SetInt(character.ToString() + "Attitude", 3);
         }
 
     }

@@ -10,10 +10,18 @@ public class Day : ScriptableObject
     public Sequence[] sequences;
     public ScriptableObject newsEvent;
 
+    // Should be replaced
     public List<Contract> contracts = new List<Contract>();
 
+    public List<ContractTypes> contractTypeList = new List<ContractTypes>();
+
+    public enum ContractTypes { Easy, Hard, Story}
+
+    public List<Contract> storyContracts = new List<Contract>();
     public List<Contract> easyContracts = new List<Contract>();
     public List<Contract> hardContracts = new List<Contract>();
+
+    // Remove?
     public int numEasy;
     public int numHard;
 

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
+using UnityEngine.EventSystems;
 
 public class RecapSceneManager : MonoBehaviour
 {
@@ -18,9 +20,16 @@ public class RecapSceneManager : MonoBehaviour
     public GameObject priceParent;
     public GameObject gradeParent;
 
-    public TextMeshProUGUI timeText;
+    public UIButton nextDayButton;
+
+    public GameObject registerOverlay;
+    public GameObject bonusOverlay;
+
+    public TextMeshProUGUI drugGameTimeText;
     public TextMeshProUGUI timeDecreasingText;
     public TextMeshProUGUI bonusDecreasingText;
+
+    private string charList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     private void Awake()
     {
@@ -41,9 +50,17 @@ public class RecapSceneManager : MonoBehaviour
     {
         FinishedContract toAdd = new FinishedContract();
         Contract currentContract = GameManager.instance.GetCurrentContract();
+        
+        // Create random ID
+        string randomString = "";
+       
+        // Change the i < 4 bit if you want more chars
+        for (int i = 0; i < 4; i++)
+            randomString += charList[UnityEngine.Random.Range(0, 25)];
 
-        // TO DO: generate drug ID from object in DrugScene
-        toAdd.drugID = "(ID)";
+        toAdd.drugID = randomString + "#" + PlayerPrefs.GetInt("DrugID").ToString();
+        PlayerPrefs.SetInt("DrugID", PlayerPrefs.GetInt("DrugID") + UnityEngine.Random.Range(1, 5));
+
         toAdd.companyName = currentContract.companyName;
 
         toAdd.description = currentContract.description;
@@ -110,6 +127,9 @@ public class RecapSceneManager : MonoBehaviour
 
     public void DisplayContracts()
     {
+        bonusOverlay.gameObject.SetActive(false);
+        registerOverlay.gameObject.SetActive(true);
+
         TextMeshProUGUI[] drugIDs = drugIDParent.GetComponentsInChildren<TextMeshProUGUI>();
         TextMeshProUGUI[] companyNames = companyNameParent.GetComponentsInChildren<TextMeshProUGUI>();
         TextMeshProUGUI[] descriptions = descriptionParent.GetComponentsInChildren<TextMeshProUGUI>();
@@ -166,29 +186,41 @@ public class RecapSceneManager : MonoBehaviour
 
     }
 
-    public void StartBonusCouroutine()
+    public void RevealBonusScene()
     {
+        nextDayButton.GetComponent<EventTrigger>().enabled = false;
+
+        string minutesAsString = DrugManager.instance.minutes.ToString();
+        if (DrugManager.instance.minutes < 10)
+            minutesAsString = "0" + DrugManager.instance.minutes;
+
+        timeDecreasingText.text = DrugManager.instance.hours + ":" + minutesAsString + " " + DrugManager.instance.qualifier;
+
+        registerOverlay.gameObject.SetActive(false);
+        bonusOverlay.gameObject.SetActive(true);
+
         StartCoroutine("BonusCouroutine");
     }
 
     private IEnumerator BonusCouroutine()
     {
+        // Maybe increase salary over time?
         bonusDecreasingText.text = "1000";
 
-        int hours = int.Parse(timeText.text.Substring(0, timeText.text.IndexOf(':')));
-        int minutes = int.Parse(timeText.text.Substring(timeText.text.IndexOf(':'), timeText.text.IndexOf(' ')));
+        int hours = DrugManager.instance.hours;
+        int minutes = DrugManager.instance.minutes;
 
-        string qualifier = timeText.text.Substring(timeText.text.IndexOf(' '));
-
+        string qualifier = DrugManager.instance.qualifier;
         yield return new WaitForSeconds(1f);
     
         while (qualifier != "AM" || minutes != 0 || hours != 9)
         {
 
             minutes -= 1;
-            if (minutes <= -1)
+            if (minutes < 0)
             {
                 hours -= 1;
+                minutes = 59;
                 if (hours <= 0)
                 {
                     hours = 12;
@@ -196,12 +228,30 @@ public class RecapSceneManager : MonoBehaviour
                 }
             }
 
-            timeDecreasingText.text = hours + ":" + minutes + " " + qualifier;
+            string minutesAsString = minutes.ToString();
+            if (minutes < 10)
+                minutesAsString = "0" + minutes.ToString();
+
+            timeDecreasingText.text = hours + ":" + minutesAsString + " " + qualifier;
             bonusDecreasingText.text = (int.Parse(bonusDecreasingText.text) - 1).ToString();
 
             yield return new WaitForEndOfFrame(); 
         }
 
+        nextDayButton.GetComponent<EventTrigger>().enabled = false;
+    }
+
+    public void AdvanceToNextDay()
+    {
+        foreach (Day.Sequence sequence in GameManager.instance.currentDay.sequences)
+        {
+            if (sequence.trigger.ToString() == "dream")
+            {
+                GameManager.instance.StartSequence(sequence.initialEvent);
+                return;
+            }
+        }
+        SceneChangeManager.instance.StartSceneChange(RecapSceneManager.instance.recapToMR);
     }
 
 

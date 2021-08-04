@@ -21,7 +21,9 @@ public enum CharacterName {
     Elizabeth, 
     Wesley, 
     Robbie, 
-    Maria
+    Maria,
+    Elliana,
+    RichRamirez
 }
 
 public enum AnimationName

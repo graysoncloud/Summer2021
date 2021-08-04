@@ -30,6 +30,10 @@ public class DrugManager : MonoBehaviour
     private int lastTimeStamp;
     private float timeElapsed;
 
+    public int hours;
+    public int minutes;
+    public string qualifier;
+
     public delegate void OnClearChems();
     public static event OnClearChems onClearChems;
 
@@ -49,6 +53,10 @@ public class DrugManager : MonoBehaviour
 
         lastTimeStamp = 0;
         timeElapsed = 0;
+
+        hours = 9;
+        minutes = 0;
+        qualifier = "AM";
     }
 
     void Update()
@@ -58,23 +66,20 @@ public class DrugManager : MonoBehaviour
         // Every fifteen seconds in the drug game, the player-visible clock will tick up 15 minutes. Stops at 11:00
         if (Mathf.Floor(timeElapsed / 15) > lastTimeStamp && (timeElapsed < 854))
         {
-            bool isPM = false;
-
             lastTimeStamp++;
-            int hours = (int)Mathf.Floor(lastTimeStamp / 4) + 9;
-            if (!isPM && hours >= 13)
+            hours = (int)Mathf.Floor(lastTimeStamp / 4) + 9;
+            if (hours >= 13)
             {
                 hours -= 12;
-                isPM = true;
+                qualifier = "PM";
             }
 
-            string minutes = ((lastTimeStamp % 4) * 15).ToString();
-            if (minutes == "0")
-                minutes = "00";
+            minutes = ((lastTimeStamp % 4) * 15);
+            string minutesAsString = minutes.ToString();
+            if (minutes == 0)
+                minutesAsString = "00";
 
-            string qualifier = isPM ? " PM" : " AM";
-
-            timeText.text = hours.ToString() + ":" + minutes + qualifier;
+            timeText.text = hours.ToString() + ":" + minutesAsString + " " + qualifier;
         }
 
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -311,5 +316,8 @@ public class DrugManager : MonoBehaviour
     {
         timeElapsed = 0;
         lastTimeStamp = 0;
+        hours = 9;
+        minutes = 0;
+        qualifier = "AM";
     }
 }

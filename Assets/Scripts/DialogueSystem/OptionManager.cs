@@ -202,7 +202,15 @@ public class OptionManager : MonoBehaviour
         {
             // Attitude To Change is a charName enumerator
             string charToChange = choiceToExecute.attitudeToChange.ToString();
-            PlayerPrefs.SetInt(charToChange + "Attitude", PlayerPrefs.GetInt(charToChange + "Attitude") + choiceToExecute.amountToAlter);
+
+            PlayerPrefs.SetInt(charToChange + "Attitude", PlayerPrefs.GetInt(charToChange + "Attitude") + choiceToExecute.amountToAlterAttitude);
+
+            if (PlayerPrefs.GetInt(charToChange + "Attitude") > 3)
+                PlayerPrefs.SetInt(charToChange + "Attitude", 3);
+            else if (PlayerPrefs.GetInt(charToChange + "Attitude") < -3)
+                PlayerPrefs.SetInt(charToChange + "Attitude", -3);
+
+
         }
 
         if (choiceToExecute.logsEvent)

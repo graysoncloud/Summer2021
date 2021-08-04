@@ -27,7 +27,7 @@ public class Path : ScriptableObject
 
     public bool changesAttitude;
     public CharacterName attitudeToChange;
-    public int amountToAlter;
+    public int amountToAlterAttitude;
 
     public bool logsEvent;
     public GameManager.SaveableEvent eventToLog;
@@ -80,7 +80,7 @@ public class Path : ScriptableObject
             if (myScript.changesAttitude)
             {
                 myScript.attitudeToChange = (CharacterName)EditorGUILayout.EnumPopup("Attitude To Change", myScript.attitudeToChange);
-                myScript.amountToAlter = EditorGUILayout.IntField("Amount", myScript.amountToAlter);
+                myScript.amountToAlterAttitude = EditorGUILayout.IntField("Amount", myScript.amountToAlterAttitude);
             }
 
             myScript.logsEvent = GUILayout.Toggle(myScript.logsEvent, "Logs Event");

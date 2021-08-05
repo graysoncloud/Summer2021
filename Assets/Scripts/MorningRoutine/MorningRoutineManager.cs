@@ -9,6 +9,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     public Button backButton;
     public GameObject roomButtons;
     public TextMeshProUGUI dayCounterTxt;
+    public TextMeshProUGUI stressTxt;
     public GameObject MRUI;
 
     public Minigame currentMinigame = null;
@@ -25,6 +26,9 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     bool isTVActive = false;
 
     public MRAudioManager audioManager;
+
+    [Range(0,100)]
+    public int tempStress;
 
     // game data
     // the day
@@ -56,8 +60,14 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
             }
         }
 
+        PlayerPrefs.SetInt("Stress", tempStress);
+
         if(dayCounterTxt != null) {
             dayCounterTxt.text = "Day: " + gameDay;
+        }
+
+        if(stressTxt != null) {
+            stressTxt.text = "stress: " + PlayerPrefs.GetInt("Stress");
         }
     }
 

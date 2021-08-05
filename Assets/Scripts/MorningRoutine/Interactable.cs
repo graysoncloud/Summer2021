@@ -15,6 +15,10 @@ public class Interactable : MonoBehaviour
 
     public AudioClip soundEffect;
 
+    public int jitterThreshold = 20;
+    public float maxJitter = 0.1f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,8 +40,17 @@ public class Interactable : MonoBehaviour
             Vector3 mousePos = Input.mousePosition;
             Vector3 screenPos = activeCam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, activeCam.nearClipPlane));
             screenPos.z = defaultPosition.z;
-            this.gameObject.transform.position = screenPos;
             
+
+            if(PlayerPrefs.GetInt("Stress") >= jitterThreshold) {
+                Vector3 jitterVec = Random.insideUnitSphere;
+                float jitterMult = (PlayerPrefs.GetInt("Stress") / 100f) * maxJitter;
+                jitterVec *= jitterMult;
+                jitterVec.z = 0;
+                screenPos += jitterVec;
+            }
+
+            this.gameObject.transform.position = screenPos;
         }
     }
 

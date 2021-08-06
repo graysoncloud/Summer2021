@@ -51,14 +51,6 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat("MusicVolume", MusicManager.instance.defaultSFXVolume);
         PlayerPrefs.SetFloat("SFXVolume", MusicManager.instance.defaultSFXVolume);
 
-        PlayerPrefs.SetInt("Stress", 50);
-
-        foreach (CharacterName character in Enum.GetValues(typeof(CharacterName)))
-        {
-            // Load save state here
-            PlayerPrefs.SetInt(character.ToString() + "Attitude", 3);
-        }
-
     }
 
     private void Update()
@@ -74,6 +66,44 @@ public class GameManager : MonoBehaviour
             }
 
         }
+    }
+
+    public void StartNewGame()
+    {
+        TitleSceneManager.instance.ToggleButtonInteractability(false);
+
+        float musicVol = PlayerPrefs.GetFloat("MusicVolume");
+        float sfxVol = PlayerPrefs.GetFloat("SFXVolume");
+
+        PlayerPrefs.DeleteAll();
+
+        // Saves settings from game to game
+        PlayerPrefs.SetFloat("MusicVolume", musicVol);
+        PlayerPrefs.SetFloat("SFXVolume", sfxVol);
+
+        PlayerPrefs.SetInt("Stress", 50);
+
+        PlayerPrefs.SetInt("TotalMoney", 0);
+
+        foreach (CharacterName character in System.Enum.GetValues(typeof(CharacterName)))
+        {
+            // Load save state here
+            PlayerPrefs.SetInt(character.ToString() + "Attitude", 0);
+        }
+
+        PlayerPrefs.SetInt("DrugID", 100);
+
+        PlayerPrefs.SetInt("ActiveGame", 1);
+        SceneChangeManager.instance.StartSceneChange(TitleSceneManager.instance.titleToMR);
+
+    }
+
+    public void ResumeGame()
+    {
+        TitleSceneManager.instance.ToggleButtonInteractability(false);
+        SceneChangeManager.instance.StartSceneChange(TitleSceneManager.instance.titleToMR);
+
+        // Load save information
     }
 
     public Contract GetCurrentContract()

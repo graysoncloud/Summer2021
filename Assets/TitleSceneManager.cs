@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 
 public class TitleSceneManager : MonoBehaviour
 {
+    public static TitleSceneManager instance;
+
     public GameObject optionsMenu;
     public GameObject warningMenu;
 
@@ -22,6 +24,16 @@ public class TitleSceneManager : MonoBehaviour
 
 
     private Color disabledButtonColor = new Color(.4f, .4f, .4f, 1f);
+
+    private void Awake()
+    {
+        // Singleton Stuff
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+
+    }
 
     public void PrepareScene()
     {
@@ -62,43 +74,12 @@ public class TitleSceneManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("ActiveGame") != 1)
         {
-            StartNewGame();
+            GameManager.instance.StartNewGame();
             return;
         }
 
         // If player already has an active game, give them a warning before deleting
         EnableWarningMenu();
-    }
-
-    public void StartNewGame()
-    {
-        ToggleButtonInteractability(false);
-
-        float musicVol = PlayerPrefs.GetFloat("MusicVolume");
-        float sfxVol = PlayerPrefs.GetFloat("SFXVolume");
-
-        PlayerPrefs.DeleteAll();
-
-        // Saves settings from game to game
-        PlayerPrefs.SetFloat("MusicVolume", musicVol);
-        PlayerPrefs.SetFloat("SFXVolume", sfxVol);
-
-        foreach (CharacterName character in System.Enum.GetValues(typeof(CharacterName)))
-        {
-            // Load save state here
-            PlayerPrefs.SetInt(character.ToString() + "Attitude", 0);
-        }
-
-        PlayerPrefs.SetInt("DrugID", 100);
-
-        PlayerPrefs.SetInt("ActiveGame", 1);
-        SceneChangeManager.instance.StartSceneChange(titleToMR);
-    }
-
-    public void ResumeGame()
-    {
-        ToggleButtonInteractability(false);
-        SceneChangeManager.instance.StartSceneChange(titleToMR);
     }
 
     public void EnableWarningMenu()

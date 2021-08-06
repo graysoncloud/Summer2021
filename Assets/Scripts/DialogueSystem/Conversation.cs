@@ -6,6 +6,8 @@ using UnityEditor;
 [CreateAssetMenu(fileName = "Conversation", menuName = "Conversation", order = 1)]
 public class Conversation : ScriptableEvent
 {
+
+    public bool isNews;
     public DialogueLine[] dialogueLines;
 
     [System.Serializable]

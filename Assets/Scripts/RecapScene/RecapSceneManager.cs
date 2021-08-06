@@ -28,6 +28,8 @@ public class RecapSceneManager : MonoBehaviour
     public TextMeshProUGUI drugGameTimeText;
     public TextMeshProUGUI timeDecreasingText;
     public TextMeshProUGUI bonusDecreasingText;
+    public TextMeshProUGUI totalText;
+    public TextMeshProUGUI grossAmountText;
 
     private string charList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -80,28 +82,34 @@ public class RecapSceneManager : MonoBehaviour
         }
 
         // Initialized at 1 to match change to denominator
+        float gradeDividend = 1;
+
+        if (toAdd.usesMaxVolatility)
+        {
+            gradeDividend += currentContract.optimalMaxVolatilityVal;
+        }
+
+        if (toAdd.usesMaxPrice)
+        {
+            gradeDividend += currentContract.optimalMaxPriceVal;
+        }
+        else if (toAdd.usesMinPrice)
+            gradeDividend += CostDisplay.instance.GetCost();
+
+        // Initialized at 1 so there's not divide by 0 errors
         float gradeDivisor = 1;
 
         if (toAdd.usesMaxVolatility)
-            gradeDivisor += currentContract.optimalMaxVolatilityVal;
+            gradeDivisor += VolatilityBar.instance.GetVol();
 
         if (toAdd.usesMaxPrice)
-            gradeDivisor += currentContract.optimalMaxPriceVal;
-        else if (toAdd.usesMinPrice)
             gradeDivisor += CostDisplay.instance.GetCost();
-
-        // Initialized at 1 so there's not divide by 0 errors
-        float gradeDenominator = 1;
-
-        if (toAdd.usesMaxVolatility)
-            gradeDenominator += VolatilityBar.instance.GetVol();
-
-        if (toAdd.usesMaxPrice)
-            gradeDenominator += CostDisplay.instance.GetCost();
         else if (toAdd.usesMinPrice)
-            gradeDenominator += currentContract.optimalMinPriceVal;
+            gradeDivisor += currentContract.optimalMinPriceVal;
 
-        float grade = gradeDivisor / gradeDenominator;
+        Debug.Log(gradeDividend + ", / " + gradeDivisor);
+
+        float grade = gradeDividend / gradeDivisor;
         switch (grade)
         {
             case float n when n >= 1:
@@ -196,6 +204,8 @@ public class RecapSceneManager : MonoBehaviour
 
         timeDecreasingText.text = DrugManager.instance.hours + ":" + minutesAsString + " " + DrugManager.instance.qualifier;
 
+        totalText.gameObject.SetActive(false);
+        grossAmountText.gameObject.SetActive(false);
         registerOverlay.gameObject.SetActive(false);
         bonusOverlay.gameObject.SetActive(true);
 
@@ -205,7 +215,7 @@ public class RecapSceneManager : MonoBehaviour
     private IEnumerator BonusCouroutine()
     {
         // Maybe increase salary over time?
-        bonusDecreasingText.text = "1000";
+        bonusDecreasingText.text = "$1000";
 
         int hours = DrugManager.instance.hours;
         int minutes = DrugManager.instance.minutes;
@@ -233,12 +243,25 @@ public class RecapSceneManager : MonoBehaviour
                 minutesAsString = "0" + minutes.ToString();
 
             timeDecreasingText.text = hours + ":" + minutesAsString + " " + qualifier;
-            bonusDecreasingText.text = (int.Parse(bonusDecreasingText.text) - 1).ToString();
+            bonusDecreasingText.text = "$" + (int.Parse(bonusDecreasingText.text.Substring(1)) - 1).ToString();
 
             yield return new WaitForEndOfFrame(); 
         }
 
-        nextDayButton.GetComponent<EventTrigger>().enabled = false;
+        yield return new WaitForSeconds(1.2f);
+
+        totalText.gameObject.SetActive(true);
+
+        PlayerPrefs.SetInt("TotalMoney", PlayerPrefs.GetInt("TotalMoney") + int.Parse(bonusDecreasingText.text.Substring(1)));
+        grossAmountText.text = "$" + PlayerPrefs.GetInt("TotalMoney").ToString();
+
+        yield return new WaitForSeconds(.8f);
+
+        grossAmountText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(.5f);
+
+        nextDayButton.GetComponent<EventTrigger>().enabled = true;
     }
 
     public void AdvanceToNextDay()

@@ -161,9 +161,6 @@ public class OfficeSceneManager : MonoBehaviour
                 EvaluateSolution();
                 lastLocation = null;
 
-                // Generate FinishedContract object for the recap scene to read
-                RecapSceneManager.instance.GenerateFinishedContract();
-
                 contractsSolved++; 
                 currentContractIndex++;
 

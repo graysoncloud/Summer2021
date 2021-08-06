@@ -24,10 +24,15 @@ public class PrintButton : MonoBehaviour
             Printer.instance.GetComponent<SpriteRenderer>().sprite = Printer.instance.printedSolutionSprite;
             OfficeSceneManager.instance.solutionFinished = true;
 
+            RecapSceneManager.instance.GenerateFinishedContract();
+
             // Display a "solution printed", prevent further editing
         }
+
         else
             Debug.Log("Contract conditions not achived");
+
+        // Generate FinishedContract object for the recap scene to read
     }
 
 

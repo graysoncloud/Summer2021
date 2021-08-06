@@ -67,6 +67,11 @@ public class ConversationManager : MonoBehaviour
         // Could be a redundant variable, but it could be useful (not a big deal either way)
         currentConversation = conversation;
 
+        if (conversation.isNews)
+            DialogueUIManager.instance.SetUpForNews();
+        else
+            DialogueUIManager.instance.SetUpDefault();
+
         for (int i = 0; i < currentConversation.dialogueLines.Length; i++)
         {
             // Check if its an animation-only event

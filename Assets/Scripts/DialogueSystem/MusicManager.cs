@@ -60,8 +60,6 @@ public class MusicManager : MonoBehaviour
 
         }
 
-        Debug.Log("Done");
-
     }
 
     // Unlike other managers, this isn't a coroutine since it should happen instantly and not delay the game
@@ -119,7 +117,6 @@ public class MusicManager : MonoBehaviour
         if (fadeOutCoroutine != null)
         {
             StopCoroutine(fadeOutCoroutine);
-            Debug.Log("Fade out ended");
         }
 
         audioSource.volume = 0f;

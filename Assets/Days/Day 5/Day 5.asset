@@ -17,7 +17,7 @@ MonoBehaviour:
     trigger: 1
   - initialEvent: {fileID: 11400000, guid: 4ebfb6186fb81df4fb46834e281a0186, type: 2}
     trigger: 4
-  newsEvent: {fileID: 0}
+  newsEvent: {fileID: 11400000, guid: bb7ddbbbeeb98294cba836a7b2023b25, type: 2}
   contracts: []
   contractTypeList: 
   storyContracts: []

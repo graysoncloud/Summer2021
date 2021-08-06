@@ -28,6 +28,7 @@ public class DialogueUIManager : MonoBehaviour
     {
         characterParentObject.SetActive(false);
         dialogueTextObject.alignment = TextAlignmentOptions.Center;
+        dialogueTextObject.alignment = TextAlignmentOptions.Top;
         dialogueTextObject.fontStyle = FontStyles.Italic;
         dialogueTextObject.rectTransform.sizeDelta = new Vector2(420, 67);
         dialogueTextObject.rectTransform.localPosition = new Vector3(1.3f, 2.5f, 0);

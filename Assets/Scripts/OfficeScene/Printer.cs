@@ -6,8 +6,7 @@ public class Printer : MonoBehaviour
 {
     public static Printer instance = null;
 
-    public Sprite noSolutionSprite;
-    public Sprite printedSolutionSprite;
+    public GameObject printerPaper;
 
     public bool solutionPrinted;
 

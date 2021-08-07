@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Productivity is low- looking for something to rally the troops
   usesMaxVolatility: 1
   volatilityMax: 8
-  optimalMaxVolatilityVal: 0
+  optimalMaxVolatilityVal: 6
   usesMaxPrice: 1
   maxPrice: 11
-  optimalMaxPriceVal: 0
+  optimalMaxPriceVal: 8
   usesMinPrice: 0
   minPrice: 0
   optimalMinPriceVal: 0

@@ -67,6 +67,11 @@ public class ConversationManager : MonoBehaviour
         // Could be a redundant variable, but it could be useful (not a big deal either way)
         currentConversation = conversation;
 
+        if (conversation.isNews)
+            DialogueUIManager.instance.SetUpForNews();
+        else
+            DialogueUIManager.instance.SetUpDefault();
+
         for (int i = 0; i < currentConversation.dialogueLines.Length; i++)
         {
             // Check if its an animation-only event
@@ -150,11 +155,27 @@ public class ConversationManager : MonoBehaviour
 
                 readbackSpeedModifier = 1;
 
-                // Wait for player to click to continue
-                yield return StartCoroutine("WaitForClick");
+                Option nextEventAsOption = null;
+                if (currentConversation.nextEvent.GetType().ToString() == "Option")
+                    nextEventAsOption = (Option)currentConversation.nextEvent;
 
-                DialogueUIManager.instance.dialogueTextObject.text = "";
-                DialogueUIManager.instance.characterTextObject.text = "";
+                // Makes it so that text will always reset UNLESS the next event is an option and this is the final line of text
+                if (nextEventAsOption == null || (i + 1) != currentConversation.dialogueLines.Length || nextEventAsOption.automatic)
+                {
+                    // Wait for player to click to continue
+                    yield return StartCoroutine("WaitForClick");
+
+                    Debug.Log("Success");
+                    DialogueUIManager.instance.dialogueTextObject.text = "";
+                    DialogueUIManager.instance.characterTextObject.text = "";
+                }
+
+                else
+                {
+                    // If the next thing is an option, wait for a second then immediately present options without waiting
+                    yield return new WaitForSeconds(.4f);
+                }
+
             }
             
         }

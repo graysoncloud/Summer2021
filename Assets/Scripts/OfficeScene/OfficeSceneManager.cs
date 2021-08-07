@@ -14,6 +14,8 @@ public class OfficeSceneManager : MonoBehaviour
     [SerializeField]
     private ContractDisplayer contractDisplayer;
 
+    public bool openedComputerToday;
+
     public bool solutionFinished;
 
     public ContractFolder contractPrefab;
@@ -27,6 +29,7 @@ public class OfficeSceneManager : MonoBehaviour
 
     public SceneChange officeToDrugGameTransition;
     public SceneChange officeToRecapTransition;
+    public SceneChange officeToOSTransition;
 
 
     private void Awake()
@@ -45,6 +48,8 @@ public class OfficeSceneManager : MonoBehaviour
         currentContractIndex = 0;
         holdingNewContract = false;
         solutionFinished = false;
+        openedComputerToday = false;
+        Printer.instance.printerPaper.SetActive(false);
     }
 
     private void Update()
@@ -57,7 +62,7 @@ public class OfficeSceneManager : MonoBehaviour
             Vector3 pointOfClick = new Vector3(worldPointOfClick.x, worldPointOfClick.y, 0);
 
             // Pick Up Contract from Stack
-            if (ContractStack.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick) && ActiveContractArea.instance.currentContract == null && contractInHand == null && solutionInHand == null)
+            if (ContractStack.instance.GetComponent<PolygonCollider2D>().bounds.Contains(pointOfClick) && ActiveContractArea.instance.currentContract == null && contractInHand == null && solutionInHand == null)
             {
                 if (currentContractIndex < GameManager.instance.currentDay.contracts.Count)
                 {
@@ -73,7 +78,7 @@ public class OfficeSceneManager : MonoBehaviour
             }
 
             // Pick up solution from printer
-            else if (Printer.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick) && contractInHand == null && solutionInHand == null && Printer.instance.solutionPrinted)
+            else if (Printer.instance.GetComponent<PolygonCollider2D>().bounds.Contains(pointOfClick) && contractInHand == null && solutionInHand == null && Printer.instance.solutionPrinted)
             {
                 Vector3 mouseLocation = OfficeSceneCamera.instance.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
 
@@ -82,13 +87,13 @@ public class OfficeSceneManager : MonoBehaviour
 
                 solutionInHand.pickedUp = true;
                 Printer.instance.solutionPrinted = false;
-                Printer.instance.GetComponent<SpriteRenderer>().sprite = Printer.instance.noSolutionSprite;
+                Printer.instance.printerPaper.SetActive(false);
 
                 //lastLocation = printer.instance;
             }
 
             // Pick up contract from contract area
-            else if (ActiveContractArea.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick) && ActiveContractArea.instance.currentContract != null && contractInHand == null && solutionInHand == null)
+            else if (ActiveContractArea.instance.GetComponent<PolygonCollider2D>().bounds.Contains(pointOfClick) && ActiveContractArea.instance.currentContract != null && contractInHand == null && solutionInHand == null)
             {
                 contractInHand = ActiveContractArea.instance.currentContract;
                 ActiveContractArea.instance.currentContract = null;
@@ -97,9 +102,16 @@ public class OfficeSceneManager : MonoBehaviour
             }
 
             // Start Drug Game if computer clicked
-            else if (OfficeComputer.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick) && !solutionFinished)
+            else if (OfficeComputer.instance.GetComponent<PolygonCollider2D>().bounds.Contains(pointOfClick) && !solutionFinished)
             {
-                SceneChangeManager.instance.StartSceneChange(officeToDrugGameTransition);
+                if (!openedComputerToday)
+                {
+                    SceneChangeManager.instance.StartSceneChange(officeToOSTransition);
+                    openedComputerToday = true;
+                } else
+                {
+                    SceneChangeManager.instance.StartSceneChange(officeToDrugGameTransition);
+                }
             }
 
             // Leave office if button clicked, also looking out for special transitions
@@ -131,7 +143,7 @@ public class OfficeSceneManager : MonoBehaviour
             Vector3 pointOfRelease = new Vector3(worldPointOfRelease.x, worldPointOfRelease.y, 0);
 
             // Drop contract from hand onto empty activeContractArea
-            if (ActiveContractArea.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfRelease) && ActiveContractArea.instance.currentContract == null && contractInHand != null)
+            if (ActiveContractArea.instance.GetComponent<PolygonCollider2D>().bounds.Contains(pointOfRelease) && ActiveContractArea.instance.currentContract == null && contractInHand != null)
             {
                 ActiveContractArea.instance.currentContract = contractInHand;
                 ActiveContractArea.instance.currentContract.pickedUp = false;
@@ -147,22 +159,20 @@ public class OfficeSceneManager : MonoBehaviour
             }
 
             // Drop solution onto Contract (in ActiveContractArea)
-            else if (ActiveContractArea.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfRelease) && ActiveContractArea.instance.currentContract != null && !ActiveContractArea.instance.currentContract.solved && solutionInHand != null)
+            else if (ActiveContractArea.instance.GetComponent<PolygonCollider2D>().bounds.Contains(pointOfRelease) && ActiveContractArea.instance.currentContract != null && !ActiveContractArea.instance.currentContract.solved && solutionInHand != null)
             {
-                ActiveContractArea.instance.currentContract.GetComponent<SpriteRenderer>().sprite = ActiveContractArea.instance.currentContract.solvedContractSprite;
+                // Do something to visually identify being finished
+                //ActiveContractArea.instance.currentContract
                 ActiveContractArea.instance.currentContract.solved = true;
                 Destroy(solutionInHand.gameObject);
                 lastLocation = null;
             }
 
             // Drop completed contract into the filing cabinet
-            else if (FilingCabinet.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfRelease) && contractInHand != null && contractInHand.solved)
+            else if (FilingCabinet.instance.GetComponent<PolygonCollider2D>().bounds.Contains(pointOfRelease) && contractInHand != null && contractInHand.solved)
             {
                 EvaluateSolution();
                 lastLocation = null;
-
-                // Generate FinishedContract object for the recap scene to read
-                RecapSceneManager.instance.GenerateFinishedContract();
 
                 contractsSolved++; 
                 currentContractIndex++;
@@ -231,7 +241,7 @@ public class OfficeSceneManager : MonoBehaviour
             {
                 Destroy(solutionInHand.gameObject);
                 Printer.instance.solutionPrinted = true;
-                Printer.instance.GetComponent<SpriteRenderer>().sprite = Printer.instance.printedSolutionSprite;
+                Printer.instance.printerPaper.SetActive(true);
             }
         }
 

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: News 3
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 0}
+  isNews: 1
+  dialogueLines:
+  - speaker: 0
+    dialogue: 'NEW YORK CITY REACHES HARROWING LEVELS OF HOMELESSNESS WITH 9% OF
+      THE CITY SLEEPING ON THE STREETS
+
+'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 0
+    dialogue: 'GROWING LOWER CLASS RAISES THE QUESTION: ARE THE RICH REALLY GETTING
+      RICHER, OR THE POOR JUST GETTING LAZIER?'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 0
+    dialogue: 'NUAIR STOCKS ON THE RISE: IS BOTTLED AIR THE FUTURE?'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

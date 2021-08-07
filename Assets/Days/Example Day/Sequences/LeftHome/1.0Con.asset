@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: 1.0Con
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: e27011afa7aabcf4aa3649b484c851a3, type: 2}
+  isNews: 1
   dialogueLines:
-  - speaker: 1
-    dialogue: Alright, time to go to work.
+  - speaker: 0
+    dialogue: '<u>SOCIETY:</u>
+
+      Joker movement captures thousands of clowns,
+      promises to release them once they''re accepted'
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

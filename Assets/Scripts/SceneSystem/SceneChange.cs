@@ -21,7 +21,8 @@ public class SceneChange : ScriptableEvent
         DrugGameScene, 
         RecapScene, 
         DreamScene,
-        TitleScene
+        TitleScene,
+        OSOverlay
     }
 
     public enum TransitionStyle { 

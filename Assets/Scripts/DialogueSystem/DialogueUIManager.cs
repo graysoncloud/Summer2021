@@ -24,10 +24,28 @@ public class DialogueUIManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    public void SetUpForNews()
+    {
+        characterParentObject.SetActive(false);
+        dialogueTextObject.alignment = TextAlignmentOptions.Center;
+        dialogueTextObject.alignment = TextAlignmentOptions.Top;
+        dialogueTextObject.fontStyle = FontStyles.Italic;
+        dialogueTextObject.rectTransform.sizeDelta = new Vector2(420, 67);
+        dialogueTextObject.rectTransform.localPosition = new Vector3(1.3f, 2.5f, 0);
+    }
+
+    public void SetUpDefault()
+    {
+        characterParentObject.SetActive(true);
+        dialogueTextObject.alignment = TextAlignmentOptions.TopLeft;
+        dialogueTextObject.fontStyle = FontStyles.Normal;
+        dialogueTextObject.rectTransform.sizeDelta = new Vector2(570, 67);
+        dialogueTextObject.rectTransform.localPosition = new Vector3(1.3f, -1.1f, 0);
+    }
+
     public void SetUpForOption()
     {
         UIParent.SetActive(true);
-        characterParentObject.SetActive(false);
     }
 
     public void SetUpForConversation()

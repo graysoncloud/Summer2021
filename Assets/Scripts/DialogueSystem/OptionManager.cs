@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class OptionManager : MonoBehaviour
 {
     public static OptionManager instance = null;
-    public GameObject[] buttons;
+    public GameObject[] buttonBackgrounds;
+    public UIButton[] buttonTexts;
 
-    private Color normalButtonColor = new Color(.6f, .6f, .6f, .4f);
-    private Color shadedButtonColor = new Color(.25f, .25f, .25f, .3f);
+    private Color normalBackgroundColor = new Color(1f, 1f, 1f, .6f);
+    private Color shadedBackgroundColor = new Color(.75f, .75f, .75f, .4f);
 
     private Option currentOption;
 
@@ -98,7 +99,10 @@ public class OptionManager : MonoBehaviour
                 }
 
                 if (execute)
+                {
                     ExecutePath(i);
+                    return;
+                }
             }
 
             Debug.LogError("No valid (default) pathway detected");
@@ -108,11 +112,10 @@ public class OptionManager : MonoBehaviour
         DialogueUIManager.instance.SetUpForOption();
 
         // Reset remnants of disabled buttons form previous option
-        foreach (GameObject button in buttons)
+        for (int i = 0; i < buttonBackgrounds.Length; i++)
         {
-            button.GetComponent<Button>().interactable = true;
-            button.GetComponent<Image>().color = normalButtonColor;
-
+            buttonTexts[i].Enable();
+            buttonBackgrounds[i].GetComponent<Image>().color = normalBackgroundColor;
         }
 
         for (int i = 0; i < currentOption.paths.Length; i++)
@@ -179,23 +182,27 @@ public class OptionManager : MonoBehaviour
                 enabled = true;
             }
 
-            buttons[i].gameObject.SetActive(true);
+            buttonBackgrounds[i].gameObject.SetActive(true);
 
             if (!enabled)
             {
-                buttons[i].gameObject.GetComponent<Button>().interactable = false;
+                buttonTexts[i].Disable();
                 // Change sprite ideally, not just color. But maybe just color would work
-                buttons[i].gameObject.GetComponent<Image>().color = shadedButtonColor;
+                buttonBackgrounds[i].gameObject.GetComponent<Image>().color = shadedBackgroundColor;
             }
 
 
             // The only children of these buttons right now is their text. If this changes, make sure the text is the first child
-            buttons[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentOption.paths[i].choiceText;
+            buttonBackgrounds[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentOption.paths[i].choiceText;
         }
     }
 
     public void ExecutePath(int index)
     {
+        // Turn off lingering text
+        DialogueUIManager.instance.dialogueTextObject.text = "";
+        DialogueUIManager.instance.characterTextObject.text = "";
+
         Path choiceToExecute = currentOption.paths[index];
 
         if (choiceToExecute.changesAttitude)
@@ -224,7 +231,7 @@ public class OptionManager : MonoBehaviour
         }
 
 
-        foreach (GameObject button in buttons)
+        foreach (GameObject button in buttonBackgrounds)
             button.SetActive(false);
 
         // Execute Consequences

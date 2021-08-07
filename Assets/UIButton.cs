@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class UIButton : MonoBehaviour
 {
     [SerializeField]
     private Color defaultColor;
     [SerializeField]
-    private Color highlightedColor;
+    private Color highlightedColor;    
+    [SerializeField]
+    private Color disabledColor;
 
     [SerializeField]
     [Range(0f, 1f)]
@@ -58,6 +61,20 @@ public class UIButton : MonoBehaviour
     public Color GetDefaultColor()
     {
         return defaultColor;
+    }
+
+    public void Disable()
+    {
+        GetComponent<EventTrigger>().enabled = false;
+        gameObject.GetComponent<TextMeshProUGUI>().color = disabledColor;
+
+    }
+
+    public void Enable()
+    {
+        GetComponent<EventTrigger>().enabled = true;
+        gameObject.GetComponent<TextMeshProUGUI>().color = defaultColor;
+
     }
 
 

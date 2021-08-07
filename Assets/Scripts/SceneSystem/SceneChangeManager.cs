@@ -111,6 +111,7 @@ public class SceneChangeManager : MonoBehaviour
             case "RecapScene": newScene = scenes[3]; currentScene = newScene; newScene.gameObject.SetActive(true); RecapSceneManager.instance.DisplayContracts(); break;
             case "DreamScene": newScene = scenes[4]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
             case "TitleScene": newScene = scenes[5]; currentScene = newScene; newScene.gameObject.SetActive(true); newScene.GetComponent<TitleSceneManager>().PrepareScene(); break;
+            case "OSOverlay": newScene = scenes[6]; currentScene = newScene; newScene.gameObject.SetActive(true); OSOverlay.instance.StartOSDisplay(); break;
             default: Debug.LogError("Invalid sceneName: " + sceneChange.newScene.ToString()); break;
         }
 

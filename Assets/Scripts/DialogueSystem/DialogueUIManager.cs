@@ -46,7 +46,6 @@ public class DialogueUIManager : MonoBehaviour
     public void SetUpForOption()
     {
         UIParent.SetActive(true);
-        characterParentObject.SetActive(false);
     }
 
     public void SetUpForConversation()

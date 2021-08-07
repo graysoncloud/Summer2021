@@ -120,6 +120,8 @@ public class GameManager : MonoBehaviour
 
         DrugManager.instance.ResetTimeElapsed();
 
+        OfficeSceneManager.instance.openedComputerToday = false;
+
         currentDayIndex++;
         currentDay = days[currentDayIndex];
         currentDay.ShuffleContracts();

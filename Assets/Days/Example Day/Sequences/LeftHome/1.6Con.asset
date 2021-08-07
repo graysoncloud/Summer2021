@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1.6Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 89a19713387bad448b2239d28e8774af, type: 2}
+  nextEvent: {fileID: 11400000, guid: 44c2a682d8d98734a845a0c393010f6c, type: 2}
+  isNews: 0
   dialogueLines:
   - speaker: 1
     dialogue: Woah i'm in the scene now
@@ -29,13 +30,13 @@ MonoBehaviour:
     animations: []
     animOnly: 0
     animLength: 0
-    SFX: 00000000
+    SFX: 
   - speaker: 1
-    dialogue: Im no longer happy
+    dialogue: Im no longer happy. What do you have to say for yourself?
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1
       animationName: 0
-    animOnly: 1
+    animOnly: 0
     animLength: 0.94
     SFX: 

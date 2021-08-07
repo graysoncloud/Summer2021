@@ -46,6 +46,7 @@ public class RecapSceneManager : MonoBehaviour
     private void Start()
     {
         finishedContracts = new List<FinishedContract>();
+        nextDayButton.gameObject.SetActive(false);
     }
 
     public void GenerateFinishedContract()
@@ -196,7 +197,7 @@ public class RecapSceneManager : MonoBehaviour
 
     public void RevealBonusScene()
     {
-        nextDayButton.GetComponent<EventTrigger>().enabled = false;
+        nextDayButton.gameObject.SetActive(false);
 
         string minutesAsString = DrugManager.instance.minutes.ToString();
         if (DrugManager.instance.minutes < 10)
@@ -261,7 +262,7 @@ public class RecapSceneManager : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
 
-        nextDayButton.GetComponent<EventTrigger>().enabled = true;
+        nextDayButton.gameObject.SetActive(true);
     }
 
     public void AdvanceToNextDay()

@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd5a681f375878044ba0aba0d7a3a9a8, type: 3}
-  m_Name: 1.7CF
+  m_Script: {fileID: 11500000, guid: 15f2c2874d4a210459b67163429fe28c, type: 3}
+  m_Name: OfficeToOS
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 44c2a682d8d98734a845a0c393010f6c, type: 2}
-  characterFades:
-  - characterToFade: 1
-    fadeIn: 0
+  nextEvent: {fileID: 0}
+  newScene: 6
+  transitionStyle: 0
+  predelay: 0
+  postdelay: 0
+  increaseDay: 0

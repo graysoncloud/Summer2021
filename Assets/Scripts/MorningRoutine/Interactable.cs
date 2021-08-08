@@ -43,14 +43,32 @@ public class Interactable : MonoBehaviour
             
 
             if(PlayerPrefs.GetInt("Stress") >= jitterThreshold) {
-                Vector3 jitterVec = Random.insideUnitSphere;
+                /*Vector3 jitterVec = Random.insideUnitSphere;
                 float jitterMult = (PlayerPrefs.GetInt("Stress") / 100f) * maxJitter;
                 jitterVec *= jitterMult;
                 jitterVec.z = 0;
-                screenPos += jitterVec;
+                screenPos += jitterVec;*/
+
+                StartCoroutine("Jitter", screenPos);
             }
 
             this.gameObject.transform.position = screenPos;
+        }
+    }
+
+    IEnumerator Jitter(Vector3 startPos) {
+        int stress = PlayerPrefs.GetInt("Stress");
+        int duration = Random.Range(10 * stress, 25 * stress);
+        for(int i = 0; i < duration; i++) {
+            Vector3 jitterVec = Random.insideUnitSphere;
+            float jitterMult = (PlayerPrefs.GetInt("Stress") / 100f) * maxJitter;
+            jitterVec *= jitterMult;
+            jitterVec.z = 0;
+            startPos += jitterVec;
+            this.gameObject.transform.position = startPos;
+
+            yield return new WaitForEndOfFrame();
+            
         }
     }
 

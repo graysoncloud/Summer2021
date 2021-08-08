@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float scrollSpeed = 0.5f;
 
-    public GameObject[] rooms;
+    public Room[] rooms;
 
 
     // Start is called before the first frame update
@@ -30,6 +30,12 @@ public class PlayerController : MonoBehaviour
                 pos.x = 25;
             }
             rooms[i].transform.position = pos;
+
+            if(rooms[i].roomName == "LivingRoom") {
+                //start dialogue event
+
+                
+            }
         }
     }
 

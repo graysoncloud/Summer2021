@@ -2269,7 +2269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &156543538
 Transform:
   m_ObjectHideFlags: 0
@@ -7260,9 +7260,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 0.5
   rooms:
-  - {fileID: 1419662217}
-  - {fileID: 2088006594}
-  - {fileID: 565493392}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &417735832
 Transform:
   m_ObjectHideFlags: 0
@@ -10671,6 +10671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 565493393}
   - component: {fileID: 565493394}
+  - component: {fileID: 565493395}
   m_Layer: 6
   m_Name: LivingRoom
   m_TagString: Untagged
@@ -10744,6 +10745,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &565493395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565493392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec219a04e58e364a90cfe4fad75788a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomName: LivingRoom
+  dialogueEvent:
+    initialEvent: {fileID: 0}
+    trigger: 0
 --- !u!1 &566389059
 GameObject:
   m_ObjectHideFlags: 0
@@ -25992,6 +26009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1419662219}
   - component: {fileID: 1419662218}
+  - component: {fileID: 1419662220}
   m_Layer: 6
   m_Name: Bedroom
   m_TagString: Untagged
@@ -26066,6 +26084,22 @@ Transform:
   m_Father: {fileID: 156543538}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1419662220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419662217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec219a04e58e364a90cfe4fad75788a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomName: Bedroom
+  dialogueEvent:
+    initialEvent: {fileID: 0}
+    trigger: 0
 --- !u!1 &1423300752
 GameObject:
   m_ObjectHideFlags: 0
@@ -40043,6 +40077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2088006595}
   - component: {fileID: 2088006596}
+  - component: {fileID: 2088006597}
   m_Layer: 6
   m_Name: Bathroom
   m_TagString: Untagged
@@ -40117,6 +40152,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2088006597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088006594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec219a04e58e364a90cfe4fad75788a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomName: Bathroom
+  dialogueEvent:
+    initialEvent: {fileID: 0}
+    trigger: 0
 --- !u!1 &2089933302
 GameObject:
   m_ObjectHideFlags: 0

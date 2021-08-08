@@ -156,7 +156,7 @@ public class ConversationManager : MonoBehaviour
                 readbackSpeedModifier = 1;
 
                 Option nextEventAsOption = null;
-                if (currentConversation.nextEvent.GetType().ToString() == "Option")
+                if (currentConversation.nextEvent != null && currentConversation.nextEvent.GetType().ToString() == "Option")
                     nextEventAsOption = (Option)currentConversation.nextEvent;
 
                 // Makes it so that text will always reset UNLESS the next event is an option and this is the final line of text

@@ -16,6 +16,9 @@ public enum EffectType
     Immunosuppressant,
     Nauseatic,
     Stimulant,
+    Tranquilizer,
+    Antibacterial,
+    Decongesitant
 
 }
 

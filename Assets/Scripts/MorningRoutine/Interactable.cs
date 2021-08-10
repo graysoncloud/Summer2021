@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour
     public int jitterThreshold = 20;
     public float maxJitter = 0.1f;
     bool jittering = false;
-    public int jitterCooldown = 100;
+    int jitterCooldown = 200;
     int jitterTimer = 0;
     int jitterDuration = 0;
 
@@ -52,8 +52,8 @@ public class Interactable : MonoBehaviour
             if (stress >= jitterThreshold && !jittering)
             {
                 jittering = true;
-                jitterTimer = jitterCooldown;
-                jitterDuration = 100;
+                jitterTimer = (int)(jitterCooldown * ((100 + jitterThreshold -stress) / 100f));
+                jitterDuration = Random.Range(10, stress);
             }
             if (jittering && jitterDuration > 0)
             {

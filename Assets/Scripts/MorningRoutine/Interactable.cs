@@ -17,6 +17,10 @@ public class Interactable : MonoBehaviour
 
     public int jitterThreshold = 20;
     public float maxJitter = 0.1f;
+    bool jittering = false;
+    public int jitterCooldown = 100;
+    int jitterTimer = 0;
+    int jitterDuration = 0;
 
 
     // Start is called before the first frame update
@@ -26,84 +30,105 @@ public class Interactable : MonoBehaviour
         defaultPosition = this.gameObject.transform.position;
 
         //gameObject.SetActive(persistent);
-        if(persistent) { 
+        if (persistent)
+        {
             GetComponent<BoxCollider2D>().enabled = false;
         }
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(active && mouseDown && draggable) { 
+        if (active && mouseDown && draggable)
+        {
             //Debug.Log("dragging " + interactableName);
             Vector3 mousePos = Input.mousePosition;
             Vector3 screenPos = activeCam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, activeCam.nearClipPlane));
             screenPos.z = defaultPosition.z;
-            
 
-            if(PlayerPrefs.GetInt("Stress") >= jitterThreshold) {
-                /*Vector3 jitterVec = Random.insideUnitSphere;
-                float jitterMult = (PlayerPrefs.GetInt("Stress") / 100f) * maxJitter;
-                jitterVec *= jitterMult;
-                jitterVec.z = 0;
-                screenPos += jitterVec;*/
-
-                StartCoroutine("Jitter", screenPos);
-            }
-
+            int stress = PlayerPrefs.GetInt("Stress");
             this.gameObject.transform.position = screenPos;
+            if (stress >= jitterThreshold && !jittering)
+            {
+                jittering = true;
+                jitterTimer = jitterCooldown;
+                jitterDuration = 100;
+            }
+            if (jittering && jitterDuration > 0)
+            {
+                jitterDuration--;
+                Jitter(screenPos);
+            }
+            else if (jittering)
+            {
+                jitterTimer--;
+                if (jitterTimer <= 0)
+                {
+                    jittering = false;
+                    jitterTimer = jitterCooldown;
+                }
+            }
         }
+
+
     }
 
-    IEnumerator Jitter(Vector3 startPos) {
+    void Jitter(Vector3 startPos)
+    {
         int stress = PlayerPrefs.GetInt("Stress");
-        int duration = Random.Range(10 * stress, 25 * stress);
-        for(int i = 0; i < duration; i++) {
-            Vector3 jitterVec = Random.insideUnitSphere;
-            float jitterMult = (PlayerPrefs.GetInt("Stress") / 100f) * maxJitter;
-            jitterVec *= jitterMult;
-            jitterVec.z = 0;
-            startPos += jitterVec;
-            this.gameObject.transform.position = startPos;
+        Vector3 jitterVec = Random.insideUnitSphere;
+        float jitterMult = (PlayerPrefs.GetInt("Stress") / 100f) * maxJitter;
+        jitterVec *= jitterMult;
+        jitterVec.z = 0;
+        startPos += jitterVec;
+        this.gameObject.transform.position = startPos;
 
-            yield return new WaitForEndOfFrame();
-            
-        }
     }
 
-    public void OnMouseDown() {
-        if(GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive) {
+    public void OnMouseDown()
+    {
+        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive)
+        {
             return;
         }
-        if(active && draggable) {
-            if(!mouseDown) {
+        if (active && draggable)
+        {
+            if (!mouseDown)
+            {
                 defaultPosition = this.gameObject.transform.position;
             }
-            Debug.Log("Interactable " + interactableName + " clicked");
+            //Debug.Log("Interactable " + interactableName + " clicked");
             Interact();
             mouseDown = true;
         }
     }
 
-    public void OnMouseUp() {
-        if(active && draggable) { 
+    public void OnMouseUp()
+    {
+        if (active && draggable)
+        {
             mouseDown = false;
             this.gameObject.transform.position = defaultPosition;
+            jittering = false;
+            jitterTimer = 0;
         }
     }
 
-    void Interact() {
+    void Interact()
+    {
     }
 
-    public void SetInteractableActive(bool a) { 
+    public void SetInteractableActive(bool a)
+    {
         active = a;
         GetComponent<BoxCollider2D>().enabled = a;
 
-        if(!persistent) { 
+        if (!persistent)
+        {
             gameObject.SetActive(a);
         }
-        
+
         //Debug.Log(interactableName + " set to " + gameObject.active);
     }
 }

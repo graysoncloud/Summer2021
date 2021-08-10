@@ -7368,9 +7368,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 0.5
   rooms:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1419662220}
+  - {fileID: 2088006597}
+  - {fileID: 565493395}
 --- !u!4 &417735832
 Transform:
   m_ObjectHideFlags: 0
@@ -35972,6 +35972,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   jitterThreshold: 20
   maxJitter: 0.1
+  jitterCooldown: 1000
 --- !u!114 &1830278535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39753,6 +39754,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   jitterThreshold: 20
   maxJitter: 0.1
+  jitterCooldown: 1000
   dispensed: 0
   taken: 0
   degreesToRotate: 30
@@ -43548,6 +43550,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   jitterThreshold: 20
   maxJitter: 0.1
+  jitterCooldown: 1000
 --- !u!114 &1689213063241734516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43567,6 +43570,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   jitterThreshold: 20
   maxJitter: 0.1
+  jitterCooldown: 1000
 --- !u!4 &1689213063241734517
 Transform:
   m_ObjectHideFlags: 0
@@ -43885,6 +43889,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   jitterThreshold: 20
   maxJitter: 5
+  jitterCooldown: 1000
 --- !u!212 &1689213063615409339
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44529,6 +44534,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   jitterThreshold: 20
   maxJitter: 0.1
+  jitterCooldown: 100
 --- !u!222 &5744459121688163894
 CanvasRenderer:
   m_ObjectHideFlags: 0

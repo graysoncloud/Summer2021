@@ -63,9 +63,9 @@ public class FlowerPot : Interactable
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        Debug.Log("collide with " + col.name);
+        //Debug.Log("collide with " + col.name);
         if(col.gameObject.tag.Equals("WateringCan")) {
-            Debug.Log("water");
+            //Debug.Log("water");
             if(!hasBeenWateredToday) {
                 
                 if(decay > 0) {

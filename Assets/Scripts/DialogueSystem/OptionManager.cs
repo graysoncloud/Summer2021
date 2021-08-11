@@ -10,8 +10,8 @@ public class OptionManager : MonoBehaviour
     public GameObject[] buttonBackgrounds;
     public UIButton[] buttonTexts;
 
-    private Color normalBackgroundColor = new Color(1f, 1f, 1f, .6f);
-    private Color shadedBackgroundColor = new Color(.75f, .75f, .75f, .4f);
+    private Color normalBackgroundColor = new Color(1f, 1f, 1f, 1f);
+    private Color shadedBackgroundColor = new Color(.75f, .75f, .75f, .7f);
 
     private Option currentOption;
 
@@ -149,6 +149,9 @@ public class OptionManager : MonoBehaviour
             } 
             if (currentPath.checkEvent)
             {
+                Debug.Log("checking " + currentPath.eventToCheck.ToString());
+                Debug.Log("value " + PlayerPrefs.GetInt(currentPath.eventToCheck.ToString()));
+
                 // If player prefs had bools this would look a bit simpler. As is, 1 is on, 0 is off
                 if (PlayerPrefs.GetInt(currentPath.eventToCheck.ToString()) == 1)
                     enabled = (enabled && true);
@@ -175,11 +178,6 @@ public class OptionManager : MonoBehaviour
                 {
                     Debug.LogError("Invalid comparator: " + option.paths[i].attitudeComparison.ToString());
                 }
-            }
-            else
-            {
-                // Default case means there's no restrictions on the option
-                enabled = true;
             }
 
             buttonBackgrounds[i].gameObject.SetActive(true);

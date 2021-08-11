@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetInt("Stress", 50);
 
-        PlayerPrefs.SetInt("TotalMoney", 0);
+        PlayerPrefs.SetFloat("TotalMoney", 0);
 
         foreach (CharacterName character in System.Enum.GetValues(typeof(CharacterName)))
         {

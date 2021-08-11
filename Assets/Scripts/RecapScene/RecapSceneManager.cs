@@ -31,7 +31,7 @@ public class RecapSceneManager : MonoBehaviour
     public TextMeshProUGUI totalText;
     public TextMeshProUGUI grossAmountText;
 
-    private string charList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private string charList = "BCDFGHJKLMNPQRSTVWXZ";
 
     private void Awake()
     {
@@ -59,7 +59,7 @@ public class RecapSceneManager : MonoBehaviour
        
         // Change the i < 4 bit if you want more chars
         for (int i = 0; i < 4; i++)
-            randomString += charList[UnityEngine.Random.Range(0, 25)];
+            randomString += charList[UnityEngine.Random.Range(0, 19)];
 
         toAdd.drugID = randomString + "#" + PlayerPrefs.GetInt("DrugID").ToString();
         PlayerPrefs.SetInt("DrugID", PlayerPrefs.GetInt("DrugID") + UnityEngine.Random.Range(1, 5));
@@ -244,7 +244,9 @@ public class RecapSceneManager : MonoBehaviour
                 minutesAsString = "0" + minutes.ToString();
 
             timeDecreasingText.text = hours + ":" + minutesAsString + " " + qualifier;
-            bonusDecreasingText.text = "$" + (int.Parse(bonusDecreasingText.text.Substring(1)) - 1).ToString();
+
+            if (!(float.Parse(bonusDecreasingText.text.Substring(1)) == 0f))
+                bonusDecreasingText.text = "$" + (float.Parse(bonusDecreasingText.text.Substring(1)) - 1.25).ToString();
 
             yield return new WaitForEndOfFrame(); 
         }
@@ -253,14 +255,14 @@ public class RecapSceneManager : MonoBehaviour
 
         totalText.gameObject.SetActive(true);
 
-        PlayerPrefs.SetInt("TotalMoney", PlayerPrefs.GetInt("TotalMoney") + int.Parse(bonusDecreasingText.text.Substring(1)));
-        grossAmountText.text = "$" + PlayerPrefs.GetInt("TotalMoney").ToString();
+        PlayerPrefs.SetFloat("TotalMoney", PlayerPrefs.GetFloat("TotalMoney") + float.Parse(bonusDecreasingText.text.Substring(1)));
+        grossAmountText.text = "$" + PlayerPrefs.GetFloat("TotalMoney").ToString();
 
         yield return new WaitForSeconds(.8f);
 
         grossAmountText.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1.2f);
 
         nextDayButton.gameObject.SetActive(true);
     }

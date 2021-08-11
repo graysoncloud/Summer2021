@@ -26,6 +26,8 @@ public class PrintButton : MonoBehaviour
 
             RecapSceneManager.instance.GenerateFinishedContract();
 
+            SceneChangeManager.instance.StartSceneChange(DrugManager.instance.drugToOfficeSceneChange);
+
             // Display a "solution printed", prevent further editing
         }
 

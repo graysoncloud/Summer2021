@@ -102,7 +102,7 @@ public class OfficeSceneManager : MonoBehaviour
             }
 
             // Start Drug Game if computer clicked
-            else if (OfficeComputer.instance.GetComponent<PolygonCollider2D>().bounds.Contains(pointOfClick) && !solutionFinished)
+            else if (OfficeComputer.instance.GetComponent<PolygonCollider2D>().bounds.Contains(pointOfClick) && !solutionFinished && ActiveContractArea.instance.currentContract != null)
             {
                 if (!openedComputerToday)
                 {

@@ -99,6 +99,8 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         bedMinigame.IncrementDay();
         medicationMinigame.IncrementDay();
         tvInteractable.Reset();
+
+        SetMinigame(bedMinigame);
     }
 
     public void SetTVActive(bool a) {

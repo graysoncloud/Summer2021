@@ -28,7 +28,8 @@ public class ChemicalBin : MonoBehaviour
 
     private void OnMouseDown()
     {
-        CreateDrug();
+        if (!Printer.instance.solutionPrinted && ActiveContractArea.instance.currentContract != null)
+            CreateDrug();
     }
 
     public void CreateDrug()

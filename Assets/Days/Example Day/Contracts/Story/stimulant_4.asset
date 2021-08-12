@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
-  m_Name: D1 1
+  m_Name: stimulant_4
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Productivity is low- looking for something to rally the troops
+  companyName: Hard 2
+  description: This is a story contract! It should appear 2nd
   usesMaxVolatility: 1
-  volatilityMax: 8
-  optimalMaxVolatilityVal: 6
+  volatilityMax: 27
+  optimalMaxVolatilityVal: 27
   usesMaxPrice: 1
-  maxPrice: 11
-  optimalMaxPriceVal: 8
+  maxPrice: 16
+  optimalMaxPriceVal: 16
   usesMinPrice: 0
   minPrice: 0
   optimalMinPriceVal: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   undesirableEffect: 0
   undesirableEffectMax: 0
   optimalUndesirableEffectAmount: 0
-  usesDesirableEffect: 0
-  desirableEffect: 5
-  desirableEffectMin: 5
+  usesDesirableEffect: 1
+  desirableEffect: 7
+  desirableEffectMin: 4
   optimalDesirableEffectAmount: 4

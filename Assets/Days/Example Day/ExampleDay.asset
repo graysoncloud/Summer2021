@@ -19,14 +19,15 @@ MonoBehaviour:
     trigger: 1
   newsEvent: {fileID: 11400000, guid: 152b4f31b878054429dde95bd21c27a7, type: 2}
   contracts:
-  - {fileID: 0}
-  contractTypeList: 0000000001000000010000000200000002000000
+  - {fileID: 11400000, guid: f337c615464882f48bae1eb51dd60753, type: 2}
+  - {fileID: 11400000, guid: ccdbb1f3b157a00418981a7b44d317a1, type: 2}
+  - {fileID: 11400000, guid: e88aae05458ecf74b8616c5f1000fb9e, type: 2}
+  contractTypeList: 000000000200000001000000
   storyContracts:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: ccdbb1f3b157a00418981a7b44d317a1, type: 2}
   easyContracts:
-  - {fileID: 11400000, guid: 9a92194d27c5b2d4e84e16c48d5672bf, type: 2}
-  - {fileID: 11400000, guid: 37299aab0f6d48f4dad5f30ed21bf376, type: 2}
-  hardContracts: []
-  numEasy: 2
-  numHard: 0
+  - {fileID: 11400000, guid: 3e3e5405348578f4c9c693508d328902, type: 2}
+  - {fileID: 11400000, guid: f337c615464882f48bae1eb51dd60753, type: 2}
+  - {fileID: 11400000, guid: 478e4f9fca1fcf34ca098374e8de3e79, type: 2}
+  hardContracts:
+  - {fileID: 11400000, guid: e88aae05458ecf74b8616c5f1000fb9e, type: 2}

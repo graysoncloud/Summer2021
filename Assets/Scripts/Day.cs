@@ -21,10 +21,6 @@ public class Day : ScriptableObject
     public List<Contract> easyContracts = new List<Contract>();
     public List<Contract> hardContracts = new List<Contract>();
 
-    // Remove?
-    public int numEasy;
-    public int numHard;
-
     [System.Serializable]
     public class Sequence
     {
@@ -59,22 +55,35 @@ public class Day : ScriptableObject
         List<int> randomHard = Enumerable.Range(0, hardContracts.Count).ToList();
 
         int randomChoice;
+        int numStory = 0;
 
-
-        for (int i = 0; i < numEasy; i++)
+        foreach (ContractTypes contract in contractTypeList)
         {
-            randomChoice = Random.Range(0, randomEasy.Count);
-            contracts.Add(easyContracts[randomEasy[randomChoice]]);
-            randomEasy.RemoveAt(randomChoice);
+            switch(contract){
+                case ContractTypes.Easy:
+                {
+                    randomChoice = Random.Range(0, randomEasy.Count);
+                    contracts.Add(easyContracts[randomEasy[randomChoice]]);
+                    randomEasy.RemoveAt(randomChoice);
+                    break;
+                }
+                case ContractTypes.Hard:
+                {
+                    randomChoice = Random.Range(0, randomHard.Count);
+                    contracts.Add(hardContracts[randomHard[randomChoice]]);
+                    randomHard.RemoveAt(randomChoice);
+                    break;
+                }
+                case ContractTypes.Story:
+                {
+                    contracts.Add(storyContracts[numStory]);
+                    numStory++;
+                    break;
+                }
+                default: Debug.Log("Error: No matching contract type: " + contract);
+                break;
+            }
         }
-
-        for (int i = 0; i < numHard; i++)
-        {
-            randomChoice = Random.Range(0, randomHard.Count);
-            contracts.Add(hardContracts[randomHard[randomChoice]]);
-            randomHard.RemoveAt(randomChoice);
-        }
-
     }
 
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2436835926744554298}
   - component: {fileID: 7981378947044688337}
   m_Layer: 0
-  m_Name: Row
+  m_Name: HexRow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 14.8
+  m_Spacing: 16
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0

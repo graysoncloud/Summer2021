@@ -156,6 +156,10 @@ public class OfficeSceneManager : MonoBehaviour
                     contractDisplayer.DisplayContract();
                     holdingNewContract = false;
                 }
+
+                if (GameManager.instance.currentDayIndex == 0)
+                    TutorialManager.instance.ActivateTutorial(TutorialManager.instance.ContractTutorial2);
+
             }
 
             // Drop solution onto Contract (in ActiveContractArea)
@@ -166,6 +170,9 @@ public class OfficeSceneManager : MonoBehaviour
                 ActiveContractArea.instance.currentContract.solved = true;
                 Destroy(solutionInHand.gameObject);
                 lastLocation = null;
+
+                if (GameManager.instance.currentDayIndex == 0)
+                    TutorialManager.instance.ActivateTutorial(TutorialManager.instance.ContractTutorial3);
             }
 
             // Drop completed contract into the filing cabinet

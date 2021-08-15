@@ -135,6 +135,9 @@ public class GameManager : MonoBehaviour
         {
             ConversationManager.instance.EndConversation();
 
+            if (SceneChangeManager.instance.currentScene.name == "OfficeScene" && currentDayIndex == 0)
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.ContractTutorial1);
+
             GameManager.instance.sequenceActive = false;
         }
 

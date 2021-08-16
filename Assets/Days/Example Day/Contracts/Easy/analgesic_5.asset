@@ -15,7 +15,7 @@ MonoBehaviour:
   companyName: Easy 1
   description: Yo
   usesMaxVolatility: 1
-  volatilityMax: 4
+  volatilityMax: 16
   optimalMaxVolatilityVal: 4
   usesMaxPrice: 1
   maxPrice: 17

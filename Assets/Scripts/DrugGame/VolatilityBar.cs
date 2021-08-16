@@ -72,7 +72,7 @@ public class VolatilityBar : MonoBehaviour
                 volatility -= positiveVol;
         }
 
-        volatilityText.text = volatility.ToString() + " / " + volMax.ToString();
+        volatilityText.text = Mathf.Clamp(volatility, 0, 999).ToString() + " / " + volMax.ToString();
         /*if (volatility < 0)
         {
             volatilityText.text = "0";
@@ -85,9 +85,11 @@ public class VolatilityBar : MonoBehaviour
             volatilityBar.transform.localScale = new Vector3(volatiltiyBG.transform.localScale.x * volatiltiyBG.size.x, volatilityBar.transform.localScale.y, volatilityBar.transform.localScale.z);
         }*/
 
-        float volAmount = volatility / volMax;
+        float volAmount = (float)volatility / (float)volMax;
         Mathf.Clamp(volAmount, 0, 1);
         volBar.ChangeProgress(volAmount);
+        Debug.Log(volMax);
+        Debug.Log(volatility);
     }
 
     public int GetVol()

@@ -25,13 +25,18 @@ public class CircleSlider : MonoBehaviour
 				progress.text = (int)(image.fillAmount*100)+"%";
 			}
 			
-        if(time>1)
-		{
+			if(time>1)
+			{
 						
-			time=0;
+				time=0;
+			}
 		}
-    }
 	}
+
+	public void ChangeProgress(float f)
+    {
+		image.fillAmount = f;
+    }
 	
 	
 }

@@ -236,6 +236,17 @@ public class DrugManager : MonoBehaviour
         return GameManager.instance.GetCurrentContract().undesirableEffect;
     }
 
+    public int GetVolMax()
+    {
+        if (GameManager.instance.GetCurrentContract().usesMaxVolatility)
+        {
+            return GameManager.instance.GetCurrentContract().volatilityMax;
+        }
+        else
+            return -1;
+        
+    }
+
     public void SetConnection(Chemical chemical, int index, string type)
     {
         chemical.connectionTypes[index] = type;

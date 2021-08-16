@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class VolatilityBar : MonoBehaviour
@@ -9,12 +10,14 @@ public class VolatilityBar : MonoBehaviour
 
     [SerializeField]
     private int volatility;
+    private int volMax;
 
-    // Will probably be replaced by bar apparatus
     [SerializeField]
-    private TextMeshProUGUI volatilityText = null;
+    private Text volatilityText = null;
+    /*[SerializeField]
+    private SpriteRenderer volatilityBar = null, volatiltiyBG = null;*/
     [SerializeField]
-    private SpriteRenderer volatilityBar = null, volatiltiyBG = null;
+    CircleSlider volBar = null;
     [SerializeField]
     private int unstableVol = 5, negativeVol = 2, positiveVol = -1;
 
@@ -34,6 +37,16 @@ public class VolatilityBar : MonoBehaviour
     private void Start()
     {
         volatility = 0;
+        int contractMax = DrugManager.instance.GetVolMax();
+        if (contractMax != -1)
+        {
+            volMax = contractMax;
+            volatilityText.text = "0 / " + volMax.ToString();
+        } else
+        {
+            //disable if no vol max
+            this.gameObject.SetActive(false);
+        }
     }
 
     // Takes in the 12 statuses that were possibly altered from a rotation, placement or pickup, and adjusts the danger level accordingly
@@ -59,8 +72,8 @@ public class VolatilityBar : MonoBehaviour
                 volatility -= positiveVol;
         }
 
-        volatilityText.text = volatility.ToString();
-        if (volatility < 0)
+        volatilityText.text = volatility.ToString() + " / " + volMax.ToString();
+        /*if (volatility < 0)
         {
             volatilityText.text = "0";
             volatilityBar.transform.localScale = new Vector3(0, volatilityBar.transform.localScale.y, volatilityBar.transform.localScale.z);
@@ -70,8 +83,11 @@ public class VolatilityBar : MonoBehaviour
         } else
         {
             volatilityBar.transform.localScale = new Vector3(volatiltiyBG.transform.localScale.x * volatiltiyBG.size.x, volatilityBar.transform.localScale.y, volatilityBar.transform.localScale.z);
-        }
-        
+        }*/
+
+        float volAmount = volatility / volMax;
+        Mathf.Clamp(volAmount, 0, 1);
+        volBar.ChangeProgress(volAmount);
     }
 
     public int GetVol()

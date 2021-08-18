@@ -12,13 +12,15 @@ public class FlowerMinigame : Minigame
     Vector3 startPosition;
     public float spacing = 10f;
 
+    public GameObject spawnPointGO;
+
     new void Start()
     {
         
 
         flowerDecayList = new int[numFlowers];
 
-        startPosition = gameObject.transform.position;
+        startPosition = spawnPointGO.transform.position;
 
         for(int i = 0; i < numFlowers; i++) {
             Vector3 flowerPos = startPosition;

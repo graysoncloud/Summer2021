@@ -7,6 +7,9 @@ public class Door : MonoBehaviour
     SpriteRenderer spriteRenderer;
     public Sprite closedSprite;
     public Sprite openSprite;
+
+    public Room destination;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -20,6 +23,10 @@ public class Door : MonoBehaviour
 
     void OnMouseOver() {
         spriteRenderer.sprite = openSprite;
+    }
+
+    void OnMouseDown() {
+        FindObjectOfType<PlayerController>().SetRoom(destination);
     }
 
     void OnMouseExit() {

@@ -39,6 +39,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SetRoom(Room r) {
+        for(int i = 0; i < rooms.Length; i++) {
+            Vector3 pos = rooms[i].transform.position;
+            pos.x = 25;
+            rooms[i].transform.position = pos;
+        }
+        r.transform.position = Vector3.zero;
+    }
+
     public void GoToWork() {
         foreach (Day.Sequence dialogueEvent in GameManager.instance.currentDay.sequences)
         {

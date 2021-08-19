@@ -27,8 +27,6 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
 
     public MRAudioManager audioManager;
 
-    [Range(0,100)]
-    public int tempStress;
 
     // game data
     // the day
@@ -60,15 +58,10 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
             }
         }
 
-        PlayerPrefs.SetInt("Stress", tempStress);
-
         if(dayCounterTxt != null) {
-            dayCounterTxt.text = "Day: " + gameDay;
+            dayCounterTxt.text = "DAY " + gameDay;
         }
 
-        if(stressTxt != null) {
-            stressTxt.text = "stress: " + PlayerPrefs.GetInt("Stress");
-        }
     }
 
     public void SetMinigame(Minigame m) {

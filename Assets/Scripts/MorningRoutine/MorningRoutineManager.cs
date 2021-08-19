@@ -78,6 +78,9 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         if(isTVActive) {
             tvInteractable.StopTVEvent();
         }
+        if(medicationMinigame.isGameActive) {
+            medicationMinigame.StopGame();
+        }
         backButton.gameObject.SetActive(false);
         roomButtons.SetActive(true);
     }
@@ -93,7 +96,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         medicationMinigame.IncrementDay();
         tvInteractable.Reset();
 
-        SetMinigame(bedMinigame);
+        //SetMinigame(bedMinigame);
     }
 
     public void SetTVActive(bool a) {

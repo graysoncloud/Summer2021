@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SpriteGlow;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
@@ -23,6 +24,7 @@ public class Interactable : MonoBehaviour
     int jitterDuration = 0;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,8 @@ public class Interactable : MonoBehaviour
         {
             GetComponent<BoxCollider2D>().enabled = false;
         }
+
+        
 
     }
 
@@ -52,7 +56,7 @@ public class Interactable : MonoBehaviour
             if (stress >= jitterThreshold && !jittering)
             {
                 jittering = true;
-                jitterTimer = (int)(jitterCooldown * ((100 + jitterThreshold -stress) / 100f));
+                jitterTimer = (int)(jitterCooldown * ((100 + jitterThreshold - stress) / 100f));
                 jitterDuration = Random.Range(10, stress);
             }
             if (jittering && jitterDuration > 0)

@@ -46,10 +46,9 @@ public class FlowerMinigame : Minigame
     }
 
     public void IncrementDay() {
-        for(int i = 0; i < numFlowers; i++) {
-            flowerDecayList[i] = flowerPots[i].GetComponent<FlowerPot>().decay;
-            flowerDecayList[i]++;
-            flowerPots[i].GetComponent<FlowerPot>().UpdateFlower(flowerDecayList[i]);
+
+        foreach(GameObject f in flowerPots) {
+            f.GetComponent<FlowerPot>().Decay();
         }
     }
 }

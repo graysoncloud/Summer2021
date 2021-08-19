@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlowerPot : Interactable
 {
     // Start is called before the first frame update
-    [Range(0, 4)]
+    [Range(0, 5)]
     [SerializeField]
     public int decay = 0;
     public int waterLevel = 0;
@@ -60,6 +60,18 @@ public class FlowerPot : Interactable
                 decay = maxDecay;
             }
         }
+    }
+
+    public void Decay() {
+        if(waterLevel > 0) {
+            waterLevel--;
+        } else {
+            decay++;
+            if(decay > maxDecay) {
+                decay = maxDecay;
+            }
+        }
+        hasBeenWateredToday = false;
     }
 
     void OnTriggerEnter2D(Collider2D col) {

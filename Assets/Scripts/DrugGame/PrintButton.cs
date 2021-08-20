@@ -18,7 +18,8 @@ public class PrintButton : MonoBehaviour
         //return;
 
         // Evaluate solution
-        if (ContractDisplayer.instance.EvaluateContract())
+        // Just delete the true part
+        if (true || ContractDisplayer.instance.EvaluateContract())
         {
             Printer.instance.solutionPrinted = true;
             Printer.instance.printerPaper.SetActive(true);

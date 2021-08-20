@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetInt("TookPill", 0);
         PlayerPrefs.SetInt("WatchedNews", 0);
+        PlayerPrefs.SetInt("IsLate", 0);
 
         DrugManager.instance.ResetTimeElapsed();
 
@@ -175,6 +176,7 @@ public class GameManager : MonoBehaviour
         FinishedLate,
         NotTookPill,
         HelpedRobbie,
+        IsLate
     }
 
 }

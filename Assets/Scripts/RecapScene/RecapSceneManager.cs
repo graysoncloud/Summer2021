@@ -28,6 +28,8 @@ public class RecapSceneManager : MonoBehaviour
     public TextMeshProUGUI drugGameTimeText;
     public TextMeshProUGUI timeDecreasingText;
     public TextMeshProUGUI bonusDecreasingText;
+    public TextMeshProUGUI latePenaltyText;
+    public TextMeshProUGUI gradeBonusText;
     public TextMeshProUGUI totalText;
     public TextMeshProUGUI grossAmountText;
 
@@ -250,6 +252,11 @@ public class RecapSceneManager : MonoBehaviour
 
             yield return new WaitForEndOfFrame(); 
         }
+
+        yield return new WaitForSeconds(1.2f);
+
+        if (PlayerPrefs.GetInt("MariaAttitude") == 0) ;
+        //latePenaltyText.text = 
 
         yield return new WaitForSeconds(1.2f);
 

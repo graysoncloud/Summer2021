@@ -28,9 +28,9 @@ public enum CharacterName {
 
 public enum AnimationName
 {
-    BarneyWorkIdle, BarneyListening, BarneySmile, BarneyQuizzical, BarneyFear,
-    MariaWalking, MariaIdle, MariaSmirk, MariaAngry,
-    WesleyWalking, WesleyIdle, WesleyLaughing, WesleySinister,
-    RobbieWalking, RobbieIdle, RobbieSmile, RobbieParanoid,
-    ElizabethIdle, ElizabethLaughing, ElizabethCoughing, ElizabethCoughingBad,
+    BarneyWorkingNormal, BarneyWorkingStressed, BarneyListening, BarneyFrowning, BarneyQuizzical, BarneySmiling, BarneyAfraid, BarneyPanicAttack, BarneyLeavingDesk,
+    MariaNeutral, MariaSmirk, MariaAngry,
+    WesleyNeutral, WesleySmirk, WesleyLaughing, WesleySinister,
+    RobbieNeutral, RobbieRelaxed, RobbieSmile, RobbieParanoid,
+    ElizabethNeutral, ElizabethLaughing, ElizabethCoughing, ElizabethCoughingBad,
 }

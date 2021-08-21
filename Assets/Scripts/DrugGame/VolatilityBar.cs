@@ -88,8 +88,6 @@ public class VolatilityBar : MonoBehaviour
         float volAmount = (float)volatility / (float)volMax;
         Mathf.Clamp(volAmount, 0, 1);
         volBar.ChangeProgress(volAmount);
-        Debug.Log(volMax);
-        Debug.Log(volatility);
     }
 
     public int GetVol()

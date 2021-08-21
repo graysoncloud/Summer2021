@@ -88,6 +88,7 @@ public class ContractDisplayer : MonoBehaviour
             int vol = DrugManager.instance.GetVol();
             if (vol > currentContract.volatilityMax)
                 return false;
+            Debug.Log("Vol good");
         }
 
         float cost = DrugManager.instance.GetCost();
@@ -96,24 +97,29 @@ public class ContractDisplayer : MonoBehaviour
         {
             if (cost > currentContract.maxPrice)
                 return false;
+            Debug.Log("Max Price good");
         }
 
         if (currentContract.usesMinPrice)
         {
             if (cost < currentContract.minPrice)
                 return false;
+            Debug.Log("Min Price good");
         }
 
         if (currentContract.usesUndesirableEffect)
         {
             if (DrugManager.instance.undesiredChems > currentContract.undesirableEffectMax)
                 return false;
+            Debug.Log("Undes good");
         }
 
         if (currentContract.usesDesirableEffect)
         {
+            Debug.Log(DrugManager.instance.desiredChems);
             if (DrugManager.instance.desiredChems < currentContract.desirableEffectMin)
                 return false;
+            Debug.Log("Des good");
         }
 
         return true;

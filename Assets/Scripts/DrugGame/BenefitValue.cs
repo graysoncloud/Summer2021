@@ -17,6 +17,7 @@ public class BenefitValue : MonoBehaviour
         benefitValue = 0;
     }
 
+    /* Out of date
     // Takes in the 12 statuses that were possibly altered from a rotation, placement or pickup, and adjusts the danger level accordingly
     public void UpdateBenefitValue(string[] oldStatuses, string[] newStatuses)
     {
@@ -31,11 +32,12 @@ public class BenefitValue : MonoBehaviour
         }
 
         benefitValueText.text = benefitValue.ToString();
-    }
+    }*/
 
     public void UpdateBenefitValue(int benefit)
     {
         benefitValue += benefit;
         benefitValueText.text = benefitValue.ToString();
+        DrugManager.instance.desiredChems += benefit; //terrible way of doing this
     }
 }

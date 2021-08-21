@@ -8,7 +8,7 @@ public class Chemical : MonoBehaviour
     public EffectType[] effects;
     public int[] effectAmount;
     public bool desirable = false, undesirable = false;
-    private int benefit = 0, detriment = 0, benefitAmount = 1, detrimentAmount = 1;
+    private int benefit = 0, detriment = 0, benefitAmount = 0, detrimentAmount = 0;
     private const float rotateSpeed = 15f;
     private float rotateTarget = 0, internalRotation = 0;
 

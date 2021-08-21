@@ -13,23 +13,20 @@ MonoBehaviour:
   m_Name: 5 Con
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: f71c2d2e45c1a884783198b8c124a9d6, type: 2}
+  isNews: 0
   dialogueLines:
   - speaker: 2
     dialogue: "You know, this sort of thing would be a lot easier if you had a bit
       more practice. Practice with another woman who isn\u2019t your mother."
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 17
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 1
     dialogue: "Not now, mom-\r"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 1
-      animationName: 0
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
@@ -37,45 +34,35 @@ MonoBehaviour:
     dialogue: "Come on, Barney. Are you really going to stay single in this apartment
       forever? Get out there and find someone special! You\u2019re way overdue."
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 17
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 1
     dialogue: "I really have to get going, I can\u2019t be late on my first day back!"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 1
-      animationName: 0
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 2
     dialogue: 'Whatever. Get out of here, you big sponge. '
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 17
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 2
     dialogue: '*Cough Cough*'
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 19
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 2
     dialogue: Have a good first day back.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 17
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

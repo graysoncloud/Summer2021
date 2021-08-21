@@ -20,12 +20,12 @@ MonoBehaviour:
   characterToCheck: 0
   attitudeComparison: 0
   attitudeToCompare: 0
-  checkEvent: 1
+  checkEvent: 0
   eventToCheck: 3
   changesStress: 0
   stressChangeAmount: 0
   changesAttitude: 0
   attitudeToChange: 0
-  amountToAlter: 0
+  amountToAlterAttitude: 0
   logsEvent: 0
   eventToLog: 0

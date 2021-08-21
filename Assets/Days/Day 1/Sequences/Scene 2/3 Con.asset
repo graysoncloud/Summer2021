@@ -10,14 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 2.2 Con
+  m_Name: 3 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: e7661482ae092a74e91a2fff86108096, type: 2}
+  nextEvent: {fileID: 0}
   isNews: 0
   dialogueLines:
-  - speaker: 1
-    dialogue: "Forgetting something? Um... keys, wallet... the plants! I forgot,
-      I\u2019ll go run and-"
+  - speaker: 3
+    dialogue: "We\u2019re giving you a mellow day today. No need to stress. Go at
+      your own pace."
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Although we do need you done by five at the latest....
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Anyways, good to have you back!
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

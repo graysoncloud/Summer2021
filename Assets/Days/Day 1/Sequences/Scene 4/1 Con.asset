@@ -10,16 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 2.2 Con
+  m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: e7661482ae092a74e91a2fff86108096, type: 2}
-  isNews: 0
+  nextEvent: {fileID: 11400000, guid: 39475c0f4c59948409d2a89b6ae4274a, type: 2}
   dialogueLines:
-  - speaker: 1
-    dialogue: "Forgetting something? Um... keys, wallet... the plants! I forgot,
-      I\u2019ll go run and-"
+  - speaker: 5
+    dialogue: "Let me see....\r"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 6
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: "Acceptable. You may leave. Be in tomorrow at 9:00 sharp.\r"
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 5
+      animationName: 6
     animOnly: 0
     animLength: 0
     SFX: 

@@ -15,11 +15,11 @@ MonoBehaviour:
   sequences:
   - initialEvent: {fileID: 11400000, guid: 84cb34e029ccfd14c9e0c3d94a4da181, type: 2}
     trigger: 1
+  - initialEvent: {fileID: 11400000, guid: 116710eaebc5e914c9fa0971d17b6660, type: 2}
+    trigger: 3
   newsEvent: {fileID: 11400000, guid: 6ee86f99d2b55f84fb5ff2f168940692, type: 2}
   contracts: []
   contractTypeList: 
   storyContracts: []
   easyContracts: []
   hardContracts: []
-  numEasy: 0
-  numHard: 0

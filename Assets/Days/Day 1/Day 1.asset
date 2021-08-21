@@ -17,11 +17,16 @@ MonoBehaviour:
     trigger: 0
   - initialEvent: {fileID: 11400000, guid: 3decdaa75bb53244cadb936dfc090201, type: 2}
     trigger: 1
+  - initialEvent: {fileID: 11400000, guid: 9374454d5d2c4c74e984a7afa998f240, type: 2}
+    trigger: 2
   - initialEvent: {fileID: 11400000, guid: a854505925c2cff49b88440c89b3888a, type: 2}
     trigger: 3
   newsEvent: {fileID: 11400000, guid: b58426fc35a83cf4aaef4e1ceb69ec8a, type: 2}
-  contracts: []
-  contractTypeList: 
+  contracts:
+  - {fileID: 11400000, guid: 3d705040b793bbd4183ce8f1177ada3d, type: 2}
+  contractTypeList: 00000000
   storyContracts: []
-  easyContracts: []
+  easyContracts:
+  - {fileID: 11400000, guid: 2690638670583df4a9ab2bca7fc379fe, type: 2}
+  - {fileID: 11400000, guid: 3d705040b793bbd4183ce8f1177ada3d, type: 2}
   hardContracts: []

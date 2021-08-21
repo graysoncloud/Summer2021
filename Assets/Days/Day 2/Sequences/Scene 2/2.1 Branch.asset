@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6cf3753bd334704ea56229dd0ebb808, type: 3}
-  m_Name: 4.1 Branch
+  m_Name: 2.1 Branch
   m_EditorClassIdentifier: 
-  choiceText: I love you.
+  choiceText: 
   checkStress: 0
   stressComparison: 0
   stressCheckAmount: 0
@@ -20,12 +20,12 @@ MonoBehaviour:
   characterToCheck: 0
   attitudeComparison: 0
   attitudeToCompare: 0
-  checkEvent: 0
-  eventToCheck: 0
+  checkEvent: 1
+  eventToCheck: 8
   changesStress: 0
   stressChangeAmount: 0
-  changesAttitude: 1
-  attitudeToChange: 2
-  amountToAlterAttitude: 1
+  changesAttitude: 0
+  attitudeToChange: 0
+  amountToAlterAttitude: 0
   logsEvent: 0
   eventToLog: 0

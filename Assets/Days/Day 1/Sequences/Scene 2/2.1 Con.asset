@@ -10,35 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 1 Con
+  m_Name: 2.1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: 6531a16f65d42ab4eb9878461e00d20f, type: 2}
   isNews: 0
   dialogueLines:
-  - speaker: 4
-    dialogue: ...
+  - speaker: 1
+    dialogue: .... Morning, Wesley.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: I'm Robbie. Wesley said I should come and- and introduce myself.
+  - speaker: 3
+    dialogue: Well well well! Someone woke up on the wrong side of the bed this morning!
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: I'm Mazer's new head of research. I've mad a lot of new chemicals since
-      you've been gone. Glacium and Avero, to name a few. I hope they're servicable.
+  - speaker: 3
+    dialogue: You know that the main ingredient to a successful career at Mazer is
+      a positive attitude, right Barney? A team's morale is only as strong as it's
+      weakest link.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: ... Goodbye.
+  - speaker: 1
+    dialogue: '*sigh* Yes, Wesley.'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: If you say so, pal. Now that we got that out of the way...
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

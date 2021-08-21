@@ -10,21 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 3 Con
+  m_Name: 2.1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: ea181cf3ad41df44a8add43ef333f9f7, type: 2}
+  nextEvent: {fileID: 0}
   isNews: 0
   dialogueLines:
-  - speaker: 2
-    dialogue: "Unbelievable. You manage to remember the names of all those fancy
-      drugs and pills. Everything in that big brain of yours...\r"
+  - speaker: 5
+    dialogue: You're late, Barney. This is far from acceptable behaviour. And from
+      a professional like yourself!
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 2
-    dialogue: "And you still can\u2019t remember to tell your mother you love her.\r"
+  - speaker: 5
+    dialogue: You will not make this a habit. Is that clear?
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: ...
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: I have nothing more to say. You may leave.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

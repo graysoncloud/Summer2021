@@ -10,35 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 1 Con
+  m_Name: 2.2 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: 6531a16f65d42ab4eb9878461e00d20f, type: 2}
   isNews: 0
   dialogueLines:
-  - speaker: 4
-    dialogue: ...
+  - speaker: 1
+    dialogue: Morning, Wesley! Happy to be here.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: I'm Robbie. Wesley said I should come and- and introduce myself.
+  - speaker: 3
+    dialogue: '''Course you are! Everyone at Mazer could always count on you for
+      your great work ethic!'
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: I'm Mazer's new head of research. I've mad a lot of new chemicals since
-      you've been gone. Glacium and Avero, to name a few. I hope they're servicable.
+  - speaker: 3
+    dialogue: "Alright, enough funny business. To make up for all your missed time,
+      you\u2019re gonna be working on twice as many contracts. We need you at 250%
+      manpower, minimum.\r"
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: ... Goodbye.
+  - speaker: 3
+    dialogue: Ho ho ho! Naw, I'm just pulling your leg. Can't help myself sometimes.
+      The truth is...
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

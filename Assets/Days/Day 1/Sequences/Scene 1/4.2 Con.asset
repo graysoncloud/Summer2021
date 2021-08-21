@@ -13,22 +13,19 @@ MonoBehaviour:
   m_Name: 4.2 Con
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: a0e36ff3f4de17e41b102e1dbed4d9cc, type: 2}
+  isNews: 0
   dialogueLines:
   - speaker: 1
     dialogue: "Mom, I don\u2019t have time for this. I have to go to work.\r"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 1
-      animationName: 0
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 2
     dialogue: The gall of this boy... hah!
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 17
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

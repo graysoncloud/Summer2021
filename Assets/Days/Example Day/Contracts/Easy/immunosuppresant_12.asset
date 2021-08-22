@@ -29,5 +29,5 @@ MonoBehaviour:
   optimalUndesirableEffectAmount: 0
   usesDesirableEffect: 1
   desirableEffect: 5
-  desirableEffectMin: 12
-  optimalDesirableEffectAmount: 12
+  desirableEffectMin: 2
+  optimalDesirableEffectAmount: 2

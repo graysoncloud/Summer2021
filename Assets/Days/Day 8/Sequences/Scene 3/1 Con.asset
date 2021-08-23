@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 1 Con
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 0}
+  dialogueLines:
+  - speaker: 5
+    dialogue: ........
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 5
+      animationName: 6
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: "Barney, what is this?\r"
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 5
+      animationName: 6
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: "You think if you\u2019re clever enough with your meddling, you can
+      push things like this past us? Just how dumb do you think I am?\r"
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 5
+      animationName: 8
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: This is strike one, Barney. Two more might be too generous... so watch
+      it.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 5
+      animationName: 8
+    animOnly: 0
+    animLength: 0
+    SFX: 

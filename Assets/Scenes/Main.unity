@@ -2574,9 +2574,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   days:
   - {fileID: 11400000, guid: bef17959852e84d4880d48c90c95d5e9, type: 2}
-  - {fileID: 11400000, guid: cff37fc0d5a9b1c47b896d8f9afc8c12, type: 2}
   - {fileID: 11400000, guid: 43c23f096ba49e94f85e1a4cc5c0a6b3, type: 2}
-  - {fileID: 11400000, guid: cff37fc0d5a9b1c47b896d8f9afc8c12, type: 2}
+  - {fileID: 11400000, guid: bf738d117c9be46468863c171a5c8aa4, type: 2}
+  - {fileID: 11400000, guid: 7f8321b6db2b7a54eb2777d37824747a, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -32054,7 +32054,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backButton: {fileID: 307424894193808368}
-  roomButtons: {fileID: 0}
   dayCounterTxt: {fileID: 307424893862137737}
   stressTxt: {fileID: 0}
   MRUI: {fileID: 307424892601007152}

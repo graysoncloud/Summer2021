@@ -12,23 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 39475c0f4c59948409d2a89b6ae4274a, type: 2}
+  nextEvent: {fileID: 11400000, guid: edbdcc0bb9d9d64428adab1afe787282, type: 2}
+  isNews: 0
   dialogueLines:
   - speaker: 5
     dialogue: "Let me see....\r"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 5
-      animationName: 6
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 5
-    dialogue: "Acceptable. You may leave. Be in tomorrow at 9:00 sharp.\r"
+    dialogue: Acceptable. Be in tomorrow at 9:00 sharp.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 5
-      animationName: 6
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

@@ -486,6 +486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 3
   effects: 05000000
+  effectAmount: 05000000
   desirable: 1
   undesirable: 0
   isPlaced: 0
@@ -520,6 +521,7 @@ MonoBehaviour:
   - None
   - None
   - None
+  graphicsParent: {fileID: 0}
 --- !u!1 &4703939092782083827
 GameObject:
   m_ObjectHideFlags: 0

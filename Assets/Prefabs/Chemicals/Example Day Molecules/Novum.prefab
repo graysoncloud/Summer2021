@@ -244,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 2
   effects: 04000000
+  effectAmount: 02000000
   desirable: 1
   undesirable: 0
   isPlaced: 0
@@ -266,6 +267,7 @@ MonoBehaviour:
   - 
   childConnection1: []
   childConnection2: []
+  graphicsParent: {fileID: 0}
 --- !u!1 &4603956492425896196
 GameObject:
   m_ObjectHideFlags: 0

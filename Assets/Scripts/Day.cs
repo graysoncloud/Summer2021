@@ -13,6 +13,7 @@ public class Day : ScriptableObject
     // Should be replaced
     public List<Contract> contracts = new List<Contract>();
 
+    public Chemical[] dayChemicals = null;
     public List<ContractTypes> contractTypeList = new List<ContractTypes>();
 
     public enum ContractTypes { Easy, Hard, Story}
@@ -46,6 +47,9 @@ public class Day : ScriptableObject
 
     }
 
+    public void FillBins(){
+        GameObject.Find("ChemicalBins").GetComponent<BinManager>().chemicals = dayChemicals;
+    }
     public void ShuffleContracts()
     {
 

@@ -8,13 +8,15 @@ public class BinManager : MonoBehaviour
     private ChemicalBin bin = null;
     
     [SerializeField]
-    private Chemical[] chemicals = null;
+    public Chemical[] chemicals = null;
     // Could rework it so it loads from a json or something for different days
     public List<ChemicalBin> binArray = new List<ChemicalBin>(); //for getting bins from chem
 
     [SerializeField]
     private float spacing = 0;
 
+    [SerializeField]
+    private GameObject InfoDisplayer;  
     private void Awake()
     {
         int index = 0;
@@ -29,6 +31,8 @@ public class BinManager : MonoBehaviour
 
             chemBin.ChemicalPrefab = chem;
             chemBin.transform.position = pos;
+
+            chemBin.InfoTooltip = InfoDisplayer;
 
             binArray.Add(chemBin);
             index++;

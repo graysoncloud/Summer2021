@@ -849,4 +849,19 @@ public class Chemical : MonoBehaviour
     {
         return cost;
     }
+
+    public string getInfo()
+    {
+
+        var effectlist = new System.Text.StringBuilder();
+
+        effectlist.AppendLine(name);
+
+        
+        for(int i = 0; i < effects.Length; i++){
+            effectlist.AppendLine(effects[i].ToString() + " " + effectAmount[i].ToString());
+        }
+        
+        return effectlist.ToString();
+    }
 }

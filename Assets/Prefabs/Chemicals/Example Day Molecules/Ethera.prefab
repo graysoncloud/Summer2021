@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 4
   effects: 07000000
+  effectAmount: 03000000
   desirable: 0
   undesirable: 0
   isPlaced: 0
@@ -222,6 +223,7 @@ MonoBehaviour:
   - Chemical
   - None
   childConnection2: []
+  graphicsParent: {fileID: 0}
 --- !u!1 &1970604857088962881
 GameObject:
   m_ObjectHideFlags: 0

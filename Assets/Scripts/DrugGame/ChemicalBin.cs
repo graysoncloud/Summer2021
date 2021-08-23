@@ -9,6 +9,7 @@ public class ChemicalBin : MonoBehaviour
     public Chemical ChemicalPrefab;
     public TMPro.TextMeshProUGUI title, costDisplay;
     public Transform graphicPosition;
+    public GameObject InfoTooltip;
 
     private void Start()
     {
@@ -23,6 +24,20 @@ public class ChemicalBin : MonoBehaviour
                 costDisplay.SetText("Cost " + ChemicalPrefab.getCost().ToString());
             }
             //CreateDrugGraphic();
+        }
+    }
+
+    private void OnMouseOver(){
+        if(!InfoTooltip.activeSelf){
+            InfoTooltip.SetActive(true);
+            InfoTooltip.GetComponent<ChemicalInfoDisplayer>().ChangeText(ChemicalPrefab.getInfo());
+            InfoTooltip.GetComponent<ChemicalInfoDisplayer>().ChangePosition(graphicPosition.position);
+        }
+    }
+
+    private void OnMouseExit(){
+        if(InfoTooltip.activeSelf){
+            InfoTooltip.SetActive(false);
         }
     }
 
@@ -64,4 +79,5 @@ public class ChemicalBin : MonoBehaviour
     {
         costDisplay.SetText("Cost " + cost.ToString());
     }
+    
 }

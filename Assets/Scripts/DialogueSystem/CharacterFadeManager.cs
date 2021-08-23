@@ -12,6 +12,8 @@ public class CharacterFadeManager : MonoBehaviour
 
     public Dictionary<string, Character> currentChars;
 
+    public GameObject ElizabethLocation;
+
     private CharacterFade currentFadeObject;
 
     private void Awake()
@@ -42,6 +44,37 @@ public class CharacterFadeManager : MonoBehaviour
         foreach (CharacterFade.Fade fadeEvent in fadeObject.characterFades)
         {
             StartCoroutine(ExecuteCharacterFade(fadeEvent));
+        }
+    }
+
+    public void StartInstantFade(CharacterFade fadeObject)
+    {
+        currentFadeObject = fadeObject;
+
+        foreach (CharacterFade.Fade fadeEvent in fadeObject.characterFades)
+        {
+            if (fadeEvent.fadeIn)
+            {                
+                Character charToFade = Instantiate(characterPrefabs[(int)fadeEvent.characterToFade - 1], SceneChangeManager.instance.currentScene.transform);
+                if (charToFade.name.Contains("Elizabeth"))
+                {
+                    charToFade.transform.parent = ElizabethLocation.transform;
+                }
+
+                charToFade.transform.position = charToFade.startLocation;
+
+                currentChars.Add(fadeEvent.characterToFade.ToString(), charToFade);
+            }
+
+            else
+            {
+
+                Character charToFade = currentChars[fadeEvent.characterToFade.ToString()];
+
+                currentChars.Remove(fadeEvent.characterToFade.ToString());
+                GameObject.Destroy(charToFade.gameObject);
+
+            }
         }
     }
 
@@ -95,6 +128,9 @@ public class CharacterFadeManager : MonoBehaviour
                 spriteRenderer.color += (fadeIncrement * -1);
                 yield return new WaitForSeconds(fadeRate);
             }
+
+            currentChars.Remove(fadeEvent.characterToFade.ToString());
+            GameObject.Destroy(charToFade.gameObject);
 
         }
 

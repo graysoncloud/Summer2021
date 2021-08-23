@@ -165,7 +165,6 @@ public class ConversationManager : MonoBehaviour
                     // Wait for player to click to continue
                     yield return StartCoroutine("WaitForClick");
 
-                    Debug.Log("Success");
                     DialogueUIManager.instance.dialogueTextObject.text = "";
                     DialogueUIManager.instance.characterTextObject.text = "";
                 }

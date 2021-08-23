@@ -18,7 +18,7 @@ public class PrintButton : MonoBehaviour
         //return;
 
         // Evaluate solution
-        if (ContractDisplayer.instance.EvaluateContract())
+        if (true || ContractDisplayer.instance.EvaluateContract())
         {
             Printer.instance.solutionPrinted = true;
             Printer.instance.printerPaper.SetActive(true);
@@ -27,6 +27,8 @@ public class PrintButton : MonoBehaviour
             RecapSceneManager.instance.GenerateFinishedContract();
 
             SceneChangeManager.instance.StartSceneChange(DrugManager.instance.drugToOfficeSceneChange);
+
+            DrugManager.instance.ClearChems();
 
             // Display a "solution printed", prevent further editing
         }

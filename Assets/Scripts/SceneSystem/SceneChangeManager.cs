@@ -26,6 +26,13 @@ public class SceneChangeManager : MonoBehaviour
 
     public GameObject[] scenes;
 
+    public CharacterFade instantBarneyFadeIn;
+    public CharacterFade instantBarneyFadeOut;
+    public CharacterFade instantElizabethFadeIn;
+    public CharacterFade instantElizabethFadeOut;
+
+    public GameObject bedroom;
+
     private void Awake()
     {
         // Singleton Stuff
@@ -82,6 +89,17 @@ public class SceneChangeManager : MonoBehaviour
             }
         }
 
+        if (currentScene != null)
+        {
+            if (currentScene.name == "OfficeScene")
+                CharacterFadeManager.instance.StartInstantFade(instantBarneyFadeOut);
+
+            if (currentScene.name == "MorningRoutineScene")
+            {
+                CharacterFadeManager.instance.StartInstantFade(instantElizabethFadeOut);
+            }
+        }
+
         GameObject oldScene = currentScene;
 
         /*
@@ -102,11 +120,12 @@ public class SceneChangeManager : MonoBehaviour
         GameObject newScene = null;
 
         // Strings must match whatevers in the newScene sceneName enumerator, and the scene array must be indexed properly
-        switch(sceneChange.newScene.ToString())
+        switch (sceneChange.newScene.ToString())
         {
             // Insert things like MRManager.ResetScene() below
-            case "MorningRoutineScene": newScene = scenes[0]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
-            case "OfficeScene": newScene = scenes[1]; currentScene = newScene; newScene.gameObject.SetActive(true); OfficeSceneManager.instance.SetUpOfficeScene(); break;
+            case "MorningRoutineScene": newScene = scenes[0]; currentScene = newScene; CharacterFadeManager.instance.StartInstantFade(instantElizabethFadeIn);
+                newScene.gameObject.SetActive(true); GameObject.FindObjectOfType<PlayerController>().SetRoom(bedroom.GetComponent<Room>()); break;
+            case "OfficeScene": newScene = scenes[1]; currentScene = newScene; CharacterFadeManager.instance.StartInstantFade(instantBarneyFadeIn); newScene.gameObject.SetActive(true); OfficeSceneManager.instance.SetUpOfficeScene(); break;
             case "DrugGameScene": newScene = scenes[2]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
             case "RecapScene": newScene = scenes[3]; currentScene = newScene; newScene.gameObject.SetActive(true); RecapSceneManager.instance.DisplayContracts(); break;
             case "DreamScene": newScene = scenes[4]; currentScene = newScene; newScene.gameObject.SetActive(true); break;

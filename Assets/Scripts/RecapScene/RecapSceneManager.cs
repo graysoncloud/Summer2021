@@ -200,6 +200,8 @@ public class RecapSceneManager : MonoBehaviour
     public void RevealBonusScene()
     {
         nextDayButton.gameObject.SetActive(false);
+        latePenaltyText.gameObject.SetActive(false);
+        gradeBonusText.gameObject.SetActive(false);
 
         string minutesAsString = DrugManager.instance.minutes.ToString();
         if (DrugManager.instance.minutes < 10)
@@ -253,24 +255,45 @@ public class RecapSceneManager : MonoBehaviour
             yield return new WaitForEndOfFrame(); 
         }
 
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1f);
 
-        if (PlayerPrefs.GetInt("MariaAttitude") == 0) ;
-        //latePenaltyText.text = 
-
-        yield return new WaitForSeconds(1.2f);
-
-        totalText.gameObject.SetActive(true);
-
+        // This part handles the grade bonus / late fee
         PlayerPrefs.SetFloat("TotalMoney", PlayerPrefs.GetFloat("TotalMoney") + float.Parse(bonusDecreasingText.text.Substring(1)));
+
+        int toAdd = 0;
+        foreach (FinishedContract FC in finishedContracts)
+        {
+            switch (FC.grade) {
+                case "A+": toAdd += 30; break;
+                case "A": toAdd += 25; break;
+                case "B": toAdd += 10; break;
+                default: break;
+            }
+        }
+        PlayerPrefs.SetFloat("TotalMoney", PlayerPrefs.GetFloat("TotalMoney") + toAdd);
+        gradeBonusText.text = "+$" + toAdd;
+
+        switch (PlayerPrefs.GetInt("MariaAttitude"))
+        {
+            case 0: PlayerPrefs.SetFloat("TotalMoney", PlayerPrefs.GetFloat("TotalMoney") - 25); latePenaltyText.text = "-$25"; break;
+            case -1: PlayerPrefs.SetFloat("TotalMoney", PlayerPrefs.GetFloat("TotalMoney") - 50); latePenaltyText.text = "-$50"; break;
+            case -2: PlayerPrefs.SetFloat("TotalMoney", PlayerPrefs.GetFloat("TotalMoney") - 100); latePenaltyText.text = "-$100"; break;
+            case -3: PlayerPrefs.SetFloat("TotalMoney", PlayerPrefs.GetFloat("TotalMoney") - 250); latePenaltyText.text = "-$250"; break;
+            default: latePenaltyText.text = "-$0"; break;
+        }
+        latePenaltyText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(.7f);
+
+        gradeBonusText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(1.2f);
+        totalText.gameObject.SetActive(true);
         grossAmountText.text = "$" + PlayerPrefs.GetFloat("TotalMoney").ToString();
 
         yield return new WaitForSeconds(.8f);
-
         grossAmountText.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(1.2f);
-
         nextDayButton.gameObject.SetActive(true);
     }
 

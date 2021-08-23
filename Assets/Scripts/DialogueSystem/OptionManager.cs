@@ -31,8 +31,8 @@ public class OptionManager : MonoBehaviour
 
         currentOption = option;
 
-        Debug.Log(PlayerPrefs.GetInt("BarneyAttitude"));
-        Debug.Log(PlayerPrefs.GetFloat("Stress"));
+        //Debug.Log(PlayerPrefs.GetInt("BarneyAttitude"));
+        //Debug.Log(PlayerPrefs.GetFloat("Stress"));
 
         // This block of code allows instant forks to occur (no choosing necessary)
         if (option.automatic)

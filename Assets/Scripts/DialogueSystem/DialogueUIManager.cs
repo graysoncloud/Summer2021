@@ -27,7 +27,7 @@ public class DialogueUIManager : MonoBehaviour
     public void SetUpForNews()
     {
         characterParentObject.SetActive(false);
-        dialogueTextObject.alignment = TextAlignmentOptions.Center;
+        dialogueTextObject.alignment = TextAlignmentOptions.Top;
         dialogueTextObject.alignment = TextAlignmentOptions.Top;
         dialogueTextObject.fontStyle = FontStyles.Italic;
         dialogueTextObject.rectTransform.sizeDelta = new Vector2(420, 67);

@@ -20,7 +20,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1
-      animationName: 2
+      animationName: 0
     animOnly: 0
     animLength: 0
     SFX: 

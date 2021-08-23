@@ -73,6 +73,7 @@ public class VolatilityBar : MonoBehaviour
         }
 
         volatilityText.text = Mathf.Clamp(volatility, 0, 999).ToString() + " / " + volMax.ToString();
+        ContractDisplayer.instance.UpdateVol(volatility);
         /*if (volatility < 0)
         {
             volatilityText.text = "0";

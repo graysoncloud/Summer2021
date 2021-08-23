@@ -7,9 +7,11 @@ public class ContractDisplayer : MonoBehaviour
 {
     public static ContractDisplayer instance = null;
 
+    private Contract contractToDisplay = null;
+    private int volIndex = -1, maxPriceIndex = -1, minPriceIndex = -1, badEffectIndex = -1, effectIndex = -1;
+
     public TextMeshProUGUI companyName;
     public TextMeshProUGUI description;
-    public TextMeshProUGUI spacingDescriptionCopy;
     public TextMeshProUGUI[] requirements;
     public TextMeshProUGUI[] values;
 
@@ -27,7 +29,6 @@ public class ContractDisplayer : MonoBehaviour
         // Erase the old data
         companyName.text = "";
         description.text = "";
-        spacingDescriptionCopy.text = "<alpha =#00>";
 
         foreach (TextMeshProUGUI tmpro in requirements)
             tmpro.text = "";
@@ -35,49 +36,89 @@ public class ContractDisplayer : MonoBehaviour
             tmpro.text = "";
 
 
-        Contract contractToDisplay = GameManager.instance.GetCurrentContract();
+        contractToDisplay = GameManager.instance.GetCurrentContract();
 
         companyName.text = contractToDisplay.companyName;
         description.text = contractToDisplay.description;
-        spacingDescriptionCopy.text = "<alpha=#00>" + contractToDisplay.description;
 
         int currentDisplayItemIndex = 0;
 
         if (contractToDisplay.usesMaxVolatility)
         {
+            volIndex = currentDisplayItemIndex;
             requirements[currentDisplayItemIndex].text = "Max Volatility";
-            values[currentDisplayItemIndex].text = contractToDisplay.volatilityMax.ToString();
+            values[currentDisplayItemIndex].text = "0/" + contractToDisplay.volatilityMax.ToString();
             currentDisplayItemIndex++;
         }
 
         if (contractToDisplay.usesMaxPrice)
         {
+            maxPriceIndex = currentDisplayItemIndex;
             requirements[currentDisplayItemIndex].text = "Max Price";
-            values[currentDisplayItemIndex].text = contractToDisplay.maxPrice.ToString();
+            values[currentDisplayItemIndex].text = "0/" + contractToDisplay.maxPrice.ToString();
             currentDisplayItemIndex++;
         }
 
         if (contractToDisplay.usesMinPrice)
         {
+            minPriceIndex = currentDisplayItemIndex;
             requirements[currentDisplayItemIndex].text = "Min Price";
-            values[currentDisplayItemIndex].text = contractToDisplay.minPrice.ToString();
+            values[currentDisplayItemIndex].text = "0/" + contractToDisplay.minPrice.ToString();
             currentDisplayItemIndex++;
         }
 
         if (contractToDisplay.usesUndesirableEffect)
         {
+            badEffectIndex = currentDisplayItemIndex;
             requirements[currentDisplayItemIndex].text = "Max " + contractToDisplay.undesirableEffect.ToString();
-            values[currentDisplayItemIndex].text = contractToDisplay.undesirableEffectMax.ToString();
+            values[currentDisplayItemIndex].text = "0/" + contractToDisplay.undesirableEffectMax.ToString();
             currentDisplayItemIndex++;
         }
 
         if (contractToDisplay.usesDesirableEffect)
         {
+            effectIndex = currentDisplayItemIndex;
             requirements[currentDisplayItemIndex].text = "Min " + contractToDisplay.desirableEffect.ToString();
-            values[currentDisplayItemIndex].text = contractToDisplay.desirableEffectMin.ToString();
+            values[currentDisplayItemIndex].text = "0/" + contractToDisplay.desirableEffectMin.ToString();
             currentDisplayItemIndex++;
         }
 
+    }
+
+    public void UpdateVol(int vol)
+    {
+        if (contractToDisplay.usesMaxVolatility)
+        {
+            values[volIndex].text = vol + "/" + contractToDisplay.volatilityMax.ToString();
+        }
+    }
+
+    public void UpdatePrice(int price)
+    {
+        if (contractToDisplay.usesMaxPrice)
+        {
+            values[maxPriceIndex].text = price + "/" + contractToDisplay.maxPrice.ToString();
+        }
+        if (contractToDisplay.usesMinPrice)
+        {
+            values[minPriceIndex].text = price + "/" + contractToDisplay.minPrice.ToString();
+        }
+    }
+
+    public void UpdateEffect(int amount)
+    {
+        if (contractToDisplay.usesDesirableEffect)
+        {
+            values[effectIndex].text = amount + "/" + contractToDisplay.desirableEffectMin.ToString();
+        }
+    }
+
+    public void UpdateBadEffect(int amount)
+    {
+        if (contractToDisplay.usesUndesirableEffect)
+        {
+            values[badEffectIndex].text = amount + "/" + contractToDisplay.undesirableEffectMax.ToString();
+        }
     }
 
     public bool EvaluateContract()

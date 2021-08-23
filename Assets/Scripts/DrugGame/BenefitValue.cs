@@ -39,5 +39,6 @@ public class BenefitValue : MonoBehaviour
         benefitValue += benefit;
         benefitValueText.text = benefitValue.ToString();
         DrugManager.instance.desiredChems += benefit; //terrible way of doing this
+        ContractDisplayer.instance.UpdateEffect(DrugManager.instance.desiredChems);
     }
 }

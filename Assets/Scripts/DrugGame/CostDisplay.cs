@@ -49,6 +49,7 @@ public class CostDisplay : MonoBehaviour
 
             ChemicalBin chemBin = bin.GetBin(chem);
             chemBin.ChangeCost(newCost+1);
+            ContractDisplayer.instance.UpdatePrice((int) totalCost);
         }
     }
 
@@ -63,6 +64,7 @@ public class CostDisplay : MonoBehaviour
 
             ChemicalBin chemBin = bin.GetBin(chem);
             chemBin.ChangeCost(newCost);
+            ContractDisplayer.instance.UpdatePrice((int)totalCost);
         }
     }
 

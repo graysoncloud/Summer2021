@@ -664,6 +664,7 @@ public class Chemical : MonoBehaviour
             DrugManager.instance.undesiredChems -= detriment;
             detriment = detrimentAmount;
             DrugManager.instance.undesiredChems += detriment;
+            ContractDisplayer.instance.UpdateBadEffect(DrugManager.instance.undesiredChems);
         }
     }
 
@@ -678,6 +679,7 @@ public class Chemical : MonoBehaviour
         {
             DrugManager.instance.undesiredChems -= detriment;
             detriment = 0;
+            ContractDisplayer.instance.UpdateBadEffect(DrugManager.instance.undesiredChems);
         }
     }
 

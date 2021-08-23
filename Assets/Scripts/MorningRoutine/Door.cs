@@ -9,6 +9,7 @@ public class Door : MonoBehaviour
     public Sprite openSprite;
 
     public Room destination;
+    public bool workDoor;
 
     void Start()
     {
@@ -22,14 +23,48 @@ public class Door : MonoBehaviour
     }
 
     void OnMouseOver() {
+        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive)
+        {
+            return;
+        }
+
         spriteRenderer.sprite = openSprite;
     }
 
     void OnMouseDown() {
-        FindObjectOfType<PlayerController>().SetRoom(destination);
+        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive)
+        {
+            return;
+        }
+
+        if(!workDoor) {
+            FindObjectOfType<PlayerController>().SetRoom(destination);
+        } else {
+            GoToWork();
+        }
+        
     }
 
     void OnMouseExit() {
+        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive)
+        {
+            return;
+        }
+        
         spriteRenderer.sprite = closedSprite;
+    }
+
+    void GoToWork() {
+        foreach (Day.Sequence dialogueEvent in GameManager.instance.currentDay.sequences)
+        {
+            if (dialogueEvent.trigger.ToString() == "leavingHome")
+            {
+                GameManager.instance.StartSequence(dialogueEvent.initialEvent);
+                return;
+            }
+
+        }
+
+        SceneChangeManager.instance.StartSceneChange(MorningRoutineManager.Instance.mrToOffice);
     }
 }

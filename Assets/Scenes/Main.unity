@@ -16197,8 +16197,8 @@ MonoBehaviour:
   volatility: 0
   volatilityText: {fileID: 1961161436}
   volBar: {fileID: 340757681}
-  unstableVol: 5
-  negativeVol: 2
+  unstableVol: 10
+  negativeVol: 1.5
   positiveVol: -1
 --- !u!1 &711455563
 GameObject:
@@ -32054,7 +32054,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backButton: {fileID: 307424894193808368}
-  roomButtons: {fileID: 0}
   dayCounterTxt: {fileID: 307424893862137737}
   stressTxt: {fileID: 0}
   MRUI: {fileID: 307424892601007152}

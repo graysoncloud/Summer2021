@@ -9,7 +9,7 @@ public class VolatilityBar : MonoBehaviour
     public static VolatilityBar instance = null;
 
     [SerializeField]
-    private int volatility;
+    private float volatility;
     private int volMax;
 
     [SerializeField]
@@ -19,7 +19,7 @@ public class VolatilityBar : MonoBehaviour
     [SerializeField]
     CircleSlider volBar = null;
     [SerializeField]
-    private int unstableVol = 5, negativeVol = 2, positiveVol = -1;
+    private float unstableVol = 10, negativeVol = 1.5f, positiveVol = -1;
 
     //private int unstableIncrement = 4;
     //private int negativeConnectionIncrement = 1;
@@ -72,8 +72,10 @@ public class VolatilityBar : MonoBehaviour
                 volatility -= positiveVol;
         }
 
+        volatility = (int)volatility;
+
         volatilityText.text = Mathf.Clamp(volatility, 0, 999).ToString() + " / " + volMax.ToString();
-        ContractDisplayer.instance.UpdateVol(volatility);
+        ContractDisplayer.instance.UpdateVol((int)volatility);
         /*if (volatility < 0)
         {
             volatilityText.text = "0";
@@ -93,6 +95,6 @@ public class VolatilityBar : MonoBehaviour
 
     public int GetVol()
     {
-        return volatility;
+        return (int)volatility;
     }
 }

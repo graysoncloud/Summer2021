@@ -15,16 +15,15 @@ MonoBehaviour:
   nextEvent: {fileID: 0}
   isNews: 0
   dialogueLines:
-  - speaker: 5
-    dialogue: Barney, this repeated tardiness is unacceptable. I have no choice but
-      to dock your pay.
+  - speaker: 1
+    dialogue: Goodbye.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 5
-    dialogue: You may leave.
+  - speaker: 4
+    dialogue: ...
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

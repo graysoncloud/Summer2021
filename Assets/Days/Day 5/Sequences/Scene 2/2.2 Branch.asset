@@ -26,6 +26,6 @@ MonoBehaviour:
   stressChangeAmount: 30
   changesAttitude: 1
   attitudeToChange: 4
-  amountToAlter: -1
+  amountToAlterAttitude: -1
   logsEvent: 0
   eventToLog: 0

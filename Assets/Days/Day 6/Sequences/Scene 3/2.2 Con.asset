@@ -10,28 +10,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 1 Con
+  m_Name: 2.2 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 2163738917368f0498b8e54865f39419, type: 2}
+  nextEvent: {fileID: 0}
   isNews: 0
   dialogueLines:
-  - speaker: 4
-    dialogue: ...
+  - speaker: 5
+    dialogue: "Barney, what is this?\r"
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: New chemicals today. Neutral bonds. They can fuse to both positive
-      and negative bonds. Should be useful.
+  - speaker: 5
+    dialogue: "You think if you\u2019re clever enough with your meddling, you can
+      push things like this past us? Just how dumb do you think I am?\r"
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: Goodbye.
+  - speaker: 5
+    dialogue: "You think if you\u2019re clever enough with your meddling, you can
+      push things like this past us? Just how dumb do you think I am?\r"
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: This is strike one, Barney. Two more might be too generous... so watch
+      it.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

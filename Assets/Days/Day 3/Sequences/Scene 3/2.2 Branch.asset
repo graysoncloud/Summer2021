@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6cf3753bd334704ea56229dd0ebb808, type: 3}
   m_Name: 2.2 Branch
   m_EditorClassIdentifier: 
-  choiceText: Thank you.
+  choiceText: 
   checkStress: 0
   stressComparison: 0
   stressCheckAmount: 0
@@ -20,12 +20,12 @@ MonoBehaviour:
   characterToCheck: 0
   attitudeComparison: 0
   attitudeToCompare: 0
-  checkEvent: 0
-  eventToCheck: 0
+  checkEvent: 1
+  eventToCheck: 8
   changesStress: 0
   stressChangeAmount: 0
   changesAttitude: 1
-  attitudeToChange: 4
-  amountToAlterAttitude: 1
+  attitudeToChange: 5
+  amountToAlterAttitude: -1
   logsEvent: 0
   eventToLog: 0

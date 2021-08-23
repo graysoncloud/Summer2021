@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: 1 Con
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
+  isNews: 0
   dialogueLines:
   - speaker: 3
     dialogue: Barney.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 10
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
@@ -27,9 +26,7 @@ MonoBehaviour:
     dialogue: It's come to Maria's attention that you may not be giving your work
       100% of your effort.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 10
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
@@ -37,9 +34,7 @@ MonoBehaviour:
     dialogue: She showed me your work from yesterday, and I have to say... very sloppy
       work, Barney. I know you can do better.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 10
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
@@ -47,18 +42,14 @@ MonoBehaviour:
     dialogue: I hate to be the bad guy here, but if you can't get back into the swing
       of things... we might have to find a new drug engineer.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 10
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 3
     dialogue: Anyways, have a good day!
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 11
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

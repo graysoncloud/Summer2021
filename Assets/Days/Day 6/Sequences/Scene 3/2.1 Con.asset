@@ -10,46 +10,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 1 Con
+  m_Name: 2.1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 96b416edba279b64da1f0421730d97a4, type: 2}
+  nextEvent: {fileID: 0}
   isNews: 0
   dialogueLines:
   - speaker: 5
-    dialogue: ........
+    dialogue: Barney, there seems to be an extra contract in your pile.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 5
-      animationName: 6
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Um...
+    offset: {x: 0, y: 0}
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 5
-    dialogue: "Barney, what is this?\r"
+    dialogue: Naturally, I should chew you out. This could even be grounds to have
+      you fired.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 5
-      animationName: 6
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 5
-    dialogue: "You think if you\u2019re clever enough with your meddling, you can
-      push things like this past us? Just how dumb do you think I am?\r"
+    dialogue: But I think I'll let this one slide.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 5
-      animationName: 8
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 5
-    dialogue: This is strike one, Barney. Two more might be too generous... so watch
-      it.
+    dialogue: You're a hard worker, Barney. A model employee. We appreciate the work
+      you're doing.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 5
-      animationName: 8
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: But I may not be so generous in the future....
+    offset: {x: 0, y: 0}
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

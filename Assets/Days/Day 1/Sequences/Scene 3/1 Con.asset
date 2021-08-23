@@ -38,22 +38,6 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: On your computer, the chemicals are displayed on a grid, each with
-      several connections coming off of them.
-    offset: {x: 0, y: 0}
-    animations: []
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 4
-    dialogue: In order to avoid making your drug too unstable, make sure as many
-      of those connections are bonded to one another.
-    offset: {x: 0, y: 0}
-    animations: []
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 4
     dialogue: ...
     offset: {x: 0, y: 0}
     animations: []

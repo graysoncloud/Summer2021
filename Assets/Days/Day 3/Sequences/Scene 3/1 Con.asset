@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: ceb2bb78015b6d3468495b3bc7c2e9bc, type: 2}
+  nextEvent: {fileID: 11400000, guid: 33b4d3cdb8d0de4499f4ee561d9a6e7f, type: 2}
   isNews: 0
   dialogueLines:
-  - speaker: 4
-    dialogue: Hey.
+  - speaker: 5
+    dialogue: ...
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

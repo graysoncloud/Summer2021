@@ -10,28 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 2.1 Con
+  m_Name: 2.2 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 9801bed2266ef7648b01f1d03d9aef0a, type: 2}
+  nextEvent: {fileID: 0}
   isNews: 0
   dialogueLines:
-  - speaker: 4
-    dialogue: Listen, about those migraine pills.
+  - speaker: 5
+    dialogue: Please remember to be more timely, Barney.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 4
-      animationName: 14
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: "Mazer developed them a few years ago. They work pretty well, but prolonged
-      use can cause some pretty bad side effects. I\u2019ve started having a harder
-      time falling asleep.\r"
+  - speaker: 5
+    dialogue: You may leave.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 4
-      animationName: 14
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

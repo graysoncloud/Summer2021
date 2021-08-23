@@ -19,6 +19,7 @@ public class ShavingMinigame : Minigame
         spawnMin = spawnPos - (spawnBounds.size / 2);
         spawnMax = spawnPos + (spawnBounds.size / 2);
         GetStubble();
+        IncrementDay();
     }
 
     // Update is called once per frame

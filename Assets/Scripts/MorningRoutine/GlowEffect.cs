@@ -6,17 +6,23 @@ using UnityEngine;
 public class GlowEffect : MonoBehaviour
 {
     public bool shouldGlow = false;
+    public bool hoverGlow = false;
 
     bool tutorialGlow = false;
+    bool hovering = false;
+    bool clicking = false;
+    
 
     SpriteGlowEffect glowSettings;
 
     [Range(0, 5f)]
     public float maxGlow = 1f;
-    [Range(0, 0.5f)]
+    [Range(0, 5f)]
     public float pulseSpeed = 0.1f;
 
     float glowTimer = 0f;
+    public Color tutorialGlowColor;
+    public Color hoverColor;
 
     void Start()
     {
@@ -30,18 +36,18 @@ public class GlowEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.activeSelf && tutorialGlow)
+        if (gameObject.activeSelf && tutorialGlow && !hovering)
         {
 
-            glowTimer += pulseSpeed;
+            glowTimer += (pulseSpeed / 20);
             if (glowTimer >= 1f)
             {
                 glowTimer = -1f;
             }
 
-
             float glowBrightness = Mathf.Abs(glowTimer) * maxGlow;
             glowSettings.GlowBrightness = glowBrightness;
+            glowSettings.GlowColor = tutorialGlowColor;
         }
     }
 
@@ -50,7 +56,25 @@ public class GlowEffect : MonoBehaviour
         if (tutorialGlow)
         {
             tutorialGlow = false;
-            glowSettings.OutlineWidth = 0;
+            glowSettings.GlowBrightness = 0;
+        }
+        clicking = true;
+    }
+
+    public void OnMouseOver() {
+        if(hoverGlow && !tutorialGlow && !clicking) {
+            hovering = true;
+            glowSettings.GlowBrightness = maxGlow;
+            glowSettings.GlowColor = hoverColor;
         }
     }
+
+    public void OnMouseExit() { 
+        if(hoverGlow) {
+            hovering = false;
+            glowSettings.GlowBrightness = 0;
+        }
+        clicking = false;
+    }
+    
 }

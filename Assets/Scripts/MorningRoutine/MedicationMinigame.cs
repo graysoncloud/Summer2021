@@ -13,6 +13,7 @@ public class MedicationMinigame : Minigame
         base.Start();
         lidInteractable = GetComponentInChildren<LidInteractable>();
         pillInteractable = GetComponentInChildren<PillInteractable>();
+        lidInteractable.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,9 +38,12 @@ public class MedicationMinigame : Minigame
         lidInteractable.SetActive(true);
     }
 
-    new void StopGame() {
+    public void StopMedGame() {
         //Debug.Log("medicine game end");
         base.StopGame();
+        lidInteractable.SetActive(false);
+        lidInteractable.Reset();
+        pillInteractable.Reset();
     }
 
     public void IncrementDay() {

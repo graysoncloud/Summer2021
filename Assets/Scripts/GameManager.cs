@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
 
         currentDay = days[currentDayIndex];
         currentDay.ShuffleContracts();
-        currentDay.FillBins();
 
         PlayerPrefs.DeleteAll();
 
@@ -112,6 +111,11 @@ public class GameManager : MonoBehaviour
         return currentDay.contracts[OfficeSceneManager.instance.currentContractIndex];
     }
 
+    public Day GetCurrentDay()
+    {
+        return currentDay;
+    }
+
     public void NextDay()
     {
         OfficeSceneManager.instance.currentContractIndex = 0;
@@ -127,7 +131,6 @@ public class GameManager : MonoBehaviour
         currentDayIndex++;
         currentDay = days[currentDayIndex];
         currentDay.ShuffleContracts();
-        currentDay.FillBins();
 
         MorningRoutineManager.Instance.StartNewDay();
     }

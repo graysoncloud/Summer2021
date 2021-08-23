@@ -47,9 +47,6 @@ public class Day : ScriptableObject
 
     }
 
-    public void FillBins(){
-        GameObject.Find("ChemicalBins").GetComponent<BinManager>().chemicals = dayChemicals;
-    }
     public void ShuffleContracts()
     {
 

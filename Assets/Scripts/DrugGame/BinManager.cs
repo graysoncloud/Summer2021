@@ -19,6 +19,9 @@ public class BinManager : MonoBehaviour
     private GameObject InfoDisplayer;  
     private void Awake()
     {
+
+        chemicals = GameManager.instance.GetCurrentDay().dayChemicals;
+
         int index = 0;
         foreach (Chemical chem in chemicals)
         {

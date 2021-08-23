@@ -19,6 +19,13 @@ MonoBehaviour:
     trigger: 3
   newsEvent: {fileID: 11400000, guid: 6ee86f99d2b55f84fb5ff2f168940692, type: 2}
   contracts: []
+  dayChemicals:
+  - {fileID: 4991818317866170135, guid: ca93b602592e5e347b070a41e8b1a2de, type: 3}
+  - {fileID: 4991818317866170135, guid: b0498c4b10265de4da2ea258c0238db3, type: 3}
+  - {fileID: 4991818317866170135, guid: 23a9136f6d4114a428f8e5c0737a0add, type: 3}
+  - {fileID: 4991818317866170135, guid: 20a824d3f3877854a8ee33dd996889be, type: 3}
+  - {fileID: 4991818317866170135, guid: 76a843807c187324e8bb0ab4ddacdbf4, type: 3}
+  - {fileID: 4991818317866170135, guid: 1c9da7e66f5b6b14f8d41974e459e553, type: 3}
   contractTypeList: 
   storyContracts: []
   easyContracts: []

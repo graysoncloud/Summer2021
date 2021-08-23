@@ -23,12 +23,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ccdbb1f3b157a00418981a7b44d317a1, type: 2}
   - {fileID: 11400000, guid: e88aae05458ecf74b8616c5f1000fb9e, type: 2}
   dayChemicals:
-  - {fileID: 5631039560477863137, guid: 39b01e00865393649b54d2d96c0c91d0, type: 3}
-  - {fileID: 1845687974562502713, guid: dda7dba3c3262ce409a7ad9f76167c7c, type: 3}
-  - {fileID: 110390762768189720, guid: beebc4bc444e61242b212a6c2c671ab9, type: 3}
-  - {fileID: 631240075661282151, guid: d16ef878097e42742b6d09d0df9b81b0, type: 3}
-  - {fileID: 5631039560477863137, guid: acd885e65b718354b8e808b082e0d6ea, type: 3}
-  - {fileID: 1845687974562502713, guid: 95bfe5087d2c6ec4d8ade0da74c992c1, type: 3}
+  - {fileID: 4991818317866170135, guid: b0498c4b10265de4da2ea258c0238db3, type: 3}
+  - {fileID: 4991818317866170135, guid: 004b6217479e29a47b5a68aee64f65a9, type: 3}
+  - {fileID: 4991818317866170135, guid: 1c9da7e66f5b6b14f8d41974e459e553, type: 3}
+  - {fileID: 4991818317866170135, guid: fc923a491f84b364b82508303020923e, type: 3}
+  - {fileID: 4991818317866170135, guid: c35e893e229656349b45a859d531d32e, type: 3}
+  - {fileID: 4991818317866170135, guid: 76a843807c187324e8bb0ab4ddacdbf4, type: 3}
   contractTypeList: 000000000200000001000000
   storyContracts:
   - {fileID: 11400000, guid: ccdbb1f3b157a00418981a7b44d317a1, type: 2}

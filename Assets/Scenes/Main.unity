@@ -28451,11 +28451,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
-  far clip plane: 5000
-  field of view: 40
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
   orthographic: 1
-  orthographic size: 5.39
+  orthographic size: 5.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -32224,7 +32224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backButton: {fileID: 307424894193808368}
   dayCounterTxt: {fileID: 307424893862137737}
-  stressTxt: {fileID: 0}
   MRUI: {fileID: 307424892601007152}
   currentMinigame: {fileID: 0}
   flowerMinigame: {fileID: 0}

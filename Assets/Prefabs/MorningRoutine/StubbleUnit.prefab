@@ -152,7 +152,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1fe16580359e2e2498e0c9273c66e5d9, type: 3}
   shaveCreamSprite: {fileID: 21300000, guid: c35f6ee4dccf5db40b8e749560e64b98, type: 3}
   cutSprite: {fileID: 21300000, guid: 152857c2a7c8c724fb0d46ee3820c2bc, type: 3}
-  length: 0
+  length: 1
   cutChance: 0.1
   healChance: 0.5
   audioClips:

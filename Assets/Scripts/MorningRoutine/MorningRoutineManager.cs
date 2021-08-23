@@ -8,7 +8,6 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
 {
     public Button backButton;
     public TextMeshProUGUI dayCounterTxt;
-    public TextMeshProUGUI stressTxt;
     public GameObject MRUI;
 
     public Minigame currentMinigame = null;

@@ -15,6 +15,9 @@ public class ContractDisplayer : MonoBehaviour
     public TextMeshProUGUI[] requirements;
     public TextMeshProUGUI[] values;
 
+    public Color baseColor;
+    public Color successColor;
+
     private void Awake()
     {
         // Singleton Stuff
@@ -90,6 +93,16 @@ public class ContractDisplayer : MonoBehaviour
         if (contractToDisplay.usesMaxVolatility)
         {
             values[volIndex].text = vol + "/" + contractToDisplay.volatilityMax.ToString();
+            if (EvalVol())
+            {
+                values[volIndex].color = successColor;
+                requirements[volIndex].color = successColor;
+            }
+            else
+            {
+                values[volIndex].color = baseColor;
+                requirements[volIndex].color = baseColor;
+            }
         }
     }
 
@@ -98,10 +111,30 @@ public class ContractDisplayer : MonoBehaviour
         if (contractToDisplay.usesMaxPrice)
         {
             values[maxPriceIndex].text = price + "/" + contractToDisplay.maxPrice.ToString();
+            if (EvalMaxPrice())
+            {
+                values[maxPriceIndex].color = successColor;
+                requirements[maxPriceIndex].color = successColor;
+            }
+            else
+            {
+                values[maxPriceIndex].color = baseColor;
+                requirements[maxPriceIndex].color = baseColor;
+            }
         }
         if (contractToDisplay.usesMinPrice)
         {
             values[minPriceIndex].text = price + "/" + contractToDisplay.minPrice.ToString();
+            if (EvalMinPrice())
+            {
+                values[minPriceIndex].color = successColor;
+                requirements[minPriceIndex].color = successColor;
+            }
+            else
+            {
+                values[minPriceIndex].color = baseColor;
+                requirements[minPriceIndex].color = baseColor;
+            }
         }
     }
 
@@ -110,6 +143,16 @@ public class ContractDisplayer : MonoBehaviour
         if (contractToDisplay.usesDesirableEffect)
         {
             values[effectIndex].text = amount + "/" + contractToDisplay.desirableEffectMin.ToString();
+            if (EvalEffect())
+            {
+                values[effectIndex].color = successColor;
+                requirements[effectIndex].color = successColor;
+            }
+            else
+            {
+                values[effectIndex].color = baseColor;
+                requirements[effectIndex].color = baseColor;
+            }
         }
     }
 
@@ -118,6 +161,16 @@ public class ContractDisplayer : MonoBehaviour
         if (contractToDisplay.usesUndesirableEffect)
         {
             values[badEffectIndex].text = amount + "/" + contractToDisplay.undesirableEffectMax.ToString();
+            if (EvalBadEffect())
+            {
+                values[badEffectIndex].color = successColor;
+                requirements[badEffectIndex].color = successColor;
+            }
+            else
+            {
+                values[badEffectIndex].color = baseColor;
+                requirements[badEffectIndex].color = baseColor;
+            }
         }
     }
 
@@ -157,7 +210,6 @@ public class ContractDisplayer : MonoBehaviour
 
         if (currentContract.usesDesirableEffect)
         {
-            Debug.Log(DrugManager.instance.desiredChems);
             if (DrugManager.instance.desiredChems < currentContract.desirableEffectMin)
                 return false;
             Debug.Log("Des good");
@@ -166,5 +218,37 @@ public class ContractDisplayer : MonoBehaviour
         return true;
     }
 
-
+    public bool EvalVol()
+    {
+        int vol = DrugManager.instance.GetVol();
+        if (vol > contractToDisplay.volatilityMax)
+            return false;
+        return true;
+    }
+    public bool EvalMaxPrice()
+    {
+        float cost = DrugManager.instance.GetCost();
+        if (cost > contractToDisplay.maxPrice)
+            return false;
+        return true;
+    }
+    public bool EvalMinPrice()
+    {
+        float cost = DrugManager.instance.GetCost();
+        if (cost < contractToDisplay.minPrice)
+            return false;
+        return true;
+    }
+    public bool EvalEffect()
+    {
+        if (DrugManager.instance.desiredChems < contractToDisplay.desirableEffectMin)
+            return false;
+        return true;
+    }
+    public bool EvalBadEffect()
+    {
+        if (DrugManager.instance.undesiredChems > contractToDisplay.undesirableEffectMax)
+            return false;
+        return true;
+    }
 }

@@ -77,7 +77,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
             tvInteractable.StopTVEvent();
         }
         if(medicationMinigame.isGameActive) {
-            medicationMinigame.StopGame();
+            medicationMinigame.StopMedGame();
         }
         backButton.gameObject.SetActive(false);
     }

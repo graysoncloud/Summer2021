@@ -13,22 +13,12 @@ MonoBehaviour:
   m_Name: 1 Con
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
+  isNews: 0
   dialogueLines:
   - speaker: 3
     dialogue: Morning, Barney!
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 11
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 3
-    dialogue: Morning, Barney!
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 11
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
@@ -37,18 +27,28 @@ MonoBehaviour:
       coworkers have been getting pestered by nosy reporters. They\u2019re always
       trying to dig their grubby paws into our business, those pests.\r"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 10
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 3
     dialogue: "If you ever get called by one, do yourself a favor and let it ring!\r"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 10
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Will do.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: That's what I like to hear. Have a good one!
+    offset: {x: 0, y: 0}
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

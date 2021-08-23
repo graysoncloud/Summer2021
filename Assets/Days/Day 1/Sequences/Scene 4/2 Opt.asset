@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2 Opt
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
-  automatic: 0
+  automatic: 1
   paths:
   - {fileID: 11400000, guid: 6842020e75ad68a4ea861d63739c42c5, type: 2}
   - {fileID: 11400000, guid: 25ff04042a6f7bd469881feb9e364931, type: 2}

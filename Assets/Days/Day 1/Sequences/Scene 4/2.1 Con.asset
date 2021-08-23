@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: 2.1 Con
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
+  isNews: 0
   dialogueLines:
   - speaker: 5
-    dialogue: Welcome Back to the office.
+    dialogue: "We\u2019re happy to have you back, Barney, but you must be swifter
+      with your work in the future."
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 5
-      animationName: 6
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

@@ -12,40 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 2 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: 259f78469fab76e4e98e010e92c040a9, type: 2}
+  isNews: 0
   dialogueLines:
   - speaker: 3
     dialogue: Morning, Barney! here's today's work.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 10
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 1
-    dialogue: Who was that?
+    dialogue: Hey, how long has that guy been here?
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 3
-    dialogue: "That? Oh, right. That\u2019s our new R&D guy, Robbie Long-Legs. A
-      man of long legs, but few words...\r"
+    dialogue: "So you've noticed Robbie Long-Legs, I see. Our new R&D guy. A man
+      of long legs, but few words...\r"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 10
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 3
     dialogue: "And of few thoughts, if you catch my drift.\r"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 11
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
@@ -53,19 +48,15 @@ MonoBehaviour:
     dialogue: "Anyway, he\u2019s always cooking up new chemicals in that lab of his.
       New fodder for your designs. He may be... special, but he knows his drugs.\r"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 10
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 3
     dialogue: "Anyway, I\u2019ll leave you to it. Now you\u2019ve had your day of
-      leisure, so today the training wheels are off. Work hard and make us proud!"
+      leisure, so today the training wheels are off!"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 10
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

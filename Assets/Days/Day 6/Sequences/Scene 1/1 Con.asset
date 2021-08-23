@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: 1 Con
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: 27e30901a4a07b74db6b465b9e539cfb, type: 2}
+  isNews: 0
   dialogueLines:
   - speaker: 2
     dialogue: Oh, Barney, hold on a minute.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 17
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
@@ -27,27 +26,21 @@ MonoBehaviour:
     dialogue: "On your way home, could you pick up some of those stale bread nuggets.
       I forget what they\u2019re called...\r"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 17
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 1
     dialogue: Croutons?
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 1
-      animationName: 0
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 2
     dialogue: Croutons! Yes! Grab a bag of those. No salad is complete without them.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 17
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
@@ -55,45 +48,35 @@ MonoBehaviour:
     dialogue: "But you wouldn\u2019t know, would you? You never eat salad anyways!
       Ho ho ho ho-\r"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 18
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 2
     dialogue: '*cough cough*'
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 19
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 2
     dialogue: '*cough cough cough COUGH cough COUGH COUGH COUGH COUGH*'
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 19
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 1
     dialogue: Mom!
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 1
-      animationName: 4
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 2
     dialogue: "It\u2019s nothing. I\u2019m *cough* fine."
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 17
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

@@ -31,14 +31,37 @@ MonoBehaviour:
     SFX: 
   - speaker: 4
     dialogue: I'm Mazer's new head of research. I've mad a lot of new chemicals since
-      you've been gone. Glacium and Avero, to name a few. I hope they're servicable.
+      you've been gone.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: ... Goodbye.
+    dialogue: On your computer, the chemicals are displayed on a grid, each with
+      several connections coming off of them.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: In order to avoid making your drug too unstable, make sure as many
+      of those connections are bonded to one another.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: ...
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: Goodbye.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

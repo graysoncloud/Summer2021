@@ -70,6 +70,10 @@ public class DrugManager : MonoBehaviour
             TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial1);
             numtutorialsfinished++;
         }
+        else
+        {
+            alltutorialsfinished = true;
+        }
     }
 
     void Update()
@@ -84,6 +88,27 @@ public class DrugManager : MonoBehaviour
             else if(numtutorialsfinished == 2 && TutorialManager.instance.activeTutorial == null)
             {
                 TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial3);
+                numtutorialsfinished++;
+            }
+            else if(numtutorialsfinished == 3 && TutorialManager.instance.activeTutorial == null && desiredChems == 2)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial4);
+                numtutorialsfinished++;
+            }
+            else if(numtutorialsfinished == 4 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial5);
+                numtutorialsfinished++;
+            }
+            else if(numtutorialsfinished == 5 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial6);
+                numtutorialsfinished++;
+            }
+            else if(numtutorialsfinished == 6 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial7);
+                numtutorialsfinished++;
                 numtutorialsfinished++;
             }
         }

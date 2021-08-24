@@ -31,7 +31,6 @@ public class ChemicalBin : MonoBehaviour
         if(!InfoTooltip.activeSelf){
             InfoTooltip.SetActive(true);
             InfoTooltip.GetComponent<ChemicalInfoDisplayer>().ChangeText(ChemicalPrefab.getInfo());
-            InfoTooltip.GetComponent<ChemicalInfoDisplayer>().ChangePosition(graphicPosition.position);
         }
     }
 

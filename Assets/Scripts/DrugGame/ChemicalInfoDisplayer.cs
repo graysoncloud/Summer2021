@@ -9,6 +9,10 @@ public class ChemicalInfoDisplayer : MonoBehaviour
     private RectTransform background;
     private TextMeshProUGUI text;
     private RectTransform rectTransform;
+
+    private Vector3 mousePosition;
+    public Vector2 offset = new Vector2(10, 10);
+    public float moveSpeed = 0.1f;
     private void Awake(){
         background = transform.Find("Background").GetComponent<RectTransform>();
         text = transform.Find("Text").GetComponent<TextMeshProUGUI>();
@@ -27,8 +31,11 @@ public class ChemicalInfoDisplayer : MonoBehaviour
         background.sizeDelta = textSize + padding;
     }
 
-    public void ChangePosition(Vector2 position){
-        Vector2 offset = new Vector2(300, 240);
-        rectTransform.anchoredPosition = position + offset;
+
+    private void Update(){
+        mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed) + offset;
     }
 }

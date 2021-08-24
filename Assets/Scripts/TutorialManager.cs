@@ -16,6 +16,12 @@ public class TutorialManager : MonoBehaviour
     public GameObject DrugGameTutorial3;
     public GameObject DrugGameTutorial4;
 
+    public GameObject DrugGameTutorial5;
+
+    public GameObject DrugGameTutorial6;
+
+    public GameObject DrugGameTutorial7;
+
     // Add more tutorial scenes
 
     public GameObject activeTutorial;

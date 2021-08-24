@@ -37,6 +37,9 @@ public class DrugManager : MonoBehaviour
     public delegate void OnClearChems();
     public static event OnClearChems onClearChems;
 
+    private int numtutorialsfinished;
+    private bool alltutorialsfinished;
+
     private void Awake()
     {
         // Singleton Stuff
@@ -48,6 +51,10 @@ public class DrugManager : MonoBehaviour
 
     private void Start()
     {
+
+        numtutorialsfinished = 0;
+        alltutorialsfinished = false;
+
         hexGrid = GameObject.FindObjectOfType<HexGrid>().GetComponent<HexGrid>();
         dangerBar = GameObject.FindObjectOfType<VolatilityBar>();
 
@@ -57,10 +64,30 @@ public class DrugManager : MonoBehaviour
         hours = 9;
         minutes = 0;
         qualifier = "AM";
+
+        if(GameManager.instance.currentDayIndex == 0)
+        {
+            TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial1);
+            numtutorialsfinished++;
+        }
     }
 
     void Update()
     {
+
+        if(!alltutorialsfinished){
+            if(numtutorialsfinished == 1 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial2);
+                numtutorialsfinished++;
+            }
+            else if(numtutorialsfinished == 2 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial3);
+                numtutorialsfinished++;
+            }
+        }
+
         timeElapsed += Time.deltaTime * 30;
 
         // Every fifteen seconds in the drug game, the player-visible clock will tick up 15 minutes. Stops at 11:00

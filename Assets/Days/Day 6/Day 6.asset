@@ -21,9 +21,22 @@ MonoBehaviour:
     trigger: 8
   newsEvent: {fileID: 11400000, guid: b1a646e0e03fb86409cf8b8aa8be895e, type: 2}
   contracts: []
-  contractTypeList: 
-  storyContracts: []
-  easyContracts: []
-  hardContracts: []
-  numEasy: 0
-  numHard: 0
+  dayChemicals:
+  - {fileID: 4991818317866170135, guid: 76a843807c187324e8bb0ab4ddacdbf4, type: 3}
+  - {fileID: 4991818317866170135, guid: 7dc71964c27dfd64f8f510fb3063b55e, type: 3}
+  - {fileID: 4991818317866170135, guid: 4d1289f9cbcefaa47975c042546f89ea, type: 3}
+  - {fileID: 4991818317866170135, guid: b0498c4b10265de4da2ea258c0238db3, type: 3}
+  - {fileID: 4991818317866170135, guid: 004b6217479e29a47b5a68aee64f65a9, type: 3}
+  - {fileID: 4991818317866170135, guid: ca93b602592e5e347b070a41e8b1a2de, type: 3}
+  contractTypeList: 0000000000000000020000000100000000000000
+  storyContracts:
+  - {fileID: 11400000, guid: e8aa612e98cae8f4782984f381114ebe, type: 2}
+  easyContracts:
+  - {fileID: 11400000, guid: 3d99279a5d5e84143b7b2d2516a9eec2, type: 2}
+  - {fileID: 11400000, guid: d77dabb1153e8f8448e54ede23b43412, type: 2}
+  - {fileID: 11400000, guid: a48d0fccfa6f35e419099c83774acf51, type: 2}
+  - {fileID: 11400000, guid: 6c7ce8a09612aec44b454d3fe89ab9cd, type: 2}
+  - {fileID: 11400000, guid: 170ee7bc78457cd418dde2b6824161a4, type: 2}
+  hardContracts:
+  - {fileID: 11400000, guid: 418920e98fc706348940b045a09b6a97, type: 2}
+  - {fileID: 11400000, guid: ee40b3de71a245045840412932fbce50, type: 2}

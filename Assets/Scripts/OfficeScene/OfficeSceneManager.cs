@@ -178,9 +178,6 @@ public class OfficeSceneManager : MonoBehaviour
                 ActiveContractArea.instance.currentContract.solved = true;
                 Destroy(solutionInHand.gameObject);
                 lastLocation = null;
-
-                if (GameManager.instance.currentDayIndex == 0)
-                    TutorialManager.instance.ActivateTutorial(TutorialManager.instance.ContractTutorial3);
             }
 
             // Drop completed contract into the filing cabinet
@@ -198,33 +195,26 @@ public class OfficeSceneManager : MonoBehaviour
                     if (sequence.trigger.ToString() == "solvedContract1" && contractsSolved == 1)
                     {
                         GameManager.instance.StartSequence(sequence.initialEvent);
-                        MusicManager.instance.StartFadeOut();
-                        MusicManager.instance.StartFadeOut();
                     }
                     else if (sequence.trigger.ToString() == "solvedContract2" && contractsSolved == 2)
                     {
                         GameManager.instance.StartSequence(sequence.initialEvent);
-                        MusicManager.instance.StartFadeOut();
                     }
                     else if (sequence.trigger.ToString() == "solvedContract3" && contractsSolved == 3)
                     {
                         GameManager.instance.StartSequence(sequence.initialEvent);
-                        MusicManager.instance.StartFadeOut();
                     }
                     else if (sequence.trigger.ToString() == "solvedContract4" && contractsSolved == 4)
                     {
                         GameManager.instance.StartSequence(sequence.initialEvent);
-                        MusicManager.instance.StartFadeOut();
                     }
                     else if (sequence.trigger.ToString() == "solvedContract5" && contractsSolved == 5)
                     {
                         GameManager.instance.StartSequence(sequence.initialEvent);
-                        MusicManager.instance.StartFadeOut();
                     }
                     else if (sequence.trigger.ToString() == "solvedContract6" && contractsSolved == 6)
                     {
                         GameManager.instance.StartSequence(sequence.initialEvent);
-                        MusicManager.instance.StartFadeOut();
                     }
                 }
 

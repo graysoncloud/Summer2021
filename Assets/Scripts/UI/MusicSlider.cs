@@ -30,6 +30,7 @@ public class MusicSlider : MonoBehaviour
     {
         valueText.text = Mathf.Round(slider.value * 100).ToString() + "%";
         PlayerPrefs.SetFloat("MusicVolume", slider.value);
+        MusicManager.instance.AttemptMusicVolumeChange();
     }
 
 

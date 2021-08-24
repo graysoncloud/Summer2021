@@ -5,7 +5,7 @@ using UnityEngine;
 public class PrintButton : MonoBehaviour
 {
 
-    private void OnMouseDown()
+    private void OnMouseUp()
     {
         if (Printer.instance.solutionPrinted == true)
         {
@@ -29,6 +29,9 @@ public class PrintButton : MonoBehaviour
             SceneChangeManager.instance.StartSceneChange(DrugManager.instance.drugToOfficeSceneChange);
 
             DrugManager.instance.ClearChems();
+
+            if (GameManager.instance.currentDayIndex == 0)
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.ContractTutorial3);
 
             // Display a "solution printed", prevent further editing
         }

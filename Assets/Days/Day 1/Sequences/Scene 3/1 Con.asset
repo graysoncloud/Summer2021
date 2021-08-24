@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: 11f6d16c4af914a46b8d757e397345d8, type: 2}
   isNews: 0
   dialogueLines:
   - speaker: 4
@@ -30,8 +30,8 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: I'm Mazer's new head of research. I've mad a lot of new chemicals since
-      you've been gone.
+    dialogue: I'm Mazer's new head of research. I've made a lot of new chemicals
+      since you've been gone.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

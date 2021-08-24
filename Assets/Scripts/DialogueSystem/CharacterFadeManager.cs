@@ -81,6 +81,8 @@ public class CharacterFadeManager : MonoBehaviour
 
     public IEnumerator ExecuteCharacterFade(CharacterFade.Fade fadeEvent)
     {
+        Debug.Log("Executing");
+
         numActiveFades++;
 
         Color fadeIncrement = new Color(.01f, .01f, .01f, .01f);
@@ -107,7 +109,7 @@ public class CharacterFadeManager : MonoBehaviour
             // Move and fade in
             while (charToFade.GetComponent<SpriteRenderer>().color.a < 1)
             {
-                charToFade.transform.position += new Vector3(.02f, 0f, 0f);
+                charToFade.transform.position -= new Vector3(.02f, 0f, 0f);
                 spriteRenderer.color += fadeIncrement;
                 yield return new WaitForSeconds(fadeRate);
             }
@@ -124,7 +126,7 @@ public class CharacterFadeManager : MonoBehaviour
 
             while (charToFade.GetComponent<SpriteRenderer>().color.a > 0)
             {
-                charToFade.transform.position += new Vector3(-.02f, 0f, 0f);
+                charToFade.transform.position += new Vector3(.02f, 0f, 0f);
                 spriteRenderer.color += (fadeIncrement * -1);
                 yield return new WaitForSeconds(fadeRate);
             }

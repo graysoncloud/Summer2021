@@ -72,6 +72,12 @@ public class SceneChangeManager : MonoBehaviour
         else
             oldSceneName = null;
 
+        // Default fade outs:
+        if (oldSceneName == "MorningRoutineScene" && sceneChange.newScene.ToString() == "OfficeScene")
+            MusicManager.instance.StartFadeOut();
+        if (oldSceneName == "OfficeScene" && sceneChange.newScene.ToString() == "RecapScene")
+            MusicManager.instance.StartFadeOut();
+
         yield return new WaitForSeconds(sceneChange.predelay);
 
         if (sceneChange.transitionStyle.ToString() == "fade" || sceneChange.transitionStyle.ToString() == "longFade")
@@ -124,7 +130,7 @@ public class SceneChangeManager : MonoBehaviour
         {
             // Insert things like MRManager.ResetScene() below
             case "MorningRoutineScene": newScene = scenes[0]; currentScene = newScene; CharacterFadeManager.instance.StartInstantFade(instantElizabethFadeIn);
-                newScene.gameObject.SetActive(true); GameObject.FindObjectOfType<PlayerController>().SetRoom(bedroom.GetComponent<Room>()); break;
+                newScene.gameObject.SetActive(true); MusicManager.instance.StartMRMusic(); GameObject.FindObjectOfType<PlayerController>().SetRoom(bedroom.GetComponent<Room>()); break;
             case "OfficeScene": newScene = scenes[1]; currentScene = newScene; CharacterFadeManager.instance.StartInstantFade(instantBarneyFadeIn); newScene.gameObject.SetActive(true); OfficeSceneManager.instance.SetUpOfficeScene(); break;
             case "DrugGameScene": newScene = scenes[2]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
             case "RecapScene": newScene = scenes[3]; currentScene = newScene; newScene.gameObject.SetActive(true); RecapSceneManager.instance.DisplayContracts(); break;

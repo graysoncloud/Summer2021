@@ -46,7 +46,7 @@ public class TutorialManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0) && readyToStopTutorial) {
             if (activeTutorial != null)
                 activeTutorial.SetActive(false);
 
@@ -60,12 +60,20 @@ public class TutorialManager : MonoBehaviour
         if (PlayerPrefs.GetInt(toActivate + "Triggered") == 1)
             return;
 
-        StartCoroutine("ClickDelay");
+        StartCoroutine(DelayedExecute(toActivate));
 
+    }
+
+    IEnumerator DelayedExecute(GameObject toActivate)
+    {
+        readyToStopTutorial = false;
         activeTutorial = toActivate;
+
+        yield return new WaitForSeconds(.25f);
+
         toActivate.SetActive(true);
         PlayerPrefs.SetInt(toActivate + "Triggered", 1);
-
+        readyToStopTutorial = true;
     }
 
     private IEnumerator ClickDelay()

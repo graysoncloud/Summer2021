@@ -15,18 +15,18 @@ MonoBehaviour:
   sequences:
   - initialEvent: {fileID: 11400000, guid: 777e123b7a94ff54088fcbf20d6103a0, type: 2}
     trigger: 0
-  - initialEvent: {fileID: 11400000, guid: 3decdaa75bb53244cadb936dfc090201, type: 2}
+  - initialEvent: {fileID: 11400000, guid: af74dcc6ae5a599498b29e191e6a9e85, type: 2}
     trigger: 1
-  - initialEvent: {fileID: 11400000, guid: 9374454d5d2c4c74e984a7afa998f240, type: 2}
+  - initialEvent: {fileID: 11400000, guid: d3e742e7dd79aea4688d0c118e0372ef, type: 2}
     trigger: 2
-  - initialEvent: {fileID: 11400000, guid: a854505925c2cff49b88440c89b3888a, type: 2}
+  - initialEvent: {fileID: 11400000, guid: cbc227c6c87ac6445bad2474d1ff9f22, type: 2}
     trigger: 5
   newsEvent: {fileID: 11400000, guid: b58426fc35a83cf4aaef4e1ceb69ec8a, type: 2}
   contracts:
   - {fileID: 11400000, guid: 2263b95c66ebb4e47a213586dfd74ed5, type: 2}
-  - {fileID: 11400000, guid: 34425545b1fa89a40a99680e1622ce29, type: 2}
-  - {fileID: 11400000, guid: 7bc788821b38f4e44b92eb64e52bd153, type: 2}
   - {fileID: 11400000, guid: e741ebc1f82350745b04c13322c8ef36, type: 2}
+  - {fileID: 11400000, guid: 479577cb92861664dbaa26092af0ae7c, type: 2}
+  - {fileID: 11400000, guid: 0ef0bb679eeace940b26eddf3f9f1911, type: 2}
   dayChemicals:
   - {fileID: 4991818317866170135, guid: ca93b602592e5e347b070a41e8b1a2de, type: 3}
   - {fileID: 4991818317866170135, guid: c35e893e229656349b45a859d531d32e, type: 3}

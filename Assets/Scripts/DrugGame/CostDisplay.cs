@@ -17,6 +17,7 @@ public class CostDisplay : MonoBehaviour
 
     private BinManager bin;
     private Chemical[] chemArray;
+    private int currentDayChemIndex;
 
     private void Awake()
     {
@@ -30,11 +31,28 @@ public class CostDisplay : MonoBehaviour
 
     private void Start()
     {
+        currentDayChemIndex = GameManager.instance.currentDayIndex;
         bin = GameObject.FindObjectOfType<BinManager>();
         chemArray = bin.GetChemicals();
         foreach (Chemical chem in chemArray)
         {
             chemAmount.Add(chem.name, 0);
+        }
+    }
+
+    private void OnEnable()
+    {
+        if(currentDayChemIndex != GameManager.instance.currentDayIndex)
+        {
+            bin = GameObject.FindObjectOfType<BinManager>();
+            chemArray = bin.GetChemicals();
+            chemAmount.Clear();
+            foreach (Chemical chem in chemArray)
+            {
+                chemAmount.Add(chem.name, 0);
+            }
+
+            currentDayChemIndex = GameManager.instance.currentDayIndex;
         }
     }
 

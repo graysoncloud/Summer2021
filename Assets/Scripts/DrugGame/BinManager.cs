@@ -16,32 +16,51 @@ public class BinManager : MonoBehaviour
     private float spacing = 0;
 
     [SerializeField]
-    private GameObject InfoDisplayer;  
+    private GameObject InfoDisplayer;
+
+    private int currentDayChemIndex;
+
+
     private void Awake()
     {
+        currentDayChemIndex = 0;
+    }
+    private void OnEnable()
+    {
+        if(binArray.Count == 0 || GameManager.instance.currentDayIndex != currentDayChemIndex){
 
-        chemicals = GameManager.instance.GetCurrentDay().dayChemicals;
+            chemicals = GameManager.instance.GetCurrentDay().dayChemicals;
 
-        int index = 0;
-        foreach (Chemical chem in chemicals)
-        {
-            ChemicalBin chemBin = Instantiate(bin);
-            chemBin.transform.SetParent(this.transform, false);
-            Vector3 pos = this.transform.position;
+            foreach(ChemicalBin bins in binArray){
+                Destroy(bins);
+            }
+            foreach(Transform child in this.transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+            binArray.Clear();
 
-            //I could get the scale and multiply it by the height but it's unnecessary for the finished assets
-            pos.y -= index * (spacing);
+            int index = 0;
+            foreach (Chemical chem in chemicals)
+            {
+                ChemicalBin chemBin = Instantiate(bin);
+                chemBin.transform.SetParent(this.transform, false);
+                Vector3 pos = this.transform.position;
 
-            chemBin.ChemicalPrefab = chem;
-            chemBin.transform.position = pos;
+                //I could get the scale and multiply it by the height but it's unnecessary for the finished assets
+                pos.y -= index * (spacing);
 
-            chemBin.InfoTooltip = InfoDisplayer;
+                chemBin.ChemicalPrefab = chem;
+                chemBin.transform.position = pos;
 
-            binArray.Add(chemBin);
-            index++;
+                chemBin.InfoTooltip = InfoDisplayer;
+
+                binArray.Add(chemBin);
+                index++;
+            }
+            currentDayChemIndex = GameManager.instance.currentDayIndex;
         }
     }
-
     public ChemicalBin GetBin(Chemical chemical)
     {
         foreach (ChemicalBin bin in binArray)

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 9e8eda4cccb5af742b8fd9d8a221e1a2, type: 2}
+  nextEvent: {fileID: 11400000, guid: c986a5c509aee204c9e0cd11da4def0b, type: 2}
   isNews: 0
   dialogueLines:
   - speaker: 4

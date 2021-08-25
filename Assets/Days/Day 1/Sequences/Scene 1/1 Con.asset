@@ -18,7 +18,9 @@ MonoBehaviour:
   - speaker: 2
     dialogue: "Barney!\r"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 2
+      animationName: 21
     animOnly: 0
     animLength: 0
     SFX: 

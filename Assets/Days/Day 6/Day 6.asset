@@ -15,9 +15,9 @@ MonoBehaviour:
   sequences:
   - initialEvent: {fileID: 11400000, guid: f7b2e9091baf7ce4798dfde5c141b0dc, type: 2}
     trigger: 0
-  - initialEvent: {fileID: 11400000, guid: ce3f0a00e7f30e64eb93f5760f7c5b2e, type: 2}
+  - initialEvent: {fileID: 11400000, guid: 7fca62c07db267b459e5cf7d14fe06b0, type: 2}
     trigger: 1
-  - initialEvent: {fileID: 11400000, guid: 5a8c10d0f0a9aae4ebf26eca57206351, type: 2}
+  - initialEvent: {fileID: 11400000, guid: 29dfcae59f475c94398a36955e1d5d69, type: 2}
     trigger: 8
   newsEvent: {fileID: 11400000, guid: b1a646e0e03fb86409cf8b8aa8be895e, type: 2}
   contracts: []

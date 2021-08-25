@@ -18,7 +18,9 @@ MonoBehaviour:
   - speaker: 4
     dialogue: ...
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 4
+      animationName: 17
     animOnly: 0
     animLength: 0
     SFX: 

@@ -32,7 +32,9 @@ MonoBehaviour:
   - speaker: 5
     dialogue: Failure to complete it adequately will result in punishment.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 12
     animOnly: 0
     animLength: 0
     SFX: 

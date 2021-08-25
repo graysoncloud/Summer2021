@@ -18,7 +18,11 @@ MonoBehaviour:
   - speaker: 5
     dialogue: "Let me see....\r"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 2
+    - toAnimate: 5
+      animationName: 10
     animOnly: 0
     animLength: 0
     SFX: 

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd5a681f375878044ba0aba0d7a3a9a8, type: 3}
-  m_Name: 0 CF
+  m_Name: 1 CF
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 3decdaa75bb53244cadb936dfc090201, type: 2}
+  nextEvent: {fileID: 11400000, guid: 3a504b29246513e42b9d8e6395eaae84, type: 2}
   characterFades:
   - characterToFade: 3
     fadeIn: 1

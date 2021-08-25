@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: ffa9dee5d664b7840987fb3c815ae88f, type: 2}
   isNews: 0
   dialogueLines:
   - speaker: 3
@@ -27,7 +27,9 @@ MonoBehaviour:
       coworkers have been getting pestered by nosy reporters. They\u2019re always
       trying to dig their grubby paws into our business, those pests.\r"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 3
+      animationName: 13
     animOnly: 0
     animLength: 0
     SFX: 
@@ -48,7 +50,9 @@ MonoBehaviour:
   - speaker: 3
     dialogue: That's what I like to hear. Have a good one!
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 3
+      animationName: 14
     animOnly: 0
     animLength: 0
     SFX: 

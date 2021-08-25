@@ -13,12 +13,18 @@ MonoBehaviour:
   m_Name: Day 2
   m_EditorClassIdentifier: 
   sequences:
-  - initialEvent: {fileID: 11400000, guid: 84cb34e029ccfd14c9e0c3d94a4da181, type: 2}
+  - initialEvent: {fileID: 11400000, guid: cf67682089b0e05449e8c3b4c3ada048, type: 2}
     trigger: 1
-  - initialEvent: {fileID: 11400000, guid: 116710eaebc5e914c9fa0971d17b6660, type: 2}
+  - initialEvent: {fileID: 11400000, guid: 45c9f6bd526adfe459783431befd686b, type: 2}
+    trigger: 3
+  - initialEvent: {fileID: 11400000, guid: 45c9f6bd526adfe459783431befd686b, type: 2}
     trigger: 3
   newsEvent: {fileID: 11400000, guid: 6ee86f99d2b55f84fb5ff2f168940692, type: 2}
-  contracts: []
+  contracts:
+  - {fileID: 11400000, guid: 471d8bbdf93fa0349935587c186078d1, type: 2}
+  - {fileID: 11400000, guid: 3578d4eae45a03d478ef399b56706195, type: 2}
+  - {fileID: 11400000, guid: 19f1ab56a65ac2548b321b9d9ff6e43f, type: 2}
+  - {fileID: 11400000, guid: 32236f9c3c769da40a46899ae8e14555, type: 2}
   dayChemicals:
   - {fileID: 4991818317866170135, guid: ca93b602592e5e347b070a41e8b1a2de, type: 3}
   - {fileID: 4991818317866170135, guid: b0498c4b10265de4da2ea258c0238db3, type: 3}

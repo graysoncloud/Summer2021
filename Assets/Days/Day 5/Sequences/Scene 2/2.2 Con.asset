@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 2.2 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: 3698ea85bd8a1a3499ac196d5d5444b1, type: 2}
+  isNews: 0
   dialogueLines:
   - speaker: 1
     dialogue: I'm fine. Just leave me alone.
@@ -26,9 +27,7 @@ MonoBehaviour:
   - speaker: 4
     dialogue: ........
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 4
-      animationName: 14
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

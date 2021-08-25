@@ -19,7 +19,9 @@ MonoBehaviour:
     dialogue: "You know, this sort of thing would be a lot easier if you had a bit
       more practice. Practice with another woman who isn\u2019t your mother."
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 2
+      animationName: 21
     animOnly: 0
     animLength: 0
     SFX: 
@@ -55,14 +57,18 @@ MonoBehaviour:
   - speaker: 2
     dialogue: '*Cough Cough*'
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 2
+      animationName: 23
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 2
     dialogue: Have a good first day back.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 2
+      animationName: 21
     animOnly: 0
     animLength: 0
     SFX: 

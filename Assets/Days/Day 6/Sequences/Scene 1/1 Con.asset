@@ -48,21 +48,27 @@ MonoBehaviour:
     dialogue: "But you wouldn\u2019t know, would you? You never eat salad anyways!
       Ho ho ho ho-\r"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 2
+      animationName: 22
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 2
     dialogue: '*cough cough*'
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 2
+      animationName: 23
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 2
     dialogue: '*cough cough cough COUGH cough COUGH COUGH COUGH COUGH*'
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 2
+      animationName: 24
     animOnly: 0
     animLength: 0
     SFX: 
@@ -76,7 +82,9 @@ MonoBehaviour:
   - speaker: 2
     dialogue: "It\u2019s nothing. I\u2019m *cough* fine."
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 2
+      animationName: 23
     animOnly: 0
     animLength: 0
     SFX: 
@@ -85,7 +93,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 2
-      animationName: 17
+      animationName: 22
     animOnly: 0
     animLength: 0
     SFX: 

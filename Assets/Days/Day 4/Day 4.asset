@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Day 4
   m_EditorClassIdentifier: 
   sequences:
-  - initialEvent: {fileID: 11400000, guid: 019afe4c20a237b43967043a3a37c5fe, type: 2}
+  - initialEvent: {fileID: 11400000, guid: f1f9f7b6d0d175544a3453acffc36302, type: 2}
     trigger: 1
-  - initialEvent: {fileID: 11400000, guid: 7265a79ec7629a14f85b0af8a05ffe79, type: 2}
+  - initialEvent: {fileID: 11400000, guid: 33af316834886f149b11e4e992f8fcce, type: 2}
     trigger: 3
   newsEvent: {fileID: 0}
   contracts: []

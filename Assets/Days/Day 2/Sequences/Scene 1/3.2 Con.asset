@@ -18,7 +18,9 @@ MonoBehaviour:
   - speaker: 0
     dialogue: We tolerate no amount of laziness here at Mazer. Got it?
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 3
+      animationName: 13
     animOnly: 0
     animLength: 0
     SFX: 

@@ -25,7 +25,9 @@ MonoBehaviour:
   - speaker: 1
     dialogue: Hey, how long has that guy been here?
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 4
     animOnly: 0
     animLength: 0
     SFX: 
@@ -33,14 +35,18 @@ MonoBehaviour:
     dialogue: "So you've noticed Robbie Long-Legs, I see. Our new R&D guy. A man
       of long legs, but few words...\r"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 2
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 3
     dialogue: "And of few thoughts, if you catch my drift.\r"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 3
+      animationName: 15
     animOnly: 0
     animLength: 0
     SFX: 
@@ -48,13 +54,15 @@ MonoBehaviour:
     dialogue: "Anyway, he\u2019s always cooking up new chemicals in that lab of his.
       New fodder for your designs. He may be... special, but he knows his drugs.\r"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 3
+      animationName: 14
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 3
-    dialogue: "Anyway, I\u2019ll leave you to it. Now you\u2019ve had your day of
-      leisure, so today the training wheels are off!"
+    dialogue: "Well, I\u2019ll leave you to it. Now you\u2019ve had your day of leisure,
+      so today the training wheels are off!"
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

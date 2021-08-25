@@ -18,7 +18,9 @@ MonoBehaviour:
   - speaker: 1
     dialogue: Morning, Wesley! Happy to be here.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 5
     animOnly: 0
     animLength: 0
     SFX: 
@@ -35,7 +37,11 @@ MonoBehaviour:
       you\u2019re gonna be working on twice as many contracts. We need you at 250%
       manpower, minimum.\r"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 3
+      animationName: 13
+    - toAnimate: 1
+      animationName: 2
     animOnly: 0
     animLength: 0
     SFX: 
@@ -43,7 +49,9 @@ MonoBehaviour:
     dialogue: Ho ho ho! Naw, I'm just pulling your leg. Can't help myself sometimes.
       The truth is...
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 3
+      animationName: 15
     animOnly: 0
     animLength: 0
     SFX: 

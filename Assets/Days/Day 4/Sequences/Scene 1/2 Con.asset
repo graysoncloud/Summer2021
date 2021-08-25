@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 2 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: 5c102b989102e7f4d9f4f32fb0ba3023, type: 2}
   isNews: 0
   dialogueLines:
   - speaker: 0
@@ -20,7 +20,9 @@ MonoBehaviour:
       getting harder and harder for them to stand up after sitting for a sustained
       period of time.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 10
     animOnly: 0
     animLength: 0
     SFX: 

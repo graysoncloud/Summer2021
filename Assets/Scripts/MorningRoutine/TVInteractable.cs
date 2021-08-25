@@ -21,14 +21,18 @@ public class TVInteractable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(TVEventPlayed) {
+            if(!GameManager.instance.sequenceActive && isTVActive) {
+                StopTVEvent();
+            }
+        }
     }
 
     public void OnMouseDown() {
         if(GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive) {
             return;
         }
-        if(!isTVActive) {
+        if(!isTVActive && !TVEventPlayed) {
             isTVActive = true;
             BeginTVEvent();
         }
@@ -42,7 +46,7 @@ public class TVInteractable : MonoBehaviour
             mainCamera.SetActive(false);
 
             MorningRoutineManager.Instance.SetTVActive(true);
-            MorningRoutineManager.Instance.SetMinigame(null);
+            //MorningRoutineManager.Instance.SetMinigame(null);
             //do something to start the dialogue
 
             if(!TVEventPlayed) {

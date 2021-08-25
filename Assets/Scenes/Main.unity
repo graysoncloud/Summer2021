@@ -26245,8 +26245,6 @@ GameObject:
   - component: {fileID: 1165088111}
   - component: {fileID: 1165088113}
   - component: {fileID: 1165088112}
-  - component: {fileID: 1165088115}
-  - component: {fileID: 1165088114}
   m_Layer: 0
   m_Name: BedroomDoor
   m_TagString: Untagged
@@ -26361,42 +26359,6 @@ MonoBehaviour:
   openSprite: {fileID: 21300000, guid: ed348dae57a30664ca0cb287b807e3f0, type: 3}
   destination: {fileID: 1419662220}
   workDoor: 0
---- !u!114 &1165088114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1165088109}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  glowColor: {r: 1, g: 1, b: 1, a: 1}
-  glowBrightness: 1.49
-  outlineWidth: 1
-  alphaThreshold: 0.555
-  drawOutside: 1
-  enableInstancing: 0
---- !u!114 &1165088115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1165088109}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 261f3acae002ea74b97e029b43ade91c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shouldGlow: 1
-  hoverGlow: 0
-  maxGlow: 1.5
-  pulseSpeed: 0.1
-  tutorialGlowColor: {r: 1, g: 0.7608758, b: 0, a: 1}
-  hoverColor: {r: 0, g: 0.74034977, b: 1, a: 1}
 --- !u!1001 &1181693008
 PrefabInstance:
   m_ObjectHideFlags: 0

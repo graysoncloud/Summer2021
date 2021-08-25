@@ -27,7 +27,7 @@ public class Minigame : MonoBehaviour
     }
 
     public void OnMouseDown() {
-        if(GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive) {
+        if(GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive || MorningRoutineManager.Instance.currentMinigame != null) {
             return;
         }
         if(!isGameActive) {

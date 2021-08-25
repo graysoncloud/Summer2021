@@ -3702,7 +3702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &156543538
 Transform:
   m_ObjectHideFlags: 0
@@ -42828,6 +42828,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   jitterThreshold: 20
   maxJitter: 0.1
+  hasAffector: 0
 --- !u!114 &1830278535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47882,6 +47883,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   jitterThreshold: 20
   maxJitter: 0.1
+  hasAffector: 0
   dispensed: 0
   taken: 0
   degreesToRotate: 30
@@ -51103,6 +51105,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   jitterThreshold: 20
   maxJitter: 0.1
+  hasAffector: 1
 --- !u!114 &1689213063241734516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51122,6 +51125,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   jitterThreshold: 20
   maxJitter: 0.1
+  hasAffector: 1
 --- !u!4 &1689213063241734517
 Transform:
   m_ObjectHideFlags: 0
@@ -51182,7 +51186,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.7, y: 7.64}
+  m_Size: {x: 4.73, y: 7.64}
   m_EdgeRadius: 0
 --- !u!114 &1689213063241734520
 MonoBehaviour:
@@ -51481,6 +51485,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   jitterThreshold: 20
   maxJitter: 5
+  hasAffector: 0
 --- !u!212 &1689213063615409339
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -52102,6 +52107,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   jitterThreshold: 20
   maxJitter: 0.1
+  hasAffector: 0
 --- !u!114 &5764245193578155212
 MonoBehaviour:
   m_ObjectHideFlags: 0

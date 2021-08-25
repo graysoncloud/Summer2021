@@ -57,17 +57,23 @@ public class GlowEffect : MonoBehaviour
 
     public void OnMouseDown()
     {
+        glowSettings.GlowBrightness = 0;
+        glowSettings.OutlineWidth = 0;
         if (tutorialGlow)
         {
             tutorialGlow = false;
-            glowSettings.GlowBrightness = 0;
-            glowSettings.OutlineWidth = 0;
         }
+
         clicking = true;
     }
 
+    public void OnMouseDrag() {
+        glowSettings.GlowBrightness = 0;
+        glowSettings.OutlineWidth = 0;
+    }
+
     public void OnMouseOver() {
-        if(hoverGlow && !tutorialGlow && !clicking) {
+        if(hoverGlow && !clicking) {
             hovering = true;
             glowSettings.OutlineWidth = maxOutline;
             glowSettings.GlowBrightness = maxGlow;
@@ -81,6 +87,10 @@ public class GlowEffect : MonoBehaviour
             glowSettings.GlowBrightness = 0;
             glowSettings.OutlineWidth = 0;
         }
+        
+    }
+
+    public void OnMouseUp() {
         clicking = false;
     }
     

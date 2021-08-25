@@ -23,6 +23,8 @@ public class Interactable : MonoBehaviour
     int jitterTimer = 0;
     int jitterDuration = 0;
 
+    public bool hasAffector = false;
+
 
 
     // Start is called before the first frame update
@@ -37,7 +39,9 @@ public class Interactable : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
         }
 
-        
+        if(hasAffector) {
+                transform.Find("Affector").gameObject.SetActive(false);
+            }
 
     }
 
@@ -105,6 +109,9 @@ public class Interactable : MonoBehaviour
             //Debug.Log("Interactable " + interactableName + " clicked");
             Interact();
             mouseDown = true;
+            if(hasAffector) {
+                transform.Find("Affector").gameObject.SetActive(true);
+            }
         }
     }
 
@@ -116,6 +123,10 @@ public class Interactable : MonoBehaviour
             this.gameObject.transform.position = defaultPosition;
             jittering = false;
             jitterTimer = 0;
+
+            if(hasAffector) {
+                transform.Find("Affector").gameObject.SetActive(false);
+            }
         }
     }
 

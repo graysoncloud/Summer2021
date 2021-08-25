@@ -24,12 +24,15 @@ public class GlowEffect : MonoBehaviour
     public Color tutorialGlowColor;
     public Color hoverColor;
 
+    int maxOutline;
+
     void Start()
     {
         if (shouldGlow)
         {
             tutorialGlow = true;
             glowSettings = GetComponent<SpriteGlowEffect>();
+            maxOutline = glowSettings.OutlineWidth;
         }
     }
 
@@ -48,6 +51,7 @@ public class GlowEffect : MonoBehaviour
             float glowBrightness = Mathf.Abs(glowTimer) * maxGlow;
             glowSettings.GlowBrightness = glowBrightness;
             glowSettings.GlowColor = tutorialGlowColor;
+            glowSettings.OutlineWidth = maxOutline;
         }
     }
 
@@ -57,6 +61,7 @@ public class GlowEffect : MonoBehaviour
         {
             tutorialGlow = false;
             glowSettings.GlowBrightness = 0;
+            glowSettings.OutlineWidth = 0;
         }
         clicking = true;
     }
@@ -64,6 +69,7 @@ public class GlowEffect : MonoBehaviour
     public void OnMouseOver() {
         if(hoverGlow && !tutorialGlow && !clicking) {
             hovering = true;
+            glowSettings.OutlineWidth = maxOutline;
             glowSettings.GlowBrightness = maxGlow;
             glowSettings.GlowColor = hoverColor;
         }
@@ -73,6 +79,7 @@ public class GlowEffect : MonoBehaviour
         if(hoverGlow) {
             hovering = false;
             glowSettings.GlowBrightness = 0;
+            glowSettings.OutlineWidth = 0;
         }
         clicking = false;
     }

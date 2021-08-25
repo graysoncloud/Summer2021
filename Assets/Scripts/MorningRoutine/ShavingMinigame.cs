@@ -8,7 +8,7 @@ public class ShavingMinigame : Minigame
     public GameObject stubblePrefab, stubbleParent;
     List<StubbleUnit> stubbleUnits;
     public BoxCollider2D spawnBounds;
-
+    public GameObject mirror;
 
     Vector2 spawnMin, spawnMax;
 
@@ -35,6 +35,7 @@ public class ShavingMinigame : Minigame
         if(!isGameActive) {
             isGameActive = true;
             BeginGame();
+            mirror.GetComponent<GlowEffect>().OnMouseDown();
         }
     }
 

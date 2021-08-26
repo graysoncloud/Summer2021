@@ -48,8 +48,12 @@ public class GameManager : MonoBehaviour
          */
 
         // Load save info
-        PlayerPrefs.SetFloat("MusicVolume", MusicManager.instance.defaultSFXVolume);
+        PlayerPrefs.SetFloat("MusicVolume", MusicManager.instance.defaultMusicVolume);
         PlayerPrefs.SetFloat("SFXVolume", MusicManager.instance.defaultSFXVolume);
+        MusicManager.instance.audioSource.volume = PlayerPrefs.GetFloat("MusicVolume");
+        AmbienceManager.instance.audioSource.volume = PlayerPrefs.GetFloat("MusicVolume");
+
+        SceneChangeManager.instance.StartSceneChange(SceneChangeManager.instance.startingScene);
 
     }
 

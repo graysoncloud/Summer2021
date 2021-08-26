@@ -195,6 +195,7 @@ public class RecapSceneManager : MonoBehaviour
             grades[i].gameObject.SetActive(false);
         }
 
+        finishedContracts = new List<FinishedContract>();
     }
 
     public void RevealBonusScene()

@@ -6,8 +6,8 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager instance = null;
 
-    public float defaultMusicVolume = .5f;
-    public float defaultSFXVolume = .5f;
+    public float defaultMusicVolume = .8f;
+    public float defaultSFXVolume = .8f;
 
     // Must be in the exact order of the Song enum
     public AudioClip[] songs;
@@ -48,9 +48,18 @@ public class MusicManager : MonoBehaviour
 
         while (SceneChangeManager.instance.currentScene.name != "RecapScene")
         {
+            bool firstPlay = true;
+
             if (!audioSource.isPlaying && SceneChangeManager.instance.currentScene.name != "OfficeScene")
             {
-                yield return new WaitForSeconds((Random.value * 5) + 5);
+                if (firstPlay)
+                {
+                    yield return new WaitForSeconds(2f);
+                    firstPlay = false;
+                } else
+                {
+                    yield return new WaitForSeconds(12f);
+                }
 
                 // Double checks after delay, preventing lingering music
                 if (!audioSource.isPlaying && SceneChangeManager.instance.currentScene.name != "RecapScene")

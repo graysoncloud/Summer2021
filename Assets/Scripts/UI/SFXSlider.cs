@@ -20,6 +20,7 @@ public class SFXSlider : MonoBehaviour
     public void Start()
     {
         valueText.text = Mathf.Round(slider.value * 100).ToString() + "%";
+        slider.value = MusicManager.instance.defaultMusicVolume;
 
         //Adds a listener to the main slider and invokes a method when the value changes.
         slider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
@@ -30,6 +31,8 @@ public class SFXSlider : MonoBehaviour
     {
         valueText.text = Mathf.Round(slider.value * 100).ToString() + "%";
         PlayerPrefs.SetFloat("SFXVolume", slider.value);
+        AmbienceManager.instance.AttemptSFXVolumeChange();
+
     }
 
 

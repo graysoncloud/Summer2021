@@ -28,7 +28,7 @@ public class Contract : ScriptableObject
 {
     // Need to check in with Harry to get specifics
 
-    public static SceneAsset mainScene;
+    //public static SceneAsset mainScene;
 
     public string companyName;
     public string description;

@@ -1411,6 +1411,7 @@ GameObject:
   - component: {fileID: 47895144}
   - component: {fileID: 47895143}
   - component: {fileID: 47895142}
+  - component: {fileID: 47895147}
   m_Layer: 7
   m_Name: MigraineCameraTEST
   m_TagString: MainCamera
@@ -1567,11 +1568,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
-  far clip plane: 5000
-  field of view: 40
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
   orthographic: 1
-  orthographic size: 5.39
+  orthographic size: 5.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1622,6 +1623,22 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1715549404}
+--- !u!114 &47895147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47895140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62373c5c1546fc34d806612cc2b37f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jitterAmount: 1
+  strength: 1
+  pulseTime: 100
+  active: 1
 --- !u!1 &64271683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3927,7 +3944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &156543538
 Transform:
   m_ObjectHideFlags: 0
@@ -30935,7 +30952,7 @@ MonoBehaviour:
     m_Bits: 64
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 1
+  antialiasingMode: 2
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25

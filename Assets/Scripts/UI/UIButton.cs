@@ -20,6 +20,11 @@ public class UIButton : MonoBehaviour
     private Coroutine highlightCoroutine;
     private Coroutine dehighlightCoroutine;
 
+    public void OnMouseDown()
+    {
+        DehighlightText();
+    }
+
     public void HighlightText()
     {
         if (dehighlightCoroutine != null)

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51c3728d04347b44ca539b9b36e3c167, type: 3}
-  m_Name: MusicEvent
+  m_Name: Title
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
   fadeOut: 0

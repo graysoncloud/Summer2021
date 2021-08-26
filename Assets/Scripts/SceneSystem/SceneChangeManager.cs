@@ -78,7 +78,7 @@ public class SceneChangeManager : MonoBehaviour
         if (oldSceneName == "OfficeScene" && sceneChange.newScene.ToString() == "RecapScene")
             MusicManager.instance.StartFadeOut();
 
-        yield return new WaitForSeconds(sceneChange.predelay);
+        yield return new WaitForSeconds(sceneChange.preDelay);
 
         if (sceneChange.transitionStyle.ToString() == "fade" || sceneChange.transitionStyle.ToString() == "longFade")
         {
@@ -108,6 +108,8 @@ public class SceneChangeManager : MonoBehaviour
 
         GameObject oldScene = currentScene;
 
+        yield return new WaitForSeconds(sceneChange.midDelay);
+
         /*
          * Depricated: characters instantiated in their own scriptable object
          */
@@ -135,7 +137,8 @@ public class SceneChangeManager : MonoBehaviour
             case "DrugGameScene": newScene = scenes[2]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
             case "RecapScene": newScene = scenes[3]; currentScene = newScene; newScene.gameObject.SetActive(true); RecapSceneManager.instance.DisplayContracts(); break;
             case "DreamScene": newScene = scenes[4]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
-            case "TitleScene": newScene = scenes[5]; currentScene = newScene; newScene.gameObject.SetActive(true); newScene.GetComponent<TitleSceneManager>().PrepareScene(); break;
+            case "TitleScene": newScene = scenes[5]; currentScene = newScene; newScene.gameObject.SetActive(true); newScene.GetComponent<TitleSceneManager>().PrepareScene();
+                MusicManager.instance.StartMusicEvent(TitleSceneManager.instance.defaultTitleMusicEvent); break;
             case "OSOverlay": newScene = scenes[6]; currentScene = newScene; newScene.gameObject.SetActive(true); OSOverlay.instance.StartOSDisplay(); break;
             default: Debug.LogError("Invalid sceneName: " + sceneChange.newScene.ToString()); break;
         }
@@ -180,7 +183,8 @@ public class SceneChangeManager : MonoBehaviour
             fadeOutCover.gameObject.SetActive(false);
         }
 
-        yield return new WaitForSeconds(sceneChange.postdelay);
+        yield return new WaitForSeconds(sceneChange.postDelay);
+        yield return new WaitForSeconds(sceneChange.postDelay);
 
         // Look for any triggered sequences
         bool triggeredSequence = false;

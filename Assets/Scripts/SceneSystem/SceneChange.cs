@@ -9,8 +9,9 @@ public class SceneChange : ScriptableEvent
     //public CharacterInstantiation[] characters;
     public TransitionStyle transitionStyle;
 
-    public float predelay;
-    public float postdelay;
+    public float preDelay;
+    public float midDelay;
+    public float postDelay;
 
     public bool increaseDay;
 

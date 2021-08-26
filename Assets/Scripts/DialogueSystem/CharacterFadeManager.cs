@@ -61,7 +61,9 @@ public class CharacterFadeManager : MonoBehaviour
                     charToFade.transform.parent = ElizabethLocation.transform;
                 }
 
-                charToFade.transform.position = charToFade.startLocation;
+                Debug.Log(charToFade.transform.position.x);
+                charToFade.transform.localPosition = charToFade.startLocation;
+                Debug.Log(charToFade.transform.position.x);
 
                 currentChars.Add(fadeEvent.characterToFade.ToString(), charToFade);
             }
@@ -76,6 +78,8 @@ public class CharacterFadeManager : MonoBehaviour
 
             }
         }
+
+            GameManager.instance.StartSequence(currentFadeObject.nextEvent);
     }
 
 

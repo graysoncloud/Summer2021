@@ -22,6 +22,8 @@ public class TitleSceneManager : MonoBehaviour
 
     public SceneChange titleToMR;
 
+    public MusicEvent defaultTitleMusicEvent;
+
 
     private Color disabledButtonColor = new Color(.4f, .4f, .4f, 1f);
 

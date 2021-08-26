@@ -13,14 +13,16 @@ public class MusicEvent : ScriptableEvent
 
 public enum Song
 {
+    Title,
+    MR1,
+    MR2,
     Work1,
     Work2,
     Work3,
-    MorningTheme1,
-    MorningTheme2,
+    Work4,
+    Work5,
     WesleyTheme,
     MariaTheme,
     RobbieTheme,
     ElizabethTheme,
-
 }

@@ -7,7 +7,8 @@ public class LeaveDrugGameButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        SceneChangeManager.instance.StartSceneChange(DrugManager.instance.drugToOfficeSceneChange);
+        if (TutorialManager.instance.activeTutorial == null)
+            SceneChangeManager.instance.StartSceneChange(DrugManager.instance.drugToOfficeSceneChange);
 
     }
 

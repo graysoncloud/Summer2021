@@ -96,12 +96,16 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("ActiveGame", 1);
         SceneChangeManager.instance.StartSceneChange(TitleSceneManager.instance.titleToMR);
 
+        MusicManager.instance.StartFadeOut();
+
     }
 
     public void ResumeGame()
     {
         TitleSceneManager.instance.ToggleButtonInteractability(false);
         SceneChangeManager.instance.StartSceneChange(TitleSceneManager.instance.titleToMR);
+
+        MusicManager.instance.StartFadeOut();
 
         // Load save information
     }
@@ -141,9 +145,6 @@ public class GameManager : MonoBehaviour
         {
             ConversationManager.instance.EndConversation();
 
-            if (SceneChangeManager.instance.currentScene.name == "OfficeScene" && currentDayIndex == 0)
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.ContractTutorial1);
-
             GameManager.instance.sequenceActive = false;
         }
 
@@ -164,6 +165,12 @@ public class GameManager : MonoBehaviour
 
         else if (toExecute.GetType().ToString() == "MusicEvent")
             MusicManager.instance.StartMusicEvent((MusicEvent)toExecute);
+
+        else if (toExecute.GetType().ToString() == "TutorialEvent")
+        {
+            TutorialManager.instance.ActivateTutorial(TutorialManager.instance.ContractTutorial1);
+            sequenceActive = false;
+        }
 
     }
 

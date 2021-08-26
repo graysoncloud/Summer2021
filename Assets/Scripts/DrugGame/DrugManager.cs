@@ -141,6 +141,9 @@ public class DrugManager : MonoBehaviour
                 qualifier = "PM";
             }
 
+            if (timeElapsed > 480)
+                PlayerPrefs.SetInt("IsLate", 1);
+
             minutes = ((lastTimeStamp % 4) * 15);
             string minutesAsString = minutes.ToString();
             if (minutes == 0)

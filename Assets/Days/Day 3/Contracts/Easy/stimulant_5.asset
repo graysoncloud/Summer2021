@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: stimulant_5
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Brewer's Beans
+  description: Coffee just isn't doing it anymore for some of our customers, and
+    we want to demo some new hyper-caffeinated coffees.
   usesMaxVolatility: 1
   volatilityMax: 8
   optimalMaxVolatilityVal: 2

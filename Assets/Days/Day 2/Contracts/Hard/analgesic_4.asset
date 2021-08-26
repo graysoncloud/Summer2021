@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: analgesic_4
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Persephonis Grains
+  description: Some kind of ointment to give our workers to help with back-pain while
+    harvesting should increase productivity.
   usesMaxVolatility: 1
   volatilityMax: 18
   optimalMaxVolatilityVal: 12

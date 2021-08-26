@@ -18,19 +18,42 @@ public class HexTile : MonoBehaviour
     private Color mouseOverColor = new Color(.6f, .87f, .9f, 1f);
     private Color defaultColor = new Color(1f, 1f, 1f, 1f);
 
+    public bool holdcolor;
+
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        holdcolor = false;
     }
 
     private void OnMouseOver()
     {
-        spriteRenderer.color = mouseOverColor;
+        if(!holdcolor)
+        {
+            spriteRenderer.color = mouseOverColor;
+        }
+        
+        //Debug.Log(coordinates);
     }
 
     private void OnMouseExit()
     {
+        if(!holdcolor)
+        {
+            spriteRenderer.color = defaultColor;
+        }
+    }
+
+    public void LockColor(Color lockcolor)
+    {
+        spriteRenderer.color = lockcolor;
+        holdcolor = true;
+    }
+
+    public void UnlockColor()
+    {
+        holdcolor = false;
         spriteRenderer.color = defaultColor;
     }
 

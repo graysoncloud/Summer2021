@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: immunosuppresant_8
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Jennifer Jameson Foundation
+  description: We're researching a fast-acting medication people with celiac can
+    take in case they accidentally ingest gluten.
   usesMaxVolatility: 1
   volatilityMax: 6
   optimalMaxVolatilityVal: 0

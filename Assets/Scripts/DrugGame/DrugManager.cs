@@ -39,7 +39,9 @@ public class DrugManager : MonoBehaviour
 
     private int numtutorialsfinished;
     private bool alltutorialsfinished;
-
+    private Vector2 tutorialTheromideTile = new Vector2(2f, 5f);
+    private HexTile[] tutorialAveroTiles;
+    private Color tutorialHighlightColor = new Color(0.9f, 0.6f, 0.2f, 1f);
     private void Awake()
     {
         // Singleton Stuff
@@ -57,6 +59,7 @@ public class DrugManager : MonoBehaviour
 
         hexGrid = GameObject.FindObjectOfType<HexGrid>().GetComponent<HexGrid>();
         dangerBar = GameObject.FindObjectOfType<VolatilityBar>();
+
 
         lastTimeStamp = 0;
         timeElapsed = 0;
@@ -78,7 +81,6 @@ public class DrugManager : MonoBehaviour
 
     void Update()
     {
-
         if(!alltutorialsfinished){
             if(numtutorialsfinished == 1 && TutorialManager.instance.activeTutorial == null)
             {
@@ -89,11 +91,14 @@ public class DrugManager : MonoBehaviour
             {
                 TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial3);
                 numtutorialsfinished++;
+                hexGrid.GetHexTile(tutorialTheromideTile).LockColor(tutorialHighlightColor);
             }
-            else if(numtutorialsfinished == 3 && TutorialManager.instance.activeTutorial == null && desiredChems == 2)
+            //Looks very ugly, but have to make sure the chemical exists first.
+            else if(numtutorialsfinished == 3 && TutorialManager.instance.activeTutorial == null && hexGrid.GetHexTile(tutorialTheromideTile).storedChemical != null && hexGrid.GetHexTile(tutorialTheromideTile).storedChemical.name == "Theromide")
             {
                 TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial4);
                 numtutorialsfinished++;
+                hexGrid.GetHexTile(tutorialTheromideTile).UnlockColor();
             }
             else if(numtutorialsfinished == 4 && TutorialManager.instance.activeTutorial == null)
             {
@@ -109,7 +114,17 @@ public class DrugManager : MonoBehaviour
             {
                 TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial7);
                 numtutorialsfinished++;
+            }
+            else if(numtutorialsfinished == 7 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial8);
                 numtutorialsfinished++;
+                tutorialAveroTiles = hexGrid.GetAdjacent(tutorialTheromideTile);
+                foreach(HexTile tile in tutorialAveroTiles)
+                {
+                    tile.LockColor(tutorialHighlightColor);
+                }
+                alltutorialsfinished = true;
             }
         }
 

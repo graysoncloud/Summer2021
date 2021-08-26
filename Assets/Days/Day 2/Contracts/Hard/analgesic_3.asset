@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: analgesic_3
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Houghton Huskies Rowing
+  description: Our rowing team needs something to rocket us out of last place, and
+    some kind of hand gel should help us get through those long races.
   usesMaxVolatility: 1
   volatilityMax: 25
   optimalMaxVolatilityVal: 19

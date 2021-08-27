@@ -18,4 +18,4 @@ MonoBehaviour:
     startingSprite: 13
     fadeIn: 1
     SFX: 
-  postDelay: 3
+  postDelay: 0

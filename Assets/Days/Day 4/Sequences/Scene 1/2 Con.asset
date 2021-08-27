@@ -16,9 +16,9 @@ MonoBehaviour:
   isNews: 0
   dialogueLines:
   - speaker: 0
-    dialogue: Recently, I- a friend of mine has been suffering from knee pain. It's
-      getting harder and harder for them to stand up after sitting for a sustained
-      period of time.
+    dialogue: Recently, there has been a lot of talk in our shipping warehouse of
+      union activity. These people- they're not the sharpest tools in the shed. They
+      don't reason like you or I.
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 5
@@ -27,8 +27,15 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: Your drug should relieve pain nearly instantaniously, but should last
-      no more than a few seconds.
+    dialogue: This would be much much easier if the workers were a little more...
+      aggreable. Calmer, more rational.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 0
+    dialogue: 'The drug you are making is only meant to take the edge off. '
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

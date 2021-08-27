@@ -45,7 +45,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 1
-    dialogue: '*sigh* Yes, Wesley.'
+    dialogue: Yes, Wesley.
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1

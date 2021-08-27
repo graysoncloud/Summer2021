@@ -96,6 +96,7 @@ public class CharacterFadeManager : MonoBehaviour
         {
             // Relies on prefab having an alpha of 0 and being set to black (0, 0, 0, 0);
             Character charToFade = Instantiate(characterPrefabs[(int)fadeEvent.characterToFade - 1], SceneChangeManager.instance.currentScene.transform);
+            charToFade.GetComponent<Animator>().Play(fadeEvent.startingSprite.ToString());
             charToFade.transform.position = charToFade.startLocation;
 
             // Play SFX
@@ -144,6 +145,7 @@ public class CharacterFadeManager : MonoBehaviour
 
         if (numActiveFades == 0)
         {
+            yield return new WaitForSeconds(currentFadeObject.postDelay);
             GameManager.instance.StartSequence(currentFadeObject.nextEvent);
         }
 

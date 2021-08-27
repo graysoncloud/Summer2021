@@ -8,14 +8,18 @@ public class CharacterFade : ScriptableEvent
 {
     public Fade[] characterFades;
 
+    public int postDelay;
+
     [System.Serializable]
     public class Fade
     {
         public CharacterName characterToFade;
+        public AnimationName startingSprite;
         //public AnimationName animationName;
         public bool fadeIn;
         public CharacterFadeSFX[] SFX;
 
     }
+
 
 }

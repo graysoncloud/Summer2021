@@ -96,7 +96,7 @@ public class Interactable : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive)
+        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive || SceneChangeManager.instance.IsFading())
         {
             return;
         }

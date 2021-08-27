@@ -29,7 +29,7 @@ public class ShavingMinigame : Minigame
     }
 
     new void OnMouseDown() { 
-        if(GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive || MorningRoutineManager.Instance.currentMinigame != null) {
+        if(GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive || MorningRoutineManager.Instance.currentMinigame != null || SceneChangeManager.instance.IsFading()) {
             return;
         }
         if(!isGameActive) {

@@ -23,7 +23,7 @@ public class Door : MonoBehaviour
     }
 
     void OnMouseOver() {
-        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive)
+        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive || SceneChangeManager.instance.IsFading())
         {
             return;
         }
@@ -32,7 +32,7 @@ public class Door : MonoBehaviour
     }
 
     void OnMouseDown() {
-        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive)
+        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive || SceneChangeManager.instance.IsFading())
         {
             return;
         }

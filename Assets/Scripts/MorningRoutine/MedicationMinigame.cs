@@ -23,7 +23,7 @@ public class MedicationMinigame : Minigame
     }
     new void OnMouseDown() { 
         //Debug.Log("Minigame " + minigameName + " clicked");
-        if(GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive || MorningRoutineManager.Instance.currentMinigame != null) {
+        if(GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive || MorningRoutineManager.Instance.currentMinigame != null || SceneChangeManager.instance.IsFading()) {
             return;
         }
         if(!isGameActive) {

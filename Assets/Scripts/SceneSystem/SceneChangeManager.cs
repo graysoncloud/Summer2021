@@ -33,6 +33,7 @@ public class SceneChangeManager : MonoBehaviour
 
     public GameObject bedroom;
 
+
     private void Awake()
     {
         // Singleton Stuff
@@ -208,4 +209,8 @@ public class SceneChangeManager : MonoBehaviour
 
     }
 
+
+    public bool IsFading() {
+        return fadeOutCover.IsActive();
+    }
 }

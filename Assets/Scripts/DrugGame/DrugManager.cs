@@ -79,6 +79,17 @@ public class DrugManager : MonoBehaviour
         }
     }
 
+    private bool TutorialContainsAvero()
+    {
+        foreach(HexTile tile in tutorialAveroTiles)
+        {
+            if(tile.storedChemical != null && tile.storedChemical.name == "Avero")
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     void Update()
     {
         if(!alltutorialsfinished){
@@ -124,6 +135,25 @@ public class DrugManager : MonoBehaviour
                 {
                     tile.LockColor(tutorialHighlightColor);
                 }
+            }
+            else if(numtutorialsfinished == 8 && TutorialManager.instance.activeTutorial == null && dangerBar.GetVol() == 33 && TutorialContainsAvero())
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial9);
+                numtutorialsfinished++;
+                foreach(HexTile tile in tutorialAveroTiles)
+                {
+                    tile.UnlockColor();
+                }
+            }
+            else if(numtutorialsfinished == 9 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial10);
+                numtutorialsfinished++;
+            }
+            else if(numtutorialsfinished == 10 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial11);
+                numtutorialsfinished++;
                 alltutorialsfinished = true;
             }
         }

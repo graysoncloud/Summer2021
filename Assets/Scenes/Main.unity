@@ -1616,8 +1616,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftSide: {fileID: 435309375}
   rightSide: {fileID: 1569067214}
-  leftConnection: []
-  rightConnection: []
+  leftConnection:
+  - positive
+  rightConnection:
+  - positive
 --- !u!1 &64271683
 GameObject:
   m_ObjectHideFlags: 0
@@ -22986,8 +22988,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftSide: {fileID: 1208400609}
   rightSide: {fileID: 570010712}
-  leftConnection: []
-  rightConnection: []
+  leftConnection:
+  - negative
+  rightConnection:
+  - negative
 --- !u!1 &855266654
 GameObject:
   m_ObjectHideFlags: 0
@@ -32620,8 +32624,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftSide: {fileID: 1112243599}
   rightSide: {fileID: 942127252}
-  leftConnection: []
-  rightConnection: []
+  leftConnection:
+  - positive
+  - neutral
+  - positive
+  - negative
+  - neutral
+  rightConnection:
+  - negative
+  - neutral
+  - none
+  - none
+  - none
 --- !u!1 &1336697427
 GameObject:
   m_ObjectHideFlags: 0
@@ -44426,8 +44440,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftSide: {fileID: 1380282869}
   rightSide: {fileID: 1449519624}
-  leftConnection: []
-  rightConnection: []
+  leftConnection:
+  - positive
+  - negative
+  rightConnection:
+  - neutral
+  - neutral
 --- !u!1 &1714234823
 GameObject:
   m_ObjectHideFlags: 0

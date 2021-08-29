@@ -25,6 +25,9 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
 
     public MRAudioManager audioManager;
 
+    public Camera mainCamera;
+    public Camera migraineCamera;
+
 
     // game data
     // the day
@@ -97,5 +100,11 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
 
     public void SetTVActive(bool a) {
         isTVActive = a;
+    }
+
+    public void StartMigraine() {
+        mainCamera.enabled = false;
+        migraineCamera.enabled = true;
+        GameObject.FindGameObjectWithTag("MigraineCamera").GetComponent<MigraineController>().SetMigraineActive(true, mainCamera);
     }
 }

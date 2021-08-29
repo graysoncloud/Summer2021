@@ -15,6 +15,7 @@ TagManager:
   - Razor
   - Bed
   - Lid
+  - MigraineCamera
   layers:
   - Default
   - TransparentFX

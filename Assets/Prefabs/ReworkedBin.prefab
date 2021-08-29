@@ -132,6 +132,7 @@ MonoBehaviour:
   title: {fileID: 1192976462335490773}
   costDisplay: {fileID: 610005569516232870}
   graphicPosition: {fileID: 3565971598632412998}
+  InfoTooltip: {fileID: 0}
 --- !u!1 &1192976462335490775
 GameObject:
   m_ObjectHideFlags: 0

@@ -67,7 +67,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
 
     public void SetMinigame(Minigame m) {
         this.currentMinigame = m;
-        backButton.gameObject.SetActive(true);
+        //backButton.gameObject.SetActive(true);
     }
 
     public void StopMinigame() {
@@ -81,7 +81,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         if(medicationMinigame.isGameActive) {
             medicationMinigame.StopMedGame();
         }
-        backButton.gameObject.SetActive(false);
+        //backButton.gameObject.SetActive(false);
     }
 
     public void StartNewDay() {

@@ -26,6 +26,12 @@ public class TVInteractable : MonoBehaviour
                 StopTVEvent();
             }
         }
+        if(GameManager.instance.currentDay.newsEvent != null && !TVEventPlayed) {
+            GetComponent<GlowEffect>().hoverGlow = true;
+        }
+        else {
+            GetComponent<GlowEffect>().hoverGlow = false;
+        }
     }
 
     public void OnMouseDown() {

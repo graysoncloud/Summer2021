@@ -29,4 +29,11 @@ public class MRAudioManager : MonoBehaviour
             audioSource.PlayOneShot(currentSound);
         }
     }
+
+    public void PlaySoundForce() {
+        if(currentSound.loadState == AudioDataLoadState.Loaded) {
+            audioSource.volume = PlayerPrefs.GetFloat("SFXVolume");
+            audioSource.PlayOneShot(currentSound);
+        }
+    }
 }

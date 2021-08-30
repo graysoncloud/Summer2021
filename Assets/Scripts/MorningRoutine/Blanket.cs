@@ -11,6 +11,8 @@ public class Blanket : MonoBehaviour
     bool bedMade = false;
     public GameObject madeBlanketGO;
 
+    public AudioClip soundEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,8 @@ public class Blanket : MonoBehaviour
         dragging = true;
         Vector3 newScale = new Vector3(0.5f, 1, 1);
         GetComponent<Rigidbody2D>().transform.localScale = newScale;
+        MorningRoutineManager.Instance.audioManager.LoadSound(soundEffect);
+        MorningRoutineManager.Instance.audioManager.PlaySound();
     }
 
     void OnMouseUp() {
@@ -51,6 +55,8 @@ public class Blanket : MonoBehaviour
             i.OnMouseUp();
             i.SetInteractableActive(false);
             bedMade = true;
+            MorningRoutineManager.Instance.audioManager.LoadSound(soundEffect);
+            MorningRoutineManager.Instance.audioManager.PlaySound();
         }
     }
 

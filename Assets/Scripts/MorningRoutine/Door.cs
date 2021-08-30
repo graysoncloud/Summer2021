@@ -11,6 +11,11 @@ public class Door : MonoBehaviour
     public Room destination;
     public bool workDoor;
 
+    public AudioClip hoverSoundEffect;
+    public AudioClip clickSoundEffect;
+
+    bool soundEffectPlayed = false;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -29,6 +34,12 @@ public class Door : MonoBehaviour
         }
 
         spriteRenderer.sprite = openSprite;
+        if(!soundEffectPlayed) {
+            soundEffectPlayed = true;
+            MorningRoutineManager.Instance.audioManager.LoadSound(hoverSoundEffect);
+            MorningRoutineManager.Instance.audioManager.PlaySoundForce();
+        }
+        
     }
 
     void OnMouseDown() {
@@ -39,8 +50,12 @@ public class Door : MonoBehaviour
 
         if(!workDoor) {
             FindObjectOfType<PlayerController>().SetRoom(destination);
+            MorningRoutineManager.Instance.audioManager.LoadSound(clickSoundEffect);
+            MorningRoutineManager.Instance.audioManager.PlaySoundForce();
         } else {
             GoToWork();
+            MorningRoutineManager.Instance.audioManager.LoadSound(clickSoundEffect);
+            MorningRoutineManager.Instance.audioManager.PlaySoundForce();
         }
         
     }
@@ -52,6 +67,9 @@ public class Door : MonoBehaviour
         }
         
         spriteRenderer.sprite = closedSprite;
+        MorningRoutineManager.Instance.audioManager.LoadSound(clickSoundEffect);
+        MorningRoutineManager.Instance.audioManager.PlaySoundForce();
+        soundEffectPlayed = false;
     }
 
     void GoToWork() {

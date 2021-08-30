@@ -4463,7 +4463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &156543538
 Transform:
   m_ObjectHideFlags: 0
@@ -12061,6 +12061,8 @@ MonoBehaviour:
   openSprite: {fileID: 21300000, guid: 981b5ead91e4b47ed92a3e70087035ac, type: 3}
   destination: {fileID: 1419662220}
   workDoor: 0
+  hoverSoundEffect: {fileID: 0}
+  clickSoundEffect: {fileID: 0}
 --- !u!1 &454433797
 GameObject:
   m_ObjectHideFlags: 0
@@ -14201,6 +14203,8 @@ MonoBehaviour:
   openSprite: {fileID: 21300000, guid: 84ae04d83c631814d80bd56444507d12, type: 3}
   destination: {fileID: 2088006597}
   workDoor: 0
+  hoverSoundEffect: {fileID: 8300000, guid: 72f14ff9d9b6b704bbdb884c907a4c15, type: 3}
+  clickSoundEffect: {fileID: 8300000, guid: 4c0f91b80bc3747679497e454c098dd6, type: 3}
 --- !u!212 &529675601
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22064,6 +22068,8 @@ MonoBehaviour:
   openSprite: {fileID: 21300000, guid: 44015c89a92434b4ea668256dcdfb3c7, type: 3}
   destination: {fileID: 0}
   workDoor: 1
+  hoverSoundEffect: {fileID: 8300000, guid: 72f14ff9d9b6b704bbdb884c907a4c15, type: 3}
+  clickSoundEffect: {fileID: 8300000, guid: 4c0f91b80bc3747679497e454c098dd6, type: 3}
 --- !u!212 &793662572
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29015,6 +29021,8 @@ MonoBehaviour:
   openSprite: {fileID: 21300000, guid: ed348dae57a30664ca0cb287b807e3f0, type: 3}
   destination: {fileID: 1419662220}
   workDoor: 0
+  hoverSoundEffect: {fileID: 8300000, guid: 72f14ff9d9b6b704bbdb884c907a4c15, type: 3}
+  clickSoundEffect: {fileID: 8300000, guid: 4c0f91b80bc3747679497e454c098dd6, type: 3}
 --- !u!1 &1165129051
 GameObject:
   m_ObjectHideFlags: 0
@@ -42549,6 +42557,8 @@ MonoBehaviour:
   openSprite: {fileID: 21300000, guid: e73ff8efa3fc9c6408ada378a2a224b4, type: 3}
   destination: {fileID: 565493395}
   workDoor: 0
+  hoverSoundEffect: {fileID: 8300000, guid: 72f14ff9d9b6b704bbdb884c907a4c15, type: 3}
+  clickSoundEffect: {fileID: 8300000, guid: 4c0f91b80bc3747679497e454c098dd6, type: 3}
 --- !u!212 &1655939886
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -47505,7 +47515,7 @@ MonoBehaviour:
   draggable: 1
   persistent: 1
   activeCam: {fileID: 0}
-  soundEffect: {fileID: 0}
+  soundEffect: {fileID: 8300000, guid: 45fa36b0cc6bf674da0ba275fc02ffdb, type: 3}
   jitterThreshold: 20
   maxJitter: 0.1
   hasAffector: 0
@@ -47526,6 +47536,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 31377e22687ce41438505f43cca63570, type: 3}
   - {fileID: 0}
   madeBlanketGO: {fileID: 1463752144}
+  soundEffect: {fileID: 8300000, guid: 45fa36b0cc6bf674da0ba275fc02ffdb, type: 3}
 --- !u!114 &1830278536
 MonoBehaviour:
   m_ObjectHideFlags: 0

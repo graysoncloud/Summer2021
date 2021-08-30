@@ -56,6 +56,8 @@ public class FlowerPot : Interactable
         } else {
             decay++;
             hasBeenWateredToday = false;
+            PlayerPrefs.SetInt("WateredPlants", 0);
+            PlayerPrefs.SetInt("NotWateredPlants", 1);
             if(decay > maxDecay) { 
                 decay = maxDecay;
             }
@@ -82,7 +84,9 @@ public class FlowerPot : Interactable
                 
                 if(decay > 0) {
                     decay -= 1;
-                    hasBeenWateredToday = true;                   
+                    hasBeenWateredToday = true;     
+                    PlayerPrefs.SetInt("WateredPlants", 1);
+                    PlayerPrefs.SetInt("NotWateredPlants", 0);              
                 }
                 
             }

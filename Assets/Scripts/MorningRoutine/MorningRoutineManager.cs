@@ -103,8 +103,6 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     }
 
     public void StartMigraine() {
-        mainCamera.enabled = false;
-        migraineCamera.enabled = true;
-        GameObject.FindGameObjectWithTag("MigraineCamera").GetComponent<MigraineController>().SetMigraineActive(true, mainCamera);
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MigraineController>().SetMigraineActive(true, mainCamera);
     }
 }

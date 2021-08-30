@@ -14,7 +14,7 @@ public class MigraineController : MonoBehaviour
     public float pulseTime = 1;
 
     public bool active = false;
-    long delta = 0;
+    float delta = 0;
     bool increasing = true;
 
     Camera activeCamera;
@@ -30,6 +30,9 @@ public class MigraineController : MonoBehaviour
     public int pulseNum = 1;
     int pulses = 0;
 
+    public PostProcessProfile migraineProfile;
+    public PostProcessProfile normalProfile;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,9 +44,9 @@ public class MigraineController : MonoBehaviour
     void Update()
     {
         if(pulsing) {
-            delta++;
+            delta += Time.deltaTime;
 
-            float w = Mathf.Clamp(Mathf.Sin((delta / pulseTime) * Mathf.PI * 2), 0, 1);
+            float w = Mathf.Clamp(Mathf.Sin((delta / pulseTime) * Mathf.PI * 2), 0.3f, 1);
 
             postProcessingVolume.weight = w;
 
@@ -52,23 +55,28 @@ public class MigraineController : MonoBehaviour
                 delta = 0;
                 if(pulses >= pulseNum) {
                     pulsing = false;
-                    postProcessingVolume.weight = 0;
-                    mainCamera.enabled = true;
-                    GetComponent<Camera>().enabled = false;
+                    //mainCamera.enabled = true;
+                    //GetComponent<Camera>().enabled = false;
+                    postProcessingVolume.profile = normalProfile;
+                    postProcessingVolume.weight = 1;
                 }
             }
         }
     }
 
     public void SetMigraineActive(bool t, Camera c) {
+        
+
+
         pulsing = t;
         if(t) {
             delta = 0;
             postProcessingVolume.weight = 0;
-            GetComponent<Camera>().enabled = true;
-            mainCamera = c;
-            mainCamera.enabled = false;
+            //GetComponent<Camera>().enabled = true;
+            //mainCamera = c;
+            //mainCamera.enabled = false;
             pulses = 0;
+            postProcessingVolume.profile = migraineProfile;
         }
     }
 }

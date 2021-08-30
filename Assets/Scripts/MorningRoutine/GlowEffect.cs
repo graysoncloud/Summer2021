@@ -42,7 +42,7 @@ public class GlowEffect : MonoBehaviour
         if (gameObject.activeSelf && tutorialGlow && !hovering)
         {
 
-            glowTimer += (pulseSpeed / 20);
+            glowTimer += pulseSpeed * Time.deltaTime;
             if (glowTimer >= 1f)
             {
                 glowTimer = -1f;

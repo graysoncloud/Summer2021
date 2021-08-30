@@ -1333,7 +1333,6 @@ GameObject:
   - component: {fileID: 47895141}
   - component: {fileID: 47895146}
   - component: {fileID: 47895145}
-  - component: {fileID: 47895144}
   - component: {fileID: 47895143}
   - component: {fileID: 47895142}
   - component: {fileID: 47895147}
@@ -1343,7 +1342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &47895141
 Transform:
   m_ObjectHideFlags: 0
@@ -1377,7 +1376,7 @@ MonoBehaviour:
     m_Bits: 192
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 0
+  antialiasingMode: 1
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -1436,40 +1435,6 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
---- !u!114 &47895144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47895140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 5
-    m_Time: 1
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 11400000, guid: dd18b38006a02cb4fb425a6da878ca92, type: 2}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!20 &47895145
 Camera:
   m_ObjectHideFlags: 0
@@ -1562,10 +1527,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jitterAmount: 1
   strength: 1
-  pulseTime: 400
+  pulseTime: 5
   active: 1
   pulsing: 0
   pulseNum: 3
+  migraineProfile: {fileID: 0}
+  normalProfile: {fileID: 0}
 --- !u!1 &56562091
 GameObject:
   m_ObjectHideFlags: 0
@@ -3488,7 +3455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glowColor: {r: 1, g: 0.6468028, b: 0, a: 1}
-  glowBrightness: 2.25
+  glowBrightness: 1.55
   outlineWidth: 1
   alphaThreshold: 0.78
   drawOutside: 1
@@ -3507,8 +3474,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shouldGlow: 1
   hoverGlow: 0
-  maxGlow: 2
-  pulseSpeed: 0.1
+  maxGlow: 1.39
+  pulseSpeed: 0.5
   tutorialGlowColor: {r: 1, g: 0.64705884, b: 0, a: 1}
   hoverColor: {r: 0, g: 0.38550162, b: 1, a: 1}
 --- !u!212 &118625641
@@ -4496,7 +4463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &156543538
 Transform:
   m_ObjectHideFlags: 0
@@ -14318,7 +14285,7 @@ MonoBehaviour:
   shouldGlow: 1
   hoverGlow: 0
   maxGlow: 1.8
-  pulseSpeed: 0.1
+  pulseSpeed: 0.5
   tutorialGlowColor: {r: 1, g: 0.7608758, b: 0, a: 1}
   hoverColor: {r: 0, g: 0.74034977, b: 1, a: 1}
 --- !u!1 &533937023
@@ -22163,7 +22130,7 @@ MonoBehaviour:
   shouldGlow: 1
   hoverGlow: 0
   maxGlow: 1.8
-  pulseSpeed: 0.1
+  pulseSpeed: 0.5
   tutorialGlowColor: {r: 1, g: 0.7608758, b: 0, a: 1}
   hoverColor: {r: 0, g: 0.74034977, b: 1, a: 1}
 --- !u!114 &793662574
@@ -31521,7 +31488,7 @@ MonoBehaviour:
   shouldGlow: 1
   hoverGlow: 1
   maxGlow: 2
-  pulseSpeed: 0.1
+  pulseSpeed: 0.5
   tutorialGlowColor: {r: 1, g: 0.7608758, b: 0, a: 1}
   hoverColor: {r: 0, g: 0.74034977, b: 1, a: 1}
 --- !u!114 &1268487643
@@ -31539,7 +31506,7 @@ MonoBehaviour:
   glowColor: {r: 1, g: 1, b: 1, a: 1}
   glowBrightness: 2
   outlineWidth: 1
-  alphaThreshold: 0.01
+  alphaThreshold: 0.332
   drawOutside: 0
   enableInstancing: 0
 --- !u!212 &1268487644
@@ -34026,6 +33993,7 @@ GameObject:
   - component: {fileID: 1375980668}
   - component: {fileID: 1375980670}
   - component: {fileID: 1375980669}
+  - component: {fileID: 1375980671}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -34175,7 +34143,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 1375980667}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 2
@@ -34185,7 +34153,7 @@ MonoBehaviour:
     stationaryBlending: 0.95
     motionBlending: 0.85
   subpixelMorphologicalAntialiasing:
-    quality: 2
+    quality: 1
   fastApproximateAntialiasing:
     fastMode: 1
     keepAlpha: 0
@@ -34237,6 +34205,26 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &1375980671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375980664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62373c5c1546fc34d806612cc2b37f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jitterAmount: 1
+  strength: 1
+  pulseTime: 5
+  active: 1
+  pulsing: 0
+  pulseNum: 3
+  migraineProfile: {fileID: 11400000, guid: 4b5bd7ffa66ae93498d829f9d5909c92, type: 2}
+  normalProfile: {fileID: 11400000, guid: c3d2500d5c5e5d6439b33ae5375d7f36, type: 2}
 --- !u!1 &1379578782
 GameObject:
   m_ObjectHideFlags: 0
@@ -42627,7 +42615,7 @@ MonoBehaviour:
   shouldGlow: 1
   hoverGlow: 0
   maxGlow: 1.8
-  pulseSpeed: 0.1
+  pulseSpeed: 0.5
   tutorialGlowColor: {r: 1, g: 0.7608758, b: 0, a: 1}
   hoverColor: {r: 0, g: 0.74034977, b: 1, a: 1}
 --- !u!114 &1655939888
@@ -47571,7 +47559,7 @@ MonoBehaviour:
   shouldGlow: 1
   hoverGlow: 1
   maxGlow: 1.29
-  pulseSpeed: 0.1
+  pulseSpeed: 0.5
   tutorialGlowColor: {r: 1, g: 0.7608758, b: 0, a: 1}
   hoverColor: {r: 0, g: 0.74034977, b: 1, a: 1}
 --- !u!1 &1832866105
@@ -47735,9 +47723,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shouldGlow: 1
-  hoverGlow: 1
-  maxGlow: 1.35
-  pulseSpeed: 0.1
+  hoverGlow: 0
+  maxGlow: 1.18
+  pulseSpeed: 0.5
   tutorialGlowColor: {r: 1, g: 0.7608758, b: 0, a: 1}
   hoverColor: {r: 0, g: 0.74034977, b: 1, a: 1}
 --- !u!1001 &1832995513
@@ -48052,7 +48040,7 @@ MonoBehaviour:
   shouldGlow: 1
   hoverGlow: 1
   maxGlow: 1.9
-  pulseSpeed: 0.1
+  pulseSpeed: 0.5
   tutorialGlowColor: {r: 1, g: 0.7608758, b: 0, a: 1}
   hoverColor: {r: 0, g: 0.74034977, b: 1, a: 1}
 --- !u!1001 &1853574007
@@ -56442,8 +56430,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shouldGlow: 1
   hoverGlow: 1
-  maxGlow: 4.06
-  pulseSpeed: 0.1
+  maxGlow: 2.28
+  pulseSpeed: 0.5
   tutorialGlowColor: {r: 1, g: 0.7608758, b: 0, a: 1}
   hoverColor: {r: 0, g: 0.74034977, b: 1, a: 1}
 --- !u!212 &1689213062974725834
@@ -56612,7 +56600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glowColor: {r: 1, g: 0.738766, b: 0, a: 0.4392157}
-  glowBrightness: 3.45
+  glowBrightness: 2.43
   outlineWidth: 3
   alphaThreshold: 0.364
   drawOutside: 1
@@ -56631,8 +56619,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shouldGlow: 1
   hoverGlow: 1
-  maxGlow: 4
-  pulseSpeed: 0.1
+  maxGlow: 2.37
+  pulseSpeed: 0.5
   tutorialGlowColor: {r: 1, g: 0.7608758, b: 0, a: 1}
   hoverColor: {r: 0, g: 0.74034977, b: 1, a: 1}
 --- !u!212 &1689213063241734523
@@ -57475,7 +57463,7 @@ MonoBehaviour:
   shouldGlow: 1
   hoverGlow: 1
   maxGlow: 2.6
-  pulseSpeed: 0.1
+  pulseSpeed: 0.5
   tutorialGlowColor: {r: 1, g: 0.7608758, b: 0, a: 1}
   hoverColor: {r: 0, g: 0.74034977, b: 1, a: 1}
 --- !u!50 &5282021731174827678

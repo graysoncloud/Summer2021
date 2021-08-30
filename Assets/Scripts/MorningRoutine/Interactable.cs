@@ -30,7 +30,7 @@ public class Interactable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        activeCam = FindObjectOfType<Camera>();
+        activeCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         defaultPosition = this.gameObject.transform.position;
 
         //gameObject.SetActive(persistent);

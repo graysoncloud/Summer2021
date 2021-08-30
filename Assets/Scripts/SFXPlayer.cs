@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class SFXPlayer : MonoBehaviour
 {
+    public static SFXPlayer instance = null;
 
     public AudioSource audioSource;
 
     public AudioClip[] audioClips;
+
+    private void Awake()
+    {
+        // Singleton Stuff
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {

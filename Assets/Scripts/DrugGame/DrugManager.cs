@@ -327,6 +327,11 @@ public class DrugManager : MonoBehaviour
         return costDisplay.GetCost();
     }
 
+    public int GetUnstableCount()
+    {
+        return dangerBar.GetUnstableCount();
+    }
+
     public EffectType GetDesireable()
     {
         return GameManager.instance.GetCurrentContract().desirableEffect;
@@ -360,6 +365,7 @@ public class DrugManager : MonoBehaviour
 
         costDisplay.RemoveCost(currentlyHeldChemical, currentlyHeldChemical.getCost());
         Destroy(currentlyHeldChemical.gameObject);
+        SFXPlayer.instance.PlaySoundEffect(3);
     }
 
     public void TrashChem(HexTile tile)

@@ -20,6 +20,7 @@ public class VolatilityBar : MonoBehaviour
     CircleSlider volBar = null;
     [SerializeField]
     private float unstableVol = 10, negativeVol = 1.5f, positiveVol = -1;
+    private int unstableCount = 0;
 
     //private int unstableIncrement = 4;
     //private int negativeConnectionIncrement = 1;
@@ -56,7 +57,10 @@ public class VolatilityBar : MonoBehaviour
         {
             // expand if else statements to increase separate variables to display different bars, i.e. unstable amount vs. negative amount
             if (newStatuses[i] == "Unstable")
+            {
                 volatility += unstableVol;
+                unstableCount++;
+            }
             else if (newStatuses[i] == "Negative")
                 volatility += negativeVol;
             else if (newStatuses[i] == "Positive")
@@ -65,7 +69,10 @@ public class VolatilityBar : MonoBehaviour
 
             // This essentially reverses the above affect if nothing changed
             if (oldStatuses[i] == "Unstable")
+            {
                 volatility -= unstableVol;
+                unstableCount--;
+            }
             else if (oldStatuses[i] == "Negative")
                 volatility -= negativeVol;
             else if (oldStatuses[i] == "Positive")
@@ -96,5 +103,10 @@ public class VolatilityBar : MonoBehaviour
     public int GetVol()
     {
         return (int)volatility;
+    }
+
+    public int GetUnstableCount()
+    {
+        return unstableCount;
     }
 }

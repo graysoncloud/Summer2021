@@ -33,11 +33,14 @@ public class PrintButton : MonoBehaviour
             if (GameManager.instance.currentDayIndex == 0)
                 TutorialManager.instance.ActivateTutorial(TutorialManager.instance.ContractTutorial3);
 
+            SFXPlayer.instance.PlaySoundEffect(5);
             // Display a "solution printed", prevent further editing
         }
 
         else
-            Debug.Log("Contract conditions not achived");
+        {
+            SFXPlayer.instance.PlaySoundEffect(6);
+        }
 
         // Generate FinishedContract object for the recap scene to read
     }

@@ -297,7 +297,7 @@ public class Chemical : MonoBehaviour
             }
 
             rotateTarget += amount;
-
+            SFXPlayer.instance.PlaySoundEffect(1);
             connectionTypes = RotateArray(connectionTypes, amount);
             if (childIndex1 != -1)
             {
@@ -442,6 +442,8 @@ public class Chemical : MonoBehaviour
         // Update score (could this be run in the scorekeeper's script?)
         dangerBar.UpdateDanger(oldStatuses, newStatuses);
         UpdateBenefit();
+
+        SFXPlayer.instance.PlaySoundEffect(4);
     }
 
     private void EvaluateConnection(string connectionType, int statusIndex, int adjacentIndex)
@@ -788,6 +790,7 @@ public class Chemical : MonoBehaviour
             }
 
             housingTile.storedChemical = null;
+            SFXPlayer.instance.PlaySoundEffect(2);
         } 
         else
         {

@@ -57,6 +57,7 @@ public class ChemicalBin : MonoBehaviour
             DrugManager.instance.currentlyHeldChemical = newChemical;
             newChemical.isPlaced = false;
             newChemical.GetComponent<PolygonCollider2D>().enabled = false;
+            SFXPlayer.instance.PlaySoundEffect(2);
 
             foreach (SpriteRenderer SR in newChemical.GetComponentsInChildren<SpriteRenderer>())
             {

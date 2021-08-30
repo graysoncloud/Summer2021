@@ -5080,53 +5080,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 80597313}
     m_Modifications:
-    - target: {fileID: 610005569516232870, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_text
-      value: Cost 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 965094576615112688, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 965094576615112688, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Color.a
-      value: 0.83137256
-      objectReference: {fileID: 0}
-    - target: {fileID: 965094576615112688, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 965094576615112688, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 965094576615112688, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1192976462103853963, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
       propertyPath: InfoTooltip
       value: 
       objectReference: {fileID: 908192116}
-    - target: {fileID: 1192976462103853972, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192976462103853972, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192976462103853972, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Color.g
-      value: 0.30174166
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192976462103853972, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Color.b
-      value: 0.5943396
-      objectReference: {fileID: 0}
     - target: {fileID: 1192976462103853973, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -414.4
+      value: -442.9
       objectReference: {fileID: 0}
     - target: {fileID: 1192976462103853973, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5171,62 +5131,6 @@ PrefabInstance:
     - target: {fileID: 1192976462103853974, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
       propertyPath: m_Name
       value: ReworkedBin
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192976462335490774, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.052869227
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192976462335490774, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.052869227
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192976462335490774, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.052869227
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192976462335490774, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2735070275720656733, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2735070275720656733, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Color.r
-      value: 0.5372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 2735070275720656733, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Color.g
-      value: 0.81568635
-      objectReference: {fileID: 0}
-    - target: {fileID: 2735070275720656733, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Color.b
-      value: 0.9725491
-      objectReference: {fileID: 0}
-    - target: {fileID: 6491238526467313195, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.040349655
-      objectReference: {fileID: 0}
-    - target: {fileID: 6491238526467313195, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.040349655
-      objectReference: {fileID: 0}
-    - target: {fileID: 6491238526467313195, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.040349655
-      objectReference: {fileID: 0}
-    - target: {fileID: 6491238526467313195, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 6491238526467313195, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 7325996549957685941, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
@@ -8685,7 +8589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &314944192
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8797,6 +8701,12 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   audioClips:
   - {fileID: 8300000, guid: b1ee7ee4c7e436743af37aec222dbac7, type: 3}
+  - {fileID: 8300000, guid: 67addcfea8e8bd442a2ca8e3b5a2108c, type: 3}
+  - {fileID: 8300000, guid: 99b35a76898baad429826f6a1e65b33e, type: 3}
+  - {fileID: 8300000, guid: 4df6901d58f53ba409df665372025ebd, type: 3}
+  - {fileID: 8300000, guid: 4bfcf132bc202f14bb33c374fe6a7acd, type: 3}
+  - {fileID: 8300000, guid: dd590e052166e9244b97e707155c90e6, type: 3}
+  - {fileID: 8300000, guid: b2ad8db59fe4904499ee8fe83656434e, type: 3}
 --- !u!4 &314944194
 Transform:
   m_ObjectHideFlags: 0

@@ -86,14 +86,18 @@ public class SceneChangeManager : MonoBehaviour
             fadeOutCover.gameObject.SetActive(true);
             while (fadeOutCover.color.a < 1)
             {
-                fadeOutCover.color += new Color(0f, 0f, 0f, .01f);
-                yield return new WaitForSeconds(fadeOutRate);
+                fadeOutCover.color += new Color(0f, 0f, 0f, .01f) * Time.deltaTime * 60;
+                yield return new WaitForEndOfFrame();
 
                 // Doubles fade length for long fade
                 if (sceneChange.transitionStyle.ToString() == "longFade")
-                    yield return new WaitForSeconds(fadeOutRate);
+                    yield return new WaitForEndOfFrame();
             }
+
+            MusicManager.instance.audioSource.Stop();
+            StopCoroutine(MusicManager.instance.fadeOutCoroutine);
         }
+
 
         if (currentScene != null)
         {
@@ -175,13 +179,12 @@ public class SceneChangeManager : MonoBehaviour
         {
             while (fadeOutCover.color.a > 0)
             {
-                fadeOutCover.color -= new Color(0f, 0f, 0f, .01f);
-                yield return new WaitForSeconds(fadeInRate);
+                fadeOutCover.color -= new Color(0f, 0f, 0f, .01f) * Time.deltaTime * 60;
+                yield return new WaitForEndOfFrame();
 
                 // Doubles fade length for long fade
                 if (sceneChange.transitionStyle.ToString() == "longFade")
-                    yield return new WaitForSeconds(fadeOutRate);
-
+                    yield return new WaitForEndOfFrame();
             }
             fadeOutCover.gameObject.SetActive(false);
         }

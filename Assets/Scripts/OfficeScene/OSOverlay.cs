@@ -66,36 +66,36 @@ public class OSOverlay : MonoBehaviour
 
     IEnumerator LoadOSFirstDay ()
     {
-        float rate = .005f;
+        float rate = .1f;
 
         while (progressBar.value < 12)
         {
-            progressBar.value += rate * Time.deltaTime * 30;
-            rate *= 1.0015f;
+            progressBar.value += rate * Time.deltaTime * 60;
+            rate *= 1.0025f;
             yield return new WaitForEndOfFrame();
         }
 
         while (progressBar.value < 25)
         {
-            progressBar.value += rate;
-            rate *= .999f;
+            progressBar.value += rate * Time.deltaTime * 60;
+            rate *= .9995f;
             yield return new WaitForEndOfFrame();
         }
 
         yield return new WaitForSeconds(.3f);
 
-        rate = .006f;
+        rate = .3f;
 
         while (progressBar.value < 65)
         {
-            progressBar.value += rate;
+            progressBar.value += rate * Time.deltaTime * 60;
             rate *= 1.0015f;
             yield return new WaitForEndOfFrame();
         }
 
         while (progressBar.value < 100)
         {
-            progressBar.value += rate;
+            progressBar.value += rate * Time.deltaTime * 60;
             yield return new WaitForEndOfFrame();
         }
 
@@ -112,14 +112,14 @@ public class OSOverlay : MonoBehaviour
 
         while (progressBar.value < 50)
         {
-            progressBar.value += rate;
+            progressBar.value += rate * Time.deltaTime * 60;
             rate *= 1.003f;
             yield return new WaitForEndOfFrame();
         }
 
         while (progressBar.value < 100)
         {
-            progressBar.value += rate;
+            progressBar.value += rate * Time.deltaTime * 60;
             yield return new WaitForEndOfFrame();
         }
 

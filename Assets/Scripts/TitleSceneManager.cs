@@ -99,6 +99,7 @@ public class TitleSceneManager : MonoBehaviour
     public void EnableOptionsMenu()
     {
         optionsMenu.SetActive(true);
+        optionsButton.DehighlightText();
         ToggleButtonInteractability(false);
     }
 

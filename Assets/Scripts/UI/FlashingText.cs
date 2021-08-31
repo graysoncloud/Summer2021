@@ -5,7 +5,7 @@ using TMPro;
 
 public class FlashingText : TextMeshProUGUI
 {
-    private Color toChangeBy = new Color(.0004f, .0004f, .0004f, 0f);
+    private Color toChangeBy = new Color(.01f, .01f, .01f, 0f);
     private bool ascending;
 
     protected override void Start()
@@ -19,12 +19,12 @@ public class FlashingText : TextMeshProUGUI
 
         if (ascending)
         {
-            color += toChangeBy;
+            color += toChangeBy * Time.deltaTime * 60;
             if (color.r >= 1)
                 ascending = false;
         } else
         {
-            color -= toChangeBy;
+            color -= toChangeBy * Time.deltaTime * 60;
             if (color.r <= .55)
                 ascending = true;
         }

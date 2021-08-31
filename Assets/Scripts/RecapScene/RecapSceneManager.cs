@@ -99,6 +99,8 @@ public class RecapSceneManager : MonoBehaviour
         else if (toAdd.usesMinPrice)
             gradeDividend += CostDisplay.instance.GetCost();
 
+        gradeDividend *= (1 + (.1f * DrugManager.instance.GetUnstableCount()));
+
         // Initialized at 1 so there's not divide by 0 errors
         float gradeDivisor = 1;
 
@@ -232,7 +234,7 @@ public class RecapSceneManager : MonoBehaviour
         while (qualifier != "AM" || minutes != 0 || hours != 9)
         {
 
-            minutes -= 1;
+            minutes -= 2;
             if (minutes < 0)
             {
                 hours -= 1;
@@ -251,7 +253,7 @@ public class RecapSceneManager : MonoBehaviour
             timeDecreasingText.text = hours + ":" + minutesAsString + " " + qualifier;
 
             if (!(float.Parse(bonusDecreasingText.text.Substring(1)) == 0f))
-                bonusDecreasingText.text = "$" + (float.Parse(bonusDecreasingText.text.Substring(1)) - 1.25).ToString();
+                bonusDecreasingText.text = "$" + (float.Parse(bonusDecreasingText.text.Substring(1)) - 2.5).ToString();
 
             yield return new WaitForEndOfFrame(); 
         }
@@ -294,7 +296,6 @@ public class RecapSceneManager : MonoBehaviour
         yield return new WaitForSeconds(.8f);
         grossAmountText.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(1.2f);
         nextDayButton.gameObject.SetActive(true);
     }
 

@@ -17,7 +17,7 @@ public class MusicManager : MonoBehaviour
     public AudioSource audioSource;
 
     private Coroutine fadeInCoroutine;
-    private Coroutine fadeOutCoroutine;
+    public Coroutine fadeOutCoroutine;
     private Coroutine volumeChangeCoroutine;
 
     public Coroutine backgroundMusicPlayerInstance;
@@ -132,16 +132,16 @@ public class MusicManager : MonoBehaviour
 
         while (audioSource.volume > 0)
         {
-
-            audioSource.volume -= (float)(.004 * PlayerPrefs.GetFloat("MusicVolume"));
-            yield return new WaitForSeconds(.005f);
-
+            if (audioSource.volume > .1)
+                audioSource.volume -= (float)(.45 * Time.deltaTime * PlayerPrefs.GetFloat("MusicVolume"));
             // Allows fade out to be more gradual
-            if (audioSource.volume < (.1 * PlayerPrefs.GetFloat("MusicVolume")))
-                yield return new WaitForSeconds(.022f);
+            else if (audioSource.volume < (.13 * PlayerPrefs.GetFloat("MusicVolume")))
+                audioSource.volume -= (float)(.08 * Time.deltaTime * PlayerPrefs.GetFloat("MusicVolume"));
+            else if (audioSource.volume < (.02 * PlayerPrefs.GetFloat("MusicVolume")))
+                audioSource.volume -= (float)(.015 * Time.deltaTime * PlayerPrefs.GetFloat("MusicVolume"));
 
-            if (audioSource.volume < (.02 * PlayerPrefs.GetFloat("MusicVolume")))
-                yield return new WaitForSeconds(.04f);
+            yield return new WaitForEndOfFrame();
+
         }
 
         audioSource.Stop();

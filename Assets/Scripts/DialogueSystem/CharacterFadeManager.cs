@@ -89,7 +89,7 @@ public class CharacterFadeManager : MonoBehaviour
 
         numActiveFades++;
 
-        Color fadeIncrement = new Color(.01f, .01f, .01f, .01f);
+        Color fadeIncrement = new Color(.012f, .012f, .012f, .012f);
 
         // Fade the character in
         if (fadeEvent.fadeIn)
@@ -114,9 +114,9 @@ public class CharacterFadeManager : MonoBehaviour
             // Move and fade in
             while (charToFade.GetComponent<SpriteRenderer>().color.a < 1)
             {
-                charToFade.transform.position -= new Vector3(.02f, 0f, 0f);
+                charToFade.transform.position -= new Vector3(.025f, 0f, 0f);
                 spriteRenderer.color += fadeIncrement;
-                yield return new WaitForSeconds(fadeRate);
+                yield return new WaitForEndOfFrame();
             }
 
         }
@@ -127,13 +127,13 @@ public class CharacterFadeManager : MonoBehaviour
             Character charToFade = currentChars[fadeEvent.characterToFade.ToString()];
             SpriteRenderer spriteRenderer = charToFade.GetComponent<SpriteRenderer>();
 
-            float fadeRate = .01f;
+            //float fadeRate = .01f;
 
             while (charToFade.GetComponent<SpriteRenderer>().color.a > 0)
             {
-                charToFade.transform.position += new Vector3(.02f, 0f, 0f);
+                charToFade.transform.position += new Vector3(.025f, 0f, 0f);
                 spriteRenderer.color += (fadeIncrement * -1);
-                yield return new WaitForSeconds(fadeRate);
+                yield return new WaitForEndOfFrame();
             }
 
             currentChars.Remove(fadeEvent.characterToFade.ToString());

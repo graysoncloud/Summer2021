@@ -15,9 +15,9 @@ public class ConversationManager : MonoBehaviour
     // Serves as a indicator of whether or not the conversation can continue (all animations must finish before clicking past a dialogue line)
     private int activeAnimations;
 
-    private float periodDelay = .33f;
-    private float punctuationDelay = .2f;
-    private float normalDelay = .066f;
+    private float periodDelay = .25f;
+    private float punctuationDelay = .16f;
+    private float normalDelay = .05f;
     private float readbackSpeedModifier = 1;
 
     private void Awake()

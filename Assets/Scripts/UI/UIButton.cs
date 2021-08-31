@@ -14,7 +14,7 @@ public class UIButton : MonoBehaviour
     private Color disabledColor;
 
     [SerializeField]
-    [Range(0f, 1f)]
+    [Range(0f, 10f)]
     private float fadeTime;
 
     private Coroutine highlightCoroutine;
@@ -47,7 +47,7 @@ public class UIButton : MonoBehaviour
     {
         while (gameObject.GetComponent<TextMeshProUGUI>().color != highlightedColor)
         {
-            gameObject.GetComponent<TextMeshProUGUI>().color = Color.Lerp(gameObject.GetComponent<TextMeshProUGUI>().color, highlightedColor, fadeTime);
+            gameObject.GetComponent<TextMeshProUGUI>().color = Color.Lerp(gameObject.GetComponent<TextMeshProUGUI>().color, highlightedColor, fadeTime * Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
 
@@ -57,7 +57,7 @@ public class UIButton : MonoBehaviour
     {
         while (gameObject.GetComponent<TextMeshProUGUI>().color != defaultColor)
         {
-            gameObject.GetComponent<TextMeshProUGUI>().color = Color.Lerp(gameObject.GetComponent<TextMeshProUGUI>().color, defaultColor, fadeTime);
+            gameObject.GetComponent<TextMeshProUGUI>().color = Color.Lerp(gameObject.GetComponent<TextMeshProUGUI>().color, defaultColor, fadeTime * Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
 

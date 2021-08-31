@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+        Application.targetFrameRate = 60;
     }
 
     private void Start()
@@ -62,7 +63,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             // Escape menu won't trigger while looking at title scene or if a dialogue sequence is active
-            if (SceneChangeManager.instance.currentScene.name != "TitleScene" && !sequenceActive && !escapeMenu.gameObject.activeSelf)
+            if (SceneChangeManager.instance.currentScene.name != "TitleScene" && !sequenceActive && !escapeMenu.gameObject.activeSelf && TutorialManager.instance.activeTutorial == null)
             {
                 optionsMenuActive = true;
                 escapeMenu.OpenMainMenu();
@@ -183,7 +184,10 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+
+
     public enum SaveableEvent {
+        // Ignore "not" events
         TookPill,
         WatchedNews,
         WateredPlants,

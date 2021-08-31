@@ -166,11 +166,12 @@ public class DrugManager : MonoBehaviour
         {
             lastTimeStamp++;
             hours = (int)Mathf.Floor(lastTimeStamp / 4) + 9;
-            if (hours >= 13)
-            {
-                hours -= 12;
+
+            if (hours == 12)
                 qualifier = "PM";
-            }
+
+            if (hours >= 13)
+                hours -= 12;
 
             if (timeElapsed > 480)
                 PlayerPrefs.SetInt("IsLate", 1);

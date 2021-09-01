@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 1.3 Con
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 11400000, guid: e67e36f69da5d534c8f3f7c6be123cfd, type: 2}
+  isNews: 0
+  dialogueLines:
+  - speaker: 4
+    dialogue: Sorry about bothering you yesterday.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 1
+      animationName: 2
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: "It wasn\u2019t my place to put you in an uncomfortable situation.
+      And if you had listened to me, you might have gotten into serious trouble."
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: "I\u2019ll give you a few more subtle ideas today. Feel free to ignore
+      them if you want."
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: "Just know you\u2019d be doing a lot of good for a lot of people."
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

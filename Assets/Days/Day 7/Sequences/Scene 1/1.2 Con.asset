@@ -12,28 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1.2 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: e67e36f69da5d534c8f3f7c6be123cfd, type: 2}
+  isNews: 0
   dialogueLines:
   - speaker: 4
-    dialogue: Sorry about bothering you yesterday.
+    dialogue: "I\u2019m sorry about yesterday.\r"
     offset: {x: 0, y: 0}
     animations:
-    - toAnimate: 4
-      animationName: 14
+    - toAnimate: 1
+      animationName: 2
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: "It wasn\u2019t my place to put you in an uncomfortable situation.
-      And if you had listened to me, you might have gotten into serious trouble."
+    dialogue: "I didn\u2019t expect Maria to keep such a sharp eye on your work...
+      I guess I shouldn\u2019t have asked something so extreme in the first place.\r"
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: "I\u2019ll give you a few more subtle ideas today. Feel free to ignore
-      them if you want."
+    dialogue: "I\u2019ll write down a few more subtle ideas today. Do them if you
+      want. Or ignore them."
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

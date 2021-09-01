@@ -12,37 +12,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1.1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: e67e36f69da5d534c8f3f7c6be123cfd, type: 2}
+  isNews: 0
   dialogueLines:
   - speaker: 4
-    dialogue: "I\u2019m sorry about yesterday.\r"
+    dialogue: Thanks for your help yesterday.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: I'll be honest, I wasn't sure we'd get away with it that easily. Mazer
+      keeps a close watch in its product. Maria must really trust you.
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 4
-      animationName: 14
+      animationName: 20
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: So what now?
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 4
+      animationName: 17
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: "I didn\u2019t expect them to keep such a sharp eye on your work...
-      I guess I shouldn\u2019t have asked something so extreme in the first place.\r"
+    dialogue: I'll keep bringing you my revised suggestions. If you feel like any
+      of them are too risky, don't do it.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: "I\u2019ll write down a few more subtle ideas today. Do them if you
-      want. Or ignore them."
+    dialogue: Mazer has eyes everywhere.
     offset: {x: 0, y: 0}
-    animations: []
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 4
-    dialogue: "Just know you\u2019d be doing a lot of good for a lot of people."
-    offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 4
+      animationName: 20
     animOnly: 0
     animLength: 0
     SFX: 

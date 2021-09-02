@@ -10,30 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: News 5
+  m_Name: News 4
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
   isNews: 1
   dialogueLines:
   - speaker: 0
-    dialogue: MEXICO ISSUES WARNING TO PETROMERICA AFTER COMPANY MOVES EQUIPMENT
-      INTO MEXICAN TERRITORY
+    dialogue: OIL DEPOSIT FOUND NEAR CIUDAD JUAREZ AND EL PASO BORDER, BRINGS BORDER
+      SPECIFICATIONS INTO QUESTION
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: LAST LEG OF WILDFIRES LEAVES YOSEMITE NATIONAL PARK WITH 65% OF FORESTS
-      LOST
+    dialogue: "FLORIDA MAN IN CLOWN SUIT HOLDS BARISTA HOSTAGE, BLAMES \u201CSOCIETY\u201D"
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: "\rHEARTWARMING: EIGHT YEAR OLD LEMONADE ENTREPRENEUR WORKS 40 HOURS
-      A WEEK TO PAY OFF MOTHER\u2019S STUDENT DEBT\r\n"
+    dialogue: MASS EXODUS OF NORTHEAST AFRICAN IMMIGRANTS AS THIRD SUDANESE CIVIL
+      WAR RAGES
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

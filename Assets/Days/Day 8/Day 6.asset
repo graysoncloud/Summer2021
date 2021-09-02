@@ -19,11 +19,10 @@ MonoBehaviour:
     trigger: 1
   - initialEvent: {fileID: 11400000, guid: 5a8c10d0f0a9aae4ebf26eca57206351, type: 2}
     trigger: 8
-  newsEvent: {fileID: 11400000, guid: b1a646e0e03fb86409cf8b8aa8be895e, type: 2}
+  newsEvent: {fileID: 11400000, guid: 9467e634a39b75745a132cf9948d0846, type: 2}
   contracts: []
+  dayChemicals: []
   contractTypeList: 
   storyContracts: []
   easyContracts: []
   hardContracts: []
-  numEasy: 0
-  numHard: 0

@@ -81,7 +81,7 @@ public class GlowEffect : MonoBehaviour
         }
     }
 
-    public void OnMouseExit() { 
+    public void OnMouseExit() {
         if(hoverGlow) {
             hovering = false;
             glowSettings.GlowBrightness = 0;

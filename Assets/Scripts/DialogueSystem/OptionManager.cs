@@ -64,6 +64,7 @@ public class OptionManager : MonoBehaviour
                 }
                 if (option.paths[i].checkEvent)
                 {
+                    Debug.Log(PlayerPrefs.GetInt(option.paths[i].eventToCheck.ToString()) + option.paths[i].eventToCheck.ToString());
                     if (PlayerPrefs.GetInt(option.paths[i].eventToCheck.ToString()) == 1)
                         execute = (execute && true);
                     else

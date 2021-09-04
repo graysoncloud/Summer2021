@@ -132,6 +132,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("TookPill", 0);
         PlayerPrefs.SetInt("WatchedNews", 0);
         PlayerPrefs.SetInt("IsLate", 0);
+        PlayerPrefs.SetInt("WateredPlants", 0);
 
         DrugManager.instance.ResetTimeElapsed();
 

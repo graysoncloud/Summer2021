@@ -85,10 +85,12 @@ public class FlowerPot : Interactable
                 if(decay > 0) {
                     decay -= 1;
                     hasBeenWateredToday = true;     
-                    PlayerPrefs.SetInt("WateredPlants", 1);
-                    PlayerPrefs.SetInt("NotWateredPlants", 0);              
+                    //PlayerPrefs.SetInt("WateredPlants", 1);
+                    //PlayerPrefs.SetInt("NotWateredPlants", 0);              
                 }
-                
+
+                // Above code wasn't working for the first day for some reason, this fixed it
+                PlayerPrefs.SetInt("WateredPlants", 1);
             }
 
             if(waterLevel < maxWaterLevel) {

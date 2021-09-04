@@ -22,7 +22,8 @@ public class UIButton : MonoBehaviour
 
     public void OnMouseDown()
     {
-        DehighlightText();
+        if(GetComponent<EventTrigger>().enabled != false)
+            DehighlightText();
     }
 
     public void HighlightText()

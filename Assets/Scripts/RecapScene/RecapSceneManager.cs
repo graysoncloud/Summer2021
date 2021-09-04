@@ -118,7 +118,7 @@ public class RecapSceneManager : MonoBehaviour
         switch (grade)
         {
             case float n when n >= 1:
-                toAdd.grade = "A+";
+                toAdd.grade = "S";
                 break;
             case float n when n >= .9f:
                 toAdd.grade = "A";
@@ -126,11 +126,8 @@ public class RecapSceneManager : MonoBehaviour
             case float n when n >= .8f:
                 toAdd.grade = "B";
                 break;
-            case float n when n >= .7f:
-                toAdd.grade = "C";
-                break;
             default:
-                toAdd.grade = "D";
+                toAdd.grade = "C";
                 break;
         }
 
@@ -197,7 +194,6 @@ public class RecapSceneManager : MonoBehaviour
             grades[i].gameObject.SetActive(false);
         }
 
-        finishedContracts = new List<FinishedContract>();
     }
 
     public void RevealBonusScene()
@@ -205,12 +201,13 @@ public class RecapSceneManager : MonoBehaviour
         nextDayButton.gameObject.SetActive(false);
         latePenaltyText.gameObject.SetActive(false);
         gradeBonusText.gameObject.SetActive(false);
+        bonusDecreasingText.gameObject.SetActive(false);
 
-        string minutesAsString = DrugManager.instance.minutes.ToString();
-        if (DrugManager.instance.minutes < 10)
-            minutesAsString = "0" + DrugManager.instance.minutes;
+        //string minutesAsString = DrugManager.instance.minutes.ToString();
+        //if (DrugManager.instance.minutes < 10)
+        //    minutesAsString = "0" + DrugManager.instance.minutes;
 
-        timeDecreasingText.text = DrugManager.instance.hours + ":" + minutesAsString + " " + DrugManager.instance.qualifier;
+        //timeDecreasingText.text = DrugManager.instance.hours + ":" + minutesAsString + " " + DrugManager.instance.qualifier;
 
         totalText.gameObject.SetActive(false);
         grossAmountText.gameObject.SetActive(false);
@@ -223,40 +220,47 @@ public class RecapSceneManager : MonoBehaviour
     private IEnumerator BonusCouroutine()
     {
         // Maybe increase salary over time?
-        bonusDecreasingText.text = "$1000";
+        bonusDecreasingText.text = "$300";
 
         int hours = DrugManager.instance.hours;
         int minutes = DrugManager.instance.minutes;
 
         string qualifier = DrugManager.instance.qualifier;
+
+        // Title is always revealed
+
         yield return new WaitForSeconds(1f);
-    
-        while (qualifier != "AM" || minutes != 0 || hours != 9)
-        {
 
-            minutes -= 2;
-            if (minutes < 0)
-            {
-                hours -= 1;
-                minutes = 59;
-                if (hours <= 0)
-                {
-                    hours = 12;
-                    qualifier = "AM";
-                }
-            }
+        //while (qualifier != "AM" || minutes != 0 || hours != 9)
+        //{
 
-            string minutesAsString = minutes.ToString();
-            if (minutes < 10)
-                minutesAsString = "0" + minutes.ToString();
+        //    minutes -= 2;
+        //    if (minutes < 0)
+        //    {
+        //        hours -= 1;
+        //        minutes = 59;
+        //        if (hours <= 0)
+        //        {
+        //            hours = 12;
+        //            qualifier = "AM";
+        //        }
+        //    }
 
-            timeDecreasingText.text = hours + ":" + minutesAsString + " " + qualifier;
+        //    string minutesAsString = minutes.ToString();
+        //    if (minutes < 10)
+        //        minutesAsString = "0" + minutes.ToString();
 
-            if (!(float.Parse(bonusDecreasingText.text.Substring(1)) == 0f))
-                bonusDecreasingText.text = "$" + (float.Parse(bonusDecreasingText.text.Substring(1)) - 2.5).ToString();
+        //    timeDecreasingText.text = hours + ":" + minutesAsString + " " + qualifier;
 
-            yield return new WaitForEndOfFrame(); 
-        }
+        //    if (!(float.Parse(bonusDecreasingText.text.Substring(1)) == 0f))
+        //        bonusDecreasingText.text = "$" + (float.Parse(bonusDecreasingText.text.Substring(1)) - 2.5).ToString();
+
+        //    yield return new WaitForEndOfFrame(); 
+        //}
+
+        //yield return new WaitForSeconds(1f);
+
+        bonusDecreasingText.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(1f);
 
@@ -267,12 +271,13 @@ public class RecapSceneManager : MonoBehaviour
         foreach (FinishedContract FC in finishedContracts)
         {
             switch (FC.grade) {
-                case "A+": toAdd += 30; break;
-                case "A": toAdd += 25; break;
-                case "B": toAdd += 10; break;
+                case "S": toAdd += 30; Debug.Log("A logged"); break;
+                case "A": toAdd += 15; Debug.Log("A logged"); break;
+                case "B": toAdd += 5; Debug.Log("A logged"); break;
                 default: break;
             }
         }
+        Debug.Log(toAdd);
         PlayerPrefs.SetFloat("TotalMoney", PlayerPrefs.GetFloat("TotalMoney") + toAdd);
         gradeBonusText.text = "+$" + toAdd;
 
@@ -285,9 +290,30 @@ public class RecapSceneManager : MonoBehaviour
             default: latePenaltyText.text = "-$0"; break;
         }
         latePenaltyText.gameObject.SetActive(true);
+
+        //yield return new WaitForSeconds(.2f);
+
+        // Fun little decreasing animation
+        int i = 0;
+        while (i < int.Parse(latePenaltyText.text.Substring(latePenaltyText.text.IndexOf('$') + 1)))
+        {
+            bonusDecreasingText.text = "$" + (float.Parse(bonusDecreasingText.text.Substring(1)) - 5).ToString();
+            i += 5;
+            yield return new WaitForEndOfFrame();
+        }
+
         yield return new WaitForSeconds(.7f);
 
         gradeBonusText.gameObject.SetActive(true);
+
+        // Another decreasing animation
+        int j = 0;
+        while (j < int.Parse(gradeBonusText.text.Substring(latePenaltyText.text.IndexOf('$') + 1)))
+        {
+            bonusDecreasingText.text = "$" + (float.Parse(bonusDecreasingText.text.Substring(1)) + 5).ToString();
+            j += 5;
+            yield return new WaitForEndOfFrame();
+        }
 
         yield return new WaitForSeconds(1.2f);
         totalText.gameObject.SetActive(true);
@@ -295,6 +321,9 @@ public class RecapSceneManager : MonoBehaviour
 
         yield return new WaitForSeconds(.8f);
         grossAmountText.gameObject.SetActive(true);
+
+        // Resets list for next day
+        finishedContracts = new List<FinishedContract>();
 
         nextDayButton.gameObject.SetActive(true);
     }

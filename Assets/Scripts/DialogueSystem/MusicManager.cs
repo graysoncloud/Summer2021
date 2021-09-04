@@ -45,7 +45,6 @@ public class MusicManager : MonoBehaviour
         // Initial delay
         //yield return new WaitForSeconds(Random.value * 10);
 
-
         while (SceneChangeManager.instance.currentScene.name != "RecapScene")
         {
             bool firstPlay = true;
@@ -128,7 +127,7 @@ public class MusicManager : MonoBehaviour
 
         audioSource.volume = PlayerPrefs.GetFloat("MusicVolume");
 
-        Debug.Log(audioSource.volume);
+        //Debug.Log(audioSource.volume);
 
         while (audioSource.volume > 0)
         {

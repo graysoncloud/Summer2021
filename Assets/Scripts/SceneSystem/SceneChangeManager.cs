@@ -183,8 +183,8 @@ public class SceneChangeManager : MonoBehaviour
                 yield return new WaitForEndOfFrame();
 
                 // Doubles fade length for long fade
-                if (sceneChange.transitionStyle.ToString() == "longFade")
-                    yield return new WaitForEndOfFrame();
+                //if (sceneChange.transitionStyle.ToString() == "longFade")
+                //    yield return new WaitForEndOfFrame();
             }
             fadeOutCover.gameObject.SetActive(false);
         }

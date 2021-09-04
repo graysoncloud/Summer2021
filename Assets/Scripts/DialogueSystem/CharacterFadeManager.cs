@@ -61,9 +61,7 @@ public class CharacterFadeManager : MonoBehaviour
                     charToFade.transform.parent = ElizabethLocation.transform;
                 }
 
-                Debug.Log(charToFade.transform.position.x);
                 charToFade.transform.localPosition = charToFade.startLocation;
-                Debug.Log(charToFade.transform.position.x);
 
                 currentChars.Add(fadeEvent.characterToFade.ToString(), charToFade);
             }
@@ -85,7 +83,7 @@ public class CharacterFadeManager : MonoBehaviour
 
     public IEnumerator ExecuteCharacterFade(CharacterFade.Fade fadeEvent)
     {
-        Debug.Log("Executing");
+        //Debug.Log("Executing");
 
         numActiveFades++;
 

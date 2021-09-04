@@ -90,6 +90,8 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetFloat("TotalMoney", 0);
 
+        PlayerPrefs.SetInt("NumAltContractsFinished", 0);
+
         foreach (CharacterName character in System.Enum.GetValues(typeof(CharacterName)))
         {
             // Load save state here
@@ -197,7 +199,8 @@ public class GameManager : MonoBehaviour
         FinishedLate,
         NotTookPill,
         HelpedRobbie,
-        IsLate
+        IsLate,
+        FinishedDay6SpecialContract
     }
 
 }

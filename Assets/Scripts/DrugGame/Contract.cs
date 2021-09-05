@@ -61,6 +61,16 @@ public class Contract : ScriptableObject
     public int desirableEffectMin;
     public int optimalDesirableEffectAmount;
 
+    // Optional
+    public bool usesOptional;
+    public bool isSpecialContract1;
+    public bool isSpecialContract2;
+    public bool usesOptionalDesireable;
+    public bool usesOptionalUndesirable;
+    public EffectType optionalEffect;
+    public int optionalUndesirableMax;
+    public int optionalDesirableMin;
+
     #if UNITY_EDITOR
     [CustomEditor(typeof(Contract))]
     public class ContractEditor : Editor
@@ -126,6 +136,27 @@ public class Contract : ScriptableObject
                 myScript.desirableEffect = (EffectType)EditorGUILayout.EnumPopup("Effect Type", myScript.desirableEffect);
                 myScript.desirableEffectMin = EditorGUILayout.IntField("Min", myScript.desirableEffectMin);
                 myScript.optimalDesirableEffectAmount = EditorGUILayout.IntField("Optimal Amount", myScript.optimalDesirableEffectAmount);
+            }
+
+            // Optional Effects (only 1 supported but can be either dirable or undesirable)
+            myScript.usesOptional = GUILayout.Toggle(myScript.usesOptional, "Uses Optional Effect");
+            if (myScript.usesOptional)
+            {
+                myScript.isSpecialContract1 = GUILayout.Toggle(myScript.isSpecialContract1, "Is the first special contract");
+                myScript.isSpecialContract2 = GUILayout.Toggle(myScript.isSpecialContract2, "Is the second special contract");
+                myScript.usesOptionalDesireable = GUILayout.Toggle(myScript.usesOptionalDesireable, "Uses Desirable Effect");
+                myScript.usesOptionalUndesirable = GUILayout.Toggle(myScript.usesOptionalUndesirable, "Uses Undesirable Effect");
+                if (myScript.usesOptionalDesireable || myScript.usesOptionalUndesirable)
+                {
+                    myScript.desirableEffect = (EffectType)EditorGUILayout.EnumPopup("Effect Type", myScript.desirableEffect);
+                }
+                if (myScript.usesOptionalDesireable)
+                {
+                    myScript.optionalDesirableMin = EditorGUILayout.IntField("Min", myScript.optionalDesirableMin);
+                } else if (myScript.usesOptionalUndesirable)
+                {
+                    myScript.optionalUndesirableMax = EditorGUILayout.IntField("Max", myScript.optionalUndesirableMax);
+                }
             }
 
             // Could add multiple desirable / undesirable effects

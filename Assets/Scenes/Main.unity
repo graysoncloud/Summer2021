@@ -55795,6 +55795,7 @@ MonoBehaviour:
   drugToOfficeSceneChange: {fileID: 11400000, guid: b90e1ba2acd092d40b34299862d89a15, type: 2}
   desiredChems: 0
   undesiredChems: 0
+  optionalChems: 0
   timeText: {fileID: 526002169}
   hours: 0
   minutes: 0

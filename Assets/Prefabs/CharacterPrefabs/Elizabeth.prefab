@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultAnimation: 21
-  startLocation: {x: -7.11, y: -1.39, z: -1}
+  startLocation: {x: 0, y: 0, z: -1}
 --- !u!212 &6747791553878151684
 SpriteRenderer:
   m_ObjectHideFlags: 0

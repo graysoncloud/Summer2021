@@ -33,4 +33,5 @@ public enum AnimationName
     WesleyNeutral, WesleySmirk, WesleyLaughing, WesleySinister,
     RobbieNeutral, RobbieRelaxed, RobbieSmile, RobbieParanoid,
     ElizabethNeutral, ElizabethLaughing, ElizabethCoughing, ElizabethCoughingBad,
+    WesleyBigLaugh,
 }

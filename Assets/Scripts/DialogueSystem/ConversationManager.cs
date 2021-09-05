@@ -103,6 +103,10 @@ public class ConversationManager : MonoBehaviour
                 foreach (Conversation.AnimationBit anim in conversation.dialogueLines[i].animations)
                 {
                     Character toAnimate = CharacterFadeManager.instance.currentChars[anim.toAnimate.ToString()];
+                    Debug.Log(anim.toAnimate.ToString());
+                    Debug.Log(CharacterFadeManager.instance.currentChars[anim.toAnimate.ToString()].name);
+
+                    Debug.Log(currentConversation.dialogueLines[i].animations[0].animationName.ToString());
                     toAnimate.GetComponent<Animator>().Play(currentConversation.dialogueLines[i].animations[0].animationName.ToString());
                 }
 

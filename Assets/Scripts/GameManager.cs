@@ -200,7 +200,8 @@ public class GameManager : MonoBehaviour
         NotTookPill,
         HelpedRobbie,
         IsLate,
-        FinishedDay6SpecialContract
+        SpecialContract1,
+        SpecialContract2
     }
 
 }

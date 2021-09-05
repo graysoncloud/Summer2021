@@ -23,7 +23,7 @@ public class DrugManager : MonoBehaviour
 
     private VolatilityBar dangerBar;
 
-    public int desiredChems = 0, undesiredChems = 0;
+    public int desiredChems = 0, undesiredChems = 0, optionalChems = 0;
 
     [SerializeField]
     private TextMeshProUGUI timeText;
@@ -341,6 +341,11 @@ public class DrugManager : MonoBehaviour
     public EffectType GetUndesireable()
     {
         return GameManager.instance.GetCurrentContract().undesirableEffect;
+    }
+
+    public EffectType GetOptionalEffect()
+    {
+        return GameManager.instance.GetCurrentContract().optionalEffect;
     }
 
     public int GetVolMax()

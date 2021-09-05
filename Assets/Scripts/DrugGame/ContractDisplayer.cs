@@ -174,6 +174,11 @@ public class ContractDisplayer : MonoBehaviour
         }
     }
 
+    public void UpdateOptional(int amount)
+    {
+        // To do
+    }
+
     public bool EvaluateContract()
     {
         Contract currentContract = GameManager.instance.GetCurrentContract();
@@ -213,6 +218,45 @@ public class ContractDisplayer : MonoBehaviour
             if (DrugManager.instance.desiredChems < currentContract.desirableEffectMin)
                 return false;
             Debug.Log("Des good");
+        }
+
+        if (currentContract.usesOptional)
+        {
+            bool cleared = false;
+            if (currentContract.usesOptionalDesireable)
+            {
+                if (DrugManager.instance.optionalChems >= currentContract.optionalDesirableMin)
+                    cleared = true;
+            } else if (currentContract.usesOptionalUndesirable)
+            {
+                if (DrugManager.instance.optionalChems <= currentContract.optionalUndesirableMax)
+                    cleared = true;
+            } else
+            {
+                Debug.LogWarning("Optional Contract with no condition");
+            }
+            if (cleared == true)
+            {
+                if (currentContract.isSpecialContract1)
+                {
+                    PlayerPrefs.SetInt("SpecialContract1", 1);
+                }
+                if (currentContract.isSpecialContract2)
+                {
+                    PlayerPrefs.SetInt("SpecialContract2", 1);
+                }
+                PlayerPrefs.SetInt("OptionalCompleted", PlayerPrefs.GetInt("OptionalCompleted", 0) + 1);
+            } else
+            {
+                if (currentContract.isSpecialContract1)
+                {
+                    PlayerPrefs.SetInt("SpecialContract1", 0);
+                }
+                if (currentContract.isSpecialContract2)
+                {
+                    PlayerPrefs.SetInt("SpecialContract2", 0);
+                }
+            }
         }
 
         return true;

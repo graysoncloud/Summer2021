@@ -29,6 +29,14 @@ MonoBehaviour:
   undesirableEffectMax: 0
   optimalUndesirableEffectAmount: 0
   usesDesirableEffect: 1
-  desirableEffect: 2
+  desirableEffect: 0
   desirableEffectMin: 6
   optimalDesirableEffectAmount: 6
+  usesOptional: 0
+  isSpecialContract1: 0
+  isSpecialContract2: 1
+  usesOptionalDesireable: 1
+  usesOptionalUndesirable: 0
+  optionalEffect: 0
+  optionalUndesirableMax: 0
+  optionalDesirableMin: 0

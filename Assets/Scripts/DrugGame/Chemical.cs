@@ -7,8 +7,8 @@ public class Chemical : MonoBehaviour
     public float cost = 0;
     public EffectType[] effects;
     public int[] effectAmount;
-    public bool desirable = false, undesirable = false;
-    private int benefit = 0, detriment = 0, benefitAmount = 0, detrimentAmount = 0;
+    public bool desirable = false, undesirable = false, optionalDesire = false;
+    private int benefit = 0, detriment = 0, optional = 0, benefitAmount = 0, detrimentAmount = 0, optionalDesireAmount = 0;
     private const float rotateSpeed = 15f;
     private float rotateTarget = 0, internalRotation = 0;
 
@@ -93,6 +93,7 @@ public class Chemical : MonoBehaviour
 
             EffectType wanted = DrugManager.instance.GetDesireable();
             EffectType unwanted = DrugManager.instance.GetUndesireable();
+            EffectType optional = DrugManager.instance.GetOptionalEffect();
 
             int i = 0;
             foreach (var effect in effects)
@@ -113,6 +114,15 @@ public class Chemical : MonoBehaviour
                         detrimentAmount = 1;
                     else
                         detrimentAmount = effectAmount[i];
+                }
+
+                if (effect == optional)
+                {
+                    optionalDesire = true;
+                    if (i + 1 > effectAmount.Length)
+                        optionalDesireAmount = 1;
+                    else
+                        optionalDesireAmount = effectAmount[i];
                 }
                 i++;
             }
@@ -641,22 +651,6 @@ public class Chemical : MonoBehaviour
         // call after statuses are changed
         if (desirable)
         {
-            /*benefitValue.UpdateBenefitValue(-benefit);
-            benefit = 0;
-            foreach (string status in connectionStatuses)
-            {
-                if (status == "Positive")
-                {
-                    if (!amplified)
-                        benefit++;
-                    else
-                        benefit += 2;
-                }
-            }
-            if (!amplified)
-                benefit++;
-            else
-                benefit += 2;*/
             benefitValue.UpdateBenefitValue(-benefit); // This code doesn't really make sense but it works
             benefit = benefitAmount;
             benefitValue.UpdateBenefitValue(benefit);
@@ -666,6 +660,13 @@ public class Chemical : MonoBehaviour
             DrugManager.instance.undesiredChems -= detriment;
             detriment = detrimentAmount;
             DrugManager.instance.undesiredChems += detriment;
+            ContractDisplayer.instance.UpdateBadEffect(DrugManager.instance.undesiredChems);
+        }
+        if (optionalDesire)
+        {
+            DrugManager.instance.optionalChems -= optional;
+            optional = optionalDesireAmount;
+            DrugManager.instance.undesiredChems += optional;
             ContractDisplayer.instance.UpdateBadEffect(DrugManager.instance.undesiredChems);
         }
     }
@@ -682,6 +683,12 @@ public class Chemical : MonoBehaviour
             DrugManager.instance.undesiredChems -= detriment;
             detriment = 0;
             ContractDisplayer.instance.UpdateBadEffect(DrugManager.instance.undesiredChems);
+        }
+        if (optionalDesire)
+        {
+            DrugManager.instance.optionalChems -= optional;
+            optional = 0;
+            ContractDisplayer.instance.UpdateOptional(DrugManager.instance.optionalChems);
         }
     }
 

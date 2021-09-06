@@ -16,7 +16,9 @@ public class HelpButton : MonoBehaviour
         textTMP.text = "Help";
     }
     void OnMouseUp(){
-        if(helpMenu.activeSelf){
+        if (GameManager.instance.optionsMenuActive)
+            return;
+        if (helpMenu.activeSelf){
             helpMenu.SetActive(false);
             textTMP.text = "Help";
         }

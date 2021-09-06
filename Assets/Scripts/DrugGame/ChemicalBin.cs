@@ -28,21 +28,23 @@ public class ChemicalBin : MonoBehaviour
     }
 
     private void OnMouseOver(){
-        if(!InfoTooltip.activeSelf){
+        if(!InfoTooltip.activeSelf && !GameManager.instance.optionsMenuActive)
+        {
             InfoTooltip.SetActive(true);
             InfoTooltip.GetComponent<ChemicalInfoDisplayer>().ChangeText(ChemicalPrefab.getInfo());
         }
     }
 
     private void OnMouseExit(){
-        if(InfoTooltip.activeSelf){
+        if(InfoTooltip.activeSelf)
+        {
             InfoTooltip.SetActive(false);
         }
     }
 
     private void OnMouseDown()
     {
-        if (!Printer.instance.solutionPrinted && ActiveContractArea.instance.currentContract != null)
+        if (!Printer.instance.solutionPrinted && ActiveContractArea.instance.currentContract != null && !GameManager.instance.optionsMenuActive)
             CreateDrug();
     }
 
@@ -50,7 +52,7 @@ public class ChemicalBin : MonoBehaviour
     {
         if (DrugManager.instance.currentlyHeldChemical != null) return;
 
-        if (ChemicalPrefab != null)
+        if (ChemicalPrefab != null && !GameManager.instance.optionsMenuActive)
         {
             Chemical newChemical = Instantiate<Chemical>(ChemicalPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
             newChemical.name = ChemicalPrefab.name;//without this, it adds (clone) to the name which is annoying if you try to use them as IDs

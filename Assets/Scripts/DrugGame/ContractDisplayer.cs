@@ -50,6 +50,8 @@ public class ContractDisplayer : MonoBehaviour
             volIndex = currentDisplayItemIndex;
             requirements[currentDisplayItemIndex].text = "Max Volatility";
             values[currentDisplayItemIndex].text = "0/" + contractToDisplay.volatilityMax.ToString();
+            values[currentDisplayItemIndex].color = successColor;
+            requirements[currentDisplayItemIndex].color = successColor;
             currentDisplayItemIndex++;
         }
 
@@ -58,6 +60,8 @@ public class ContractDisplayer : MonoBehaviour
             maxPriceIndex = currentDisplayItemIndex;
             requirements[currentDisplayItemIndex].text = "Max Price";
             values[currentDisplayItemIndex].text = "0/" + contractToDisplay.maxPrice.ToString();
+            values[currentDisplayItemIndex].color = successColor;
+            requirements[currentDisplayItemIndex].color = successColor;
             currentDisplayItemIndex++;
         }
 
@@ -106,6 +110,8 @@ public class ContractDisplayer : MonoBehaviour
             {
                 requirements[4].text = "Max Price";
                 values[4].text = "0/" + contractToDisplay.optionalPriceMax.ToString();
+                values[4].color = optionSuccess;
+                requirements[4].color = optionSuccess;
             }
             else if (contractToDisplay.usesOptionalMinPrice)
             {
@@ -116,6 +122,8 @@ public class ContractDisplayer : MonoBehaviour
             {
                 requirements[4].text = "Max Volatility";
                 values[4].text = "0/" + contractToDisplay.optionalVolMax.ToString();
+                values[4].color = optionSuccess;
+                requirements[4].color = optionSuccess;
             }
             else
             {

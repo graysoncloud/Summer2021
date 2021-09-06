@@ -225,9 +225,12 @@ public class Chemical : MonoBehaviour
         // May have to do things if it is placed, in which case change this structure
         if (isPlaced) return;
 
-        Vector3 toMoveTo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        toMoveTo.z = 0;
-        transform.position = toMoveTo;
+        if (!GameManager.instance.optionsMenuActive)
+        {
+            Vector3 toMoveTo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            toMoveTo.z = 0;
+            transform.position = toMoveTo;
+        }
     }
 
     private void FixedUpdate()
@@ -253,7 +256,8 @@ public class Chemical : MonoBehaviour
 
     private void OnMouseDown()
     {
-        LiftChem();
+        if (!GameManager.instance.optionsMenuActive)
+            LiftChem();
     }
 
     public void RotateConnections(float amount)

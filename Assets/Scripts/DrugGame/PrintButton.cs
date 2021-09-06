@@ -17,8 +17,13 @@ public class PrintButton : MonoBehaviour
         //Printer.instance.GetComponent<SpriteRenderer>().sprite = Printer.instance.printedSolutionSprite;
         //return;
 
+        if (GameManager.instance.optionsMenuActive)
+        {
+            return;
+        }
+
         // Evaluate solution
-        if (true || ContractDisplayer.instance.EvaluateContract())
+        if (ContractDisplayer.instance.EvaluateContract())
         {
             Printer.instance.solutionPrinted = true;
             Printer.instance.printerPaper.SetActive(true);

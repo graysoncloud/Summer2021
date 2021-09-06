@@ -15,8 +15,7 @@ public class ContractDisplayer : MonoBehaviour
     public TextMeshProUGUI[] requirements;
     public TextMeshProUGUI[] values;
 
-    public Color baseColor;
-    public Color successColor;
+    public Color baseColor, successColor, optionColor, optionSuccess;
 
     private void Awake()
     {
@@ -86,6 +85,44 @@ public class ContractDisplayer : MonoBehaviour
             currentDisplayItemIndex++;
         }
 
+        if (contractToDisplay.usesOptional)
+        {
+            if (currentDisplayItemIndex == 5)
+            {
+                Debug.LogWarning("Nathan is lazy so he won't code for a full contract with an optional condition, go yell at him");
+                return;
+            }
+            if (contractToDisplay.usesOptionalDesireable)
+            {
+                requirements[4].text = "Min " + contractToDisplay.optionalEffect.ToString(); //Change 4 to length - 1 in the future aka never
+                values[4].text = "0/" + contractToDisplay.optionalDesirableMin.ToString();
+            } 
+            else if (contractToDisplay.usesOptionalUndesirable)
+            {
+                requirements[4].text = "Max " + contractToDisplay.optionalEffect.ToString();
+                values[4].text = "0/" + contractToDisplay.optionalUndesirableMax.ToString();
+            } 
+            else if (contractToDisplay.usesOptionalMaxPrice)
+            {
+                requirements[4].text = "Max Price";
+                values[4].text = "0/" + contractToDisplay.optionalPriceMax.ToString();
+            }
+            else if (contractToDisplay.usesOptionalMinPrice)
+            {
+                requirements[4].text = "Min Price";
+                values[4].text = "0/" + contractToDisplay.optionalPriceMin.ToString();
+            }
+            else if (contractToDisplay.usesOptionalVol)
+            {
+                requirements[4].text = "Max Volatility";
+                values[4].text = "0/" + contractToDisplay.optionalVolMax.ToString();
+            }
+            else
+            {
+                Debug.LogWarning("Optional condition not found, make sure you've checked a condition");
+            }
+        }
+
     }
 
     public void UpdateVol(int vol)
@@ -102,6 +139,20 @@ public class ContractDisplayer : MonoBehaviour
             {
                 values[volIndex].color = baseColor;
                 requirements[volIndex].color = baseColor;
+            }
+        }
+        if (contractToDisplay.usesOptionalVol)
+        {
+            values[4].text = vol + "/" + contractToDisplay.optionalVolMax.ToString();
+            if (EvalOptionalVol())
+            {
+                values[4].color = optionSuccess;
+                requirements[4].color = optionSuccess;
+            }
+            else
+            {
+                values[4].color = optionColor;
+                requirements[4].color = optionColor;
             }
         }
     }
@@ -134,6 +185,34 @@ public class ContractDisplayer : MonoBehaviour
             {
                 values[minPriceIndex].color = baseColor;
                 requirements[minPriceIndex].color = baseColor;
+            }
+        }
+        if (contractToDisplay.usesOptionalMaxPrice)
+        {
+            values[4].text = price + "/" + contractToDisplay.optionalPriceMax.ToString();
+            if (EvalOptionalMaxPrice())
+            {
+                values[4].color = optionSuccess;
+                requirements[4].color = optionSuccess;
+            }
+            else
+            {
+                values[4].color = optionColor;
+                requirements[4].color = optionColor;
+            }
+        } 
+        else if (contractToDisplay.usesOptionalMinPrice)
+        {
+            values[4].text = price + "/" + contractToDisplay.optionalPriceMin.ToString();
+            if (EvalOptionalMinPrice())
+            {
+                values[4].color = optionSuccess;
+                requirements[4].color = optionSuccess;
+            }
+            else
+            {
+                values[4].color = optionColor;
+                requirements[4].color = optionColor;
             }
         }
     }
@@ -176,7 +255,23 @@ public class ContractDisplayer : MonoBehaviour
 
     public void UpdateOptional(int amount)
     {
-        // To do
+        if (contractToDisplay.usesOptionalDesireable || contractToDisplay.usesOptionalUndesirable)
+        {
+            if (contractToDisplay.usesOptionalUndesirable)
+                values[4].text = amount + "/" + contractToDisplay.optionalUndesirableMax.ToString();
+            else
+                values[4].text = amount + "/" + contractToDisplay.optionalDesirableMin.ToString();
+            if (EvalOptionalEffect())
+            {
+                values[badEffectIndex].color = optionSuccess;
+                requirements[badEffectIndex].color = optionSuccess;
+            }
+            else
+            {
+                values[badEffectIndex].color = optionColor;
+                requirements[badEffectIndex].color = optionColor;
+            }
+        }
     }
 
     public bool EvaluateContract()
@@ -292,6 +387,39 @@ public class ContractDisplayer : MonoBehaviour
     public bool EvalBadEffect()
     {
         if (DrugManager.instance.undesiredChems > contractToDisplay.undesirableEffectMax)
+            return false;
+        return true;
+    }
+    public bool EvalOptionalVol()
+    {
+        int vol = DrugManager.instance.GetVol();
+        if (vol > contractToDisplay.optionalVolMax)
+            return false;
+        return true;
+    }
+    public bool EvalOptionalMaxPrice()
+    {
+        float cost = DrugManager.instance.GetCost();
+        if (cost > contractToDisplay.optionalPriceMax)
+            return false;
+        return true;
+    }
+    public bool EvalOptionalMinPrice()
+    {
+        float cost = DrugManager.instance.GetCost();
+        if (cost < contractToDisplay.optionalPriceMin)
+            return false;
+        return true;
+    }
+    public bool EvalOptionalEffect()
+    {
+        if (DrugManager.instance.optionalChems < contractToDisplay.optionalDesirableMin)
+            return false;
+        return true;
+    }
+    public bool EvalOptionalBadEffect()
+    {
+        if (DrugManager.instance.optionalChems > contractToDisplay.optionalUndesirableMax)
             return false;
         return true;
     }

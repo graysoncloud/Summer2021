@@ -67,9 +67,16 @@ public class Contract : ScriptableObject
     public bool isSpecialContract2;
     public bool usesOptionalDesireable;
     public bool usesOptionalUndesirable;
+    public bool usesOptionalMinPrice;
+    public bool usesOptionalMaxPrice;
+    public bool usesOptionalVol;
     public EffectType optionalEffect;
     public int optionalUndesirableMax;
     public int optionalDesirableMin;
+    public int optionalVolMax;
+    public int optionalPriceMin;
+    public int optionalPriceMax;
+
 
     #if UNITY_EDITOR
     [CustomEditor(typeof(Contract))]
@@ -138,7 +145,7 @@ public class Contract : ScriptableObject
                 myScript.optimalDesirableEffectAmount = EditorGUILayout.IntField("Optimal Amount", myScript.optimalDesirableEffectAmount);
             }
 
-            // Optional Effects (only 1 supported but can be either dirable or undesirable)
+            // Optional Effects (only 1 supported)
             myScript.usesOptional = GUILayout.Toggle(myScript.usesOptional, "Uses Optional Effect");
             if (myScript.usesOptional)
             {
@@ -146,9 +153,21 @@ public class Contract : ScriptableObject
                 myScript.isSpecialContract2 = GUILayout.Toggle(myScript.isSpecialContract2, "Is the second special contract");
                 myScript.usesOptionalDesireable = GUILayout.Toggle(myScript.usesOptionalDesireable, "Uses Desirable Effect");
                 myScript.usesOptionalUndesirable = GUILayout.Toggle(myScript.usesOptionalUndesirable, "Uses Undesirable Effect");
+                myScript.usesOptionalMinPrice = GUILayout.Toggle(myScript.usesOptionalMinPrice, "Uses Min Price");
+                myScript.usesOptionalMaxPrice = GUILayout.Toggle(myScript.usesOptionalMaxPrice, "Uses Max Price");
+                myScript.usesOptionalVol = GUILayout.Toggle(myScript.usesOptionalVol, "Uses Max Vol");
                 if (myScript.usesOptionalDesireable || myScript.usesOptionalUndesirable)
                 {
-                    myScript.desirableEffect = (EffectType)EditorGUILayout.EnumPopup("Effect Type", myScript.desirableEffect);
+                    myScript.optionalEffect = (EffectType)EditorGUILayout.EnumPopup("Effect Type", myScript.optionalEffect);
+                } else if (myScript.usesOptionalMinPrice)
+                {
+                    myScript.optionalPriceMin = EditorGUILayout.IntField("Min Price", myScript.optionalPriceMin);
+                } else if (myScript.usesOptionalMaxPrice)
+                {
+                    myScript.optionalPriceMax = EditorGUILayout.IntField("Max Price", myScript.optionalPriceMax);
+                } else if (myScript.usesOptionalVol)
+                {
+                    myScript.optionalVolMax = EditorGUILayout.IntField("Max Volatility", myScript.optionalVolMax);
                 }
                 if (myScript.usesOptionalDesireable)
                 {
@@ -157,6 +176,7 @@ public class Contract : ScriptableObject
                 {
                     myScript.optionalUndesirableMax = EditorGUILayout.IntField("Max", myScript.optionalUndesirableMax);
                 }
+                // Please don't check multiple at a time or bad things will happen
             }
 
             // Could add multiple desirable / undesirable effects

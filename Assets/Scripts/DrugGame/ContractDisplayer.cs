@@ -317,19 +317,34 @@ public class ContractDisplayer : MonoBehaviour
 
         if (currentContract.usesOptional)
         {
-            bool cleared = false;
+            bool cleared = true;
             if (currentContract.usesOptionalDesireable)
             {
-                if (DrugManager.instance.optionalChems >= currentContract.optionalDesirableMin)
-                    cleared = true;
+                if (DrugManager.instance.optionalChems < currentContract.optionalDesirableMin)
+                    cleared = false;
             } else if (currentContract.usesOptionalUndesirable)
             {
-                if (DrugManager.instance.optionalChems <= currentContract.optionalUndesirableMax)
-                    cleared = true;
-            } else
+                if (DrugManager.instance.optionalChems > currentContract.optionalUndesirableMax)
+                    cleared = false;
+            } else if (currentContract.usesOptionalMinPrice)
+            {
+                if (cost > currentContract.optionalPriceMax)
+                    cleared = false;
+            } else if (currentContract.usesOptionalMaxPrice)
+            {
+                if (cost < currentContract.optionalPriceMin)
+                    cleared = false;
+            } else if (currentContract.usesOptionalVol)
+            {
+                int vol = DrugManager.instance.GetVol();
+                if (vol > currentContract.optionalVolMax)
+                    cleared = false;
+            }
+            else
             {
                 Debug.LogWarning("Optional Contract with no condition");
             }
+
             if (cleared == true)
             {
                 if (currentContract.isSpecialContract1)

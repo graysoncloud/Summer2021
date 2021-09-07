@@ -8838,7 +8838,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 327198222}
   m_OnClick:
     m_PersistentCalls:
@@ -17876,8 +17876,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294501002
-  m_fontColor: {r: 0.5418383, g: 0.88514036, b: 0.97199994, a: 1}
+    rgba: 1593369226
+  m_fontColor: {r: 0.5418383, g: 0.88514036, b: 0.97199994, a: 0.36862746}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -54418,7 +54418,9 @@ MonoBehaviour:
   successColor: {r: 1, g: 0.627451, b: 0.043137256, a: 1}
   optionColor: {r: 0.5803922, g: 0.77647066, b: 1, a: 1}
   optionSuccess: {r: 0.9725491, g: 0.93725497, b: 0.53333336, a: 1}
-  printButton: {fileID: 685228117}
+  printButton: {fileID: 327198221}
+  printText: {fileID: 622951585}
+  textAlpha: {r: 0.5411765, g: 0.8862745, b: 0.972549, a: 0.36862746}
 --- !u!1 &2009693349
 GameObject:
   m_ObjectHideFlags: 0

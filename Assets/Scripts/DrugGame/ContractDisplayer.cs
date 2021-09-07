@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class ContractDisplayer : MonoBehaviour
@@ -17,8 +18,9 @@ public class ContractDisplayer : MonoBehaviour
 
     public Color baseColor, successColor, optionColor, optionSuccess;
 
-    [SerializeField]
-    private GameObject printButton = null;
+    [SerializeField] private Button printButton = null;
+    [SerializeField] private TextMeshProUGUI printText = null;
+    [SerializeField] private Color textAlpha;
 
     private void Awake()
     {
@@ -303,13 +305,14 @@ public class ContractDisplayer : MonoBehaviour
 
     public void UpdatePrintButton()
     {
-        // Nathan is fully aware that this is a terrible way to code this
         if (EvaluateContract())
         {
-            Debug.Log("Print button on");
+            printButton.interactable = true;
+            printText.alpha = 1;
         } else
         {
-            Debug.Log("Print button off");
+            printButton.interactable = false;
+            printText.color = textAlpha;
         }
     }
 

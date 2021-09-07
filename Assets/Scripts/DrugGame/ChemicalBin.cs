@@ -23,6 +23,28 @@ public class ChemicalBin : MonoBehaviour
             {
                 costDisplay.SetText("Cost " + ChemicalPrefab.getCost().ToString());
             }
+            Contract currentContract = GameManager.instance.GetCurrentContract();
+            bool desired = false, undesired = false, optionalDesired = false, optionalUndesired = false;
+            foreach (var effect in ChemicalPrefab.effects)
+            {
+                if (currentContract.usesDesirableEffect && effect == currentContract.desirableEffect)
+                {
+                    desired = true;
+                }
+                if (currentContract.usesUndesirableEffect && effect == currentContract.undesirableEffect)
+                {
+                    undesired = true;
+                }
+                if (currentContract.usesOptionalDesireable && effect == currentContract.optionalEffect)
+                {
+                    optionalDesired = true;
+                }
+                if (currentContract.usesOptionalUndesirable && effect == currentContract.optionalEffect)
+                {
+                    optionalUndesired = true;
+                }
+            }
+
             //CreateDrugGraphic();
         }
     }

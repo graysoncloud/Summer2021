@@ -266,19 +266,47 @@ public class ContractDisplayer : MonoBehaviour
         if (contractToDisplay.usesOptionalDesireable || contractToDisplay.usesOptionalUndesirable)
         {
             if (contractToDisplay.usesOptionalUndesirable)
+            {
                 values[4].text = amount + "/" + contractToDisplay.optionalUndesirableMax.ToString();
+                if (EvalOptionalBadEffect())
+                {
+                    values[4].color = optionSuccess;
+                    requirements[4].color = optionSuccess;
+                }
+                else
+                {
+                    values[4].color = optionColor;
+                    requirements[4].color = optionColor;
+                }
+            }
             else
+            {
                 values[4].text = amount + "/" + contractToDisplay.optionalDesirableMin.ToString();
-            if (EvalOptionalEffect())
-            {
-                values[badEffectIndex].color = optionSuccess;
-                requirements[badEffectIndex].color = optionSuccess;
+                if (EvalOptionalEffect())
+                {
+                    values[4].color = optionSuccess;
+                    requirements[4].color = optionSuccess;
+                }
+                else
+                {
+                    values[4].color = optionColor;
+                    requirements[4].color = optionColor;
+                }
             }
-            else
-            {
-                values[badEffectIndex].color = optionColor;
-                requirements[badEffectIndex].color = optionColor;
-            }
+               
+            
+        }
+    }
+
+    public void UpdatePrintButton()
+    {
+        // Nathan is fully aware that this is a terrible way to code this
+        if (EvaluateContract())
+        {
+            Debug.Log("Print button on");
+        } else
+        {
+            Debug.Log("Print button off");
         }
     }
 
@@ -290,7 +318,6 @@ public class ContractDisplayer : MonoBehaviour
             int vol = DrugManager.instance.GetVol();
             if (vol > currentContract.volatilityMax)
                 return false;
-            Debug.Log("Vol good");
         }
 
         float cost = DrugManager.instance.GetCost();
@@ -299,29 +326,34 @@ public class ContractDisplayer : MonoBehaviour
         {
             if (cost > currentContract.maxPrice)
                 return false;
-            Debug.Log("Max Price good");
         }
 
         if (currentContract.usesMinPrice)
         {
             if (cost < currentContract.minPrice)
                 return false;
-            Debug.Log("Min Price good");
         }
 
         if (currentContract.usesUndesirableEffect)
         {
             if (DrugManager.instance.undesiredChems > currentContract.undesirableEffectMax)
                 return false;
-            Debug.Log("Undes good");
         }
 
         if (currentContract.usesDesirableEffect)
         {
             if (DrugManager.instance.desiredChems < currentContract.desirableEffectMin)
                 return false;
-            Debug.Log("Des good");
         }
+
+        return true;
+    }
+
+    public bool EvaluateOptional()
+    {
+        Contract currentContract = GameManager.instance.GetCurrentContract();
+        float cost = DrugManager.instance.GetCost();
+
 
         if (currentContract.usesOptional)
         {
@@ -330,19 +362,23 @@ public class ContractDisplayer : MonoBehaviour
             {
                 if (DrugManager.instance.optionalChems < currentContract.optionalDesirableMin)
                     cleared = false;
-            } else if (currentContract.usesOptionalUndesirable)
+            }
+            else if (currentContract.usesOptionalUndesirable)
             {
                 if (DrugManager.instance.optionalChems > currentContract.optionalUndesirableMax)
                     cleared = false;
-            } else if (currentContract.usesOptionalMinPrice)
+            }
+            else if (currentContract.usesOptionalMinPrice)
             {
                 if (cost > currentContract.optionalPriceMax)
                     cleared = false;
-            } else if (currentContract.usesOptionalMaxPrice)
+            }
+            else if (currentContract.usesOptionalMaxPrice)
             {
                 if (cost < currentContract.optionalPriceMin)
                     cleared = false;
-            } else if (currentContract.usesOptionalVol)
+            }
+            else if (currentContract.usesOptionalVol)
             {
                 int vol = DrugManager.instance.GetVol();
                 if (vol > currentContract.optionalVolMax)
@@ -353,31 +389,9 @@ public class ContractDisplayer : MonoBehaviour
                 Debug.LogWarning("Optional Contract with no condition");
             }
 
-            if (cleared == true)
-            {
-                if (currentContract.isSpecialContract1)
-                {
-                    PlayerPrefs.SetInt("SpecialContract1", 1);
-                }
-                if (currentContract.isSpecialContract2)
-                {
-                    PlayerPrefs.SetInt("SpecialContract2", 1);
-                }
-                PlayerPrefs.SetInt("OptionalCompleted", PlayerPrefs.GetInt("OptionalCompleted", 0) + 1);
-            } else
-            {
-                if (currentContract.isSpecialContract1)
-                {
-                    PlayerPrefs.SetInt("SpecialContract1", 0);
-                }
-                if (currentContract.isSpecialContract2)
-                {
-                    PlayerPrefs.SetInt("SpecialContract2", 0);
-                }
-            }
+            return cleared;
         }
-
-        return true;
+        return false;
     }
 
     public bool EvalVol()

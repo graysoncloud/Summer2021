@@ -456,6 +456,7 @@ public class Chemical : MonoBehaviour
         // Update score (could this be run in the scorekeeper's script?)
         dangerBar.UpdateDanger(oldStatuses, newStatuses);
         UpdateBenefit();
+        ContractDisplayer.instance.UpdatePrintButton();
 
         SFXPlayer.instance.PlaySoundEffect(4);
     }
@@ -799,7 +800,6 @@ public class Chemical : MonoBehaviour
             {
                 SR.sortingLayerName = "LiftedTile";
             }
-
             housingTile.storedChemical = null;
             SFXPlayer.instance.PlaySoundEffect(2);
         } 

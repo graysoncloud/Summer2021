@@ -17,6 +17,9 @@ public class ContractDisplayer : MonoBehaviour
 
     public Color baseColor, successColor, optionColor, optionSuccess;
 
+    [SerializeField]
+    private GameObject printButton = null;
+
     private void Awake()
     {
         // Singleton Stuff

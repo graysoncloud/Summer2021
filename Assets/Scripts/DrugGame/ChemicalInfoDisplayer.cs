@@ -12,7 +12,7 @@ public class ChemicalInfoDisplayer : MonoBehaviour
 
     private Vector3 mousePosition;
     public Vector2 offset = new Vector2(10, 10);
-    public float moveSpeed = 0.1f;
+    public float moveSpeed = 5f;
     private void Awake(){
         background = transform.Find("Background").GetComponent<RectTransform>();
         text = transform.Find("Text").GetComponent<TextMeshProUGUI>();

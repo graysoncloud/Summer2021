@@ -28,7 +28,13 @@ public class ChemicalBin : MonoBehaviour
     }
 
     private void OnMouseOver(){
-        if(!InfoTooltip.activeSelf && !GameManager.instance.optionsMenuActive)
+
+        if(DrugManager.instance.currentlyHeldChemical != null)
+        {
+            InfoTooltip.SetActive(false);
+        }
+
+        if(!InfoTooltip.activeSelf && !GameManager.instance.optionsMenuActive && DrugManager.instance.currentlyHeldChemical == null)
         {
             InfoTooltip.SetActive(true);
             InfoTooltip.GetComponent<ChemicalInfoDisplayer>().ChangeText(ChemicalPrefab.getInfo());

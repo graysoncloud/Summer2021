@@ -284,6 +284,7 @@ MonoBehaviour:
   effectAmount: 05000000
   desirable: 1
   undesirable: 0
+  optionalDesire: 0
   isPlaced: 0
   isChild: 0
   amplified: 0
@@ -291,7 +292,7 @@ MonoBehaviour:
   connectionTypes:
   - Negative
   - Neutral
-  - Negative
+  - None
   - Neutral
   - Positive
   - None

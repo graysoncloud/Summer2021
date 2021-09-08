@@ -10,6 +10,8 @@ public class ChemicalBin : MonoBehaviour
     public TMPro.TextMeshProUGUI title, costDisplay;
     public Transform graphicPosition;
     public GameObject InfoTooltip;
+    [SerializeField] private Color undesiredColor, desiredColor, optionalDesiredColor, optionalUndesiredColor;
+    [SerializeField] private SpriteRenderer border;
 
     private void Start()
     {
@@ -24,26 +26,40 @@ public class ChemicalBin : MonoBehaviour
                 costDisplay.SetText("Cost " + ChemicalPrefab.getCost().ToString());
             }
             Contract currentContract = GameManager.instance.GetCurrentContract();
-            bool desired = false, undesired = false, optionalDesired = false, optionalUndesired = false;
+            bool desired = false, undesired = false, optionalDesired = false, optionalUndesired = false, glow = false;
             foreach (var effect in ChemicalPrefab.effects)
             {
                 if (currentContract.usesDesirableEffect && effect == currentContract.desirableEffect)
                 {
                     desired = true;
+                    glow = true;
                 }
                 if (currentContract.usesUndesirableEffect && effect == currentContract.undesirableEffect)
                 {
                     undesired = true;
+                    glow = true;
                 }
                 if (currentContract.usesOptionalDesireable && effect == currentContract.optionalEffect)
                 {
                     optionalDesired = true;
+                    glow = true;
                 }
                 if (currentContract.usesOptionalUndesirable && effect == currentContract.optionalEffect)
                 {
                     optionalUndesired = true;
+                    glow = true;
                 }
             }
+            if (!glow)
+                border.color = Color.clear;
+            if (optionalDesired)
+                border.color = optionalDesiredColor;
+            else if (optionalUndesired)
+                border.color = optionalUndesiredColor;
+            else if (undesired)
+                border.color = undesiredColor;
+            else if (desired)
+                border.color = desiredColor;
 
             //CreateDrugGraphic();
         }

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 9f9eebaa3aea4264584a6bcfb78b9a5f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Kaisei HarunoUmi
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4ea3fb982967a0747ab79f21097ecdd3, type: 3}
+  - {fileID: 12800000, guid: b50da898ae32ed74d925bdd2ddff0de1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

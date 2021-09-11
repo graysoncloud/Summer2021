@@ -22,6 +22,8 @@ MonoBehaviour:
   attitudeToCompare: 0
   checkEvent: 1
   eventToCheck: 2
+  checkNumAltContractsFinished: 0
+  minimumRequired: 0
   changesStress: 0
   stressChangeAmount: 0
   changesAttitude: 0

@@ -22,6 +22,9 @@ public class Path : ScriptableObject
     public bool checkEvent;
     public GameManager.SaveableEvent eventToCheck;
 
+    public bool checkNumAltContractsFinished;
+    public int minimumRequired;
+
     public bool changesStress;
     public int stressChangeAmount;
 
@@ -73,6 +76,12 @@ public class Path : ScriptableObject
             {
                 myScript.stressComparison = (ComparisonType)EditorGUILayout.EnumPopup("Comparison", myScript.stressComparison);
                 myScript.stressCheckAmount = EditorGUILayout.IntField("Amount", myScript.stressCheckAmount);
+            }
+
+            myScript.checkNumAltContractsFinished = GUILayout.Toggle(myScript.checkNumAltContractsFinished, "Alt Contracts Finished Check");
+            if (myScript.checkNumAltContractsFinished)
+            {
+                myScript.minimumRequired = EditorGUILayout.IntField("Minimum Required", myScript.minimumRequired);
             }
 
             // Changes

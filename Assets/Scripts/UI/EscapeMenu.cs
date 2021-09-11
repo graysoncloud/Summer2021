@@ -81,6 +81,8 @@ public class EscapeMenu : MonoBehaviour
     public void QuitToTitle()
     {
         GameManager.instance.optionsMenuActive = false;
+        MusicManager.instance.audioSource.Stop();
+        AmbienceManager.instance.audioSource.Stop();
         SceneChangeManager.instance.StartSceneChange(escapeMenuToTitleSC);
         gameObject.SetActive(false);
     }

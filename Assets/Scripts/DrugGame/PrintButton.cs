@@ -47,12 +47,15 @@ public class PrintButton : MonoBehaviour
             {
                 if (currentContract.isSpecialContract1)
                 {
+
                     PlayerPrefs.SetInt("SpecialContract1", 1);
                 }
                 if (currentContract.isSpecialContract2)
                 {
+
                     PlayerPrefs.SetInt("SpecialContract2", 1);
                 }
+
                 PlayerPrefs.SetInt("OptionalCompleted", PlayerPrefs.GetInt("OptionalCompleted", 0) + 1);
             }
             else

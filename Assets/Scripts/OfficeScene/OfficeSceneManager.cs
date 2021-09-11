@@ -126,11 +126,15 @@ public class OfficeSceneManager : MonoBehaviour
             else if (LeaveOfficeButton.instance.GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick))
             {
                 if (DrugManager.instance.GetTimeElapsed() > 480f && PlayerPrefs.GetInt("MariaAttitude") > -3)
+                {
                     PlayerPrefs.SetInt("MariaAttitude", PlayerPrefs.GetInt("MariaAttitude") - 1);
+                }
                 else if (PlayerPrefs.GetInt("MariaAttitude") > 3)
+                {
                     PlayerPrefs.SetInt("MariaAttitude", PlayerPrefs.GetInt("MariaAttitude") + 1);
+                }
 
-                Debug.Log(PlayerPrefs.GetInt("MariaAttitude"));
+                //Debug.Log(PlayerPrefs.GetInt("MariaAttitude"));
 
 
                 bool sequenceTriggered = false;

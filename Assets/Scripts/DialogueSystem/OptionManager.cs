@@ -64,7 +64,7 @@ public class OptionManager : MonoBehaviour
                 }
                 if (option.paths[i].checkEvent)
                 {
-                    Debug.Log(PlayerPrefs.GetInt(option.paths[i].eventToCheck.ToString()) + option.paths[i].eventToCheck.ToString());
+                    //Debug.Log(PlayerPrefs.GetInt(option.paths[i].eventToCheck.ToString()) + option.paths[i].eventToCheck.ToString());
                     if (PlayerPrefs.GetInt(option.paths[i].eventToCheck.ToString()) == 1)
                         execute = (execute && true);
                     else
@@ -91,6 +91,13 @@ public class OptionManager : MonoBehaviour
                     {
                         Debug.LogError("Invalid comparator: " + option.paths[i].attitudeComparison.ToString());
                     }
+                }
+                if (option.paths[i].checkNumAltContractsFinished)
+                {
+                    if (PlayerPrefs.GetInt("OptionalCompleted") > option.paths[i].minimumRequired)
+                        execute = (execute && true);
+                    else
+                        execute = (execute && false);
                 }
 
                 // Default path, if no restrictions are present
@@ -179,6 +186,13 @@ public class OptionManager : MonoBehaviour
                 {
                     Debug.LogError("Invalid comparator: " + option.paths[i].attitudeComparison.ToString());
                 }
+            }
+            if (option.paths[i].checkNumAltContractsFinished)
+            {
+                if (PlayerPrefs.GetInt("OptionalCompleted") > option.paths[i].minimumRequired)
+                    enabled = (enabled && true);
+                else
+                    enabled = (enabled && false);
             }
 
             buttonBackgrounds[i].gameObject.SetActive(true);

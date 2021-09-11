@@ -27,10 +27,13 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         Application.targetFrameRate = 60;
+
+        ResetPlayerPrefsToSave();    
     }
 
     private void Start()
     {
+
         // Should be an if statement to allow for save loading (ideally would just specify the day you're on
         currentDayIndex = 0;
         sequenceActive = false;
@@ -38,6 +41,7 @@ public class GameManager : MonoBehaviour
         currentDay = days[currentDayIndex];
         currentDay.ShuffleContracts();
 
+        // To delete
         PlayerPrefs.DeleteAll();
 
         /*
@@ -71,6 +75,7 @@ public class GameManager : MonoBehaviour
             }
 
         }
+
     }
 
     public void StartNewGame()
@@ -90,7 +95,7 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetFloat("TotalMoney", 0);
 
-        PlayerPrefs.SetInt("NumAltContractsFinished", 0);
+        PlayerPrefs.SetInt("OptionalCompleted", 0);
 
         foreach (CharacterName character in System.Enum.GetValues(typeof(CharacterName)))
         {
@@ -101,6 +106,9 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("DrugID", 100);
 
         PlayerPrefs.SetInt("ActiveGame", 1);
+
+        UpdatePlayerPrefs();
+
         SceneChangeManager.instance.StartSceneChange(TitleSceneManager.instance.titleToMR);
 
         MusicManager.instance.StartFadeOut();
@@ -131,10 +139,7 @@ public class GameManager : MonoBehaviour
     {
         OfficeSceneManager.instance.currentContractIndex = 0;
 
-        PlayerPrefs.SetInt("TookPill", 0);
-        PlayerPrefs.SetInt("WatchedNews", 0);
-        PlayerPrefs.SetInt("IsLate", 0);
-        PlayerPrefs.SetInt("WateredPlants", 0);
+        UpdatePlayerPrefs();
 
         DrugManager.instance.ResetTimeElapsed();
 
@@ -145,6 +150,94 @@ public class GameManager : MonoBehaviour
         currentDay.ShuffleContracts();
 
         MorningRoutineManager.Instance.StartNewDay();
+    }
+
+    private void ResetPlayerPrefsToSave()
+    {
+
+        foreach (SaveableEvent se in Enum.GetValues(typeof(SaveableEvent)))
+        {
+            string s = se.ToString();
+
+            if (PlayerPrefs.HasKey(s + "ResetValue"))
+            {
+                PlayerPrefs.SetInt(s, PlayerPrefs.GetInt(s + "ResetValue"));
+                PlayerPrefs.DeleteKey(s + "ResetValue");
+            }
+        }
+
+        foreach (CharacterName cn in Enum.GetValues(typeof(CharacterName)))
+        {
+            string s = cn.ToString();
+
+
+            if (PlayerPrefs.HasKey(s + "AttitudeResetValue"))
+            {
+                PlayerPrefs.SetInt(s + "Attitude", PlayerPrefs.GetInt(s + "AttitudeResetValue"));
+                PlayerPrefs.DeleteKey(s + "AttitudeResetValue");
+            }
+        }
+
+        if (PlayerPrefs.HasKey("StressResetValue"))
+        {
+            PlayerPrefs.SetInt("Stress", PlayerPrefs.GetInt("StressResetValue"));
+            PlayerPrefs.DeleteKey("StressResetValue");
+        }
+
+        if (PlayerPrefs.HasKey("TotalMoneyResetValue"))
+        {
+            PlayerPrefs.SetInt("TotalMoney", PlayerPrefs.GetInt("TotalMoneyResetValue"));
+            PlayerPrefs.DeleteKey("TotalMoneyResetValue");
+        }
+
+        if (PlayerPrefs.HasKey("OptionalCompletedResetValue"))
+        {
+            PlayerPrefs.SetInt("OptionalCompleted", PlayerPrefs.GetInt("OptionalCompletedResetValue"));
+            PlayerPrefs.DeleteKey("OptionalCompletedResetValue");
+        }
+
+        if (PlayerPrefs.HasKey("DrugIDResetValue"))
+        {
+            PlayerPrefs.SetInt("DrugID", PlayerPrefs.GetInt("DrugIDResetValue"));
+            PlayerPrefs.DeleteKey("DrugIDResetValue");
+        }
+
+        PlayerPrefs.Save();
+
+    }
+
+    private void UpdatePlayerPrefs()
+    {
+        // Day-to-day resetters
+        PlayerPrefs.SetInt("TookPill", 0);
+        PlayerPrefs.SetInt("WatchedNews", 0);
+        PlayerPrefs.SetInt("IsLate", 0);
+        PlayerPrefs.SetInt("WateredPlants", 0);
+
+        // In short this bit of code checks if any variables were changed but not properly saved (i.e. if the player quit mid-day). It goes back and resets them to their original
+        //   values, which should be saved whenever PlayerPrefs is altered
+        foreach (SaveableEvent se in Enum.GetValues(typeof(SaveableEvent)))
+        {
+            string s = se.ToString();
+            if (PlayerPrefs.HasKey(s))
+                PlayerPrefs.SetInt(s + "ResetValue", PlayerPrefs.GetInt(s));
+            else
+                PlayerPrefs.SetInt(s + "ResetValue", 0);
+        }
+
+        foreach (CharacterName cn in Enum.GetValues(typeof(CharacterName)))
+        {
+            string s = cn.ToString();
+
+            PlayerPrefs.SetInt(s + "AttitudeResetValue", PlayerPrefs.GetInt(s + "Attitude"));
+        }
+
+        PlayerPrefs.SetInt("StressResetValue", PlayerPrefs.GetInt("Stress"));
+        PlayerPrefs.SetInt("TotalMoneyResetValue", PlayerPrefs.GetInt("TotalMoney"));
+        PlayerPrefs.SetInt("OptionalCompletedResetValue", PlayerPrefs.GetInt("OptionalCompleted"));
+        PlayerPrefs.SetInt("DrugIDResetValue", PlayerPrefs.GetInt("DrugID"));
+
+        PlayerPrefs.Save();
     }
 
     public void StartSequence(ScriptableObject toExecute)

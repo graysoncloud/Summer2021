@@ -11,6 +11,9 @@ public class Opening : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI title;
 
+    [SerializeField]
+    private SceneChange toTitleScreen;
+
     private bool start = false, end = false, stop = false;
 
     private void Awake()
@@ -58,8 +61,10 @@ public class Opening : MonoBehaviour
         }
         if (stop)
         {
-            Debug.Log("Stop called");
-            //Switch scenes
+            //Debug.Log("Stop called");
+
+            SceneChangeManager.instance.StartSceneChange(toTitleScreen);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -95,7 +95,9 @@ public class SceneChangeManager : MonoBehaviour
             }
 
             MusicManager.instance.audioSource.Stop();
-            StopCoroutine(MusicManager.instance.fadeOutCoroutine);
+
+            if (MusicManager.instance.fadeOutCoroutine != null)
+                StopCoroutine(MusicManager.instance.fadeOutCoroutine);
         }
 
 
@@ -137,9 +139,11 @@ public class SceneChangeManager : MonoBehaviour
             // Insert things like MRManager.ResetScene() below
             case "MorningRoutineScene": newScene = scenes[0]; currentScene = newScene; CharacterFadeManager.instance.StartInstantFade(instantElizabethFadeIn);
                 newScene.gameObject.SetActive(true); MusicManager.instance.StartMRMusic(); GameObject.FindObjectOfType<PlayerController>().SetRoom(bedroom.GetComponent<Room>()); break;
-            case "OfficeScene": newScene = scenes[1]; currentScene = newScene; CharacterFadeManager.instance.StartInstantFade(instantBarneyFadeIn); 
-                newScene.gameObject.SetActive(true); OfficeSceneManager.instance.SetUpOfficeScene(); AmbienceManager.instance.PlayAmbience(0); break;
-            case "DrugGameScene": newScene = scenes[2]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
+            case "OfficeScene": newScene = scenes[1]; currentScene = newScene; CharacterFadeManager.instance.StartInstantFade(instantBarneyFadeIn);
+                newScene.gameObject.SetActive(true); AmbienceManager.instance.PlayAmbience(0); 
+                if (MusicManager.instance.backgroundMusicPlayerInstance != null) MusicManager.instance.StopCoroutine(MusicManager.instance.backgroundMusicPlayerInstance);
+                MusicManager.instance.backgroundMusicPlayerInstance = null; break;
+            case "DrugGameScene": newScene = scenes[2]; currentScene = newScene; newScene.gameObject.SetActive(true); AmbienceManager.instance.StartFadeOut(); break;
             case "RecapScene": newScene = scenes[3]; currentScene = newScene; newScene.gameObject.SetActive(true); RecapSceneManager.instance.DisplayContracts();
                 AmbienceManager.instance.StartFadeOut(); break;
             case "DreamScene": newScene = scenes[4]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
@@ -147,6 +151,8 @@ public class SceneChangeManager : MonoBehaviour
                 MusicManager.instance.StartMusicEvent(TitleSceneManager.instance.defaultTitleMusicEvent); break;
             case "OSOverlay": newScene = scenes[6]; currentScene = newScene; newScene.gameObject.SetActive(true); OSOverlay.instance.StartOSDisplay();
                 AmbienceManager.instance.StartFadeOut(); break;
+            case "OpeningScene": newScene = scenes[7]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
+            case "CreditsScene": newScene = scenes[8]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
             default: Debug.LogError("Invalid sceneName: " + sceneChange.newScene.ToString()); break;
         }
 
@@ -155,6 +161,8 @@ public class SceneChangeManager : MonoBehaviour
 
         if (sceneChange.increaseDay)
             GameManager.instance.NextDay();
+
+        Debug.Log("Scene Changed: " + sceneChange.newScene.ToString());
 
 
         /*

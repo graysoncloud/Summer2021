@@ -19,6 +19,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     public TVInteractable tvInteractable;
     // this is the global variable to check if you took your medicine today
     public bool takenMedicationToday = false;
+    public bool enteredLRToday = false;
 
     public SceneChange mrToOffice;
     bool isTVActive = false;
@@ -88,6 +89,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         gameDay++;
 
         takenMedicationToday = false;
+        enteredLRToday = false;
 
         flowerMinigame.IncrementDay();
         shavingMinigame.IncrementDay();

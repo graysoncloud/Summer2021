@@ -55,6 +55,9 @@ public class OSOverlay : MonoBehaviour
 
         GameManager.instance.sequenceActive = true;
 
+        Debug.Log(MusicManager.instance.backgroundMusicPlayerInstance == null);
+        MusicManager.instance.StartBackgroundPlayer();
+
         if (GameManager.instance.currentDayIndex == 0)
         {
             StartCoroutine("LoadOSFirstDay");
@@ -108,12 +111,12 @@ public class OSOverlay : MonoBehaviour
 
     IEnumerator LoadOSNormal ()
     {
-        float rate = .015f;
+        float rate = .16f;
 
         while (progressBar.value < 50)
         {
             progressBar.value += rate * Time.deltaTime * 60;
-            rate *= 1.003f;
+            rate *= 1.004f;
             yield return new WaitForEndOfFrame();
         }
 

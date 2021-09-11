@@ -58,6 +58,7 @@ public class OfficeSceneManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !GameManager.instance.optionsMenuActive && !GameManager.instance.sequenceActive)
         {
+
             Vector3 worldPointOfClick = OfficeSceneCamera.instance.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
             Vector3 pointOfClick = new Vector3(worldPointOfClick.x, worldPointOfClick.y, 0);
 
@@ -74,6 +75,8 @@ public class OfficeSceneManager : MonoBehaviour
 
                     contractInHand.pickedUp = true;
                     lastLocation = ContractStack.instance.gameObject;
+
+                    SFXPlayer.instance.PlaySoundEffect(9);
                 }
             }
 
@@ -89,6 +92,8 @@ public class OfficeSceneManager : MonoBehaviour
                 Printer.instance.solutionPrinted = false;
                 Printer.instance.printerPaper.SetActive(false);
 
+                SFXPlayer.instance.PlaySoundEffect(7);
+
                 //lastLocation = printer.instance;
             }
 
@@ -99,6 +104,9 @@ public class OfficeSceneManager : MonoBehaviour
                 ActiveContractArea.instance.currentContract = null;
                 contractInHand.pickedUp = true;
                 lastLocation = ActiveContractArea.instance.gameObject;
+
+                SFXPlayer.instance.PlaySoundEffect(9);
+
             }
 
             // Start Drug Game if computer clicked
@@ -159,6 +167,8 @@ public class OfficeSceneManager : MonoBehaviour
                 contractInHand = null;
                 lastLocation = null;
 
+                SFXPlayer.instance.PlaySoundEffect(10);
+
                 if (holdingNewContract)
                 {
                     contractDisplayer.DisplayContract();
@@ -179,6 +189,8 @@ public class OfficeSceneManager : MonoBehaviour
                 Destroy(solutionInHand.gameObject);
                 lastLocation = null;
 
+                SFXPlayer.instance.PlaySoundEffect(8);
+
                 if (GameManager.instance.currentDayIndex == 0)
                     TutorialManager.instance.ActivateTutorial(TutorialManager.instance.ContractTutorial4);
             }
@@ -192,37 +204,54 @@ public class OfficeSceneManager : MonoBehaviour
                 contractsSolved++; 
                 currentContractIndex++;
 
+                SFXPlayer.instance.PlaySoundEffect(10);
+
+                bool sequenceTriggered = false;
+
                 // Trigger dialogue events
                 foreach (Day.Sequence sequence in GameManager.instance.currentDay.sequences)
                 {
                     if (sequence.trigger.ToString() == "solvedContract1" && contractsSolved == 1)
                     {
                         GameManager.instance.StartSequence(sequence.initialEvent);
+                        sequenceTriggered = true;
                     }
                     else if (sequence.trigger.ToString() == "solvedContract2" && contractsSolved == 2)
                     {
                         GameManager.instance.StartSequence(sequence.initialEvent);
+                        sequenceTriggered = true;
                     }
                     else if (sequence.trigger.ToString() == "solvedContract3" && contractsSolved == 3)
                     {
                         GameManager.instance.StartSequence(sequence.initialEvent);
+                        sequenceTriggered = true;
                     }
                     else if (sequence.trigger.ToString() == "solvedContract4" && contractsSolved == 4)
                     {
                         GameManager.instance.StartSequence(sequence.initialEvent);
+                        sequenceTriggered = true;
                     }
                     else if (sequence.trigger.ToString() == "solvedContract5" && contractsSolved == 5)
                     {
                         GameManager.instance.StartSequence(sequence.initialEvent);
+                        sequenceTriggered = true;
                     }
                     else if (sequence.trigger.ToString() == "solvedContract6" && contractsSolved == 6)
                     {
                         GameManager.instance.StartSequence(sequence.initialEvent);
+                        sequenceTriggered = true;
+                    }
+                    else
+                    {
+                        sequenceTriggered = sequenceTriggered || false;
                     }
                 }
 
-                if (contractsSolved >= GameManager.instance.currentDay.contracts.Count) 
-                    LeaveOfficeButton.instance.gameObject.SetActive(true);
+                if (GameManager.instance.currentDay.sequences.Length == 0)
+                    sequenceTriggered = false;
+
+                if (contractsSolved >= GameManager.instance.currentDay.contracts.Count && !sequenceTriggered)
+                    SceneChangeManager.instance.StartSceneChange(officeToRecapTransition);
 
                 solutionFinished = false;
 
@@ -235,6 +264,8 @@ public class OfficeSceneManager : MonoBehaviour
             {
                 holdingNewContract = false;
                 Destroy(contractInHand.gameObject);
+                SFXPlayer.instance.PlaySoundEffect(10);
+
             }
             else if (contractInHand != null && lastLocation == ActiveContractArea.instance.gameObject)
             {
@@ -243,6 +274,8 @@ public class OfficeSceneManager : MonoBehaviour
                 contractInHand.transform.position = ActiveContractArea.instance.contractSpot;
                 contractInHand = null;
                 holdingNewContract = false;
+                SFXPlayer.instance.PlaySoundEffect(10);
+
             }
             // Return solution to printer if it's dropped no where special
             else if (solutionInHand != null)
@@ -250,6 +283,8 @@ public class OfficeSceneManager : MonoBehaviour
                 Destroy(solutionInHand.gameObject);
                 Printer.instance.solutionPrinted = true;
                 Printer.instance.printerPaper.SetActive(true);
+                SFXPlayer.instance.PlaySoundEffect(8);
+
             }
         }
 
@@ -270,7 +305,7 @@ public class OfficeSceneManager : MonoBehaviour
 
     public void SetUpOfficeScene()
     {
-        MusicManager.instance.StartBackgroundPlayer();
+        
     }
 
 

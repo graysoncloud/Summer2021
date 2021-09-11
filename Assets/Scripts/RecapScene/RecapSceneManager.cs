@@ -325,6 +325,8 @@ public class RecapSceneManager : MonoBehaviour
         // Resets list for next day
         finishedContracts = new List<FinishedContract>();
 
+        yield return new WaitForSeconds(.25f);
+
         nextDayButton.gameObject.SetActive(true);
     }
 

@@ -50,6 +50,16 @@ public class Door : MonoBehaviour
 
         if(!workDoor) {
             FindObjectOfType<PlayerController>().SetRoom(destination);
+
+            foreach (Day.Sequence sequence in GameManager.instance.currentDay.sequences)
+            {
+                if (sequence.trigger.ToString() == "enteredLivingRoom" && !MorningRoutineManager.Instance.enteredLRToday)
+                {
+                    MorningRoutineManager.Instance.enteredLRToday = true;
+                    GameManager.instance.StartSequence(sequence.initialEvent);
+                }
+            }
+
             MorningRoutineManager.Instance.audioManager.LoadSound(clickSoundEffect);
             MorningRoutineManager.Instance.audioManager.PlaySoundForce();
         } else {

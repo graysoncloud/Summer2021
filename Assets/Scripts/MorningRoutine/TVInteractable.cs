@@ -57,11 +57,16 @@ public class TVInteractable : MonoBehaviour
 
             if(!TVEventPlayed) {
                 if(GameManager.instance.currentDay.newsEvent != null) {
-                    GameManager.instance.StartSequence(GameManager.instance.currentDay.newsEvent);
                     TVEventPlayed = true;
+                    GameManager.instance.StartSequence(GameManager.instance.currentDay.newsEvent);
                 }
             }
         }
+    }
+
+    IEnumerator PlayTVEvent()
+    {
+        yield return new WaitForSeconds(.5f);
     }
 
     public void StopTVEvent() {

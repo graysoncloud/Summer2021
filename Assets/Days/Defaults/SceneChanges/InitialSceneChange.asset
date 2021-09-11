@@ -15,6 +15,7 @@ MonoBehaviour:
   nextEvent: {fileID: 0}
   newScene: 5
   transitionStyle: 0
-  predelay: 0
-  postdelay: 0
+  preDelay: 0
+  midDelay: 0
+  postDelay: 0
   increaseDay: 0

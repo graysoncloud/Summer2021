@@ -47,6 +47,7 @@ public class MusicManager : MonoBehaviour
 
         while (SceneChangeManager.instance.currentScene.name != "RecapScene")
         {
+            audioSource.volume = PlayerPrefs.GetFloat("MusicVolume");
             bool firstPlay = true;
 
             if (!audioSource.isPlaying && SceneChangeManager.instance.currentScene.name != "OfficeScene")
@@ -72,7 +73,7 @@ public class MusicManager : MonoBehaviour
 
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForEndOfFrame();
 
         }
 
@@ -134,7 +135,7 @@ public class MusicManager : MonoBehaviour
             if (audioSource.volume > .1)
                 audioSource.volume -= (float)(.45 * Time.deltaTime * PlayerPrefs.GetFloat("MusicVolume"));
             // Allows fade out to be more gradual
-            else if (audioSource.volume < (.13 * PlayerPrefs.GetFloat("MusicVolume")))
+            else if (audioSource.volume < .13)
                 audioSource.volume -= (float)(.08 * Time.deltaTime * PlayerPrefs.GetFloat("MusicVolume"));
             else if (audioSource.volume < (.02 * PlayerPrefs.GetFloat("MusicVolume")))
                 audioSource.volume -= (float)(.015 * Time.deltaTime * PlayerPrefs.GetFloat("MusicVolume"));

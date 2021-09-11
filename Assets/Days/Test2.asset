@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c747640b685770845b310d0728bc0456, type: 3}
+  m_Name: Test2
+  m_EditorClassIdentifier: 
+  sequences: []
+  newsEvent: {fileID: 11400000, guid: b58426fc35a83cf4aaef4e1ceb69ec8a, type: 2}
+  contracts:
+  - {fileID: 11400000, guid: 2263b95c66ebb4e47a213586dfd74ed5, type: 2}
+  dayChemicals:
+  - {fileID: 4991818317866170135, guid: ca93b602592e5e347b070a41e8b1a2de, type: 3}
+  - {fileID: 4991818317866170135, guid: c35e893e229656349b45a859d531d32e, type: 3}
+  - {fileID: 4991818317866170135, guid: 50c17436042c3184f8071ff156a74993, type: 3}
+  - {fileID: 4991818317866170135, guid: fc923a491f84b364b82508303020923e, type: 3}
+  - {fileID: 4991818317866170135, guid: 23a9136f6d4114a428f8e5c0737a0add, type: 3}
+  - {fileID: 4991818317866170135, guid: b0498c4b10265de4da2ea258c0238db3, type: 3}
+  contractTypeList: 00000000
+  storyContracts:
+  - {fileID: 0}
+  easyContracts:
+  - {fileID: 11400000, guid: 040259af6f7ee7143967a4a9fc1b3f78, type: 2}
+  hardContracts: []

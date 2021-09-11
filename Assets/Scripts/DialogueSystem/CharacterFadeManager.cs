@@ -25,6 +25,17 @@ public class CharacterFadeManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            foreach (KeyValuePair<string, Character> entry in currentChars)
+            {
+                Debug.Log(entry.Key + ", " + entry.Value);
+            }
+        }
+    }
+
     private void Start()
     {
         numActiveFades = 0;

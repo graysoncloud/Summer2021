@@ -23,7 +23,9 @@ public class SceneChange : ScriptableEvent
         RecapScene, 
         DreamScene,
         TitleScene,
-        OSOverlay
+        OSOverlay,
+        OpeningScene,
+        CreditsScene
     }
 
     public enum TransitionStyle { 

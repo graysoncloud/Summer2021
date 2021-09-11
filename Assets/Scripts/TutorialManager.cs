@@ -25,6 +25,12 @@ public class TutorialManager : MonoBehaviour
     public GameObject DrugGameTutorial9;
     public GameObject DrugGameTutorial10;
     public GameObject DrugGameTutorial11;
+    public GameObject DrugGameTutorial12;
+    public GameObject RecapTutorial1;
+    public GameObject RecapTutorial2;
+    public GameObject RecapTutorial3;
+    public GameObject RecapTutorial4;
+    public GameObject RecapTutorial5;
 
     // Add more tutorial scenes
 
@@ -66,6 +72,11 @@ public class TutorialManager : MonoBehaviour
 
         StartCoroutine(DelayedExecute(toActivate));
 
+    }
+
+    public void ActivateReplayableTutorial(GameObject toActivate)
+    {
+        StartCoroutine(DelayedExecute(toActivate));  
     }
 
     IEnumerator DelayedExecute(GameObject toActivate)

@@ -38,7 +38,9 @@ public class DrugManager : MonoBehaviour
     public static event OnClearChems onClearChems;
 
     private int numtutorialsfinished;
-    private bool alltutorialsfinished;
+    public bool alltutorialsfinished;
+    public int numrecapfinished;
+    public bool allrecapfinished;
     private Vector2 tutorialTheromideTile = new Vector2(2f, 5f);
     private HexTile[] tutorialAveroTiles;
     private Color tutorialHighlightColor = new Color(0.9f, 0.6f, 0.2f, 1f);
@@ -56,6 +58,8 @@ public class DrugManager : MonoBehaviour
 
         numtutorialsfinished = 0;
         alltutorialsfinished = false;
+        numrecapfinished = 0;
+        allrecapfinished = true;
 
         hexGrid = GameObject.FindObjectOfType<HexGrid>().GetComponent<HexGrid>();
         dangerBar = GameObject.FindObjectOfType<VolatilityBar>();
@@ -154,8 +158,45 @@ public class DrugManager : MonoBehaviour
             {
                 TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial11);
                 numtutorialsfinished++;
+            }
+            else if(numtutorialsfinished == 11 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial12);
+                numtutorialsfinished++;
                 alltutorialsfinished = true;
             }
+        }
+
+        if(!allrecapfinished)
+        {
+            if(numrecapfinished == 0 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateReplayableTutorial(TutorialManager.instance.RecapTutorial1);
+                numrecapfinished++;
+            }
+            else if(numrecapfinished == 1 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateReplayableTutorial(TutorialManager.instance.RecapTutorial2);
+                numrecapfinished++;
+            }
+            if(numrecapfinished == 2 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateReplayableTutorial(TutorialManager.instance.RecapTutorial3);
+                numrecapfinished++;
+            }
+            if(numrecapfinished == 3 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateReplayableTutorial(TutorialManager.instance.RecapTutorial4);
+                numrecapfinished++;
+            }
+            else if(numrecapfinished == 4 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateReplayableTutorial(TutorialManager.instance.RecapTutorial5);
+                numrecapfinished++;
+                allrecapfinished = true;
+            }
+
+            
         }
 
         // Multiply by 30 for speedy

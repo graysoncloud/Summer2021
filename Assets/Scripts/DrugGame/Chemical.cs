@@ -671,8 +671,8 @@ public class Chemical : MonoBehaviour
         {
             DrugManager.instance.optionalChems -= optional;
             optional = optionalDesireAmount;
-            DrugManager.instance.undesiredChems += optional;
-            ContractDisplayer.instance.UpdateBadEffect(DrugManager.instance.undesiredChems);
+            DrugManager.instance.optionalChems += optional;
+            ContractDisplayer.instance.UpdateOptional(DrugManager.instance.optionalChems);
         }
     }
 

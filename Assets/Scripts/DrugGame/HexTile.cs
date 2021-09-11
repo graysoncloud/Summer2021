@@ -108,7 +108,7 @@ public class HexTile : MonoBehaviour
 
             foreach (SpriteRenderer SR in storedChemical.GetComponentsInChildren<SpriteRenderer>())
             {
-                SR.sortingLayerName = "HexGraphics";
+                //SR.sortingLayerName = "HexGraphics";
             }
 
             storedChemical.EvaluateConnections();

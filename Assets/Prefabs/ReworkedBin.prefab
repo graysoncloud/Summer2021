@@ -136,8 +136,8 @@ MonoBehaviour:
   InfoTooltip: {fileID: 0}
   undesiredColor: {r: 0.9137255, g: 0.53333336, b: 0.5137255, a: 0.6862745}
   desiredColor: {r: 0.5529412, g: 0.9137255, b: 0.5137255, a: 0.69411767}
-  optionalDesiredColor: {r: 0.9137255, g: 0.53333336, b: 0.5137255, a: 0.6862745}
-  optionalUndesiredColor: {r: 0.5529412, g: 0.9137255, b: 0.5137255, a: 0.69411767}
+  optionalDesiredColor: {r: 0.9101497, g: 0.9137255, b: 0.5137255, a: 0.69411767}
+  optionalUndesiredColor: {r: 0.9137255, g: 0.53333336, b: 0.5137255, a: 0.35686275}
   border: {fileID: 6657347604308236447}
 --- !u!1 &1192976462335490775
 GameObject:

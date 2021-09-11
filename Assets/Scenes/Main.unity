@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 5833595}
   - component: {fileID: 5833594}
   - component: {fileID: 5833593}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: FillArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1268,7 +1268,7 @@ GameObject:
   - component: {fileID: 28698121}
   - component: {fileID: 28698123}
   - component: {fileID: 28698122}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WarningMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1347,7 +1347,7 @@ GameObject:
   - component: {fileID: 30884636}
   - component: {fileID: 30884638}
   - component: {fileID: 30884637}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4256,7 +4256,7 @@ GameObject:
   - component: {fileID: 118834686}
   - component: {fileID: 118834688}
   - component: {fileID: 118834687}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slider04_Blue2_Frame2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4489,7 +4489,7 @@ GameObject:
   - component: {fileID: 124964886}
   - component: {fileID: 124964888}
   - component: {fileID: 124964887}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text_Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8811,7 +8811,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.88, y: 14.91}
+  m_Size: {x: 9.43, y: 14.91}
   m_EdgeRadius: 0
 --- !u!61 &289424308
 BoxCollider2D:
@@ -8837,7 +8837,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.04, y: 14.9}
+  m_Size: {x: 9.8, y: 14.9}
   m_EdgeRadius: 0
 --- !u!114 &289424309
 MonoBehaviour:
@@ -11635,7 +11635,7 @@ GameObject:
   - component: {fileID: 377198680}
   - component: {fileID: 377198682}
   - component: {fileID: 377198681}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slider04_Blue_Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12496,7 +12496,7 @@ GameObject:
   - component: {fileID: 416338934}
   - component: {fileID: 416338936}
   - component: {fileID: 416338935}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text_Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17850,7 +17850,7 @@ GameObject:
   - component: {fileID: 579531382}
   - component: {fileID: 579531384}
   - component: {fileID: 579531383}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: OptionsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19779,7 +19779,7 @@ GameObject:
   - component: {fileID: 624558146}
   - component: {fileID: 624558148}
   - component: {fileID: 624558147}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WarningMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24873,7 +24873,7 @@ GameObject:
   - component: {fileID: 779954868}
   - component: {fileID: 779954867}
   - component: {fileID: 779954866}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: OptionsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25273,7 +25273,7 @@ GameObject:
   - component: {fileID: 787960123}
   - component: {fileID: 787960122}
   - component: {fileID: 787960121}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25692,7 +25692,7 @@ GameObject:
   - component: {fileID: 806262514}
   - component: {fileID: 806262513}
   - component: {fileID: 806262512}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26384,7 +26384,7 @@ GameObject:
   - component: {fileID: 825091304}
   - component: {fileID: 825091303}
   - component: {fileID: 825091302}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: SFXSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26528,7 +26528,7 @@ GameObject:
   - component: {fileID: 826122911}
   - component: {fileID: 826122912}
   - component: {fileID: 826122910}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31308,7 +31308,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1030064965}
   - component: {fileID: 1030064964}
-  m_Layer: 0
+  - component: {fileID: 1030064967}
+  - component: {fileID: 1030064966}
+  m_Layer: 7
   m_Name: TitleCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31372,6 +31374,83 @@ Transform:
   m_Father: {fileID: 145523107}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030064966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030064963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: c48f52c9d4ad5b3409ebfbb3d1cd372f, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!114 &1030064967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030064963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1030064965}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1034013504
 GameObject:
   m_ObjectHideFlags: 0
@@ -36656,7 +36735,7 @@ GameObject:
   - component: {fileID: 1252787814}
   - component: {fileID: 1252787816}
   - component: {fileID: 1252787815}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text_Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39941,11 +40020,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
-  far clip plane: 5000
-  field of view: 40
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
   orthographic: 1
-  orthographic size: 5.39
+  orthographic size: 5.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -46975,7 +47054,7 @@ GameObject:
   - component: {fileID: 1589732200}
   - component: {fileID: 1589732202}
   - component: {fileID: 1589732201}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slider04_Blue_Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47798,7 +47877,7 @@ GameObject:
   - component: {fileID: 1621944319}
   - component: {fileID: 1621944318}
   - component: {fileID: 1621944317}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51182,7 +51261,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1702665567}
   - component: {fileID: 1702665568}
-  m_Layer: 0
+  - component: {fileID: 1702665570}
+  - component: {fileID: 1702665569}
+  m_Layer: 7
   m_Name: RecapCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51246,6 +51327,83 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1702665569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702665566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 9794e90eb123eb040a39e7bbd6449a1a, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!114 &1702665570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702665566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1702665567}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1702967506
 GameObject:
   m_ObjectHideFlags: 0
@@ -52007,7 +52165,7 @@ GameObject:
   - component: {fileID: 1716809439}
   - component: {fileID: 1716809438}
   - component: {fileID: 1716809437}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52613,7 +52771,7 @@ GameObject:
   - component: {fileID: 1732340699}
   - component: {fileID: 1732340698}
   - component: {fileID: 1732340697}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: NewGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53098,7 +53256,7 @@ GameObject:
   - component: {fileID: 1742129344}
   - component: {fileID: 1742129343}
   - component: {fileID: 1742129342}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: NewGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54125,7 +54283,7 @@ GameObject:
   - component: {fileID: 1772937639}
   - component: {fileID: 1772937641}
   - component: {fileID: 1772937640}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BlackCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55985,7 +56143,7 @@ GameObject:
   - component: {fileID: 1853852702}
   - component: {fileID: 1853852701}
   - component: {fileID: 1853852700}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: FillArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58470,7 +58628,7 @@ GameObject:
   - component: {fileID: 1945841374}
   - component: {fileID: 1945841376}
   - component: {fileID: 1945841375}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58623,7 +58781,7 @@ GameObject:
   - component: {fileID: 1951874769}
   - component: {fileID: 1951874768}
   - component: {fileID: 1951874767}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: MusicSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58897,7 +59055,7 @@ GameObject:
   - component: {fileID: 1960905376}
   - component: {fileID: 1960905378}
   - component: {fileID: 1960905377}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text_Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61181,7 +61339,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -61266,7 +61424,7 @@ GameObject:
   - component: {fileID: 2031425376}
   - component: {fileID: 2031425378}
   - component: {fileID: 2031425377}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slider04_Blue2_Frame2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63427,7 +63585,7 @@ GameObject:
   - component: {fileID: 2098532928}
   - component: {fileID: 2098532927}
   - component: {fileID: 2098532926}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: ReturnButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63667,7 +63825,7 @@ GameObject:
   - component: {fileID: 2099088623}
   - component: {fileID: 2099088622}
   - component: {fileID: 2099088621}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ExitGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -64,11 +64,10 @@ public class MigraineController : MonoBehaviour
         }
     }
 
-    public void SetMigraineActive(bool t, Camera c) {
-        
-
+    public void SetMigraineActive(bool t, int _pulseNum) {
 
         pulsing = t;
+        pulseNum = _pulseNum;
         if(t) {
             delta = 0;
             postProcessingVolume.weight = 0;

@@ -28,7 +28,7 @@ public class Door : MonoBehaviour
     }
 
     void OnMouseOver() {
-        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive || SceneChangeManager.instance.IsFading())
+        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive || SceneChangeManager.instance.IsFading() || SceneChangeManager.instance.currentScene.name != "MorningRoutineScene")
         {
             return;
         }
@@ -36,14 +36,16 @@ public class Door : MonoBehaviour
         spriteRenderer.sprite = openSprite;
         if(!soundEffectPlayed) {
             soundEffectPlayed = true;
-            MorningRoutineManager.Instance.audioManager.LoadSound(hoverSoundEffect);
-            MorningRoutineManager.Instance.audioManager.PlaySoundForce();
+            if(hoverSoundEffect != null) {
+                MorningRoutineManager.Instance.audioManager.LoadSound(hoverSoundEffect);
+                MorningRoutineManager.Instance.audioManager.PlaySoundForce();
+            }
         }
         
     }
 
     void OnMouseDown() {
-        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive || SceneChangeManager.instance.IsFading())
+        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive || SceneChangeManager.instance.IsFading() || SceneChangeManager.instance.currentScene.name != "MorningRoutineScene")
         {
             return;
         }
@@ -60,26 +62,36 @@ public class Door : MonoBehaviour
                 }
             }
 
-            MorningRoutineManager.Instance.audioManager.LoadSound(clickSoundEffect);
-            MorningRoutineManager.Instance.audioManager.PlaySoundForce();
+
+            if(clickSoundEffect != null) {
+                MorningRoutineManager.Instance.audioManager.LoadSound(clickSoundEffect);
+                MorningRoutineManager.Instance.audioManager.PlaySoundForce();
+            }
+            
         } else {
             GoToWork();
-            MorningRoutineManager.Instance.audioManager.LoadSound(clickSoundEffect);
-            MorningRoutineManager.Instance.audioManager.PlaySoundForce();
+            if(clickSoundEffect != null) {
+                MorningRoutineManager.Instance.audioManager.LoadSound(clickSoundEffect);
+                MorningRoutineManager.Instance.audioManager.PlaySoundForce();
+            }
+            
         }
         
     }
 
     void OnMouseExit() {
-        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive)
+        if (GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive || SceneChangeManager.instance.currentScene.name != "MorningRoutineScene")
         {
             return;
         }
         
         spriteRenderer.sprite = closedSprite;
-        MorningRoutineManager.Instance.audioManager.LoadSound(clickSoundEffect);
-        MorningRoutineManager.Instance.audioManager.PlaySoundForce();
-        soundEffectPlayed = false;
+        if(clickSoundEffect != null) {
+            MorningRoutineManager.Instance.audioManager.LoadSound(clickSoundEffect);
+            MorningRoutineManager.Instance.audioManager.PlaySoundForce();
+            soundEffectPlayed = false;
+        }
+        
     }
 
     void GoToWork() {

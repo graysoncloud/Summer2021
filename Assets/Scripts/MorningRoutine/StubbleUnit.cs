@@ -76,10 +76,10 @@ public class StubbleUnit : MonoBehaviour
         {
             //Debug.Log("razor");
 
-            float rand = Random.Range(0f, 1f);
+            float rand = Random.Range(0f, (PlayerPrefs.GetInt("Stress") / 100f));
             if (stubbleState == StubbleState.CREAM)
             {
-                rand += 0.25f * (PlayerPrefs.GetInt("Stress") / 100f);
+                rand /= 2;
             }
             else if (stubbleState == StubbleState.UNSHAVED)
             {

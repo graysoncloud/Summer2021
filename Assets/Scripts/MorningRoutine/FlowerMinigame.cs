@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlowerMinigame : Minigame
 {
-    public int numFlowers = 2;
+    public int numFlowers = 1;
     public GameObject flowerPotPrefab;
     List<GameObject> flowerPots = new List<GameObject>();
     public int[] flowerDecayList;

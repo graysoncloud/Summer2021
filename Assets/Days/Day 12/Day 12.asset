@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c747640b685770845b310d0728bc0456, type: 3}
+  m_Name: Day 12
+  m_EditorClassIdentifier: 
+  sequences: []
+  newsEvent: {fileID: 0}
+  contracts: []
+  dayChemicals:
+  - {fileID: 4991818317866170135, guid: b0498c4b10265de4da2ea258c0238db3, type: 3}
+  - {fileID: 4991818317866170135, guid: bb8894a440a05f5409bcaf05c6803a60, type: 3}
+  - {fileID: 4991818317866170135, guid: c41f7b2ef22917349b91227c238812ab, type: 3}
+  - {fileID: 4991818317866170135, guid: 07df1a36d657d4447a8782cb1d0f8348, type: 3}
+  - {fileID: 4991818317866170135, guid: fed731bf7ffbb2a4ebf1de7ac54dc89a, type: 3}
+  contractTypeList: 
+  storyContracts: []
+  easyContracts:
+  - {fileID: 11400000, guid: bfea11392ec39f54cbfd0c9cfedefcf7, type: 2}
+  - {fileID: 11400000, guid: ee21e8f115db5bf40be0a81e5fd31c88, type: 2}
+  - {fileID: 11400000, guid: 92d28876b258ab649bdbc9703a2c5491, type: 2}
+  hardContracts:
+  - {fileID: 11400000, guid: 24ec7896ae614044ea71b7d0f3fbb496, type: 2}
+  - {fileID: 11400000, guid: 1b31a7b081eecb34e84e5a737993c501, type: 2}
+  - {fileID: 11400000, guid: 527653c9665119246b09628eaed14ed3, type: 2}
+  - {fileID: 11400000, guid: ac7405f2e3dc0ae43b07044a22554927, type: 2}
+  - {fileID: 11400000, guid: 965d79eb55267b344b9088efe8802221, type: 2}
+  - {fileID: 11400000, guid: 571f500b9024a424cb74a84331dacc12, type: 2}
+  - {fileID: 11400000, guid: 44511a14414117e4b9423b02d908beb6, type: 2}
+  - {fileID: 11400000, guid: f85b4213fdb2fcd43894689a5484b5c0, type: 2}
+  - {fileID: 11400000, guid: 7703bda090830e64688e5dc746ad8d10, type: 2}

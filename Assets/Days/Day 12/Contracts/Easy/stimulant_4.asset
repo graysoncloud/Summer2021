@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
+  m_Name: stimulant_4
+  m_EditorClassIdentifier: 
+  companyName: Fredrickson QRL
+  description: Looking for something to motivate our employees
+  usesMaxVolatility: 1
+  volatilityMax: 11
+  optimalMaxVolatilityVal: 5
+  usesMaxPrice: 1
+  maxPrice: 22
+  optimalMaxPriceVal: 19
+  usesMinPrice: 0
+  minPrice: 0
+  optimalMinPriceVal: 0
+  usesUndesirableEffect: 0
+  undesirableEffect: 0
+  undesirableEffectMax: 0
+  optimalUndesirableEffectAmount: 0
+  usesDesirableEffect: 1
+  desirableEffect: 7
+  desirableEffectMin: 4
+  optimalDesirableEffectAmount: 4
+  usesOptional: 0
+  isSpecialContract1: 0
+  isSpecialContract2: 0
+  usesOptionalDesireable: 0
+  usesOptionalUndesirable: 0
+  usesOptionalMinPrice: 0
+  usesOptionalMaxPrice: 0
+  usesOptionalVol: 0
+  optionalEffect: 0
+  optionalUndesirableMax: 0
+  optionalDesirableMin: 0
+  optionalVolMax: 0
+  optionalPriceMin: 0
+  optionalPriceMax: 0

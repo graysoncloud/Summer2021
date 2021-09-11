@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
-  m_Name: headache_6
+  m_Name: OPTIONALheadache_4
   m_EditorClassIdentifier: 
   companyName: Fredrickson QRL
   description: Looking for something to motivate our employees
@@ -18,8 +18,8 @@ MonoBehaviour:
   volatilityMax: 15
   optimalMaxVolatilityVal: 9
   usesMaxPrice: 1
-  maxPrice: 13
-  optimalMaxPriceVal: 10
+  maxPrice: 16
+  optimalMaxPriceVal: 13
   usesMinPrice: 0
   minPrice: 0
   optimalMinPriceVal: 0
@@ -29,9 +29,9 @@ MonoBehaviour:
   optimalUndesirableEffectAmount: 0
   usesDesirableEffect: 1
   desirableEffect: 4
-  desirableEffectMin: 6
-  optimalDesirableEffectAmount: 6
-  usesOptional: 0
+  desirableEffectMin: 4
+  optimalDesirableEffectAmount: 4
+  usesOptional: 1
   isSpecialContract1: 0
   isSpecialContract2: 0
   usesOptionalDesireable: 1

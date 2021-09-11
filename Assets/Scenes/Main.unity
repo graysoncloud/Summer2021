@@ -59264,11 +59264,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeSpeed: 1
   endSpeed: 2
+  logoDelay: 1
   delay: 2
   stopDelay: 5
   endDelay: 7
   title: {fileID: 1220800063}
+  logo: {fileID: 1718197866}
   toTitleScreen: {fileID: 11400000, guid: 49739f7906dad3c42ab98e9cb071e725, type: 2}
+  animator: {fileID: 1718197868}
 --- !u!4 &2052212351
 Transform:
   m_ObjectHideFlags: 0

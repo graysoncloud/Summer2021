@@ -12,7 +12,7 @@ enum StubbleState
 
 public class StubbleUnit : MonoBehaviour
 {
-    public Sprite[] stubbleSprites = new Sprite[5];
+    public Sprite[] stubbleSprites = new Sprite[6];
     public Sprite shaveCreamSprite;
 
     public Sprite cutSprite;

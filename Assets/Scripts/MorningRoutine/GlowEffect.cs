@@ -13,7 +13,7 @@ public class GlowEffect : MonoBehaviour
     bool clicking = false;
     
 
-    SpriteGlowEffect glowSettings;
+    public SpriteGlowEffect glowSettings;
 
     [Range(0, 5f)]
     public float maxGlow = 1f;
@@ -41,7 +41,9 @@ public class GlowEffect : MonoBehaviour
     {
         if (gameObject.activeSelf && tutorialGlow && !hovering)
         {
-
+            if(glowSettings == null) {
+                    return;
+                }
             glowTimer += pulseSpeed * Time.deltaTime;
             if (glowTimer >= 1f)
             {
@@ -57,6 +59,9 @@ public class GlowEffect : MonoBehaviour
 
     public void OnMouseDown()
     {
+        if(glowSettings == null) {
+                    return;
+                }
         glowSettings.GlowBrightness = 0;
         glowSettings.OutlineWidth = 0;
         if (tutorialGlow)
@@ -68,11 +73,17 @@ public class GlowEffect : MonoBehaviour
     }
 
     public void OnMouseDrag() {
+        if(glowSettings == null) {
+                    return;
+                }
         glowSettings.GlowBrightness = 0;
         glowSettings.OutlineWidth = 0;
     }
 
     public void OnMouseOver() {
+        if(glowSettings == null) {
+                    return;
+                }
         if(hoverGlow && !clicking) {
             hovering = true;
             glowSettings.OutlineWidth = maxOutline;
@@ -82,6 +93,9 @@ public class GlowEffect : MonoBehaviour
     }
 
     public void OnMouseExit() {
+        if(glowSettings == null) {
+                    return;
+                }
         if(hoverGlow) {
             hovering = false;
             glowSettings.GlowBrightness = 0;

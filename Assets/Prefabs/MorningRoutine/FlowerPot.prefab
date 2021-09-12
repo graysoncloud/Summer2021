@@ -236,6 +236,7 @@ MonoBehaviour:
   soundEffect: {fileID: 8300000, guid: cc44a5750a369284c98b51af1e3b92e6, type: 3}
   jitterThreshold: 20
   maxJitter: 0.1
+  hasAffector: 0
   decay: 0
   waterLevel: 0
   flowerSprites:
@@ -266,7 +267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4624288348731111544
 Transform:
   m_ObjectHideFlags: 0

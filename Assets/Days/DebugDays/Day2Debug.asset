@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c747640b685770845b310d0728bc0456, type: 3}
+  m_Name: Day2Debug
+  m_EditorClassIdentifier: 
+  sequences: []
+  newsEvent: {fileID: 11400000, guid: 6ee86f99d2b55f84fb5ff2f168940692, type: 2}
+  contracts:
+  - {fileID: 11400000, guid: 471d8bbdf93fa0349935587c186078d1, type: 2}
+  - {fileID: 11400000, guid: 5e0d536b6d1e07c4890b1773e098d5f1, type: 2}
+  - {fileID: 11400000, guid: 19f1ab56a65ac2548b321b9d9ff6e43f, type: 2}
+  - {fileID: 11400000, guid: e8b5b51c58b7ca14ab493043133f0a9a, type: 2}
+  - {fileID: 11400000, guid: a0833aeddfcb06148813b49afd329b41, type: 2}
+  - {fileID: 11400000, guid: 3578d4eae45a03d478ef399b56706195, type: 2}
+  - {fileID: 11400000, guid: b9834b5edf2e25245bd6ea4fbe2aeca1, type: 2}
+  - {fileID: 11400000, guid: f33facbceced98144985415e6f4e3ffb, type: 2}
+  - {fileID: 11400000, guid: f514aad98a7d079408e3565bb433d931, type: 2}
+  - {fileID: 11400000, guid: 32236f9c3c769da40a46899ae8e14555, type: 2}
+  dayChemicals:
+  - {fileID: 4991818317866170135, guid: ca93b602592e5e347b070a41e8b1a2de, type: 3}
+  - {fileID: 4991818317866170135, guid: b0498c4b10265de4da2ea258c0238db3, type: 3}
+  - {fileID: 4991818317866170135, guid: 23a9136f6d4114a428f8e5c0737a0add, type: 3}
+  - {fileID: 4991818317866170135, guid: 20a824d3f3877854a8ee33dd996889be, type: 3}
+  - {fileID: 4991818317866170135, guid: 76a843807c187324e8bb0ab4ddacdbf4, type: 3}
+  - {fileID: 4991818317866170135, guid: 1c9da7e66f5b6b14f8d41974e459e553, type: 3}
+  contractTypeList: 02000000020000000000000000000000010000000100000001000000010000000100000001000000
+  storyContracts:
+  - {fileID: 11400000, guid: 471d8bbdf93fa0349935587c186078d1, type: 2}
+  - {fileID: 11400000, guid: 5e0d536b6d1e07c4890b1773e098d5f1, type: 2}
+  easyContracts:
+  - {fileID: 11400000, guid: e8b5b51c58b7ca14ab493043133f0a9a, type: 2}
+  - {fileID: 11400000, guid: 19f1ab56a65ac2548b321b9d9ff6e43f, type: 2}
+  hardContracts:
+  - {fileID: 11400000, guid: 3578d4eae45a03d478ef399b56706195, type: 2}
+  - {fileID: 11400000, guid: 32236f9c3c769da40a46899ae8e14555, type: 2}
+  - {fileID: 11400000, guid: f514aad98a7d079408e3565bb433d931, type: 2}
+  - {fileID: 11400000, guid: a0833aeddfcb06148813b49afd329b41, type: 2}
+  - {fileID: 11400000, guid: b9834b5edf2e25245bd6ea4fbe2aeca1, type: 2}
+  - {fileID: 11400000, guid: f33facbceced98144985415e6f4e3ffb, type: 2}

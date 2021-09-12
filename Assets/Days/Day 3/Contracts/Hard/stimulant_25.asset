@@ -16,10 +16,10 @@ MonoBehaviour:
   description: We're creating a simulator that tests how drugs may react in the body,
     and need something absolutely extreme to demo our technology.
   usesMaxVolatility: 1
-  volatilityMax: 6
+  volatilityMax: 10
   optimalMaxVolatilityVal: 0
   usesMaxPrice: 1
-  maxPrice: 65
+  maxPrice: 37
   optimalMaxPriceVal: 62
   usesMinPrice: 0
   minPrice: 0
@@ -32,3 +32,17 @@ MonoBehaviour:
   desirableEffect: 7
   desirableEffectMin: 25
   optimalDesirableEffectAmount: 25
+  usesOptional: 0
+  isSpecialContract1: 0
+  isSpecialContract2: 0
+  usesOptionalDesireable: 0
+  usesOptionalUndesirable: 0
+  usesOptionalMinPrice: 0
+  usesOptionalMaxPrice: 0
+  usesOptionalVol: 0
+  optionalEffect: 0
+  optionalUndesirableMax: 0
+  optionalDesirableMin: 0
+  optionalVolMax: 0
+  optionalPriceMin: 0
+  optionalPriceMax: 0

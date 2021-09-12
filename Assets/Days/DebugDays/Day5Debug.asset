@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c747640b685770845b310d0728bc0456, type: 3}
-  m_Name: Day 5
+  m_Name: Day5Debug
   m_EditorClassIdentifier: 
-  sequences:
-  - initialEvent: {fileID: 11400000, guid: 3048dbf527fb2d54195d46df3c4d4f61, type: 2}
-    trigger: 1
-  - initialEvent: {fileID: 11400000, guid: 22ff3792e55877c448ae238ef67d74da, type: 2}
-    trigger: 3
-  - initialEvent: {fileID: 11400000, guid: 842a9f182b80d68448b8786077a8d702, type: 2}
-    trigger: 4
+  sequences: []
   newsEvent: {fileID: 11400000, guid: bb7ddbbbeeb98294cba836a7b2023b25, type: 2}
-  contracts: []
+  contracts:
+  - {fileID: 11400000, guid: f4cb74f5385eeaa41bfcf1f15c6d2323, type: 2}
+  - {fileID: 11400000, guid: 6729c67fee342894a845cf55cb0b467f, type: 2}
+  - {fileID: 11400000, guid: d0daf6cd064eb894ea9dc0bbab6f68ac, type: 2}
+  - {fileID: 11400000, guid: 63b8c41b4d2dfb644898661647db1af6, type: 2}
+  - {fileID: 11400000, guid: 95db0e2d45a46334292d2291980c2f7d, type: 2}
+  - {fileID: 11400000, guid: b4b2d787f2fba674ba8659f1d4fa11fd, type: 2}
+  - {fileID: 11400000, guid: a660724d0f63c9d4ea051c4e3a32194a, type: 2}
   dayChemicals:
   - {fileID: 4991818317866170135, guid: 4a380683e44b1f44d9d5902a939ccfe4, type: 3}
   - {fileID: 4991818317866170135, guid: 4d1289f9cbcefaa47975c042546f89ea, type: 3}
@@ -28,9 +29,10 @@ MonoBehaviour:
   - {fileID: 4991818317866170135, guid: 7dc71964c27dfd64f8f510fb3063b55e, type: 3}
   - {fileID: 4991818317866170135, guid: ca93b602592e5e347b070a41e8b1a2de, type: 3}
   - {fileID: 4991818317866170135, guid: 1c9da7e66f5b6b14f8d41974e459e553, type: 3}
-  contractTypeList: 010000000100000001000000
+  contractTypeList: 00000000010000000100000001000000010000000100000001000000
   storyContracts: []
-  easyContracts: []
+  easyContracts:
+  - {fileID: 11400000, guid: f4cb74f5385eeaa41bfcf1f15c6d2323, type: 2}
   hardContracts:
   - {fileID: 11400000, guid: d0daf6cd064eb894ea9dc0bbab6f68ac, type: 2}
   - {fileID: 11400000, guid: 6729c67fee342894a845cf55cb0b467f, type: 2}

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
-  m_Name: ecstasis_6
+  m_Name: REMecstasis_6
   m_EditorClassIdentifier: 
   companyName: Help-a-Paw Tiger Conservation Youth Group
   description: 84% of baby tigers now suffering from ecstacy addiction in France.
     Laced baby food our last option to save the species!
   usesMaxVolatility: 1
-  volatilityMax: 18
+  volatilityMax: 21
   optimalMaxVolatilityVal: 12
   usesMaxPrice: 1
-  maxPrice: 15
+  maxPrice: 18
   optimalMaxPriceVal: 12
   usesMinPrice: 0
   minPrice: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
   undesirableEffectMax: 0
   optimalUndesirableEffectAmount: 0
   usesDesirableEffect: 1
-  desirableEffect: 0
+  desirableEffect: 2
   desirableEffectMin: 6
   optimalDesirableEffectAmount: 6
   usesOptional: 0
@@ -37,6 +37,12 @@ MonoBehaviour:
   isSpecialContract2: 1
   usesOptionalDesireable: 1
   usesOptionalUndesirable: 0
+  usesOptionalMinPrice: 0
+  usesOptionalMaxPrice: 0
+  usesOptionalVol: 0
   optionalEffect: 0
   optionalUndesirableMax: 0
   optionalDesirableMin: 0
+  optionalVolMax: 0
+  optionalPriceMin: 0
+  optionalPriceMax: 0

@@ -10,15 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c747640b685770845b310d0728bc0456, type: 3}
-  m_Name: Day 4
+  m_Name: Day4Debug
   m_EditorClassIdentifier: 
-  sequences:
-  - initialEvent: {fileID: 11400000, guid: f1f9f7b6d0d175544a3453acffc36302, type: 2}
-    trigger: 1
-  - initialEvent: {fileID: 11400000, guid: 33af316834886f149b11e4e992f8fcce, type: 2}
-    trigger: 3
+  sequences: []
   newsEvent: {fileID: 11400000, guid: 0fcc8c1df40f1514bb3af493d8dac0f5, type: 2}
-  contracts: []
+  contracts:
+  - {fileID: 11400000, guid: b31303b49ebb61844a6f72b0726c4211, type: 2}
+  - {fileID: 11400000, guid: 18c6a3592277ba443a87c1b12e757363, type: 2}
+  - {fileID: 11400000, guid: 9689a16ec2e44624abe5c9141dbd4f2b, type: 2}
+  - {fileID: 11400000, guid: 557c4049f543ee94387e595da581be0a, type: 2}
+  - {fileID: 11400000, guid: f498ffab433f0274ab9fcfb4f0ce2d77, type: 2}
+  - {fileID: 11400000, guid: ec33b86c702e02a45801719038c990a7, type: 2}
+  - {fileID: 11400000, guid: c28f4aa7b1d4a4943b6d3c583328841f, type: 2}
+  - {fileID: 11400000, guid: 7e0f89c216934e14788690cbcea4e1d6, type: 2}
+  - {fileID: 11400000, guid: 7c495b53a7c2d3a49af2ce50b39f0d03, type: 2}
+  - {fileID: 11400000, guid: 65ef383ad2da9ed42a2112fd278a75cd, type: 2}
+  - {fileID: 11400000, guid: 4726820456dfba9468ffb3f4af08a8c2, type: 2}
+  - {fileID: 11400000, guid: b51dda479bd622e44ab1a8b2083dd372, type: 2}
   dayChemicals:
   - {fileID: 4991818317866170135, guid: 76a843807c187324e8bb0ab4ddacdbf4, type: 3}
   - {fileID: 4991818317866170135, guid: 628a188085de2904fa4b18aa1d5c5563, type: 3}
@@ -26,16 +34,18 @@ MonoBehaviour:
   - {fileID: 4991818317866170135, guid: 4d1289f9cbcefaa47975c042546f89ea, type: 3}
   - {fileID: 4991818317866170135, guid: 4a1c45a71a6352d429477c2a916a2396, type: 3}
   - {fileID: 4991818317866170135, guid: b0498c4b10265de4da2ea258c0238db3, type: 3}
-  contractTypeList: 0000000000000000010000000000000001000000
+  contractTypeList: 000000000000000000000000000000000100000001000000010000000100000001000000010000000100000001000000
   storyContracts: []
   easyContracts:
   - {fileID: 11400000, guid: 557c4049f543ee94387e595da581be0a, type: 2}
+  - {fileID: 11400000, guid: b31303b49ebb61844a6f72b0726c4211, type: 2}
   - {fileID: 11400000, guid: 9689a16ec2e44624abe5c9141dbd4f2b, type: 2}
   - {fileID: 11400000, guid: 18c6a3592277ba443a87c1b12e757363, type: 2}
   hardContracts:
   - {fileID: 11400000, guid: 65ef383ad2da9ed42a2112fd278a75cd, type: 2}
   - {fileID: 11400000, guid: c28f4aa7b1d4a4943b6d3c583328841f, type: 2}
   - {fileID: 11400000, guid: ec33b86c702e02a45801719038c990a7, type: 2}
+  - {fileID: 11400000, guid: f498ffab433f0274ab9fcfb4f0ce2d77, type: 2}
   - {fileID: 11400000, guid: b51dda479bd622e44ab1a8b2083dd372, type: 2}
   - {fileID: 11400000, guid: 7c495b53a7c2d3a49af2ce50b39f0d03, type: 2}
   - {fileID: 11400000, guid: 7e0f89c216934e14788690cbcea4e1d6, type: 2}

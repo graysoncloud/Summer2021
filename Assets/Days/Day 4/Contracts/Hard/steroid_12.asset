@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
-  m_Name: headache_12
+  m_Name: steroid_12
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Jansson and Jonesson
+  description: Dahlmeier's disease is a prevalent new disease affecting kid's ability
+    to absorb nutrients, so a special boost to nutrient movement is needed.
   usesMaxVolatility: 1
   volatilityMax: 24
   optimalMaxVolatilityVal: 18
@@ -31,3 +32,17 @@ MonoBehaviour:
   desirableEffect: 4
   desirableEffectMin: 15
   optimalDesirableEffectAmount: 15
+  usesOptional: 0
+  isSpecialContract1: 0
+  isSpecialContract2: 0
+  usesOptionalDesireable: 0
+  usesOptionalUndesirable: 0
+  usesOptionalMinPrice: 0
+  usesOptionalMaxPrice: 0
+  usesOptionalVol: 0
+  optionalEffect: 0
+  optionalUndesirableMax: 0
+  optionalDesirableMin: 0
+  optionalVolMax: 0
+  optionalPriceMin: 0
+  optionalPriceMax: 0

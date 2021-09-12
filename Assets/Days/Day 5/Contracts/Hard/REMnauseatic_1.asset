@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: REMnauseatic_1
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: TruSight
+  description: We are attempting to explore the effects of food-induced nausea and
+    need a chemical composition that can be imported into our simulator.
   usesMaxVolatility: 1
   volatilityMax: 13
   optimalMaxVolatilityVal: 7

@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
-  m_Name: headache_15
+  m_Name: steroid_15
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Lakewood Valley Performance
+  description: 'CONFIDENTIAL: Lakewood Valley Performance is looking for a microdosable
+    steroid that can be expunged from the body in a rapid manner.'
   usesMaxVolatility: 1
   volatilityMax: 21
   optimalMaxVolatilityVal: 15
@@ -31,3 +32,17 @@ MonoBehaviour:
   desirableEffect: 4
   desirableEffectMin: 15
   optimalDesirableEffectAmount: 15
+  usesOptional: 0
+  isSpecialContract1: 0
+  isSpecialContract2: 0
+  usesOptionalDesireable: 0
+  usesOptionalUndesirable: 0
+  usesOptionalMinPrice: 0
+  usesOptionalMaxPrice: 0
+  usesOptionalVol: 0
+  optionalEffect: 0
+  optionalUndesirableMax: 0
+  optionalDesirableMin: 0
+  optionalVolMax: 0
+  optionalPriceMin: 0
+  optionalPriceMax: 0

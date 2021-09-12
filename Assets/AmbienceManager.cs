@@ -28,14 +28,18 @@ public class AmbienceManager : MonoBehaviour
     {
         audioSource.volume = PlayerPrefs.GetFloat("SFXVolume");
         if (fadeOutCoroutine != null)
+        {
             StopCoroutine(fadeOutCoroutine);
+            fadeOutCoroutine = null;
+        }
 
         audioSource.PlayOneShot(ambienceArray[Convert.ToInt32(toPlay)]);
     }
 
     public void StartFadeOut()
     {
-         fadeOutCoroutine = StartCoroutine("FadeOutAmbience");
+        if (fadeOutCoroutine == null)
+            fadeOutCoroutine = StartCoroutine("FadeOutAmbience");
     }
 
 
@@ -58,6 +62,7 @@ public class AmbienceManager : MonoBehaviour
         }
 
         audioSource.Stop();
+        fadeOutCoroutine = null;
 
     }
 

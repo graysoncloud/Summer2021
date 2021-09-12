@@ -109,10 +109,16 @@ public class CharacterFadeManager : MonoBehaviour
 
             float fadeRate = .01f;
 
-            // Move and fade in
+            // Move and fade in. Note characters should end at (0, 0)
             while (charToFade.GetComponent<SpriteRenderer>().color.a < 1)
             {
-                charToFade.transform.position -= new Vector3(.025f, 0f, 0f);
+                if (charToFade.transform.position.x > 0)
+                {
+                    charToFade.transform.position -= new Vector3(.025f, 0f, 0f);
+                } else
+                {
+                    charToFade.transform.position = new Vector3(.0f, 0f, charToFade.transform.position.z);
+                }
                 spriteRenderer.color += fadeIncrement;
                 yield return new WaitForEndOfFrame();
             }

@@ -12,7 +12,7 @@ public enum EffectType
     Antidepressant,
     Ecstasis,
     FetalExposure,
-    Headache,
+    Steroid,
     Immunosuppressant,
     Nauseatic,
     Stimulant,

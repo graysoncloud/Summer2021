@@ -144,6 +144,8 @@ public class GameManager : MonoBehaviour
         DrugManager.instance.ResetTimeElapsed();
 
         OfficeSceneManager.instance.openedComputerToday = false;
+        DrugManager.instance.tutorialsfinished = false;
+        DrugManager.instance.numtutorialsfinished = 0;
 
         currentDayIndex++;
         currentDay = days[currentDayIndex];

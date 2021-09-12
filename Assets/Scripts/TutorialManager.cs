@@ -31,6 +31,12 @@ public class TutorialManager : MonoBehaviour
     public GameObject RecapTutorial3;
     public GameObject RecapTutorial4;
     public GameObject RecapTutorial5;
+    public GameObject Day2Tutorial1;
+    public GameObject Day2Tutorial2;
+    public GameObject Day2Tutorial3;
+    public GameObject Day3Tutorial1;
+    public GameObject Day3Tutorial2;
+    public GameObject Day3Tutorial3;
 
     // Add more tutorial scenes
 

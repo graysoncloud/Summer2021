@@ -22,7 +22,7 @@ public class HelpButton : MonoBehaviour
             helpMenu.SetActive(false);
             textTMP.text = "Help";
         }
-        else if(!helpMenu.activeSelf && DrugManager.instance.alltutorialsfinished)
+        else if(!helpMenu.activeSelf && DrugManager.instance.tutorialsfinished)
         {
             helpMenu.SetActive(true);
             textTMP.text = "Back";

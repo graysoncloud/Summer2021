@@ -37,8 +37,8 @@ public class DrugManager : MonoBehaviour
     public delegate void OnClearChems();
     public static event OnClearChems onClearChems;
 
-    private int numtutorialsfinished;
-    public bool alltutorialsfinished;
+    public int numtutorialsfinished;
+    public bool tutorialsfinished;
     public int numrecapfinished;
     public bool allrecapfinished;
     private Vector2 tutorialTheromideTile = new Vector2(2f, 5f);
@@ -57,7 +57,7 @@ public class DrugManager : MonoBehaviour
     {
 
         numtutorialsfinished = 0;
-        alltutorialsfinished = false;
+        tutorialsfinished = false;
         numrecapfinished = 0;
         allrecapfinished = true;
 
@@ -71,16 +71,6 @@ public class DrugManager : MonoBehaviour
         hours = 9;
         minutes = 0;
         qualifier = "AM";
-
-        if(GameManager.instance.currentDayIndex == 0)
-        {
-            TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial1);
-            numtutorialsfinished++;
-        }
-        else
-        {
-            alltutorialsfinished = true;
-        }
     }
 
     private bool TutorialContainsAvero()
@@ -96,7 +86,12 @@ public class DrugManager : MonoBehaviour
     }
     void Update()
     {
-        if(!alltutorialsfinished){
+        if(!tutorialsfinished && GameManager.instance.currentDayIndex == 0){
+            if(numtutorialsfinished == 0 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial1);
+                numtutorialsfinished++;
+            }
             if(numtutorialsfinished == 1 && TutorialManager.instance.activeTutorial == null)
             {
                 TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial2);
@@ -163,7 +158,45 @@ public class DrugManager : MonoBehaviour
             {
                 TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial12);
                 numtutorialsfinished++;
-                alltutorialsfinished = true;
+                tutorialsfinished = true;
+            }
+        }
+
+        if(!tutorialsfinished && GameManager.instance.currentDayIndex == 1){
+            if(numtutorialsfinished == 0 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day2Tutorial1);
+                numtutorialsfinished++;
+            }
+            if(numtutorialsfinished == 1 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day2Tutorial2);
+                numtutorialsfinished++;
+            }
+            if(numtutorialsfinished == 2 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day2Tutorial3);
+                numtutorialsfinished++;
+                tutorialsfinished = true;
+            }
+        }
+
+        if(!tutorialsfinished && GameManager.instance.currentDayIndex == 2){
+            if(numtutorialsfinished == 0 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day3Tutorial1);
+                numtutorialsfinished++;
+            }
+            if(numtutorialsfinished == 1 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day3Tutorial2);
+                numtutorialsfinished++;
+            }
+            if(numtutorialsfinished == 2 && TutorialManager.instance.activeTutorial == null)
+            {
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day3Tutorial3);
+                numtutorialsfinished++;
+                tutorialsfinished = true;
             }
         }
 
@@ -484,5 +517,11 @@ public class DrugManager : MonoBehaviour
         hours = 9;
         minutes = 0;
         qualifier = "AM";
+    }
+
+    public void StartRecapTutorial()
+    {
+        allrecapfinished = false;
+        numrecapfinished = 0;
     }
 }

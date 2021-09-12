@@ -48,8 +48,6 @@ public class ContractDisplayer : MonoBehaviour
 
         companyName.text = contractToDisplay.companyName;
         description.text = contractToDisplay.description;
-        description.ForceMeshUpdate();
-        seperator.transform.position = new Vector3(description.transform.position.x, description.transform.position.y - description.preferredHeight, 0);
 
         int currentDisplayItemIndex = 0;
 
@@ -106,7 +104,7 @@ public class ContractDisplayer : MonoBehaviour
             }
             if (contractToDisplay.usesOptionalDesireable)
             {
-                requirements[4].text = "Min " + contractToDisplay.optionalEffect.ToString(); //Change 4 to length - 1 in the future aka never
+                requirements[4].text = "Min " + contractToDisplay.optionalEffect.ToString();
                 values[4].text = "0/" + contractToDisplay.optionalDesirableMin.ToString();
                 values[4].color = optionColor;
                 requirements[4].color = optionColor;

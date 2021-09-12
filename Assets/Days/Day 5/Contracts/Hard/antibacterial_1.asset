@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Kids never wash their hands, and we need a special chemical that can
     bond well with our multi-colored hand sanitizer.
   usesMaxVolatility: 1
-  volatilityMax: 13
+  volatilityMax: 18
   optimalMaxVolatilityVal: 7
   usesMaxPrice: 1
   maxPrice: 37

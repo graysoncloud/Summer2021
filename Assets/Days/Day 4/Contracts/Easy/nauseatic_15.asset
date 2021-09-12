@@ -19,7 +19,7 @@ MonoBehaviour:
   volatilityMax: 24
   optimalMaxVolatilityVal: 18
   usesMaxPrice: 1
-  maxPrice: 33
+  maxPrice: 30
   optimalMaxPriceVal: 30
   usesMinPrice: 1
   minPrice: 24
@@ -30,8 +30,8 @@ MonoBehaviour:
   optimalUndesirableEffectAmount: 0
   usesDesirableEffect: 1
   desirableEffect: 6
-  desirableEffectMin: 12
-  optimalDesirableEffectAmount: 12
+  desirableEffectMin: 15
+  optimalDesirableEffectAmount: 15
   usesOptional: 0
   isSpecialContract1: 0
   isSpecialContract2: 0

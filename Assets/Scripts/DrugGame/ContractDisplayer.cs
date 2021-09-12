@@ -21,6 +21,7 @@ public class ContractDisplayer : MonoBehaviour
     [SerializeField] private Button printButton = null;
     [SerializeField] private TextMeshProUGUI printText = null;
     [SerializeField] private Color textAlpha;
+    [SerializeField] private GameObject seperator;
 
     private void Awake()
     {
@@ -47,6 +48,8 @@ public class ContractDisplayer : MonoBehaviour
 
         companyName.text = contractToDisplay.companyName;
         description.text = contractToDisplay.description;
+        description.ForceMeshUpdate();
+        seperator.transform.position = new Vector3(description.transform.position.x, description.transform.position.y - description.preferredHeight, 0);
 
         int currentDisplayItemIndex = 0;
 
@@ -105,11 +108,15 @@ public class ContractDisplayer : MonoBehaviour
             {
                 requirements[4].text = "Min " + contractToDisplay.optionalEffect.ToString(); //Change 4 to length - 1 in the future aka never
                 values[4].text = "0/" + contractToDisplay.optionalDesirableMin.ToString();
+                values[4].color = optionColor;
+                requirements[4].color = optionColor;
             } 
             else if (contractToDisplay.usesOptionalUndesirable)
             {
                 requirements[4].text = "Max " + contractToDisplay.optionalEffect.ToString();
                 values[4].text = "0/" + contractToDisplay.optionalUndesirableMax.ToString();
+                values[4].color = optionColor;
+                requirements[4].color = optionColor;
             } 
             else if (contractToDisplay.usesOptionalMaxPrice)
             {
@@ -122,6 +129,8 @@ public class ContractDisplayer : MonoBehaviour
             {
                 requirements[4].text = "Min Price";
                 values[4].text = "0/" + contractToDisplay.optionalPriceMin.ToString();
+                values[4].color = optionColor;
+                requirements[4].color = optionColor;
             }
             else if (contractToDisplay.usesOptionalVol)
             {

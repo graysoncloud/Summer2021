@@ -21,17 +21,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 4
-      animationName: 14
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 4
-    dialogue: "If you\u2019re up for it, I could \u201Cborrow\u201D some of the contracts
-      before you get them and add a few ideas of my own.\r"
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 4
-      animationName: 14
+      animationName: 17
     animOnly: 0
     animLength: 0
     SFX: 
@@ -42,16 +32,14 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 4
-      animationName: 14
+      animationName: 20
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 4
     dialogue: "That\u2019s all."
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 4
-      animationName: 14
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

@@ -18,7 +18,9 @@ MonoBehaviour:
   - speaker: 1
     dialogue: Goodbye.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 3
     animOnly: 0
     animLength: 0
     SFX: 

@@ -21,6 +21,8 @@ MonoBehaviour:
     animations:
     - toAnimate: 1
       animationName: 5
+    - toAnimate: 3
+      animationName: 13
     animOnly: 0
     animLength: 0
     SFX: 
@@ -28,12 +30,14 @@ MonoBehaviour:
     dialogue: '''Course you are! Everyone at Mazer could always count on you for
       your great work ethic!'
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 3
+      animationName: 14
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 3
-    dialogue: "Alright, enough funny business. To make up for all your missed time,
+    dialogue: "Alright, lemme cut right to it. To make up for all your missed time,
       you\u2019re gonna be working on twice as many contracts. We need you at 250%
       manpower, minimum.\r"
     offset: {x: 0, y: 0}

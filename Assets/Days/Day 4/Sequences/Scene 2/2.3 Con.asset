@@ -25,7 +25,9 @@ MonoBehaviour:
   - speaker: 5
     dialogue: And thank you, Barney. Your work is much appreciated.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 11
     animOnly: 0
     animLength: 0
     SFX: 

@@ -24,32 +24,3 @@ MonoBehaviour:
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 5
-    dialogue: "Barney, what is this?\r"
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 5
-      animationName: 6
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 5
-    dialogue: "You think if you\u2019re clever enough with your meddling, you can
-      push things like this past us? Just how dumb do you think I am?\r"
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 5
-      animationName: 8
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 5
-    dialogue: This is strike one, Barney. Two more might be too generous... so watch
-      it.
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 5
-      animationName: 8
-    animOnly: 0
-    animLength: 0
-    SFX: 

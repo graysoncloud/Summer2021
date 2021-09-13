@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 2.1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: a891fceedbe40c34aac229fdcffe10e0, type: 2}
+  nextEvent: {fileID: 11400000, guid: 81f51f071bbfeba4aa4212c593de04c0, type: 2}
   isNews: 0
   dialogueLines:
   - speaker: 5
     dialogue: "We\u2019re happy to have you back, Barney, but you must be swifter
       with your work in the future."
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 12
+    - toAnimate: 1
+      animationName: 6
     animOnly: 0
     animLength: 0
     SFX: 

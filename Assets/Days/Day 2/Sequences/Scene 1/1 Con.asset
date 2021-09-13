@@ -18,7 +18,9 @@ MonoBehaviour:
   - speaker: 4
     dialogue: Here.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 2
     animOnly: 0
     animLength: 0
     SFX: 
@@ -26,7 +28,9 @@ MonoBehaviour:
     dialogue: Some new chemicals today. These ones have special ionic bonds you might
       not have seen before.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 4
+      animationName: 17
     animOnly: 0
     animLength: 0
     SFX: 
@@ -48,7 +52,9 @@ MonoBehaviour:
   - speaker: 4
     dialogue: Goodbye.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 4
+      animationName: 17
     animOnly: 0
     animLength: 0
     SFX: 

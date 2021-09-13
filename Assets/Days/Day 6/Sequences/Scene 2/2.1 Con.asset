@@ -18,9 +18,7 @@ MonoBehaviour:
   - speaker: 4
     dialogue: Listen, about those migraine pills.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 4
-      animationName: 14
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
@@ -31,7 +29,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 4
-      animationName: 14
+      animationName: 20
     animOnly: 0
     animLength: 0
     SFX: 

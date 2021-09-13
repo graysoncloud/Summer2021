@@ -12,28 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 781adabc6c6b78e41b36ce7162b399d0, type: 2}
+  nextEvent: {fileID: 11400000, guid: 22ff3792e55877c448ae238ef67d74da, type: 2}
   isNews: 0
   dialogueLines:
-  - speaker: 4
-    dialogue: Is it a migraine?
+  - speaker: 1
+    dialogue: ...
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 7
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: I get them too. I can recognize one from a mile away.
+  - speaker: 1
+    dialogue: '******'
     offset: {x: 0, y: 0}
-    animations: []
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 4
-    dialogue: Here. I carry these in cases of emergency. Take them as needed when
-      you feel one coming on.
-    offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 8
     animOnly: 0
     animLength: 0
     SFX: 

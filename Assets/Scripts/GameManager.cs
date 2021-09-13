@@ -248,6 +248,9 @@ public class GameManager : MonoBehaviour
         {
             ConversationManager.instance.EndConversation();
 
+            if (SceneChangeManager.instance.currentScene.name == "OfficeScene" && CharacterFadeManager.instance.currentChars.ContainsKey("Barney"))
+                CharacterFadeManager.instance.currentChars["Barney"].GetComponent<Animator>().Play("BarneyWorkingNormal");
+
             GameManager.instance.sequenceActive = false;
         }
 

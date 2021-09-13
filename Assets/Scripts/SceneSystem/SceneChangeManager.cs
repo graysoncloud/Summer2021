@@ -74,9 +74,16 @@ public class SceneChangeManager : MonoBehaviour
 
         // Default fade outs:
         if (oldSceneName == "MorningRoutineScene" && sceneChange.newScene.ToString() == "OfficeScene")
+        {
             MusicManager.instance.StartFadeOut();
-        if (oldSceneName == "OfficeScene" && sceneChange.newScene.ToString() == "RecapScene")
+            Debug.Log("SC1");
+
+        }
+        else if (oldSceneName == "OfficeScene" && sceneChange.newScene.ToString() == "RecapScene")
+        {
             MusicManager.instance.StartFadeOut();
+            Debug.Log("SC2");
+        }
 
         yield return new WaitForSeconds(sceneChange.preDelay);
 
@@ -97,14 +104,21 @@ public class SceneChangeManager : MonoBehaviour
             MusicManager.instance.audioSource.Stop();
 
             if (MusicManager.instance.fadeOutCoroutine != null)
+            {
                 StopCoroutine(MusicManager.instance.fadeOutCoroutine);
+                MusicManager.instance.fadeOutCoroutine = null;
+            }
+
+            Debug.Log((MusicManager.instance.fadeOutCoroutine == null) + "HERE");
         }
 
 
         if (currentScene != null)
         {
             if (currentScene.name == "OfficeScene")
+            {
                 CharacterFadeManager.instance.StartInstantFade(instantBarneyFadeOut);
+            }
 
             if (currentScene.name == "MorningRoutineScene")
             {
@@ -140,9 +154,7 @@ public class SceneChangeManager : MonoBehaviour
             case "MorningRoutineScene": newScene = scenes[0]; currentScene = newScene; CharacterFadeManager.instance.StartInstantFade(instantElizabethFadeIn);
                 newScene.gameObject.SetActive(true); MusicManager.instance.StartMRMusic(); GameObject.FindObjectOfType<PlayerController>().SetRoom(bedroom.GetComponent<Room>()); break;
             case "OfficeScene": newScene = scenes[1]; currentScene = newScene; CharacterFadeManager.instance.StartInstantFade(instantBarneyFadeIn);
-                newScene.gameObject.SetActive(true); AmbienceManager.instance.PlayAmbience(0); 
-                if (MusicManager.instance.backgroundMusicPlayerInstance != null) MusicManager.instance.StopCoroutine(MusicManager.instance.backgroundMusicPlayerInstance);
-                MusicManager.instance.backgroundMusicPlayerInstance = null; break;
+                newScene.gameObject.SetActive(true); AmbienceManager.instance.PlayAmbience(0);  break;
             case "DrugGameScene": newScene = scenes[2]; currentScene = newScene; newScene.gameObject.SetActive(true); AmbienceManager.instance.StartFadeOut(); break;
             case "RecapScene": newScene = scenes[3]; currentScene = newScene; newScene.gameObject.SetActive(true); RecapSceneManager.instance.DisplayContracts();
                 AmbienceManager.instance.StartFadeOut(); break;
@@ -154,6 +166,9 @@ public class SceneChangeManager : MonoBehaviour
             case "OpeningScene": newScene = scenes[7]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
             case "CreditsScene": newScene = scenes[8]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
             default: Debug.LogError("Invalid sceneName: " + sceneChange.newScene.ToString()); break;
+
+                //if (MusicManager.instance.backgroundMusicPlayerInstance != null) MusicManager.instance.StopCoroutine(MusicManager.instance.backgroundMusicPlayerInstance);
+                //MusicManager.instance.backgroundMusicPlayerInstance = null;
         }
 
         if (oldScene != null)

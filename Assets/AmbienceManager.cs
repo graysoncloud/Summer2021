@@ -26,6 +26,7 @@ public class AmbienceManager : MonoBehaviour
 
     public void PlayAmbience(Ambience toPlay)
     {
+        audioSource.Stop();
         audioSource.volume = PlayerPrefs.GetFloat("SFXVolume");
         if (fadeOutCoroutine != null)
         {

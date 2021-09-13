@@ -16,9 +16,9 @@ public class MusicManager : MonoBehaviour
 
     public AudioSource audioSource;
 
-    private Coroutine fadeInCoroutine;
-    public Coroutine fadeOutCoroutine;
-    private Coroutine volumeChangeCoroutine;
+    private Coroutine fadeInCoroutine = null;
+    public Coroutine fadeOutCoroutine = null;
+    private Coroutine volumeChangeCoroutine = null;
 
     public Coroutine backgroundMusicPlayerInstance;
 
@@ -77,6 +77,8 @@ public class MusicManager : MonoBehaviour
 
         }
 
+        backgroundMusicPlayerInstance = null;
+
     }
 
     // Unlike other managers, this isn't a coroutine since it should happen instantly and not delay the game
@@ -85,7 +87,8 @@ public class MusicManager : MonoBehaviour
 
         if (toExecute.fadeOut)
         {
-            fadeOutCoroutine = StartCoroutine("FadeOutMusic");
+            if (fadeOutCoroutine == null)
+                fadeOutCoroutine = StartCoroutine("FadeOutMusic");
             GameManager.instance.StartSequence(toExecute.nextEvent);
             return;
         } 
@@ -115,7 +118,10 @@ public class MusicManager : MonoBehaviour
 
     public void StartFadeOut()
     {
-        fadeOutCoroutine = StartCoroutine("FadeOutMusic");
+        if (fadeOutCoroutine == null)
+            fadeOutCoroutine = StartCoroutine("FadeOutMusic");
+        else
+            Debug.Log("Fade out failed");
     }
 
     private IEnumerator FadeOutMusic()
@@ -133,18 +139,31 @@ public class MusicManager : MonoBehaviour
         while (audioSource.volume > 0)
         {
             if (audioSource.volume > .1)
+            {
+                Debug.Log("1");
+
                 audioSource.volume -= (float)(.45 * Time.deltaTime * PlayerPrefs.GetFloat("MusicVolume"));
+            }
             // Allows fade out to be more gradual
             else if (audioSource.volume < .13)
+            {
+                Debug.Log("2");
+
                 audioSource.volume -= (float)(.08 * Time.deltaTime * PlayerPrefs.GetFloat("MusicVolume"));
-            else if (audioSource.volume < (.02 * PlayerPrefs.GetFloat("MusicVolume")))
+            }
+            else if (audioSource.volume < (.02))
+            {
+                Debug.Log("3");
+
                 audioSource.volume -= (float)(.015 * Time.deltaTime * PlayerPrefs.GetFloat("MusicVolume"));
+            }
 
             yield return new WaitForEndOfFrame();
 
         }
 
         audioSource.Stop();
+        fadeOutCoroutine = null;
 
     }
 
@@ -157,9 +176,13 @@ public class MusicManager : MonoBehaviour
     IEnumerator ChangeVolume()
     {
         while (fadeOutCoroutine != null)
+        {
             yield return new WaitForEndOfFrame();
+            //Debug.Log("waiting");
+        }
 
         audioSource.volume = PlayerPrefs.GetFloat("MusicVolume");
+        volumeChangeCoroutine = null;
     }
 
 

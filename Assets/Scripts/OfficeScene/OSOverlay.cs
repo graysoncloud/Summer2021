@@ -111,12 +111,12 @@ public class OSOverlay : MonoBehaviour
 
     IEnumerator LoadOSNormal ()
     {
-        float rate = .16f;
+        float rate = .25f;
 
         while (progressBar.value < 50)
         {
             progressBar.value += rate * Time.deltaTime * 60;
-            rate *= 1.004f;
+            rate *= 1.006f;
             yield return new WaitForEndOfFrame();
         }
 

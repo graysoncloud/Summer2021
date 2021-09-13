@@ -97,6 +97,8 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetInt("OptionalCompleted", 0);
 
+        PlayerPrefs.SetInt("LastMusicIndex", 0);
+
         foreach (CharacterName character in System.Enum.GetValues(typeof(CharacterName)))
         {
             // Load save state here
@@ -142,6 +144,7 @@ public class GameManager : MonoBehaviour
         UpdatePlayerPrefs();
 
         DrugManager.instance.ResetTimeElapsed();
+        OfficeSceneManager.instance.contractsSolved = 0;
 
         OfficeSceneManager.instance.openedComputerToday = false;
         DrugManager.instance.tutorialsfinished = false;
@@ -249,7 +252,9 @@ public class GameManager : MonoBehaviour
             ConversationManager.instance.EndConversation();
 
             if (SceneChangeManager.instance.currentScene.name == "OfficeScene" && CharacterFadeManager.instance.currentChars.ContainsKey("Barney"))
+            {
                 CharacterFadeManager.instance.currentChars["Barney"].GetComponent<Animator>().Play("BarneyWorkingNormal");
+            }
 
             GameManager.instance.sequenceActive = false;
         }

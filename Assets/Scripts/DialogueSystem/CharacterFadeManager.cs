@@ -77,14 +77,12 @@ public class CharacterFadeManager : MonoBehaviour
             }
         }
 
-            GameManager.instance.StartSequence(currentFadeObject.nextEvent);
+        GameManager.instance.StartSequence(currentFadeObject.nextEvent);
     }
 
 
     public IEnumerator ExecuteCharacterFade(CharacterFade.Fade fadeEvent)
     {
-        //Debug.Log("Executing");
-
         numActiveFades++;
 
         Color fadeIncrement = new Color(.012f, .012f, .012f, .012f);

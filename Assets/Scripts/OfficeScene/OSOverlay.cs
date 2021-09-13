@@ -114,7 +114,7 @@ public class OSOverlay : MonoBehaviour
         while (progressBar.value < 50)
         {
             progressBar.value += rate * Time.deltaTime * 60;
-            rate *= 1.006f;
+            rate *= 1.012f;
             yield return new WaitForEndOfFrame();
         }
 

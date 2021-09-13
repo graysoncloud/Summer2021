@@ -35,7 +35,6 @@ public class HexGrid : MonoBehaviour
                 newTile.transform.SetParent(newRow.transform);
 
                 Vector2 coordinates = new Vector2(j * 2 + ((i + 1) % 2), height - (i + 1));
-                //Debug.Log("(" + (tempWidth - j) + ", " + (height - i) + ")");
 
                 tileDictionary.Add(coordinates, newTile);
                 newTile.SetCoordinates(coordinates);

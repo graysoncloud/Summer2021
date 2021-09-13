@@ -274,6 +274,9 @@ public class GameManager : MonoBehaviour
 
         else if (toExecute.GetType().ToString() == "TutorialEvent")
         {
+            if (SceneChangeManager.instance.currentScene.name == "OfficeScene" && CharacterFadeManager.instance.currentChars.ContainsKey("Barney"))
+                CharacterFadeManager.instance.currentChars["Barney"].GetComponent<Animator>().Play("BarneyWorkingNormal");
+
             TutorialManager.instance.ActivateTutorial(TutorialManager.instance.ContractTutorial1);
             sequenceActive = false;
         }

@@ -84,7 +84,6 @@ public class AnimationManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        Debug.Log("Ended pause while move");
         if (pauseWhileMoving)
             activeAnimations--;
 

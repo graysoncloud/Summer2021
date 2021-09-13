@@ -28,8 +28,6 @@ public class DialogueText : MonoBehaviour
 
     public void DisplayText(string toDisplay)
     {
-        Debug.Log(currentDisplayCoroutine == null);
-
         // Is it a problem that there's no code stopping multiple coroutines from running? Or is there?
         if (currentDisplayCoroutine != null)
             StopCoroutine(currentDisplayCoroutine);

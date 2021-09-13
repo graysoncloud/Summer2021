@@ -112,8 +112,6 @@ public class RecapSceneManager : MonoBehaviour
         else if (toAdd.usesMinPrice)
             gradeDivisor += currentContract.optimalMinPriceVal;
 
-        Debug.Log(gradeDividend + ", / " + gradeDivisor);
-
         float grade = gradeDividend / gradeDivisor;
         switch (grade)
         {
@@ -271,13 +269,12 @@ public class RecapSceneManager : MonoBehaviour
         foreach (FinishedContract FC in finishedContracts)
         {
             switch (FC.grade) {
-                case "S": toAdd += 30; Debug.Log("A logged"); break;
-                case "A": toAdd += 15; Debug.Log("A logged"); break;
-                case "B": toAdd += 5; Debug.Log("A logged"); break;
+                case "S": toAdd += 30; break;
+                case "A": toAdd += 15; break;
+                case "B": toAdd += 5; break;
                 default: break;
             }
         }
-        Debug.Log(toAdd);
         PlayerPrefs.SetFloat("TotalMoney", PlayerPrefs.GetFloat("TotalMoney") + toAdd);
         gradeBonusText.text = "+$" + toAdd;
 

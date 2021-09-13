@@ -51,7 +51,6 @@ public class EscapeMenu : MonoBehaviour
     public void OpenOptionsMenu()
     {
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
-        Debug.Log(PlayerPrefs.GetFloat("MusicVolume"));
 
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
         mainMenu.SetActive(false);

@@ -31,9 +31,6 @@ public class OptionManager : MonoBehaviour
 
         currentOption = option;
 
-        //Debug.Log(PlayerPrefs.GetInt("BarneyAttitude"));
-        //Debug.Log(PlayerPrefs.GetFloat("Stress"));
-
         // This block of code allows instant forks to occur (no choosing necessary)
         if (option.automatic)
         {
@@ -64,7 +61,6 @@ public class OptionManager : MonoBehaviour
                 }
                 if (option.paths[i].checkEvent)
                 {
-                    //Debug.Log(PlayerPrefs.GetInt(option.paths[i].eventToCheck.ToString()) + option.paths[i].eventToCheck.ToString());
                     if (PlayerPrefs.GetInt(option.paths[i].eventToCheck.ToString()) == 1)
                         execute = (execute && true);
                     else
@@ -157,9 +153,6 @@ public class OptionManager : MonoBehaviour
             } 
             if (currentPath.checkEvent)
             {
-                Debug.Log("checking " + currentPath.eventToCheck.ToString());
-                Debug.Log("value " + PlayerPrefs.GetInt(currentPath.eventToCheck.ToString()));
-
                 // If player prefs had bools this would look a bit simpler. As is, 1 is on, 0 is off
                 if (PlayerPrefs.GetInt(currentPath.eventToCheck.ToString()) == 1)
                     enabled = (enabled && true);

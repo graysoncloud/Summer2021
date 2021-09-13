@@ -14,7 +14,7 @@ public class Credits : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(lastCredit.position.y);
+        //.Log(lastCredit.position.y);
     }
 
     private void FixedUpdate()
@@ -23,7 +23,6 @@ public class Credits : MonoBehaviour
         if (lastCredit.position.y > 1080 && !ended)
         {
             // switch scene stuff
-            Debug.Log("end");
             ended = true;
         }
     }

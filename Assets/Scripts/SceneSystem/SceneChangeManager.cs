@@ -50,11 +50,6 @@ public class SceneChangeManager : MonoBehaviour
         fadeOutCover.gameObject.SetActive(false);
     }
 
-    private void Update()
-    {
-        //Debug.Log(PlayerPrefs.GetFloat("MusicVolume"));
-    }
-
     public void StartSceneChange(SceneChange sceneChange) 
     {
         GameManager.instance.sequenceActive = true;
@@ -76,13 +71,10 @@ public class SceneChangeManager : MonoBehaviour
         if (oldSceneName == "MorningRoutineScene" && sceneChange.newScene.ToString() == "OfficeScene")
         {
             MusicManager.instance.StartFadeOut();
-            Debug.Log("SC1");
-
         }
         else if (oldSceneName == "OfficeScene" && sceneChange.newScene.ToString() == "RecapScene")
         {
             MusicManager.instance.StartFadeOut();
-            Debug.Log("SC2");
         }
 
         yield return new WaitForSeconds(sceneChange.preDelay);
@@ -108,8 +100,6 @@ public class SceneChangeManager : MonoBehaviour
                 StopCoroutine(MusicManager.instance.fadeOutCoroutine);
                 MusicManager.instance.fadeOutCoroutine = null;
             }
-
-            Debug.Log((MusicManager.instance.fadeOutCoroutine == null) + "HERE");
         }
 
 
@@ -176,9 +166,6 @@ public class SceneChangeManager : MonoBehaviour
 
         if (sceneChange.increaseDay)
             GameManager.instance.NextDay();
-
-        Debug.Log("Scene Changed: " + sceneChange.newScene.ToString());
-
 
         /*
          * Depricated, characters now added in by there own scriptable object

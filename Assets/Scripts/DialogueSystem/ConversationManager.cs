@@ -103,10 +103,6 @@ public class ConversationManager : MonoBehaviour
                 foreach (Conversation.AnimationBit anim in conversation.dialogueLines[i].animations)
                 {
                     Character toAnimate = CharacterFadeManager.instance.currentChars[anim.toAnimate.ToString()];
-                    //Debug.Log(anim.toAnimate.ToString());
-                    //Debug.Log(CharacterFadeManager.instance.currentChars[anim.toAnimate.ToString()].name);
-
-                    //Debug.Log(currentConversation.dialogueLines[i].animations[0].animationName.ToString());
                     toAnimate.GetComponent<Animator>().Play(anim.animationName.ToString());
                 }
 
@@ -222,8 +218,6 @@ public class ConversationManager : MonoBehaviour
         while (currentEvent.nextEvent != null)
         {
             GameManager.instance.sequenceActive = false;
-
-            //Debug.Log(currentEvent.GetType().ToString());
 
             breaker++;
             if (breaker > 30)

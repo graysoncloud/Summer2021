@@ -54,8 +54,6 @@ public class OSOverlay : MonoBehaviour
         continueText.gameObject.SetActive(false);
 
         GameManager.instance.sequenceActive = true;
-
-        Debug.Log(MusicManager.instance.backgroundMusicPlayerInstance == null);
         MusicManager.instance.StartBackgroundPlayer();
 
         if (GameManager.instance.currentDayIndex == 0)

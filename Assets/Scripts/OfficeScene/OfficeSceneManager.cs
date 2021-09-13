@@ -54,8 +54,6 @@ public class OfficeSceneManager : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(ContractDisplayer.instance == null);
-
         if (Input.GetMouseButtonDown(0) && !GameManager.instance.optionsMenuActive && !GameManager.instance.sequenceActive)
         {
 
@@ -133,9 +131,6 @@ public class OfficeSceneManager : MonoBehaviour
                 {
                     PlayerPrefs.SetInt("MariaAttitude", PlayerPrefs.GetInt("MariaAttitude") + 1);
                 }
-
-                //Debug.Log(PlayerPrefs.GetInt("MariaAttitude"));
-
 
                 bool sequenceTriggered = false;
 

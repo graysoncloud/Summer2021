@@ -29,11 +29,9 @@ public class OfficeComputer : MonoBehaviour
     //{
     //    Vector3 pointOfClick = SceneChangeManager.instance.currentScene.transform.Find("MainCamera").GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
     //    Vector3 toEvaluate = new Vector3(pointOfClick.x, pointOfClick.y, transform.position.z);
-    //    Debug.Log(toEvaluate.ToString());
 
     //    if (GetComponent<BoxCollider2D>().bounds.Contains(pointOfClick) && mouseClicked) {
     //        SceneChangeManager.instance.StartSceneChange(computerToDrugGameTransition);
-    //        Debug.Log("success");
     //    }
 
     //    mouseClicked = false;

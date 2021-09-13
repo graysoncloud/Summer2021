@@ -19,14 +19,20 @@ MonoBehaviour:
     dialogue: Barney, this repeated tardiness is unacceptable. I have no choice but
       to dock your pay.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 12
+    - toAnimate: 1
+      animationName: 6
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 5
     dialogue: You may leave.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 10
     animOnly: 0
     animLength: 0
     SFX: 

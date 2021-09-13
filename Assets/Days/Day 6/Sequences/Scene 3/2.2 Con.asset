@@ -18,7 +18,11 @@ MonoBehaviour:
   - speaker: 5
     dialogue: "Barney, what is this?\r"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 6
+    - toAnimate: 5
+      animationName: 12
     animOnly: 0
     animLength: 0
     SFX: 
@@ -34,7 +38,9 @@ MonoBehaviour:
     dialogue: This is strike one, Barney. Two more might be too generous... so watch
       it.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 10
     animOnly: 0
     animLength: 0
     SFX: 

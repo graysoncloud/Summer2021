@@ -19,7 +19,11 @@ MonoBehaviour:
     dialogue: You're late, Barney. This is far from acceptable behaviour. And from
       a professional like yourself!
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 6
+    - toAnimate: 5
+      animationName: 12
     animOnly: 0
     animLength: 0
     SFX: 
@@ -33,14 +37,18 @@ MonoBehaviour:
   - speaker: 1
     dialogue: ...
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 2
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 5
     dialogue: I have nothing more to say. You may leave.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 10
     animOnly: 0
     animLength: 0
     SFX: 

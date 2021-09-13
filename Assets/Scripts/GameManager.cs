@@ -296,7 +296,8 @@ public class GameManager : MonoBehaviour
         HelpedRobbie,
         IsLate,
         SpecialContract1,
-        SpecialContract2
+        SpecialContract2,
+        AcceptedRobbiePills
     }
 
 }

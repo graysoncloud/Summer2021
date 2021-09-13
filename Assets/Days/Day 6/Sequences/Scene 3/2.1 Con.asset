@@ -18,7 +18,11 @@ MonoBehaviour:
   - speaker: 5
     dialogue: Barney, there seems to be an extra contract in your pile.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 12
+    - toAnimate: 1
+      animationName: 6
     animOnly: 0
     animLength: 0
     SFX: 
@@ -40,7 +44,11 @@ MonoBehaviour:
   - speaker: 5
     dialogue: But I think I'll let this one slide.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 10
+    - toAnimate: 1
+      animationName: 2
     animOnly: 0
     animLength: 0
     SFX: 
@@ -55,7 +63,11 @@ MonoBehaviour:
   - speaker: 5
     dialogue: But I may not be so generous in the future....
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 12
+    - toAnimate: 1
+      animationName: 6
     animOnly: 0
     animLength: 0
     SFX: 

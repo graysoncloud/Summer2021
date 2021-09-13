@@ -13,14 +13,13 @@ MonoBehaviour:
   m_Name: 2.2 Con
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: 9801bed2266ef7648b01f1d03d9aef0a, type: 2}
+  isNews: 0
   dialogueLines:
   - speaker: 4
     dialogue: I don't blame you for shrugging me off yesterday. I'd probably do the
       same, come to think of it.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 4
-      animationName: 14
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

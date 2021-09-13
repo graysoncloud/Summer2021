@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 2.2 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: a891fceedbe40c34aac229fdcffe10e0, type: 2}
+  nextEvent: {fileID: 11400000, guid: 81f51f071bbfeba4aa4212c593de04c0, type: 2}
   isNews: 0
   dialogueLines:
   - speaker: 5
-    dialogue: Welcome back to the office.
+    dialogue: Welcome back to the office, Barney.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

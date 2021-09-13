@@ -37,7 +37,9 @@ MonoBehaviour:
     dialogue: Now these are still just rumors; nothing to worry about in the slightest.
       Just thought I'd give you the heads up.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 3
+      animationName: 14
     animOnly: 0
     animLength: 0
     SFX: 

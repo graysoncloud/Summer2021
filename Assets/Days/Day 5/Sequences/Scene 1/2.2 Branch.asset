@@ -23,7 +23,7 @@ MonoBehaviour:
   checkEvent: 0
   eventToCheck: 0
   changesStress: 1
-  stressChangeAmount: -10
+  stressChangeAmount: 10
   changesAttitude: 0
   attitudeToChange: 0
   amountToAlterAttitude: 0

@@ -254,8 +254,8 @@ public class OfficeSceneManager : MonoBehaviour
                 if (GameManager.instance.currentDay.sequences.Length == 0)
                     sequenceTriggered = false;
 
-                if (contractsSolved >= GameManager.instance.currentDay.contracts.Count && !sequenceTriggered)
-                    SceneChangeManager.instance.StartSceneChange(officeToRecapTransition);
+                //if (contractsSolved >= GameManager.instance.currentDay.contractTypeList.Count && !sequenceTriggered)
+                //    SceneChangeManager.instance.StartSceneChange(officeToRecapTransition);
 
                 solutionFinished = false;
 

@@ -104,6 +104,13 @@ public class TutorialManager : MonoBehaviour
         readyToStopTutorial = true;
     }
 
-
+    public bool IsTutorialActive()
+    {
+        // To Harry, change this part
+        if (activeTutorial != null)
+            return true;
+        else
+            return false;
+    }
 
 }

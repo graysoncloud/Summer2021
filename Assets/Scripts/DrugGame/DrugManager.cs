@@ -261,7 +261,7 @@ public class DrugManager : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 20.0f);  
 
-        if (hit.transform != null && !GameManager.instance.optionsMenuActive) //hover over stuff
+        if (hit.transform != null && !GameManager.instance.optionsMenuActive && !TutorialManager.instance.IsTutorialActive()) //hover over stuff
         {
             bool chemHovered = false;
             if (hit.transform.gameObject.tag == "Chemical" || hit.transform.gameObject.tag == "Rotate")
@@ -304,7 +304,7 @@ public class DrugManager : MonoBehaviour
         }
 
         // rotate in hand
-        if (currentlyHeldChemical != null && !GameManager.instance.optionsMenuActive)
+        if (currentlyHeldChemical != null && !GameManager.instance.optionsMenuActive && !TutorialManager.instance.IsTutorialActive())
         {
             if (Input.GetButtonDown("Rotate")) {
                 float rotateDir = Input.GetAxis("Rotate");
@@ -312,7 +312,7 @@ public class DrugManager : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0) && !GameManager.instance.optionsMenuActive)
+        if (Input.GetMouseButtonDown(0) && !GameManager.instance.optionsMenuActive && !TutorialManager.instance.IsTutorialActive())
         {
             if (hit.transform != null)
             {
@@ -337,7 +337,7 @@ public class DrugManager : MonoBehaviour
         }
         
 
-        if (!Input.GetMouseButton(0) && !GameManager.instance.optionsMenuActive)
+        if (!Input.GetMouseButton(0) && !GameManager.instance.optionsMenuActive && !TutorialManager.instance.IsTutorialActive())
         {
             if (hit.transform != null)
             {

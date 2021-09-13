@@ -225,7 +225,7 @@ public class Chemical : MonoBehaviour
         // May have to do things if it is placed, in which case change this structure
         if (isPlaced) return;
 
-        if (!GameManager.instance.optionsMenuActive)
+        if (!GameManager.instance.optionsMenuActive && !TutorialManager.instance.IsTutorialActive())
         {
             Vector3 toMoveTo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             toMoveTo.z = 0;
@@ -256,7 +256,7 @@ public class Chemical : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!GameManager.instance.optionsMenuActive)
+        if (!GameManager.instance.optionsMenuActive && !TutorialManager.instance.IsTutorialActive())
             LiftChem();
     }
 

@@ -65,7 +65,7 @@ public class MigraineController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M))
         {
-            StartMigraine(new MigraineEvent());
+            //StartMigraine(new MigraineEvent());
         }
     }
 

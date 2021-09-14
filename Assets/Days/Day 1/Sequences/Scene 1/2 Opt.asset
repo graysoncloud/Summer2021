@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0108177cadee74884d6225aac515b5, type: 3}
   m_Name: 2 Opt
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: 8f692401b9d12fa4aad5558b808c3ac7, type: 2}
   automatic: 1
   paths:
   - {fileID: 11400000, guid: 6d2af4cfa5e6a7845934ac4acffca4e2, type: 2}

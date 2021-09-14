@@ -103,8 +103,4 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     public void SetTVActive(bool a) {
         isTVActive = a;
     }
-
-    public void StartMigraine() {
-        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MigraineController>().SetMigraineActive(true, 3);
-    }
 }

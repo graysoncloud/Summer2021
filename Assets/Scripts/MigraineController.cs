@@ -5,10 +5,10 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class MigraineController : MonoBehaviour
 {
-    [Range(0,5)]
+    [Range(0, 5)]
     public float jitterAmount = 1;
 
-    [Range(0,5)]
+    [Range(0, 5)]
     public float strength = 1;
 
     public float pulseTime = 1;
@@ -43,7 +43,7 @@ public class MigraineController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pulsing) {
+        /*if(pulsing) {
             delta += Time.deltaTime;
 
             float w = Mathf.Clamp(Mathf.Sin((delta / pulseTime) * Mathf.PI * 2), 0.3f, 1);
@@ -61,14 +61,36 @@ public class MigraineController : MonoBehaviour
                     postProcessingVolume.weight = 1;
                 }
             }
+        }*/
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            StartMigraine(new MigraineEvent());
         }
     }
 
-    public void SetMigraineActive(bool t, int _pulseNum) {
+    IEnumerator StartMigraine()
+    {
+        pulsing = true;
+        for (int i = 0; i < pulseNum; i++)
+        {
+            for (int j = 0; j < pulseTime; j++)
+            {
+                delta++;
+                float w = Mathf.Clamp(Mathf.Sin((delta / pulseTime) * Mathf.PI * 2), 0.3f, 1);
+                postProcessingVolume.weight = w;
 
-        pulsing = t;
-        pulseNum = _pulseNum;
-        if(t) {
+                yield return new WaitForEndOfFrame();
+            }
+        }
+        pulsing = false;
+    }
+
+    public void StartMigraine(MigraineEvent mE)
+    {
+        if (!pulsing)
+        {
+            SetMigraineParams(mE.pulseNum, mE.strength);
             delta = 0;
             postProcessingVolume.weight = 0;
             //GetComponent<Camera>().enabled = true;
@@ -76,6 +98,16 @@ public class MigraineController : MonoBehaviour
             //mainCamera.enabled = false;
             pulses = 0;
             postProcessingVolume.profile = migraineProfile;
+
+            StartCoroutine("StartMigraine");
         }
+
+
+    }
+
+    public void SetMigraineParams(int _pulseNum, float _strength)
+    {
+        pulseNum = _pulseNum;
+        strength = _strength;
     }
 }

@@ -806,8 +806,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18359828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.364, y: -0.03, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.126837}
+  m_LocalPosition: {x: 0.364, y: 0.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1689213063500303193}
   m_RootOrder: 4
@@ -852,7 +852,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 41
-  m_Sprite: {fileID: 21300000, guid: 4b3a3335a1f6b604688ec7a50293113b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e81c70b279ee5aa43b87506ed666cd95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10840,6 +10840,8 @@ GameObject:
   - component: {fileID: 365936902}
   - component: {fileID: 365936903}
   - component: {fileID: 365936904}
+  - component: {fileID: 365936906}
+  - component: {fileID: 365936905}
   m_Layer: 7
   m_Name: ContractStack
   m_TagString: Untagged
@@ -10928,7 +10930,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10960,6 +10962,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &365936905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365936900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.48258036, b: 0, a: 1}
+  glowBrightness: 1.49
+  outlineWidth: 1
+  alphaThreshold: 0.266
+  drawOutside: 1
+  enableInstancing: 0
+--- !u!114 &365936906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365936900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261f3acae002ea74b97e029b43ade91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldGlow: 1
+  hoverGlow: 1
+  glowSettings: {fileID: 0}
+  maxGlow: 1.5
+  pulseSpeed: 0.6
+  tutorialGlowColor: {r: 1, g: 0.48235297, b: 0, a: 1}
+  hoverColor: {r: 0, g: 0.7893882, b: 1, a: 1}
 --- !u!1 &367230649
 GameObject:
   m_ObjectHideFlags: 0
@@ -20197,6 +20236,8 @@ GameObject:
   - component: {fileID: 628111274}
   - component: {fileID: 628111273}
   - component: {fileID: 628111275}
+  - component: {fileID: 628111276}
+  - component: {fileID: 628111277}
   m_Layer: 7
   m_Name: OfficeComputer
   m_TagString: Untagged
@@ -20283,7 +20324,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20315,6 +20356,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &628111276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628111271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.48258036, b: 0, a: 1}
+  glowBrightness: 1.49
+  outlineWidth: 1
+  alphaThreshold: 0.266
+  drawOutside: 1
+  enableInstancing: 0
+--- !u!114 &628111277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628111271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261f3acae002ea74b97e029b43ade91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldGlow: 1
+  hoverGlow: 1
+  glowSettings: {fileID: 0}
+  maxGlow: 1.5
+  pulseSpeed: 0.6
+  tutorialGlowColor: {r: 1, g: 0.48235297, b: 0, a: 1}
+  hoverColor: {r: 0, g: 0.7893882, b: 1, a: 1}
 --- !u!1 &629937095
 GameObject:
   m_ObjectHideFlags: 0
@@ -23787,6 +23865,7 @@ GameObject:
   - component: {fileID: 729169028}
   - component: {fileID: 729169029}
   - component: {fileID: 729169026}
+  - component: {fileID: 729169030}
   m_Layer: 7
   m_Name: OfficeSceneCamera
   m_TagString: Untagged
@@ -23940,6 +24019,26 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &729169030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729169024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62373c5c1546fc34d806612cc2b37f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jitterAmount: 1
+  strength: 1
+  pulseTime: 100
+  active: 1
+  pulsing: 0
+  pulseNum: 3
+  migraineProfile: {fileID: 11400000, guid: 4b5bd7ffa66ae93498d829f9d5909c92, type: 2}
+  normalProfile: {fileID: 11400000, guid: c3d2500d5c5e5d6439b33ae5375d7f36, type: 2}
 --- !u!1001 &735618088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43307,11 +43406,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
-  far clip plane: 5000
-  field of view: 40
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
   orthographic: 1
-  orthographic size: 5.39
+  orthographic size: 5.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -43467,7 +43566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jitterAmount: 1
   strength: 1
-  pulseTime: 5
+  pulseTime: 100
   active: 1
   pulsing: 0
   pulseNum: 3
@@ -49340,7 +49439,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568789539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.38000107, y: -2.16, z: 0}
+  m_LocalPosition: {x: 0.476, y: -2.128, z: 0}
   m_LocalScale: {x: 2.1093, y: 2.1093, z: 2.1093}
   m_Children:
   - {fileID: 1181693009}
@@ -60278,7 +60377,9 @@ GameObject:
   - component: {fileID: 1864265355}
   - component: {fileID: 1864265354}
   - component: {fileID: 1864265356}
-  m_Layer: 7
+  - component: {fileID: 1864265358}
+  - component: {fileID: 1864265357}
+  m_Layer: 0
   m_Name: Printer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60370,7 +60471,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -60402,6 +60503,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1864265357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864265352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.48258036, b: 0, a: 1}
+  glowBrightness: 1.1
+  outlineWidth: 1
+  alphaThreshold: 0.553
+  drawOutside: 1
+  enableInstancing: 0
+--- !u!114 &1864265358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864265352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261f3acae002ea74b97e029b43ade91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldGlow: 1
+  hoverGlow: 1
+  glowSettings: {fileID: 0}
+  maxGlow: 1.5
+  pulseSpeed: 0.6
+  tutorialGlowColor: {r: 1, g: 0.48235297, b: 0, a: 1}
+  hoverColor: {r: 0, g: 0.7893882, b: 1, a: 1}
 --- !u!1 &1865013585
 GameObject:
   m_ObjectHideFlags: 0

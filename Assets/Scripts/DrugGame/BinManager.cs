@@ -59,8 +59,17 @@ public class BinManager : MonoBehaviour
                 index++;
             }
             currentDayChemIndex = GameManager.instance.currentDayIndex;
+            SetGlows();
         }
     }
+    public void SetGlows()
+    {
+        foreach (ChemicalBin bin in binArray)
+        {
+            bin.SetGlow();
+        }
+    }
+
     public ChemicalBin GetBin(Chemical chemical)
     {
         foreach (ChemicalBin bin in binArray)

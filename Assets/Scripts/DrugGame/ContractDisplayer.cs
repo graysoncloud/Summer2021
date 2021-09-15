@@ -142,7 +142,6 @@ public class ContractDisplayer : MonoBehaviour
                 Debug.LogWarning("Optional condition not found, make sure you've checked a condition");
             }
         }
-
     }
 
     public void UpdateVol(int vol)

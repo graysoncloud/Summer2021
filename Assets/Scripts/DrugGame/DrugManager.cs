@@ -44,6 +44,8 @@ public class DrugManager : MonoBehaviour
     private Vector2 tutorialTheromideTile = new Vector2(2f, 5f);
     private HexTile[] tutorialAveroTiles;
     private Color tutorialHighlightColor = new Color(0.9f, 0.6f, 0.2f, 1f);
+
+    public GameObject hexGraphics;
     private void Awake()
     {
         // Singleton Stuff

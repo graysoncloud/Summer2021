@@ -193,8 +193,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 2
+  effects: 
+  effectAmount: 
+  desirable: 0
+  undesirable: 0
+  optionalDesire: 0
   isPlaced: 0
   isChild: 0
+  amplified: 0
   housingTile: {fileID: 0}
   connectionTypes:
   - None
@@ -210,8 +216,6 @@ MonoBehaviour:
   - 
   - 
   - 
-  childIndex1: -1
-  childIndex2: -1
   childConnection1:
   - None
   - Neutral
@@ -220,6 +224,7 @@ MonoBehaviour:
   - Chemical
   - None
   childConnection2: []
+  graphicsParent: {fileID: 0}
 --- !u!1 &1970604857088962881
 GameObject:
   m_ObjectHideFlags: 0

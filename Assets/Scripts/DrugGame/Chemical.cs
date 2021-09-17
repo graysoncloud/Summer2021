@@ -41,6 +41,7 @@ public class Chemical : MonoBehaviour
     private CostDisplay costDisplay;
 
     private SpriteRenderer spriteRenderer;
+    private SpriteRenderer originHex;
 
     
     Dictionary<string, int> connectionTypesDict = new Dictionary<string, int>() {
@@ -62,11 +63,10 @@ public class Chemical : MonoBehaviour
             buttons = transform.Find("Buttons").gameObject;
             leftButton = buttons.transform.Find("RotateLeft").GetComponent<ChemicalRotateButton>();
             rightButton = buttons.transform.Find("RotateRight").GetComponent<ChemicalRotateButton>();
-        }
-        if (!isChild)
-        {
             spriteRenderer = transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>();
         }
+        originHex = GetComponent<SpriteRenderer>();
+        originHex.enabled = false;
 
         dangerBar = GameObject.FindObjectOfType<VolatilityBar>();
         benefitValue = GameObject.FindObjectOfType<BenefitValue>();
@@ -133,6 +133,8 @@ public class Chemical : MonoBehaviour
     {
         if (!isChild)
         {
+            GameObject newHex = Instantiate(DrugManager.instance.hexGraphics, transform);
+
             // create the visual elements for the connections
             float offsetDist = 2.7f;
             for (int i = 0; i < 6; i++)

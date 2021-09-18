@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Chemical : MonoBehaviour
 {
+    [SerializeField]
+    private Color color1 = Color.black, color2 = Color.black;
     public float cost = 0;
     public EffectType[] effects;
     public int[] effectAmount;
@@ -42,6 +44,8 @@ public class Chemical : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private SpriteRenderer originHex;
+
+    
 
     
     Dictionary<string, int> connectionTypesDict = new Dictionary<string, int>() {
@@ -134,6 +138,19 @@ public class Chemical : MonoBehaviour
         if (!isChild)
         {
             GameObject newHex = Instantiate(DrugManager.instance.hexGraphics, transform);
+            GameObject center = Instantiate(DrugManager.instance.centerGraphics1, transform);
+            GameObject center2 = Instantiate(DrugManager.instance.centerGraphics2, transform);
+            if (color1 == new Color(0,0,0,0) ) //if unset
+            {
+                center.GetComponent<SpriteRenderer>().color = spriteRenderer.color;
+                center2.GetComponent<SpriteRenderer>().color = spriteRenderer.color;
+            }
+            else
+            {
+                center.GetComponent<SpriteRenderer>().color = color1;
+                center2.GetComponent<SpriteRenderer>().color = color2;
+            }
+            spriteRenderer.enabled = false;
 
             // create the visual elements for the connections
             float offsetDist = 2.7f;

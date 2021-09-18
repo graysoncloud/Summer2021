@@ -46,6 +46,9 @@ public class DrugManager : MonoBehaviour
     private Color tutorialHighlightColor = new Color(0.9f, 0.6f, 0.2f, 1f);
 
     public GameObject hexGraphics;
+    public GameObject centerGraphics1;
+    public GameObject centerGraphics2;
+
     private void Awake()
     {
         // Singleton Stuff

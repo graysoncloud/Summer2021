@@ -266,7 +266,7 @@ public class DrugManager : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 20.0f);  
 
-        if (hit.transform != null && !GameManager.instance.optionsMenuActive && !TutorialManager.instance.IsTutorialActive()) //hover over stuff
+        if (hit.transform != null && !GameManager.instance.optionsMenuActive && !TutorialManager.instance.IsTutorialActive() && currentlyHeldChemical == null) //hover over stuff
         {
             bool chemHovered = false;
             if (hit.transform.gameObject.tag == "Chemical" || hit.transform.gameObject.tag == "Rotate")

@@ -110,6 +110,7 @@ public class ChemicalBin : MonoBehaviour
             newChemical.isPlaced = false;
             newChemical.GetComponent<PolygonCollider2D>().enabled = false;
             SFXPlayer.instance.PlaySoundEffect(2);
+            newChemical.setActive(false);
 
             foreach (SpriteRenderer SR in newChemical.GetComponentsInChildren<SpriteRenderer>())
             {

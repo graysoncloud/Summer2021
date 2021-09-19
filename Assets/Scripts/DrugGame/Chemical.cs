@@ -137,7 +137,7 @@ public class Chemical : MonoBehaviour
     {
         if (!isChild)
         {
-            GameObject newHex = Instantiate(DrugManager.instance.hexGraphics, transform);
+            //GameObject newHex = Instantiate(DrugManager.instance.hexGraphics, transform);
             GameObject center = Instantiate(DrugManager.instance.centerGraphics1, transform);
             GameObject center2 = Instantiate(DrugManager.instance.centerGraphics2, transform);
             if (color1 == new Color(0,0,0,0) ) //if unset
@@ -822,6 +822,7 @@ public class Chemical : MonoBehaviour
             }
             housingTile.storedChemical = null;
             SFXPlayer.instance.PlaySoundEffect(2);
+            setActive(false);
         } 
         else
         {

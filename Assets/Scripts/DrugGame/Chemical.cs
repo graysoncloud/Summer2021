@@ -776,6 +776,7 @@ public class Chemical : MonoBehaviour
         dangerBar.UpdateDanger(oldStatuses, newStatuses);
         ClearBenefit();
         amplified = false;
+        ContractDisplayer.instance.UpdatePrintButton();
     }
 
     public void LiftChem()

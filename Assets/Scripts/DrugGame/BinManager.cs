@@ -59,8 +59,8 @@ public class BinManager : MonoBehaviour
                 index++;
             }
             currentDayChemIndex = GameManager.instance.currentDayIndex;
-            SetGlows();
         }
+        SetGlows();
     }
     public void SetGlows()
     {

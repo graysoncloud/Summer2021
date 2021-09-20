@@ -307,6 +307,25 @@ public class OfficeSceneManager : MonoBehaviour
         
     }
 
+    public void ResetOfficeScene()
+    {
+        foreach (ContractFolder cf in FindObjectsOfType<ContractFolder>())
+        {
+            cf.RemoveThisContract();
+        }
+
+        foreach (SolutionPaper sp in FindObjectsOfType<SolutionPaper>())
+        {
+            sp.RemoveThisSP();
+        }
+
+        Destroy(ActiveContractArea.instance.currentContract);
+        Printer.instance.solutionPrinted = false;
+        Printer.instance.printerPaper.SetActive(false);
+
+        Destroy(GameObject.Find("Contract(Clone)"));
+    }
+
 
 
 }

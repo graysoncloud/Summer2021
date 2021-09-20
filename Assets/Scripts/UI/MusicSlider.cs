@@ -20,7 +20,7 @@ public class MusicSlider : MonoBehaviour
     public void Start()
     {
         valueText.text = Mathf.Round(slider.value * 100).ToString() + "%";
-        slider.value = MusicManager.instance.defaultMusicVolume;
+        slider.value = PlayerPrefs.GetFloat("MusicVolume");
 
         //Adds a listener to the main slider and invokes a method when the value changes.
         slider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6cf3753bd334704ea56229dd0ebb808, type: 3}
   m_Name: 3.2 Branch
   m_EditorClassIdentifier: 
-  choiceText: '*Refuse the pills* I''m fine.'
+  choiceText: I'm fine.
   checkStress: 0
   stressComparison: 0
   stressCheckAmount: 0

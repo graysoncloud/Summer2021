@@ -16,7 +16,7 @@ MonoBehaviour:
   isNews: 0
   dialogueLines:
   - speaker: 1
-    dialogue: Goodbye.
+    dialogue: Seeya.
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1

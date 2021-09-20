@@ -238,7 +238,7 @@ public class DrugManager : MonoBehaviour
         }
 
         // Multiply by 30 for speedy
-        timeElapsed += Time.deltaTime;
+        timeElapsed += (Time.deltaTime * .75f);
 
         // Every fifteen seconds in the drug game, the player-visible clock will tick up 15 minutes. Stops at 11:00
         if (Mathf.Floor(timeElapsed / 15) > lastTimeStamp && (timeElapsed < 854))

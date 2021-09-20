@@ -35,14 +35,11 @@ public class GameManager : MonoBehaviour
     {
 
         // Should be an if statement to allow for save loading (ideally would just specify the day you're on
-        currentDayIndex = 0;
+        currentDayIndex = PlayerPrefs.GetInt("CurrentDayIndex");
         sequenceActive = false;
 
         currentDay = days[currentDayIndex];
         currentDay.ShuffleContracts();
-
-        // To delete
-        PlayerPrefs.DeleteAll();
 
         /*
          * NOTE ABOUT SAVING: player pref automatically saves on quit, which should not be the case
@@ -53,10 +50,17 @@ public class GameManager : MonoBehaviour
          */
 
         // Load save info
-        PlayerPrefs.SetFloat("MusicVolume", MusicManager.instance.defaultMusicVolume);
-        PlayerPrefs.SetFloat("SFXVolume", MusicManager.instance.defaultSFXVolume);
+        PlayerPrefs.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume"));
+        PlayerPrefs.SetFloat("SFXVolume", PlayerPrefs.GetFloat("SFXVolume"));
+
+        if (PlayerPrefs.GetInt("ActiveGame") != 1)
+        {
+            PlayerPrefs.SetFloat("MusicVolume", .5f);
+            PlayerPrefs.SetFloat("SFXVolume", .5f);
+        }
+
         MusicManager.instance.audioSource.volume = PlayerPrefs.GetFloat("MusicVolume");
-        AmbienceManager.instance.audioSource.volume = PlayerPrefs.GetFloat("MusicVolume");
+        AmbienceManager.instance.audioSource.volume = PlayerPrefs.GetFloat("SFXVolume");
 
         SceneChangeManager.instance.StartSceneChange(SceneChangeManager.instance.startingScene);
 
@@ -98,6 +102,9 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("OptionalCompleted", 0);
 
         PlayerPrefs.SetInt("LastMusicIndex", 0);
+
+        PlayerPrefs.SetInt("CurrentDayIndex", 0);
+        currentDayIndex = 0;
 
         foreach (CharacterName character in System.Enum.GetValues(typeof(CharacterName)))
         {
@@ -151,13 +158,16 @@ public class GameManager : MonoBehaviour
         DrugManager.instance.numtutorialsfinished = 0;
 
         currentDayIndex++;
+        PlayerPrefs.SetInt("CurrentDayIndex", PlayerPrefs.GetInt("CurrentDayIndex") + 1);
         currentDay = days[currentDayIndex];
         currentDay.ShuffleContracts();
+
+        PlayerPrefs.Save();
 
         MorningRoutineManager.Instance.StartNewDay();
     }
 
-    private void ResetPlayerPrefsToSave()
+    public void ResetPlayerPrefsToSave()
     {
 
         foreach (SaveableEvent se in Enum.GetValues(typeof(SaveableEvent)))

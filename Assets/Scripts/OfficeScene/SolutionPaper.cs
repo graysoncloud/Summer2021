@@ -20,4 +20,9 @@ public class SolutionPaper : MonoBehaviour
             transform.position = new Vector3(mouseLocation.x, mouseLocation.y, 0);
         }
     }
+
+    public void RemoveThisSP()
+    {
+        Destroy(this);
+    }
 }

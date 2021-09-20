@@ -138,13 +138,13 @@ public class ConversationManager : MonoBehaviour
 
                     // Delay between characters increases if its a punctuation mark
                     if (toReveal == '.')
-                        yield return new WaitForSeconds(periodDelay * readbackSpeedModifier);
+                        yield return new WaitForSeconds(periodDelay * readbackSpeedModifier * 60 * Time.deltaTime);
                     else if (toReveal == ' ')
                         yield return new WaitForSeconds(0);
                     else if (",;-?!".Contains(toReveal.ToString()))
-                        yield return new WaitForSeconds(punctuationDelay * readbackSpeedModifier);
+                        yield return new WaitForSeconds(punctuationDelay * readbackSpeedModifier * 60 * Time.deltaTime);
                     else
-                        yield return new WaitForSeconds(normalDelay * readbackSpeedModifier);
+                        yield return new WaitForSeconds(normalDelay * readbackSpeedModifier * 60 * Time.deltaTime);
                 }
 
                 waitingForClick = false;

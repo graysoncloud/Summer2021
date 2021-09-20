@@ -21,8 +21,6 @@ MonoBehaviour:
     animations:
     - toAnimate: 3
       animationName: 13
-    - toAnimate: 1
-      animationName: 2
     animOnly: 0
     animLength: 0
     SFX: 

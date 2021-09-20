@@ -18,7 +18,7 @@ MonoBehaviour:
   - initialEvent: {fileID: 11400000, guid: 7fca62c07db267b459e5cf7d14fe06b0, type: 2}
     trigger: 1
   - initialEvent: {fileID: 11400000, guid: 29dfcae59f475c94398a36955e1d5d69, type: 2}
-    trigger: 8
+    trigger: 5
   newsEvent: {fileID: 11400000, guid: b1a646e0e03fb86409cf8b8aa8be895e, type: 2}
   contracts: []
   dayChemicals:

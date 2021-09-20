@@ -96,10 +96,13 @@ public class RecapSceneManager : MonoBehaviour
         {
             gradeDividend += currentContract.optimalMaxPriceVal;
         }
+        // If uses both min and mix, only uses max price for vol
         else if (toAdd.usesMinPrice)
+        {
             gradeDividend += CostDisplay.instance.GetCost();
+        }
 
-        gradeDividend *= (1 + (.1f * DrugManager.instance.GetUnstableCount()));
+        gradeDividend /= (1 + (.1f * DrugManager.instance.GetUnstableCount()));
 
         // Initialized at 1 so there's not divide by 0 errors
         float gradeDivisor = 1;
@@ -111,6 +114,8 @@ public class RecapSceneManager : MonoBehaviour
             gradeDivisor += CostDisplay.instance.GetCost();
         else if (toAdd.usesMinPrice)
             gradeDivisor += currentContract.optimalMinPriceVal;
+
+        if (gradeDivisor == 0) { gradeDivisor++; }
 
         float grade = gradeDividend / gradeDivisor;
         switch (grade)
@@ -269,8 +274,8 @@ public class RecapSceneManager : MonoBehaviour
         foreach (FinishedContract FC in finishedContracts)
         {
             switch (FC.grade) {
-                case "S": toAdd += 30; break;
-                case "A": toAdd += 15; break;
+                case "S": toAdd += 25; break;
+                case "A": toAdd += 10; break;
                 case "B": toAdd += 5; break;
                 default: break;
             }

@@ -18,7 +18,7 @@ MonoBehaviour:
   - initialEvent: {fileID: 11400000, guid: 60d79ea2c6847294cabd3de29dae6f8a, type: 2}
     trigger: 2
   - initialEvent: {fileID: 11400000, guid: bd1cdf24b6fef5944921d9739ba74c44, type: 2}
-    trigger: 6
+    trigger: 5
   - initialEvent: {fileID: 11400000, guid: 91c90fbbc6e0c6b4b9cef6bdc8403fa4, type: 2}
     trigger: 0
   newsEvent: {fileID: 11400000, guid: 1f1714f39d9092b44a62695701c4f93b, type: 2}

@@ -26,4 +26,9 @@ public class ContractFolder : MonoBehaviour
             transform.position = new Vector3(mouseLocation.x, mouseLocation.y, 0);
         }
     }
+
+    public void RemoveThisContract()
+    {
+        Destroy(this);
+    }
 }

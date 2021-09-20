@@ -11,32 +11,11 @@ public class TutorialManager : MonoBehaviour
     public GameObject ContractTutorial3;
     public GameObject ContractTutorial4;
     public GameObject ContractTutorial5;
-    public GameObject DrugGameTutorial1;
-    public GameObject DrugGameTutorial2;
-    public GameObject DrugGameTutorial3;
-    public GameObject DrugGameTutorial4;
 
-    public GameObject DrugGameTutorial5;
-
-    public GameObject DrugGameTutorial6;
-
-    public GameObject DrugGameTutorial7;
-    public GameObject DrugGameTutorial8;
-    public GameObject DrugGameTutorial9;
-    public GameObject DrugGameTutorial10;
-    public GameObject DrugGameTutorial11;
-    public GameObject DrugGameTutorial12;
-    public GameObject RecapTutorial1;
-    public GameObject RecapTutorial2;
-    public GameObject RecapTutorial3;
-    public GameObject RecapTutorial4;
-    public GameObject RecapTutorial5;
-    public GameObject Day2Tutorial1;
-    public GameObject Day2Tutorial2;
-    public GameObject Day2Tutorial3;
-    public GameObject Day3Tutorial1;
-    public GameObject Day3Tutorial2;
-    public GameObject Day3Tutorial3;
+    public List<GameObject> DrugGameTutorial;
+    public List<GameObject> RecapTutorial;
+    public List<GameObject> Day2Tutorial;
+    public List<GameObject> Day3Tutorial;
 
     // Add more tutorial scenes
 

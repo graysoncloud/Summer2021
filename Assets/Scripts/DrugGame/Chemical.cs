@@ -147,7 +147,7 @@ public class Chemical : MonoBehaviour
             }
             else
             {
-                center.GetComponent<SpriteRenderer>().color = color1;
+                center.GetComponent<SpriteRenderer>().color = getDarkerSaturation(color2, 0.5f);
                 center2.GetComponent<SpriteRenderer>().color = color2;
             }
             spriteRenderer.enabled = false;
@@ -238,7 +238,13 @@ public class Chemical : MonoBehaviour
         }
     }
 
+    private Color getDarkerSaturation(Color incolor, float darkenamount)
+    {
+        float hue, sat, val;
+        Color.RGBToHSV(incolor, out hue, out sat, out val);
 
+        return Color.HSVToRGB(hue, sat + darkenamount, val);
+    }
     private void Update()
     {
         // May have to do things if it is placed, in which case change this structure

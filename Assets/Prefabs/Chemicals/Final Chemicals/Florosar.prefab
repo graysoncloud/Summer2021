@@ -279,6 +279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233622dc0446f3d4a90913745baa9390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color1: {r: 0.42352942, g: 0.40784314, b: 0.11764706, a: 1}
+  color2: {r: 0.42352945, g: 0.40784317, b: 0.11764707, a: 1}
   cost: 2
   effects: 09000000
   effectAmount: 03000000

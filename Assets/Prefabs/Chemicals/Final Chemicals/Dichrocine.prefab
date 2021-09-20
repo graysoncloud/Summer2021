@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 4137379982750764928}
   - component: {fileID: 4991818317866170135}
   m_Layer: 0
-  m_Name: Dichocine
+  m_Name: Dichrocine
   m_TagString: Chemical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,11 +279,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233622dc0446f3d4a90913745baa9390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color1: {r: 0.7372549, g: 0.47843137, b: 0.16862746, a: 1}
+  color2: {r: 0.7372549, g: 0.4784314, b: 0.16862746, a: 1}
   cost: 3
   effects: 0800000000000000
   effectAmount: 0100000002000000
   desirable: 1
   undesirable: 0
+  optionalDesire: 0
   isPlaced: 0
   isChild: 0
   amplified: 0

@@ -25,6 +25,9 @@ public class PrintButton : MonoBehaviour
         // Evaluate solution
         if (ContractDisplayer.instance.EvaluateContract())
         {
+
+            DrugManager.instance.EndTutorials();
+            
             Printer.instance.solutionPrinted = true;
             Printer.instance.printerPaper.SetActive(true);
             OfficeSceneManager.instance.solutionFinished = true;

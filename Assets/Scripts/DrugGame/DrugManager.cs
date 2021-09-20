@@ -91,48 +91,26 @@ public class DrugManager : MonoBehaviour
     }
     void Update()
     {
-        if(!tutorialsfinished && GameManager.instance.currentDayIndex == 0){
-            if(numtutorialsfinished == 0 && TutorialManager.instance.activeTutorial == null)
+
+        if(!tutorialsfinished && GameManager.instance.currentDayIndex == 0 && TutorialManager.instance.activeTutorial == null){
+            if(numtutorialsfinished == 2)
             {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial1);
-                numtutorialsfinished++;
-            }
-            if(numtutorialsfinished == 1 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial2);
-                numtutorialsfinished++;
-            }
-            else if(numtutorialsfinished == 2 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial3);
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial[numtutorialsfinished]);
                 numtutorialsfinished++;
                 hexGrid.GetHexTile(tutorialTheromideTile).LockColor(tutorialHighlightColor);
             }
-            //Looks very ugly, but have to make sure the chemical exists first.
-            else if(numtutorialsfinished == 3 && TutorialManager.instance.activeTutorial == null && hexGrid.GetHexTile(tutorialTheromideTile).storedChemical != null && hexGrid.GetHexTile(tutorialTheromideTile).storedChemical.name == "Theromide")
+            else if(numtutorialsfinished == 3)
             {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial4);
-                numtutorialsfinished++;
-                hexGrid.GetHexTile(tutorialTheromideTile).UnlockColor();
+                if(hexGrid.GetHexTile(tutorialTheromideTile).storedChemical != null && hexGrid.GetHexTile(tutorialTheromideTile).storedChemical.name == "Theromide")
+                {
+                    TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial[numtutorialsfinished]);
+                    numtutorialsfinished++;
+                    hexGrid.GetHexTile(tutorialTheromideTile).UnlockColor();
+                }
             }
-            else if(numtutorialsfinished == 4 && TutorialManager.instance.activeTutorial == null)
+            else if(numtutorialsfinished == 7)
             {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial5);
-                numtutorialsfinished++;
-            }
-            else if(numtutorialsfinished == 5 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial6);
-                numtutorialsfinished++;
-            }
-            else if(numtutorialsfinished == 6 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial7);
-                numtutorialsfinished++;
-            }
-            else if(numtutorialsfinished == 7 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial8);
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial[numtutorialsfinished]);
                 numtutorialsfinished++;
                 tutorialAveroTiles = hexGrid.GetAdjacent(tutorialTheromideTile);
                 foreach(HexTile tile in tutorialAveroTiles)
@@ -140,101 +118,60 @@ public class DrugManager : MonoBehaviour
                     tile.LockColor(tutorialHighlightColor);
                 }
             }
-            else if(numtutorialsfinished == 8 && TutorialManager.instance.activeTutorial == null && dangerBar.GetVol() == 33 && TutorialContainsAvero())
+            else if(numtutorialsfinished == 8)
             {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial9);
-                numtutorialsfinished++;
-                foreach(HexTile tile in tutorialAveroTiles)
+                if(dangerBar.GetVol() == 33 && TutorialContainsAvero())
                 {
-                    tile.UnlockColor();
+                    TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial[numtutorialsfinished]);
+                    numtutorialsfinished++;
+                    foreach(HexTile tile in tutorialAveroTiles)
+                    {
+                        tile.UnlockColor();
+                    }
                 }
             }
-            else if(numtutorialsfinished == 9 && TutorialManager.instance.activeTutorial == null)
+            else if(numtutorialsfinished > TutorialManager.instance.DrugGameTutorial.Count - 1)
             {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial10);
-                numtutorialsfinished++;
-            }
-            else if(numtutorialsfinished == 10 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial11);
-                numtutorialsfinished++;
-            }
-            else if(numtutorialsfinished == 11 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial12);
-                numtutorialsfinished++;
                 tutorialsfinished = true;
+            }
+            else{
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.DrugGameTutorial[numtutorialsfinished]);
+                numtutorialsfinished++;
             }
         }
 
-        if(!tutorialsfinished && GameManager.instance.currentDayIndex == 1){
-            if(numtutorialsfinished == 0 && TutorialManager.instance.activeTutorial == null)
+        if(!tutorialsfinished && GameManager.instance.currentDayIndex == 1 && TutorialManager.instance.activeTutorial == null){
+            if(numtutorialsfinished > TutorialManager.instance.Day2Tutorial.Count - 1)
             {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day2Tutorial1);
-                numtutorialsfinished++;
-            }
-            if(numtutorialsfinished == 1 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day2Tutorial2);
-                numtutorialsfinished++;
-            }
-            if(numtutorialsfinished == 2 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day2Tutorial3);
-                numtutorialsfinished++;
                 tutorialsfinished = true;
+            }
+            else{
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day2Tutorial[numtutorialsfinished]);
+                numtutorialsfinished++;
             }
         }
 
-        if(!tutorialsfinished && GameManager.instance.currentDayIndex == 2){
-            if(numtutorialsfinished == 0 && TutorialManager.instance.activeTutorial == null)
+        if(!tutorialsfinished && GameManager.instance.currentDayIndex == 2 && TutorialManager.instance.activeTutorial == null){
+            if(numtutorialsfinished > TutorialManager.instance.Day3Tutorial.Count - 1)
             {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day3Tutorial1);
-                numtutorialsfinished++;
-            }
-            if(numtutorialsfinished == 1 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day3Tutorial2);
-                numtutorialsfinished++;
-            }
-            if(numtutorialsfinished == 2 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day3Tutorial3);
-                numtutorialsfinished++;
                 tutorialsfinished = true;
+            }
+            else{
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day3Tutorial[numtutorialsfinished]);
+                numtutorialsfinished++;
             }
         }
 
         if(!allrecapfinished)
         {
-            if(numrecapfinished == 0 && TutorialManager.instance.activeTutorial == null)
+            if(numrecapfinished > TutorialManager.instance.RecapTutorial.Count - 1)
             {
-                TutorialManager.instance.ActivateReplayableTutorial(TutorialManager.instance.RecapTutorial1);
-                numrecapfinished++;
-            }
-            else if(numrecapfinished == 1 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateReplayableTutorial(TutorialManager.instance.RecapTutorial2);
-                numrecapfinished++;
-            }
-            if(numrecapfinished == 2 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateReplayableTutorial(TutorialManager.instance.RecapTutorial3);
-                numrecapfinished++;
-            }
-            if(numrecapfinished == 3 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateReplayableTutorial(TutorialManager.instance.RecapTutorial4);
-                numrecapfinished++;
-            }
-            else if(numrecapfinished == 4 && TutorialManager.instance.activeTutorial == null)
-            {
-                TutorialManager.instance.ActivateReplayableTutorial(TutorialManager.instance.RecapTutorial5);
-                numrecapfinished++;
                 allrecapfinished = true;
             }
-
-            
+            else if(TutorialManager.instance.activeTutorial == null){
+                TutorialManager.instance.ActivateReplayableTutorial(TutorialManager.instance.RecapTutorial[numrecapfinished]);
+                numrecapfinished++;
+            }
         }
 
         // Multiply by 30 for speedy
@@ -389,6 +326,16 @@ public class DrugManager : MonoBehaviour
 
     }
 
+    public void EndTutorials()
+    {
+        tutorialsfinished = true;
+        hexGrid.GetHexTile(tutorialTheromideTile).UnlockColor();
+        tutorialAveroTiles = hexGrid.GetAdjacent(tutorialTheromideTile);
+        foreach(HexTile tile in tutorialAveroTiles)
+        {
+            tile.UnlockColor();
+        }
+    }
     public void ClearChems()
     {
         if (onClearChems != null)

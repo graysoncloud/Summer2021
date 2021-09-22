@@ -28,7 +28,11 @@ public class GameManager : MonoBehaviour
 
         Application.targetFrameRate = 60;
 
-        ResetPlayerPrefsToSave();    
+        // De-comment on build
+        //ResetPlayerPrefsToSave();  
+
+        // Delete:
+        PlayerPrefs.DeleteAll();
     }
 
     private void Start()

@@ -147,7 +147,7 @@ public class Chemical : MonoBehaviour
             }
             else
             {
-                center.GetComponent<SpriteRenderer>().color = getDarkerSaturation(color2, 0.5f);
+                center.GetComponent<SpriteRenderer>().color = getDarkerCompliment(color2, -0.01f, 0f, -0.1f);
                 center2.GetComponent<SpriteRenderer>().color = color2;
             }
             spriteRenderer.enabled = false;
@@ -238,12 +238,12 @@ public class Chemical : MonoBehaviour
         }
     }
 
-    private Color getDarkerSaturation(Color incolor, float darkenamount)
+    private Color getDarkerCompliment(Color incolor, float hueamount, float satamount, float valamount)
     {
         float hue, sat, val;
         Color.RGBToHSV(incolor, out hue, out sat, out val);
 
-        return Color.HSVToRGB(hue, sat + darkenamount, val);
+        return Color.HSVToRGB(hue + hueamount, sat + satamount, val + valamount);
     }
     private void Update()
     {

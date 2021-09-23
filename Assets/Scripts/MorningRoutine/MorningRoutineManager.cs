@@ -43,6 +43,8 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         medicationMinigame = FindObjectOfType<MedicationMinigame>();
         tvInteractable = FindObjectOfType<TVInteractable>();
         audioManager = FindObjectOfType<MRAudioManager>();
+
+        gameDay = PlayerPrefs.GetInt("CurrentDayIndex") + 1;
     }
 
     void LoadInteractables() {

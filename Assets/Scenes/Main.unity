@@ -39599,11 +39599,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
   orthographic: 1
-  orthographic size: 5.4
+  orthographic size: 5.39
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -53258,7 +53258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1ace72d66b2f64ab12c645e5bf8e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffect: {fileID: 8300000, guid: 5cc8bf200c26442cdaa0b0e92f72a513, type: 3}
+  soundEffect: {fileID: 8300000, guid: 57dde0163cb455d4dba7ae3b91c2b8a1, type: 3}
 --- !u!61 &1795917005
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59130,7 +59130,7 @@ Transform:
   m_GameObject: {fileID: 2028207693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.063, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1268487639}
   m_RootOrder: 3

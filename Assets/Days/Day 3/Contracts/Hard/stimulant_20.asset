@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Studies suggest that amphetamines may aid in the birthing process
     of a rare species, the twin-tailed tiger.
   usesMaxVolatility: 1
-  volatilityMax: 27
+  volatilityMax: 30
   optimalMaxVolatilityVal: 0
   usesMaxPrice: 1
-  maxPrice: 58
+  maxPrice: 64
   optimalMaxPriceVal: 52
   usesMinPrice: 0
   minPrice: 0

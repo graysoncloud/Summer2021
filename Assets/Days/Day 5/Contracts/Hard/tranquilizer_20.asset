@@ -16,10 +16,10 @@ MonoBehaviour:
   description: I attempted the "120 challenge" to stay up 120 hours, and now I can't
     fall back asleep. I need the strongest thing you've got.
   usesMaxVolatility: 1
-  volatilityMax: 13
+  volatilityMax: 16
   optimalMaxVolatilityVal: 7
   usesMaxPrice: 1
-  maxPrice: 37
+  maxPrice: 43
   optimalMaxPriceVal: 34
   usesMinPrice: 0
   minPrice: 0

@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Dahlmeier's disease is a prevalent new disease affecting kid's ability
     to absorb nutrients, so a special boost to nutrient movement is needed.
   usesMaxVolatility: 1
-  volatilityMax: 24
+  volatilityMax: 27
   optimalMaxVolatilityVal: 18
   usesMaxPrice: 1
-  maxPrice: 39
+  maxPrice: 45
   optimalMaxPriceVal: 36
   usesMinPrice: 0
   minPrice: 0

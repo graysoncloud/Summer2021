@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Some kind of ointment to give our workers to help with back-pain while
     harvesting should increase productivity.
   usesMaxVolatility: 1
-  volatilityMax: 18
+  volatilityMax: 21
   optimalMaxVolatilityVal: 12
   usesMaxPrice: 1
-  maxPrice: 33
+  maxPrice: 39
   optimalMaxPriceVal: 23
   usesMinPrice: 0
   minPrice: 0

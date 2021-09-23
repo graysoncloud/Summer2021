@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Lesser variant of yersinia pestis infecting young pop singers. Seeking
     medicine to rescue their vocal chords.
   usesMaxVolatility: 1
-  volatilityMax: 13
+  volatilityMax: 16
   optimalMaxVolatilityVal: 2
   usesMaxPrice: 1
-  maxPrice: 31
+  maxPrice: 37
   optimalMaxPriceVal: 24
   usesMinPrice: 0
   minPrice: 0

@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Our rowing team needs something to rocket us out of last place, and
     some kind of hand gel should help us get through those long races.
   usesMaxVolatility: 1
-  volatilityMax: 25
+  volatilityMax: 28
   optimalMaxVolatilityVal: 19
   usesMaxPrice: 1
-  maxPrice: 25
+  maxPrice: 31
   optimalMaxPriceVal: 22
   usesMinPrice: 0
   minPrice: 0
@@ -32,3 +32,17 @@ MonoBehaviour:
   desirableEffect: 0
   desirableEffectMin: 3
   optimalDesirableEffectAmount: 3
+  usesOptional: 0
+  isSpecialContract1: 0
+  isSpecialContract2: 0
+  usesOptionalDesireable: 0
+  usesOptionalUndesirable: 0
+  usesOptionalMinPrice: 0
+  usesOptionalMaxPrice: 0
+  usesOptionalVol: 0
+  optionalEffect: 0
+  optionalUndesirableMax: 0
+  optionalDesirableMin: 0
+  optionalVolMax: 0
+  optionalPriceMin: 0
+  optionalPriceMax: 0

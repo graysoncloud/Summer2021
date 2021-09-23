@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Our deep-sea technicians need something to help with the aches caused
     by working deep underwater.
   usesMaxVolatility: 1
-  volatilityMax: 23
+  volatilityMax: 26
   optimalMaxVolatilityVal: 17
   usesMaxPrice: 1
-  maxPrice: 27
+  maxPrice: 33
   optimalMaxPriceVal: 24
   usesMinPrice: 0
   minPrice: 13

@@ -16,10 +16,10 @@ MonoBehaviour:
   description: I run the 5th largest YouTube channel reviewing decades old expired
     food; need something to help with the toll it inflicts on my body.
   usesMaxVolatility: 1
-  volatilityMax: 12
+  volatilityMax: 15
   optimalMaxVolatilityVal: 6
   usesMaxPrice: 1
-  maxPrice: 20
+  maxPrice: 26
   optimalMaxPriceVal: 17
   usesMinPrice: 0
   minPrice: 0

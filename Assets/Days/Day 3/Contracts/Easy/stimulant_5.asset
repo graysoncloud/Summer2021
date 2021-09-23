@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Coffee just isn't doing it anymore for some of our customers, and
     we want to demo some new hyper-caffeinated coffees.
   usesMaxVolatility: 1
-  volatilityMax: 8
+  volatilityMax: 33
   optimalMaxVolatilityVal: 2
   usesMaxPrice: 1
-  maxPrice: 27
+  maxPrice: 33
   optimalMaxPriceVal: 24
   usesMinPrice: 0
   minPrice: 0
@@ -32,3 +32,17 @@ MonoBehaviour:
   desirableEffect: 7
   desirableEffectMin: 5
   optimalDesirableEffectAmount: 5
+  usesOptional: 0
+  isSpecialContract1: 0
+  isSpecialContract2: 0
+  usesOptionalDesireable: 0
+  usesOptionalUndesirable: 0
+  usesOptionalMinPrice: 0
+  usesOptionalMaxPrice: 0
+  usesOptionalVol: 0
+  optionalEffect: 0
+  optionalUndesirableMax: 0
+  optionalDesirableMin: 0
+  optionalVolMax: 0
+  optionalPriceMin: 0
+  optionalPriceMax: 0

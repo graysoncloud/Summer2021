@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Going through antibacterial soaps is one of our biggest costs; looking
     for something cheap but effective we can use to clean.
   usesMaxVolatility: 1
-  volatilityMax: 16
+  volatilityMax: 19
   optimalMaxVolatilityVal: 10
   usesMaxPrice: 1
-  maxPrice: 26
+  maxPrice: 32
   optimalMaxPriceVal: 23
   usesMinPrice: 0
   minPrice: 0

@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Looking for painkiller to be utilized post-surgery with less of the
     usual side effects so patients can continue their day.
   usesMaxVolatility: 1
-  volatilityMax: 12
+  volatilityMax: 15
   optimalMaxVolatilityVal: 6
   usesMaxPrice: 1
-  maxPrice: 14
+  maxPrice: 20
   optimalMaxPriceVal: 12
   usesMinPrice: 0
   minPrice: 0

@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Looking for a stimulant that can bond well with CBD cream, so users
     can loosen up and get pumped up for their workout.
   usesMaxVolatility: 1
-  volatilityMax: 15
+  volatilityMax: 18
   optimalMaxVolatilityVal: 9
   usesMaxPrice: 1
-  maxPrice: 34
+  maxPrice: 40
   optimalMaxPriceVal: 31
   usesMinPrice: 0
   minPrice: 0

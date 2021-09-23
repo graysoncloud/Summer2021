@@ -16,10 +16,10 @@ MonoBehaviour:
   description: We discovered a rare plant with a stimulant effect and are looking
     to make it's unique chemical formulation able to smoked.
   usesMaxVolatility: 1
-  volatilityMax: 18
+  volatilityMax: 21
   optimalMaxVolatilityVal: 12
   usesMaxPrice: 1
-  maxPrice: 42
+  maxPrice: 48
   optimalMaxPriceVal: 39
   usesMinPrice: 0
   minPrice: 0

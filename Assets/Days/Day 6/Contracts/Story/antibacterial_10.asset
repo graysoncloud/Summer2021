@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Thousands of citizens are bedridden after sewage leaked into water
     supply; need a fast-acting antibacterial to help get people back to work.
   usesMaxVolatility: 1
-  volatilityMax: 12
+  volatilityMax: 15
   optimalMaxVolatilityVal: 6
   usesMaxPrice: 1
-  maxPrice: 40
+  maxPrice: 46
   optimalMaxPriceVal: 37
   usesMinPrice: 0
   minPrice: 0

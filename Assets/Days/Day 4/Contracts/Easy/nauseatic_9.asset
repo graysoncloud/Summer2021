@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Outbreak of norovirus currently underway in the mathematics department,
     all those numbers not helping with nausea. Looking for a cheap, quick fix.
   usesMaxVolatility: 1
-  volatilityMax: 21
+  volatilityMax: 24
   optimalMaxVolatilityVal: 15
   usesMaxPrice: 1
-  maxPrice: 26
+  maxPrice: 32
   optimalMaxPriceVal: 23
   usesMinPrice: 1
   minPrice: 13

@@ -16,10 +16,10 @@ MonoBehaviour:
   description: We had an outbreak of food-poisoning from expired mac and cheese,
     but our kids are here for another 2 months and parents are upset.
   usesMaxVolatility: 1
-  volatilityMax: 18
+  volatilityMax: 21
   optimalMaxVolatilityVal: 12
   usesMaxPrice: 1
-  maxPrice: 42
+  maxPrice: 48
   optimalMaxPriceVal: 39
   usesMinPrice: 0
   minPrice: 0

@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Employees at Corncob TV have been down ever since Coffin Flop got
     canceled. Need a bit of an oomph to boost morale.
   usesMaxVolatility: 1
-  volatilityMax: 17
+  volatilityMax: 20
   optimalMaxVolatilityVal: 8
   usesMaxPrice: 1
-  maxPrice: 37
+  maxPrice: 43
   optimalMaxPriceVal: 26
   usesMinPrice: 0
   minPrice: 0

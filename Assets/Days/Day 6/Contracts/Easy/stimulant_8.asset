@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Parents are worried about caffeine intake for their kids; looking
     for something light to put in decaf and give kids a taste of caffeinated coffee.
   usesMaxVolatility: 1
-  volatilityMax: 15
+  volatilityMax: 18
   optimalMaxVolatilityVal: 9
   usesMaxPrice: 1
-  maxPrice: 25
+  maxPrice: 31
   optimalMaxPriceVal: 22
   usesMinPrice: 0
   minPrice: 0

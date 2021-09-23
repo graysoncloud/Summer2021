@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Preliminary studies display intriguing effects of human nauseatics
     on some species of ants; need a specialized gaseous nauseatic.
   usesMaxVolatility: 1
-  volatilityMax: 24
+  volatilityMax: 27
   optimalMaxVolatilityVal: 18
   usesMaxPrice: 1
-  maxPrice: 30
+  maxPrice: 36
   optimalMaxPriceVal: 30
   usesMinPrice: 1
   minPrice: 24

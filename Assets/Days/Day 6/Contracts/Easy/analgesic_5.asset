@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Zero-gravity inflicts a very specific kind of bodily pain on our crew,
     and we need a unique ointment that can survive space travel.
   usesMaxVolatility: 1
-  volatilityMax: 18
+  volatilityMax: 21
   optimalMaxVolatilityVal: 12
   usesMaxPrice: 1
-  maxPrice: 22
+  maxPrice: 28
   optimalMaxPriceVal: 19
   usesMinPrice: 1
   minPrice: 13

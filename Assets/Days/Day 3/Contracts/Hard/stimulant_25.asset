@@ -16,10 +16,10 @@ MonoBehaviour:
   description: We're creating a simulator that tests how drugs may react in the body,
     and need something absolutely extreme to demo our technology.
   usesMaxVolatility: 1
-  volatilityMax: 10
+  volatilityMax: 13
   optimalMaxVolatilityVal: 0
   usesMaxPrice: 1
-  maxPrice: 70
+  maxPrice: 76
   optimalMaxPriceVal: 62
   usesMinPrice: 0
   minPrice: 0

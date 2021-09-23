@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Several of our workers are bedridden after a chemical reagent was
     exposed in the breakroom fridge, causing bacteria to thrive in their food.
   usesMaxVolatility: 1
-  volatilityMax: 15
+  volatilityMax: 18
   optimalMaxVolatilityVal: 9
   usesMaxPrice: 1
-  maxPrice: 42
+  maxPrice: 48
   optimalMaxPriceVal: 39
   usesMinPrice: 0
   minPrice: 0

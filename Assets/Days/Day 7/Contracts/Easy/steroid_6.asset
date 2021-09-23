@@ -15,10 +15,10 @@ MonoBehaviour:
   companyName: Fredrickson QRL
   description: Looking for something to motivate our employees
   usesMaxVolatility: 1
-  volatilityMax: 15
+  volatilityMax: 18
   optimalMaxVolatilityVal: 9
   usesMaxPrice: 1
-  maxPrice: 13
+  maxPrice: 19
   optimalMaxPriceVal: 10
   usesMinPrice: 0
   minPrice: 0

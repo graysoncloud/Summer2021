@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Surveys show kids won't take pain medication unless it's tasty, so
     looking for a painkiller that will fit in with our gummy bear recipe.
   usesMaxVolatility: 1
-  volatilityMax: 12
+  volatilityMax: 15
   optimalMaxVolatilityVal: 6
   usesMaxPrice: 1
-  maxPrice: 13
+  maxPrice: 19
   optimalMaxPriceVal: 10
   usesMinPrice: 0
   minPrice: 0

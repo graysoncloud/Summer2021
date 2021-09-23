@@ -16,10 +16,10 @@ MonoBehaviour:
   description: We are attempting to explore the effects of food-induced nausea and
     need a chemical composition that can be imported into our simulator.
   usesMaxVolatility: 1
-  volatilityMax: 13
+  volatilityMax: 16
   optimalMaxVolatilityVal: 7
   usesMaxPrice: 1
-  maxPrice: 37
+  maxPrice: 43
   optimalMaxPriceVal: 34
   usesMinPrice: 0
   minPrice: 0

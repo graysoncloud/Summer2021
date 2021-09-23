@@ -16,10 +16,10 @@ MonoBehaviour:
   description: We need a special variant of laughing gas that also has a mouth numbing
     effect for unruly kids at the dentist.
   usesMaxVolatility: 1
-  volatilityMax: 24
+  volatilityMax: 27
   optimalMaxVolatilityVal: 18
   usesMaxPrice: 1
-  maxPrice: 31
+  maxPrice: 37
   optimalMaxPriceVal: 28
   usesMinPrice: 0
   minPrice: 0

@@ -16,10 +16,10 @@ MonoBehaviour:
   description: 'CONFIDENTIAL: Lakewood Valley Performance is looking for a microdosable
     steroid that can be expunged from the body in a rapid manner.'
   usesMaxVolatility: 1
-  volatilityMax: 21
+  volatilityMax: 24
   optimalMaxVolatilityVal: 15
   usesMaxPrice: 1
-  maxPrice: 38
+  maxPrice: 44
   optimalMaxPriceVal: 35
   usesMinPrice: 0
   minPrice: 0

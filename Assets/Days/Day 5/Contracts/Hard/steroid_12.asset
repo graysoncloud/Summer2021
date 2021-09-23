@@ -16,10 +16,10 @@ MonoBehaviour:
   description: Our artists are compiling pieces on moods, and need a steroid with
     the mood-swing effect isolated in order to rapidly experience emotions.
   usesMaxVolatility: 1
-  volatilityMax: 18
+  volatilityMax: 21
   optimalMaxVolatilityVal: 12
   usesMaxPrice: 1
-  maxPrice: 23
+  maxPrice: 29
   optimalMaxPriceVal: 22
   usesMinPrice: 0
   minPrice: 0

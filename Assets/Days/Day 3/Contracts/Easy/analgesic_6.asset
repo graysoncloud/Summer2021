@@ -16,10 +16,10 @@ MonoBehaviour:
   description: The drummers of the bands we manage abuse their hands day in and day
     out, and they need some kind of cream to help with the pain.
   usesMaxVolatility: 1
-  volatilityMax: 6
+  volatilityMax: 9
   optimalMaxVolatilityVal: 0
   usesMaxPrice: 1
-  maxPrice: 22
+  maxPrice: 28
   optimalMaxPriceVal: 17
   usesMinPrice: 1
   minPrice: 13

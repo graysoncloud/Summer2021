@@ -16,10 +16,10 @@ MonoBehaviour:
   description: We're expanding into the medical food industry, and need a painkilling
     chemical that won't disrupt our food's unique flavor.
   usesMaxVolatility: 1
-  volatilityMax: 10
+  volatilityMax: 13
   optimalMaxVolatilityVal: 4
   usesMaxPrice: 1
-  maxPrice: 31
+  maxPrice: 37
   optimalMaxPriceVal: 28
   usesMinPrice: 1
   minPrice: 15

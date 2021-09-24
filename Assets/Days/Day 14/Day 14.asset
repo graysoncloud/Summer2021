@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 4991818317866170135, guid: 7dc71964c27dfd64f8f510fb3063b55e, type: 3}
   - {fileID: 4991818317866170135, guid: 004b6217479e29a47b5a68aee64f65a9, type: 3}
   - {fileID: 4991818317866170135, guid: c35e893e229656349b45a859d531d32e, type: 3}
+  - {fileID: 4991818317866170135, guid: 0c4ff458f27d79c4191b2fc692d1e01e, type: 3}
   contractTypeList: 
   storyContracts: []
   easyContracts:

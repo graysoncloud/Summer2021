@@ -18,8 +18,8 @@ public enum EffectType
     Stimulant,
     Tranquilizer,
     Antibacterial,
-    Decongesitant
-
+    Decongesitant,
+    UNKNOWN
 }
 
 [CreateAssetMenu(fileName = "Contract", menuName = "Contract", order = 1)]

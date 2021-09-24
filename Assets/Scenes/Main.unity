@@ -44538,6 +44538,7 @@ MonoBehaviour:
   audioManager: {fileID: 1807354952}
   mainCamera: {fileID: 1375980666}
   migraineCamera: {fileID: 47895145}
+  dayTextContainer: {fileID: 1994927663}
   gameDay: 1
 --- !u!4 &1560080107
 Transform:
@@ -58390,7 +58391,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994927663}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 242.4, y: 90.25328, z: 1}
   m_Children:

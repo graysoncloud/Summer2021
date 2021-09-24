@@ -29,6 +29,8 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     public Camera mainCamera;
     public Camera migraineCamera;
 
+    public GameObject dayTextContainer;
+
 
     // game data
     // the day
@@ -100,9 +102,34 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         tvInteractable.Reset();
 
         //SetMinigame(bedMinigame);
+
+        
     }
 
     public void SetTVActive(bool a) {
         isTVActive = a;
+    }
+
+    void OnEnable() {
+        StartCoroutine("FadeDayText");
+    }
+
+    IEnumerator FadeDayText() {
+        for(float i = 0f; i <= 1f; i += 0.01f) {
+            dayTextContainer.GetComponent<CanvasRenderer>().SetAlpha(i);
+            dayCounterTxt.alpha = i;
+            yield return new WaitForSeconds(0.01f);
+        }
+        dayTextContainer.GetComponent<CanvasRenderer>().SetAlpha(1);
+        dayCounterTxt.alpha = 1;
+        yield return new WaitForSeconds(5f);
+
+        for(float i = 1f; i >= 0f; i -= 0.01f) {
+            dayTextContainer.GetComponent<CanvasRenderer>().SetAlpha(i);
+            dayCounterTxt.alpha = i;
+            yield return new WaitForSeconds(0.01f);
+        }
+        dayTextContainer.GetComponent<CanvasRenderer>().SetAlpha(0);
+        dayCounterTxt.alpha = 0;
     }
 }

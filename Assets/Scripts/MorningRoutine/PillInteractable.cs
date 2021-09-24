@@ -10,10 +10,12 @@ public class PillInteractable : Interactable
     public float degreesToRotate = 30f;
     public float rotateStep = 0.1f;
 
+    MedicationMinigame medicationMinigame;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        medicationMinigame = GetComponentInParent<MedicationMinigame>();
     }
 
     new void OnMouseDown() {
@@ -28,6 +30,9 @@ public class PillInteractable : Interactable
             this.gameObject.SetActive(false);
             MorningRoutineManager.Instance.takenMedicationToday = true;
             PlayerPrefs.SetInt("TookPill", 0);
+
+            medicationMinigame.StopMedGame();
+            MorningRoutineManager.Instance.StopMinigame();
         }
     }
 

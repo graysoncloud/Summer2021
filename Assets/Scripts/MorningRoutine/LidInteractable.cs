@@ -54,6 +54,11 @@ public class LidInteractable : MonoBehaviour
         active = a;
     }
 
+    public void CloseLid() {
+        IEnumerator coroutine = MoveLid(openPos, defaultPos, 0.05f, false);
+        StartCoroutine(coroutine);
+    }
+
     public void Reset() {
         //Debug.Log("reset");
         active = false;

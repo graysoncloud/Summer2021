@@ -40,10 +40,12 @@ public class MedicationMinigame : Minigame
 
     public void StopMedGame() {
         //Debug.Log("medicine game end");
-        base.StopGame();
+        
+        lidInteractable.CloseLid();
         lidInteractable.SetActive(false);
         lidInteractable.Reset();
         pillInteractable.Reset();
+        base.StopGame();
     }
 
     public void IncrementDay() {

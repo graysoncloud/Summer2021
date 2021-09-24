@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stubbleSprites:
+  - {fileID: 0}
   - {fileID: 21300000, guid: 3a2b423d0e0335644953b1bb89a23274, type: 3}
   - {fileID: 21300000, guid: 5ddca2aff0d96ea4888a6d6484c088ca, type: 3}
   - {fileID: 21300000, guid: 9275eafe87e428d4491003a7c5b31abe, type: 3}

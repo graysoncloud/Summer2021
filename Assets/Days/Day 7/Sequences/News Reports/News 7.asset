@@ -16,7 +16,8 @@ MonoBehaviour:
   isNews: 1
   dialogueLines:
   - speaker: 0
-    dialogue: '*insert story dialogue that Elliana calls yo about*'
+    dialogue: MALPRACTICE OF BROOKSTONE CITY OFFICIALS LEADS TO SEWAGE BEING LEAKED
+      INTO WATER SUPPLY, INFECTING THOUSANDS
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

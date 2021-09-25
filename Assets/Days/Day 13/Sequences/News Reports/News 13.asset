@@ -10,30 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: News 4
+  m_Name: News 13
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
   isNews: 1
   dialogueLines:
   - speaker: 0
-    dialogue: OIL DEPOSIT FOUND NEAR CIUDAD JUAREZ AND EL PASO BORDER, BRINGS BORDER
-      SPECIFICATIONS INTO QUESTION
+    dialogue: 
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: "RICHARD D\u2019AMELIO, CEO OF FOOD QBE, ATTRIBUTES INSPIRATIONS TO
-      PSYCHOACTIVE DRUGS AND MEDITATION"
+    dialogue: 
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: MASS EXODUS OF NORTHEAST AFRICAN IMMIGRANTS AS THIRD SUDANESE CIVIL
-      WAR RAGES
+    dialogue: 
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

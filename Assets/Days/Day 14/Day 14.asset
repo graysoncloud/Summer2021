@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Day 14
   m_EditorClassIdentifier: 
   sequences: []
-  newsEvent: {fileID: 0}
+  newsEvent: {fileID: 11400000, guid: 85cb91fbdcfabf34198294cd92ed0d1e, type: 2}
   contracts: []
   dayChemicals:
   - {fileID: 4991818317866170135, guid: 50c17436042c3184f8071ff156a74993, type: 3}

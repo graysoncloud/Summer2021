@@ -20,5 +20,6 @@ public class MinigameExit : MonoBehaviour
         if(MorningRoutineManager.Instance.currentMinigame != null) {
             MorningRoutineManager.Instance.StopMinigame();
         }
+        gameObject.SetActive(false);
     }
 }

@@ -37,7 +37,9 @@ public class Blanket : MonoBehaviour
         Vector3 newScale = new Vector3(0.5f, 1, 1);
         GetComponent<Rigidbody2D>().transform.localScale = newScale;
         MorningRoutineManager.Instance.audioManager.LoadSound(soundEffect);
-        MorningRoutineManager.Instance.audioManager.PlaySound();
+        if(!MorningRoutineManager.Instance.audioManager.audioSource.isPlaying) {
+                MorningRoutineManager.Instance.audioManager.PlaySound();
+            }
     }
 
     void OnMouseUp() {
@@ -56,7 +58,10 @@ public class Blanket : MonoBehaviour
             i.SetInteractableActive(false);
             bedMade = true;
             MorningRoutineManager.Instance.audioManager.LoadSound(soundEffect);
-            MorningRoutineManager.Instance.audioManager.PlaySound();
+            if(!MorningRoutineManager.Instance.audioManager.audioSource.isPlaying) {
+                MorningRoutineManager.Instance.audioManager.PlaySound();
+            }
+            
         }
     }
 

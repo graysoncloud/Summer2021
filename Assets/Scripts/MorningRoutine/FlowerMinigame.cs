@@ -43,6 +43,7 @@ public class FlowerMinigame : Minigame
 
     new void OnMouseDown() {
         base.OnMouseDown();
+        
     }
 
     public void IncrementDay() {

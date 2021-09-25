@@ -33,6 +33,13 @@ public class GlowEffect : MonoBehaviour
             tutorialGlow = true;
             glowSettings = GetComponent<SpriteGlowEffect>();
             maxOutline = glowSettings.OutlineWidth;
+
+            if(!PlayerPrefs.HasKey(gameObject.name + "Glow")) {
+                PlayerPrefs.SetInt(gameObject.name + "Glow", 1);
+            }
+            else if(PlayerPrefs.GetInt(gameObject.name + "Glow") == 0) {
+                shouldGlow = false;
+            }
         }
     }
 

@@ -26,8 +26,7 @@ public class ChemicalBin : MonoBehaviour
                 costDisplay.SetText("Cost " + ChemicalPrefab.getCost().ToString());
             }
 
-            //SetGlow();
-            //CreateDrugGraphic();
+            CreateDrugGraphic();
         }
     }
 
@@ -122,10 +121,11 @@ public class ChemicalBin : MonoBehaviour
     public void CreateDrugGraphic()
     {
         Chemical newChemical = Instantiate<Chemical>(ChemicalPrefab, graphicPosition.position, Quaternion.identity);
-        GameObject graphic = Instantiate<GameObject>(newChemical.graphicsParent, graphicPosition.position, Quaternion.identity);
-        graphic.transform.localScale = new Vector3(5, 5, 1);//CHANGE THIS WHEN GRAPHICS SCALE CHANGES
-
-        Destroy(newChemical.gameObject);
+        newChemical.setActive(false);
+        newChemical.tag = "Untagged";
+        newChemical.GetComponent<PolygonCollider2D>().enabled = false;
+        newChemical.transform.localScale = new Vector3(3, 3, 1);
+        newChemical.GetComponent<Chemical>().enabled = false;
     }
 
     public void ChangeCost(float cost)

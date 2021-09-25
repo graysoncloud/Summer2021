@@ -29,6 +29,7 @@ public class MedicationMinigame : Minigame
         if(!isGameActive) {
             isGameActive = true;
             BeginGame();
+            exit.SetActive(true);
         }
     }
 

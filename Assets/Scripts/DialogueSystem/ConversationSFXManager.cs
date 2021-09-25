@@ -20,15 +20,24 @@ public class ConversationSFXManager : MonoBehaviour
 
     public void PlaySFX(ConversationSFX toPlay)
     {
-        GetComponent<AudioSource>().clip = SFX[(int)toPlay];
-        GetComponent<AudioSource>().Play();
+        if (toPlay.ToString() == "Stop")
+            GetComponent<AudioSource>().Stop();
+
+        else
+        {
+            GetComponent<AudioSource>().clip = SFX[(int)toPlay];
+            GetComponent<AudioSource>().Play();
+        }
+
     }
 
 }
 
 public enum ConversationSFX
 {
-    PaperSwoosh
+    PaperSwoosh,
+    Ringtone,
+    Stop
 }
 
 

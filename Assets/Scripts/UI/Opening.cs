@@ -43,6 +43,7 @@ public class Opening : MonoBehaviour
 
     IEnumerator Begin()
     {
+        SFXPlayer.instance.PlaySoundEffect(11);
         yield return new WaitForSeconds(delay);
         start = true;
     }

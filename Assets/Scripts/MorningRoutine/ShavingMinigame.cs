@@ -36,6 +36,7 @@ public class ShavingMinigame : Minigame
             isGameActive = true;
             BeginGame();
             mirror.GetComponent<GlowEffect>().OnMouseDown();
+            exit.SetActive(true);
         }
     }
 

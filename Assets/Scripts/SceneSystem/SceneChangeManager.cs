@@ -77,6 +77,11 @@ public class SceneChangeManager : MonoBehaviour
             MusicManager.instance.StartFadeOut();
         }
 
+        if (oldSceneName == "RecapScene")
+        {
+            AmbienceManager.instance.StartFadeOut();
+        }
+
         yield return new WaitForSeconds(sceneChange.preDelay);
 
         if (sceneChange.transitionStyle.ToString() == "fade" || sceneChange.transitionStyle.ToString() == "longFade")
@@ -148,7 +153,7 @@ public class SceneChangeManager : MonoBehaviour
                 break;
             case "DrugGameScene": newScene = scenes[2]; currentScene = newScene; newScene.gameObject.SetActive(true); AmbienceManager.instance.StartFadeOut(); break;
             case "RecapScene": newScene = scenes[3]; currentScene = newScene; newScene.gameObject.SetActive(true); RecapSceneManager.instance.DisplayContracts();
-                AmbienceManager.instance.StartFadeOut(); break;
+                AmbienceManager.instance.StartFadeOut(); AmbienceManager.instance.PlayAmbience(1);  break;
             case "DreamScene": newScene = scenes[4]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
             case "TitleScene": newScene = scenes[5]; currentScene = newScene; newScene.gameObject.SetActive(true); newScene.GetComponent<TitleSceneManager>().PrepareScene();
                 MusicManager.instance.StartMusicEvent(TitleSceneManager.instance.defaultTitleMusicEvent); break;

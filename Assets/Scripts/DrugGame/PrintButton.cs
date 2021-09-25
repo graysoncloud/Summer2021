@@ -23,7 +23,7 @@ public class PrintButton : MonoBehaviour
         }
 
         // Evaluate solution
-        if (ContractDisplayer.instance.EvaluateContract())
+        if (true || ContractDisplayer.instance.EvaluateContract())
         {
 
             DrugManager.instance.EndTutorials();

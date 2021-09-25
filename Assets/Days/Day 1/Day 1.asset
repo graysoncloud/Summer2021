@@ -21,11 +21,13 @@ MonoBehaviour:
     trigger: 2
   - initialEvent: {fileID: 11400000, guid: cbc227c6c87ac6445bad2474d1ff9f22, type: 2}
     trigger: 5
+  - initialEvent: {fileID: 11400000, guid: 43a1b69171d59784abf1f1fd83d104fe, type: 2}
+    trigger: 9
   newsEvent: {fileID: 11400000, guid: b58426fc35a83cf4aaef4e1ceb69ec8a, type: 2}
   contracts:
   - {fileID: 11400000, guid: 2263b95c66ebb4e47a213586dfd74ed5, type: 2}
   - {fileID: 11400000, guid: 34425545b1fa89a40a99680e1622ce29, type: 2}
-  - {fileID: 11400000, guid: b4cc50a2e6c6c1e47b6c80ef0152e649, type: 2}
+  - {fileID: 11400000, guid: b7167bafd4adec14a9d8106f5b43febb, type: 2}
   - {fileID: 11400000, guid: 0ef0bb679eeace940b26eddf3f9f1911, type: 2}
   dayChemicals:
   - {fileID: 4991818317866170135, guid: ca93b602592e5e347b070a41e8b1a2de, type: 3}

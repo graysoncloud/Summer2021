@@ -11,6 +11,7 @@ public class TVInteractable : MonoBehaviour
     public bool isTVActive = false;
 
     public bool TVEventPlayed = false;
+    public TVReport tVReport;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class TVInteractable : MonoBehaviour
         if(!isTVActive && !TVEventPlayed) {
             isTVActive = true;
             BeginTVEvent();
+            tVReport.StartNews();
         }
     }
 
@@ -78,6 +80,7 @@ public class TVInteractable : MonoBehaviour
             mainCamera.SetActive(true);
             focusCamera.SetActive(false);
             MorningRoutineManager.Instance.SetTVActive(false);
+            tVReport.StopNews();
         }
     }
 

@@ -24,7 +24,7 @@ public class AmbienceManager : MonoBehaviour
 
     }
 
-    public void PlayAmbience(Ambience toPlay)
+    public void PlayAmbience(int index)
     {
         audioSource.Stop();
         audioSource.volume = PlayerPrefs.GetFloat("SFXVolume");
@@ -34,7 +34,7 @@ public class AmbienceManager : MonoBehaviour
             fadeOutCoroutine = null;
         }
 
-        audioSource.PlayOneShot(ambienceArray[Convert.ToInt32(toPlay)]);
+        audioSource.PlayOneShot(ambienceArray[index]);
     }
 
     public void StartFadeOut()
@@ -87,5 +87,6 @@ public class AmbienceManager : MonoBehaviour
 public enum Ambience
 {
     OfficeAmbience,
+    RainAmbience
 }
 

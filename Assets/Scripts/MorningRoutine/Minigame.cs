@@ -13,8 +13,11 @@ public class Minigame : MonoBehaviour
 
     public Interactable[] interactableList;
 
+    public GameObject exit;
+
     public void Start()
     {
+        exit.SetActive(false);
         //focusCamera.SetActive(false);
         minigameClickArea = GetComponent<BoxCollider2D>();
 
@@ -33,6 +36,7 @@ public class Minigame : MonoBehaviour
         if(!isGameActive) {
             isGameActive = true;
             BeginGame();
+            exit.SetActive(true);
         }
         
     }

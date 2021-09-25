@@ -21,7 +21,7 @@ MonoBehaviour:
     animations: []
     animOnly: 0
     animLength: 0
-    SFX: 
+    SFX: 01000000
   - speaker: 6
     dialogue: 'Hey! This is Elliana Woodward. Am I speaking to Barney Lastname?
 
@@ -30,7 +30,7 @@ MonoBehaviour:
     animations: []
     animOnly: 0
     animLength: 0
-    SFX: 
+    SFX: 02000000
   - speaker: 1
     dialogue: 'Uh, yes. How did you get my number?
 

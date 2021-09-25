@@ -9795,7 +9795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &362122842
 Transform:
   m_ObjectHideFlags: 0
@@ -9804,7 +9804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362122841}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1832866106}
@@ -9823,12 +9823,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newsSprites:
-  - {fileID: 21300000, guid: 6dc0d587ae1023b4e907c780aeaaa3f4, type: 3}
-  - {fileID: 21300000, guid: 843b5cbe25c77dc46b9b0942e7268ad2, type: 3}
-  - {fileID: 21300000, guid: 10f12d9bd1eaaff4cbf9a39062eeba41, type: 3}
-  - {fileID: 21300000, guid: fb8d905481ebe2341bbaba12e4771408, type: 3}
-  - {fileID: 21300000, guid: 9d83e057a56f1b447893064125d82481, type: 3}
-  - {fileID: 21300000, guid: f1dde71f70c73794a94265c9cb4811d2, type: 3}
+  - {fileID: 21300000, guid: 76a31959507abb5428a43a83e09523e5, type: 3}
+  - {fileID: 21300000, guid: 9cde9cf0cd9461a4fb7fc8e224e7eb52, type: 3}
+  - {fileID: 21300000, guid: dd0db9fa037f6f5409764facf36a84bd, type: 3}
+  - {fileID: 21300000, guid: a073fced0207db042818ee5bf956d84e, type: 3}
+  - {fileID: 21300000, guid: 3cdbf8883626e9a4184b141025d0cb49, type: 3}
+  - {fileID: 21300000, guid: 77f3edce222282646b26f3851357176f, type: 3}
   minTime: 0.43
   maxTime: 1.14
 --- !u!212 &362122844
@@ -9871,15 +9871,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 27
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 76a31959507abb5428a43a83e09523e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.24, y: 1.98}
+  m_Size: {x: 2.8, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &365936900

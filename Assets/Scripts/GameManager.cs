@@ -59,8 +59,8 @@ public class GameManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("ActiveGame") != 1)
         {
-            PlayerPrefs.SetFloat("MusicVolume", .5f);
-            PlayerPrefs.SetFloat("SFXVolume", .5f);
+            PlayerPrefs.SetFloat("MusicVolume", MusicManager.instance.defaultMusicVolume);
+            PlayerPrefs.SetFloat("SFXVolume", MusicManager.instance.defaultSFXVolume);
         }
 
         MusicManager.instance.audioSource.volume = PlayerPrefs.GetFloat("MusicVolume");
@@ -105,7 +105,9 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetInt("OptionalCompleted", 0);
 
-        PlayerPrefs.SetInt("LastMusicIndex", 0);
+        PlayerPrefs.SetInt("LastMusic1", 2);
+        PlayerPrefs.SetInt("LastMusic2", 3);
+        PlayerPrefs.SetInt("LastMusic3", 4);
 
         PlayerPrefs.SetInt("CurrentDayIndex", 0);
         currentDayIndex = 0;
@@ -153,6 +155,8 @@ public class GameManager : MonoBehaviour
         OfficeSceneManager.instance.currentContractIndex = 0;
 
         UpdatePlayerPrefs();
+
+        ElizabethHitbox.instance.timesClickedToday = 0;
 
         DrugManager.instance.ResetTimeElapsed();
         OfficeSceneManager.instance.contractsSolved = 0;

@@ -64,26 +64,21 @@ public class MusicManager : MonoBehaviour
                 // Double checks after delay, preventing lingering music
                 if (!audioSource.isPlaying && SceneChangeManager.instance.currentScene.name != "RecapScene")
                 {
-                    int rInt = Random.Range(0, workSongs.Length - 1);
-                    if (GameManager.instance.currentDayIndex >= 3)
+
+                    int newIndex = -1;
+                    while (newIndex == PlayerPrefs.GetInt("LastMusic1") || newIndex == PlayerPrefs.GetInt("LastMusic2") || newIndex == PlayerPrefs.GetInt("LastMusic3") || newIndex < 0)
                     {
-                        rInt++;
+                        int rInt = Random.Range(0, workSongs.Length - 1);
+                        newIndex = rInt;
+
                     }
 
-                    if (PlayerPrefs.GetInt("LastMusicIndex") == rInt)
-                    {
-                        if (rInt == 0)
-                        {
-                            rInt++;
-                        } else
-                        {
-                            rInt--;
-                        }
-                    }
 
-                    PlayerPrefs.SetInt("LastMusicIndex", rInt);
+                    PlayerPrefs.SetInt("LastMusic3", PlayerPrefs.GetInt("LastMusic2"));
+                    PlayerPrefs.SetInt("LastMusic2", PlayerPrefs.GetInt("LastMusic1"));
+                    PlayerPrefs.SetInt("LastMusic1", newIndex);
 
-                    audioSource.clip = workSongs[rInt];
+                    audioSource.clip = workSongs[newIndex];
 
                     audioSource.volume = PlayerPrefs.GetFloat("MusicVolume");
                     audioSource.PlayOneShot(audioSource.clip);

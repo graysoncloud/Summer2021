@@ -74,4 +74,9 @@ public class DialogueUIManager : MonoBehaviour
         UIParent.SetActive(false);
     }
 
+    public void SetUpForMigraine()
+    {
+        UIParent.SetActive(false);
+    }
+
 }

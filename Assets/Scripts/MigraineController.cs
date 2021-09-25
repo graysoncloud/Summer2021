@@ -69,8 +69,10 @@ public class MigraineController : MonoBehaviour
         }
     }
 
-    IEnumerator StartMigraine()
+    IEnumerator StartMigraineCoroutine(MigraineEvent mE)
     {
+        DialogueUIManager.instance.SetUpForMigraine();
+
         pulsing = true;
         for (int i = 0; i < pulseNum; i++)
         {
@@ -84,6 +86,8 @@ public class MigraineController : MonoBehaviour
             }
         }
         pulsing = false;
+
+        GameManager.instance.StartSequence(mE.nextEvent);
     }
 
     public void StartMigraine(MigraineEvent mE)
@@ -99,7 +103,7 @@ public class MigraineController : MonoBehaviour
             pulses = 0;
             postProcessingVolume.profile = migraineProfile;
 
-            StartCoroutine("StartMigraine");
+            StartCoroutine(StartMigraineCoroutine(mE));
         }
 
 

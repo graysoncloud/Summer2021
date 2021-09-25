@@ -5272,11 +5272,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1192976462103853973, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -411.2
+      value: -477.3
       objectReference: {fileID: 0}
     - target: {fileID: 1192976462103853973, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 87.3
+      value: 225.5
       objectReference: {fileID: 0}
     - target: {fileID: 1192976462103853973, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5317,10 +5317,6 @@ PrefabInstance:
     - target: {fileID: 1192976462103853974, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
       propertyPath: m_Name
       value: ReworkedBin
-      objectReference: {fileID: 0}
-    - target: {fileID: 2735070275720656733, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8970d3e87deb0ed4784d7f8c5f169260, type: 3}
@@ -6630,7 +6626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &255604966
 Transform:
   m_ObjectHideFlags: 0

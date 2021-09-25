@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: InitialSceneChange
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
-  newScene: 4
+  newScene: 0
   transitionStyle: 0
   preDelay: 0
   midDelay: 0

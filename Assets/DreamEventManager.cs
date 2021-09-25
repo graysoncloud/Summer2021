@@ -29,6 +29,8 @@ public class DreamEventManager : MonoBehaviour
 
     IEnumerator ExecuteDreamEvent(DreamEvent dE)
     {
+        DialogueUIManager.instance.SetUpForDream();
+
         SpriteRenderer toFade = dreamChars[(int)dE.toFade].GetComponent<SpriteRenderer>();
 
         if (!dE.fadeOut)
@@ -46,7 +48,7 @@ public class DreamEventManager : MonoBehaviour
             {
                 toFade.color -= colorIncrement * 60 * Time.deltaTime;
                 yield return new WaitForEndOfFrame();
-            }
+            } 
         }
 
         GameManager.instance.StartSequence(dE.nextEvent);

@@ -303,8 +303,19 @@ public class GameManager : MonoBehaviour
             TutorialManager.instance.ActivateTutorial(TutorialManager.instance.ContractTutorial1);
             sequenceActive = false;
         } 
-        else if(toExecute.GetType().ToString() == "MigraineEvent") {
+
+        else if (toExecute.GetType().ToString() == "MigraineEvent") {
             Camera.main.GetComponent<MigraineController>().StartMigraine((MigraineEvent)toExecute);
+        }
+
+        else if (toExecute.GetType().ToString() == "DreamEvent")
+        {
+            DreamEventManager.instance.StartDreamEvent((DreamEvent)toExecute);
+        }
+
+        else if (toExecute.GetType().ToString() == "WaitEvent")
+        {
+            WaitManager.instance.StartWaitEvent((WaitEvent)toExecute);
         }
 
     }

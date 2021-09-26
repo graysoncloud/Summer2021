@@ -10,6 +10,7 @@ public class ChemicalBin : MonoBehaviour
     public TMPro.TextMeshProUGUI title, costDisplay;
     public Transform graphicPosition;
     public GameObject InfoTooltip;
+    private Chemical chemGraphic = null;
     [SerializeField] private Color undesiredColor, desiredColor, optionalDesiredColor, optionalUndesiredColor;
     [SerializeField] private SpriteRenderer border;
 
@@ -25,7 +26,10 @@ public class ChemicalBin : MonoBehaviour
             {
                 costDisplay.SetText("Cost " + ChemicalPrefab.getCost().ToString());
             }
-
+            if (chemGraphic != null)
+            {
+                Destroy(chemGraphic.gameObject);
+            }
             CreateDrugGraphic();
         }
     }
@@ -120,12 +124,12 @@ public class ChemicalBin : MonoBehaviour
 
     public void CreateDrugGraphic()
     {
-        Chemical newChemical = Instantiate<Chemical>(ChemicalPrefab, graphicPosition.position, Quaternion.identity);
-        newChemical.setActive(false);
-        newChemical.tag = "Untagged";
-        newChemical.GetComponent<PolygonCollider2D>().enabled = false;
-        newChemical.transform.localScale = new Vector3(3, 3, 1);
-        newChemical.GetComponent<Chemical>().enabled = false;
+        chemGraphic = Instantiate<Chemical>(ChemicalPrefab, graphicPosition.position, Quaternion.identity);
+        chemGraphic.setActive(false);
+        chemGraphic.tag = "Untagged";
+        chemGraphic.GetComponent<PolygonCollider2D>().enabled = false;
+        chemGraphic.transform.localScale = new Vector3(3, 3, 1);
+        chemGraphic.GetComponent<Chemical>().enabled = false;
     }
 
     public void ChangeCost(float cost)

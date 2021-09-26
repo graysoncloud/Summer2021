@@ -37,17 +37,7 @@ public class VolatilityBar : MonoBehaviour
 
     private void Start()
     {
-        volatility = 0;
-        int contractMax = DrugManager.instance.GetVolMax();
-        if (contractMax != -1)
-        {
-            volMax = contractMax;
-            volatilityText.text = "0 / " + volMax.ToString();
-        } else
-        {
-            //disable if no vol max
-            this.gameObject.SetActive(false);
-        }
+        Refresh();
     }
 
     // Takes in the 12 statuses that were possibly altered from a rotation, placement or pickup, and adjusts the danger level accordingly
@@ -98,6 +88,22 @@ public class VolatilityBar : MonoBehaviour
         float volAmount = (float)volatility / (float)volMax;
         Mathf.Clamp(volAmount, 0, 1);
         volBar.ChangeProgress(volAmount);
+    }
+
+    public void Refresh()
+    {
+        volatility = 0;
+        int contractMax = DrugManager.instance.GetVolMax();
+        if (contractMax != -1)
+        {
+            volMax = contractMax;
+            volatilityText.text = "0 / " + volMax.ToString();
+        }
+        else
+        {
+            //disable if no vol max
+            this.gameObject.SetActive(false);
+        }
     }
 
     public int GetVol()

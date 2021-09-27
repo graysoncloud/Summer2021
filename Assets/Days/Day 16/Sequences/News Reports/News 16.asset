@@ -10,30 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: News 7
+  m_Name: News 16
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
   isNews: 1
   dialogueLines:
   - speaker: 0
-    dialogue: HEAT WAVE WREAKS HAVOC ON THE AMERICAN SOUTHWEST AS TEMPERATURES RISE
-      INTO THE 120s
+    dialogue: 
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: TEXAS MAYOR REPORTED TO HAVE MOBILIZED TROOPS NEAR EL PASO AFTER OIL
-      TENSIONS RISE
+    dialogue: 
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: "TERROR STRIKES MINNEAPOLIS AS AXE-WIELDING SERIAL KILLER, LOCALLY
-      KNOWN AS \u201CHATCHET JACK\u201D, MURDERS AGAIN"
+    dialogue: 
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

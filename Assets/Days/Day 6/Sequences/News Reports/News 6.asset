@@ -16,8 +16,8 @@ MonoBehaviour:
   isNews: 1
   dialogueLines:
   - speaker: 0
-    dialogue: HEAT WAVE WREAKS HAVOC ON THE AMERICAN SOUTHWEST AS TEMPERATURES RISE
-      INTO THE 120s
+    dialogue: MALPRACTICE OF BROOKSTONE CITY OFFICIALS LEADS TO SEWAGE BEING LEAKED
+      INTO WATER SUPPLY, INFECTING THOUSANDS
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 2.2 Con
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 11400000, guid: 34349d4bda147b84b972ce6f7acac114, type: 2}
+  isNews: 0
+  dialogueLines:
+  - speaker: 3
+    dialogue: Listen, there's no easy way to say this, but-
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: We're worried about you, Barney. Your stress and curt attitude is starting
+      to rub off on the office as a whole.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 1
+      animationName: 6
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Upper management's been pestering me to say something. The bottom line
+      is, we're all still a little wary of your incident last month. We just don't
+      want something like that to ever happen again.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: 'Luckily, we have a solution that involves you keeping your job: a
+      new antidepressant, manufactured using Mazine, so you know this stuff is cutting-edge
+      tech!'
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 3
+      animationName: 14
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Um... th-thanks, Wesley.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 3
+      animationName: 13
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Um... th-thanks, Wesley.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Our pleasure! Have a good night!
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 3
+      animationName: 15
+    animOnly: 0
+    animLength: 0
+    SFX: 

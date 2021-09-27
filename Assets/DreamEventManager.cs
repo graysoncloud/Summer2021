@@ -31,22 +31,31 @@ public class DreamEventManager : MonoBehaviour
     {
         DialogueUIManager.instance.SetUpForDream();
 
+        DreamCharacter character = dreamChars[(int)dE.toFade].GetComponent<DreamCharacter>();
+
         SpriteRenderer toFade = dreamChars[(int)dE.toFade].GetComponent<SpriteRenderer>();
 
         if (!dE.fadeOut)
         {
+            dreamChars[(int)dE.toFade].GetComponent<DreamCharacter>().activated = true;
+
             while (toFade.color.a < 1)
             {
                 toFade.color += colorIncrement * 60 * Time.deltaTime;
+
                 yield return new WaitForEndOfFrame();
             }
         }
 
         else
         {
+            dreamChars[(int)dE.toFade].GetComponent<DreamCharacter>().activated = false;
+
             while (toFade.color.a > 0)
             {
+
                 toFade.color -= colorIncrement * 60 * Time.deltaTime;
+
                 yield return new WaitForEndOfFrame();
             } 
         }

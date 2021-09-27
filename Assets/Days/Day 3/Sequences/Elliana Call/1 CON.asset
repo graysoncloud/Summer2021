@@ -23,7 +23,8 @@ MonoBehaviour:
     animLength: 0
     SFX: 01000000
   - speaker: 6
-    dialogue: 'Hey! This is Elliana Woodward. Am I speaking to Barney Lastname?
+    dialogue: 'Hey! This is Elliana Woodward. Am I speaking to Barney from Mazer
+      Pharmaceuticals?
 
 '
     offset: {x: 0, y: 0}

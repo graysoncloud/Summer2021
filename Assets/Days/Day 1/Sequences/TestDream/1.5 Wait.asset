@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 1.5 Wait
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: 60c10671cc1da3345918ebfbd0141c13, type: 2}
-  secondsToWait: 5.45
+  secondsToWait: 1.8

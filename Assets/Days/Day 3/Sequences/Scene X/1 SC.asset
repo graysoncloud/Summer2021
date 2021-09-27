@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f2c2874d4a210459b67163429fe28c, type: 3}
   m_Name: 1 SC
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 844c18918247b6d4a9310dd769b53251, type: 2}
+  nextEvent: {fileID: 11400000, guid: 5c55e99968e98b448912545f202253a6, type: 2}
   newScene: 4
   transitionStyle: 1
-  predelay: 0
-  postdelay: 0
+  preDelay: 0
+  midDelay: 0
+  postDelay: 0
   increaseDay: 0

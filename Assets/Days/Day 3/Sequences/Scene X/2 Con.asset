@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: 2 Con
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
+  isNews: 0
   dialogueLines:
   - speaker: 3
     dialogue: What a world we live in, ey Barney?
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 10
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
@@ -27,9 +26,7 @@ MonoBehaviour:
     dialogue: "Half a million people sleeping on the streets here, millions more
       starving across the globe.\r"
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 10
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 
@@ -47,9 +44,7 @@ MonoBehaviour:
     dialogue: "The lucky few? We earned these seats thanks to our superior wit, Wesley.
       Where we are, we don\u2019t even need luck."
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 5
-      animationName: 6
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

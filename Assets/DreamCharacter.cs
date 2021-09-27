@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DreamCharacter : MonoBehaviour
 {
+    public bool activated;
+    public bool onEdge;
+
     private SpriteRenderer spriteRenderer;
     private float time = 0f;
 
@@ -39,6 +42,19 @@ public class DreamCharacter : MonoBehaviour
             xDir = 1;
         }
 
+        if (!activated) { return; }
+
+        if (transform.position.x >= 3)
+        {
+            onEdge = true;
+            spriteRenderer.color = new Color(1, 1, 1, 4f - transform.position.x);
+        }
+
+        if (transform.position.x <= -14)
+        {
+            onEdge = true;
+            spriteRenderer.color = new Color(1, 1, 1, transform.position.x + 15);
+        }
 
     }
 

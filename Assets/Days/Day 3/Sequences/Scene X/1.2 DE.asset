@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15f2c2874d4a210459b67163429fe28c, type: 3}
-  m_Name: 4 SC
+  m_Script: {fileID: 11500000, guid: 451a5997fbe61d34ba2ee5b8fd5d8d84, type: 3}
+  m_Name: 1.2 DE
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
-  newScene: 3
-  transitionStyle: 1
-  preDelay: 0
-  midDelay: 0
-  postDelay: 0
-  increaseDay: 0
+  nextEvent: {fileID: 11400000, guid: 844c18918247b6d4a9310dd769b53251, type: 2}
+  toFade: 2
+  fadeOut: 0

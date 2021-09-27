@@ -16,16 +16,16 @@ MonoBehaviour:
   isNews: 1
   dialogueLines:
   - speaker: 0
-    dialogue: MALPRACTICE OF BROOKSTONE CITY OFFICIALS LEADS TO SEWAGE BEING LEAKED
-      INTO WATER SUPPLY, INFECTING THOUSANDS
+    dialogue: HEAT WAVE WREAKS HAVOC ON THE AMERICAN SOUTHWEST AS TEMPERATURES RISE
+      INTO THE 120s
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: TEXAN GOVERNMENT REPORTED TO HAVE MOBILIZED TROOPS NEAR EL PASO AFTER
-      OIL TENSIONS RISE
+    dialogue: TEXAS MAYOR REPORTED TO HAVE MOBILIZED TROOPS NEAR EL PASO AFTER OIL
+      TENSIONS RISE
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

@@ -16,7 +16,8 @@ MonoBehaviour:
   isNews: 1
   dialogueLines:
   - speaker: 0
-    dialogue: 
+    dialogue: 'WORKERS IN THE NATIONAL INSTITUTE OF HISTORY INFECTED BY RARE FUNGUS
+      FROM ARTIFACTS: ANCIENT CURSE?'
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
@@ -31,7 +32,8 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: 
+    dialogue: WHO AND WHAT IS "A.I.M.S.", THE SHADY RESEARCH INSTITUTE WITH POSSIBLE
+      LINKS TO GOVERNMENT FUNDING?
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

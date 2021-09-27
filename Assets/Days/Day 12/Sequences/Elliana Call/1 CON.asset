@@ -16,7 +16,8 @@ MonoBehaviour:
   isNews: 0
   dialogueLines:
   - speaker: 1
-    dialogue: I can't keep ignoring it... Elliana's right. I should call her.
+    dialogue: I can't keep ignoring it... Elliana could be right. I may as well call
+      her.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
@@ -30,7 +31,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 6
-    dialogue: Hey, this is Elliana speaking.
+    dialogue: Hey! This is Elliana Woodward speaking.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
@@ -66,7 +67,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 1
-    dialogue: I don't know about that. It's Wesley who has influence, and Maria.
+    dialogue: I don't know about that. It's my boss Wesley who has influence.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

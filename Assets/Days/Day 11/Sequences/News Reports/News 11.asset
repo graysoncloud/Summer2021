@@ -24,14 +24,16 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: 
+    dialogue: ST. AUGUSTINE ACADEMY BECOMES FIRST COLLEGE TO COST OVER $100,000 IN
+      TUITION
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: 
+    dialogue: SEARCH FOR JENNIFER GAULMIN'S KILLER ENDS IN SHOCKING CONCLUSION AS
+      INVESTIGATORS MISPLACE KEY EVIDENCE
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

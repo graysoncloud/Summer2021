@@ -16,8 +16,8 @@ MonoBehaviour:
   isNews: 1
   dialogueLines:
   - speaker: 0
-    dialogue: HEAT WAVE WREAKS HAVOC ON THE AMERICAN SOUTHWEST AS TEMPERATURES RISE
-      INTO THE 120s
+    dialogue: MAZER PHARMACEUTICALS VOTED NUMBER ONE IN EMPLOYEE SATISFACTION, SIXTH
+      YEAR IN TOP TEN
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

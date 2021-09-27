@@ -16,21 +16,24 @@ MonoBehaviour:
   isNews: 1
   dialogueLines:
   - speaker: 0
-    dialogue: 
+    dialogue: GRAYLE PHARMACEUTICALS LOCAL MANAGER FOUND MURDERED IN OFFICE, AUTHORITIES
+      QUESTIONING WORKERS
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: 
+    dialogue: 23% OF ELEMENTARY SCHOOLS AROUND THE NATION FOUND TO BE SERVING KIDS
+      FOOD WITH EXCEEDINGLY LOW NUTRITIONAL VALUE
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: 
+    dialogue: 'HEAT WAVE WREAKS HAVOC ON THE AMERICAN SOUTHWEST AS TEMPERATURES RISE
+      INTO THE 120s '
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

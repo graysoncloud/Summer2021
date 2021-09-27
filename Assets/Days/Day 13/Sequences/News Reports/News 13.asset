@@ -16,21 +16,24 @@ MonoBehaviour:
   isNews: 1
   dialogueLines:
   - speaker: 0
-    dialogue: 
+    dialogue: ANOTHERLIFE ENTERTAINMENT OPENING "ENHANCED" VIRTUAL EXPERIENCE, UTILIZING
+      SHORT-TERM DRUGS
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: 
+    dialogue: AXE-WIELDING KILLER "HATCHET JACK" REVEALED TO BE FORMER MINNESOTA
+      GOVERNOR AND PRO-WRESTLER DAN HILL
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: 
+    dialogue: TWO YEAR AND TEN MILLION DOLLAR STUDY AT HARVARD UNIVERSITY CONCLUDES
+      DIET AND EXERCISE CAUSE WEIGHT LOSS
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

@@ -32,8 +32,8 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: 23% OF ELEMENTARY SCHOOLS AROUND THE NATION FOUND TO BE SERVING KIDS
-      FOOD WITH EXCEEDINGLY LOW NUTRITIONAL VALUE
+    dialogue: 'LOS ANGELES ANTI-HOMELESSNESS EFFORTS UNDER MAYOR LANG SPARK DEBATE
+      ABOUT METHODOLOGY: CRUEL OR NECESSARY?'
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 2.2 Con
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 11400000, guid: 0c93acd514a042b46bd1e055787d9106, type: 2}
+  isNews: 0
+  dialogueLines:
+  - speaker: 5
+    dialogue: ...
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 1
+      animationName: 2
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: There is a discrepancy here, Barney.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: Didn't I tell you that the next time I--
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 5
+      animationName: 12
+    - toAnimate: 1
+      animationName: 6
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: ........
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 5
+      animationName: 10
+    - toAnimate: 1
+      animationName: 6
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: Oh. Interesting.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: '*ahem* Yes, you''re free to go, Barney. Have a good night.'
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 5
+      animationName: 11
+    - toAnimate: 1
+      animationName: 2
+    animOnly: 0
+    animLength: 0
+    SFX: 

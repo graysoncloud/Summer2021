@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5a681f375878044ba0aba0d7a3a9a8, type: 3}
   m_Name: 1 CF
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: 957044e25658a134a90837074e683572, type: 2}
   characterFades:
   - characterToFade: 3
     startingSprite: 14

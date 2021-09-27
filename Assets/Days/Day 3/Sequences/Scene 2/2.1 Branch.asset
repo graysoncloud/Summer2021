@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6cf3753bd334704ea56229dd0ebb808, type: 3}
   m_Name: 2.1 Branch
   m_EditorClassIdentifier: 
-  choiceText: Seeya.
+  choiceText: See ya.
   checkStress: 0
   stressComparison: 0
   stressCheckAmount: 0
@@ -26,8 +26,8 @@ MonoBehaviour:
   minimumRequired: 0
   changesStress: 0
   stressChangeAmount: 0
-  changesAttitude: 0
-  attitudeToChange: 0
-  amountToAlterAttitude: 0
+  changesAttitude: 1
+  attitudeToChange: 4
+  amountToAlterAttitude: -1
   logsEvent: 0
   eventToLog: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 27e30901a4a07b74db6b465b9e539cfb, type: 2}
+  nextEvent: {fileID: 11400000, guid: 63b66fa2cce0ce0419009753fb766258, type: 2}
   isNews: 0
   dialogueLines:
   - speaker: 2
@@ -26,7 +26,9 @@ MonoBehaviour:
     dialogue: "On your way home, could you pick up some of those stale bread nuggets.
       I forget what they\u2019re called...\r"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 2
+      animationName: 26
     animOnly: 0
     animLength: 0
     SFX: 
@@ -40,7 +42,9 @@ MonoBehaviour:
   - speaker: 2
     dialogue: Croutons! Yes! Grab a bag of those. No salad is complete without them.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 2
+      animationName: 21
     animOnly: 0
     animLength: 0
     SFX: 
@@ -85,15 +89,6 @@ MonoBehaviour:
     animations:
     - toAnimate: 2
       animationName: 23
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 2
-    dialogue: Go on. Have a good day.
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 22
     animOnly: 0
     animLength: 0
     SFX: 

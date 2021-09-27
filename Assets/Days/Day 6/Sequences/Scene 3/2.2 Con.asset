@@ -22,7 +22,7 @@ MonoBehaviour:
     - toAnimate: 1
       animationName: 6
     - toAnimate: 5
-      animationName: 12
+      animationName: 10
     animOnly: 0
     animLength: 0
     SFX: 
@@ -30,7 +30,9 @@ MonoBehaviour:
     dialogue: "You think if you\u2019re clever enough with your meddling, you can
       push things like this past us? Just how dumb do you think I am?\r"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 12
     animOnly: 0
     animLength: 0
     SFX: 

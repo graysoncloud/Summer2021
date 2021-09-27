@@ -19,7 +19,9 @@ MonoBehaviour:
     dialogue: "Unbelievable. You manage to remember the names of all those fancy
       drugs and pills. Everything in that big brain of yours...\r"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 2
+      animationName: 26
     animOnly: 0
     animLength: 0
     SFX: 

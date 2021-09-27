@@ -20,7 +20,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 5
-      animationName: 12
+      animationName: 10
     - toAnimate: 1
       animationName: 6
     animOnly: 0
@@ -37,7 +37,9 @@ MonoBehaviour:
     dialogue: Naturally, I should chew you out. This could even be grounds to have
       you fired.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 12
     animOnly: 0
     animLength: 0
     SFX: 
@@ -65,7 +67,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 5
-      animationName: 12
+      animationName: 10
     - toAnimate: 1
       animationName: 6
     animOnly: 0

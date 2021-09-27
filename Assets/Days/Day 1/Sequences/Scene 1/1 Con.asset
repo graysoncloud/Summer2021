@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 8f692401b9d12fa4aad5558b808c3ac7, type: 2}
+  nextEvent: {fileID: 11400000, guid: 8521869e25207174a9e4fe48fbdf334b, type: 2}
   isNews: 0
   dialogueLines:
   - speaker: 2
@@ -20,7 +20,7 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 2
-      animationName: 21
+      animationName: 27
     animOnly: 0
     animLength: 0
     SFX: 

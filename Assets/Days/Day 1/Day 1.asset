@@ -27,8 +27,8 @@ MonoBehaviour:
   contracts:
   - {fileID: 11400000, guid: 2263b95c66ebb4e47a213586dfd74ed5, type: 2}
   - {fileID: 11400000, guid: 34425545b1fa89a40a99680e1622ce29, type: 2}
-  - {fileID: 11400000, guid: b7167bafd4adec14a9d8106f5b43febb, type: 2}
-  - {fileID: 11400000, guid: 0ef0bb679eeace940b26eddf3f9f1911, type: 2}
+  - {fileID: 11400000, guid: 12dea6d1fbc242046939c56271f6931a, type: 2}
+  - {fileID: 11400000, guid: 479577cb92861664dbaa26092af0ae7c, type: 2}
   dayChemicals:
   - {fileID: 4991818317866170135, guid: ca93b602592e5e347b070a41e8b1a2de, type: 3}
   - {fileID: 4991818317866170135, guid: c35e893e229656349b45a859d531d32e, type: 3}

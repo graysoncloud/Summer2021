@@ -15,10 +15,10 @@ MonoBehaviour:
   nextEvent: {fileID: 0}
   automatic: 1
   paths:
-  - {fileID: 11400000, guid: 6dd85844dfa56a84eabbbf90206c76f1, type: 2}
-  - {fileID: 11400000, guid: 1bd5d40626ee2794792332922863ce0f, type: 2}
-  - {fileID: 11400000, guid: 22604978920e7044481a13a90fb08869, type: 2}
+  - {fileID: 11400000, guid: a5af8025349f48a4aa1f422c5433ef68, type: 2}
+  - {fileID: 11400000, guid: a6eceb0b3008f5049b9e51efb26d5b34, type: 2}
+  - {fileID: 11400000, guid: 3f2564a533b45c34f8c468d88b7f981f, type: 2}
   possibleConversations:
-  - {fileID: 11400000, guid: e5312ab59631c2b439212186b5c7d420, type: 2}
-  - {fileID: 11400000, guid: e595072ea46cc70448444abf1837ccbb, type: 2}
-  - {fileID: 11400000, guid: e1568fbd1e4fe9a45970c0e46b56fccb, type: 2}
+  - {fileID: 11400000, guid: 7b3a08a11fe1f0641a0a2d0b1c50de8f, type: 2}
+  - {fileID: 11400000, guid: 1b7ad18a6f5af45479999c953df66022, type: 2}
+  - {fileID: 11400000, guid: 48908cf7dc16ed14d800a1642151fe4c, type: 2}

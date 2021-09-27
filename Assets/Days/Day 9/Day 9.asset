@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c747640b685770845b310d0728bc0456, type: 3}
   m_Name: Day 9
   m_EditorClassIdentifier: 
-  sequences: []
+  sequences:
+  - initialEvent: {fileID: 11400000, guid: a36d7728c7f0b3347a10334aec223ebf, type: 2}
+    trigger: 1
+  - initialEvent: {fileID: 11400000, guid: 589b28a3a047edf4881970dd4d5c8898, type: 2}
+    trigger: 5
+  - initialEvent: {fileID: 11400000, guid: 977f0fcf5f5934042923ce39db10a73e, type: 2}
+    trigger: 6
   newsEvent: {fileID: 11400000, guid: 54381f224035e69438fd551c576c2dc9, type: 2}
   contracts: []
   dayChemicals:

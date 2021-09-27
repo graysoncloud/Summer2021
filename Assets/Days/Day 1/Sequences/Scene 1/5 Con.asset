@@ -37,14 +37,18 @@ MonoBehaviour:
     dialogue: "Come on, Barney. Are you really going to stay single in this apartment
       forever? Get out there and find someone special! You\u2019re way overdue."
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 2
+      animationName: 26
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 1
     dialogue: "I really have to get going, I can\u2019t be late on my first day back!"
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 2
+      animationName: 21
     animOnly: 0
     animLength: 0
     SFX: 

@@ -4285,6 +4285,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bf738d117c9be46468863c171a5c8aa4, type: 2}
   - {fileID: 11400000, guid: 7f8321b6db2b7a54eb2777d37824747a, type: 2}
   - {fileID: 11400000, guid: fd48fcc359565aa41916d5ff32cc2028, type: 2}
+  - {fileID: 11400000, guid: d0036f5449c864e4980ab7a5c98b0e7b, type: 2}
   currentDayIndex: 0
   currentDay: {fileID: 0}
   sequenceActive: 0
@@ -9797,7 +9798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &362122842
 Transform:
   m_ObjectHideFlags: 0

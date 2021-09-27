@@ -30,7 +30,9 @@ MonoBehaviour:
   - speaker: 5
     dialogue: You will not make this a habit. Is that clear?
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 5
+      animationName: 10
     animOnly: 0
     animLength: 0
     SFX: 

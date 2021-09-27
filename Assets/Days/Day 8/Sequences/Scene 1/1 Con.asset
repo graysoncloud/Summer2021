@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 33b4d3cdb8d0de4499f4ee561d9a6e7f, type: 2}
+  nextEvent: {fileID: 11400000, guid: a38eb530fc82d54429d05f779bd0456c, type: 2}
   isNews: 0
   dialogueLines:
-  - speaker: 5
-    dialogue: ...
+  - speaker: 3
+    dialogue: Morning, Barney! Another day, another dollar!
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 2
     animOnly: 0
     animLength: 0
     SFX: 

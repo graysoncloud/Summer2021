@@ -26,14 +26,20 @@ MonoBehaviour:
   - speaker: 1
     dialogue: I'll try.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 5
+    - toAnimate: 3
+      animationName: 13
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 3
     dialogue: '''Course you will! Have a good one.'
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 3
+      animationName: 14
     animOnly: 0
     animLength: 0
     SFX: 

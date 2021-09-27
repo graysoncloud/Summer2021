@@ -13,17 +13,19 @@ MonoBehaviour:
   m_Name: 2.1 Branch
   m_EditorClassIdentifier: 
   choiceText: 
-  checkStress: 0
+  checkStress: 1
   stressComparison: 0
-  stressCheckAmount: 0
-  checkAttitude: 1
-  characterToCheck: 5
-  attitudeComparison: 1
-  attitudeToCompare: -3
-  checkEvent: 1
-  eventToCheck: 8
-  changesStress: 1
-  stressChangeAmount: 15
+  stressCheckAmount: 50
+  checkAttitude: 0
+  characterToCheck: 0
+  attitudeComparison: 0
+  attitudeToCompare: 0
+  checkEvent: 0
+  eventToCheck: 0
+  checkNumAltContractsFinished: 0
+  minimumRequired: 0
+  changesStress: 0
+  stressChangeAmount: 0
   changesAttitude: 0
   attitudeToChange: 0
   amountToAlterAttitude: 0

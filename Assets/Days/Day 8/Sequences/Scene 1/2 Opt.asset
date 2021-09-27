@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: 2 Opt
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
-  automatic: 1
+  automatic: 0
   paths:
-  - {fileID: 11400000, guid: 6dd85844dfa56a84eabbbf90206c76f1, type: 2}
-  - {fileID: 11400000, guid: 1bd5d40626ee2794792332922863ce0f, type: 2}
-  - {fileID: 11400000, guid: 22604978920e7044481a13a90fb08869, type: 2}
+  - {fileID: 11400000, guid: d71da975e38e0234da30748159424e25, type: 2}
+  - {fileID: 11400000, guid: f7a4c2a897783a845bf2372831136aa9, type: 2}
   possibleConversations:
-  - {fileID: 11400000, guid: e5312ab59631c2b439212186b5c7d420, type: 2}
-  - {fileID: 11400000, guid: e595072ea46cc70448444abf1837ccbb, type: 2}
-  - {fileID: 11400000, guid: e1568fbd1e4fe9a45970c0e46b56fccb, type: 2}
+  - {fileID: 11400000, guid: 313eafa1b4bb2e04aa54c79f7b301d08, type: 2}
+  - {fileID: 11400000, guid: 1f3ca5dabba097f4d9b2e3f3a6b39fb0, type: 2}

@@ -12,20 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 2.2 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 96e842e48ae8a1d4fad382a061ed84c0, type: 2}
+  nextEvent: {fileID: 11400000, guid: 4b99e826911b90549a0d7759cc227a2b, type: 2}
   isNews: 0
   dialogueLines:
-  - speaker: 5
-    dialogue: Please remember to be more timely, Barney.
+  - speaker: 3
+    dialogue: Morning, Barney! Another day another dollar!
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 3
+      animationName: 14
+    - toAnimate: 1
+      animationName: 2
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Hey, got a quick favor to ask. My wife and I just bought a few hermit
+      crabs - I though they'd be a fun addition to the home, scurrying around with
+      all those legs of theirs.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 5
-    dialogue: You may leave.
+  - speaker: 3
+    dialogue: Anyway, we noticed this morning that they have some sort of fungus
+      growing on their shells! Think that's something you can cook up an antidote
+      for?
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 3
+      animationName: 13
     animOnly: 0
     animLength: 0
     SFX: 

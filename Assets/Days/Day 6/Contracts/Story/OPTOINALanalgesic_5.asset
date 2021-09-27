@@ -10,38 +10,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
-  m_Name: tranquilizer_4
+  m_Name: OPTOINALanalgesic_5
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Space Force/ NASA
+  description: Zero-gravity inflicts a very specific kind of bodily pain on our crew,
+    and we need a unique ointment that can survive space travel.
   usesMaxVolatility: 1
-  volatilityMax: 24
-  optimalMaxVolatilityVal: 15
+  volatilityMax: 21
+  optimalMaxVolatilityVal: 12
   usesMaxPrice: 1
-  maxPrice: 37
-  optimalMaxPriceVal: 28
-  usesMinPrice: 0
-  minPrice: 0
-  optimalMinPriceVal: 0
+  maxPrice: 28
+  optimalMaxPriceVal: 19
+  usesMinPrice: 1
+  minPrice: 13
+  optimalMinPriceVal: 19
   usesUndesirableEffect: 0
   undesirableEffect: 0
   undesirableEffectMax: 0
   optimalUndesirableEffectAmount: 0
   usesDesirableEffect: 1
-  desirableEffect: 8
-  desirableEffectMin: 4
-  optimalDesirableEffectAmount: 4
-  usesOptional: 0
+  desirableEffect: 0
+  desirableEffectMin: 5
+  optimalDesirableEffectAmount: 5
+  usesOptional: 1
   isSpecialContract1: 0
   isSpecialContract2: 0
-  usesOptionalDesireable: 0
+  usesOptionalDesireable: 1
   usesOptionalUndesirable: 0
   usesOptionalMinPrice: 0
   usesOptionalMaxPrice: 0
   usesOptionalVol: 0
-  optionalEffect: 0
+  optionalEffect: 9
   optionalUndesirableMax: 0
-  optionalDesirableMin: 0
+  optionalDesirableMin: 2
   optionalVolMax: 0
   optionalPriceMin: 0
   optionalPriceMax: 0

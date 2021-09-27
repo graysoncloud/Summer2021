@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
-  m_Name: antibacterial_8
+  m_Name: tranquilizer_20
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Mazer Pharmaceudicals
+  description: Unruly employees disrupting workflow. Talks of unions imminent. Need
+    a moderate tranquilizer, dissolvable in liquid, to calm their nerves.
   usesMaxVolatility: 1
-  volatilityMax: 18
-  optimalMaxVolatilityVal: 12
+  volatilityMax: 16
+  optimalMaxVolatilityVal: 7
   usesMaxPrice: 1
-  maxPrice: 28
-  optimalMaxPriceVal: 26
+  maxPrice: 43
+  optimalMaxPriceVal: 34
   usesMinPrice: 0
   minPrice: 0
   optimalMinPriceVal: 0
@@ -28,9 +29,9 @@ MonoBehaviour:
   undesirableEffectMax: 0
   optimalUndesirableEffectAmount: 0
   usesDesirableEffect: 1
-  desirableEffect: 9
-  desirableEffectMin: 8
-  optimalDesirableEffectAmount: 8
+  desirableEffect: 8
+  desirableEffectMin: 20
+  optimalDesirableEffectAmount: 20
   usesOptional: 0
   isSpecialContract1: 0
   isSpecialContract2: 0

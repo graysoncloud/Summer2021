@@ -24,8 +24,9 @@ MonoBehaviour:
   - {fileID: 4991818317866170135, guid: 07df1a36d657d4447a8782cb1d0f8348, type: 3}
   - {fileID: 4991818317866170135, guid: fed731bf7ffbb2a4ebf1de7ac54dc89a, type: 3}
   - {fileID: 4991818317866170135, guid: 2670103ea68de984fb2f2cfca19f2d7b, type: 3}
-  contractTypeList: 
-  storyContracts: []
+  contractTypeList: 00000000010000000200000001000000
+  storyContracts:
+  - {fileID: 11400000, guid: 527653c9665119246b09628eaed14ed3, type: 2}
   easyContracts:
   - {fileID: 11400000, guid: bfea11392ec39f54cbfd0c9cfedefcf7, type: 2}
   - {fileID: 11400000, guid: ee21e8f115db5bf40be0a81e5fd31c88, type: 2}
@@ -33,7 +34,6 @@ MonoBehaviour:
   hardContracts:
   - {fileID: 11400000, guid: 24ec7896ae614044ea71b7d0f3fbb496, type: 2}
   - {fileID: 11400000, guid: 1b31a7b081eecb34e84e5a737993c501, type: 2}
-  - {fileID: 11400000, guid: 527653c9665119246b09628eaed14ed3, type: 2}
   - {fileID: 11400000, guid: ac7405f2e3dc0ae43b07044a22554927, type: 2}
   - {fileID: 11400000, guid: 965d79eb55267b344b9088efe8802221, type: 2}
   - {fileID: 11400000, guid: 571f500b9024a424cb74a84331dacc12, type: 2}

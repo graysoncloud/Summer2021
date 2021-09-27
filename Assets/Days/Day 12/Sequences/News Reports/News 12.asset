@@ -24,14 +24,16 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: 
+    dialogue: VASILY ARTIST'S RETREAT OPEN NEW GALLERY, APOTHEOSIS, DISPLAYING PIECES
+      CREATED BY ARTISTS WHILE ON VARIOUS DRUGS
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: 
+    dialogue: 23% OF ELEMENTARY SCHOOLS AROUND THE NATION FOUND TO BE SERVING KIDS
+      FOOD WITH EXCEEDINGLY LOW NUTRITIONAL VALUE
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

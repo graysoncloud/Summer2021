@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef0108177cadee74884d6225aac515b5, type: 3}
-  m_Name: 2 Opt
+  m_Name: 1 Opt
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
   automatic: 1
   paths:
-  - {fileID: 11400000, guid: 7e2e36b44b3a5664dab8fa0cecec092d, type: 2}
-  - {fileID: 11400000, guid: aec583c332fd33849b633aa656ad0377, type: 2}
+  - {fileID: 11400000, guid: cb8714e1875d3bc4aaa187f7efa6889c, type: 2}
+  - {fileID: 11400000, guid: 8d926afaf146a4a4ea3263993a378559, type: 2}
   possibleConversations:
-  - {fileID: 11400000, guid: 8127a3997e748794bacd6f9655fb1ff3, type: 2}
-  - {fileID: 11400000, guid: 6fc2a0e3fc084d9448c4fba7ccc1dae3, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}

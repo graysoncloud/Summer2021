@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 1.2 Con
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 11400000, guid: b162eef8bba8ef14883c637d9f1d7818, type: 2}
+  isNews: 0
+  dialogueLines:
+  - speaker: 1
+    dialogue: ... Elliana again.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: 'Barney. '
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Elliana, I don't know what's going on, but I have a feeling something
+      terrible happened to-
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: 'To Robbie. I know. Mazer''s doing their best to cover it up, but I''m
+      too sharp for them. I know their tricks. '
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Well where-
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: Barney, I don't know pretend to know what your relationship with Mazer
+      is. Maybe you working there is your only option. Maybe it's not your place
+      to try and interfere with the terrible things they're doing.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: Someone else will just take your place if you quit, after all.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: But there is still one way you can make a difference.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: I've done some digging, and I found out that Mazer is commissioning
+      a vitamin supplement for their upper management team. It should arrive in your
+      contract pile sometime this morning.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: 'I don''t know what symptoms Mazine overdoses bring on, but... '
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: ... I think you know what to do.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 0
+    dialogue: '*click*'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: ....
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

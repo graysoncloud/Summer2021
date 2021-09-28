@@ -40,7 +40,7 @@ MonoBehaviour:
   usesOptionalMinPrice: 0
   usesOptionalMaxPrice: 0
   usesOptionalVol: 0
-  optionalEffect: 7
+  optionalEffect: 5
   optionalUndesirableMax: 0
   optionalDesirableMin: 6
   optionalVolMax: 0

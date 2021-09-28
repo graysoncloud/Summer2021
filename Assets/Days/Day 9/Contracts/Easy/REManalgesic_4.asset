@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
-  m_Name: immunosuppressant_6
+  m_Name: REManalgesic_4
   m_EditorClassIdentifier: 
-  companyName: Lockhart
-  description: Some immunosuppressants can cause a severe lack of appetite; looking
-    for a possible solution to this side-effect.
+  companyName: Naturus Foods
+  description: Carbonated drinks are the craze and we need an innovation; carbonated
+    ibuprofen could be the move. Taste must be preserved.
   usesMaxVolatility: 1
-  volatilityMax: 18
-  optimalMaxVolatilityVal: 9
+  volatilityMax: 13
+  optimalMaxVolatilityVal: 4
   usesMaxPrice: 1
-  maxPrice: 23
-  optimalMaxPriceVal: 14
+  maxPrice: 21
+  optimalMaxPriceVal: 12
   usesMinPrice: 0
   minPrice: 0
   optimalMinPriceVal: 0
@@ -29,9 +29,9 @@ MonoBehaviour:
   undesirableEffectMax: 0
   optimalUndesirableEffectAmount: 0
   usesDesirableEffect: 1
-  desirableEffect: 5
-  desirableEffectMin: 6
-  optimalDesirableEffectAmount: 6
+  desirableEffect: 0
+  desirableEffectMin: 4
+  optimalDesirableEffectAmount: 4
   usesOptional: 0
   isSpecialContract1: 0
   isSpecialContract2: 0

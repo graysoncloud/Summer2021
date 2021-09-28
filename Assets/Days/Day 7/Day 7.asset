@@ -26,13 +26,11 @@ MonoBehaviour:
   - {fileID: 4991818317866170135, guid: 1c9da7e66f5b6b14f8d41974e459e553, type: 3}
   - {fileID: 4991818317866170135, guid: 76a843807c187324e8bb0ab4ddacdbf4, type: 3}
   - {fileID: 4991818317866170135, guid: 20a824d3f3877854a8ee33dd996889be, type: 3}
-  contractTypeList: 00000000020000000000000001000000
+  contractTypeList: 00000000020000000100000001000000
   storyContracts:
   - {fileID: 11400000, guid: 57622ac23eb36924998d2a39f4e648ba, type: 2}
   easyContracts:
-  - {fileID: 11400000, guid: 8cc1f5ca0bbc99048a645e37db631461, type: 2}
   - {fileID: 11400000, guid: b5296d1daaf823b4680b2eca2bc2c7c3, type: 2}
-  - {fileID: 11400000, guid: cef9b7b003934fe43bef51a5b2cdcc16, type: 2}
   - {fileID: 11400000, guid: a2fa3d05e19561942975d35c9a26e8bd, type: 2}
   hardContracts:
   - {fileID: 11400000, guid: ab91926b7d27fbd4f9566bb81bb5f07e, type: 2}

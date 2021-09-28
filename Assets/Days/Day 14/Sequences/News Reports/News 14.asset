@@ -31,7 +31,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 0
-    dialogue: JOHNNY JUNTO, STAR OF "DEE'S NUTS", CRASHES INTO YOUNG COUPLE; "I WAS
+    dialogue: JOHNNY JUNTO, STAR OF "DEE'S NUTS", CRASHES INTO BOOKSTORE; "I WAS
       DISCUSSING DEE'S NUTS 2 WITH MY AGENT"
     offset: {x: 0, y: 0}
     animations: []

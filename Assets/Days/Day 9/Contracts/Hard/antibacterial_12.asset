@@ -21,9 +21,9 @@ MonoBehaviour:
   usesMaxPrice: 1
   maxPrice: 56
   optimalMaxPriceVal: 47
-  usesMinPrice: 0
-  minPrice: 0
-  optimalMinPriceVal: 0
+  usesMinPrice: 1
+  minPrice: 30
+  optimalMinPriceVal: 47
   usesUndesirableEffect: 0
   undesirableEffect: 0
   undesirableEffectMax: 0

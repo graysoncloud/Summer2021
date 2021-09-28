@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
-  m_Name: ecstasis_6
+  m_Name: REMimmunosuppressant_6
   m_EditorClassIdentifier: 
-  companyName: Victor Trufalia
-  description: Part of my culture's rite of passage is ingesting a rare psychoactive
-    plant. Need a chemically similar but easily producible alternative.
+  companyName: Lockhart
+  description: Some immunosuppressants can cause a severe lack of appetite; looking
+    for a possible solution to this side-effect.
   usesMaxVolatility: 1
-  volatilityMax: 12
-  optimalMaxVolatilityVal: 6
+  volatilityMax: 18
+  optimalMaxVolatilityVal: 9
   usesMaxPrice: 1
-  maxPrice: 15
-  optimalMaxPriceVal: 12
+  maxPrice: 23
+  optimalMaxPriceVal: 14
   usesMinPrice: 0
   minPrice: 0
   optimalMinPriceVal: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
   undesirableEffectMax: 0
   optimalUndesirableEffectAmount: 0
   usesDesirableEffect: 1
-  desirableEffect: 2
+  desirableEffect: 5
   desirableEffectMin: 6
   optimalDesirableEffectAmount: 6
   usesOptional: 0

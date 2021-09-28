@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
-  m_Name: analgesic_4
+  m_Name: REMecstasis_3
   m_EditorClassIdentifier: 
-  companyName: Naturus Foods
-  description: Carbonated drinks are the craze and we need an innovation; carbonated
-    ibuprofen could be the move. Taste must be preserved.
+  companyName: Guru Goods
+  description: Looking to combine microdosing of psychoactive drugs and cereal to
+    give people a boost at the start of their day.
   usesMaxVolatility: 1
-  volatilityMax: 13
-  optimalMaxVolatilityVal: 4
+  volatilityMax: 15
+  optimalMaxVolatilityVal: 6
   usesMaxPrice: 1
-  maxPrice: 21
-  optimalMaxPriceVal: 12
+  maxPrice: 20
+  optimalMaxPriceVal: 11
   usesMinPrice: 0
   minPrice: 0
   optimalMinPriceVal: 0
@@ -29,9 +29,9 @@ MonoBehaviour:
   undesirableEffectMax: 0
   optimalUndesirableEffectAmount: 0
   usesDesirableEffect: 1
-  desirableEffect: 0
-  desirableEffectMin: 4
-  optimalDesirableEffectAmount: 4
+  desirableEffect: 2
+  desirableEffectMin: 3
+  optimalDesirableEffectAmount: 3
   usesOptional: 0
   isSpecialContract1: 0
   isSpecialContract2: 0

@@ -27,7 +27,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9c11731b2dacf6a4d973b9ad4249c681, type: 2}
   easyContracts:
   - {fileID: 11400000, guid: e734e7b1b22343f4b8e12d74489959f5, type: 2}
-  - {fileID: 11400000, guid: aa3e29348fea98f4eb8bc2872c7ebd25, type: 2}
   - {fileID: 11400000, guid: c7ee8873df3697e45a0d4a1eb96a6126, type: 2}
   - {fileID: 11400000, guid: 8ddf813b4283c7846ab1982b34b3673a, type: 2}
   hardContracts:
@@ -36,4 +35,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 971a233a4a4854c499e32d125c8f8cb0, type: 2}
   - {fileID: 11400000, guid: 707bd8abae6bb6d438e1988eef095a2a, type: 2}
   - {fileID: 11400000, guid: 5bbaed1108b9e0e4c8071ebadd12721d, type: 2}
-  - {fileID: 11400000, guid: 9c11731b2dacf6a4d973b9ad4249c681, type: 2}

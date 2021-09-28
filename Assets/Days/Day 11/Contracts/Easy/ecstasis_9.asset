@@ -19,7 +19,7 @@ MonoBehaviour:
   volatilityMax: 21
   optimalMaxVolatilityVal: 12
   usesMaxPrice: 1
-  maxPrice: 27
+  maxPrice: 22
   optimalMaxPriceVal: 18
   usesMinPrice: 0
   minPrice: 0

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
-  m_Name: antibacterial_2
+  m_Name: REMnauseatic_2
   m_EditorClassIdentifier: 
-  companyName: Food Qbe
-  description: We are demoing a new kind of yogurt full of rare bacteria, and need
-    a special antibacterial to make it more easy on the stomach.
+  companyName: BioCorp
+  description: We are researching how various ailments affect mice's ability to complete
+    mazes, and we are beginning with a light nauseatic.
   usesMaxVolatility: 1
-  volatilityMax: 13
-  optimalMaxVolatilityVal: 4
+  volatilityMax: 15
+  optimalMaxVolatilityVal: 6
   usesMaxPrice: 1
-  maxPrice: 19
-  optimalMaxPriceVal: 10
+  maxPrice: 21
+  optimalMaxPriceVal: 12
   usesMinPrice: 0
   minPrice: 0
   optimalMinPriceVal: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
   undesirableEffectMax: 0
   optimalUndesirableEffectAmount: 0
   usesDesirableEffect: 1
-  desirableEffect: 9
+  desirableEffect: 6
   desirableEffectMin: 2
   optimalDesirableEffectAmount: 2
   usesOptional: 0

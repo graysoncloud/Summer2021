@@ -62,13 +62,6 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 1
-    dialogue: Um... th-thanks, Wesley.
-    offset: {x: 0, y: 0}
-    animations: []
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 1
     dialogue: Our pleasure! Have a good night!
     offset: {x: 0, y: 0}
     animations:

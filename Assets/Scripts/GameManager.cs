@@ -340,7 +340,8 @@ public class GameManager : MonoBehaviour
         IsLate,
         SpecialContract1,
         SpecialContract2,
-        AcceptedRobbiePills
+        AcceptedRobbiePills,
+        RobbieGaveMomPills
     }
 
 }

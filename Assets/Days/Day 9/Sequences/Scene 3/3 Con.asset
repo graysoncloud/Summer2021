@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 1.2 Con
+  m_Name: 3 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: d75bdb3718d07804da1e67e24e94a8d7, type: 2}
+  nextEvent: {fileID: 11400000, guid: 0c93acd514a042b46bd1e055787d9106, type: 2}
   isNews: 0
   dialogueLines:
-  - speaker: 3
-    dialogue: How we feeling today, Barney?
+  - speaker: 5
+    dialogue: ...
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1
@@ -24,40 +24,50 @@ MonoBehaviour:
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 1
-    dialogue: Hmm? Oh, right. Feeling... good. Yeah that pill - working wonders.
-      Yup.
+  - speaker: 5
+    dialogue: There is a discrepancy here, Barney.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: Didn't I tell you that the next time I--
     offset: {x: 0, y: 0}
     animations:
+    - toAnimate: 5
+      animationName: 12
+    - toAnimate: 1
+      animationName: 6
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: ........
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 5
+      animationName: 10
+    - toAnimate: 1
+      animationName: 6
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: Oh. Interesting.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 5
+    dialogue: '*ahem* Yes, you''re free to go, Barney. Have a good night.'
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 5
+      animationName: 11
     - toAnimate: 1
       animationName: 2
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 3
-    dialogue: I see!
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 1
-      animationName: 2
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 3
-    dialogue: ....
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 1
-      animationName: 3
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 3
-    dialogue: Well, I'll leave you to it!
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 14
     animOnly: 0
     animLength: 0
     SFX: 

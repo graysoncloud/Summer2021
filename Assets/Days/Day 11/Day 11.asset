@@ -15,7 +15,7 @@ MonoBehaviour:
   sequences:
   - initialEvent: {fileID: 11400000, guid: a5a24226bf9a72a48a3752e9410b3b49, type: 2}
     trigger: 11
-  - initialEvent: {fileID: 11400000, guid: 85b0aa644daeca945bcdc12f18a2c5d3, type: 2}
+  - initialEvent: {fileID: 11400000, guid: 4a15f4d162d15194d8f755af445353b7, type: 2}
     trigger: 1
   - initialEvent: {fileID: 11400000, guid: 8e74e05eea13bad43967d2bface66292, type: 2}
     trigger: 5

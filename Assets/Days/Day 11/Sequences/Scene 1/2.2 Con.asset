@@ -12,40 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 2.2 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 0d11fb83650dc6f4f977c59cfdd8abd5, type: 2}
+  nextEvent: {fileID: 11400000, guid: 9866bb43edb957648974ab32f16361d1, type: 2}
   isNews: 0
   dialogueLines:
-  - speaker: 2
-    dialogue: zzzzz....
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 26
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 2
-    dialogue: ... oh, me? I'm just fine.....
+  - speaker: 1
+    dialogue: Oh, right. No, not yet.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 2
-    dialogue: '*cough cough*'
+    dialogue: Well you wouldn't shut up about them last night, so thought I'd remind
+      you.
     offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 23
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 2
-    dialogue: Have a good day.
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 2
-      animationName: 26
+    animations: []
     animOnly: 0
     animLength: 0
     SFX: 

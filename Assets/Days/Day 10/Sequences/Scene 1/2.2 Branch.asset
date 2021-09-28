@@ -26,8 +26,8 @@ MonoBehaviour:
   minimumRequired: 0
   changesStress: 0
   stressChangeAmount: 0
-  changesAttitude: 1
-  attitudeToChange: 2
-  amountToAlterAttitude: 1
+  changesAttitude: 0
+  attitudeToChange: 0
+  amountToAlterAttitude: 0
   logsEvent: 0
   eventToLog: 0

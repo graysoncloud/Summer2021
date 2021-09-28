@@ -59543,10 +59543,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dreamChars:
-  - {fileID: 1184909846}
-  - {fileID: 1017198009}
-  - {fileID: 994487158}
   - {fileID: 920119509}
+  - {fileID: 994487158}
+  - {fileID: 1017198009}
+  - {fileID: 1184909846}
 --- !u!1 &2016490579
 GameObject:
   m_ObjectHideFlags: 0

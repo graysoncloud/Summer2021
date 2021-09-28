@@ -16,36 +16,57 @@ MonoBehaviour:
   isNews: 0
   dialogueLines:
   - speaker: 2
-    dialogue: zzzzz....
+    dialogue: You know, I feel very chipper this morning!
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 2
-      animationName: 26
+      animationName: 21
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 2
-    dialogue: ... oh, me? I'm just fine.....
-    offset: {x: 0, y: 0}
-    animations: []
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 2
-    dialogue: '*cough cough*'
+    dialogue: Actually, I feel better than ever! Whatever the new stuff you gave
+      me is, it really did the trick!
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 2
-      animationName: 23
+      animationName: 22
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 2
-    dialogue: Have a good day.
+  - speaker: 1
+    dialogue: Wow, that's- that's great!
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 2
-      animationName: 26
+      animationName: 21
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Well what are you waiting for? Get back our there and change the world!
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 22
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: I'm proud of you, son.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Thanks, mom. Have a good day.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
     animOnly: 0
     animLength: 0
     SFX: 

@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd5a681f375878044ba0aba0d7a3a9a8, type: 3}
-  m_Name: 1 CF
+  m_Script: {fileID: 11500000, guid: 451a5997fbe61d34ba2ee5b8fd5d8d84, type: 3}
+  m_Name: 2.1 DE
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 5b8aeb5dbc075b446bb4c5fbed994255, type: 2}
-  characterFades:
-  - characterToFade: 5
-    startingSprite: 10
-    fadeIn: 1
-    SFX: 
-  postDelay: 0
+  nextEvent: {fileID: 11400000, guid: 5e0ccd1bca8959f4c93ce31cd72d1896, type: 2}
+  toFade: 1
+  fadeOut: 0

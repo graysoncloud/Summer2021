@@ -22,12 +22,12 @@ MonoBehaviour:
   attitudeToCompare: 0
   checkEvent: 0
   eventToCheck: 0
-  checkNumAltContractsFinished: 0
-  minimumRequired: 0
+  checkNumAltContractsFinished: 1
+  minimumRequired: 2
   changesStress: 0
   stressChangeAmount: 0
   changesAttitude: 0
   attitudeToChange: 0
   amountToAlterAttitude: 0
-  logsEvent: 0
-  eventToLog: 0
+  logsEvent: 1
+  eventToLog: 12

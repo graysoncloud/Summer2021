@@ -341,7 +341,9 @@ public class GameManager : MonoBehaviour
         SpecialContract1,
         SpecialContract2,
         AcceptedRobbiePills,
-        RobbieGaveMomPills
+        RobbieGaveMomPills,
+        TookPillFirstTime,
+        BigReveal
     }
 
 }

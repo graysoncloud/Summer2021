@@ -24,11 +24,3 @@ MonoBehaviour:
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: This new chemical, Mazine, it's a game changer. Pretty soon it'll be
-      used all over the place, mark my words.
-    offset: {x: 0, y: 0}
-    animations: []
-    animOnly: 0
-    animLength: 0
-    SFX: 

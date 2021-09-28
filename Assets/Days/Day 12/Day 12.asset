@@ -15,6 +15,10 @@ MonoBehaviour:
   sequences:
   - initialEvent: {fileID: 11400000, guid: d71776c584e6d8e4390d4156d498a3a7, type: 2}
     trigger: 0
+  - initialEvent: {fileID: 11400000, guid: e06eda041930d3143a131f7d89b360f3, type: 2}
+    trigger: 4
+  - initialEvent: {fileID: 11400000, guid: 8e74e05eea13bad43967d2bface66292, type: 2}
+    trigger: 5
   newsEvent: {fileID: 11400000, guid: 017ad099b80ee70459a262bb2e11aa07, type: 2}
   contracts: []
   dayChemicals:

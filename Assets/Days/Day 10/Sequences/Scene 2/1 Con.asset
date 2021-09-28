@@ -15,7 +15,7 @@ MonoBehaviour:
   nextEvent: {fileID: 11400000, guid: 2fc06dd015a256f4387ad612f383f13b, type: 2}
   isNews: 0
   dialogueLines:
-  - speaker: 0
+  - speaker: 3
     dialogue: Hey there, Barney.
     offset: {x: 0, y: 0}
     animations:

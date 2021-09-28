@@ -10,13 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 2.2 Con
+  m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 083263eec2d35524eae6048fde654788, type: 2}
+  nextEvent: {fileID: 11400000, guid: ad3a64e424567aa4f9e8e1095efeceb9, type: 2}
   isNews: 0
   dialogueLines:
   - speaker: 4
-    dialogue: I need to tell you something.
+    dialogue: ...
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 4
+      animationName: 20
+    - toAnimate: 1
+      animationName: 2
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: Toss your meds.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: What?
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1
@@ -25,16 +43,16 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: Mazine, this new chemical, it's a big deal for Mazer. The thing is......
+    dialogue: Tomorrow morning. Don't take your antidepressants.
     offset: {x: 0, y: 0}
     animations:
-    - toAnimate: 4
-      animationName: 20
+    - toAnimate: 1
+      animationName: 6
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: Nevermind. I have to go. Goodbye.
+    dialogue: It's for your own good.
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1

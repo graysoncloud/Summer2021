@@ -16,17 +16,6 @@ MonoBehaviour:
   isNews: 0
   dialogueLines:
   - speaker: 3
-    dialogue: Morning, Barney! Another day another dollar!
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 3
-      animationName: 14
-    - toAnimate: 1
-      animationName: 2
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 3
     dialogue: Hey, got a quick favor to ask. My wife and I just bought a few hermit
       crabs - I though they'd be a fun addition to the home, scurrying around with
       all those legs of theirs.

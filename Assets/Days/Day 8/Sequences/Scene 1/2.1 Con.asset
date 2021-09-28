@@ -16,17 +16,6 @@ MonoBehaviour:
   isNews: 0
   dialogueLines:
   - speaker: 3
-    dialogue: Morning, Barney! Another day, another dollar!
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 1
-      animationName: 6
-    - toAnimate: 3
-      animationName: 14
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 3
     dialogue: Say, you don't look so hot this morning. You feeling okay?
     offset: {x: 0, y: 0}
     animations:

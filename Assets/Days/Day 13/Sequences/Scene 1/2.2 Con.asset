@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 2.2 Con
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 0}
+  isNews: 0
+  dialogueLines:
+  - speaker: 1
+    dialogue: Wh- what's happening to me??
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: Slow down. Breathe. Try not to make a scene.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 4
+      animationName: 20
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: I have to get out of here. I need--
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: Mazine. You need Mazine - that's what your body is telling you.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 4
+      animationName: 17
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: What do you mean?
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 1
+      animationName: 6
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: Mazine is everywhere! In every painkiller, every antibiotic... they're
+      even making us put Mazine in vitamins!
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 1
+      animationName: 6
+    - toAnimate: 4
+      animationName: 20
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: 'It''s unbelievably addictive, Barney. Prolonged usage from anything
+      containing it can make someone hooked for life. '
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 1
+      animationName: 6
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: I had no idea what I was working on, I swear! If I did, well...
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: We're past that now.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 4
+      animationName: 17
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: All those contracts. All those people. This whole time....
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: What do I do?
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: Just try and take deep breaths. And lay low for a while. Don't say
+      a word to anyone, especially not Wesley.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

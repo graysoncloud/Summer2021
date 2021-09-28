@@ -10,30 +10,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 2.2 Con
+  m_Name: 3.2.1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: 9866bb43edb957648974ab32f16361d1, type: 2}
+  nextEvent: {fileID: 11400000, guid: f4fec5e35aa68054b89b9c9a01b49709, type: 2}
   isNews: 0
   dialogueLines:
   - speaker: 1
-    dialogue: Oh, right. No, not yet.
+    dialogue: ... okay.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 2
-    dialogue: Well you wouldn't shut up about them last night, so thought I'd remind
-      you.
+  - speaker: 4
+    dialogue: Thanks for everything, Barney.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 2
-    dialogue: It's in the bathroom, on the counter, same place your old ones were.
+  - speaker: 4
+    dialogue: I know I can be a little... standoff-ish sometimes. But it's been nice
+      knowing that I can talk to you. Really.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 4
+      animationName: 19
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Why are you-
     offset: {x: 0, y: 0}
     animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: Goodbye, Barney.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 4
+      animationName: 17
     animOnly: 0
     animLength: 0
     SFX: 

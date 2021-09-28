@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: nauseatic_3
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Newark Public Schools
+  description: Foggy glasses aren't getting the message through to kids about the
+    dangers of drinking; need something brief to display how it affects them.
   usesMaxVolatility: 1
   volatilityMax: 23
   optimalMaxVolatilityVal: 11

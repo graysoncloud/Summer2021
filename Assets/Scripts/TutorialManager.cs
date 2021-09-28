@@ -17,6 +17,8 @@ public class TutorialManager : MonoBehaviour
     public List<GameObject> Day2Tutorial;
     public List<GameObject> Day3Tutorial;
 
+    public List<GameObject> Day6Tutorial;
+
     // Add more tutorial scenes
 
     public GameObject activeTutorial;

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: steroid_8
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Richard D'Amelio
+  description: I am looking for something potent to restore the visions I once had...
+    I need to see them again. They are waiting for me.
   usesMaxVolatility: 1
   volatilityMax: 19
   optimalMaxVolatilityVal: 10

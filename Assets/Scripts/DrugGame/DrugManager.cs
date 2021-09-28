@@ -162,6 +162,17 @@ public class DrugManager : MonoBehaviour
             }
         }
 
+        if(!tutorialsfinished && GameManager.instance.currentDayIndex == 5 && TutorialManager.instance.activeTutorial == null){
+            if(numtutorialsfinished > TutorialManager.instance.Day6Tutorial.Count - 1)
+            {
+                tutorialsfinished = true;
+            }
+            else{
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.Day6Tutorial[numtutorialsfinished]);
+                numtutorialsfinished++;
+            }
+        }
+
         if(!allrecapfinished)
         {
             if(numrecapfinished > TutorialManager.instance.RecapTutorial.Count - 1)

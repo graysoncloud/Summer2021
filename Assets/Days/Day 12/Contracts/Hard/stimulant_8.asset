@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: stimulant_8
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: New Bregovian Guard
+  description: Our soldiers need a boost in battle if we are to overthrow the filthy
+    pigs in power... need something that can pass import checks.
   usesMaxVolatility: 1
   volatilityMax: 16
   optimalMaxVolatilityVal: 7

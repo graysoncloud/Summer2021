@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: steroid_3
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Eastside Barbell
+  description: We need an simple anabolic to show our athletes how poorly it affects
+    their bodies and get them to swear off steroids
   usesMaxVolatility: 1
   volatilityMax: 18
   optimalMaxVolatilityVal: 9

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: stimulant_6
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Lockhart
+  description: Our scientists need a stimulant with a specific makeup to meet the
+    specifications of our new "Sniff n' Lift" smellable preworkout.
   usesMaxVolatility: 1
   volatilityMax: 17
   optimalMaxVolatilityVal: 8

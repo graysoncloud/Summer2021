@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: steroid_6
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: AnotherLife Entertainment
+  description: "Only one person can save the world\u2014our players! Need an anabolic
+    effect for players to roleplay as genetically enhanced super-soldiers"
   usesMaxVolatility: 1
   volatilityMax: 25
   optimalMaxVolatilityVal: 16

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: immunosuppressant_4
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Jennifer Jameson Foundation
+  description: A new variation of multiple sclerosis has arisen in a few people,
+    and an adapted immunosuppressant is needed.
   usesMaxVolatility: 1
   volatilityMax: 13
   optimalMaxVolatilityVal: 4

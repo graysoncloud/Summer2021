@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: analgesic_2
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Jansson and Jonesson
+  description: Some newborns receive a condition that gives extreme joint pain, and
+    so an incredibly light painkiller is needed to soothe them.
   usesMaxVolatility: 1
   volatilityMax: 28
   optimalMaxVolatilityVal: 19

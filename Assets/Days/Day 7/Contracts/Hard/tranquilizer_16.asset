@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: tranquilizer_16
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: SpaceY
+  description: Experiments into making the travel to Mars demand a uniquely potent
+    chemical to put our explorers to sleep for long periods of time.
   usesMaxVolatility: 1
   volatilityMax: 16
   optimalMaxVolatilityVal: 7

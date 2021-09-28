@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: nauseatic_6
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Peak Experiences
+  description: Something to induce a light nausea for our virtual plane flying experience
+    will take things to the next level for some of our users.
   usesMaxVolatility: 1
   volatilityMax: 19
   optimalMaxVolatilityVal: 10

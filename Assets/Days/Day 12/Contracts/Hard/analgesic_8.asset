@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: analgesic_8
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: Grand Oaks Care
+  description: Looking for an arthritic painkiller with an absolute minimum level
+    of side effects to be an easy option for our elderly patients.
   usesMaxVolatility: 1
   volatilityMax: 20
   optimalMaxVolatilityVal: 11

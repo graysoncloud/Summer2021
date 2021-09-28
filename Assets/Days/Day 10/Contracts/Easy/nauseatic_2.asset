@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: nauseatic_2
   m_EditorClassIdentifier: 
-  companyName: Fredrickson QRL
-  description: Looking for something to motivate our employees
+  companyName: BioCorp
+  description: Studies show horses under effects of nausea run faster... seems to
+    be an instinct but whatever the case, it could be useful for racing.
   usesMaxVolatility: 1
   volatilityMax: 14
   optimalMaxVolatilityVal: 5

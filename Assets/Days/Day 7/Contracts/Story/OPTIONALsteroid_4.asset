@@ -41,7 +41,7 @@ MonoBehaviour:
   usesOptionalVol: 0
   optionalEffect: 8
   optionalUndesirableMax: 0
-  optionalDesirableMin: 2
+  optionalDesirableMin: 6
   optionalVolMax: 0
   optionalPriceMin: 0
   optionalPriceMax: 0

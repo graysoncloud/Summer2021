@@ -44,8 +44,8 @@ public class MedicationMinigame : Minigame
         
         lidInteractable.CloseLid();
         lidInteractable.SetActive(false);
-        lidInteractable.Reset();
-        pillInteractable.Reset();
+        //lidInteractable.Reset();
+        //pillInteractable.Reset();
         base.StopGame();
     }
 

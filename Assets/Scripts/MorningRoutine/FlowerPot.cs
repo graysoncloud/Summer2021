@@ -16,6 +16,8 @@ public class FlowerPot : Interactable
     public SpriteRenderer spriteRenderer;
     public GameObject waterEffectGO;
 
+    Vector3 waterStartPos;
+
     bool hasBeenWateredToday = false;
     
     void Start() {
@@ -23,6 +25,7 @@ public class FlowerPot : Interactable
         maxWaterLevel = moistureBars.Length;
         waterEffectGO = GameObject.FindGameObjectWithTag("WaterEffect");
         waterEffectGO.SetActive(false);
+        waterStartPos = waterEffectGO.transform.position;
         
     }
     // Update is called once per frame
@@ -102,7 +105,7 @@ public class FlowerPot : Interactable
     }
 
     IEnumerator ShowWaterEffect() {
-        waterEffectGO.transform.position = spriteRenderer.transform.position;
+        waterEffectGO.transform.position = waterStartPos;
         waterEffectGO.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         waterEffectGO.SetActive(true);
         yield return new WaitForSeconds(0.5f);

@@ -71,6 +71,10 @@ public class MigraineController : MonoBehaviour
 
     IEnumerator StartMigraineCoroutine(MigraineEvent mE)
     {
+        
+
+        pulseTime = pulseTime * ((float)pulseNum - 0.5f);
+
         DialogueUIManager.instance.SetUpForMigraine();
 
         pulsing = true;
@@ -86,6 +90,8 @@ public class MigraineController : MonoBehaviour
             }
         }
         pulsing = false;
+
+        postProcessingVolume.weight = 0;
 
         GameManager.instance.StartSequence(mE.nextEvent);
     }

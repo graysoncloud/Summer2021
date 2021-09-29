@@ -72459,7 +72459,7 @@ MonoBehaviour:
   activeCam: {fileID: 0}
   soundEffect: {fileID: 0}
   jitterThreshold: 20
-  maxJitter: 0.1
+  maxJitter: 0.05
   hasAffector: 0
 --- !u!224 &5303328752574682051
 RectTransform:

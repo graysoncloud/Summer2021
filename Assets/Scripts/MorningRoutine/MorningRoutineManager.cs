@@ -57,10 +57,10 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     void Update()
     {
         if(GameManager.instance.optionsMenuActive || GameManager.instance.sequenceActive) {
-            MRUI.SetActive(false);
+            //MRUI.SetActive(false);
         } else {
             if(MRUI.activeInHierarchy == false) {
-                 MRUI.SetActive(true);
+                 //MRUI.SetActive(true);
             }
         }
 
@@ -115,6 +115,7 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
     }
 
     IEnumerator FadeDayText() {
+        dayTextContainer.SetActive(true);
         for(float i = 0f; i <= 1f; i += 0.01f) {
             dayTextContainer.GetComponent<CanvasRenderer>().SetAlpha(i);
             dayCounterTxt.alpha = i;
@@ -131,5 +132,6 @@ public class MorningRoutineManager : Singleton<MorningRoutineManager>
         }
         dayTextContainer.GetComponent<CanvasRenderer>().SetAlpha(0);
         dayCounterTxt.alpha = 0;
+        dayTextContainer.SetActive(true);
     }
 }

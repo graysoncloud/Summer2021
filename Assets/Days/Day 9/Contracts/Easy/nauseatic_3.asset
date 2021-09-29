@@ -24,8 +24,8 @@ MonoBehaviour:
   usesMinPrice: 0
   minPrice: 0
   optimalMinPriceVal: 0
-  usesUndesirableEffect: 0
-  undesirableEffect: 0
+  usesUndesirableEffect: 1
+  undesirableEffect: 9
   undesirableEffectMax: 0
   optimalUndesirableEffectAmount: 0
   usesDesirableEffect: 1

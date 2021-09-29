@@ -29,7 +29,7 @@ MonoBehaviour:
   undesirableEffectMax: 0
   optimalUndesirableEffectAmount: 0
   usesDesirableEffect: 1
-  desirableEffect: 1
+  desirableEffect: 9
   desirableEffectMin: 8
   optimalDesirableEffectAmount: 8
   usesOptional: 1

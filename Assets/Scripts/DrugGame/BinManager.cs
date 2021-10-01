@@ -30,7 +30,7 @@ public class BinManager : MonoBehaviour
         if(binArray.Count == 0 || GameManager.instance.currentDayIndex != currentDayChemIndex){
 
             chemicals = GameManager.instance.GetCurrentDay().dayChemicals;
-
+            ClearGraphic();
             foreach(ChemicalBin bins in binArray){
                 Destroy(bins);
             }
@@ -61,12 +61,29 @@ public class BinManager : MonoBehaviour
             currentDayChemIndex = GameManager.instance.currentDayIndex;
         }
         SetGlows();
+        RefreshGraphic();
     }
     public void SetGlows()
     {
         foreach (ChemicalBin bin in binArray)
         {
             bin.SetGlow();
+        }
+    }
+
+    public void RefreshGraphic()
+    {
+        foreach (ChemicalBin bin in binArray)
+        {
+            bin.RefreshChemGraphic();
+        }
+    }
+
+    public void ClearGraphic()
+    {
+        foreach (ChemicalBin bin in binArray)
+        {
+            bin.ClearChemGraphic();
         }
     }
 

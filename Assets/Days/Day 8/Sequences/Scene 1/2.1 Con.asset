@@ -59,7 +59,7 @@ MonoBehaviour:
     SFX: 
   - speaker: 3
     dialogue: Anyways, I got a quick favor to ask. My wife and I just bought a few
-      hermit crabs - I though they'd be a fun addition to the home, scurrying around
+      hermit crabs- I thought they'd be a fun addition to the home, scurrying around
       with all those legs of theirs.
     offset: {x: 0, y: 0}
     animations: []

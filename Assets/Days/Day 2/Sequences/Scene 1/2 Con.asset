@@ -16,7 +16,7 @@ MonoBehaviour:
   isNews: 0
   dialogueLines:
   - speaker: 3
-    dialogue: Morning, Barney! here's today's work.
+    dialogue: Morning, Barney! Here's today's work.
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 3

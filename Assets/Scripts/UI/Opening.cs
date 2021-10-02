@@ -7,11 +7,11 @@ using TMPro;
 public class Opening : MonoBehaviour
 {
     [SerializeField]
-    private float fadeSpeed = 0, endSpeed = 0, logoDelay, delay = 0, stopDelay, endDelay;
+    private float fadeSpeed = 0, endSpeed = 0, logoDelay, delay = 0, stopDelay, endDelay, start2Delay, stop2Delay;
     [SerializeField]
     private TextMeshProUGUI title;
     [SerializeField]
-    private Image logo;
+    private Image logo, lmuLogo;
 
     [SerializeField]
     private SceneChange toTitleScreen;
@@ -19,7 +19,7 @@ public class Opening : MonoBehaviour
     [SerializeField]
     private Animator animator; 
 
-    private bool start = false, end = false, stop = false;
+    private bool start = false, end = false, start2 = false, end2 = false, stop = false;
 
     private void Awake()
     {
@@ -32,6 +32,8 @@ public class Opening : MonoBehaviour
         StartCoroutine(LogoStart());
         StartCoroutine(Begin());
         StartCoroutine(End());
+        StartCoroutine(Begin2());
+        StartCoroutine(End2());
         StartCoroutine(Stop());
     }
 
@@ -55,6 +57,19 @@ public class Opening : MonoBehaviour
         end = true;
     }
 
+    IEnumerator Begin2()
+    {
+        yield return new WaitForSeconds(start2Delay);
+        start2 = true;
+    }
+
+    IEnumerator End2()
+    {
+        yield return new WaitForSeconds(stop2Delay);
+        start2 = false;
+        end2 = true;
+    }
+
     IEnumerator Stop()
     {
         yield return new WaitForSeconds(endDelay);
@@ -72,6 +87,14 @@ public class Opening : MonoBehaviour
         {
             title.alpha -= endSpeed / 100;
             logo.color = new Color (logo.color.r, logo.color.g, logo.color.b, logo.color.a - endSpeed / 150);
+        }
+        if (start2)
+        {
+            lmuLogo.color = new Color(lmuLogo.color.r, lmuLogo.color.g, lmuLogo.color.b, lmuLogo.color.a + fadeSpeed / 150);
+        }
+        if (end2)
+        {
+            lmuLogo.color = new Color(lmuLogo.color.r, lmuLogo.color.g, lmuLogo.color.b, lmuLogo.color.a - endSpeed / 150);
         }
         if (stop)
         {

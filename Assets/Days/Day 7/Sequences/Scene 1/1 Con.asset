@@ -10,30 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 3.2.2 Con
+  m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: f4fec5e35aa68054b89b9c9a01b49709, type: 2}
+  nextEvent: {fileID: 0}
   isNews: 0
   dialogueLines:
-  - speaker: 4
-    dialogue: ...You could rat me out, I guess. I'm sure you'll get a nice reward.
-      You never seem to want to help me out much anyways.
+  - speaker: 3
+    dialogue: There's my favorite employee! How you doing this morning?
     offset: {x: 0, y: 0}
     animations:
-    - toAnimate: 4
-      animationName: 20
+    - toAnimate: 1
+      animationName: 2
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 1
-    dialogue: Robbie-
-    offset: {x: 0, y: 0}
-    animations: []
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 4
-    dialogue: Goodbye, Barney.
+    dialogue: 'I''m alright. '
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

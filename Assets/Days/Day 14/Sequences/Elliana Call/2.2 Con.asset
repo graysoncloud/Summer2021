@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 2.2 Con
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 0}
+  isNews: 0
+  dialogueLines:
+  - speaker: 1
+    dialogue: I'm about to head to work. Why?
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: Barney, listen to me. There's something you need to know. It's about
+      Mazer.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: I know, I know, they're hiking up prices and making it impossible for
+      people to afford their medication. You've harrassed me enough already, now
+      can you please just leave me alone?
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: No, it's not that. Mazer products recently all started using a product
+      called Mazine. I'm sure you know about it.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: ...Yeah, of coures. What's your point?
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: Barney, Mazine is a highly addictive substance. Anybody who takes their
+      producst now might become dependant on them for life.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: What??
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: Mazine has the financial means to silence any scientist that comes
+      forward with any allegations. There's nothing I can say or write that can stop
+      them.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: But you... you're on the inside! You could gather information for me,
+      or try and--
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Elliana, stop! I could get in serious trouble if I do anything you're
+      asking me to do. Yeah, Mazer isn't a shining pillar of moral strength, okay?
+      I get it. But you don't have to call me every time-
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Elliana, stop! I could get in serious trouble if I do anything you're
+      asking me to do. Yeah, Mazer isn't a shining pillar of moral strength, okay?
+      I get it. But you don't have to call me every time-
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: Bobbie is missing.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: 'Your co-worker, Bobbie. He and I were supposed to meet last night.
+      He never showed up. '
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: Something terrible has happened to him. I just know it.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: You're crazy! Don't ever call me again.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 0
+    dialogue: '*click*'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

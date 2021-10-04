@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5a681f375878044ba0aba0d7a3a9a8, type: 3}
   m_Name: 1 CF
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: cace8f68de2f45e49bbf231144e500de, type: 2}
   characterFades:
-  - characterToFade: 3
-    startingSprite: 14
+  - characterToFade: 4
+    startingSprite: 17
     fadeIn: 1
     SFX: 
   postDelay: 0

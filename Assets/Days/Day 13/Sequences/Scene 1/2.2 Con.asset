@@ -116,3 +116,11 @@ MonoBehaviour:
     animOnly: 0
     animLength: 0
     SFX: 
+  - speaker: 4
+    dialogue: If Mazer finds out we know, god knows what they'll do to us. And they
+      have enough money to cover up anything the press tries to throw at them.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

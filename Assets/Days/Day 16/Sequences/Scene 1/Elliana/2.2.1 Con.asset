@@ -10,30 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
-  m_Name: 3.2.2 Con
+  m_Name: 2.2
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: f4fec5e35aa68054b89b9c9a01b49709, type: 2}
+  nextEvent: {fileID: 11400000, guid: 3f82c726855d5a44d8ca9b356b023569, type: 2}
   isNews: 0
   dialogueLines:
-  - speaker: 4
-    dialogue: ...You could rat me out, I guess. I'm sure you'll get a nice reward.
-      You never seem to want to help me out much anyways.
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 4
-      animationName: 20
-    animOnly: 0
-    animLength: 0
-    SFX: 
   - speaker: 1
-    dialogue: Robbie-
+    dialogue: Elliana, I don't know what's going on, but I have a feeling something
+      terrible happened to-
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: Goodbye, Barney.
+  - speaker: 6
+    dialogue: 'To Robbie. I know. Mazer''s doing their best to cover it up, but I''m
+      too sharp for them. I know their tricks. '
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Well where-
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

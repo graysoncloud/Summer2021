@@ -12,6 +12,9 @@ public class Credits : MonoBehaviour
 
     private bool ended = false;
 
+    [SerializeField]
+    private SceneChange toTitle;
+
     private void Start()
     {
         //.Log(lastCredit.position.y);
@@ -24,6 +27,9 @@ public class Credits : MonoBehaviour
         {
             // switch scene stuff
             ended = true;
+            PlayerPrefs.DeleteAll();
+            GameManager.instance.StartSequence(toTitle);
+            Debug.Log("Success");
         }
     }
 

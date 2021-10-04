@@ -161,6 +161,7 @@ public class SceneChangeManager : MonoBehaviour
                 AmbienceManager.instance.StartFadeOut(); break;
             case "OpeningScene": newScene = scenes[7]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
             case "CreditsScene": newScene = scenes[8]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
+            case "OverBlackScene": newScene = scenes[9]; currentScene = newScene; newScene.gameObject.SetActive(true); break;
             default: Debug.LogError("Invalid sceneName: " + sceneChange.newScene.ToString()); break;
 
                 //if (MusicManager.instance.backgroundMusicPlayerInstance != null) MusicManager.instance.StopCoroutine(MusicManager.instance.backgroundMusicPlayerInstance);

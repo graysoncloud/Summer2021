@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 1 CON
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 11400000, guid: 22e1f977036a9ad44b677573fe2fde7b, type: 2}
+  isNews: 0
+  dialogueLines:
+  - speaker: 1
+    dialogue: Someone's calling?
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 01000000
+  - speaker: 6
+    dialogue: 'Hey! This is Elliana Woodward. Am I speaking to Barney from Mazer
+      Pharmaceuticals?
+
+'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 02000000
+  - speaker: 1
+    dialogue: 'Uh, yes. How did you get my number?
+
+'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: 'From the Warbledon alumni network, we actually graduated in the same
+      year as each other.
+
+'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: 'I suppose I remember an Elliana. From Biology?
+
+'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: "Chemistry, actually. But I hear now you\u2019re a chemical engineer
+      at Mazer; that\u2019s quite a career for someone from Warbledon to get. "
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: "I work with Templeton News and I was wondering if I could ask about
+      the antibacterial drug Mazer created for Pendlay Chemicals. Did you know they
+      can\u2019t afford to pay for the drug for all their workers?"
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: "I- I don\u2019t know. It was a really complex chemical."
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: "That strain of bacteria was incredibly rare, and the antibacterial
+      works better than any other\u2014I know that."
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: "I understand that it\u2019s effective; but as the leading pharmaceutical
+      company in America, don\u2019t you think Mazer has an obligation to ensure
+      their medications reach those who need it?"
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: "Look, I don\u2019t know what you want from me. I just make the drugs\u2026"
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: You really ought to be thinking about these things working for a company
+      like Mazer.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Please, just-
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: 'Stop bothering me, I need to go to work. '
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: '*click*'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

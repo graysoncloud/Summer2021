@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Day 7
   m_EditorClassIdentifier: 
   sequences:
+  - initialEvent: {fileID: 11400000, guid: 9c6684ecd98889442b674b0df059a5be, type: 2}
+    trigger: 0
   - initialEvent: {fileID: 11400000, guid: 50a81e3f6d56a434d99b2b8990435d0c, type: 2}
     trigger: 1
   - initialEvent: {fileID: 11400000, guid: 8e74e05eea13bad43967d2bface66292, type: 2}

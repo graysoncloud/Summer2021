@@ -51,17 +51,20 @@ public class Door : MonoBehaviour
         }
 
         if(!workDoor) {
+
             FindObjectOfType<PlayerController>().SetRoom(destination);
 
-            foreach (Day.Sequence sequence in GameManager.instance.currentDay.sequences)
+            if (destination.roomName == "LivingRoom")
             {
-                if (sequence.trigger.ToString() == "enteredLivingRoom" && !MorningRoutineManager.Instance.enteredLRToday)
+                foreach (Day.Sequence sequence in GameManager.instance.currentDay.sequences)
                 {
-                    MorningRoutineManager.Instance.enteredLRToday = true;
-                    GameManager.instance.StartSequence(sequence.initialEvent);
+                    if (sequence.trigger.ToString() == "enteredLivingRoom" && !MorningRoutineManager.Instance.enteredLRToday)
+                    {
+                        MorningRoutineManager.Instance.enteredLRToday = true;
+                        GameManager.instance.StartSequence(sequence.initialEvent);
+                    }
                 }
             }
-
 
             if(clickSoundEffect != null) {
                 MorningRoutineManager.Instance.audioManager.LoadSound(clickSoundEffect);

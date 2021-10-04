@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 2.1 CON
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 11400000, guid: f9dad05bad5b9364eadff515457f0637, type: 2}
+  isNews: 0
+  dialogueLines:
+  - speaker: 1
+    dialogue: "I saw what happened in Brookstone, if that\u2019s what you\u2019re
+      asking me about."
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: Then you should know that the drug is only going to the few who can
+      afford it. Thousands are still bedridden, unable to keep their food down and
+      vomiting-
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: "I know. It\u2019s bad. \r\n"
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: "I still don\u2019t know what you want me to say. I can\u2019t do anything
+      about that."
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

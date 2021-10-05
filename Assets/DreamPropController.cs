@@ -30,13 +30,18 @@ public class DreamPropController : MonoBehaviour
         // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("PropCoroutine");
+        //StartCoroutine("PropCoroutine");
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void BeginPropCoroutine()
+    {
+        StartCoroutine("PropCoroutine");
     }
 
     IEnumerator PropCoroutine ()

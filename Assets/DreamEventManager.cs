@@ -11,6 +11,9 @@ public class DreamEventManager : MonoBehaviour
     // Needs to be laid out exactly as the dreamChar enum is
     public GameObject[] dreamChars;
 
+    [SerializeField]
+    public GameObject props;
+
 
     private void Awake()
     {
@@ -62,6 +65,14 @@ public class DreamEventManager : MonoBehaviour
 
         GameManager.instance.StartSequence(dE.nextEvent);
 
+    }
+
+    public void ResetDreamScene()
+    {
+        foreach (SpriteRenderer sR in props.GetComponentsInChildren<SpriteRenderer>())
+        {
+            Destroy(sR.gameObject);
+        }
     }
 
 

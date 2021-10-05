@@ -23,7 +23,7 @@ public class Credits : MonoBehaviour
     private void FixedUpdate()
     {
         this.transform.position = new Vector3(transform.position.x, transform.position.y + speed, 0);
-        if (lastCredit.position.y > 1080 && !ended)
+        if (lastCredit.position.y > 600 && !ended)
         {
             // switch scene stuff
             ended = true;

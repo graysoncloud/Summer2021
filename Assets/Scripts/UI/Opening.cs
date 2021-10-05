@@ -9,7 +9,7 @@ public class Opening : MonoBehaviour
     [SerializeField]
     private float fadeSpeed = 0, endSpeed = 0, logoDelay, delay = 0, stopDelay, endDelay, start2Delay, stop2Delay;
     [SerializeField]
-    private TextMeshProUGUI title;
+    private TextMeshProUGUI title, thankYou;
     [SerializeField]
     private Image logo, lmuLogo;
 
@@ -91,10 +91,14 @@ public class Opening : MonoBehaviour
         if (start2)
         {
             lmuLogo.color = new Color(lmuLogo.color.r, lmuLogo.color.g, lmuLogo.color.b, lmuLogo.color.a + fadeSpeed / 150);
+            thankYou.color = new Color(lmuLogo.color.r, lmuLogo.color.g, lmuLogo.color.b, lmuLogo.color.a + fadeSpeed / 150);
+
         }
         if (end2)
         {
             lmuLogo.color = new Color(lmuLogo.color.r, lmuLogo.color.g, lmuLogo.color.b, lmuLogo.color.a - endSpeed / 150);
+            thankYou.color = new Color(lmuLogo.color.r, lmuLogo.color.g, lmuLogo.color.b, lmuLogo.color.a - endSpeed / 150);
+
         }
         if (stop)
         {

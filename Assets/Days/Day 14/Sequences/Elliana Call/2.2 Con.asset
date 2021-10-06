@@ -48,7 +48,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 1
-    dialogue: ...Yeah, of coures. What's your point?
+    dialogue: ...Yeah, of course. What's your point?
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
     SFX: 
   - speaker: 6
     dialogue: Barney, Mazine is a highly addictive substance. Anybody who takes their
-      producst now might become dependant on them for life.
+      products now might become dependent on them for life.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
@@ -70,9 +70,8 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 6
-    dialogue: Mazine has the financial means to silence any scientist that comes
-      forward with any allegations. There's nothing I can say or write that can stop
-      them.
+    dialogue: Mazer has the financial means to silence any scientist that comes forward
+      with any allegations. There's nothing I can say or write that can stop them.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
@@ -80,16 +79,7 @@ MonoBehaviour:
     SFX: 
   - speaker: 6
     dialogue: But you... you're on the inside! You could gather information for me,
-      or try and--
-    offset: {x: 0, y: 0}
-    animations: []
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 1
-    dialogue: Elliana, stop! I could get in serious trouble if I do anything you're
-      asking me to do. Yeah, Mazer isn't a shining pillar of moral strength, okay?
-      I get it. But you don't have to call me every time-
+      or try and-
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
@@ -105,14 +95,14 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 6
-    dialogue: Bobbie is missing.
+    dialogue: Robbie is missing.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 6
-    dialogue: 'Your co-worker, Bobbie. He and I were supposed to meet last night.
+    dialogue: 'Your co-worker, Robbie. He and I were supposed to meet last night.
       He never showed up. '
     offset: {x: 0, y: 0}
     animations: []

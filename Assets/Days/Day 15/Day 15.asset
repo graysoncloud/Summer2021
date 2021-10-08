@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequences:
   - initialEvent: {fileID: 11400000, guid: 8e74e05eea13bad43967d2bface66292, type: 2}
-    trigger: 5
+    trigger: 3
   newsEvent: {fileID: 11400000, guid: 64a715887c9e0bc4d843460e847ea274, type: 2}
   contracts:
   - {fileID: 11400000, guid: 97308f7730c0f9f4c82e110d2bee87af, type: 2}
+  - {fileID: 11400000, guid: dabd2f0ca996d694aa15ecee8f2307a0, type: 2}
   dayChemicals:
   - {fileID: 4991818317866170135, guid: 0c4ff458f27d79c4191b2fc692d1e01e, type: 3}
   - {fileID: 4991818317866170135, guid: ca93b602592e5e347b070a41e8b1a2de, type: 3}

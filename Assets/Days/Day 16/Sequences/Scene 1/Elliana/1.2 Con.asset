@@ -21,11 +21,11 @@ MonoBehaviour:
     animations: []
     animOnly: 0
     animLength: 0
-    SFX: 
+    SFX: 01000000
   - speaker: 6
     dialogue: Barney.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
-    SFX: 
+    SFX: 02000000

@@ -18,4 +18,4 @@ MonoBehaviour:
   preDelay: 0
   midDelay: 0
   postDelay: 0
-  increaseDay: 0
+  increaseDay: 1

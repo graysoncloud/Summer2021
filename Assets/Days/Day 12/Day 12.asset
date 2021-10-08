@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: Day 12
   m_EditorClassIdentifier: 
   sequences:
-  - initialEvent: {fileID: 11400000, guid: d71776c584e6d8e4390d4156d498a3a7, type: 2}
-    trigger: 0
   - initialEvent: {fileID: 11400000, guid: e06eda041930d3143a131f7d89b360f3, type: 2}
     trigger: 4
   - initialEvent: {fileID: 11400000, guid: 8e74e05eea13bad43967d2bface66292, type: 2}
     trigger: 5
   newsEvent: {fileID: 11400000, guid: 017ad099b80ee70459a262bb2e11aa07, type: 2}
-  contracts: []
+  contracts:
+  - {fileID: 11400000, guid: 92d28876b258ab649bdbc9703a2c5491, type: 2}
+  - {fileID: 11400000, guid: 24ec7896ae614044ea71b7d0f3fbb496, type: 2}
+  - {fileID: 11400000, guid: 527653c9665119246b09628eaed14ed3, type: 2}
+  - {fileID: 11400000, guid: 44511a14414117e4b9423b02d908beb6, type: 2}
   dayChemicals:
   - {fileID: 4991818317866170135, guid: b0498c4b10265de4da2ea258c0238db3, type: 3}
   - {fileID: 4991818317866170135, guid: bb8894a440a05f5409bcaf05c6803a60, type: 3}

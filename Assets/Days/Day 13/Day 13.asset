@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c747640b685770845b310d0728bc0456, type: 3}
   m_Name: Day 13
   m_EditorClassIdentifier: 
-  sequences: []
+  sequences:
+  - initialEvent: {fileID: 11400000, guid: c81c3079f323815499f460455a88d004, type: 2}
+    trigger: 2
+  - initialEvent: {fileID: 11400000, guid: 672ec327178d46a4f86557b4f861530d, type: 2}
+    trigger: 5
   newsEvent: {fileID: 11400000, guid: cd49cc8b6f539e54589d854fccdccc29, type: 2}
-  contracts: []
+  contracts:
+  - {fileID: 11400000, guid: 0d8eb39cc09923a47b014c2306ad6f62, type: 2}
+  - {fileID: 11400000, guid: 052b1e6c3af2e0f469fbd4c2d78e49a0, type: 2}
+  - {fileID: 11400000, guid: 9e7ff033dcb418f4ea59f7930968d5c2, type: 2}
+  - {fileID: 11400000, guid: 9479e0067c3e8a84fb95e576eaa65f0e, type: 2}
   dayChemicals:
   - {fileID: 4991818317866170135, guid: 004b6217479e29a47b5a68aee64f65a9, type: 3}
   - {fileID: 4991818317866170135, guid: b0498c4b10265de4da2ea258c0238db3, type: 3}

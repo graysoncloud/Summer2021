@@ -22760,7 +22760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &716440383
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49607,6 +49607,60 @@ MonoBehaviour:
   gradeBonusText: {fileID: 544160680}
   totalText: {fileID: 1572290262}
   grossAmountText: {fileID: 1352960796}
+  descriptions:
+  - {fileID: 658484474}
+  - {fileID: 1205635329}
+  - {fileID: 1871344421}
+  - {fileID: 372503501}
+  - {fileID: 2016490581}
+  - {fileID: 262234635}
+  - {fileID: 1571670769}
+  - {fileID: 708016942}
+  drugIDs:
+  - {fileID: 98012703}
+  - {fileID: 1911850408}
+  - {fileID: 26109020}
+  - {fileID: 1607887771}
+  - {fileID: 1285659375}
+  - {fileID: 533937025}
+  - {fileID: 608960381}
+  - {fileID: 1714234825}
+  companyNames:
+  - {fileID: 696489879}
+  - {fileID: 1323987377}
+  - {fileID: 1214645627}
+  - {fileID: 1348105558}
+  - {fileID: 221143150}
+  - {fileID: 684659897}
+  - {fileID: 760471642}
+  - {fileID: 1233051104}
+  volatilities:
+  - {fileID: 1537253081}
+  - {fileID: 1403598708}
+  - {fileID: 151299256}
+  - {fileID: 711455565}
+  - {fileID: 1379578784}
+  - {fileID: 1522367022}
+  - {fileID: 1406692486}
+  - {fileID: 1635494218}
+  costs:
+  - {fileID: 436879629}
+  - {fileID: 352940925}
+  - {fileID: 498124034}
+  - {fileID: 1418343500}
+  - {fileID: 590043010}
+  - {fileID: 524650034}
+  - {fileID: 513708778}
+  - {fileID: 1199476531}
+  grades:
+  - {fileID: 634760186}
+  - {fileID: 1249263756}
+  - {fileID: 1029918775}
+  - {fileID: 1198910006}
+  - {fileID: 448009879}
+  - {fileID: 498205214}
+  - {fileID: 991305801}
+  - {fileID: 1795722550}
 --- !u!1 &1652455290
 GameObject:
   m_ObjectHideFlags: 0

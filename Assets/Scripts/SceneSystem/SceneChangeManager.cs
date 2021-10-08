@@ -175,6 +175,9 @@ public class SceneChangeManager : MonoBehaviour
         if (sceneChange.increaseDay)
             GameManager.instance.NextDay();
 
+        // Shouldn't be neccessary but it fixes a bug
+        GameManager.instance.sequenceActive = true;
+
         /*
          * Depricated, characters now added in by there own scriptable object
          */

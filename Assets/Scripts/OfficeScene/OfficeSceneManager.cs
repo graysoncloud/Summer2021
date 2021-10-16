@@ -116,7 +116,6 @@ public class OfficeSceneManager : MonoBehaviour
                     openedComputerToday = true;
                 } else
                 {
-                    VolatilityBar.instance.Refresh();
                     SceneChangeManager.instance.StartSceneChange(officeToDrugGameTransition);
                 }
             }

@@ -15,7 +15,7 @@ MonoBehaviour:
   nextEvent: {fileID: 11400000, guid: 252e608454f2716469a32aa7f2954495, type: 2}
   characterFades:
   - characterToFade: 5
-    startingSprite: 0
+    startingSprite: 10
     fadeIn: 0
     SFX: 
   postDelay: 0

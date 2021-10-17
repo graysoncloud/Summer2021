@@ -15,7 +15,7 @@ MonoBehaviour:
   nextEvent: {fileID: 11400000, guid: 5c102b989102e7f4d9f4f32fb0ba3023, type: 2}
   isNews: 0
   dialogueLines:
-  - speaker: 0
+  - speaker: 5
     dialogue: "Recently, there has been a lot of talk in our shipping warehouse of
       union activity. These people\u2014they're not the sharpest tools in the shed.
       They don't reason like you or I."
@@ -26,7 +26,7 @@ MonoBehaviour:
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 0
+  - speaker: 5
     dialogue: This would be much much easier if the workers were a little more...
       agreeable. Calmer, more rational.
     offset: {x: 0, y: 0}
@@ -34,14 +34,14 @@ MonoBehaviour:
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 0
+  - speaker: 5
     dialogue: 'The drug you are making is only meant to take the edge off. '
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 0
+  - speaker: 5
     dialogue: Get that done, as well as the rest of your work, by 5:00.
     offset: {x: 0, y: 0}
     animations: []

@@ -16,7 +16,14 @@ MonoBehaviour:
   isNews: 0
   dialogueLines:
   - speaker: 1
-    dialogue: "I can talk to my boss.\r But you really need to stop calling me-"
+    dialogue: I can talk to my boss.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: But Elliana you really need to stop calling me-
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

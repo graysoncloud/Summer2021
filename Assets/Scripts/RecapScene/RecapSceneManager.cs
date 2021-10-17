@@ -33,6 +33,14 @@ public class RecapSceneManager : MonoBehaviour
     public TextMeshProUGUI totalText;
     public TextMeshProUGUI grossAmountText;
 
+    [SerializeField]
+    TextMeshProUGUI[] descriptions,
+                      drugIDs,
+                      companyNames,
+                      volatilities,
+                      costs,
+                      grades;
+
     private string charList = "BCDFGHJKLMNPQRSTVWXZ";
 
     private void Awake()
@@ -135,6 +143,7 @@ public class RecapSceneManager : MonoBehaviour
         }
 
         finishedContracts.Add(toAdd);
+        Debug.Log("Contract added! Total num: " + finishedContracts.Count);
 
     }
 
@@ -142,13 +151,6 @@ public class RecapSceneManager : MonoBehaviour
     {
         bonusOverlay.gameObject.SetActive(false);
         registerOverlay.gameObject.SetActive(true);
-
-        TextMeshProUGUI[] drugIDs = drugIDParent.GetComponentsInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI[] companyNames = companyNameParent.GetComponentsInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI[] descriptions = descriptionParent.GetComponentsInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI[] volatilities = volatilityParent.GetComponentsInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI[] costs = priceParent.GetComponentsInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI[] grades = gradeParent.GetComponentsInChildren<TextMeshProUGUI>();
 
         for (int i = 0; i < finishedContracts.Count; i++)
         {
@@ -223,7 +225,7 @@ public class RecapSceneManager : MonoBehaviour
     private IEnumerator BonusCouroutine()
     {
         // Maybe increase salary over time?
-        bonusDecreasingText.text = "$300";
+        bonusDecreasingText.text = "$250";
 
         int hours = DrugManager.instance.hours;
         int minutes = DrugManager.instance.minutes;

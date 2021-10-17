@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: 3 CF
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 11400000, guid: a6b285fdb7ee52a47b0d29cd00c27a7f, type: 2}
-  characterFades: []
+  characterFades:
+  - characterToFade: 3
+    startingSprite: 15
+    fadeIn: 0
+    SFX: 
   postDelay: 0

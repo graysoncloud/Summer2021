@@ -63,9 +63,9 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 6
-    dialogue: "I was wondering if I could ask about the new beta blocker Mazer released.
-      Do you really think it\u2019s acceptable to expect people with heart disease
-      to pay such a price?"
+    dialogue: "I was wondering if I could ask about the antibacterial Mazer created
+      for Pendlay Chemicals. Do you really think it\u2019s acceptable to expect their
+      employees to pay such a price?"
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 6
-    dialogue: "It works better than any other beta blocker than anyone\u2019s ever
+    dialogue: "It works better than any other antibacterial than anyone\u2019s ever
       seen, it\u2019s really quite impressive."
     offset: {x: 0, y: 0}
     animations: []

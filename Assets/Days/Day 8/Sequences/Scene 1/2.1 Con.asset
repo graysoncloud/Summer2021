@@ -32,10 +32,16 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 3
-    dialogue: 'I''m sorry to hear that, Barney. Be careful not to overwork yourself,
-      okay? Staying past five all the time can''t be that good for you. Hell, I would
-      also be a nervous wreck too if Maria were always yelling at me to finish on
-      time! '
+    dialogue: I'm sorry to hear that, Barney. Be careful not to overwork yourself,
+      okay? Staying past five all the time can't be that good for you.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: 'Hell, I would also be a nervous wreck too if Maria were always yelling
+      at me to finish on time! '
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

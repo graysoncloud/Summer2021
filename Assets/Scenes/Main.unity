@@ -4255,13 +4255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   days:
-  - {fileID: 11400000, guid: 0ab10ffa938437a47b68fbdfb29c47c2, type: 2}
-  - {fileID: 11400000, guid: aa2a7f5bb38e99a4598aabe8c1f2c7e3, type: 2}
-  - {fileID: 11400000, guid: ba60071ed74e8394789ddc9e85bfb40b, type: 2}
-  - {fileID: 11400000, guid: b6e6cb1f4f1943b4aae1175219d977b8, type: 2}
-  - {fileID: 11400000, guid: efb58bb472028cd42b835d623b0eb72b, type: 2}
-  - {fileID: 11400000, guid: df74e5602ae93f64ba889963b6fc64ad, type: 2}
-  - {fileID: 11400000, guid: df81b77befe8c9e4bad2cd03da4be000, type: 2}
   - {fileID: 11400000, guid: bef17959852e84d4880d48c90c95d5e9, type: 2}
   - {fileID: 11400000, guid: 43c23f096ba49e94f85e1a4cc5c0a6b3, type: 2}
   - {fileID: 11400000, guid: bf738d117c9be46468863c171a5c8aa4, type: 2}
@@ -4271,6 +4264,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4d9acff1ba0bb6445a17ca147b837dab, type: 2}
   - {fileID: 11400000, guid: 66839dd7aabbeb04e9363977725bddc3, type: 2}
   - {fileID: 11400000, guid: c4df4608725f04346b22c50d9c2a4768, type: 2}
+  - {fileID: 11400000, guid: 0ab10ffa938437a47b68fbdfb29c47c2, type: 2}
+  - {fileID: 11400000, guid: aa2a7f5bb38e99a4598aabe8c1f2c7e3, type: 2}
+  - {fileID: 11400000, guid: ba60071ed74e8394789ddc9e85bfb40b, type: 2}
+  - {fileID: 11400000, guid: b6e6cb1f4f1943b4aae1175219d977b8, type: 2}
+  - {fileID: 11400000, guid: efb58bb472028cd42b835d623b0eb72b, type: 2}
+  - {fileID: 11400000, guid: df74e5602ae93f64ba889963b6fc64ad, type: 2}
+  - {fileID: 11400000, guid: df81b77befe8c9e4bad2cd03da4be000, type: 2}
   currentDayIndex: 0
   currentDay: {fileID: 0}
   sequenceActive: 0
@@ -5347,7 +5347,7 @@ RectTransform:
   m_GameObject: {fileID: 191317805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 7437521072404789498}
   - {fileID: 2066638229}
@@ -5373,7 +5373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7176471}
+  m_Color: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 0.7176471}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15039,7 +15039,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 498.1}
+  m_AnchoredPosition: {x: 0, y: 465}
   m_SizeDelta: {x: 1082.2, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &515223419
@@ -15170,7 +15170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7176471}
+  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.7176471}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15204,7 +15204,7 @@ RectTransform:
   m_GameObject: {fileID: 522400125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 1298854638}
   - {fileID: 875523359}
@@ -22760,7 +22760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &716440383
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25953,7 +25953,7 @@ RectTransform:
   m_GameObject: {fileID: 819093951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 917018978}
   - {fileID: 1572028770}
@@ -49607,6 +49607,60 @@ MonoBehaviour:
   gradeBonusText: {fileID: 544160680}
   totalText: {fileID: 1572290262}
   grossAmountText: {fileID: 1352960796}
+  descriptions:
+  - {fileID: 658484474}
+  - {fileID: 1205635329}
+  - {fileID: 1871344421}
+  - {fileID: 372503501}
+  - {fileID: 2016490581}
+  - {fileID: 262234635}
+  - {fileID: 1571670769}
+  - {fileID: 708016942}
+  drugIDs:
+  - {fileID: 98012703}
+  - {fileID: 1911850408}
+  - {fileID: 26109020}
+  - {fileID: 1607887771}
+  - {fileID: 1285659375}
+  - {fileID: 533937025}
+  - {fileID: 608960381}
+  - {fileID: 1714234825}
+  companyNames:
+  - {fileID: 696489879}
+  - {fileID: 1323987377}
+  - {fileID: 1214645627}
+  - {fileID: 1348105558}
+  - {fileID: 221143150}
+  - {fileID: 684659897}
+  - {fileID: 760471642}
+  - {fileID: 1233051104}
+  volatilities:
+  - {fileID: 1537253081}
+  - {fileID: 1403598708}
+  - {fileID: 151299256}
+  - {fileID: 711455565}
+  - {fileID: 1379578784}
+  - {fileID: 1522367022}
+  - {fileID: 1406692486}
+  - {fileID: 1635494218}
+  costs:
+  - {fileID: 436879629}
+  - {fileID: 352940925}
+  - {fileID: 498124034}
+  - {fileID: 1418343500}
+  - {fileID: 590043010}
+  - {fileID: 524650034}
+  - {fileID: 513708778}
+  - {fileID: 1199476531}
+  grades:
+  - {fileID: 634760186}
+  - {fileID: 1249263756}
+  - {fileID: 1029918775}
+  - {fileID: 1198910006}
+  - {fileID: 448009879}
+  - {fileID: 498205214}
+  - {fileID: 991305801}
+  - {fileID: 1795722550}
 --- !u!1 &1652455290
 GameObject:
   m_ObjectHideFlags: 0
@@ -62153,7 +62207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2052212350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64283,7 +64337,7 @@ RectTransform:
   m_GameObject: {fileID: 2100847451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 871147283}
   - {fileID: 2053840758}

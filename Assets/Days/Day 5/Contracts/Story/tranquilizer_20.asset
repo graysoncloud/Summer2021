@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: tranquilizer_20
   m_EditorClassIdentifier: 
-  companyName: Mazer Pharmaceudicals
+  companyName: Mazer Pharmaceuticals
   description: Unruly employees disrupting workflow. Talks of unions imminent. Need
     a moderate tranquilizer, dissolvable in liquid, to calm their nerves.
   usesMaxVolatility: 1

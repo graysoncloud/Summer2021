@@ -17,7 +17,7 @@ MonoBehaviour:
   dialogueLines:
   - speaker: 0
     dialogue: MARCUS BEAUREGARDI, CROWN PRINCE OF THE BEAUREGARDI ROYAL FAMILY, PASSES
-      AWAY DUE TO SURGEY COMPLICATIONS
+      AWAY DUE TO SURGERY COMPLICATIONS
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

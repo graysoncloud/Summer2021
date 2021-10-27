@@ -16,7 +16,7 @@ MonoBehaviour:
   isNews: 0
   dialogueLines:
   - speaker: 4
-    dialogue: ...You could rat me out, I guess. I'm sure you'll get a nice reward.
+    dialogue: ... You could rat me out, I guess. I'm sure you'll get a nice reward.
       You never seem to want to help me out much anyways.
     offset: {x: 0, y: 0}
     animations:

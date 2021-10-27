@@ -16,7 +16,7 @@ MonoBehaviour:
   isNews: 0
   dialogueLines:
   - speaker: 3
-    dialogue: How we feeling today, Barney?
+    dialogue: How are we feeling today, Barney?
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1
@@ -25,8 +25,8 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 1
-    dialogue: Hmm? Oh, right. Feeling... good. Yeah that pill - working wonders.
-      Yup.
+    dialogue: "Hmm? Oh, right. Feeling... good. Yeah that pill\u2014working wonders.
+      Yup."
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1

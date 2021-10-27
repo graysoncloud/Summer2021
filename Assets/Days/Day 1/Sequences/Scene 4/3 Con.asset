@@ -29,9 +29,9 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 5
-    dialogue: You are graded on the cost, effectiveness, and stability of your drug
+    dialogue: "You are graded on the cost, effectiveness, and stability of your drug
       blueprints. Extra penalties are applied if any chemicals are left with unconnected
-      ends - it's just bad practice.
+      ends\u2014it's just bad practice."
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

@@ -32,7 +32,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 5
-    dialogue: Didn't I tell you that the next time I--
+    dialogue: Didn't I tell you that the next time I-
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 5

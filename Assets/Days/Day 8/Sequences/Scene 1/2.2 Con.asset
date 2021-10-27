@@ -16,9 +16,9 @@ MonoBehaviour:
   isNews: 0
   dialogueLines:
   - speaker: 3
-    dialogue: Hey, got a quick favor to ask. My wife and I just bought a few hermit
-      crabs- I thought they'd be a fun addition to the home, scurrying around with
-      all those legs of theirs.
+    dialogue: "Hey, got a quick favor to ask. My wife and I just bought a few hermit
+      crabs\u2014I thought they'd be a fun addition to the home, scurrying around
+      with all those legs of theirs."
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

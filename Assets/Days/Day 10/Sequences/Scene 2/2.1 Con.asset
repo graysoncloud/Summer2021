@@ -26,7 +26,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 3
-    dialogue: So as a little "thank you," the other drug engineers have developed
+    dialogue: So as a little "thank you", the other drug engineers have developed
       a little surprise for you!
     offset: {x: 0, y: 0}
     animations:
@@ -36,8 +36,8 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 3
-    dialogue: We're sending you home with a brand new antidepressant, engineered
-      with Mazine - so you know it's the good stuff!
+    dialogue: "We're sending you home with a brand new antidepressant, engineered
+      with Mazine\u2014so you know it's the good stuff!"
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 3

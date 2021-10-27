@@ -32,8 +32,8 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: I heard about your mom's condition yesterday. So to repay you, I started
-      working on a temporary antidote - made possible with Mazine.
+    dialogue: "I heard about your mom's condition yesterday. So to repay you, I started
+      working on a temporary antidote\u2014made possible with Mazine."
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: One more thing. Mazine, this new drug......
+    dialogue: One more thing. Mazine, this new drug...
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1
@@ -73,7 +73,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: ..... nevermind. I have to go.
+    dialogue: ...nevermind. I have to go.
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 4

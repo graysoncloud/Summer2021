@@ -32,14 +32,14 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 1
-    dialogue: I have to get out of here. I need--
+    dialogue: I have to get out of here. I need-
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: Mazine. You need Mazine - that's what your body is telling you.
+    dialogue: "Mazine. You need Mazine\u2014that's what your body is telling you."
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 4

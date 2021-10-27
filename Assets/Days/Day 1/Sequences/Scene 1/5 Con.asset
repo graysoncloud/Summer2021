@@ -17,7 +17,7 @@ MonoBehaviour:
   dialogueLines:
   - speaker: 2
     dialogue: "You know, this sort of thing would be a lot easier if you had someone
-      else to talk to - practice. Practice with another woman who isn\u2019t your
+      else to talk to\u2014practice. Practice with another woman who isn\u2019t your
       mother."
     offset: {x: 0, y: 0}
     animations:
@@ -27,7 +27,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 1
-    dialogue: "Not now, mom-\r"
+    dialogue: "Not now, mom\u2014"
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

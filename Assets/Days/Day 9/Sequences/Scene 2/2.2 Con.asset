@@ -25,7 +25,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: Mazine, this new chemical, it's a big deal for Mazer. The thing is......
+    dialogue: Mazine, this new chemical, it's a big deal for Mazer. The thing is...
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 4

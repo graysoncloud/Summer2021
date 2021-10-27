@@ -41,7 +41,8 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 6
-    dialogue: Elliana Roarke-  we graduated in the same year as each other at Warbledon.
+    dialogue: "Elliana Roarke\u2014we graduated in the same year as each other at
+      Warbledon."
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

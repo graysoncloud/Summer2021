@@ -17,7 +17,7 @@ MonoBehaviour:
   dialogueLines:
   - speaker: 1
     dialogue: "Forgetting something? Um... keys, wallet... the plants! I forgot,
-      I\u2019ll go run and-"
+      I\u2019ll go run and\u2014"
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

@@ -29,7 +29,7 @@ public class PillInteractable : Interactable
             dispensed = false;
             this.gameObject.SetActive(false);
             MorningRoutineManager.Instance.takenMedicationToday = true;
-            PlayerPrefs.SetInt("TookPill", 0);
+            PlayerPrefs.SetInt("TookPill", 1);
 
             medicationMinigame.StopMedGame();
             MorningRoutineManager.Instance.StopMinigame();

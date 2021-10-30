@@ -12,15 +12,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: a98be0d08475c864ea4f7d78776d5bf9, type: 2}
+  nextEvent: {fileID: 11400000, guid: c986a5c509aee204c9e0cd11da4def0b, type: 2}
   isNews: 0
   dialogueLines:
-  - speaker: 5
-    dialogue: ...
+  - speaker: 4
+    dialogue: Here.
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1
       animationName: 2
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: Some new chemicals today. These ones have special ionic bonds you might
+      not have seen before.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 4
+      animationName: 17
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: They'll appear as green connections on your computer. Connecting green
+      bonds boosts your drug's efficacy.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: ...
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 4
+    dialogue: Goodbye.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 4
+      animationName: 17
     animOnly: 0
     animLength: 0
     SFX: 

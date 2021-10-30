@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequences:
   - initialEvent: {fileID: 11400000, guid: 777e123b7a94ff54088fcbf20d6103a0, type: 2}
-    trigger: 0
+    trigger: 11
   - initialEvent: {fileID: 11400000, guid: af74dcc6ae5a599498b29e191e6a9e85, type: 2}
     trigger: 1
   - initialEvent: {fileID: 11400000, guid: d3e742e7dd79aea4688d0c118e0372ef, type: 2}

@@ -29,5 +29,5 @@ MonoBehaviour:
   changesAttitude: 0
   attitudeToChange: 0
   amountToAlterAttitude: 0
-  logsEvent: 0
-  eventToLog: 0
+  logsEvent: 1
+  eventToLog: 15

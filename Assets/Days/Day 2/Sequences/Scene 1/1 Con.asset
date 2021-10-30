@@ -12,49 +12,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: c986a5c509aee204c9e0cd11da4def0b, type: 2}
+  nextEvent: {fileID: 11400000, guid: 27fe065709416a24397cf135fdd12239, type: 2}
   isNews: 0
   dialogueLines:
-  - speaker: 4
-    dialogue: Here.
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 1
-      animationName: 2
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 4
-    dialogue: Some new chemicals today. These ones have special ionic bonds you might
-      not have seen before.
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 4
-      animationName: 17
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 4
-    dialogue: They'll appear as green connections on your computer. Connecting green
-      bonds boosts your drug's efficacy.
+  - speaker: 2
+    dialogue: You're up late this morning... you doing okay?
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: ...
+  - speaker: 1
+    dialogue: I'm fine. Just overslept is all.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 4
-    dialogue: Goodbye.
+  - speaker: 2
+    dialogue: You sure you're good to be going back to work so soon? How do we know
+      you won't just have *another* nervous breakdown today? or tomorrow? You could
+      get fired for good!
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Mom-- just drop it, alright? I'm fine!
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 2
+    dialogue: Okay. If you say so.
     offset: {x: 0, y: 0}
     animations:
-    - toAnimate: 4
-      animationName: 17
+    - toAnimate: 2
+      animationName: 26
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: I have to go. Goodbye.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 2
+    dialogue: Have a good one.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
     animOnly: 0
     animLength: 0
     SFX: 

@@ -4350,8 +4350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   days:
-  - {fileID: 11400000, guid: aa2a7f5bb38e99a4598aabe8c1f2c7e3, type: 2}
-  - {fileID: 11400000, guid: efb58bb472028cd42b835d623b0eb72b, type: 2}
   - {fileID: 11400000, guid: bef17959852e84d4880d48c90c95d5e9, type: 2}
   - {fileID: 11400000, guid: 43c23f096ba49e94f85e1a4cc5c0a6b3, type: 2}
   - {fileID: 11400000, guid: bf738d117c9be46468863c171a5c8aa4, type: 2}
@@ -4362,8 +4360,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 66839dd7aabbeb04e9363977725bddc3, type: 2}
   - {fileID: 11400000, guid: c4df4608725f04346b22c50d9c2a4768, type: 2}
   - {fileID: 11400000, guid: 0ab10ffa938437a47b68fbdfb29c47c2, type: 2}
+  - {fileID: 11400000, guid: aa2a7f5bb38e99a4598aabe8c1f2c7e3, type: 2}
   - {fileID: 11400000, guid: ba60071ed74e8394789ddc9e85bfb40b, type: 2}
   - {fileID: 11400000, guid: b6e6cb1f4f1943b4aae1175219d977b8, type: 2}
+  - {fileID: 11400000, guid: efb58bb472028cd42b835d623b0eb72b, type: 2}
   - {fileID: 11400000, guid: df74e5602ae93f64ba889963b6fc64ad, type: 2}
   - {fileID: 11400000, guid: df81b77befe8c9e4bad2cd03da4be000, type: 2}
   currentDayIndex: 0
@@ -45464,9 +45464,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timesClickedToday: 0
   firstClickReactions:
-  - {fileID: 11400000, guid: e4d6987e8254c7f429cc515198d6dcd1, type: 2}
-  - {fileID: 11400000, guid: f8e52d0a40276f84da0865bdba280a99, type: 2}
-  - {fileID: 11400000, guid: 305904fac4d0bb642bd853d8f6dcf1d1, type: 2}
+  - {fileID: 11400000, guid: d554bc3745feb7c49a265c6de3ea839c, type: 2}
+  - {fileID: 11400000, guid: 6ce3a332e0b707241bbf1434d2f80e7e, type: 2}
+  - {fileID: 11400000, guid: 880b984ada625cf44af266b0af7ca278, type: 2}
   secondClickReactions:
   - {fileID: 11400000, guid: b2d803134e52a7d418b76b3619752f44, type: 2}
   - {fileID: 11400000, guid: 47a98c63e9393b548ab480c5485d4a4c, type: 2}

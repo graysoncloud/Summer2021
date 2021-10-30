@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
         foreach (CharacterName character in System.Enum.GetValues(typeof(CharacterName)))
         {
             // Load save state here
-            PlayerPrefs.SetInt(character.ToString() + "Attitude", 3);
+            PlayerPrefs.SetInt(character.ToString() + "Attitude", 0);
         }
 
         PlayerPrefs.SetInt("DrugID", 100);
@@ -343,7 +343,9 @@ public class GameManager : MonoBehaviour
         AcceptedRobbiePills,
         RobbieGaveMomPills,
         TookPillFirstTime,
-        BigReveal
+        BigReveal,
+        PromisedEllianaWesley,
+        HelpedElliana
     }
 
 }

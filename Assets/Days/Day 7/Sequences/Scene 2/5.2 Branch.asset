@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6cf3753bd334704ea56229dd0ebb808, type: 3}
-  m_Name: 5
+  m_Name: 5.2 Branch
   m_EditorClassIdentifier: 
   choiceText: 
   checkStress: 0

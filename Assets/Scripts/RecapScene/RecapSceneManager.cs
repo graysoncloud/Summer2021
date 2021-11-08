@@ -143,7 +143,7 @@ public class RecapSceneManager : MonoBehaviour
         }
 
         finishedContracts.Add(toAdd);
-        Debug.Log("Contract added! Total num: " + finishedContracts.Count);
+        //Debug.Log("Contract added! Total num: " + finishedContracts.Count);
 
     }
 

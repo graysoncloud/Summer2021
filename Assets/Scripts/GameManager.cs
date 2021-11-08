@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
 
         UpdatePlayerPrefs();
 
-        SceneChangeManager.instance.StartSceneChange(TitleSceneManager.instance.titleToMR);
+        SceneChangeManager.instance.StartSceneChange(TitleSceneManager.instance.titleToOB);
 
         MusicManager.instance.StartFadeOut();
 
@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         TitleSceneManager.instance.ToggleButtonInteractability(false);
-        SceneChangeManager.instance.StartSceneChange(TitleSceneManager.instance.titleToMR);
+        SceneChangeManager.instance.StartSceneChange(TitleSceneManager.instance.titleToOB);
 
         MusicManager.instance.StartFadeOut();
 

@@ -32,7 +32,7 @@ public class ChemicalBin : MonoBehaviour
     public void SetGlow()
     {
         Contract currentContract = GameManager.instance.GetCurrentContract();
-        Debug.Log(currentContract.companyName);
+        //Debug.Log(currentContract.companyName);
         bool desired = false, undesired = false, optionalDesired = false, optionalUndesired = false, glow = false;
         foreach (var effect in ChemicalPrefab.effects)
         {

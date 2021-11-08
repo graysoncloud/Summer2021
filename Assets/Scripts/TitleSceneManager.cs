@@ -20,7 +20,7 @@ public class TitleSceneManager : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
 
-    public SceneChange titleToMR;
+    public SceneChange titleToOB;
 
     public MusicEvent defaultTitleMusicEvent;
 

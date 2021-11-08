@@ -4350,13 +4350,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   days:
-  - {fileID: 11400000, guid: 4d9acff1ba0bb6445a17ca147b837dab, type: 2}
   - {fileID: 11400000, guid: bef17959852e84d4880d48c90c95d5e9, type: 2}
   - {fileID: 11400000, guid: 43c23f096ba49e94f85e1a4cc5c0a6b3, type: 2}
   - {fileID: 11400000, guid: bf738d117c9be46468863c171a5c8aa4, type: 2}
   - {fileID: 11400000, guid: 7f8321b6db2b7a54eb2777d37824747a, type: 2}
   - {fileID: 11400000, guid: fd48fcc359565aa41916d5ff32cc2028, type: 2}
   - {fileID: 11400000, guid: d0036f5449c864e4980ab7a5c98b0e7b, type: 2}
+  - {fileID: 11400000, guid: 4d9acff1ba0bb6445a17ca147b837dab, type: 2}
   - {fileID: 11400000, guid: 66839dd7aabbeb04e9363977725bddc3, type: 2}
   - {fileID: 11400000, guid: c4df4608725f04346b22c50d9c2a4768, type: 2}
   - {fileID: 11400000, guid: 0ab10ffa938437a47b68fbdfb29c47c2, type: 2}
@@ -62093,7 +62093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2052212350
 MonoBehaviour:
   m_ObjectHideFlags: 0

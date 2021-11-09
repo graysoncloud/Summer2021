@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 2 CON
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 11400000, guid: b2ebcac09bfc9504e91a70375c28fd6d, type: 2}
+  isNews: 0
+  dialogueLines:
+  - speaker: 0
+    dialogue: '* The next morning, a letter comes for you in the mail *'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Greetings, Barney! Hope you're doing well.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Last night, Mazer discovered a plot to overload our vitamins with a
+      higher than normal dose of Mazine. A plot that was foiled by none other than
+      you!
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: We all wanted to thank you for your incredible bravery, as well as
+      your courageous efforts to ignore Robbie Long-Legs's pestering requests.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: (Robbie Long-Legs has been dealt with accordingly, might I add)
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Anyway, we all believe it's time we gave you a raise. Starting tomorrow,
+      you're being promoted to executive. It comes with a whopping 12% salary increase!
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Excellent work this week. Long live Mazer!
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 1 CON
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 0}
+  isNews: 0
+  dialogueLines:
+  - speaker: 2
+    dialogue: Are you alright, Barney? You look... pale.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Yeah, mom. I'm fine.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: 'Actually... I''m more than fine. I''m better than ever! '
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: I've decided that I'm quitting Mazer. I don't know what I'm going to
+      do... but I'll land on my feet somehow.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 2
+    dialogue: ....... what?
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 26
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 2
+    dialogue: 'Are you sure? This seems so... sudden! '
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 26
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: No! Don't you get it, mom? I'm finally out! I never have to go back
+      to that place again!
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Let's celebrate... or something. When was the last time I took you
+      out somewhere? Where do you want to go? What do you want to do?
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 2
+    dialogue: Barney, I don't know where this is coming from.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 2
+    dialogue: But I sure as hell do love the new you!
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 22
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 2
+    dialogue: I'm proud of you son.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Thanks, mom.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: I love you.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
+    animOnly: 0
+    animLength: 0
+    SFX: 

@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 1 CON
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 0}
+  isNews: 0
+  dialogueLines:
+  - speaker: 2
+    dialogue: ... You alright, Barney? You look pale.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Actually--
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: I'm taking a bit more time off. They want me to... to clear my head.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 2
+    dialogue: Maybe it's for the best! They overwork you in that building, I tell
+      you.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 22
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 2
+    dialogue: '* cough * And now you get to be home and take care of your old woman.'
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Yeah... I guess you're right.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 2
+    dialogue: Oh, cheer up, Barney! Try and relax. Speaking of, have you remembered
+      to take your meds today?
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: My meds......
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Not yet.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: You're right. I probably should.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

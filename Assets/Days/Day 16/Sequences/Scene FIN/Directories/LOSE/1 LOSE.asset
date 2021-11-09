@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0108177cadee74884d6225aac515b5, type: 3}
+  m_Name: 1 LOSE
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 0}
+  automatic: 1
+  paths:
+  - {fileID: 11400000, guid: 8e5f9556c8d97cc449acd381c531db72, type: 2}
+  - {fileID: 11400000, guid: 516b3c6a18283634c9375a310b32a5d1, type: 2}
+  - {fileID: 11400000, guid: dd1af5a48ca1b8b4e85e9477df772c89, type: 2}
+  possibleConversations:
+  - {fileID: 11400000, guid: 96aa61ed2f83d774e8cd89e7b89f423f, type: 2}
+  - {fileID: 11400000, guid: 3a0a7f4cccdc04a4e8726e4a9833a9f2, type: 2}
+  - {fileID: 0}

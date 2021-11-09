@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 2 CON
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 11400000, guid: 6ae5d9dec27279b439a285e3258d834a, type: 2}
+  isNews: 0
+  dialogueLines:
+  - speaker: 0
+    dialogue: '* The next morning, a letter arrives in the mail. *'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Greetings, Barney. Wesley here.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: You think you can get rid of me that easily? It takes more than a sprinkling
+      of Mazine to overdose. Should have been more generous!
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Anyway, it goes without saying that we're immediately terminating you
+      from Mazer. Don't bother coming in for your belongings; they are being burned
+      tonight.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Also, expect another letter from the United States justice department
+      within the week. We are pressing charges for attempted murder and conspiracy.
+      Enjoy your last moments of freedom.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Best, Wesley.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

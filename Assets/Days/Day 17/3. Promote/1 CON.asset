@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 1 CON
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 0}
+  isNews: 0
+  dialogueLines:
+  - speaker: 2
+    dialogue: You alright, Barney? You look pale this morning.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: Me? Um... I'm fine.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: I just found out that I got a raise, but I--
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 2
+    dialogue: A raise? Barney, that's fantastic! Oh, I'm so proud of you!
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 22
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 2
+    dialogue: '* cough * I always said that they were overworking you, and you got
+      nothing to show from it. Very good news! Let''s do something tonight to celebrate.
+      When was the last time we broke out a card game?'
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: ....
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: That sounds nice. I'm in.
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 2
+      animationName: 21
+    animOnly: 0
+    animLength: 0
+    SFX: 

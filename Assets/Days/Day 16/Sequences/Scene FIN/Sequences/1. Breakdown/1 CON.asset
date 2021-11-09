@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 1 CON
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 11400000, guid: 7c13fd13a2fe6114a975f58cda36fa41, type: 2}
+  isNews: 0
+  dialogueLines:
+  - speaker: 0
+    dialogue: '* The next morning, a letter arrives in the mail. *'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Dear Barney,
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: While we appreciate your service as an employee, we feel that it may
+      have been a hasty decision to have you return to work so soon after your nervous
+      breakdown.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: We are therefore allocating you another week of sick leave. Please
+      use this opportunity to clear your mind and continue taking your Mazine antidepressants.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 3
+    dialogue: Mazer, once again, wishes you a hasty recovery. Thank you for your
+      continued service and hard work!
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

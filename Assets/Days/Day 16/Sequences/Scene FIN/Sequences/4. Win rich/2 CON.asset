@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
+  m_Name: 2 CON
+  m_EditorClassIdentifier: 
+  nextEvent: {fileID: 11400000, guid: e792c0827d7a7ef44afe2323de218a35, type: 2}
+  isNews: 0
+  dialogueLines:
+  - speaker: 0
+    dialogue: '* The next morning, a letter arrives in the mail. *'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: Hello, Barney.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: I've just recived an inside scoop that an "unidentified event of mass
+      hysteria" broke out at Mazer headquarters right now. Details are scarce right
+      now, but if it means what I think it means....
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: Thank you, Barney.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: I'm proud of you. Robbie would be proud, too.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: Since the dangerous effects of Mazine are kept hidden by Mazer, your
+      hands should be clean in the eyes of the law.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: But if I were you, I wouldn't set foot near Mazer again.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
+    dialogue: 'I won''t be calling you from now on. But I wish you the best. '
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 

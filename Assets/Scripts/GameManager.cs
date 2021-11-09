@@ -345,7 +345,12 @@ public class GameManager : MonoBehaviour
         TookPillFirstTime,
         BigReveal,
         PromisedEllianaWesley,
-        HelpedElliana
+        HelpedElliana,
+        Ending1,
+        Ending2,
+        Ending3,
+        Ending4,
+        Ending5
     }
 
 }

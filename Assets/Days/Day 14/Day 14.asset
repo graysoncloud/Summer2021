@@ -17,12 +17,14 @@ MonoBehaviour:
     trigger: 1
   - initialEvent: {fileID: 11400000, guid: 8e74e05eea13bad43967d2bface66292, type: 2}
     trigger: 5
+  - initialEvent: {fileID: 11400000, guid: 52ecf1c0060bf73498e30e60b807d210, type: 2}
+    trigger: 0
   newsEvent: {fileID: 11400000, guid: 85cb91fbdcfabf34198294cd92ed0d1e, type: 2}
   contracts:
   - {fileID: 11400000, guid: 8ddf813b4283c7846ab1982b34b3673a, type: 2}
-  - {fileID: 11400000, guid: 5bbaed1108b9e0e4c8071ebadd12721d, type: 2}
-  - {fileID: 11400000, guid: 9c11731b2dacf6a4d973b9ad4249c681, type: 2}
   - {fileID: 11400000, guid: fab33a2cd5d8dd347b2a4a43e617e34f, type: 2}
+  - {fileID: 11400000, guid: 9c11731b2dacf6a4d973b9ad4249c681, type: 2}
+  - {fileID: 11400000, guid: 971a233a4a4854c499e32d125c8f8cb0, type: 2}
   dayChemicals:
   - {fileID: 4991818317866170135, guid: 50c17436042c3184f8071ff156a74993, type: 3}
   - {fileID: 4991818317866170135, guid: 4d1289f9cbcefaa47975c042546f89ea, type: 3}

@@ -21,14 +21,14 @@ MonoBehaviour:
     animations: []
     animOnly: 0
     animLength: 0
-    SFX: 
+    SFX: 01000000
   - speaker: 6
     dialogue: "Hey Barney! It\u2019s Elliana-\r\n"
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
-    SFX: 
+    SFX: 02000000
   - speaker: 1
     dialogue: "Please stop calling, I shouldn\u2019t be talking to you.\r"
     offset: {x: 0, y: 0}

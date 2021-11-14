@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 2.2 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: 9bdc1fbaba904694f9a7c24f66375ed5, type: 2}
   isNews: 0
   dialogueLines:
   - speaker: 1
@@ -79,16 +79,15 @@ MonoBehaviour:
     SFX: 
   - speaker: 6
     dialogue: But you... you're on the inside! You could gather information for me,
-      or try and-
+      and we could end this nightmare.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
   - speaker: 1
-    dialogue: Elliana, stop! I could get in serious trouble if I do anything you're
-      asking me to do. Yeah, Mazer isn't a shining pillar of moral strength, okay?
-      I get it. But you don't have to call me every time-
+    dialogue: They're constantly monitoring me, there's no way I can help you without
+      seriously jeopardizing-
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
@@ -96,6 +95,13 @@ MonoBehaviour:
     SFX: 
   - speaker: 6
     dialogue: Robbie is missing.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: What?
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
@@ -117,14 +123,29 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 1
-    dialogue: You're crazy! Don't ever call me again.
+    dialogue: You're lying. I just saw him yesterday.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 0
+  - speaker: 6
+    dialogue: Stop making excuses Barney! We have to do something now, and we'll
+      get nowhere if you don't do anything.
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 6
     dialogue: '*click*'
+    offset: {x: 0, y: 0}
+    animations: []
+    animOnly: 0
+    animLength: 0
+    SFX: 
+  - speaker: 1
+    dialogue: ...
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

@@ -12,23 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: 4963d4217ec958c4da9cf4edcbab86f0, type: 2}
   isNews: 0
   dialogueLines:
   - speaker: 1
-    dialogue: ... Elliana again.
+    dialogue: ...
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
-    SFX: 
+    SFX: 01000000
   - speaker: 1
     dialogue: Hello?
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
     animLength: 0
-    SFX: 
+    SFX: 02000000
   - speaker: 6
     dialogue: Barney! Where are you?
     offset: {x: 0, y: 0}

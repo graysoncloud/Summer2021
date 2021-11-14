@@ -53,6 +53,8 @@ public class TVInteractable : MonoBehaviour
             focusCamera.SetActive(true);
             mainCamera.SetActive(false);
 
+            PlayerPrefs.SetInt("WatchedNews", 1);
+
             MorningRoutineManager.Instance.SetTVActive(true);
             //MorningRoutineManager.Instance.SetMinigame(null);
             //do something to start the dialogue

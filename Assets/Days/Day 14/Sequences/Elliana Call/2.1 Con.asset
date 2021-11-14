@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 2.1 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 11400000, guid: 9bdc1fbaba904694f9a7c24f66375ed5, type: 2}
   isNews: 0
   dialogueLines:
   - speaker: 1
@@ -114,13 +114,6 @@ MonoBehaviour:
     SFX: 
   - speaker: 0
     dialogue: '*click*'
-    offset: {x: 0, y: 0}
-    animations: []
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 1
-    dialogue: Oh boy.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0

@@ -19,8 +19,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 27e1bc61668f84440a30867b0c6e88f2, type: 2}
   - {fileID: 11400000, guid: 124238b58e820d64691cfd074d3cf862, type: 2}
   - {fileID: 11400000, guid: 7419b7bf17e33084d9f53f4fe578d76c, type: 2}
+  - {fileID: 11400000, guid: 1b9a373814c0b0e4ea7036c9c18fa922, type: 2}
   possibleConversations:
   - {fileID: 11400000, guid: 995f18041895ad5478e628b7c48c15eb, type: 2}
   - {fileID: 11400000, guid: 33c64a6786a358b469e5eb8088600ae7, type: 2}
   - {fileID: 11400000, guid: f382bd62639fcf3459b706eeba13796c, type: 2}
   - {fileID: 11400000, guid: fd31c80b7f5524947b33c11eb0fab91d, type: 2}
+  - {fileID: 11400000, guid: 1d8bbbd06114c0f49a669bc846b4b13d, type: 2}

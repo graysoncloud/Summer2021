@@ -84,6 +84,8 @@ public class GameManager : MonoBehaviour
 
         }
 
+        Debug.Log(PlayerPrefs.GetInt("SpecialContract2"));
+
     }
 
     public void StartNewGame()
@@ -103,7 +105,7 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetFloat("TotalMoney", 0);
 
-        PlayerPrefs.SetInt("OptionalCompleted", 0);
+        PlayerPrefs.SetInt("OptionalCompleted", 1);
 
         PlayerPrefs.SetInt("LastMusic1", 2);
         PlayerPrefs.SetInt("LastMusic2", 3);
@@ -112,7 +114,9 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("CurrentDayIndex", 0);
         currentDayIndex = 0;
 
-        PlayerPrefs.SetInt("MadeEnoughMoney", 0);
+        PlayerPrefs.SetInt("SpecialContract2", 1);
+
+        PlayerPrefs.SetInt("MadeEnoughMoney", 1);
 
         foreach (CharacterName character in System.Enum.GetValues(typeof(CharacterName)))
         {
@@ -331,7 +335,7 @@ public class GameManager : MonoBehaviour
 
 
     public enum SaveableEvent {
-        // Ignore "not" events
+        // Ignore "not" events. Fucking stupid idiots.
         TookPill,
         WatchedNews,
         WateredPlants,

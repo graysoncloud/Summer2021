@@ -20,8 +20,8 @@ MonoBehaviour:
   characterToCheck: 0
   attitudeComparison: 0
   attitudeToCompare: 0
-  checkEvent: 0
-  eventToCheck: 0
+  checkEvent: 1
+  eventToCheck: 10
   checkNumAltContractsFinished: 0
   minimumRequired: 0
   changesStress: 0

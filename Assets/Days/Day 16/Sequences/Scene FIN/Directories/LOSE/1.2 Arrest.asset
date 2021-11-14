@@ -23,7 +23,7 @@ MonoBehaviour:
   checkEvent: 0
   eventToCheck: 14
   checkNumAltContractsFinished: 1
-  minimumRequired: 5
+  minimumRequired: 6
   changesStress: 0
   stressChangeAmount: 0
   changesAttitude: 0

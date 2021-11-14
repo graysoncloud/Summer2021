@@ -25,25 +25,6 @@ public class PrintButton : MonoBehaviour
         // Evaluate solution
         if (true || ContractDisplayer.instance.EvaluateContract())
         {
-
-            DrugManager.instance.EndTutorials();
-            
-            Printer.instance.solutionPrinted = true;
-            Printer.instance.printerPaper.SetActive(true);
-            OfficeSceneManager.instance.solutionFinished = true;
-
-            RecapSceneManager.instance.GenerateFinishedContract();
-
-            SceneChangeManager.instance.StartSceneChange(DrugManager.instance.drugToOfficeSceneChange);
-
-            DrugManager.instance.ClearChems();
-
-            if (GameManager.instance.currentDayIndex == 0)
-                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.ContractTutorial3);
-
-            SFXPlayer.instance.PlaySoundEffect(5);
-            // Display a "solution printed", prevent further editing
-
             Contract currentContract = GameManager.instance.GetCurrentContract();
             bool cleared = ContractDisplayer.instance.EvaluateOptional();
             if (cleared == true)
@@ -72,6 +53,24 @@ public class PrintButton : MonoBehaviour
                     PlayerPrefs.SetInt("SpecialContract2", 0);
                 }
             }
+
+            DrugManager.instance.EndTutorials();
+            
+            Printer.instance.solutionPrinted = true;
+            Printer.instance.printerPaper.SetActive(true);
+            OfficeSceneManager.instance.solutionFinished = true;
+
+            RecapSceneManager.instance.GenerateFinishedContract();
+
+            SceneChangeManager.instance.StartSceneChange(DrugManager.instance.drugToOfficeSceneChange);
+
+            DrugManager.instance.ClearChems();
+
+            if (GameManager.instance.currentDayIndex == 0)
+                TutorialManager.instance.ActivateTutorial(TutorialManager.instance.ContractTutorial3);
+
+            SFXPlayer.instance.PlaySoundEffect(5);
+            // Display a "solution printed", prevent further editing
         }
         else
         {

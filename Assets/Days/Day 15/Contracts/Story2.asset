@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: Story2
   m_EditorClassIdentifier: 
-  companyName: Day15 Hard1
-  description: Possible without Miracle chem
+  companyName: Zeistfreckle Tap
+  description: It's that time of the year again! Temperature is rising, and customers
+    are getting thirsty for our famous bottled water. Looking for a special "kick"
+    that will keep our customers wanting more.
   usesMaxVolatility: 1
   volatilityMax: 41
   optimalMaxVolatilityVal: 41

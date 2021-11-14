@@ -62,13 +62,6 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: There's something I need to tell you.
-    offset: {x: 0, y: 0}
-    animations: []
-    animOnly: 0
-    animLength: 0
-    SFX: 
-  - speaker: 4
     dialogue: But I do have one final favor to ask.
     offset: {x: 0, y: 0}
     animations: []

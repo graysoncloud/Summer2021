@@ -34,7 +34,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: Nevermind. I have to go. Goodbye.
+    dialogue: Nevermind. It's not important. I have to go, goodbye.
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1

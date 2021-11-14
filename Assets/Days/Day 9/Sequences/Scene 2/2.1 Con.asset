@@ -73,7 +73,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: ...nevermind. I have to go.
+    dialogue: ...nevermind. It's not important; I have to go.
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 4

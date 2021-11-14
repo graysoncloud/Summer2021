@@ -113,9 +113,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("CurrentDayIndex", 0);
         currentDayIndex = 0;
 
-        PlayerPrefs.SetInt("SpecialContract2", 1);
-
-        PlayerPrefs.SetInt("MadeEnoughMoney", 1);
+        PlayerPrefs.SetInt("MadeEnoughMoney", 0);
 
         foreach (CharacterName character in System.Enum.GetValues(typeof(CharacterName)))
         {

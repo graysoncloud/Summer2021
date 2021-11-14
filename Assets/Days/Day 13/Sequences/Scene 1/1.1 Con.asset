@@ -14,13 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextEvent: {fileID: 0}
   isNews: 0
-  dialogueLines:
-  - speaker: 1
-    dialogue: n/a
-    offset: {x: 0, y: 0}
-    animations:
-    - toAnimate: 1
-      animationName: 0
-    animOnly: 1
-    animLength: 0
-    SFX: 
+  dialogueLines: []

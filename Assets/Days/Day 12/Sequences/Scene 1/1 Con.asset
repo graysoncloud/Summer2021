@@ -43,7 +43,8 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: Tomorrow morning. Don't take your antidepressants.
+    dialogue: Tomorrow morning. Toss your antidepressants. At the very least don't
+      take them. Ever again.
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1

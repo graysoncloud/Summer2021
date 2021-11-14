@@ -69,8 +69,8 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 4
-    dialogue: 'It''s unbelievably addictive, Barney. Prolonged usage from anything
-      containing it can make someone hooked for life. '
+    dialogue: 'It''s addictive, Barney. Prolonged usage from anything containing
+      it can make someone body depend on it. '
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 1

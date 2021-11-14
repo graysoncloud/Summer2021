@@ -43,7 +43,7 @@ MonoBehaviour:
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 1
+  - speaker: 2
     dialogue: Well what are you waiting for? Get back our there and change the world!
     offset: {x: 0, y: 0}
     animations:
@@ -52,7 +52,7 @@ MonoBehaviour:
     animOnly: 0
     animLength: 0
     SFX: 
-  - speaker: 1
+  - speaker: 2
     dialogue: I'm proud of you, son.
     offset: {x: 0, y: 0}
     animations:

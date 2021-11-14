@@ -32,12 +32,23 @@ MonoBehaviour:
     animOnly: 0
     animLength: 0
     SFX: 
+  - speaker: 1
+    dialogue: My attitude? But-
+    offset: {x: 0, y: 0}
+    animations:
+    - toAnimate: 1
+      animationName: 4
+    animOnly: 0
+    animLength: 0
+    SFX: 
   - speaker: 3
     dialogue: Upper management's been pestering me to say something. The bottom line
       is, we're all still a little wary of your incident last month. We just don't
       want something like that to ever happen again.
     offset: {x: 0, y: 0}
-    animations: []
+    animations:
+    - toAnimate: 1
+      animationName: 6
     animOnly: 0
     animLength: 0
     SFX: 

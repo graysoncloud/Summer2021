@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2800dd8433d3e4c83531dab2471d86, type: 3}
   m_Name: FinalContract
   m_EditorClassIdentifier: 
-  companyName: Robbie
-  description: Hey Barney, please kill Wesley. Thanks.
+  companyName: Mazer Pharmaceuticals
+  description: Mazer is proud to employ the sharpest minds in the industry. We're
+    showing our appreciation by supplying them with a state of the art vitamin pill!
+    Looking for something to increase their quality of life.
   usesMaxVolatility: 1
   volatilityMax: 100
   optimalMaxVolatilityVal: 100

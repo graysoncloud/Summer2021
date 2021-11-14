@@ -84,8 +84,7 @@ public class GameManager : MonoBehaviour
 
         }
 
-        Debug.Log(PlayerPrefs.GetInt("SpecialContract2"));
-
+        //Debug.Log(PlayerPrefs.GetInt("SpecialContract2"));
     }
 
     public void StartNewGame()

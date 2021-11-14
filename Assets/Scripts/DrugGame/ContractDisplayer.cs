@@ -372,29 +372,45 @@ public class ContractDisplayer : MonoBehaviour
             bool cleared = true;
             if (currentContract.usesOptionalDesireable)
             {
+                Debug.Log(DrugManager.instance.optionalChems + " is less than " + currentContract.optionalDesirableMin);
                 if (DrugManager.instance.optionalChems < currentContract.optionalDesirableMin)
+                {
                     cleared = false;
+                    Debug.Log("1");
+                }
             }
             else if (currentContract.usesOptionalUndesirable)
             {
                 if (DrugManager.instance.optionalChems > currentContract.optionalUndesirableMax)
+                {
                     cleared = false;
+                    Debug.Log("2");
+                }
             }
             else if (currentContract.usesOptionalMinPrice)
             {
                 if (cost > currentContract.optionalPriceMax)
+                {
                     cleared = false;
+                    Debug.Log("3");
+                }
             }
             else if (currentContract.usesOptionalMaxPrice)
             {
                 if (cost < currentContract.optionalPriceMin)
+                {
                     cleared = false;
+                    Debug.Log("4");
+                }
             }
             else if (currentContract.usesOptionalVol)
             {
                 int vol = DrugManager.instance.GetVol();
                 if (vol > currentContract.optionalVolMax)
+                {
                     cleared = false;
+                    Debug.Log("5");
+                }
             }
             else
             {

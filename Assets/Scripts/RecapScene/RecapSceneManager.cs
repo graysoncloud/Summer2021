@@ -295,6 +295,11 @@ public class RecapSceneManager : MonoBehaviour
         }
         latePenaltyText.gameObject.SetActive(true);
 
+        if (PlayerPrefs.GetFloat("TotalMoney") >= 4250)
+        {
+            PlayerPrefs.SetInt("MadeEnoughMoney", 1);
+        }
+
         //yield return new WaitForSeconds(.2f);
 
         // Fun little decreasing animation

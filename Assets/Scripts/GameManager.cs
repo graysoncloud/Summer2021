@@ -112,6 +112,8 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("CurrentDayIndex", 0);
         currentDayIndex = 0;
 
+        PlayerPrefs.SetInt("MadeEnoughMoney", 0);
+
         foreach (CharacterName character in System.Enum.GetValues(typeof(CharacterName)))
         {
             // Load save state here
@@ -351,7 +353,8 @@ public class GameManager : MonoBehaviour
         Ending2,
         Ending3,
         Ending4,
-        Ending5
+        Ending5,
+        MadeEnoughMoney
     }
 
 }

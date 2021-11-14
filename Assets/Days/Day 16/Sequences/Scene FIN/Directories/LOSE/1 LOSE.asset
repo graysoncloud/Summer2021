@@ -21,4 +21,4 @@ MonoBehaviour:
   possibleConversations:
   - {fileID: 11400000, guid: 96aa61ed2f83d774e8cd89e7b89f423f, type: 2}
   - {fileID: 11400000, guid: 3a0a7f4cccdc04a4e8726e4a9833a9f2, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 328060f4171257343bb6faa51d168573, type: 2}

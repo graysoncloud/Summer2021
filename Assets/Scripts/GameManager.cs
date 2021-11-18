@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         TitleSceneManager.instance.ToggleButtonInteractability(false);
-        SceneChangeManager.instance.StartSceneChange(TitleSceneManager.instance.titleToOB);
+        SceneChangeManager.instance.StartSceneChange(TitleSceneManager.instance.titleToMR);
 
         MusicManager.instance.StartFadeOut();
 

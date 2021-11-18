@@ -21,6 +21,7 @@ public class TitleSceneManager : MonoBehaviour
     public Slider sfxSlider;
 
     public SceneChange titleToOB;
+    public SceneChange titleToMR;
 
     public MusicEvent defaultTitleMusicEvent;
 
@@ -70,6 +71,16 @@ public class TitleSceneManager : MonoBehaviour
                 DisableWarningMenu();
 
         }
+
+        Debug.Log((optionsMenu.gameObject.activeSelf).ToString() + (Input.GetKey(KeyCode.A)).ToString() + Input.GetKey(KeyCode.P).ToString());
+
+        if ((optionsMenu.gameObject.activeSelf) && Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.P))
+        {
+            Debug.Log("Success: Resetting Data");
+            PlayerPrefs.DeleteAll();
+            Application.Quit();
+        }
+
     }
 
     public void AttemptNewGame()

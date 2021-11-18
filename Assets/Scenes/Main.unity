@@ -4554,6 +4554,7 @@ MonoBehaviour:
   musicSlider: {fileID: 1951874768}
   sfxSlider: {fileID: 825091303}
   titleToOB: {fileID: 11400000, guid: e90d69a8c41094940bbf50519d31f29f, type: 2}
+  titleToMR: {fileID: 11400000, guid: 6ffb202fd311b0143af6c380221aaf15, type: 2}
   defaultTitleMusicEvent: {fileID: 11400000, guid: 2d434716327506b41950e6caca34abb5, type: 2}
 --- !u!1 &149280217
 GameObject:
@@ -19101,6 +19102,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 314944193}
+          m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+          m_MethodName: PlaySoundEffect
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 12
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -19129,6 +19142,18 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 314944193}
+          m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+          m_MethodName: PlaySoundEffect
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 13
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -24075,6 +24100,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 314944193}
+          m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+          m_MethodName: PlaySoundEffect
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 12
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -24103,6 +24140,18 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 314944193}
+          m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+          m_MethodName: PlaySoundEffect
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 13
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -44889,6 +44938,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 314944193}
+          m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+          m_MethodName: PlaySoundEffect
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 12
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -44917,6 +44978,18 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 314944193}
+          m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+          m_MethodName: PlaySoundEffect
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 13
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -70048,7 +70121,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'To remove a chemical from the board. Drag it anywhere outside of the grid.
+  m_text: 'To remove a chemical from the board, drag it anywhere outside of the grid.
 
 
     Finish

@@ -39,7 +39,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 1
-    dialogue: Mom-- just drop it, alright? I'm fine!
+    dialogue: Mom-- just drop it, alright? I'm fine.
     offset: {x: 0, y: 0}
     animations: []
     animOnly: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 1
-    dialogue: I have to go. Goodbye.
+    dialogue: I have to go.
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 2

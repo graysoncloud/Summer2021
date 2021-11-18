@@ -23,7 +23,7 @@ public class PrintButton : MonoBehaviour
         }
 
         // Evaluate solution
-        if (true || ContractDisplayer.instance.EvaluateContract())
+        if (ContractDisplayer.instance.EvaluateContract())
         {
             Contract currentContract = GameManager.instance.GetCurrentContract();
             bool cleared = ContractDisplayer.instance.EvaluateOptional();

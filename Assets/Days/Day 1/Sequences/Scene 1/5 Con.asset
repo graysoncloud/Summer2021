@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd451733398b4442ab1eb28e21eb929, type: 3}
   m_Name: 5 Con
   m_EditorClassIdentifier: 
-  nextEvent: {fileID: 11400000, guid: f71c2d2e45c1a884783198b8c124a9d6, type: 2}
+  nextEvent: {fileID: 0}
   isNews: 0
   dialogueLines:
   - speaker: 2
@@ -69,7 +69,7 @@ MonoBehaviour:
     animLength: 0
     SFX: 
   - speaker: 2
-    dialogue: Have a good first day back.
+    dialogue: Hope it goes well.
     offset: {x: 0, y: 0}
     animations:
     - toAnimate: 2

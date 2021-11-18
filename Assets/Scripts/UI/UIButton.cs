@@ -22,8 +22,19 @@ public class UIButton : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if(GetComponent<EventTrigger>().enabled != false)
+        if(GetComponent<EventTrigger>().enabled != false && GameManager.instance.sequenceActive == false)
+        {
             DehighlightText();
+            SFXPlayer.instance.PlaySoundEffect(13);
+        }
+    }
+
+    private void OnMouseEnter()
+    {
+        if (GetComponent<EventTrigger>().enabled != false && GameManager.instance.sequenceActive == false)
+        {
+            SFXPlayer.instance.PlaySoundEffect(12);
+        }
     }
 
     public void HighlightText()

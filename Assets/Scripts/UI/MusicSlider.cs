@@ -17,6 +17,16 @@ public class MusicSlider : MonoBehaviour
         slider = GetComponent<Slider>();
     }
 
+    private void OnMouseDown()
+    {
+        SFXPlayer.instance.PlaySoundEffect(12);
+    }
+
+    private void OnMouseUp()
+    {
+        SFXPlayer.instance.PlaySoundEffect(13);
+    }
+
     public void Start()
     {
         valueText.text = Mathf.Round(slider.value * 100).ToString() + "%";

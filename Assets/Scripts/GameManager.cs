@@ -29,10 +29,10 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
 
         // De-comment on build
-        //ResetPlayerPrefsToSave();  
+        ResetPlayerPrefsToSave();  
 
         // Delete:
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
     }
 
     private void Start()
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             // Escape menu won't trigger while looking at title scene or if a dialogue sequence is active
-            if (SceneChangeManager.instance.currentScene.name != "TitleScene" && !sequenceActive && !escapeMenu.gameObject.activeSelf && TutorialManager.instance.activeTutorial == null)
+            if (SceneChangeManager.instance.currentScene.name != "TitleScene" && SceneChangeManager.instance.currentScene.name != "OpeningScene" && !sequenceActive && !escapeMenu.gameObject.activeSelf && TutorialManager.instance.activeTutorial == null)
             {
                 optionsMenuActive = true;
                 escapeMenu.OpenMainMenu();

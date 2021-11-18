@@ -190,6 +190,7 @@ public class ConversationManager : MonoBehaviour
         {
             yield return new WaitForEndOfFrame();
         }
+        SFXPlayer.instance.PlaySoundEffect(14);
         clicked = false;
         waitingForClick = false;
     }

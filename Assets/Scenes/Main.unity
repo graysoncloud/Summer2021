@@ -5459,7 +5459,7 @@ RectTransform:
   m_GameObject: {fileID: 191317805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children:
   - {fileID: 7437521072404789498}
   - {fileID: 2066638229}
@@ -8946,6 +8946,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 314944193}
+          m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+          m_MethodName: PlaySoundEffect
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 15
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &304824906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9597,6 +9609,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9a9cf2c1f80ae784abac5d3c026bf418, type: 3}
   - {fileID: 8300000, guid: 55d926a93fa05ca4ba66f9412249fbfb, type: 3}
   - {fileID: 8300000, guid: e3dd74acb40696f4c8818525a74ab7dc, type: 3}
+  - {fileID: 8300000, guid: 1930f8c797cff714683dcdbdd1d4908a, type: 3}
+  - {fileID: 8300000, guid: 416de2d1beecfea4c8bc46e407c4ccd8, type: 3}
+  - {fileID: 8300000, guid: 8111840df214aa045a90e3430850fb97, type: 3}
+  - {fileID: 8300000, guid: 0c7639769bb6cd64fbca505a3fa6ffac, type: 3}
 --- !u!4 &314944194
 Transform:
   m_ObjectHideFlags: 0
@@ -14926,6 +14942,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 314944193}
+          m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+          m_MethodName: PlaySoundEffect
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 15
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &512133044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15372,7 +15400,7 @@ RectTransform:
   m_GameObject: {fileID: 522400125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children:
   - {fileID: 1298854638}
   - {fileID: 875523359}
@@ -20304,7 +20332,7 @@ MonoBehaviour:
   defaultMusicVolume: 0.8
   defaultSFXVolume: 0.8
   songs:
-  - {fileID: 8300000, guid: 738e6a8c9494abb4a92c68ab0847b1ca, type: 3}
+  - {fileID: 8300000, guid: ebdc3ff34bd3cd4429647c6c3193f531, type: 3}
   - {fileID: 8300000, guid: 5247574d75621084ca89639728445a78, type: 3}
   - {fileID: 8300000, guid: 5a69557eee1064646a9e2ef3fd6e823b, type: 3}
   - {fileID: 8300000, guid: eef94d1d55cd01b4eb46d2163214f71f, type: 3}
@@ -24498,6 +24526,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 314944193}
+          m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+          m_MethodName: PlaySoundEffect
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 15
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &768171641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26086,7 +26126,7 @@ RectTransform:
   m_GameObject: {fileID: 819093951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children:
   - {fileID: 917018978}
   - {fileID: 1572028770}
@@ -60824,6 +60864,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 314944193}
+          m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+          m_MethodName: PlaySoundEffect
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 15
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1992331884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64686,7 +64738,7 @@ RectTransform:
   m_GameObject: {fileID: 2100847451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children:
   - {fileID: 871147283}
   - {fileID: 2053840758}
